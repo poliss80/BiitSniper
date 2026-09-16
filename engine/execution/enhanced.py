@@ -493,28 +493,28 @@ class EnhancedExecutor:
         limit_price, reason = self._after_hours_limit_price(symbol, current_price, side)
         return "limit", limit_price, reason
 
-    def _place_live_probe_atm_option(self, symbol: str, spot: float, market_state: MarketState, options_executor) -> None:
+    def _place_live_probe_atm_option(self, symbol: str, spot: float, market_state: MarketState, options_executor) -> bool:
         """Submit one ATM call only after a qualifying long probe scale-in succeeds."""
         if not LIVE_PROBE_SCALE_IN_ATM_OPTION_ENABLED or options_executor is None:
-            return
+            return False
         if not self._is_option_market_open(market_state):
             log.info(f"LIVE PROBE {symbol}: ATM option deferred; options market is closed")
-            return
+            return False
         try:
             from engine.options.strategies import OptionSignal, _get_options_chain, _pick_strike, get_dynamic_option_filters
 
             chain = _get_options_chain(symbol)
             if chain is None:
                 log.info(f"LIVE PROBE {symbol}: ATM option skipped; no usable option chain")
-                return
+                return False
             strike_row = _pick_strike(chain.calls, spot, 0.50, get_dynamic_option_filters())
             if strike_row is None:
                 log.info(f"LIVE PROBE {symbol}: ATM option skipped; no liquid ATM call")
-                return
+                return False
             mid_price = float(strike_row.get("mid", strike_row.get("lastprice", 0)) or 0)
             if mid_price <= 0:
                 log.info(f"LIVE PROBE {symbol}: ATM option skipped; no executable call price")
-                return
+                return False
             option_signal = OptionSignal(
                 symbol=symbol, option_type="call", action="buy_to_open",
                 strike=float(strike_row["strike"]), expiry=chain.expiry,
@@ -528,8 +528,10 @@ class EnhancedExecutor:
             )
             if options_executor.place_option_order(option_signal, market_state):
                 log.info(f"LIVE PROBE ATM OPTION {symbol}: 1x ${option_signal.strike:.2f} call submitted")
+                return True
         except Exception as option_error:
             log.warning(f"LIVE PROBE {symbol}: ATM option scale-in skipped: {option_error}")
+        return False
 
     def check_live_probe_scale_ins(self, options_executor=None) -> None:
         """Add once to a profitable live probe after the strategy scan completes."""
@@ -569,17 +571,17 @@ class EnhancedExecutor:
             is_long = qty > 0
             pending_scale_in = pending_scale_ins.get(sym)
             if pending_scale_in is not None:
-                if pending_scale_in.get("atm_option_deferred"):
+                if pending_scale_in.get("atm_option_deferred") or pending_scale_in.get("atm_option_pending"):
                     if self._is_option_market_open(market_state):
-                        self._place_live_probe_atm_option(sym, current_price, market_state, options_executor)
-                        pending_scale_ins.pop(sym, None)
-                        state_changed = True
+                        if self._place_live_probe_atm_option(sym, current_price, market_state, options_executor):
+                            pending_scale_ins.pop(sym, None)
+                            state_changed = True
                     continue
                 if abs(qty) > pending_scale_in["prior_qty"]:
                     try:
-                        for order in self.client.get_orders() or []:
-                            if order.symbol == sym:
-                                self.client.cancel_order_by_id(str(order.id))
+                        order_id = str(pending_scale_in.get("order_id") or "")
+                        if order_id:
+                            self.client.cancel_order_by_id(order_id)
                         time.sleep(0.4)
                         trail_pct = get_dynamic_tier(sym, current_price)["ts"]
                         self.client.submit_order(TrailingStopOrderRequest(
@@ -597,8 +599,10 @@ class EnhancedExecutor:
                         continue
                     self._mark_live_probe_scaled_in(sym)
                     if self._is_option_market_open(market_state):
-                        self._place_live_probe_atm_option(sym, current_price, market_state, options_executor)
-                        pending_scale_ins.pop(sym, None)
+                        if self._place_live_probe_atm_option(sym, current_price, market_state, options_executor):
+                            pending_scale_ins.pop(sym, None)
+                        else:
+                            pending_scale_in["atm_option_pending"] = True
                     else:
                         pending_scale_in["atm_option_deferred"] = True
                     state_changed = True

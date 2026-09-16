@@ -261,6 +261,32 @@ class EquityExitLifecycleTests(unittest.TestCase):
 
         executor._place_live_probe_atm_option.assert_called_once()
 
+    def test_failed_atm_option_attempt_remains_retryable(self):
+        client = MockClient([MockPosition("AAPL", "2", 101.0, avg_entry_price=100.0)])
+        executor = build_executor(client, Path(tempfile.gettempdir()) / "unused_probe_state.json")
+        executor._get_account = lambda **_kwargs: SimpleNamespace(equity=10_000.0, buying_power=10_000.0)
+        now = datetime.datetime(2026, 8, 20, 10, 30)
+        executor._current_market_state = lambda: SimpleNamespace(
+            is_regular_hours=True, now=now, resolve_regime=lambda: True,
+        )
+        executor._entry_log["AAPL"] = {"entry_price": 100.0, "entry_time": now - datetime.timedelta(minutes=10)}
+        executor._live_probe_scale_in_pending["AAPL"] = {
+            "prior_qty": 1,
+            "order_id": "scale-in-order",
+            "atm_option_pending": True,
+        }
+        executor._place_live_probe_atm_option = Mock(side_effect=[False, True])
+
+        with patch.object(enhanced, "LIVE_PROBE_MODE", True), patch.object(
+            enhanced, "LIVE_PROBE_SCALE_IN_ENABLED", True
+        ):
+            executor.check_live_probe_scale_ins(Mock())
+            self.assertIn("AAPL", executor._live_probe_scale_in_pending)
+            executor.check_live_probe_scale_ins(Mock())
+
+        self.assertEqual(executor._place_live_probe_atm_option.call_count, 2)
+        self.assertNotIn("AAPL", executor._live_probe_scale_in_pending)
+
     def test_live_probe_confirmation_normalizes_timezone_aware_bars(self):
         executor = object.__new__(EnhancedExecutor)
         entry_time = datetime.datetime(2026, 9, 4, 7, 45)
@@ -504,7 +530,7 @@ class EquityExitLifecycleTests(unittest.TestCase):
         class WashTradeClient(MockClient):
             def __init__(self):
                 super().__init__([MockPosition("AAPL", "1", 101.0, avg_entry_price=100.0)])
-                self.open_orders = [SimpleNamespace(symbol="AAPL", id="existing-trailing-stop")]
+                self.open_orders = [SimpleNamespace(symbol="AAPL", id="tracked-scale-in-order")]
                 self.cancelled_orders = []
 
             def get_orders(self):
@@ -518,6 +544,7 @@ class EquityExitLifecycleTests(unittest.TestCase):
                 if self.open_orders and order.side == enhanced.OrderSide.SELL:
                     raise RuntimeError("potential wash trade detected")
                 self.orders.append(order)
+                return SimpleNamespace(id="tracked-scale-in-order")
 
         client = WashTradeClient()
         executor = build_executor(client, Path(tempfile.gettempdir()) / "unused_probe_state.json")
@@ -542,7 +569,7 @@ class EquityExitLifecycleTests(unittest.TestCase):
             client.positions[0].qty = "2"
             executor.check_live_probe_scale_ins()
 
-        self.assertEqual(client.cancelled_orders, ["existing-trailing-stop"])
+        self.assertEqual(client.cancelled_orders, ["tracked-scale-in-order"])
         self.assertEqual(len(client.orders), 2)
         self.assertEqual(client.orders[1].qty, 2)
         self.assertIn("AAPL", executor._live_probe_scaled_in)
