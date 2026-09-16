@@ -1,0 +1,607 @@
+2026-09-16 04:35:38,616 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-16 04:35:38,689 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-16 04:35:38,761 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-16 04:35:38,762 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-16 04:35:38,762 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-16 04:35:38,762 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-16 04:35:38,763 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-16 04:35:38,763 [INFO] ======================================================================
+2026-09-16 04:35:38,763 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-16 04:35:38,763 [INFO] ======================================================================
+2026-09-16 04:35:38,763 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-16 04:35:38,763 [INFO] Priority 2 (Established): 16 stocks
+2026-09-16 04:35:38,763 [INFO] Total Universe: 42 stocks
+2026-09-16 04:35:38,763 [INFO] Scan: 3 min fixed
+2026-09-16 04:35:38,763 [INFO] ======================================================================
+2026-09-16 04:35:38,793 [INFO] Equity:          $97,206.37
+2026-09-16 04:35:38,793 [INFO] Buying Power:    $388,825.48
+2026-09-16 04:35:38,793 [INFO] PDT Status:      No
+2026-09-16 04:35:38,793 [INFO] Day Trade Count: None
+2026-09-16 04:35:38,793 [INFO] ======================================================================
+2026-09-16 04:35:38,793 [INFO] Starting… Press Ctrl+C to stop
+2026-09-16 04:35:38,793 [INFO] ======================================================================
+2026-09-16 04:35:38,793 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-16 04:35:38,794 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-16 04:35:38,794 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 04:35:38,794 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-16 04:37:08,801 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-16 04:37:09,278 [INFO] ======================================================================
+2026-09-16 04:37:09,278 [INFO] NEW DAY: 2026-09-16 | Start equity: $97,206.37
+2026-09-16 04:37:09,282 [INFO] Universe pruned: removed 98 expired ticker(s): ['ADPT', 'AEHL', 'AGI', 'AGPU', 'ALAR', 'ALHC', 'ALLY', 'ARMG', 'ARMP', 'ARQQ']…
+2026-09-16 04:37:09,282 [INFO] ======================================================================
+2026-09-16 04:37:09,283 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 04:38:54,370 [INFO] Stopped by user
+2026-09-16 04:39:03,305 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-16 04:39:03,329 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-16 04:39:03,399 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-16 04:39:03,400 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-16 04:39:03,400 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-16 04:39:03,400 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-16 04:39:03,401 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-16 04:39:03,401 [INFO] ======================================================================
+2026-09-16 04:39:03,401 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-16 04:39:03,402 [INFO] ======================================================================
+2026-09-16 04:39:03,402 [INFO] Priority 1 (Momentum): 88 stocks
+2026-09-16 04:39:03,402 [INFO] Priority 2 (Established): 16 stocks
+2026-09-16 04:39:03,402 [INFO] Total Universe: 108 stocks
+2026-09-16 04:39:03,402 [INFO] Scan: 3 min fixed
+2026-09-16 04:39:03,402 [INFO] ======================================================================
+2026-09-16 04:39:03,428 [INFO] Equity:          $97,206.37
+2026-09-16 04:39:03,428 [INFO] Buying Power:    $388,825.48
+2026-09-16 04:39:03,428 [INFO] PDT Status:      No
+2026-09-16 04:39:03,428 [INFO] Day Trade Count: None
+2026-09-16 04:39:03,428 [INFO] ======================================================================
+2026-09-16 04:39:03,428 [INFO] Starting… Press Ctrl+C to stop
+2026-09-16 04:39:03,428 [INFO] ======================================================================
+2026-09-16 04:39:03,429 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-16 04:39:03,429 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-16 04:39:03,429 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 04:39:03,429 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-16 04:39:05,772 [WARNING] Startup TI capture failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff72bfa1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff72bef2654]
+	msedgedriver!GetHandleVerifier [0x7ff72c32138f+38455f]
+	msedgedriver!(No symbol) [0x7ff72bc67312]
+	msedgedriver!(No symbol) [0x7ff72bcf5ab6]
+	msedgedriver!(No symbol) [0x7ff72bd0d26f]
+	msedgedriver!(No symbol) [0x7ff72bcc599c]
+	msedgedriver!(No symbol) [0x7ff72bcc4c1d]
+	msedgedriver!(No symbol) [0x7ff72bcc57c3]
+	msedgedriver!(No symbol) [0x7ff72bdfbe52]
+	msedgedriver!(No symbol) [0x7ff72be0b879]
+	msedgedriver!GetHandleVerifier [0x7ff72c049a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff72c04fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff72befe3cf]
+	msedgedriver!(No symbol) [0x7ff72bef8da4]
+	msedgedriver!(No symbol) [0x7ff72bef8eca]
+	msedgedriver!(No symbol) [0x7ff72beea488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-16 04:39:05,803 [INFO] ======================================================================
+2026-09-16 04:39:05,803 [INFO] NEW DAY: 2026-09-16 | Start equity: $97,206.37
+2026-09-16 04:39:05,806 [INFO] Universe pruned: no expired tickers
+2026-09-16 04:39:05,806 [INFO] ======================================================================
+2026-09-16 04:39:05,862 [INFO] Schwab: Refreshing access token...
+2026-09-16 04:39:06,718 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-16 04:39:07,433 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:39:07,905 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:39:08,110 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:39:08,146 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff72bfa1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff72bef2654]
+	msedgedriver!GetHandleVerifier [0x7ff72c32138f+38455f]
+	msedgedriver!(No symbol) [0x7ff72bc67312]
+	msedgedriver!(No symbol) [0x7ff72bcf5ab6]
+	msedgedriver!(No symbol) [0x7ff72bd0d26f]
+	msedgedriver!(No symbol) [0x7ff72bcc599c]
+	msedgedriver!(No symbol) [0x7ff72bcc4c1d]
+	msedgedriver!(No symbol) [0x7ff72bcc57c3]
+	msedgedriver!(No symbol) [0x7ff72bdfbe52]
+	msedgedriver!(No symbol) [0x7ff72be0b879]
+	msedgedriver!GetHandleVerifier [0x7ff72c049a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff72c04fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff72befe3cf]
+	msedgedriver!(No symbol) [0x7ff72bef8da4]
+	msedgedriver!(No symbol) [0x7ff72bef8eca]
+	msedgedriver!(No symbol) [0x7ff72beea488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-16 04:39:09,059 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-16 04:39:09,722 [INFO] [EDGAR] 8-K match: AUID — 8-K - authID Inc. (0001534154) (Filer)
+2026-09-16 04:39:09,724 [INFO] [EDGAR] 8-K match: PLSE — 8-K - PULSE BIOSCIENCES, INC. (0001625101) (Filer)
+2026-09-16 04:39:09,724 [INFO] [EDGAR] 2 newly triggered tickers: ['AUID', 'PLSE']
+2026-09-16 04:39:09,727 [INFO] [EDGAR] Adding AUID to P2 + scan queue for monitoring
+2026-09-16 04:39:09,727 [INFO] [EDGAR] Adding PLSE to P2 + scan queue for monitoring
+2026-09-16 04:39:23,115 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), AAOI(0.35:news-bullish, universe-seed), AFL(0.35:news-bullish, universe-seed), AGQ(0.35:news-bullish, universe-seed), ALVO(0.35:news-bullish, universe-seed), AXTI(0.35:news-bullish, universe-seed), BAM(0.35:news-bullish, universe-seed), BEKE(0.35:news-bullish, universe-seed), BITU(0.35:news-bullish, universe-seed)
+2026-09-16 04:39:23,115 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/3, universe_seed=w1.00/0/5, sentiment=w1.00/0/15
+2026-09-16 04:39:23,170 [INFO] [SCAN] 69 symbols (filtered, 8 workers): AUID, PLSE, MEDS, RETO, NAMI, WNW, FTFT, INTW, SKHL, TNON, SKUU, ALVO, INTC, DLLL, TCOM, SOXL, MVLL, BMNZ, KORU, NBIL, GLWG, SKHY, GDXU, AAOI, AXTI, AGQ, IPW, VEEA, BRNX, SKDD, TKC, CRCG, SOXS, SKYQ, USDE, CRCA, MSTX, ZSL, BOIL, JDST, CRCL, BNC, GDXD, MUZ, CONL, BMNR, BITU, GLL, NOW, TEM, MSTR, NOK, MYSZ, MKT, BX, AFL, BRK, JPM, OBDC, TEVA, CNQ, MDT, NCLH, BEKE, BAM, WSM, RVLV, OKE, MTB
+2026-09-16 04:39:23,170 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:39:27,615 [INFO] [GUARDRAIL SUMMARY] Rejected: 69 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 69
+2026-09-16 04:39:27,615 [INFO] [FUNNEL] targets=69 guardrail_rejected=69 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:39:27,615 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:39:27,615 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:39:27,615 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:42:28,233 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:42:28,287 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:42:28,287 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:42:28,371 [INFO] [SCAN] 69 symbols (filtered, 8 workers): AUID, PLSE, MEDS, RETO, NAMI, WNW, FTFT, INTW, SKHL, TNON, SKUU, ALVO, INTC, DLLL, TCOM, SOXL, MVLL, BMNZ, KORU, NBIL, GLWG, SKHY, GDXU, AAOI, AXTI, AGQ, IPW, VEEA, BRNX, SKDD, TKC, CRCG, SOXS, SKYQ, USDE, CRCA, MSTX, ZSL, BOIL, JDST, CRCL, BNC, GDXD, MUZ, CONL, BMNR, BITU, GLL, NOW, TEM, MSTR, NOK, MYSZ, MKT, BX, AFL, BRK, JPM, OBDC, TEVA, CNQ, MDT, NCLH, BEKE, BAM, WSM, RVLV, OKE, MTB
+2026-09-16 04:42:28,371 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:42:28,403 [INFO] [GUARDRAIL SUMMARY] Rejected: 69 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 69
+2026-09-16 04:42:28,403 [INFO] [FUNNEL] targets=69 guardrail_rejected=69 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:42:28,403 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:42:28,403 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:42:28,403 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:42:28,404 [INFO] Heartbeat: 2026-09-16T04:42:28.403955
+2026-09-16 04:45:28,827 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:45:28,882 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:45:28,882 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:45:28,971 [INFO] [SCAN] 69 symbols (filtered, 8 workers): AUID, PLSE, MEDS, RETO, NAMI, WNW, FTFT, INTW, SKHL, TNON, SKUU, ALVO, INTC, DLLL, TCOM, SOXL, MVLL, BMNZ, KORU, NBIL, GLWG, SKHY, GDXU, AAOI, AXTI, AGQ, IPW, VEEA, BRNX, SKDD, TKC, CRCG, SOXS, SKYQ, USDE, CRCA, MSTX, ZSL, BOIL, JDST, CRCL, BNC, GDXD, MUZ, CONL, BMNR, BITU, GLL, NOW, TEM, MSTR, NOK, MYSZ, MKT, BX, AFL, BRK, JPM, OBDC, TEVA, CNQ, MDT, NCLH, BEKE, BAM, WSM, RVLV, OKE, MTB
+2026-09-16 04:45:28,972 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:45:28,996 [INFO] [GUARDRAIL SUMMARY] Rejected: 69 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 69
+2026-09-16 04:45:28,996 [INFO] [FUNNEL] targets=69 guardrail_rejected=69 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:45:28,996 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-16 04:45:28,996 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:45:28,996 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:45:28,997 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:45:28,997 [INFO] Heartbeat: 2026-09-16T04:45:28.997082
+2026-09-16 04:48:29,407 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:48:29,463 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:48:29,463 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:48:29,545 [INFO] [SCAN] 69 symbols (filtered, 8 workers): AUID, PLSE, MEDS, RETO, NAMI, WNW, FTFT, INTW, SKHL, TNON, SKUU, ALVO, INTC, DLLL, TCOM, SOXL, MVLL, BMNZ, KORU, NBIL, GLWG, SKHY, GDXU, AAOI, AXTI, AGQ, IPW, VEEA, BRNX, SKDD, TKC, CRCG, SOXS, SKYQ, USDE, CRCA, MSTX, ZSL, BOIL, JDST, CRCL, BNC, GDXD, MUZ, CONL, BMNR, BITU, GLL, NOW, TEM, MSTR, NOK, MYSZ, MKT, BX, AFL, BRK, JPM, OBDC, TEVA, CNQ, MDT, NCLH, BEKE, BAM, WSM, RVLV, OKE, MTB
+2026-09-16 04:48:29,546 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:48:29,566 [INFO] [GUARDRAIL SUMMARY] Rejected: 69 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 69
+2026-09-16 04:48:29,566 [INFO] [FUNNEL] targets=69 guardrail_rejected=69 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:48:29,566 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-16 04:48:29,567 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:48:29,567 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:48:29,567 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:48:29,567 [INFO] Heartbeat: 2026-09-16T04:48:29.567693
+2026-09-16 04:51:30,041 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:51:30,096 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:51:30,096 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:51:31,107 [INFO] [SCAN] 69 symbols (filtered, 8 workers): AUID, PLSE, MEDS, RETO, NAMI, WNW, FTFT, INTW, SKHL, TNON, SKUU, ALVO, INTC, DLLL, TCOM, SOXL, MVLL, BMNZ, KORU, NBIL, GLWG, SKHY, GDXU, AAOI, AXTI, AGQ, IPW, VEEA, BRNX, SKDD, TKC, CRCG, SOXS, SKYQ, USDE, CRCA, MSTX, ZSL, BOIL, JDST, CRCL, BNC, GDXD, MUZ, CONL, BMNR, BITU, GLL, NOW, TEM, MSTR, NOK, MYSZ, MKT, BX, AFL, BRK, JPM, OBDC, TEVA, CNQ, MDT, NCLH, BEKE, BAM, WSM, RVLV, OKE, MTB
+2026-09-16 04:51:31,108 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:51:31,129 [INFO] [GUARDRAIL SUMMARY] Rejected: 69 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 69
+2026-09-16 04:51:31,129 [INFO] [FUNNEL] targets=69 guardrail_rejected=69 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:51:31,130 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-16 04:51:31,130 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:51:31,130 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:51:31,130 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:51:31,130 [INFO] Heartbeat: 2026-09-16T04:51:31.130443
+2026-09-16 04:54:31,654 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:54:31,710 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:54:31,711 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:54:31,745 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 04:54:36,460 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), AAOI(0.35:news-bullish, universe-seed), AFL(0.35:news-bullish, universe-seed), AGQ(0.35:news-bullish, universe-seed), ALVO(0.35:news-bullish, universe-seed), AXTI(0.35:news-bullish, universe-seed), BAM(0.35:news-bullish, universe-seed), BEKE(0.35:news-bullish, universe-seed), BITU(0.35:news-bullish, universe-seed)
+2026-09-16 04:54:36,461 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/6, universe_seed=w1.00/0/11, sentiment=w1.00/0/30
+2026-09-16 04:54:36,614 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 04:54:36,615 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 04:54:36,615 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:54:36,618 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 04:54:36,619 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:54:36,619 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.70
+2026-09-16 04:54:36,619 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:54:36,619 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:54:36,620 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:54:36,620 [INFO] Heartbeat: 2026-09-16T04:54:36.620269
+2026-09-16 04:57:42,032 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 04:57:42,096 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 04:57:42,096 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 04:57:42,123 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff72bfa1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff72bef2654]
+	msedgedriver!GetHandleVerifier [0x7ff72c32138f+38455f]
+	msedgedriver!(No symbol) [0x7ff72bc67312]
+	msedgedriver!(No symbol) [0x7ff72bcf5ab6]
+	msedgedriver!(No symbol) [0x7ff72bd0d26f]
+	msedgedriver!(No symbol) [0x7ff72bcc599c]
+	msedgedriver!(No symbol) [0x7ff72bcc4c1d]
+	msedgedriver!(No symbol) [0x7ff72bcc57c3]
+	msedgedriver!(No symbol) [0x7ff72bdfbe52]
+	msedgedriver!(No symbol) [0x7ff72be0b879]
+	msedgedriver!GetHandleVerifier [0x7ff72c049a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff72c04fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff72befe3cf]
+	msedgedriver!(No symbol) [0x7ff72bef8da4]
+	msedgedriver!(No symbol) [0x7ff72bef8eca]
+	msedgedriver!(No symbol) [0x7ff72beea488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-16 04:57:42,175 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 04:57:42,176 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 04:57:42,176 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 04:57:42,178 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 04:57:42,178 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 04:57:42,178 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.67
+2026-09-16 04:57:42,178 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 04:57:42,178 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 04:57:42,179 [INFO] [SCAN] No signals this cycle
+2026-09-16 04:57:42,179 [INFO] Heartbeat: 2026-09-16T04:57:42.179215
+2026-09-16 05:00:47,603 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:00:47,658 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:00:47,658 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:00:47,744 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:00:47,745 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:00:47,745 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:00:47,746 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:00:47,747 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:00:47,747 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.64
+2026-09-16 05:00:47,748 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:00:47,748 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:00:47,748 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:00:47,748 [INFO] Heartbeat: 2026-09-16T05:00:47.748770
+2026-09-16 05:03:53,420 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:03:53,477 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:03:53,477 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:03:54,811 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:03:54,813 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:03:54,813 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:03:54,816 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:03:54,817 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:03:54,817 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.61
+2026-09-16 05:03:54,817 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:03:54,818 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:03:54,818 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:03:54,818 [INFO] Heartbeat: 2026-09-16T05:03:54.818671
+2026-09-16 05:07:00,607 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:07:00,665 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:07:00,665 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:07:00,755 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:07:00,757 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:07:00,757 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:07:00,760 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:07:00,761 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:07:00,761 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.60
+2026-09-16 05:07:00,761 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:07:00,762 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:07:00,762 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:07:00,762 [INFO] Heartbeat: 2026-09-16T05:07:00.762910
+2026-09-16 05:09:31,248 [INFO] ======================================================================
+2026-09-16 05:09:31,248 [INFO] STATUS
+2026-09-16 05:09:31,249 [INFO] Equity:     $97,206.37
+2026-09-16 05:09:31,249 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 05:09:31,249 [INFO] Positions:  0
+2026-09-16 05:09:31,249 [INFO] ======================================================================
+2026-09-16 05:09:31,255 [INFO] Universe pruned: 67 expired ticker(s): ['AAOI', 'AFL', 'AGQ', 'ALVO', 'AXTI', 'BAM', 'BEKE', 'BITU', 'BMNR', 'BMNZ']…
+2026-09-16 05:10:02,634 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:10:03,119 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:10:03,333 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:10:21,310 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), AAOI(0.35:news-bullish, universe-seed), AFL(0.35:news-bullish, universe-seed), AGQ(0.35:news-bullish, universe-seed), ALVO(0.35:news-bullish, universe-seed), AXTI(0.35:news-bullish, universe-seed), BAM(0.35:news-bullish, universe-seed), BEKE(0.35:news-bullish, universe-seed), BITU(0.35:news-bullish, universe-seed)
+2026-09-16 05:10:21,310 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/9, universe_seed=w1.00/0/17, sentiment=w1.00/0/45
+2026-09-16 05:10:21,366 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:10:21,367 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:10:21,367 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:10:21,371 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:10:21,372 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:10:21,372 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:10:21,373 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:10:21,373 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:10:21,373 [INFO] Heartbeat: 2026-09-16T05:10:21.373850
+2026-09-16 05:13:22,392 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:13:22,451 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:13:22,452 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:13:22,484 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 05:13:22,543 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:13:22,544 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:13:22,544 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:13:22,547 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:13:22,548 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:13:22,548 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:13:22,548 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:13:22,548 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:13:22,549 [INFO] Heartbeat: 2026-09-16T05:13:22.549047
+2026-09-16 05:16:23,932 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:16:23,999 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:16:24,000 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:16:24,038 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff72bfa1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff72bef2654]
+	msedgedriver!GetHandleVerifier [0x7ff72c32138f+38455f]
+	msedgedriver!(No symbol) [0x7ff72bc67312]
+	msedgedriver!(No symbol) [0x7ff72bcf5ab6]
+	msedgedriver!(No symbol) [0x7ff72bd0d26f]
+	msedgedriver!(No symbol) [0x7ff72bcc599c]
+	msedgedriver!(No symbol) [0x7ff72bcc4c1d]
+	msedgedriver!(No symbol) [0x7ff72bcc57c3]
+	msedgedriver!(No symbol) [0x7ff72bdfbe52]
+	msedgedriver!(No symbol) [0x7ff72be0b879]
+	msedgedriver!GetHandleVerifier [0x7ff72c049a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff72c04fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff72befe3cf]
+	msedgedriver!(No symbol) [0x7ff72bef8da4]
+	msedgedriver!(No symbol) [0x7ff72bef8eca]
+	msedgedriver!(No symbol) [0x7ff72beea488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-16 05:16:29,001 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:16:29,002 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:16:29,003 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:16:29,008 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:16:29,009 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:16:29,009 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:16:29,010 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:16:29,010 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:16:29,010 [INFO] Heartbeat: 2026-09-16T05:16:29.010660
+2026-09-16 05:19:34,372 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:19:34,512 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:19:34,526 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:19:34,739 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:19:34,743 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:19:34,752 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:19:34,800 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:19:34,836 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:19:34,856 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:19:34,865 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:19:34,869 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:19:34,871 [INFO] Heartbeat: 2026-09-16T05:19:34.870666
+2026-09-16 05:22:39,575 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:22:39,735 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:22:39,737 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:22:39,900 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:22:39,905 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:22:39,907 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:22:39,970 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:22:39,988 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:22:39,994 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:22:39,995 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:22:39,997 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:22:39,998 [INFO] Heartbeat: 2026-09-16T05:22:39.997980
+2026-09-16 05:25:43,500 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:25:43,611 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:25:43,615 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:26:09,258 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), AAOI(0.35:news-bullish, universe-seed), AFL(0.35:news-bullish, universe-seed), AGQ(0.35:news-bullish, universe-seed), ALVO(0.35:news-bullish, universe-seed), AXTI(0.35:news-bullish, universe-seed), BAM(0.35:news-bullish, universe-seed), BEKE(0.35:news-bullish, universe-seed), BITU(0.35:news-bullish, universe-seed)
+2026-09-16 05:26:09,260 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/12, universe_seed=w1.00/0/23, sentiment=w1.00/0/60
+2026-09-16 05:26:09,427 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:26:09,457 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:26:09,458 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:26:09,477 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:26:09,488 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:26:09,494 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:26:09,495 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:26:09,497 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:26:09,498 [INFO] Heartbeat: 2026-09-16T05:26:09.498272
+2026-09-16 05:29:17,226 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:29:17,741 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:29:17,754 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:29:26,233 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:29:26,241 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:29:26,242 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:29:26,275 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:29:26,285 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:29:26,288 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:29:26,289 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:29:26,291 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:29:26,292 [INFO] Heartbeat: 2026-09-16T05:29:26.292410
+2026-09-16 05:32:31,611 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:32:31,786 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:32:31,787 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:32:31,849 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 05:32:32,239 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:32:32,287 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:32:32,288 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:32:32,430 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:32:32,623 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:32:32,629 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:32:32,757 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:32:32,857 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:32:32,904 [INFO] Heartbeat: 2026-09-16T05:32:32.903896
+2026-09-16 05:35:44,830 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:35:45,158 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:35:45,162 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:35:45,358 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff72bfa1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff72bef2654]
+	msedgedriver!GetHandleVerifier [0x7ff72c32138f+38455f]
+	msedgedriver!(No symbol) [0x7ff72bc67312]
+	msedgedriver!(No symbol) [0x7ff72bcf5ab6]
+	msedgedriver!(No symbol) [0x7ff72bd0d26f]
+	msedgedriver!(No symbol) [0x7ff72bcc599c]
+	msedgedriver!(No symbol) [0x7ff72bcc4c1d]
+	msedgedriver!(No symbol) [0x7ff72bcc57c3]
+	msedgedriver!(No symbol) [0x7ff72bdfbe52]
+	msedgedriver!(No symbol) [0x7ff72be0b879]
+	msedgedriver!GetHandleVerifier [0x7ff72c049a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff72c04fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff72befe3cf]
+	msedgedriver!(No symbol) [0x7ff72bef8da4]
+	msedgedriver!(No symbol) [0x7ff72bef8eca]
+	msedgedriver!(No symbol) [0x7ff72beea488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-16 05:35:45,881 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:35:45,978 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:35:45,983 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:35:46,009 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:35:46,011 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:35:46,018 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:35:46,019 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:35:46,025 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:35:46,027 [INFO] Heartbeat: 2026-09-16T05:35:46.026924
+2026-09-16 05:38:52,407 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:38:52,558 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:38:52,560 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:38:52,788 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:38:52,793 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:38:52,794 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:38:52,843 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:38:52,870 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:38:52,884 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:38:52,885 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:38:52,891 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:38:52,893 [INFO] Heartbeat: 2026-09-16T05:38:52.892859
+2026-09-16 05:39:33,095 [INFO] ======================================================================
+2026-09-16 05:39:33,096 [INFO] STATUS
+2026-09-16 05:39:33,096 [INFO] Equity:     $97,206.37
+2026-09-16 05:39:33,096 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 05:39:33,097 [INFO] Positions:  0
+2026-09-16 05:39:33,099 [INFO] ======================================================================
+2026-09-16 05:39:33,112 [INFO] Universe pruned: no expired tickers
+2026-09-16 05:42:03,983 [INFO] Schwab: Refreshing access token...
+2026-09-16 05:42:14,808 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-16 05:42:25,443 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:42:32,343 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:42:32,703 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:44:34,998 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), AAOI(0.35:news-bullish, universe-seed), AFL(0.35:news-bullish, universe-seed), AGQ(0.35:news-bullish, universe-seed), ALVO(0.35:news-bullish, universe-seed), AXTI(0.35:news-bullish, universe-seed), BAM(0.35:news-bullish, universe-seed), BEKE(0.35:news-bullish, universe-seed), BITU(0.35:news-bullish, universe-seed)
+2026-09-16 05:44:35,008 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/15, universe_seed=w1.00/0/29, sentiment=w1.00/0/75
+2026-09-16 05:44:43,493 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:44:43,499 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:44:43,501 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:44:43,589 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:44:43,596 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:44:43,598 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:44:43,665 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:44:43,667 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:44:43,682 [INFO] Heartbeat: 2026-09-16T05:44:43.682663
+2026-09-16 05:47:48,378 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:47:48,515 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:47:48,522 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:47:48,762 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:47:48,768 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:47:48,769 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:47:48,805 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:47:48,828 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:47:48,829 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:47:48,830 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:47:48,833 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:47:48,835 [INFO] Heartbeat: 2026-09-16T05:47:48.834836
+2026-09-16 05:50:51,479 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:50:51,568 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:50:51,569 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:50:51,624 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 05:50:51,740 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:50:51,743 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:50:51,746 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:50:51,761 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:50:51,770 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:50:51,783 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:50:51,787 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:50:51,789 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:50:51,790 [INFO] Heartbeat: 2026-09-16T05:50:51.790078
+2026-09-16 05:54:55,144 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 05:54:57,179 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 05:54:57,335 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 05:54:58,127 [ERROR] Trade Ideas scrape hard-timeout (247s) — killing Chrome/chromedriver and resetting future
+2026-09-16 05:57:31,569 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 05:57:31,982 [INFO] [SCAN] 2 symbols (filtered, 8 workers): AUID, PLSE
+2026-09-16 05:57:32,098 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 05:57:32,733 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-16 05:57:33,079 [INFO] [FUNNEL] targets=2 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 05:57:33,080 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 05:57:33,084 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 05:57:33,200 [INFO] [SCAN] No signals this cycle
+2026-09-16 05:57:33,202 [INFO] Heartbeat: 2026-09-16T05:57:33.202172
+2026-09-16 06:01:14,068 [WARNING] [SYSTEM] FORCE_SCAN active — bypassing market-hours gate
+2026-09-16 06:01:14,731 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 06:01:14,777 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 06:06:54,088 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), AAOI(0.35:news-bullish, universe-seed), AFL(0.35:news-bullish, universe-seed), AGQ(0.35:news-bullish, universe-seed), ALVO(0.35:news-bullish, universe-seed), AXTI(0.35:news-bullish, universe-seed), BAM(0.35:news-bullish, universe-seed), BEKE(0.35:news-bullish, universe-seed), BITU(0.35:news-bullish, universe-seed)
+2026-09-16 06:06:54,090 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/18, universe_seed=w1.00/0/34, sentiment=w1.00/0/90
+2026-09-16 06:07:25,205 [WARNING] get_live_holdings failed: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Read timed out. (read timeout=None)
+2026-09-16 06:07:25,214 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 06:07:25,559 [INFO] [SCAN] 52 symbols (filtered, 8 workers): AUID, PLSE, AIXI, ALVO, BILI, BNC, BRNX, COHR, CRCA, CRCG, CRCL, CYPH, DLLL, FIG, FTFT, GDXD, GLL, GLWG, INTC, INTW, IPW, JDST, KORU, MEDS, MUZ, MVLL, NAMI, NBIL, NOK, NOW, NOWL, PSNYW, RETO, SBLK, SKDD, SKHL, SKHY, SKUU, SKYQ, SOXL, SOXS, STLA, TCOM, TKC, TNON, TRMD, UMC, USDE, VEEA, WDC, WNW, ZSL
+2026-09-16 06:07:25,683 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 06:08:26,103 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=CYPH&startDate=1789466849200&endDate=1789553249200
+2026-09-16 06:08:38,210 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=COHR&startDate=1789466847698&endDate=1789553247698
+2026-09-16 06:08:45,859 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MVLL&startDate=1789466852724&endDate=1789553252724
+2026-09-16 06:08:49,265 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=NAMI&startDate=1789466852881&endDate=1789553252881
+2026-09-16 06:09:11,135 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=CYPH&startDate=1789466849200&endDate=1789553249200
+2026-09-16 06:09:24,870 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MVLL&startDate=1789466852724&endDate=1789553252724
+2026-09-16 06:09:26,164 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=COHR&startDate=1789466847698&endDate=1789553247698
+2026-09-16 06:09:41,764 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=NAMI&startDate=1789466852881&endDate=1789553252881
+2026-09-16 06:10:28,387 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=CYPH&startDate=1789466849200&endDate=1789553249200
+2026-09-16 06:10:46,974 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=COHR&startDate=1789466847698&endDate=1789553247698
+2026-09-16 06:10:50,292 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MVLL&startDate=1789466852724&endDate=1789553252724
+2026-09-16 06:10:56,888 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=NAMI&startDate=1789466852881&endDate=1789553252881
+2026-09-16 06:11:04,360 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=CYPH&startDate=1789466849200&endDate=1789553249200
+2026-09-16 06:11:18,909 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=COHR&startDate=1789466847698&endDate=1789553247698
+2026-09-16 06:11:19,400 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MVLL&startDate=1789466852724&endDate=1789553252724
+2026-09-16 06:11:28,318 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=NAMI&startDate=1789466852881&endDate=1789553252881
+2026-09-16 06:12:04,387 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=CYPH&startDate=1789466849200&endDate=1789553249200
+2026-09-16 06:12:32,401 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=COHR&startDate=1789466847698&endDate=1789553247698
+2026-09-16 06:12:32,958 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MVLL&startDate=1789466852724&endDate=1789553252724
+2026-09-16 06:12:33,054 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=CYPH&startDate=1789466849200&endDate=1789553249200
+2026-09-16 06:12:33,864 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)'))': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=NAMI&startDate=1789466852881&endDate=1789553252881
+2026-09-16 06:12:37,190 [INFO] [GUARDRAIL SUMMARY] Rejected: 52 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 52
+2026-09-16 06:12:37,191 [INFO] [FUNNEL] targets=52 guardrail_rejected=52 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 06:12:37,192 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 06:12:37,193 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-16 06:12:37,193 [INFO] [SCAN] No signals this cycle
+2026-09-16 06:12:37,195 [INFO] Heartbeat: 2026-09-16T06:12:37.194802
+2026-09-16 06:12:40,098 [INFO] ======================================================================
+2026-09-16 06:12:40,099 [INFO] STATUS
+2026-09-16 06:12:40,100 [INFO] Equity:     $97,206.37
+2026-09-16 06:12:40,101 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 06:12:40,102 [INFO] Positions:  0
+2026-09-16 06:12:40,105 [INFO] ======================================================================
+2026-09-16 06:12:40,141 [INFO] Universe pruned: no expired tickers
+2026-09-16 08:19:59,401 [WARNING] [CRYPTO] get_all_positions failed: ('Connection aborted.', ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine', None, 10053, None))
+2026-09-16 08:19:59,402 [INFO] Schwab: Refreshing access token...
+2026-09-16 08:19:59,847 [ERROR] Schwab: OAuth token refresh failed: HTTPSConnectionPool(host='api.schwabapi.com', port=443): Max retries exceeded with url: /v1/oauth/token (Caused by NameResolutionError("HTTPSConnection(host='api.schwabapi.com', port=443): Failed to resolve 'api.schwabapi.com' ([Errno 11001] getaddrinfo failed)"))
+2026-09-16 08:20:02,876 [INFO] Schwab: Refreshing access token...
+2026-09-16 08:20:06,804 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-16 08:20:26,059 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /marketdata/v1/pricehistory?periodType=year&period=1&frequencyType=daily&frequency=1&symbol=SPY
+2026-09-16 08:20:28,405 [INFO] Quarterly P&L: -0.0% (target >= 50%)
+2026-09-16 08:20:28,621 [INFO] [SCAN] Market sentiment: neutral
+2026-09-16 08:20:28,655 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 08:20:29,476 [INFO] [EDGAR] 8-K match: MRCY — 8-K - MERCURY SYSTEMS INC (0001049521) (Filer)
+2026-09-16 08:20:29,477 [INFO] [EDGAR] 8-K match: BRN — 8-K - BARNWELL INDUSTRIES INC (0000010048) (Filer)
+2026-09-16 08:20:29,478 [INFO] [EDGAR] 8-K match: XBIO — 8-K - Xenetic Biosciences, Inc. (0001534525) (Filer)
+2026-09-16 08:20:29,480 [INFO] [EDGAR] 8-K match: EXE — 8-K - EXPAND ENERGY Corp (0000895126) (Filer)
+2026-09-16 08:20:29,480 [INFO] [EDGAR] 8-K match: SAFX — 8-K - XCF Global, Inc. (0002019793) (Filer)
+2026-09-16 08:20:29,480 [INFO] [EDGAR] 5 newly triggered tickers: ['MRCY', 'BRN', 'XBIO', 'EXE', 'SAFX']
+2026-09-16 08:20:29,483 [INFO] [EDGAR] Adding MRCY to P2 + scan queue for monitoring
+2026-09-16 08:20:29,483 [INFO] [EDGAR] Adding BRN to P2 + scan queue for monitoring
+2026-09-16 08:20:29,483 [INFO] [EDGAR] Adding XBIO to P2 + scan queue for monitoring
+2026-09-16 08:20:29,483 [INFO] [EDGAR] Adding EXE to P2 + scan queue for monitoring
+2026-09-16 08:20:29,483 [INFO] [EDGAR] Adding SAFX to P2 + scan queue for monitoring
+2026-09-16 08:20:30,337 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-16 08:20:30,399 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-16 08:20:30,402 [INFO] [SCAN] 7 symbols (filtered, 8 workers): AUID, PLSE, MRCY, BRN, XBIO, EXE, SAFX
+2026-09-16 08:20:30,402 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-16 08:20:32,593 [WARNING] [GUARDRAIL] SAFX blocked: dollar volume 16036 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.42 | day_vol=37732
+2026-09-16 08:20:45,559 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=PLSE&startDate=1789474830553&endDate=1789561230553
+2026-09-16 08:20:45,718 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MRCY&startDate=1789474830703&endDate=1789561230703
+2026-09-16 08:20:46,008 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=XBIO&startDate=1789474831004&endDate=1789561231004
+2026-09-16 08:20:46,159 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=EXE&startDate=1789474831154&endDate=1789561231154
+2026-09-16 08:20:46,470 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=AUID&startDate=1789042831455&endDate=1789561231455
+2026-09-16 08:20:46,620 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=BRN&startDate=1789042831605&endDate=1789561231605
+2026-09-16 08:20:47,717 [WARNING] [GUARDRAIL] XBIO blocked: dollar volume 547266 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.81 | day_vol=194715
+2026-09-16 08:20:48,358 [INFO] [GUARDRAIL SUMMARY] Rejected: 7 | DollarVol: 2 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 5
+2026-09-16 08:20:48,358 [INFO] [FUNNEL] targets=7 guardrail_rejected=7 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-16 08:20:48,358 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-16 08:20:48,358 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-16 08:20:48,358 [INFO] [SCAN] No signals this cycle
+2026-09-16 08:20:48,358 [INFO] Heartbeat: 2026-09-16T08:20:48.358905
+2026-09-16 08:20:48,431 [INFO] ======================================================================
+2026-09-16 08:20:48,431 [INFO] STATUS
+2026-09-16 08:20:48,431 [INFO] Equity:     $97,206.37
+2026-09-16 08:20:48,431 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 08:20:48,432 [INFO] Positions:  0
+2026-09-16 08:20:48,432 [INFO] ======================================================================
+2026-09-16 08:20:48,482 [INFO] Universe pruned: 46 expired ticker(s): ['AAOI', 'APLD', 'ARM', 'BABA', 'BILI', 'BMNR', 'BMNZ', 'BOIL', 'CIFR', 'COHR']…
+2026-09-16 08:21:58,393 [INFO] Stopped by user
+2026-09-16 08:21:58,482 [INFO] ======================================================================
+2026-09-16 08:21:58,482 [INFO] STATUS
+2026-09-16 08:21:58,482 [INFO] Equity:     $97,206.37
+2026-09-16 08:21:58,482 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 08:21:58,482 [INFO] Positions:  0
+2026-09-16 08:21:58,482 [INFO] ======================================================================

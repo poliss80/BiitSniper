@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-15T19:57:36-04:00",
-  "date": "2026-09-15",
+  "generated_at": "2026-09-16T08:24:15-04:00",
+  "date": "2026-09-16",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "PLSE",
+      "symbol": "RETO",
       "action": "buy",
-      "price": 54.21,
-      "confidence": 0.84,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $4.12"
+      "price": 3.43,
+      "confidence": 0.94,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +850.9% | PM vol 1576% of avg daily"
     },
     {
-      "symbol": "OKE",
+      "symbol": "SOXS",
       "action": "buy",
-      "price": 96.97,
-      "confidence": 0.84,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $2.53"
+      "price": 51.1,
+      "confidence": 0.8893,
+      "strategy": "Momentum",
+      "reason": "Bear inverse ETF momentum (15.9% / 5d trend)"
     }
   ]
 }

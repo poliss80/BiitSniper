@@ -628,3 +628,56 @@ Stacktrace:
 2026-09-15 23:43:55,945 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
 2026-09-15 23:43:56,472 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
 2026-09-15 23:43:56,473 [INFO] Heartbeat: 2026-09-15T23:43:56.472981
+2026-09-15 23:46:22,937 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:46:22,966 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:46:23,041 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:46:23,041 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:46:23,041 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 23:46:23,041 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:46:23,042 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 23:46:23,042 [INFO] ======================================================================
+2026-09-15 23:46:23,042 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 23:46:23,043 [INFO] ======================================================================
+2026-09-15 23:46:23,043 [INFO] Priority 1 (Momentum): 132 stocks
+2026-09-15 23:46:23,043 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 23:46:23,043 [INFO] Total Universe: 152 stocks
+2026-09-15 23:46:23,043 [INFO] Scan: 3 min fixed
+2026-09-15 23:46:23,043 [INFO] ======================================================================
+2026-09-15 23:46:23,074 [INFO] Equity:          $97,206.37
+2026-09-15 23:46:23,074 [INFO] Buying Power:    $388,825.48
+2026-09-15 23:46:23,074 [INFO] PDT Status:      No
+2026-09-15 23:46:23,074 [INFO] Day Trade Count: None
+2026-09-15 23:46:23,075 [INFO] ======================================================================
+2026-09-15 23:46:23,075 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 23:46:23,075 [INFO] ======================================================================
+2026-09-15 23:46:23,076 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 23:46:23,076 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 23:46:23,076 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:46:23,077 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 23:46:56,503 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:46:56,504 [INFO] Heartbeat: 2026-09-15T23:46:56.504484
+2026-09-15 23:46:57,861 [INFO] ======================================================================
+2026-09-15 23:46:57,862 [INFO] STATUS
+2026-09-15 23:46:57,863 [INFO] Equity:     $97,206.37
+2026-09-15 23:46:57,863 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:46:57,864 [INFO] Positions:  0
+2026-09-15 23:46:57,864 [INFO] ======================================================================
+2026-09-15 23:46:57,871 [INFO] Universe pruned: 60 expired ticker(s): ['ADPT', 'AEHL', 'AGI', 'AGPU', 'ALAR', 'ALLY', 'ASND', 'BBIO', 'BEG', 'BITI']…
+2026-09-15 23:47:53,085 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-15 23:47:53,451 [INFO] ======================================================================
+2026-09-15 23:47:53,452 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 23:47:53,470 [INFO] Universe pruned: no expired tickers
+2026-09-15 23:47:53,470 [INFO] ======================================================================
+2026-09-15 23:47:53,471 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:49:57,898 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:49:57,899 [INFO] Heartbeat: 2026-09-15T23:49:57.899118
+2026-09-15 23:50:53,496 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:50:53,496 [INFO] Heartbeat: 2026-09-15T23:50:53.496873
+2026-09-15 23:52:57,923 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:52:57,924 [INFO] Heartbeat: 2026-09-15T23:52:57.924833
+2026-09-15 23:53:53,521 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:53:53,521 [INFO] Heartbeat: 2026-09-15T23:53:53.521910
+2026-09-15 23:55:58,004 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:55:58,005 [INFO] Heartbeat: 2026-09-15T23:55:58.005087
+2026-09-15 23:56:53,548 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:56:53,548 [INFO] Heartbeat: 2026-09-15T23:56:53.548694
