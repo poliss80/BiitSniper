@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-09-16T10:12:21-04:00",
+  "generated_at": "2026-09-16T11:09:08-04:00",
   "date": "2026-09-16",
   "market_regime": "bull",
   "picks": [
     {
+      "symbol": "ADPT",
+      "action": "buy",
+      "price": 26.68,
+      "confidence": 0.92,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.12"
+    },
+    {
+      "symbol": "ZD",
+      "action": "buy",
+      "price": 59.21,
+      "confidence": 0.91,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.43"
+    },
+    {
       "symbol": "FPS",
       "action": "buy",
-      "price": 34.255,
-      "confidence": 0.95,
-      "strategy": "ORB",
-      "reason": "ORB breakout above $31.97 | range $0.27 | buffer $0.03 | vol x67.0/1.5"
-    },
-    {
-      "symbol": "DLLL",
-      "action": "buy",
-      "price": 36.98,
-      "confidence": 0.95,
-      "strategy": "ORB",
-      "reason": "ORB breakout above $35.48 | range $0.24 | buffer $0.03 | vol x11.4/1.5"
-    },
-    {
-      "symbol": "MVLL",
-      "action": "buy",
-      "price": 28.08,
-      "confidence": 0.95,
-      "strategy": "ORB",
-      "reason": "ORB breakout above $26.77 | range $0.17 | buffer $0.02 | vol x5.6/1.5"
+      "price": 35.11,
+      "confidence": 0.88,
+      "strategy": "MomentumContinuation",
+      "reason": "Momentum continuation rvol=3.6x up=10.3% break of session high MACD hist=0.0327 RSI=78.5"
     }
   ]
 }

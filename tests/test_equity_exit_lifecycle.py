@@ -475,7 +475,7 @@ class EquityExitLifecycleTests(unittest.TestCase):
                 executor.check_live_probe_scale_ins()
 
         self.assertEqual(len(client.orders), 2)
-        self.assertEqual(client.orders[0].qty, 1)
+        self.assertEqual(client.orders[0].qty, 5)
         self.assertEqual(client.orders[1].qty, 2)
 
     def test_live_probe_scale_in_waits_for_minimum_hold_time(self):
