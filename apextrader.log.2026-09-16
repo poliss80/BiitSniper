@@ -10318,3 +10318,44 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='paper-api.alpaca.
 2026-09-16 18:04:30,924 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
 2026-09-16 18:04:30,928 [INFO] Restored position exit state: AAPL
 2026-09-16 18:04:30,928 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 18:07:46,131 [INFO] Restored position exit state: EMAT, FPS, BBNX, ADPT
+2026-09-16 18:07:46,169 [INFO] Entry log rebuilt from today's orders: EMAT, FPS, BBNX, ADPT
+2026-09-16 18:07:46,203 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-16 18:07:46,231 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-16 18:07:46,304 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-16 18:07:46,305 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-16 18:07:46,305 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-16 18:07:46,305 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-16 18:07:46,306 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-16 18:07:46,306 [INFO] ======================================================================
+2026-09-16 18:07:46,306 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-16 18:07:46,306 [INFO] ======================================================================
+2026-09-16 18:07:46,307 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-16 18:07:46,307 [INFO] Priority 2 (Established): 16 stocks
+2026-09-16 18:07:46,307 [INFO] Total Universe: 42 stocks
+2026-09-16 18:07:46,307 [INFO] Scan: 3 min fixed
+2026-09-16 18:07:46,307 [INFO] ======================================================================
+2026-09-16 18:07:46,334 [INFO] Equity:          $97,206.98
+2026-09-16 18:07:46,335 [INFO] Buying Power:    $388,718.34
+2026-09-16 18:07:46,335 [INFO] PDT Status:      No
+2026-09-16 18:07:46,335 [INFO] Day Trade Count: None
+2026-09-16 18:07:46,335 [INFO] ======================================================================
+2026-09-16 18:07:46,335 [INFO] Starting… Press Ctrl+C to stop
+2026-09-16 18:07:46,335 [INFO] ======================================================================
+2026-09-16 18:07:46,335 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-16 18:07:46,335 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-16 18:07:46,335 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 18:07:46,336 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-16 18:09:16,332 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-16 18:09:17,497 [INFO] ======================================================================
+2026-09-16 18:09:17,498 [INFO] NEW DAY: 2026-09-16 | Start equity: $97,206.94
+2026-09-16 18:09:17,504 [INFO] Universe pruned: no expired tickers
+2026-09-16 18:09:17,504 [INFO] ======================================================================
+2026-09-16 18:09:17,506 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:09:17,506 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:12:17,526 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:12:17,527 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:12:17,527 [INFO] Heartbeat: 2026-09-16T18:12:17.527195
+2026-09-16 18:15:17,559 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:15:17,560 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:15:17,560 [INFO] Heartbeat: 2026-09-16T18:15:17.560599
