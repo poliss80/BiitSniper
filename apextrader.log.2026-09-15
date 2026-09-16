@@ -602,3 +602,29 @@ Stacktrace:
 2026-09-15 23:36:34,539 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
 2026-09-15 23:36:34,544 [INFO] Restored position exit state: AAPL
 2026-09-15 23:36:34,545 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:37:56,410 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:37:56,412 [INFO] Heartbeat: 2026-09-15T23:37:56.412019
+2026-09-15 23:40:56,443 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:40:56,444 [INFO] Heartbeat: 2026-09-15T23:40:56.443965
+2026-09-15 23:42:49,364 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-15 23:42:49,365 [INFO] ======================================================================
+2026-09-15 23:42:49,365 [INFO] NEW DAY: 2026-09-15 | Start equity: $0.00
+2026-09-15 23:42:49,370 [INFO] Universe pruned: no expired tickers
+2026-09-15 23:42:49,371 [INFO] ======================================================================
+2026-09-15 23:42:49,374 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-15 23:42:49,376 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-15 23:42:49,386 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:42:49,394 [INFO] Restored position exit state: AAPL
+2026-09-15 23:42:49,395 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:43:55,936 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-15 23:43:55,936 [INFO] ======================================================================
+2026-09-15 23:43:55,936 [INFO] NEW DAY: 2026-09-15 | Start equity: $0.00
+2026-09-15 23:43:55,938 [INFO] Universe pruned: removed 1 expired ticker(s): ['QCMU']
+2026-09-15 23:43:55,938 [INFO] ======================================================================
+2026-09-15 23:43:55,939 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-15 23:43:55,940 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-15 23:43:55,941 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:43:55,944 [INFO] Restored position exit state: AAPL
+2026-09-15 23:43:55,945 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:43:56,472 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:43:56,473 [INFO] Heartbeat: 2026-09-15T23:43:56.472981

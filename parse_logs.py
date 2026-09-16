@@ -8,24 +8,34 @@ keywords = [
     'order error', 'order failed', 'insufficient', 'market closed', 'FORCE_SCAN'
 ]
 
+def redact_sensitive(line: str) -> str:
+    redacted = line.strip()
+    if any(sec in redacted.lower() for sec in ["token", "key", "secret", "password", "auth", "credential"]):
+        return re.sub(r'([A-Za-z0-9_\-\.\=\+\/]{12,})', '[REDACTED]', redacted)
+    return redacted
+
+
+def iter_recent_lines(log_name: str, max_lines: int = 400):
+    try:
+        with open(log_name, 'r', encoding='utf-8', errors='ignore') as f:
+            tail = []
+            for line in f:
+                tail.append(line)
+                if len(tail) > max_lines:
+                    tail.pop(0)
+            return tail
+    except Exception:
+        return []
+
+
 # Create case-sensitive/literal match
 print("--- LOG MATCHES ---")
 for log_name in logs:
     print(f"=== {log_name} ===")
     try:
-        with open(log_name, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
-        last_400 = lines[-400:] if len(lines) >= 400 else lines
-
-        for line in last_400:
+        for line in iter_recent_lines(log_name):
             if any(k in line for k in keywords):
-                # Simple credential protection: redact anything that looks like schwab token/key or long hex/alphanumeric strings
-                # especially in lines containing "token", "key", "secret", "password", "auth"
-                line_redacted = line.strip()
-                if any(sec in line_redacted.lower() for sec in ["token", "key", "secret", "password", "auth", "credential"]):
-                    # Redact a 12+ char API/OAuth key or token pattern
-                    line_redacted = re.sub(r'([A-Za-z0-9_\-\.\=\+\/]{12,})', '[REDACTED]', line_redacted)
-                print(line_redacted)
+                print(redact_sensitive(line))
     except Exception as e:
         print(f"Error reading {log_name}: {e}")
 
@@ -34,8 +44,7 @@ watchdog_mode = "UNKNOWN"
 # Look for the last launching or environment configurations
 for log_name in logs:
     try:
-        with open(log_name, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
+        lines = iter_recent_lines(log_name, max_lines=2000)
         for line in reversed(lines):
             # Check for latest launch state or environment variable in logs
             if "Launching main.py" in line:
@@ -63,8 +72,7 @@ if watchdog_mode == "UNKNOWN":
     # fallback to searching simply Mode:
     for log_name in logs:
         try:
-            with open(log_name, 'r', encoding='utf-8', errors='ignore') as f:
-                lines = f.readlines()
+            lines = iter_recent_lines(log_name, max_lines=2000)
             for line in reversed(lines):
                 if "Mode:" in line or "TRADE_MODE" in line:
                     if "PAPER" in line or "paper" in line:
@@ -84,18 +92,12 @@ print("\n--- LAST 5 ERRORS/WARNINGS ---")
 errs_warnings = []
 for log_name in logs:
     try:
-        with open(log_name, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
-        # Search all lines of logs for Errors or Warnings
+        lines = iter_recent_lines(log_name, max_lines=2000)
         for idx, line in enumerate(lines):
             line_upper = line.upper()
             if "ERROR" in line_upper or "WARNING" in line_upper or "TRACEBACK" in line_upper or "EXCEPTION" in line_upper or "FAILED" in line_upper:
-                # Redact
-                line_redacted = line.strip()
-                if any(sec in line_redacted.lower() for sec in ["token", "key", "secret", "password", "auth", "credential"]):
-                    line_redacted = re.sub(r'([A-Za-z0-9_\-\.\=\+\/]{12,})', '[REDACTED]', line_redacted)
-                errs_warnings.append((log_name, idx, line_redacted))
-    except Exception as e:
+                errs_warnings.append((log_name, idx, redact_sensitive(line)))
+    except Exception:
         pass
 
 # Sort they are chronological, and get the last 5
@@ -105,16 +107,12 @@ for log_name in logs:
 combined_recent = []
 for log_name in logs:
     try:
-        with open(log_name, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
+        lines = iter_recent_lines(log_name, max_lines=2000)
         for idx in range(len(lines) - 1, -1, -1):
             line = lines[idx]
             line_upper = line.upper()
             if "ERROR" in line_upper or "WARNING" in line_upper or "TRACEBACK" in line_upper or "EXCEPTION" in line_upper or "FAILED" in line_upper:
-                line_redacted = line.strip()
-                if any(sec in line_redacted.lower() for sec in ["token", "key", "secret", "password", "auth", "credential"]):
-                    line_redacted = re.sub(r'([A-Za-z0-9_\-\.\=\+\/]{12,})', '[REDACTED]', line_redacted)
-                combined_recent.append((log_name, idx, line_redacted))
+                combined_recent.append((log_name, idx, redact_sensitive(line)))
                 if len(combined_recent) >= 20: # grab enough to sort/filter
                     break
     except Exception:

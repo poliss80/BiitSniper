@@ -148,6 +148,56 @@ class EquityExitLifecycleTests(unittest.TestCase):
         self.assertEqual(executor._flatten_in_progress, set())
         self.assertEqual(executor._flatten_failed, set())
 
+    def test_guardrail_cache_reuses_symbol_bar_data(self):
+        from engine.equity import scan as equity_scan
+
+        equity_scan._guardrail_cache.clear()
+        call_count = {"n": 0}
+        now = datetime.datetime(2026, 9, 15, 10, 30, tzinfo=datetime.timezone.utc)
+
+        def fake_get_bars(symbol, period, interval):
+            call_count["n"] += 1
+            if period == "1d" and interval == "1m":
+                times = [now - datetime.timedelta(minutes=i) for i in range(20)]
+                return pd.DataFrame({
+                    "time": times,
+                    "open": [100.0] * 20,
+                    "high": [101.0] * 20,
+                    "low": [99.5] * 20,
+                    "close": [100.5] * 20,
+                    "volume": [2000] * 20,
+                })
+            if period == "20d" and interval == "1d":
+                return pd.DataFrame({
+                    "close": [100.0] * 20,
+                    "volume": [100_000] * 20,
+                })
+            return pd.DataFrame()
+
+        market_state = SimpleNamespace(
+            resolve_regime=lambda: True,
+            is_regular_hours=False,
+            is_market_open=False,
+            vix=15.0,
+        )
+
+        with patch.object(equity_scan, "get_bars", side_effect=fake_get_bars), patch.object(
+            equity_scan, "_mda_snapshot_cache", {}
+        ), patch.object(equity_scan, "_snapshot_cache", {}), patch.object(
+            equity_scan, "_is_iex_feed", return_value=False
+        ):
+            passed, reason = equity_scan._passes_guardrails(
+                "AAA",
+                bull_regime=True,
+                market_state=market_state,
+                return_reason=True,
+                is_ti_stock=False,
+            )
+
+        self.assertTrue(passed)
+        self.assertIsNone(reason)
+        self.assertLess(call_count["n"], 5)
+
     def test_live_probe_scale_in_submits_one_atm_call_when_available(self):
         executor = object.__new__(EnhancedExecutor)
         options_executor = Mock()

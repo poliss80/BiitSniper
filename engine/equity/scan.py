@@ -5,6 +5,7 @@ Contains reusable scanning functions for main loop and run_top3 tools.
 
 import datetime
 import logging
+import threading
 import pytz
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Tuple, Set, Optional
@@ -90,6 +91,8 @@ _ti_stocks: Set[str] = set()
 # then falls back to per-symbol get_bars() (which also uses MDA).
 _snapshot_cache: Dict = {}
 _mda_snapshot_cache: Dict[str, Dict] = {}
+_guardrail_cache: Dict[str, Dict[str, object]] = {}
+_guardrail_lock = threading.RLock()
 
 
 def _prefetch_snapshots(symbols: List[str]) -> None:
@@ -110,6 +113,55 @@ def _prefetch_snapshots(symbols: List[str]) -> None:
     # MDA bulk quotes removed — relying on per-symbol bar fetch in _passes_guardrails
 
 
+def _guardrail_cache_key(symbol: str) -> str:
+    return symbol.upper()
+
+
+def _cached_frame_or_default(cached_obj, fallback_obj):
+    if cached_obj is not None and hasattr(cached_obj, "empty"):
+        try:
+            if not cached_obj.empty:
+                return cached_obj
+        except Exception:
+            pass
+    if cached_obj is not None:
+        return cached_obj
+    return fallback_obj
+
+
+def _get_or_load_guardrail_data(symbol: str) -> Dict[str, object]:
+    """Load and cache the minimal bar slices needed for a symbol's guardrail pass."""
+    key = _guardrail_cache_key(symbol)
+    with _guardrail_lock:
+        cached = _guardrail_cache.get(key)
+        if cached is not None:
+            return cached
+
+    data: Dict[str, object] = {}
+    try:
+        intraday = get_bars(symbol, "1d", "1m")
+        if not intraday.empty:
+            data["intraday_1d_1m"] = intraday
+        past_intraday = get_bars(symbol, "6d", "1m")
+        if not past_intraday.empty:
+            data["intraday_6d_1m"] = past_intraday
+        daily_hist = get_bars(symbol, "20d", "1d")
+        if not daily_hist.empty:
+            data["daily_20d_1d"] = daily_hist
+        if is_ti_stock := symbol in _ti_stocks:
+            try:
+                yesterday = get_bars(symbol, "2d", "1d")
+                if not yesterday.empty:
+                    data["daily_2d_1d"] = yesterday
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    _guardrail_cache[key] = data
+    return data
+
+
 def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Optional[MarketState] = None, return_reason: bool = False, is_ti_stock: bool = False) -> bool:
     """Pre-scan gates: dollar-volume, RVOL, and gap-chase guard.
     Returns False to skip the symbol; never raises.
@@ -127,13 +179,14 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
     """
     # return_reason is now an explicit argument
     try:
+        guard_data = _get_or_load_guardrail_data(symbol)
         # ── Fast path 1: MDA bulk-quote cache (consolidated, full-feed) ───────
         _mda_snap = _mda_snapshot_cache.get(symbol)
         if _mda_snap is not None:
             price    = _mda_snap["price"]
             day_vol  = _mda_snap["volume"]
             open_px  = _mda_snap["open"]
-            intraday = None
+            intraday = guard_data.get("intraday_1d_1m")
         # ── Fast path 2: Alpaca batch-prefetched snapshot (fallback) ─────────
         elif (
             _snapshot_cache.get(symbol) is not None
@@ -144,11 +197,11 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
             price   = float(_snap.latest_trade.price)
             day_vol = float(_snap.daily_bar.volume)
             open_px = float(_snap.daily_bar.open)
-            intraday = None
+            intraday = guard_data.get("intraday_1d_1m")
         else:
             # ── Fallback: fetch 1-min intraday bars ───────────────────────────
-            intraday = get_bars(symbol, "1d", "1m")
-            if intraday.empty or len(intraday) < 5:
+            intraday = _cached_frame_or_default(guard_data.get("intraday_1d_1m"), get_bars(symbol, "1d", "1m"))
+            if intraday is None or getattr(intraday, "empty", False) or len(intraday) < 5:
                 if return_reason:
                     return False, 'other'
                 return False
@@ -162,8 +215,8 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
         if is_ti_stock and open_px > 0:
             try:
                 # Fetch yesterday's daily bar to calc overnight gap
-                yesterday_bars = get_bars(symbol, "2d", "1d")
-                if not yesterday_bars.empty and len(yesterday_bars) >= 1:
+                yesterday_bars = _cached_frame_or_default(guard_data.get("daily_2d_1d"), get_bars(symbol, "2d", "1d"))
+                if yesterday_bars is not None and hasattr(yesterday_bars, "empty") and not yesterday_bars.empty and len(yesterday_bars) >= 1:
                     yesterday_close = float(yesterday_bars["close"].iloc[-2]) if len(yesterday_bars) >= 2 else None
                     if yesterday_close and yesterday_close > 0:
                         overnight_gap = ((open_px - yesterday_close) / yesterday_close) * 100
@@ -245,7 +298,7 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
         _rvol_gate_applied = False  # track whether RVOL@TIME block ran (skip legacy gate below)
         if market_state.is_regular_hours and bull:
             # Determine history depth from daily bars (already cheap — MDA/Alpaca daily)
-            _daily_hist = get_bars(symbol, "20d", "1d")
+            _daily_hist = _cached_frame_or_default(guard_data.get("daily_20d_1d"), get_bars(symbol, "20d", "1d"))
             _n_daily = len(_daily_hist)
 
             if _n_daily == 0:
@@ -287,8 +340,8 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
             else:
                 # Tier 3 / Tier 4: enough history for RVOL@TIME
                 # Fetch today's and past bars via get_bars (MDA-primary)
-                today_intraday = get_bars(symbol, "1d", "1m")
-                past_intraday  = get_bars(symbol, "6d", "1m")
+                today_intraday = _cached_frame_or_default(guard_data.get("intraday_1d_1m"), get_bars(symbol, "1d", "1m"))
+                past_intraday  = _cached_frame_or_default(guard_data.get("intraday_6d_1m"), get_bars(symbol, "6d", "1m"))
                 now_et = datetime.datetime.now(_ET)
                 mkt_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
                 elapsed_min = int(max((now_et - mkt_open).total_seconds() / 60, 1))
@@ -435,7 +488,7 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
                 dv_scale = _IEX_THRESHOLD_SCALE if iex_feed else 1.0
                 tw_dollar_vol = adaptive_dollar_vol * max(elapsed_frac, 0.05) * dv_scale
                 dollar_vol = price * day_vol
-                _log.info(
+                _log.debug(
                     f"[DOLLAR_VOL@TIME DEBUG] {symbol}: dollar_vol={dollar_vol:.0f}, "
                     f"tw_dollar_vol={tw_dollar_vol:.0f} (iex_scale={iex_feed}), "
                     f"elapsed_min={elapsed_min}, elapsed_frac={elapsed_frac:.3f}"
@@ -462,8 +515,8 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
 
         # RVOL gate (adaptive) — skipped when RVOL@TIME block already evaluated RVOL above
         if not _rvol_gate_applied and market_state.is_market_open and bull:
-            _daily_for_gate = get_bars(symbol, "20d", "1d")
-            if not _daily_for_gate.empty and len(_daily_for_gate) >= 2:
+            _daily_for_gate = _cached_frame_or_default(guard_data.get("daily_20d_1d"), get_bars(symbol, "20d", "1d"))
+            if _daily_for_gate is not None and hasattr(_daily_for_gate, "empty") and not _daily_for_gate.empty and len(_daily_for_gate) >= 2:
                 avg_daily_vol = float(_daily_for_gate["volume"].iloc[:-1].mean())
                 if avg_daily_vol > 0:
                     now_et       = datetime.datetime.now(_ET)
@@ -659,6 +712,8 @@ def get_scan_targets(excluded: Set[str] = None) -> List[str]:
 
 def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketState) -> Tuple[List, Dict[str, int], int]:
     clear_bar_cache()
+    with _guardrail_lock:
+        _guardrail_cache.clear()
 
     # Batch-prefetch stock snapshots for all scan targets in one API call.
     # Populates _snapshot_cache so _passes_guardrails() avoids per-symbol
@@ -676,6 +731,7 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
     signals = []
     hit_counts = {}
     scan_errors = 0
+    scan_lock = threading.Lock()
     guardrail_rejections = {
         'dollar_vol': 0,
         'rvol': 0,
@@ -692,10 +748,11 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
         is_ti = symbol in _ti_stocks
         passed, reason = _passes_guardrails(symbol, bull_regime=bull_regime, market_state=market_state, return_reason=True, is_ti_stock=is_ti)
         if not passed:
-            if reason in guardrail_rejections:
-                guardrail_rejections[reason] += 1
-            else:
-                guardrail_rejections['other'] += 1
+            with scan_lock:
+                if reason in guardrail_rejections:
+                    guardrail_rejections[reason] += 1
+                else:
+                    guardrail_rejections['other'] += 1
             return None
 
         candidates = []
@@ -727,8 +784,9 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
             try:
                 sig = future.result(timeout=SCAN_SYMBOL_TIMEOUT)
                 if sig:
-                    signals.append(sig)
-                    hit_counts[sig.strategy] = hit_counts.get(sig.strategy, 0) + 1
+                    with scan_lock:
+                        signals.append(sig)
+                        hit_counts[sig.strategy] = hit_counts.get(sig.strategy, 0) + 1
             except Exception as e:
                 scan_errors += 1
                 _log.error(f"[SCAN ERROR] {sym}: {e}")
