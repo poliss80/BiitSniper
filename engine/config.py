@@ -159,8 +159,9 @@ def get_options_universe(require_ti_file: bool = False) -> list:
         if _override_symbols:
             return list(dict.fromkeys(_override_symbols))
 
-    # Core liquid options names — always included first regardless of TI data.
-    # These have the tightest spreads, deepest chains, and highest OI.
+    # Prioritize the latest Trade Ideas unusual-options scrape. Downstream
+    # ADV, chain, liquidity, IV, and confidence gates still decide eligibility.
+    unusual_options = list(dict.fromkeys(_load_options_universe()))
 
     # Always include index tickers in paper trading mode
     _index_tickers = ["SPX", "NDX", "RUT", "VIX"]
@@ -191,9 +192,9 @@ def get_options_universe(require_ti_file: bool = False) -> list:
     if not ti_universe and require_ti_file:
         raise FileNotFoundError("Primary TI universe (data/ti_primary.json or data/universe.json tiers 1+2) is missing or empty")
 
-    # Merge: core first, then TI names not already in core
-    core_set = set(_core)
-    combined = _core + [s for s in ti_universe if s not in core_set]
+    # Merge: unusual-options scrape first, then liquid core, then remaining TI names.
+    prioritized = list(dict.fromkeys(unusual_options + _core + ti_universe))
+    combined = prioritized
     return combined
 
 
