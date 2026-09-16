@@ -34,7 +34,7 @@ import pandas as pd
 import psutil
 import pytz
 from engine.options._options_today import _calc_iv_rank
-from engine.utils import MarketState, get_bars, calc_rsi
+from engine.utils import MarketState, get_bars, calc_rsi, calc_macd
 from engine.config import (
     OPTIONS_ENABLED,
     OPTIONS_ALLOWED_STRATEGIES,
@@ -60,6 +60,8 @@ from engine.config import (
     ATR_STOP_MULTIPLIER,
     OPTIONS_CHAIN_CACHE_MAX,
     MEMORY_WARN_MB,
+    MOMENTUM_CONTINUATION,
+    GAP_BREAKOUT,
     get_options_universe,
 )
 import os
@@ -122,6 +124,26 @@ def _get_move_threshold(symbol: str) -> float:
 def _get_rvol_threshold(symbol: str) -> float:
     """Get min relative volume threshold. Lower for TI symbols, higher for major caps."""
     return OPTIONS_MIN_RVOL_TI if _is_ti_symbol(symbol) else OPTIONS_MIN_RVOL
+
+
+def _get_current_session_bars(symbol: str) -> Optional[pd.DataFrame]:
+    """Return today's 07:00-16:00 ET bars for regular-hours option signals."""
+    bars = get_bars(symbol, "1d", "1m")
+    if bars.empty:
+        return None
+    timestamp_values = bars["time"] if "time" in bars.columns else bars.index
+    timestamps = pd.Series(pd.to_datetime(timestamp_values, errors="coerce"), index=bars.index)
+    if timestamps.dt.tz is not None:
+        timestamps = timestamps.dt.tz_convert("America/New_York")
+    else:
+        timestamps = timestamps.dt.tz_localize("America/New_York")
+    minutes = timestamps.dt.hour * 60 + timestamps.dt.minute
+    session = bars.loc[
+        (timestamps.dt.date == datetime.datetime.now(pytz.timezone("America/New_York")).date())
+        & (minutes >= 7 * 60)
+        & (minutes <= 16 * 60)
+    ].copy()
+    return session if not session.empty else None
 
 
 def _calc_rsi_scalar(prices: pd.Series) -> Optional[float]:
@@ -1291,6 +1313,133 @@ def _fetch_bar_context(symbol: str) -> Optional[_BarCtx]:
 
 
 # -- Strategy Implementations --------------------------------------------------
+
+
+def _build_equity_parity_call(symbol: str, spot: float, chain: OptionsChainInfo, reason: str, confidence: float, strategy_name: str) -> Optional[OptionSignal]:
+    """Apply shared option-quality gates to an equity-style bullish signal."""
+    f = _get_filters()
+    if chain.iv_rank > f["IV_RANK_CALL_MAX"]:
+        return None
+    strike_row = _pick_strike(chain.calls, spot, OPTIONS_DELTA_TARGET, f)
+    if strike_row is None:
+        return None
+    strike = float(strike_row["strike"])
+    mid = float(strike_row.get("mid", strike_row.get("lastprice", 0)) or 0)
+    dte = (chain.expiry - datetime.date.today()).days
+    if mid <= 0 or mid / spot * 100 > f["MAX_PREMIUM_SPOT"] or not OPTIONS_DTE_MIN <= dte <= min(OPTIONS_DTE_MAX, 21):
+        return None
+    rr = _calc_rr(chain.atr14, dte, mid)
+    if rr < f["MIN_RR"]:
+        return None
+    delta = float(strike_row.get("delta", OPTIONS_DELTA_TARGET))
+    return OptionSignal(
+        symbol=symbol, option_type="call", action="buy_to_open", strike=strike,
+        expiry=chain.expiry, mid_price=mid,
+        confidence=round(min(0.95, confidence + min(0.05, (rr - f["MIN_RR"]) * 0.02)), 3),
+        reason=f"{reason} | {dte}DTE ${strike:.0f}C d={delta:.2f} R/R={rr:.1f}x",
+        strategy=strategy_name, iv_pct=float(strike_row.get("iv_pct", chain.hv_30)),
+        iv_rank=chain.iv_rank, delta=delta, open_interest=int(strike_row.get("openinterest", 0)),
+        rr_ratio=rr, breakeven=round(strike + mid, 2),
+    )
+
+
+class MomentumContinuationCallStrategy:
+    """Translate the equity MomentumContinuation setup into a liquid call."""
+
+    name = "MomentumContinuationCall"
+
+    def scan(self, symbol: str) -> Optional[OptionSignal]:
+        if not OPTIONS_ENABLED or symbol in _INVERSE_ETFS or not _is_bull_regime():
+            return None
+        now_et = datetime.datetime.now(pytz.timezone("America/New_York"))
+        minutes_of_day = now_et.hour * 60 + now_et.minute
+        if not 9 * 60 + 30 <= minutes_of_day <= 15 * 60 + 45:
+            return None
+        try:
+            ctx = _fetch_bar_context(symbol)
+            intraday = _get_current_session_bars(symbol)
+            if ctx is None or intraday is None or len(intraday) < 6:
+                return None
+            session_open = float(intraday["open"].iloc[0])
+            current = float(intraday["close"].iloc[-1])
+            if session_open <= 0:
+                return None
+            move_pct = (current - session_open) / session_open * 100
+            if move_pct < MOMENTUM_CONTINUATION["min_price_up_pct"]:
+                return None
+            elapsed_min = max(minutes_of_day - (9 * 60 + 30), 1.0)
+            avg_daily_vol = float(ctx.daily["volume"].iloc[:-1].mean())
+            rvol = float(intraday["volume"].sum()) / max(avg_daily_vol * max(elapsed_min / 390.0, 0.005), 1.0)
+            if rvol < MOMENTUM_CONTINUATION["min_rvol"]:
+                return None
+            recent = intraday.iloc[-15:]
+            recent_high = float(recent["high"].max())
+            current_low = float(recent["low"].min())
+            near_high = current >= recent_high * 0.998
+            typical = (intraday["high"] + intraday["low"] + intraday["close"]) / 3
+            total_volume = float(intraday["volume"].sum())
+            vwap = float((typical * intraday["volume"]).sum() / max(total_volume, 1.0))
+            if not near_high and (rvol < 3.0 or current <= vwap or current <= (recent_high + current_low) / 2):
+                return None
+            macd = calc_macd(intraday["close"])
+            rsi = calc_rsi(intraday["close"])
+            if len(macd["hist"]) < 2 or rsi.empty:
+                return None
+            macd_hist = float(macd["hist"].iloc[-1])
+            previous_hist = float(macd["hist"].iloc[-2])
+            current_rsi = float(rsi.iloc[-1])
+            if macd_hist <= 0 or macd_hist < previous_hist or not 45 <= current_rsi <= 82:
+                return None
+            chain = _get_options_chain(symbol)
+            if chain is None:
+                return None
+            confidence = 0.78 + min(0.04, max(0.0, rvol - 2.0) * 0.02) + min(0.02, max(0.0, move_pct - 1.0) * 0.005)
+            reason = f"Equity momentum continuation rvol={rvol:.1f}x up={move_pct:.1f}% MACD hist={macd_hist:.4f} RSI={current_rsi:.1f}"
+            return _build_equity_parity_call(symbol, current, chain, reason, confidence, self.name)
+        except Exception as error:
+            log.debug(f"MomentumContinuationCall {symbol}: {error}")
+            return None
+
+
+class GapBreakoutCallStrategy:
+    """Translate the equity opening GapBreakout setup into a liquid call."""
+
+    name = "GapBreakoutCall"
+
+    def scan(self, symbol: str) -> Optional[OptionSignal]:
+        if not OPTIONS_ENABLED or not _is_bull_regime():
+            return None
+        now_et = datetime.datetime.now(pytz.timezone("America/New_York"))
+        minutes_since_open = now_et.hour * 60 + now_et.minute - (9 * 60 + 30)
+        if not 0 <= minutes_since_open <= 90:
+            return None
+        try:
+            ctx = _fetch_bar_context(symbol)
+            intraday = _get_current_session_bars(symbol)
+            if ctx is None or intraday is None or len(intraday) < 5 or ctx.prev <= 0:
+                return None
+            current = float(intraday["close"].iloc[-1])
+            gap_pct = (current - ctx.prev) / ctx.prev * 100
+            min_gap = GAP_BREAKOUT["min_gap_pct"]
+            if gap_pct < GAP_BREAKOUT["min_gap_pct"]:
+                return None
+            recent_volume = float(intraday["volume"].iloc[-5:].mean())
+            average_volume = float(intraday["volume"].mean())
+            volume_ratio = recent_volume / average_volume if average_volume > 0 else 0.0
+            if volume_ratio < GAP_BREAKOUT["volume_multiplier"] or current < ctx.prev * (1 + GAP_BREAKOUT["min_gap_pct"] / 200):
+                return None
+            if ctx.rsi is not None and ctx.rsi <= 30:
+                return None
+            chain = _get_options_chain(symbol)
+            if chain is None:
+                return None
+            confidence = min(0.90, 0.75 + gap_pct / 100 + min(0.05, (volume_ratio - 1.5) * 0.03))
+            reason = f"Equity gap breakout up={gap_pct:.1f}% volume x{volume_ratio:.1f}"
+            return _build_equity_parity_call(symbol, current, chain, reason, confidence, self.name)
+        except Exception as error:
+            log.debug(f"GapBreakoutCall {symbol}: {error}")
+            return None
+
 
 class MomentumCallStrategy:
     """Buy near-term calls on confirmed bullish breakouts with A+ filters.
@@ -2995,6 +3144,8 @@ class MeanReversionCallStrategy:
 # Strategy confidence adjustments by market regime
 # Format: strategy_name -> {regime_name -> confidence_delta}
 _STRATEGY_REGIME_ADJUSTMENTS = {
+    "MomentumContinuationCall": {"BULLISH": +0.08, "BULL_NEUTRAL": +0.03, "NEUTRAL": -0.12, "BEAR_NEUTRAL": -0.15, "BEARISH": -1.00},
+    "GapBreakoutCall": {"BULLISH": +0.06, "BULL_NEUTRAL": +0.02, "NEUTRAL": -0.12, "BEAR_NEUTRAL": -0.15, "BEARISH": -1.00},
     "MomentumCall": {"BULLISH": +0.10, "BULL_NEUTRAL": +0.05, "NEUTRAL": -0.05, "BEAR_NEUTRAL": -0.10, "BEARISH": -0.15},
     "BearPut": {"BULLISH": -0.10, "BULL_NEUTRAL": -0.05, "NEUTRAL": +0.05, "BEAR_NEUTRAL": +0.10, "BEARISH": +0.15},
     "BearCallSpread": {"BULLISH": -1.00, "BULL_NEUTRAL": -0.20, "NEUTRAL": -0.15, "BEAR_NEUTRAL": +0.08, "BEARISH": +0.12},
@@ -3015,6 +3166,8 @@ _NEUTRAL_ZONE_STRATEGIES = frozenset({"IronCondor", "Butterfly", "BearPut", "Cov
 # - put_side: profits from DOWN moves or crashes (good in bearish markets)
 # - neutral: profits from stagnation/theta decay (works everywhere but highest in range-bound)
 _STRATEGY_DIRECTION = {
+    "MomentumContinuationCall": "call_side",
+    "GapBreakoutCall": "call_side",
     "MomentumCall": "call_side",       # BUY CALL (up moves)
     "BearPut": "call_side",            # SELL PUT (stays up, avoids crash)
     "BearCallSpread": "put_side",      # BUY PUT (down moves) - ONLY put-side strategy
@@ -3209,6 +3362,8 @@ def scan_options_universe(
     _CURRENT_TI_UNIVERSE = ti_universe
     
     signals: List[OptionSignal] = []
+    continuation_strat  = MomentumContinuationCallStrategy()
+    gap_breakout_strat  = GapBreakoutCallStrategy()
     momentum_strat      = MomentumCallStrategy()
     bear_put_strat      = BearPutStrategy()
     bear_call_strat     = BearCallSpreadStrategy()
@@ -3294,7 +3449,7 @@ def scan_options_universe(
         # Try all strategies in priority order; one signal per symbol per cycle
         # OPTIONS_ALLOWED_STRATEGIES restricts to a named subset when non-empty.
         _allowed = OPTIONS_ALLOWED_STRATEGIES  # empty set = all enabled
-        for strat in (momentum_strat, bear_put_strat, bear_call_strat, squeeze_strat, mean_rev_strat,
+        for strat in (continuation_strat, gap_breakout_strat, momentum_strat, bear_put_strat, bear_call_strat, squeeze_strat, mean_rev_strat,
                       retest_strat, trend_spread_strat, iron_condor_strat, butterfly_strat):
             if _allowed and strat.name not in _allowed:
                 continue

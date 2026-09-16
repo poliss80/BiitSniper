@@ -84,6 +84,8 @@ from engine.utils.market import MarketState
 from engine.utils import get_bars
 from engine.options.strategies import (
     MomentumCallStrategy,
+    MomentumContinuationCallStrategy,
+    GapBreakoutCallStrategy,
     BearPutStrategy,
     BearCallSpreadStrategy,
     ShortSqueezeStrategy,
@@ -99,6 +101,8 @@ from engine.options.strategies import (
 import engine.options.strategies as _strats
 
 STRATEGIES = [
+    ("MomentumContinuationCall", MomentumContinuationCallStrategy()),
+    ("GapBreakoutCall",         GapBreakoutCallStrategy()),
     ("MomentumCall",        MomentumCallStrategy()),
     ("BearPut",             BearPutStrategy()),
     ("BearCallSpread",      BearCallSpreadStrategy()),

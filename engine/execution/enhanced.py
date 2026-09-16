@@ -65,6 +65,9 @@ from engine.config import (
     LIVE_PROBE_SCALE_IN_MAX_TOTAL_RISK_PCT,
     LIVE_PROBE_MAX_TOTAL_BUYING_POWER_PCT,
     LIVE_PROBE_SCALE_IN_ATM_OPTION_ENABLED,
+    LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES,
+    LIVE_PROBE_SCALE_IN_ATM_OPTION_MAX_ATTEMPTS,
+    LIVE_PROBE_SCALE_IN_ATM_OPTION_MAX_MINUTES,
     INTRADAY_MOMENTUM_EXEMPTIONS, INTRADAY_MOMENTUM_MIN_GAIN_PCT,
     INTRADAY_MOMENTUM_MIN_RVOL, INTRADAY_MOMENTUM_MIN_5M_RETURN_PCT,
     CONF_SCALE_MIN_MULT, CONF_SCALE_FULL_CONF,
@@ -345,11 +348,16 @@ class EnhancedExecutor:
         except Exception:
             return None
 
-    def _live_probe_scale_in_confirmation_ok(self, symbol: str, entry_time, current_price: float) -> tuple[bool, str | None]:
+    def _live_probe_scale_in_confirmation_ok(self, symbol: str, entry_time, current_price: float, bars_cache=None) -> tuple[bool, str | None]:
         if not (LIVE_PROBE_SCALE_IN_REQUIRE_VWAP or LIVE_PROBE_SCALE_IN_REQUIRE_NEW_HIGH):
             return True, None
         try:
-            bars = get_bars(symbol, "1d", "1m")
+            if bars_cache is not None and symbol in bars_cache:
+                bars = bars_cache[symbol]
+            else:
+                bars = get_bars(symbol, "1d", "1m")
+                if bars_cache is not None:
+                    bars_cache[symbol] = bars
             if bars.empty or len(bars) < 6:
                 return False, "missing intraday bars for VWAP/new-high confirmation"
             bars = bars.copy()
@@ -551,7 +559,7 @@ class EnhancedExecutor:
         state_changed = False
         is_bull = market_state.resolve_regime()
         pending_scale_ins = getattr(self, "_live_probe_scale_in_pending", {})
-        cumulative_scale_cost = 0.0
+        confirmation_bars_cache = {}
         for sym, info in list(self._entry_log.items()):
             pos = positions.get(sym)
             entry_price = float(getattr(pos, "avg_entry_price", 0) or 0) if pos is not None else 0
@@ -573,15 +581,54 @@ class EnhancedExecutor:
             if pending_scale_in is not None:
                 if pending_scale_in.get("atm_option_deferred") or pending_scale_in.get("atm_option_pending"):
                     if self._is_option_market_open(market_state):
+                        now_utc = datetime.datetime.now(datetime.timezone.utc)
+                        started_at = pending_scale_in.get("atm_retry_started_at")
+                        try:
+                            retry_started = datetime.datetime.fromisoformat(started_at) if started_at else now_utc
+                            if retry_started.tzinfo is None:
+                                retry_started = retry_started.replace(tzinfo=datetime.timezone.utc)
+                        except (TypeError, ValueError):
+                            retry_started = now_utc
+                        attempts = int(pending_scale_in.get("atm_attempt_count", 0) or 0)
+                        retry_expired = (
+                            attempts >= LIVE_PROBE_SCALE_IN_ATM_OPTION_MAX_ATTEMPTS
+                            or (now_utc - retry_started).total_seconds() >= LIVE_PROBE_SCALE_IN_ATM_OPTION_MAX_MINUTES * 60
+                        )
+                        if retry_expired:
+                            pending_scale_ins.pop(sym, None)
+                            state_changed = True
+                            log.info(f"LIVE PROBE {sym}: ATM option retry window expired")
+                            continue
                         if self._place_live_probe_atm_option(sym, current_price, market_state, options_executor):
                             pending_scale_ins.pop(sym, None)
                             state_changed = True
+                        else:
+                            pending_scale_in["atm_option_pending"] = True
+                            pending_scale_in["atm_option_deferred"] = False
+                            pending_scale_in["atm_attempt_count"] = attempts + 1
+                            pending_scale_in["atm_retry_started_at"] = retry_started.isoformat()
+                            state_changed = True
+                    continue
+                order_id = str(pending_scale_in.get("order_id") or "")
+                order_status = ""
+                if order_id:
+                    try:
+                        broker_order = self.client.get_order_by_id(order_id)
+                        order_status = str(getattr(broker_order, "status", "")).lower()
+                    except Exception as order_error:
+                        log.debug(f"LIVE PROBE {sym}: unable to query scale-in order {order_id}: {order_error}")
+                if order_status in {"canceled", "cancelled", "rejected", "expired"}:
+                    pending_scale_ins.pop(sym, None)
+                    state_changed = True
+                    log.info(f"LIVE PROBE {sym}: scale-in order {order_status}; eligible to retry")
                     continue
                 if abs(qty) > pending_scale_in["prior_qty"]:
                     try:
-                        order_id = str(pending_scale_in.get("order_id") or "")
                         if order_id:
-                            self.client.cancel_order_by_id(order_id)
+                            try:
+                                self.client.cancel_order_by_id(order_id)
+                            except Exception as cancel_error:
+                                log.debug(f"LIVE PROBE {sym}: scale-in order cleanup skipped: {cancel_error}")
                         time.sleep(0.4)
                         trail_pct = get_dynamic_tier(sym, current_price)["ts"]
                         self.client.submit_order(TrailingStopOrderRequest(
@@ -603,10 +650,31 @@ class EnhancedExecutor:
                             pending_scale_ins.pop(sym, None)
                         else:
                             pending_scale_in["atm_option_pending"] = True
+                            pending_scale_in["atm_attempt_count"] = 1
+                            pending_scale_in["atm_retry_started_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
                     else:
                         pending_scale_in["atm_option_deferred"] = True
+                        pending_scale_in["atm_attempt_count"] = 0
+                        pending_scale_in["atm_retry_started_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
                     state_changed = True
                     log.info(f"LIVE PROBE {sym}: scale-in filled; protection replaced for {abs(qty)} shares")
+                    continue
+                if "filled" in order_status:
+                    log.info(f"LIVE PROBE {sym}: scale-in filled at broker; awaiting position quantity refresh")
+                    continue
+                pending_scale_in["poll_count"] = int(pending_scale_in.get("poll_count", 0) or 0) + 1
+                if pending_scale_in["poll_count"] >= LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES:
+                    if order_id:
+                        try:
+                            self.client.cancel_order_by_id(order_id)
+                        except Exception as cancel_error:
+                            log.debug(f"LIVE PROBE {sym}: stale scale-in cancellation failed: {cancel_error}")
+                    pending_scale_ins.pop(sym, None)
+                    state_changed = True
+                    log.info(
+                        f"LIVE PROBE {sym}: stale scale-in order canceled after "
+                        f"{LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES} checks"
+                    )
                     continue
                 log.info(f"LIVE PROBE {sym}: scale-in order still pending fill confirmation")
                 continue
@@ -630,7 +698,7 @@ class EnhancedExecutor:
                 )
                 continue
             confirmed, confirm_reason = self._live_probe_scale_in_confirmation_ok(
-                sym, info.get("entry_time"), current_price
+                sym, info.get("entry_time"), current_price, confirmation_bars_cache
             )
             if not confirmed:
                 log.info(f"LIVE PROBE {sym}: scale-in skipped; {confirm_reason}")
@@ -655,17 +723,20 @@ class EnhancedExecutor:
                     continue
 
             margin = 1.0 if is_long else 2.0
-            usable_bp = max(0.0, account.buying_power - self._options_cost_reserve - cumulative_scale_cost)
+            # Scale-in allocation is based on the broker-reported buying power.
+            # Options reserve and prior symbols still remain separate accounting data;
+            # this per-symbol budget intentionally uses the full available BP figure.
+            available_bp = max(0.0, float(account.buying_power or 0.0))
             current_exposure = abs(qty) * current_price
-            max_total_exposure = usable_bp * LIVE_PROBE_MAX_TOTAL_BUYING_POWER_PCT / 100
+            max_total_exposure = available_bp * LIVE_PROBE_MAX_TOTAL_BUYING_POWER_PCT / 100
             remaining_exposure = max(0.0, max_total_exposure - current_exposure)
             scale_budget = min(
-                usable_bp * LIVE_PROBE_SCALE_IN_BUYING_POWER_PCT / 100,
+                available_bp * LIVE_PROBE_SCALE_IN_BUYING_POWER_PCT / 100,
                 remaining_exposure,
             )
             add_shares = min(
                 int(scale_budget / (current_price * margin)),
-                int(usable_bp / (current_price * margin)),
+                int(available_bp / (current_price * margin)),
                 add_cap,
             )
             if add_shares < 1:
@@ -689,6 +760,8 @@ class EnhancedExecutor:
                     ))
                     pending_scale_ins[sym] = {
                         "prior_qty": abs(qty), "order_id": str(getattr(order, "id", "") or ""),
+                        "submitted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                        "attempt_count": 1, "poll_count": 0,
                     }
                     log.info(
                         f"LIVE PROBE SCALE-IN LIMIT {sym}: +{add_shares} shares @ "
@@ -702,10 +775,11 @@ class EnhancedExecutor:
                     ))
                     pending_scale_ins[sym] = {
                         "prior_qty": abs(qty), "order_id": str(getattr(order, "id", "") or ""),
+                        "submitted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                        "attempt_count": 1, "poll_count": 0,
                     }
                     log.info(f"LIVE PROBE SCALE-IN {sym}: +{add_shares} shares at {gain_pct:+.2f}% pending fill confirmation")
 
-                cumulative_scale_cost += add_shares * current_price * margin
                 state_changed = True
             except Exception as scale_error:
                 log.warning(f"LIVE PROBE {sym}: scale-in order failed: {scale_error}")
