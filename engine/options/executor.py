@@ -862,8 +862,10 @@ class OptionsExecutor:
         Production-ready order placement for ApexTrader.
         Fixes communications with Alpaca API and internal state tracking.
         """
+        self._last_rejection_reason = "unspecified rejection"
         permitted_probe_bypass = self._is_permitted_probe_cap_bypass(signal)
         if signal.bypass_portfolio_cap and not permitted_probe_bypass:
+            self._last_rejection_reason = "unauthorized portfolio-cap bypass"
             log.warning(
                 f"[OPTIONS] Rejected unauthorized portfolio-cap bypass for {signal.symbol} "
                 f"({signal.strategy})"
@@ -873,6 +875,7 @@ class OptionsExecutor:
             broker_positions = self.client.get_all_positions()
             portfolio_count = len(broker_positions)
             if portfolio_count >= MAX_POSITIONS and not signal.bypass_portfolio_cap:
+                self._last_rejection_reason = f"portfolio cap reached ({portfolio_count}/{MAX_POSITIONS})"
                 log.info(
                     f"[OPTIONS] Portfolio position cap reached "
                     f"({portfolio_count}/{MAX_POSITIONS}) — skipping {signal.symbol}"
@@ -889,12 +892,14 @@ class OptionsExecutor:
                 if getattr(position, "asset_class", "") == "us_option"
             )
             if broker_option_count >= OPTIONS_MAX_POSITIONS:
+                self._last_rejection_reason = f"options cap reached ({broker_option_count}/{OPTIONS_MAX_POSITIONS})"
                 log.info(
                     f"[OPTIONS] Broker option cap reached "
                     f"({broker_option_count}/{OPTIONS_MAX_POSITIONS}) — skipping {signal.symbol}"
                 )
                 return False
         except Exception as e:
+            self._last_rejection_reason = f"position count check failed: {e}"
             log.warning(f"[OPTIONS] Could not verify portfolio position count: {e} — skipping entry")
             return False
 
@@ -960,16 +965,19 @@ class OptionsExecutor:
                 order_accepted = True
                 break
             if not order_accepted:
+                self._last_rejection_reason = "gross notional cap exceeded even at one contract"
                 log.warning(
                     f"[OPTIONS] Skipping {signal.symbol} order: even 1 contract would exceed gross notional cap (${gross_notional:,.2f} > 6x equity ${equity:,.2f})"
                 )
                 return False
         # 1. Global Enable Check
         if not getattr(self, "OPTIONS_ENABLED", True):
+            self._last_rejection_reason = "options disabled"
             return False
 
         # 1b. Account restriction check (liquidation-only = code 40310000)
         if not self._is_account_tradeable():
+            self._last_rejection_reason = "account is not tradeable"
             return False
 
         # 1c. Corporate actions guard — block entry if a reverse split or merger is
@@ -1031,6 +1039,7 @@ class OptionsExecutor:
         # 3. Budget & Contract Calculation
         raw_contracts = self._calc_contracts(signal, remaining)
         if raw_contracts <= 0:
+            self._last_rejection_reason = f"insufficient options budget (${remaining:.2f} remaining)"
             per_contract = signal.mid_price * CONTRACT_SIZE
             log.info(
                 f"[OPTIONS] Insufficient budget for {signal.symbol} "
@@ -1059,6 +1068,7 @@ class OptionsExecutor:
         if is_mleg:
             open_mleg = sum(1 for p in self._positions.values() if len(p.legs) > 1)
             if open_mleg >= OPTIONS_MAX_MLEG_POSITIONS:
+                self._last_rejection_reason = f"multi-leg cap reached ({open_mleg}/{OPTIONS_MAX_MLEG_POSITIONS})"
                 log.info(
                     f"[OPTIONS] Mleg limit ({OPTIONS_MAX_MLEG_POSITIONS}) reached "
                     f"({open_mleg} open spreads) — skipping {signal.symbol}"
@@ -1084,12 +1094,14 @@ class OptionsExecutor:
             elif _in_open_window:
                 # Higher confidence bar — only cleanest signals at the open
                 if signal.confidence < 0.85:
+                    self._last_rejection_reason = f"open-window confidence {signal.confidence:.0%} < 85%"
                     log.debug(
                         f"[OPTIONS] Open window: {signal.symbol} conf={signal.confidence:.0%} < 85% — skip"
                     )
                     return False
                 # 1 naked position max during the open window
                 if self._count_open_options() >= 1:
+                    self._last_rejection_reason = "open-window option position already open"
                     log.debug(
                         f"[OPTIONS] Open window: already 1 open position — skip {signal.symbol}"
                     )

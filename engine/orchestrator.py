@@ -211,12 +211,21 @@ def _run_options_cycle(ctx: AppContext, market_state: MarketState) -> None:
                 f"| top: {top[0].symbol} {top[0].option_type} conf={top[0].confidence:.0%}"
             )
             executed = False
+            rejected = []
             for sig in top:
                 if ctx.options_executor.place_option_order(sig, market_state):
                     executed = True
                     break
+                rejected.append(
+                    f"{sig.symbol}/{sig.strategy}: "
+                    f"{getattr(ctx.options_executor, '_last_rejection_reason', 'unspecified rejection')}"
+                )
             if not executed:
-                log.info(f"[OPTIONS] No option order executed this cycle | open={len(ctx.options_executor._positions)}")
+                log.info(
+                    f"[OPTIONS] No option order executed this cycle | "
+                    f"open={len(ctx.options_executor._positions)} | "
+                    f"rejections={' ; '.join(rejected)}"
+                )
         else:
             log.info(
                 f"[OPTIONS] No qualifying signals this cycle | open={len(ctx.options_executor._positions)}"

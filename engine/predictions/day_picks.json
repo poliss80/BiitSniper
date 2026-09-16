@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-16T13:35:27-04:00",
+  "generated_at": "2026-09-16T14:48:42-04:00",
   "date": "2026-09-16",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "GLOO",
+      "symbol": "BNS",
       "action": "buy",
-      "price": 3.9784,
-      "confidence": 0.84,
-      "strategy": "MomentumContinuationPullback",
-      "reason": "Momentum continuation high-RVOL pullback/reclaim rvol=9.9x up=21.7% above VWAP and range midpoint MACD hist=0.0011 RSI=74.1"
+      "price": 93.28,
+      "confidence": 0.83,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.64"
     }
   ]
 }

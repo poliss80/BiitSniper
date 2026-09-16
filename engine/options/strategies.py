@@ -3458,6 +3458,8 @@ def scan_options_universe(
                 signals.append(sig)
                 symbol_got_signal = True
                 break   # one signal per symbol per scan cycle
+            elif sig:
+                _record_fail(f"low_conf_{strat.name}", symbol)
             else:
                 _record_fail(f"no_{strat.name}", symbol)
         if not symbol_got_signal:
