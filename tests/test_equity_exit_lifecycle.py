@@ -530,7 +530,11 @@ class EquityExitLifecycleTests(unittest.TestCase):
         class WashTradeClient(MockClient):
             def __init__(self):
                 super().__init__([MockPosition("AAPL", "1", 101.0, avg_entry_price=100.0)])
-                self.open_orders = [SimpleNamespace(symbol="AAPL", id="tracked-scale-in-order")]
+                self.open_orders = [
+                    SimpleNamespace(symbol="AAPL", id="tracked-scale-in-order", type="market"),
+                    SimpleNamespace(symbol="AAPL", id="existing-trailing-stop", type="trailing_stop"),
+                    SimpleNamespace(symbol="AAPL", id="unrelated-order", type="limit"),
+                ]
                 self.cancelled_orders = []
 
             def get_orders(self):
@@ -541,7 +545,10 @@ class EquityExitLifecycleTests(unittest.TestCase):
                 self.open_orders = [order for order in self.open_orders if order.id != order_id]
 
             def submit_order(self, order):
-                if self.open_orders and order.side == enhanced.OrderSide.SELL:
+                protective_orders = {
+                    "stop", "stop_limit", "trailing_stop",
+                }
+                if any(getattr(open_order, "type", "") in protective_orders for open_order in self.open_orders) and order.side == enhanced.OrderSide.SELL:
                     raise RuntimeError("potential wash trade detected")
                 self.orders.append(order)
                 return SimpleNamespace(id="tracked-scale-in-order")
@@ -569,7 +576,10 @@ class EquityExitLifecycleTests(unittest.TestCase):
             client.positions[0].qty = "2"
             executor.check_live_probe_scale_ins()
 
-        self.assertEqual(client.cancelled_orders, ["tracked-scale-in-order"])
+        self.assertEqual(
+            client.cancelled_orders,
+            ["tracked-scale-in-order", "existing-trailing-stop"],
+        )
         self.assertEqual(len(client.orders), 2)
         self.assertEqual(client.orders[1].qty, 2)
         self.assertIn("AAPL", executor._live_probe_scaled_in)

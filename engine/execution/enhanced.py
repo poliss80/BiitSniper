@@ -629,6 +629,20 @@ class EnhancedExecutor:
                                 self.client.cancel_order_by_id(order_id)
                             except Exception as cancel_error:
                                 log.debug(f"LIVE PROBE {sym}: scale-in order cleanup skipped: {cancel_error}")
+                        # The original probe protection still reserves the old quantity.
+                        # Cancel only stop/trailing protection orders, never unrelated symbol orders.
+                        for open_order in self.client.get_orders() or []:
+                            if str(getattr(open_order, "symbol", "")) != sym:
+                                continue
+                            open_id = str(getattr(open_order, "id", "") or "")
+                            if not open_id or open_id == order_id:
+                                continue
+                            open_type = str(getattr(open_order, "type", "")).lower()
+                            if open_type in {"stop", "stop_limit", "trailing_stop"}:
+                                try:
+                                    self.client.cancel_order_by_id(open_id)
+                                except Exception as cancel_error:
+                                    log.debug(f"LIVE PROBE {sym}: protection cleanup skipped: {cancel_error}")
                         time.sleep(0.4)
                         trail_pct = get_dynamic_tier(sym, current_price)["ts"]
                         self.client.submit_order(TrailingStopOrderRequest(

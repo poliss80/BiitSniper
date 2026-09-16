@@ -8267,3 +8267,34 @@ Stacktrace:
 2026-09-16 14:14:14,151 [ERROR] LIVE PROBE GLOO: premarket scale-in filled but protection replacement failed: {"available":"5","code":40310000,"existing_qty":"6","held_for_orders":"1","message":"insufficient qty available for order (requested: 6, available: 5)","related_orders":["e833f9ac-1688-4451-8245-d05f932f6caf"],"symbol":"GLOO"}
 2026-09-16 14:14:14,151 [INFO] [SCAN] No signals this cycle
 2026-09-16 14:14:14,152 [INFO] Heartbeat: 2026-09-16T14:14:14.152150
+2026-09-16 14:16:14,419 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-16 14:16:14,419 [INFO] ======================================================================
+2026-09-16 14:16:14,420 [INFO] NEW DAY: 2026-09-16 | Start equity: $0.00
+2026-09-16 14:16:14,421 [INFO] Universe pruned: no expired tickers
+2026-09-16 14:16:14,421 [INFO] ======================================================================
+2026-09-16 14:16:14,423 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-16 14:16:14,424 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-16 14:16:14,426 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 14:16:14,431 [INFO] Restored position exit state: AAPL
+2026-09-16 14:16:14,431 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 14:16:26,760 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-16 14:16:26,760 [INFO] ======================================================================
+2026-09-16 14:16:26,761 [INFO] NEW DAY: 2026-09-16 | Start equity: $0.00
+2026-09-16 14:16:26,764 [INFO] Universe pruned: no expired tickers
+2026-09-16 14:16:26,764 [INFO] ======================================================================
+2026-09-16 14:16:26,765 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-16 14:16:26,767 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-16 14:16:26,769 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 14:16:26,773 [INFO] Restored position exit state: AAPL
+2026-09-16 14:16:26,773 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 14:16:34,303 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-16 14:16:34,304 [INFO] ======================================================================
+2026-09-16 14:16:34,304 [INFO] NEW DAY: 2026-09-16 | Start equity: $0.00
+2026-09-16 14:16:34,306 [INFO] Universe pruned: no expired tickers
+2026-09-16 14:16:34,306 [INFO] ======================================================================
+2026-09-16 14:16:34,309 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-16 14:16:34,310 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-16 14:16:34,313 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 14:16:34,319 [INFO] Restored position exit state: AAPL
+2026-09-16 14:16:34,320 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-16 14:16:34,323 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
