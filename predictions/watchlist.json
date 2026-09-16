@@ -1,0 +1,217 @@
+{
+  "generated_at": "2026-03-26T22:25:25",
+  "source_date": "2026-03-26",
+  "tickers": [
+    {
+      "symbol": "SLND",
+      "price": 1.61,
+      "gap_pct": 21.97,
+      "vol_ratio": 6.7,
+      "score": 0.8,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "NAVN",
+      "price": 13.11,
+      "gap_pct": 43.28,
+      "vol_ratio": 10.44,
+      "score": 0.75,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "ICU",
+      "price": 2.79,
+      "gap_pct": 22.37,
+      "vol_ratio": 5.39,
+      "score": 0.7194,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "OLPX",
+      "price": 2.01,
+      "gap_pct": 51.13,
+      "vol_ratio": 38.29,
+      "score": 0.7,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "FATN",
+      "price": 2.38,
+      "gap_pct": 37.57,
+      "vol_ratio": 33.84,
+      "score": 0.7,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "KOD",
+      "price": 39.76,
+      "gap_pct": 74.77,
+      "vol_ratio": 14.86,
+      "score": 0.7,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "FCHL",
+      "price": 3.55,
+      "gap_pct": 107.6,
+      "vol_ratio": 13.42,
+      "score": 0.7,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "AIFF",
+      "price": 3.02,
+      "gap_pct": 79.76,
+      "vol_ratio": 23.53,
+      "score": 0.7,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "CAR",
+      "price": 139.58,
+      "gap_pct": 12.97,
+      "vol_ratio": 3.85,
+      "score": 0.6924,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "MDGL",
+      "price": 518.76,
+      "gap_pct": 12.3,
+      "vol_ratio": 4.18,
+      "score": 0.6589,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "TURB",
+      "price": 1.96,
+      "gap_pct": 32.43,
+      "vol_ratio": 6.02,
+      "score": 0.65,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "BOXL",
+      "price": 1.28,
+      "gap_pct": 24.27,
+      "vol_ratio": 63.93,
+      "score": 0.65,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "HTZ",
+      "price": 4.77,
+      "gap_pct": 9.15,
+      "vol_ratio": 3.0,
+      "score": 0.6202,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "PGEN",
+      "price": 3.89,
+      "gap_pct": 25.48,
+      "vol_ratio": 5.3,
+      "score": 0.6148,
+      "tags": [
+        "GAP-RUN",
+        "HIGH-VOL"
+      ]
+    },
+    {
+      "symbol": "RVI",
+      "price": 32.18,
+      "gap_pct": 11.0,
+      "vol_ratio": 2.29,
+      "score": 0.6146,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "PROF",
+      "price": 6.3,
+      "gap_pct": 8.25,
+      "vol_ratio": 4.09,
+      "score": 0.5932,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "NDRA",
+      "price": 4.59,
+      "gap_pct": 22.4,
+      "vol_ratio": 2.63,
+      "score": 0.5817,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "PROP",
+      "price": 2.04,
+      "gap_pct": 13.97,
+      "vol_ratio": 2.62,
+      "score": 0.5812,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "LOVE",
+      "price": 13.76,
+      "gap_pct": 21.88,
+      "vol_ratio": 2.55,
+      "score": 0.5776,
+      "tags": [
+        "GAP-RUN"
+      ]
+    },
+    {
+      "symbol": "BMEA",
+      "price": 1.37,
+      "gap_pct": 12.3,
+      "vol_ratio": 2.22,
+      "score": 0.5608,
+      "tags": [
+        "GAP-RUN"
+      ]
+    }
+  ]
+}

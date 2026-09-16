@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Logs and runtime files
+*.log
+autobot.log
+apextrader.log
+*.pid
+*.lock
+engine/.position_exit_state.json
+engine/.probe_journal.jsonl
+
+# Environment files
+.env
+.env.*
+config_env_vars.txt
+
+# IDE/editor files
+.vscode/
+*.swp
+*.swo
+*.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Caches
+*.cache
+*.sqlite
+*.db
+
+# Temporary files
+tmp*
+*.tmp
+
+# Build artifacts
+build/
+dist/
+**/build/
+**/dist/
+
+# Python package metadata
+*.egg-info/
+*.egg
+/apextrader

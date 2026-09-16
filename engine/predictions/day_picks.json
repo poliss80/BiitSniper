@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-09-15T19:57:36-04:00",
+  "date": "2026-09-15",
+  "market_regime": "bull",
+  "picks": [
+    {
+      "symbol": "PLSE",
+      "action": "buy",
+      "price": 54.21,
+      "confidence": 0.84,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $4.12"
+    },
+    {
+      "symbol": "OKE",
+      "action": "buy",
+      "price": 96.97,
+      "confidence": 0.84,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $2.53"
+    }
+  ]
+}
