@@ -751,6 +751,13 @@ GAP_BREAKOUT = {
     "entry_window_min":  90,    # Only enter within first 90 min of open
 }
 
+MARKET_STRUCTURE_BREAKOUT = {
+    "enabled": os.getenv("MSB_ENABLED", "true").lower() in ("1", "true", "yes"),
+    "lookback_bars": int(os.getenv("MSB_LOOKBACK_BARS", "30")),
+    "resistance_tolerance_pct": float(os.getenv("MSB_RESISTANCE_TOLERANCE_PCT", "0.5")),
+    "min_volume_expansion": float(os.getenv("MSB_MIN_VOLUME_EXPANSION", "2.5")),
+}
+
 # ─────────────────────────────────────────────────────────────────
 # Opening Range Breakout (ORB) Strategy
 # ─────────────────────────────────────────────────────────────────

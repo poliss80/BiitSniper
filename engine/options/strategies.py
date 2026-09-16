@@ -62,6 +62,8 @@ from engine.config import (
     MEMORY_WARN_MB,
     MOMENTUM_CONTINUATION,
     GAP_BREAKOUT,
+    MARKET_STRUCTURE_BREAKOUT,
+    ORB,
     get_options_universe,
 )
 import os
@@ -1438,6 +1440,97 @@ class GapBreakoutCallStrategy:
             return _build_equity_parity_call(symbol, current, chain, reason, confidence, self.name)
         except Exception as error:
             log.debug(f"GapBreakoutCall {symbol}: {error}")
+            return None
+
+
+class MarketStructureBreakoutCallStrategy:
+    """Option translation of higher-low compression through flat resistance."""
+
+    name = "MarketStructureBreakoutCall"
+
+    def scan(self, symbol: str) -> Optional[OptionSignal]:
+        if not OPTIONS_ENABLED or not MARKET_STRUCTURE_BREAKOUT["enabled"] or not _is_bull_regime():
+            return None
+        try:
+            ctx = _fetch_bar_context(symbol)
+            intraday = _get_current_session_bars(symbol)
+            lookback = MARKET_STRUCTURE_BREAKOUT["lookback_bars"]
+            if ctx is None or intraday is None or len(ctx.daily) < 10 or len(intraday) < 6:
+                return None
+            structure = ctx.daily.iloc[-min(lookback, len(ctx.daily)):]
+            resistance = float(structure["high"].quantile(0.75))
+            peaks = structure[structure["high"] >= resistance]["high"]
+            lows = structure["low"].iloc[-5:].tolist()
+            if len(peaks) < 3 or len(lows) < 3:
+                return None
+            if (float(peaks.max()) - float(peaks.min())) / max(resistance, 0.01) * 100 > MARKET_STRUCTURE_BREAKOUT["resistance_tolerance_pct"]:
+                return None
+            if not all(lows[i] > lows[i - 1] for i in range(1, len(lows))):
+                return None
+            current = float(intraday["close"].iloc[-1])
+            volume_average = float(intraday["volume"].rolling(20).mean().iloc[-1])
+            current_volume = float(intraday["volume"].iloc[-1])
+            if current <= resistance or volume_average <= 0 or current_volume / volume_average < MARKET_STRUCTURE_BREAKOUT["min_volume_expansion"]:
+                return None
+            chain = _get_options_chain(symbol)
+            if chain is None:
+                return None
+            confidence = min(0.95, 0.80 + min(0.08, (current_volume / volume_average - 2.5) * 0.03))
+            reason = f"Higher-low compression breakout above ${resistance:.2f} volume x{current_volume / volume_average:.1f}"
+            return _build_equity_parity_call(symbol, current, chain, reason, confidence, self.name)
+        except Exception as error:
+            log.debug(f"MarketStructureBreakoutCall {symbol}: {error}")
+            return None
+
+
+class OpeningRangeBreakoutCallStrategy:
+    """Option translation of the equity 15-minute opening-range breakout."""
+
+    name = "OpeningRangeBreakoutCall"
+
+    def scan(self, symbol: str) -> Optional[OptionSignal]:
+        if not OPTIONS_ENABLED or not _is_bull_regime():
+            return None
+        now_et = datetime.datetime.now(pytz.timezone("America/New_York"))
+        minutes_since_open = now_et.hour * 60 + now_et.minute - (9 * 60 + 30)
+        if not ORB["entry_start_min"] <= minutes_since_open <= ORB["entry_end_min"]:
+            return None
+        try:
+            ctx = _fetch_bar_context(symbol)
+            bars = _get_current_session_bars(symbol)
+            if ctx is None or bars is None:
+                return None
+            times = pd.to_datetime(bars["time"] if "time" in bars.columns else bars.index, errors="coerce")
+            if times.dt.tz is not None:
+                times = times.dt.tz_convert("America/New_York")
+            else:
+                times = times.dt.tz_localize("America/New_York")
+            regular = bars.loc[(times.dt.hour * 60 + times.dt.minute) >= 570].copy()
+            if len(regular) < ORB["range_minutes"] + 3:
+                return None
+            opening = regular.iloc[:ORB["range_minutes"]]
+            opening_high = float(opening["high"].max())
+            opening_low = float(opening["low"].min())
+            opening_range = opening_high - opening_low
+            current = float(regular["close"].iloc[-1])
+            atr14 = max(float(ctx.atr14), 0.01)
+            if opening_range <= 0 or opening_range > 1.5 * atr14:
+                return None
+            buffer = atr14 * ORB["breakout_buffer_atr"]
+            if current <= opening_high + buffer:
+                return None
+            post_volume = float(regular["volume"].iloc[ORB["range_minutes"]:].iloc[-3:].mean())
+            opening_volume = float(opening["volume"].mean())
+            if opening_volume <= 0 or post_volume / opening_volume < ORB["volume_surge_min"]:
+                return None
+            chain = _get_options_chain(symbol)
+            if chain is None:
+                return None
+            confidence = min(0.95, 0.78 + min(0.10, (current - opening_high) / max(opening_range, 0.01) * 0.05))
+            reason = f"15m ORB breakout above ${opening_high:.2f} range=${opening_range:.2f} volume x{post_volume / opening_volume:.1f}"
+            return _build_equity_parity_call(symbol, current, chain, reason, confidence, self.name)
+        except Exception as error:
+            log.debug(f"OpeningRangeBreakoutCall {symbol}: {error}")
             return None
 
 
@@ -3144,6 +3237,8 @@ class MeanReversionCallStrategy:
 # Strategy confidence adjustments by market regime
 # Format: strategy_name -> {regime_name -> confidence_delta}
 _STRATEGY_REGIME_ADJUSTMENTS = {
+    "MarketStructureBreakoutCall": {"BULLISH": +0.08, "BULL_NEUTRAL": +0.03, "NEUTRAL": -0.12, "BEAR_NEUTRAL": -0.15, "BEARISH": -1.00},
+    "OpeningRangeBreakoutCall": {"BULLISH": +0.08, "BULL_NEUTRAL": +0.03, "NEUTRAL": -0.12, "BEAR_NEUTRAL": -0.15, "BEARISH": -1.00},
     "MomentumContinuationCall": {"BULLISH": +0.08, "BULL_NEUTRAL": +0.03, "NEUTRAL": -0.12, "BEAR_NEUTRAL": -0.15, "BEARISH": -1.00},
     "GapBreakoutCall": {"BULLISH": +0.06, "BULL_NEUTRAL": +0.02, "NEUTRAL": -0.12, "BEAR_NEUTRAL": -0.15, "BEARISH": -1.00},
     "MomentumCall": {"BULLISH": +0.10, "BULL_NEUTRAL": +0.05, "NEUTRAL": -0.05, "BEAR_NEUTRAL": -0.10, "BEARISH": -0.15},
@@ -3166,6 +3261,8 @@ _NEUTRAL_ZONE_STRATEGIES = frozenset({"IronCondor", "Butterfly", "BearPut", "Cov
 # - put_side: profits from DOWN moves or crashes (good in bearish markets)
 # - neutral: profits from stagnation/theta decay (works everywhere but highest in range-bound)
 _STRATEGY_DIRECTION = {
+    "MarketStructureBreakoutCall": "call_side",
+    "OpeningRangeBreakoutCall": "call_side",
     "MomentumContinuationCall": "call_side",
     "GapBreakoutCall": "call_side",
     "MomentumCall": "call_side",       # BUY CALL (up moves)
@@ -3362,6 +3459,8 @@ def scan_options_universe(
     _CURRENT_TI_UNIVERSE = ti_universe
     
     signals: List[OptionSignal] = []
+    structure_strat     = MarketStructureBreakoutCallStrategy()
+    orb_strat           = OpeningRangeBreakoutCallStrategy()
     continuation_strat  = MomentumContinuationCallStrategy()
     gap_breakout_strat  = GapBreakoutCallStrategy()
     momentum_strat      = MomentumCallStrategy()
@@ -3449,7 +3548,7 @@ def scan_options_universe(
         # Try all strategies in priority order; one signal per symbol per cycle
         # OPTIONS_ALLOWED_STRATEGIES restricts to a named subset when non-empty.
         _allowed = OPTIONS_ALLOWED_STRATEGIES  # empty set = all enabled
-        for strat in (continuation_strat, gap_breakout_strat, momentum_strat, bear_put_strat, bear_call_strat, squeeze_strat, mean_rev_strat,
+        for strat in (structure_strat, orb_strat, continuation_strat, gap_breakout_strat, momentum_strat, bear_put_strat, bear_call_strat, squeeze_strat, mean_rev_strat,
                       retest_strat, trend_spread_strat, iron_condor_strat, butterfly_strat):
             if _allowed and strat.name not in _allowed:
                 continue

@@ -28,7 +28,7 @@ from engine.config import (
     PRE_MARKET_MOMENTUM, OPENING_BELL_SURGE, PM_HIGH_BREAKOUT, EARLY_SQUEEZE, BEAR_BREAKDOWN,
     SENTIMENT_STRATEGY, TRENDLINE_BREAKOUT,
     SWEEPEA_DYNAMIC_CONFIDENCE, SWEEPEA_REQUIRE_TREND, SWEEPEA_TREND_EMA_RISING_BARS,
-    MOMENTUM_CONTINUATION,
+    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT,
 )
 from scripts.trendline_breakout import detect_trendline_breakouts
 from scripts.auto_trendline import AutoTrendline, TrendlineConfig
@@ -1025,6 +1025,45 @@ class GapBreakoutStrategy:
 
 
 # ──────────────────────────────────────────────────────────────
+# Market Structure Breakout Strategy
+# ──────────────────────────────────────────────────────────────
+class MarketStructureBreakoutStrategy:
+    """Buy a breakout from higher-low compression under flat resistance."""
+
+    def scan(self, symbol: str) -> Optional[Signal]:
+        if not MARKET_STRUCTURE_BREAKOUT["enabled"]:
+            return None
+        try:
+            daily = get_bars(symbol, "60d", "1d")
+            intraday = get_bars(symbol, "1d", "1m")
+            lookback = MARKET_STRUCTURE_BREAKOUT["lookback_bars"]
+            if len(daily) < 10 or len(intraday) < 6:
+                return None
+            structure = daily.iloc[-min(lookback, len(daily)):]
+            resistance = float(structure["high"].quantile(0.75))
+            peaks = structure[structure["high"] >= resistance]["high"]
+            if len(peaks) < 3 or (float(peaks.max()) - float(peaks.min())) / resistance * 100 > MARKET_STRUCTURE_BREAKOUT["resistance_tolerance_pct"]:
+                return None
+            lows = structure["low"].iloc[-5:].tolist()
+            if len(lows) < 3 or not all(lows[i] > lows[i - 1] for i in range(1, len(lows))):
+                return None
+            recent_volume = float(intraday["volume"].iloc[-1])
+            average_volume = float(intraday["volume"].rolling(20).mean().iloc[-1])
+            price = float(intraday["close"].iloc[-1])
+            if average_volume <= 0 or price <= resistance or recent_volume / average_volume < MARKET_STRUCTURE_BREAKOUT["min_volume_expansion"]:
+                return None
+            atr14 = _calc_atr14(daily)
+            confidence = min(0.95, 0.78 + min(0.10, (recent_volume / average_volume - 2.5) * 0.03))
+            return Signal(
+                symbol, "buy", price, confidence,
+                f"Market structure breakout above ${resistance:.2f} with higher lows and volume x{recent_volume / average_volume:.1f}",
+                "MarketStructureBreakout", atr_stop=atr14 * ATR_STOP_MULTIPLIER if atr14 > 0 else None,
+            )
+        except Exception:
+            return None
+
+
+# ──────────────────────────────────────────────────────────────
 # Opening Range Breakout (ORB) Strategy
 # ──────────────────────────────────────────────────────────────
 class ORBStrategy:
@@ -1955,6 +1994,7 @@ def get_strategy_instances(bull_regime: bool = True):
     """Return instantiated strategy objects for the current market regime."""
     strategies = [
         GapBreakoutStrategy(),
+        MarketStructureBreakoutStrategy(),
         ORBStrategy(),
         VWAPReclaimStrategy(),
         FloatRotationStrategy(),

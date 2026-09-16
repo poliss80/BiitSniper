@@ -8,7 +8,9 @@ import pandas as pd
 import engine.options.strategies as strategies
 from engine.options.strategies import (
     GapBreakoutCallStrategy,
+    MarketStructureBreakoutCallStrategy,
     MomentumContinuationCallStrategy,
+    OpeningRangeBreakoutCallStrategy,
     OptionSignal,
     OptionsChainInfo,
     _build_equity_parity_call,
@@ -59,6 +61,10 @@ class OptionsEquityParityTests(unittest.TestCase):
         self.assertEqual(MomentumContinuationCallStrategy.name, "MomentumContinuationCall")
         self.assertEqual(GapBreakoutCallStrategy.name, "GapBreakoutCall")
         self.assertNotEqual(MomentumContinuationCallStrategy.name, "MomentumCall")
+
+    def test_new_strategy_names_are_registered(self):
+        self.assertEqual(MarketStructureBreakoutCallStrategy.name, "MarketStructureBreakoutCall")
+        self.assertEqual(OpeningRangeBreakoutCallStrategy.name, "OpeningRangeBreakoutCall")
 
 
 if __name__ == "__main__":

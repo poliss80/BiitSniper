@@ -86,6 +86,8 @@ from engine.options.strategies import (
     MomentumCallStrategy,
     MomentumContinuationCallStrategy,
     GapBreakoutCallStrategy,
+    MarketStructureBreakoutCallStrategy,
+    OpeningRangeBreakoutCallStrategy,
     BearPutStrategy,
     BearCallSpreadStrategy,
     ShortSqueezeStrategy,
@@ -101,6 +103,8 @@ from engine.options.strategies import (
 import engine.options.strategies as _strats
 
 STRATEGIES = [
+    ("MarketStructureBreakoutCall", MarketStructureBreakoutCallStrategy()),
+    ("OpeningRangeBreakoutCall",   OpeningRangeBreakoutCallStrategy()),
     ("MomentumContinuationCall", MomentumContinuationCallStrategy()),
     ("GapBreakoutCall",         GapBreakoutCallStrategy()),
     ("MomentumCall",        MomentumCallStrategy()),
