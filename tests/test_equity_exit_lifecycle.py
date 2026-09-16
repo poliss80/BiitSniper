@@ -138,6 +138,16 @@ class EquityExitLifecycleTests(unittest.TestCase):
         self.assertTrue(executor.flatten_portfolio("INTRADAY FINAL RESET"))
         self.assertEqual(client.close_attempts, ["AAPL"])
 
+    def test_flatten_skips_scaled_in_live_probe_positions_by_default(self):
+        client = FlattenClient([MockPosition("AAPL", "10", 100.0)])
+        executor = build_executor(client, Path(tempfile.gettempdir()) / "unused_flatten_state.json")
+        executor._live_probe_scaled_in = {"AAPL"}
+
+        self.assertTrue(executor.flatten_portfolio("INTRADAY FINAL RESET"))
+        self.assertEqual(client.close_attempts, [])
+        self.assertEqual(executor._flatten_in_progress, set())
+        self.assertEqual(executor._flatten_failed, set())
+
     def test_live_probe_scale_in_submits_one_atm_call_when_available(self):
         executor = object.__new__(EnhancedExecutor)
         options_executor = Mock()

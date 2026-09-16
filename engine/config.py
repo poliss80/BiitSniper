@@ -585,7 +585,7 @@ EXTENDED_HOURS   = True
 PREMARKET_START  = "07:00"
 MARKET_OPEN      = "09:30"
 MARKET_CLOSE     = "16:00"
-AFTERHOURS_END   = "20:00"
+AFTERHOURS_END   = "16:00"
 
 # Set FORCE_SCAN=1 (env var) or pass --force CLI flag to bypass the
 # market-hours gate when a high-confidence opportunity is spotted.

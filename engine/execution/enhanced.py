@@ -1824,14 +1824,19 @@ class EnhancedExecutor:
         }
         if option_symbols:
             log.info(f"{reason}: retaining options positions: {sorted(option_symbols)}")
+
+        scaled_in_symbols = set(getattr(self, "_live_probe_scaled_in", set())) & active
+        if scaled_in_symbols:
+            log.info(f"{reason}: retaining scaled-in live-probe positions: {sorted(scaled_in_symbols)}")
+
         if not active:
             self._flatten_in_progress = set()
             self._flatten_failed = set()
             return True
 
-        retained = set()
+        retained = set(scaled_in_symbols)
         if allow_momentum_exemptions:
-            retained = self._momentum_exemptions(positions)
+            retained |= self._momentum_exemptions(positions)
         ignored = getattr(self, "_flatten_ignored", set()) & active
         close_symbols = active - retained - ignored
 

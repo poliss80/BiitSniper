@@ -476,3 +476,129 @@ Stacktrace:
 2026-09-15 23:16:23,747 [INFO] Daily P&L:  $0.00  |  Trades: 0
 2026-09-15 23:16:23,748 [INFO] Positions:  0
 2026-09-15 23:16:23,748 [INFO] ======================================================================
+2026-09-15 23:16:55,549 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:16:55,549 [INFO] Heartbeat: 2026-09-15T23:16:55.549911
+2026-09-15 23:16:56,048 [INFO] ======================================================================
+2026-09-15 23:16:56,048 [INFO] STATUS
+2026-09-15 23:16:56,049 [INFO] Equity:     $97,206.37
+2026-09-15 23:16:56,049 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:16:56,049 [INFO] Positions:  0
+2026-09-15 23:16:56,049 [INFO] ======================================================================
+2026-09-15 23:16:56,054 [INFO] Universe pruned: 5 expired ticker(s): ['ARMG', 'ASND', 'BEG', 'QCML', 'SBIT']
+2026-09-15 23:18:29,834 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-15 23:18:29,835 [INFO] ======================================================================
+2026-09-15 23:18:29,835 [INFO] NEW DAY: 2026-09-15 | Start equity: $0.00
+2026-09-15 23:18:29,837 [INFO] Universe pruned: no expired tickers
+2026-09-15 23:18:29,837 [INFO] ======================================================================
+2026-09-15 23:18:29,839 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-15 23:18:29,840 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-15 23:18:29,843 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:18:29,847 [INFO] Restored position exit state: AAPL
+2026-09-15 23:18:29,847 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:19:56,095 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:19:56,095 [INFO] Heartbeat: 2026-09-15T23:19:56.095668
+2026-09-15 23:22:56,282 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:22:56,283 [INFO] Heartbeat: 2026-09-15T23:22:56.283149
+2026-09-15 23:24:01,432 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-15 23:24:01,433 [INFO] ======================================================================
+2026-09-15 23:24:01,433 [INFO] NEW DAY: 2026-09-15 | Start equity: $0.00
+2026-09-15 23:24:01,435 [INFO] Universe pruned: no expired tickers
+2026-09-15 23:24:01,435 [INFO] ======================================================================
+2026-09-15 23:24:01,437 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-15 23:24:01,438 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-15 23:24:01,440 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:24:01,445 [INFO] Restored position exit state: AAPL
+2026-09-15 23:24:01,446 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:25:35,303 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:25:35,331 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:25:35,401 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:25:35,402 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:25:35,402 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 23:25:35,402 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:25:35,402 [INFO] APEXTRADER — Top3 scan mode
+2026-09-15 23:25:35,405 [INFO] Schwab: Refreshing access token...
+2026-09-15 23:25:36,212 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-15 23:25:36,919 [INFO] Market sentiment: neutral
+2026-09-15 23:25:36,919 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:25:38,568 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-15 23:25:40,135 [INFO] [EDGAR] 8-K match: AUID — 8-K - authID Inc. (0001534154) (Filer)
+2026-09-15 23:25:40,137 [INFO] [EDGAR] 8-K match: PLSE — 8-K - PULSE BIOSCIENCES, INC. (0001625101) (Filer)
+2026-09-15 23:25:40,138 [INFO] [EDGAR] 2 newly triggered tickers: ['AUID', 'PLSE']
+2026-09-15 23:25:40,141 [INFO] [EDGAR] Adding AUID to P2 + scan queue for monitoring
+2026-09-15 23:25:40,141 [INFO] [EDGAR] Adding PLSE to P2 + scan queue for monitoring
+2026-09-15 23:25:56,303 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:25:56,304 [INFO] Heartbeat: 2026-09-15T23:25:56.304148
+2026-09-15 23:26:04,008 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=unknown): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), ALAR(1.05:PM vol 25%, news-bullish, pre-market gap +27.6%, universe-seed), BMGL(1.05:PM vol 1447%, news-bullish, pre-market gap +33.8%, universe-seed), BRNX(1.05:PM vol 693%, news-bullish, pre-market gap +21.7%, universe-seed), CANG(1.05:PM vol 39%, news-bullish, pre-market gap +13.7%, universe-seed), COIG(1.05:PM vol 19%, news-bullish, pre-market gap +9.1%, universe-seed), CONX(1.05:PM vol 15%, news-bullish, pre-market gap +8.6%, universe-seed), CRDF(1.05:PM vol 44%, news-bullish, pre-market gap +15.7%, universe-seed), CONL(0.60:news-bullish, pre-market gap +8.8%, universe-seed)
+2026-09-15 23:26:04,008 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/3, universe_seed=w1.00/0/5, sentiment=w1.00/0/15, premarket=w1.00/0/6
+2026-09-15 23:26:04,063 [INFO] Top3 mode: scanning 75 symbols (0 pre-excluded)
+2026-09-15 23:26:04,347 [WARNING] [GUARDRAIL] AUID blocked: dollar volume 99107 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.49 | day_vol=202259
+2026-09-15 23:26:16,338 [WARNING] [GUARDRAIL] PFSA blocked: dollar volume 841532 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=1.85 | day_vol=454907
+2026-09-15 23:26:20,056 [WARNING] [GUARDRAIL] COIG blocked: dollar volume 1232229 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.88 | day_vol=252506
+2026-09-15 23:26:22,239 [WARNING] [GUARDRAIL] CONX blocked: dollar volume 1125366 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.01 | day_vol=187249
+2026-09-15 23:26:24,253 [WARNING] [GUARDRAIL] IPDN blocked: dollar volume 249586 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=76326
+2026-09-15 23:27:07,831 [INFO] [GUARDRAIL SUMMARY] Rejected: 20 | DollarVol: 5 | RVOL: 0 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-15 23:27:07,831 [INFO] [FUNNEL] targets=75 guardrail_rejected=20 (rvol=0) -> signals_generated=17 -> conf_gate(-14) -> sector_cap(-0) -> final=3
+2026-09-15 23:27:07,831 [INFO] Scan errors: 0 | Signals: 3
+2026-09-15 23:27:07,886 [INFO] TOP 5 SCAN PICKS:
+2026-09-15 23:27:07,886 [INFO] #1: MEOH BUY $62.71 conf=87% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $2.24
+2026-09-15 23:27:07,887 [INFO] #2: PLSE BUY $54.21 conf=84% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $4.12
+2026-09-15 23:27:07,887 [INFO] #3: DLLL BUY $32.56 conf=83% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $3.86
+2026-09-15 23:27:09,001 [INFO] Scan email sent
+2026-09-15 23:27:09,057 [INFO] ======================================================================
+2026-09-15 23:27:09,057 [INFO] STATUS
+2026-09-15 23:27:09,058 [INFO] Equity:     $97,206.37
+2026-09-15 23:27:09,058 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:27:09,058 [INFO] Positions:  0
+2026-09-15 23:27:09,058 [INFO] ======================================================================
+2026-09-15 23:28:44,458 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:28:44,490 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:28:44,615 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:28:44,616 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:28:44,616 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 23:28:44,616 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:28:44,617 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 23:28:44,618 [INFO] ======================================================================
+2026-09-15 23:28:44,618 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 23:28:44,618 [INFO] ======================================================================
+2026-09-15 23:28:44,618 [INFO] Priority 1 (Momentum): 132 stocks
+2026-09-15 23:28:44,618 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 23:28:44,618 [INFO] Total Universe: 152 stocks
+2026-09-15 23:28:44,619 [INFO] Scan: 3 min fixed
+2026-09-15 23:28:44,619 [INFO] ======================================================================
+2026-09-15 23:28:44,650 [INFO] Equity:          $97,206.37
+2026-09-15 23:28:44,651 [INFO] Buying Power:    $388,825.48
+2026-09-15 23:28:44,651 [INFO] PDT Status:      No
+2026-09-15 23:28:44,651 [INFO] Day Trade Count: None
+2026-09-15 23:28:44,651 [INFO] ======================================================================
+2026-09-15 23:28:44,651 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 23:28:44,651 [INFO] ======================================================================
+2026-09-15 23:28:44,652 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 23:28:44,652 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 23:28:44,652 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:28:44,653 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 23:28:56,331 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:28:56,332 [INFO] Heartbeat: 2026-09-15T23:28:56.332146
+2026-09-15 23:30:14,660 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-15 23:30:14,988 [INFO] ======================================================================
+2026-09-15 23:30:14,988 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 23:30:14,991 [INFO] Universe pruned: removed 3 expired ticker(s): ['AGPU', 'IPDN', 'XHLD']
+2026-09-15 23:30:14,991 [INFO] ======================================================================
+2026-09-15 23:30:14,991 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:31:56,356 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:31:56,357 [INFO] Heartbeat: 2026-09-15T23:31:56.357143
+2026-09-15 23:33:15,027 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:33:15,028 [INFO] Heartbeat: 2026-09-15T23:33:15.028315
+2026-09-15 23:34:56,381 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:34:56,383 [INFO] Heartbeat: 2026-09-15T23:34:56.382940
+2026-09-15 23:36:15,055 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:36:15,056 [INFO] Heartbeat: 2026-09-15T23:36:15.056346
+2026-09-15 23:36:34,533 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-15 23:36:34,533 [INFO] ======================================================================
+2026-09-15 23:36:34,533 [INFO] NEW DAY: 2026-09-15 | Start equity: $0.00
+2026-09-15 23:36:34,535 [INFO] Universe pruned: no expired tickers
+2026-09-15 23:36:34,535 [INFO] ======================================================================
+2026-09-15 23:36:34,537 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-15 23:36:34,537 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-15 23:36:34,539 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-15 23:36:34,544 [INFO] Restored position exit state: AAPL
+2026-09-15 23:36:34,545 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
