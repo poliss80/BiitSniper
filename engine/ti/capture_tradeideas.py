@@ -61,7 +61,6 @@ try:
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
     from selenium.common.exceptions import SessionNotCreatedException, TimeoutException
-    from webdriver_manager.microsoft import EdgeChromiumDriverManager
     SELENIUM_OK = True
 except ImportError:
     SELENIUM_OK = False
@@ -176,14 +175,82 @@ DROPDOWN_REFRESH_SEC = 2
 _edge_driver: Optional["webdriver.Edge"] = None
 
 
+_VERSION_RE = re.compile(r"\b(\d+)(?:\.\d+){1,3}\b")
+
+
+def _major_version_from_text(text: str) -> Optional[int]:
+    """Extract the first dotted product version's major component."""
+    match = _VERSION_RE.search(text or "")
+    return int(match.group(1)) if match else None
+
+
+def _executable_major_version(executable: str) -> Optional[int]:
+    """Return an executable's major version, or None when it cannot be read."""
+    import subprocess
+
+    try:
+        result = subprocess.run(
+            [executable, "--version"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+            check=False,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return _major_version_from_text(f"{result.stdout}\n{result.stderr}")
+
+
+def _installed_edge_major_version() -> Optional[int]:
+    """Return the installed Windows Edge major version when it can be detected."""
+    import os
+
+    if sys.platform != "win32":
+        return None
+
+    roots = [
+        os.environ.get("PROGRAMFILES(X86)"),
+        os.environ.get("PROGRAMFILES"),
+    ]
+    for root in roots:
+        if not root:
+            continue
+        executable = Path(root) / "Microsoft" / "Edge" / "Application" / "msedge.exe"
+        if executable.is_file():
+            version = _executable_major_version(str(executable))
+            if version is not None:
+                return version
+    return None
+
+
+def _select_compatible_edgedriver(
+    candidates: list[str], browser_major: Optional[int],
+) -> Optional[str]:
+    """Choose the newest candidate known to match the installed Edge major."""
+    if browser_major is None:
+        return None
+    compatible = [
+        path for path in candidates
+        if _executable_major_version(path) == browser_major
+    ]
+    return max(compatible, key=lambda path: Path(path).stat().st_mtime) if compatible else None
+
+
 def _find_existing_edgedriver() -> Optional[str]:
-    """Locate msedgedriver.exe — checks repo .drivers/ first, then ~/.wdm cache."""
+    """Locate a cached msedgedriver.exe compatible with the installed Edge."""
     import glob, os
+
+    browser_major = _installed_edge_major_version()
+    if browser_major is None:
+        return None
 
     # 1) Repo-local driver (committed or manually placed) — highest priority
     repo_driver = REPO_ROOT / ".drivers" / "msedgedriver.exe"
     if repo_driver.is_file():
-        return str(repo_driver)
+        selected = _select_compatible_edgedriver([str(repo_driver)], browser_major)
+        if selected:
+            return selected
 
     # 2) webdriver_manager cache
     wdm_root = os.path.expandvars(r"%USERPROFILE%\.wdm\drivers\msedgedriver")
@@ -196,9 +263,17 @@ def _find_existing_edgedriver() -> Optional[str]:
     for pattern in patterns:
         candidates.extend(glob.glob(pattern, recursive=True))
     candidates = [c for c in candidates if os.path.isfile(c)]
-    if candidates:
-        return max(candidates, key=lambda p: os.path.getmtime(p))
-    return None
+    return _select_compatible_edgedriver(candidates, browser_major)
+
+
+def _edge_service(driver_path: str) -> "EdgeService":
+    """Build a quiet Windows service for an explicitly selected driver."""
+    import subprocess
+
+    service = EdgeService(driver_path)
+    if sys.platform == "win32":
+        service.creation_flags = subprocess.CREATE_NO_WINDOW
+    return service
 
 
 def _is_driver_alive(driver: "webdriver.Edge") -> bool:
@@ -226,13 +301,9 @@ def _try_attach_edge(port: int) -> Optional["webdriver.Edge"]:
         opts.add_experimental_option("debuggerAddress", f"localhost:{port}")
         existing = _find_existing_edgedriver()
         if existing:
-            service = EdgeService(existing)
+            driver = webdriver.Edge(service=_edge_service(existing), options=opts)
         else:
-            service = EdgeService(EdgeChromiumDriverManager().install())
-        import subprocess as _sp2, sys as _sys2
-        if _sys2.platform == "win32":
-            service.creation_flags = _sp2.CREATE_NO_WINDOW
-        driver = webdriver.Edge(service=service, options=opts)
+            driver = webdriver.Edge(options=opts)
         _ = driver.title   # verify connection is live
         print(f"[INFO ] Re-attached to existing Edge session on port {port}.")
         return driver
@@ -243,7 +314,7 @@ def _try_attach_edge(port: int) -> Optional["webdriver.Edge"]:
 
 def _create_edge_driver(chrome_profile: Optional[str] = None, remote_debug_port: int = 0) -> "webdriver.Edge":
     """Spawn a new visible Edge window and return the driver (never headless)."""
-    import os, subprocess as _sp, sys as _sys
+    import os
 
     os.environ.setdefault("WDM_LOG", "0")
     os.environ.setdefault("WDM_LOG_LEVEL", "0")
@@ -284,15 +355,15 @@ def _create_edge_driver(chrome_profile: Optional[str] = None, remote_debug_port:
     existing = _find_existing_edgedriver()
     if existing:
         print(f"[INFO ] Using cached msedgedriver: {existing}")
-        service = EdgeService(existing)
+        service = _edge_service(existing)
     else:
-        service = EdgeService(EdgeChromiumDriverManager().install())
-
-    if _sys.platform == "win32":
-        service.creation_flags = _sp.CREATE_NO_WINDOW
+        service = None
 
     try:
-        driver = webdriver.Edge(service=service, options=opts)
+        if service is None:
+            driver = webdriver.Edge(options=opts)
+        else:
+            driver = webdriver.Edge(service=service, options=opts)
     except SessionNotCreatedException as e:
         if chrome_profile and "locked" in str(e).lower():
             # Profile is locked by a running Edge instance that wasn't started with
@@ -308,14 +379,14 @@ def _create_edge_driver(chrome_profile: Optional[str] = None, remote_debug_port:
                     opts_fresh.add_argument(arg)
             for k, v in (opts.experimental_options or {}).items():
                 opts_fresh.add_experimental_option(k, v)
-            driver = webdriver.Edge(service=service, options=opts_fresh)
+            if service is None:
+                driver = webdriver.Edge(options=opts_fresh)
+            else:
+                driver = webdriver.Edge(service=service, options=opts_fresh)
         # Cached driver version doesn't match the installed Edge — download the correct one
         elif existing and "only supports Microsoft Edge version" in str(e):
-            log.warning(f"Cached msedgedriver version mismatch — downloading correct driver. ({e})")
-            service = EdgeService(EdgeChromiumDriverManager().install())
-            if _sys.platform == "win32":
-                service.creation_flags = _sp.CREATE_NO_WINDOW
-            driver = webdriver.Edge(service=service, options=opts)
+            log.warning(f"Cached msedgedriver version mismatch — using Selenium Manager. ({e})")
+            driver = webdriver.Edge(options=opts)
         else:
             # A prior interrupted run can leave the persistent scraper profile
             # unusable. Retry once with a fresh profile before failing the scan.
@@ -328,7 +399,10 @@ def _create_edge_driver(chrome_profile: Optional[str] = None, remote_debug_port:
             clean_profile = _tf.mkdtemp(prefix="edge_ti_scraper_")
             retry_opts.add_argument(f"--user-data-dir={clean_profile}")
             log.warning("Persistent Edge scraper profile failed; retrying with a clean profile.")
-            driver = webdriver.Edge(service=service, options=retry_opts)
+            if service is None:
+                driver = webdriver.Edge(options=retry_opts)
+            else:
+                driver = webdriver.Edge(service=service, options=retry_opts)
 
     driver.set_page_load_timeout(45)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")

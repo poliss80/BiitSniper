@@ -66,10 +66,16 @@ def _build_intraday(total_vol=600_000.0, spike_high_at=None, n=90):
     }, index=idx)
 
 
-def _scan(intraday, daily):
+def _scan(intraday, daily, macd=None, rsi=None):
     def fake_get_bars(symbol, period, interval, *a, **k):
         return intraday.copy() if interval == "1m" else daily.copy()
+    if macd is None:
+        macd = {"hist": pd.Series([0.10, 0.20])}
+    if rsi is None:
+        rsi = pd.Series([60.0])
     with patch.object(strategies, "get_bars", side_effect=fake_get_bars), \
+         patch.object(strategies, "calc_macd", return_value=macd), \
+         patch.object(strategies, "calc_rsi", return_value=rsi), \
          patch.object(strategies, "_sa_metrics_boost", _identity_boost), \
          patch.object(strategies, "datetime", _FAKE_DATETIME_MODULE):
         return MomentumContinuationStrategy().scan("TEST")
@@ -97,6 +103,76 @@ class TestMomentumContinuation(unittest.TestCase):
         # Up 2.5% with rvol ~2.6x but current close below a recent spike high -> None
         sig = _scan(_build_intraday(total_vol=600_000.0, spike_high_at=70), _build_daily())
         self.assertIsNone(sig)
+
+    def test_logs_rejection_reason(self):
+        with self.assertLogs(strategies.log, level="DEBUG") as captured:
+            sig = _scan(_build_intraday(total_vol=100_000.0), _build_daily())
+
+        self.assertIsNone(sig)
+        self.assertTrue(any("insufficient RVOL" in message for message in captured.output))
+
+    def test_high_rvol_pullback_reclaims(self):
+        intraday = _build_intraday(total_vol=700_000.0, spike_high_at=70)
+        intraday.loc[intraday.index[-1], "close"] = 102.80
+
+        sig = _scan(intraday, _build_daily())
+
+        self.assertIsNotNone(sig)
+        self.assertEqual(sig.action, "buy")
+        self.assertEqual(sig.strategy, "MomentumContinuationPullback")
+        self.assertIn("high-RVOL pullback/reclaim", sig.reason)
+        self.assertGreaterEqual(sig.confidence, 0.72)
+        self.assertLessEqual(sig.confidence, 0.84)
+
+    def test_high_rvol_pullback_below_vwap_does_not_fire(self):
+        intraday = _build_intraday(total_vol=700_000.0, spike_high_at=70)
+        intraday.loc[intraday.index[60], "low"] = 85.00
+        intraday.loc[intraday.index[70], "high"] = 115.00
+        intraday.loc[intraday.index[70], "low"] = 95.00
+        intraday.loc[intraday.index[70], "volume"] = 700_000.0
+        intraday.loc[intraday.index[-1], "close"] = 102.00
+
+        sig = _scan(intraday, _build_daily())
+
+        self.assertIsNone(sig)
+
+    def test_rejects_weak_macd_confirmation(self):
+        sig = _scan(
+            _build_intraday(),
+            _build_daily(),
+            macd={"hist": pd.Series([0.20, 0.10])},
+        )
+
+        self.assertIsNone(sig)
+
+    def test_rejects_exhausted_rsi_confirmation(self):
+        sig = _scan(
+            _build_intraday(),
+            _build_daily(),
+            rsi=pd.Series([85.0]),
+        )
+
+        self.assertIsNone(sig)
+
+    def test_signal_reason_includes_indicator_confirmation(self):
+        sig = _scan(_build_intraday(), _build_daily())
+
+        self.assertIsNotNone(sig)
+        self.assertIn("MACD hist=0.2000", sig.reason)
+        self.assertIn("RSI=60.0", sig.reason)
+
+    def test_uses_current_regular_session_only(self):
+        prior = _build_intraday().copy()
+        prior.index = prior.index - pd.Timedelta(days=1)
+        premarket = _build_intraday().iloc[:5].copy()
+        premarket.index = pd.date_range("2026-09-09 07:00", periods=5, freq="min")
+        today = _build_intraday().iloc[:85].copy()
+        today.index = pd.date_range("2026-09-09 09:30", periods=85, freq="min")
+
+        intraday = pd.concat([prior, premarket, today])
+        sig = _scan(intraday, _build_daily())
+
+        self.assertIsNotNone(sig)
 
 
 if __name__ == "__main__":

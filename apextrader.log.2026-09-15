@@ -1,0 +1,478 @@
+2026-09-15 22:15:23,982 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 22:15:24,008 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 22:15:24,079 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 22:15:24,080 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 22:15:24,081 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 22:15:24,081 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 22:15:24,082 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 22:15:24,082 [INFO] ======================================================================
+2026-09-15 22:15:24,082 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 22:15:24,082 [INFO] ======================================================================
+2026-09-15 22:15:24,082 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-15 22:15:24,082 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 22:15:24,082 [INFO] Total Universe: 42 stocks
+2026-09-15 22:15:24,083 [INFO] Scan: 3 min fixed
+2026-09-15 22:15:24,083 [INFO] ======================================================================
+2026-09-15 22:15:24,108 [INFO] Equity:          $97,206.37
+2026-09-15 22:15:24,108 [INFO] Buying Power:    $388,825.48
+2026-09-15 22:15:24,108 [INFO] PDT Status:      No
+2026-09-15 22:15:24,108 [INFO] Day Trade Count: None
+2026-09-15 22:15:24,108 [INFO] ======================================================================
+2026-09-15 22:15:24,109 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 22:15:24,109 [INFO] ======================================================================
+2026-09-15 22:15:24,109 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 22:15:24,109 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 22:15:24,110 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 22:15:24,110 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 22:16:30,537 [WARNING] Cached msedgedriver version mismatch — downloading correct driver. (Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 151
+Current browser version is 153.0.4234.32 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff715efaad5+e025]
+	msedgedriver!GetHandleVerifier [0x7ff715efab34+e084]
+	msedgedriver!GetHandleVerifier [0x7ff7165b2ff2+6c6542]
+	msedgedriver!(No symbol) [0x7ff7158e278a]
+	msedgedriver!(No symbol) [0x7ff7158e1c47]
+	msedgedriver!(No symbol) [0x7ff7158dd3de]
+	msedgedriver!(No symbol) [0x7ff7158d9bdd]
+	msedgedriver!(No symbol) [0x7ff71591acb3]
+	msedgedriver!(No symbol) [0x7ff71591a646]
+	msedgedriver!(No symbol) [0x7ff7158e5bbc]
+	msedgedriver!(No symbol) [0x7ff7158e4e16]
+	msedgedriver!(No symbol) [0x7ff7158e59e3]
+	msedgedriver!(No symbol) [0x7ff715b4e2db]
+	msedgedriver!(No symbol) [0x7ff715b4a6f4]
+	msedgedriver!GetHandleVerifier [0x7ff715f277e5+3ad35]
+	msedgedriver!GetHandleVerifier [0x7ff715f165a1+29af1]
+	msedgedriver!GetHandleVerifier [0x7ff715f1eee6+32436]
+	msedgedriver!GetHandleVerifier [0x7ff715f02494+159e4]
+	msedgedriver!GetHandleVerifier [0x7ff715f025b5+15b05]
+	msedgedriver!GetHandleVerifier [0x7ff715eeeef3+2443]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+)
+2026-09-15 22:16:54,111 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-15 22:16:54,432 [INFO] ======================================================================
+2026-09-15 22:16:54,432 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 22:16:54,435 [INFO] Universe pruned: no expired tickers
+2026-09-15 22:16:54,435 [INFO] ======================================================================
+2026-09-15 22:16:54,435 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:19:33,907 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 22:19:33,930 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 22:19:34,013 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 22:19:34,014 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 22:19:34,014 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 22:19:34,014 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 22:19:34,015 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 22:19:34,015 [INFO] ======================================================================
+2026-09-15 22:19:34,015 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 22:19:34,015 [INFO] ======================================================================
+2026-09-15 22:19:34,015 [INFO] Priority 1 (Momentum): 87 stocks
+2026-09-15 22:19:34,015 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 22:19:34,015 [INFO] Total Universe: 107 stocks
+2026-09-15 22:19:34,015 [INFO] Scan: 3 min fixed
+2026-09-15 22:19:34,015 [INFO] ======================================================================
+2026-09-15 22:19:34,040 [INFO] Equity:          $97,206.37
+2026-09-15 22:19:34,040 [INFO] Buying Power:    $388,825.48
+2026-09-15 22:19:34,040 [INFO] PDT Status:      No
+2026-09-15 22:19:34,040 [INFO] Day Trade Count: None
+2026-09-15 22:19:34,040 [INFO] ======================================================================
+2026-09-15 22:19:34,041 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 22:19:34,041 [INFO] ======================================================================
+2026-09-15 22:19:34,041 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 22:19:34,041 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 22:19:34,041 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 22:19:34,042 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 22:19:40,034 [WARNING] Persistent Edge scraper profile failed; retrying with a clean profile.
+2026-09-15 22:19:43,101 [WARNING] Startup TI capture failed: Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 151
+Current browser version is 153.0.4234.32 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff72f7caad5+e025]
+	msedgedriver!GetHandleVerifier [0x7ff72f7cab34+e084]
+	msedgedriver!GetHandleVerifier [0x7ff72fe82ff2+6c6542]
+	msedgedriver!(No symbol) [0x7ff72f1b278a]
+	msedgedriver!(No symbol) [0x7ff72f1b1c47]
+	msedgedriver!(No symbol) [0x7ff72f1ad3de]
+	msedgedriver!(No symbol) [0x7ff72f1a9bdd]
+	msedgedriver!(No symbol) [0x7ff72f1eacb3]
+	msedgedriver!(No symbol) [0x7ff72f1ea646]
+	msedgedriver!(No symbol) [0x7ff72f1b5bbc]
+	msedgedriver!(No symbol) [0x7ff72f1b4e16]
+	msedgedriver!(No symbol) [0x7ff72f1b59e3]
+	msedgedriver!(No symbol) [0x7ff72f41e2db]
+	msedgedriver!(No symbol) [0x7ff72f41a6f4]
+	msedgedriver!GetHandleVerifier [0x7ff72f7f77e5+3ad35]
+	msedgedriver!GetHandleVerifier [0x7ff72f7e65a1+29af1]
+	msedgedriver!GetHandleVerifier [0x7ff72f7eeee6+32436]
+	msedgedriver!GetHandleVerifier [0x7ff72f7d2494+159e4]
+	msedgedriver!GetHandleVerifier [0x7ff72f7d25b5+15b05]
+	msedgedriver!GetHandleVerifier [0x7ff72f7beef3+2443]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-15 22:19:43,126 [INFO] ======================================================================
+2026-09-15 22:19:43,126 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 22:19:43,130 [INFO] Universe pruned: no expired tickers
+2026-09-15 22:19:43,130 [INFO] ======================================================================
+2026-09-15 22:19:43,131 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:19:54,484 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:19:54,484 [INFO] Heartbeat: 2026-09-15T22:19:54.484745
+2026-09-15 22:20:05,250 [INFO] Stopped by user
+2026-09-15 22:20:05,311 [INFO] ======================================================================
+2026-09-15 22:20:05,311 [INFO] STATUS
+2026-09-15 22:20:05,311 [INFO] Equity:     $97,206.37
+2026-09-15 22:20:05,311 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 22:20:05,311 [INFO] Positions:  0
+2026-09-15 22:20:05,311 [INFO] ======================================================================
+2026-09-15 22:22:54,598 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:22:54,598 [INFO] Heartbeat: 2026-09-15T22:22:54.598668
+2026-09-15 22:25:54,618 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:25:54,619 [INFO] Heartbeat: 2026-09-15T22:25:54.619092
+2026-09-15 22:28:54,639 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:28:54,639 [INFO] Heartbeat: 2026-09-15T22:28:54.639792
+2026-09-15 22:31:54,664 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:31:54,665 [INFO] Heartbeat: 2026-09-15T22:31:54.665357
+2026-09-15 22:34:54,686 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:34:54,687 [INFO] Heartbeat: 2026-09-15T22:34:54.687166
+2026-09-15 22:37:54,707 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:37:54,708 [INFO] Heartbeat: 2026-09-15T22:37:54.708691
+2026-09-15 22:38:27,211 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 22:38:27,239 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 22:38:27,312 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 22:38:27,313 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 22:38:27,313 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 22:38:27,313 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 22:38:27,313 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 22:38:27,314 [INFO] ======================================================================
+2026-09-15 22:38:27,314 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 22:38:27,314 [INFO] ======================================================================
+2026-09-15 22:38:27,314 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-15 22:38:27,314 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 22:38:27,314 [INFO] Total Universe: 42 stocks
+2026-09-15 22:38:27,314 [INFO] Scan: 3 min fixed
+2026-09-15 22:38:27,314 [INFO] ======================================================================
+2026-09-15 22:38:27,343 [INFO] Equity:          $97,206.37
+2026-09-15 22:38:27,344 [INFO] Buying Power:    $388,825.48
+2026-09-15 22:38:27,344 [INFO] PDT Status:      No
+2026-09-15 22:38:27,344 [INFO] Day Trade Count: None
+2026-09-15 22:38:27,344 [INFO] ======================================================================
+2026-09-15 22:38:27,344 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 22:38:27,344 [INFO] ======================================================================
+2026-09-15 22:38:27,345 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 22:38:27,345 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 22:38:27,345 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 22:38:27,346 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 22:39:33,603 [WARNING] Cached msedgedriver version mismatch — downloading correct driver. (Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 151
+Current browser version is 153.0.4234.32 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff65f91aad5+e025]
+	msedgedriver!GetHandleVerifier [0x7ff65f91ab34+e084]
+	msedgedriver!GetHandleVerifier [0x7ff65ffd2ff2+6c6542]
+	msedgedriver!(No symbol) [0x7ff65f30278a]
+	msedgedriver!(No symbol) [0x7ff65f301c47]
+	msedgedriver!(No symbol) [0x7ff65f2fd3de]
+	msedgedriver!(No symbol) [0x7ff65f2f9bdd]
+	msedgedriver!(No symbol) [0x7ff65f33acb3]
+	msedgedriver!(No symbol) [0x7ff65f33a646]
+	msedgedriver!(No symbol) [0x7ff65f305bbc]
+	msedgedriver!(No symbol) [0x7ff65f304e16]
+	msedgedriver!(No symbol) [0x7ff65f3059e3]
+	msedgedriver!(No symbol) [0x7ff65f56e2db]
+	msedgedriver!(No symbol) [0x7ff65f56a6f4]
+	msedgedriver!GetHandleVerifier [0x7ff65f9477e5+3ad35]
+	msedgedriver!GetHandleVerifier [0x7ff65f9365a1+29af1]
+	msedgedriver!GetHandleVerifier [0x7ff65f93eee6+32436]
+	msedgedriver!GetHandleVerifier [0x7ff65f922494+159e4]
+	msedgedriver!GetHandleVerifier [0x7ff65f9225b5+15b05]
+	msedgedriver!GetHandleVerifier [0x7ff65f90eef3+2443]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+)
+2026-09-15 22:39:57,349 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-15 22:39:57,836 [INFO] ======================================================================
+2026-09-15 22:39:57,837 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 22:39:57,840 [INFO] Universe pruned: removed 55 expired ticker(s): ['ADPT', 'AEHL', 'AGI', 'ALLY', 'ASND', 'BBIO', 'BITI', 'BMEA', 'BRNX', 'BWET']…
+2026-09-15 22:39:57,840 [INFO] ======================================================================
+2026-09-15 22:39:57,841 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:40:54,729 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:40:54,729 [INFO] Heartbeat: 2026-09-15T22:40:54.729725
+2026-09-15 22:42:08,619 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 22:42:08,648 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 22:42:08,729 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 22:42:08,730 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 22:42:08,730 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 22:42:08,730 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 22:42:08,730 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 22:42:08,730 [INFO] ======================================================================
+2026-09-15 22:42:08,730 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 22:42:08,731 [INFO] ======================================================================
+2026-09-15 22:42:08,731 [INFO] Priority 1 (Momentum): 132 stocks
+2026-09-15 22:42:08,731 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 22:42:08,731 [INFO] Total Universe: 152 stocks
+2026-09-15 22:42:08,731 [INFO] Scan: 3 min fixed
+2026-09-15 22:42:08,731 [INFO] ======================================================================
+2026-09-15 22:42:08,762 [INFO] Equity:          $97,206.37
+2026-09-15 22:42:08,762 [INFO] Buying Power:    $388,825.48
+2026-09-15 22:42:08,762 [INFO] PDT Status:      No
+2026-09-15 22:42:08,762 [INFO] Day Trade Count: None
+2026-09-15 22:42:08,762 [INFO] ======================================================================
+2026-09-15 22:42:08,762 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 22:42:08,762 [INFO] ======================================================================
+2026-09-15 22:42:08,763 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 22:42:08,764 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 22:42:08,764 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 22:42:08,765 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 22:42:14,740 [WARNING] Persistent Edge scraper profile failed; retrying with a clean profile.
+2026-09-15 22:42:17,313 [WARNING] Startup TI capture failed: Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 151
+Current browser version is 153.0.4234.32 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff693ccaad5+e025]
+	msedgedriver!GetHandleVerifier [0x7ff693ccab34+e084]
+	msedgedriver!GetHandleVerifier [0x7ff694382ff2+6c6542]
+	msedgedriver!(No symbol) [0x7ff6936b278a]
+	msedgedriver!(No symbol) [0x7ff6936b1c47]
+	msedgedriver!(No symbol) [0x7ff6936ad3de]
+	msedgedriver!(No symbol) [0x7ff6936a9bdd]
+	msedgedriver!(No symbol) [0x7ff6936eacb3]
+	msedgedriver!(No symbol) [0x7ff6936ea646]
+	msedgedriver!(No symbol) [0x7ff6936b5bbc]
+	msedgedriver!(No symbol) [0x7ff6936b4e16]
+	msedgedriver!(No symbol) [0x7ff6936b59e3]
+	msedgedriver!(No symbol) [0x7ff69391e2db]
+	msedgedriver!(No symbol) [0x7ff69391a6f4]
+	msedgedriver!GetHandleVerifier [0x7ff693cf77e5+3ad35]
+	msedgedriver!GetHandleVerifier [0x7ff693ce65a1+29af1]
+	msedgedriver!GetHandleVerifier [0x7ff693ceeee6+32436]
+	msedgedriver!GetHandleVerifier [0x7ff693cd2494+159e4]
+	msedgedriver!GetHandleVerifier [0x7ff693cd25b5+15b05]
+	msedgedriver!GetHandleVerifier [0x7ff693cbeef3+2443]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-15 22:42:17,346 [INFO] ======================================================================
+2026-09-15 22:42:17,346 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 22:42:17,348 [INFO] Universe pruned: no expired tickers
+2026-09-15 22:42:17,348 [INFO] ======================================================================
+2026-09-15 22:42:17,348 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:43:54,749 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:43:54,749 [INFO] Heartbeat: 2026-09-15T22:43:54.749544
+2026-09-15 22:45:17,369 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:45:17,370 [INFO] Heartbeat: 2026-09-15T22:45:17.370361
+2026-09-15 22:46:09,102 [INFO] Stopped by user
+2026-09-15 22:46:09,536 [INFO] ======================================================================
+2026-09-15 22:46:09,536 [INFO] STATUS
+2026-09-15 22:46:09,536 [INFO] Equity:     $97,206.37
+2026-09-15 22:46:09,536 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 22:46:09,536 [INFO] Positions:  0
+2026-09-15 22:46:09,536 [INFO] ======================================================================
+2026-09-15 22:46:20,475 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 22:46:20,501 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 22:46:20,570 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 22:46:20,571 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 22:46:20,571 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 22:46:20,571 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 22:46:20,571 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-15 22:46:20,571 [INFO] ======================================================================
+2026-09-15 22:46:20,571 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-15 22:46:20,571 [INFO] ======================================================================
+2026-09-15 22:46:20,571 [INFO] Priority 1 (Momentum): 132 stocks
+2026-09-15 22:46:20,571 [INFO] Priority 2 (Established): 16 stocks
+2026-09-15 22:46:20,572 [INFO] Total Universe: 152 stocks
+2026-09-15 22:46:20,572 [INFO] Scan: 3 min fixed
+2026-09-15 22:46:20,572 [INFO] ======================================================================
+2026-09-15 22:46:20,598 [INFO] Equity:          $97,206.37
+2026-09-15 22:46:20,598 [INFO] Buying Power:    $388,825.48
+2026-09-15 22:46:20,598 [INFO] PDT Status:      No
+2026-09-15 22:46:20,598 [INFO] Day Trade Count: None
+2026-09-15 22:46:20,598 [INFO] ======================================================================
+2026-09-15 22:46:20,598 [INFO] Starting… Press Ctrl+C to stop
+2026-09-15 22:46:20,598 [INFO] ======================================================================
+2026-09-15 22:46:20,598 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-15 22:46:20,598 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-15 22:46:20,599 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 22:46:20,599 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-15 22:46:54,778 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:46:54,778 [INFO] Heartbeat: 2026-09-15T22:46:54.778631
+2026-09-15 22:46:55,159 [INFO] ======================================================================
+2026-09-15 22:46:55,159 [INFO] STATUS
+2026-09-15 22:46:55,160 [INFO] Equity:     $97,206.37
+2026-09-15 22:46:55,160 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 22:46:55,160 [INFO] Positions:  0
+2026-09-15 22:46:55,161 [INFO] ======================================================================
+2026-09-15 22:46:55,162 [INFO] Universe pruned: no expired tickers
+2026-09-15 22:47:50,605 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-15 22:47:51,078 [INFO] ======================================================================
+2026-09-15 22:47:51,078 [INFO] NEW DAY: 2026-09-15 | Start equity: $97,206.37
+2026-09-15 22:47:51,081 [INFO] Universe pruned: no expired tickers
+2026-09-15 22:47:51,081 [INFO] ======================================================================
+2026-09-15 22:47:51,082 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:49:55,277 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:49:55,277 [INFO] Heartbeat: 2026-09-15T22:49:55.277690
+2026-09-15 22:50:51,107 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:50:51,107 [INFO] Heartbeat: 2026-09-15T22:50:51.107719
+2026-09-15 22:52:55,299 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:52:55,299 [INFO] Heartbeat: 2026-09-15T22:52:55.299631
+2026-09-15 22:53:51,127 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:53:51,128 [INFO] Heartbeat: 2026-09-15T22:53:51.128054
+2026-09-15 22:55:55,323 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:55:55,323 [INFO] Heartbeat: 2026-09-15T22:55:55.323775
+2026-09-15 22:56:51,149 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:56:51,149 [INFO] Heartbeat: 2026-09-15T22:56:51.149458
+2026-09-15 22:58:55,343 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:58:55,344 [INFO] Heartbeat: 2026-09-15T22:58:55.344120
+2026-09-15 22:59:51,169 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 22:59:51,170 [INFO] Heartbeat: 2026-09-15T22:59:51.170261
+2026-09-15 23:01:55,366 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:01:55,367 [INFO] Heartbeat: 2026-09-15T23:01:55.367388
+2026-09-15 23:02:51,189 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:02:51,190 [INFO] Heartbeat: 2026-09-15T23:02:51.190424
+2026-09-15 23:04:55,389 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:04:55,389 [INFO] Heartbeat: 2026-09-15T23:04:55.389588
+2026-09-15 23:05:51,210 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:05:51,211 [INFO] Heartbeat: 2026-09-15T23:05:51.211334
+2026-09-15 23:07:55,410 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:07:55,410 [INFO] Heartbeat: 2026-09-15T23:07:55.410566
+2026-09-15 23:08:22,253 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:08:22,281 [INFO] [OPTIONS] Reconciled BUY position: BBNX260918C00020000 10x call @20.0 entry=$0.40
+2026-09-15 23:08:22,281 [INFO] [OPTIONS] Reconciled BUY position: REI260918C00001500 4x call @1.5 entry=$0.10
+2026-09-15 23:08:22,282 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:08:22,319 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:08:22,320 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:08:22,320 [INFO] Trade mode: live (PAPER=False, LIVE=True)
+2026-09-15 23:08:22,320 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:08:22,320 [INFO] APEXTRADER — Top3 scan mode
+2026-09-15 23:08:23,171 [INFO] Market sentiment: neutral
+2026-09-15 23:08:23,171 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:08:24,479 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-15 23:08:25,724 [INFO] [EDGAR] 8-K match: AUID — 8-K - authID Inc. (0001534154) (Filer)
+2026-09-15 23:08:25,726 [INFO] [EDGAR] 8-K match: PLSE — 8-K - PULSE BIOSCIENCES, INC. (0001625101) (Filer)
+2026-09-15 23:08:25,726 [INFO] [EDGAR] 2 newly triggered tickers: ['AUID', 'PLSE']
+2026-09-15 23:08:25,727 [INFO] [EDGAR] Adding AUID to P2 + scan queue for monitoring
+2026-09-15 23:08:25,727 [INFO] [EDGAR] Adding PLSE to P2 + scan queue for monitoring
+2026-09-15 23:08:51,241 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:08:51,241 [INFO] Heartbeat: 2026-09-15T23:08:51.241191
+2026-09-15 23:08:51,357 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=unknown): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), SOXS(0.60:news-bullish, pre-market gap +13.1%, universe-seed), MARA(0.35:news-bullish, universe-seed), WULF(0.35:news-bullish, universe-seed), CORZ(0.35:news-bullish, universe-seed), HUT(0.35:news-bullish, universe-seed), IREN(0.35:news-bullish, universe-seed), MRNA(0.35:news-bullish, universe-seed), BCRX(0.35:news-bullish, universe-seed)
+2026-09-15 23:08:51,358 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/3, universe_seed=w1.00/0/3, sentiment=w1.00/0/9, premarket=w1.00/0/0
+2026-09-15 23:08:51,422 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-15 23:08:51,424 [INFO] Top3 mode: scanning 2 symbols (5 pre-excluded)
+2026-09-15 23:08:51,691 [WARNING] [GUARDRAIL] AUID blocked: dollar volume 99107 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.49 | day_vol=202259
+2026-09-15 23:08:54,759 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 1 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-15 23:08:54,759 [INFO] [FUNNEL] targets=2 guardrail_rejected=1 (rvol=0) -> signals_generated=1 -> conf_gate(-0) -> sector_cap(-0) -> final=1
+2026-09-15 23:08:54,759 [INFO] Scan errors: 0 | Signals: 1
+2026-09-15 23:08:54,818 [INFO] TOP 5 SCAN PICKS:
+2026-09-15 23:08:54,819 [INFO] #1: PLSE BUY $54.21 conf=84% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $4.12
+2026-09-15 23:08:55,818 [INFO] Scan email sent
+2026-09-15 23:08:55,883 [INFO] ======================================================================
+2026-09-15 23:08:55,883 [INFO] STATUS
+2026-09-15 23:08:55,883 [INFO] Equity:     $165.57
+2026-09-15 23:08:55,883 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:08:55,883 [INFO] Positions:  5
+2026-09-15 23:08:55,883 [INFO] Unrealized: $-374.65
+2026-09-15 23:08:55,884 [INFO]   296CVR020: 62 @ $0.00 | $0.00 (+0.00%)
+2026-09-15 23:08:55,884 [INFO]   BBNX260918C00020000: 10 @ $0.40 | $-350.00 (-87.50%)
+2026-09-15 23:08:55,884 [INFO]   REI260918C00001500: 4 @ $0.10 | $-20.00 (-50.00%)
+2026-09-15 23:08:55,884 [INFO]   TH: 1 @ $18.80 | $-0.05 (-0.27%)
+2026-09-15 23:08:55,885 [INFO]   YMAT: 10 @ $2.00 | $-4.60 (-23.00%)
+2026-09-15 23:08:55,885 [INFO] ======================================================================
+2026-09-15 23:09:08,103 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:09:08,128 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:09:08,193 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:09:08,194 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:09:08,194 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 23:09:08,195 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:09:08,195 [INFO] APEXTRADER — Top3 scan mode
+2026-09-15 23:09:08,864 [INFO] Market sentiment: neutral
+2026-09-15 23:09:08,865 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:09:09,954 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-15 23:09:10,970 [INFO] [EDGAR] 8-K match: AUID — 8-K - authID Inc. (0001534154) (Filer)
+2026-09-15 23:09:10,971 [INFO] [EDGAR] 8-K match: PLSE — 8-K - PULSE BIOSCIENCES, INC. (0001625101) (Filer)
+2026-09-15 23:09:10,971 [INFO] [EDGAR] 2 newly triggered tickers: ['AUID', 'PLSE']
+2026-09-15 23:09:10,973 [INFO] [EDGAR] Adding AUID to P2 + scan queue for monitoring
+2026-09-15 23:09:10,973 [INFO] [EDGAR] Adding PLSE to P2 + scan queue for monitoring
+2026-09-15 23:09:32,851 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=unknown): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), SOXS(0.60:news-bullish, pre-market gap +13.1%, universe-seed), MARA(0.35:news-bullish, universe-seed), WULF(0.35:news-bullish, universe-seed), CORZ(0.35:news-bullish, universe-seed), HUT(0.35:news-bullish, universe-seed), IREN(0.35:news-bullish, universe-seed), MRNA(0.35:news-bullish, universe-seed), BCRX(0.35:news-bullish, universe-seed)
+2026-09-15 23:09:32,851 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/3, universe_seed=w1.00/0/3, sentiment=w1.00/0/9, premarket=w1.00/0/0
+2026-09-15 23:09:32,905 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-15 23:09:32,906 [INFO] Top3 mode: scanning 2 symbols (0 pre-excluded)
+2026-09-15 23:09:33,136 [WARNING] [GUARDRAIL] AUID blocked: dollar volume 99107 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.49 | day_vol=202259
+2026-09-15 23:09:35,594 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 1 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-15 23:09:35,595 [INFO] [FUNNEL] targets=2 guardrail_rejected=1 (rvol=0) -> signals_generated=1 -> conf_gate(-0) -> sector_cap(-0) -> final=1
+2026-09-15 23:09:35,595 [INFO] Scan errors: 0 | Signals: 1
+2026-09-15 23:09:35,648 [INFO] TOP 5 SCAN PICKS:
+2026-09-15 23:09:35,648 [INFO] #1: PLSE BUY $54.21 conf=84% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $4.12
+2026-09-15 23:09:36,533 [INFO] Scan email sent
+2026-09-15 23:09:36,592 [INFO] ======================================================================
+2026-09-15 23:09:36,592 [INFO] STATUS
+2026-09-15 23:09:36,592 [INFO] Equity:     $97,206.37
+2026-09-15 23:09:36,593 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:09:36,593 [INFO] Positions:  0
+2026-09-15 23:09:36,593 [INFO] ======================================================================
+2026-09-15 23:09:54,291 [INFO] Stopped by user
+2026-09-15 23:09:54,660 [INFO] ======================================================================
+2026-09-15 23:09:54,660 [INFO] STATUS
+2026-09-15 23:09:54,660 [INFO] Equity:     $97,206.37
+2026-09-15 23:09:54,661 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:09:54,661 [INFO] Positions:  0
+2026-09-15 23:09:54,661 [INFO] ======================================================================
+2026-09-15 23:10:26,684 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:10:26,710 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:10:26,783 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:10:26,784 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:10:26,784 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 23:10:26,785 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:10:26,785 [INFO] APEXTRADER — Top3 scan mode
+2026-09-15 23:10:27,644 [INFO] Market sentiment: neutral
+2026-09-15 23:10:27,645 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:10:29,223 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-15 23:10:55,459 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:10:55,460 [INFO] Heartbeat: 2026-09-15T23:10:55.460362
+2026-09-15 23:11:05,964 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=unknown): top 20 tickers → SOXS(0.60:news-bullish, pre-market gap +13.1%, universe-seed), MARA(0.35:news-bullish, universe-seed), WULF(0.35:news-bullish, universe-seed), CORZ(0.35:news-bullish, universe-seed), HUT(0.35:news-bullish, universe-seed), IREN(0.35:news-bullish, universe-seed), MRNA(0.35:news-bullish, universe-seed), BCRX(0.35:news-bullish, universe-seed), SNDX(0.35:news-bullish, universe-seed), IMVT(0.35:news-bullish, universe-seed)
+2026-09-15 23:11:05,964 [INFO] [PREOPEN] Provider performance → universe_seed=w1.00/0/3, sentiment=w1.00/0/9, premarket=w1.00/0/0
+2026-09-15 23:11:06,020 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-15 23:11:06,021 [INFO] Top3 mode: scanning 0 symbols (0 pre-excluded)
+2026-09-15 23:11:06,022 [INFO] [FUNNEL] targets=0 guardrail_rejected=0 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-15 23:11:06,022 [INFO] Scan errors: 0 | Signals: 0
+2026-09-15 23:11:06,023 [INFO] No signals found in Top3 mode
+2026-09-15 23:11:06,078 [INFO] ======================================================================
+2026-09-15 23:11:06,079 [INFO] STATUS
+2026-09-15 23:11:06,079 [INFO] Equity:     $97,206.37
+2026-09-15 23:11:06,080 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:11:06,080 [INFO] Positions:  0
+2026-09-15 23:11:06,080 [INFO] ======================================================================
+2026-09-15 23:13:55,510 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-15 23:13:55,516 [INFO] Heartbeat: 2026-09-15T23:13:55.516176
+2026-09-15 23:14:49,439 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-15 23:14:49,466 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-15 23:14:49,539 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-15 23:14:49,540 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-15 23:14:49,540 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-15 23:14:49,540 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-15 23:14:49,541 [INFO] APEXTRADER — Top3 scan mode
+2026-09-15 23:14:50,714 [INFO] Market sentiment: neutral
+2026-09-15 23:14:50,714 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-15 23:14:52,536 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-15 23:14:53,888 [INFO] [EDGAR] 8-K match: AUID — 8-K - authID Inc. (0001534154) (Filer)
+2026-09-15 23:14:53,889 [INFO] [EDGAR] 8-K match: PLSE — 8-K - PULSE BIOSCIENCES, INC. (0001625101) (Filer)
+2026-09-15 23:14:53,890 [INFO] [EDGAR] 2 newly triggered tickers: ['AUID', 'PLSE']
+2026-09-15 23:14:53,893 [INFO] [EDGAR] Adding AUID to P2 + scan queue for monitoring
+2026-09-15 23:14:53,893 [INFO] [EDGAR] Adding PLSE to P2 + scan queue for monitoring
+2026-09-15 23:15:18,886 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=unknown): top 20 tickers → AUID(1.75:news-bullish, priority-queue), PLSE(1.75:news-bullish, priority-queue), ALAR(1.05:PM vol 25%, news-bullish, pre-market gap +27.6%, universe-seed), BMGL(1.05:PM vol 1447%, news-bullish, pre-market gap +33.8%, universe-seed), BRNX(1.05:PM vol 693%, news-bullish, pre-market gap +21.7%, universe-seed), CANG(1.05:PM vol 39%, news-bullish, pre-market gap +13.7%, universe-seed), COIG(1.05:PM vol 19%, news-bullish, pre-market gap +9.1%, universe-seed), CONX(1.05:PM vol 15%, news-bullish, pre-market gap +8.6%, universe-seed), CRDF(1.05:PM vol 44%, news-bullish, pre-market gap +15.7%, universe-seed), CONL(0.60:news-bullish, pre-market gap +8.8%, universe-seed)
+2026-09-15 23:15:18,886 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/3, universe_seed=w1.00/0/5, sentiment=w1.00/0/15, premarket=w1.00/0/6
+2026-09-15 23:15:18,942 [INFO] Top3 mode: scanning 75 symbols (0 pre-excluded)
+2026-09-15 23:15:19,189 [WARNING] [GUARDRAIL] AUID blocked: dollar volume 99107 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.49 | day_vol=202259
+2026-09-15 23:15:31,681 [WARNING] [GUARDRAIL] PFSA blocked: dollar volume 841532 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=1.85 | day_vol=454907
+2026-09-15 23:15:34,947 [WARNING] [GUARDRAIL] COIG blocked: dollar volume 1232229 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.88 | day_vol=252506
+2026-09-15 23:15:36,938 [WARNING] [GUARDRAIL] CONX blocked: dollar volume 1125366 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.01 | day_vol=187249
+2026-09-15 23:15:39,009 [WARNING] [GUARDRAIL] IPDN blocked: dollar volume 249586 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=76326
+2026-09-15 23:16:22,583 [INFO] [GUARDRAIL SUMMARY] Rejected: 20 | DollarVol: 5 | RVOL: 0 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-15 23:16:22,583 [INFO] [FUNNEL] targets=75 guardrail_rejected=20 (rvol=0) -> signals_generated=17 -> conf_gate(-14) -> sector_cap(-0) -> final=3
+2026-09-15 23:16:22,584 [INFO] Scan errors: 0 | Signals: 3
+2026-09-15 23:16:22,640 [INFO] TOP 5 SCAN PICKS:
+2026-09-15 23:16:22,641 [INFO] #1: MEOH BUY $62.71 conf=87% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $2.24
+2026-09-15 23:16:22,641 [INFO] #2: PLSE BUY $54.21 conf=84% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $4.12
+2026-09-15 23:16:22,643 [INFO] #3: DLLL BUY $32.56 conf=83% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $3.86
+2026-09-15 23:16:23,686 [INFO] Scan email sent
+2026-09-15 23:16:23,746 [INFO] ======================================================================
+2026-09-15 23:16:23,746 [INFO] STATUS
+2026-09-15 23:16:23,747 [INFO] Equity:     $97,206.37
+2026-09-15 23:16:23,747 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-15 23:16:23,748 [INFO] Positions:  0
+2026-09-15 23:16:23,748 [INFO] ======================================================================

@@ -1522,6 +1522,9 @@ class MomentumContinuationStrategy:
     high-RVOL spikes that never pull back to an EMA)."""
 
     def scan(self, symbol: str) -> Optional[Signal]:
+        def reject(reason: str) -> None:
+            log.debug("MomentumContinuation %s rejected: %s", symbol, reason)
+
         try:
             if not MOMENTUM_CONTINUATION["enabled"]:
                 return None
@@ -1539,6 +1542,27 @@ class MomentumContinuationStrategy:
             intraday = get_bars(symbol, "1d", "1m")
             daily    = get_bars(symbol, "20d", "1d")
             if intraday.empty or daily.empty or len(daily) < 2:
+                reject("missing data")
+                return None
+
+            # Data providers can return multiple dates and extended-hours bars
+            # for a 1d/1m request. Momentum measurements use today's 7 AM ET
+            # premarket-to-current window only.
+            timestamp_values = intraday["time"] if "time" in intraday.columns else intraday.index
+            timestamps = pd.Series(pd.to_datetime(timestamp_values, errors="coerce"), index=intraday.index)
+            if timestamps.dt.tz is not None:
+                timestamps = timestamps.dt.tz_convert(ET)
+            else:
+                timestamps = timestamps.dt.tz_localize(ET)
+            minutes = timestamps.dt.hour * 60 + timestamps.dt.minute
+            session_mask = (
+                (timestamps.dt.date == now_et.date())
+                & (minutes >= 7 * 60)
+                & (minutes <= 16 * 60)
+            )
+            intraday = intraday.loc[session_mask]
+            if intraday.empty:
+                reject("missing current-day session data")
                 return None
 
             cur_close    = float(intraday["close"].iloc[-1])
@@ -1546,28 +1570,90 @@ class MomentumContinuationStrategy:
             if session_open <= 0:
                 session_open = float(daily["close"].iloc[-2])   # prior close fallback
             if session_open <= 0:
+                reject("missing session open")
                 return None
 
             # Must be up >= min_price_up_pct above the session open
             price_up_pct = (cur_close - session_open) / session_open * 100
             if price_up_pct < MOMENTUM_CONTINUATION["min_price_up_pct"]:
+                reject(f"insufficient move ({price_up_pct:.1f}% above session open)")
                 return None
 
             # Must be breaking / at the session high (last break_lookback_min minutes)
             lookback     = min(int(MOMENTUM_CONTINUATION["break_lookback_min"]), len(intraday))
-            session_high = float(intraday["high"].iloc[-lookback:].max())
-            if cur_close < session_high * 0.998:
-                return None
+            recent_window = intraday.iloc[-lookback:]
+            session_high = float(recent_window["high"].max())
+            session_low = float(recent_window["low"].min())
+            near_recent_high = cur_close >= session_high * 0.998
 
             # RVOL: intraday volume so far vs elapsed fraction of avg daily volume
             day_vol       = float(intraday["volume"].sum())
             avg_daily_vol = float(daily["volume"].iloc[:-1].mean())
             if avg_daily_vol <= 0:
+                reject("missing average daily volume")
                 return None
             elapsed_frac = max(elapsed_min / 390.0, 0.005)
             rvol         = day_vol / (avg_daily_vol * elapsed_frac)
             if rvol < MOMENTUM_CONTINUATION["min_rvol"]:
+                reject(f"insufficient RVOL ({rvol:.1f}x)")
                 return None
+
+            def momentum_confirmation() -> tuple[float, float] | None:
+                macd = calc_macd(intraday["close"])
+                rsi = calc_rsi(intraday["close"])
+                if len(macd["hist"]) < 2 or rsi.empty:
+                    reject("insufficient MACD/RSI data")
+                    return None
+                macd_hist = float(macd["hist"].iloc[-1])
+                previous_macd_hist = float(macd["hist"].iloc[-2])
+                current_rsi = float(rsi.iloc[-1])
+                if not all(np.isfinite(value) for value in (macd_hist, previous_macd_hist, current_rsi)):
+                    reject("invalid MACD/RSI data")
+                    return None
+                if macd_hist <= 0 or macd_hist < previous_macd_hist:
+                    reject(f"weak MACD histogram ({macd_hist:.4f})")
+                    return None
+                if not 45 <= current_rsi <= 82:
+                    reject(f"RSI outside continuation range ({current_rsi:.1f})")
+                    return None
+                return macd_hist, current_rsi
+
+            # Keep the original breakout path preferred. A high-RVOL pullback can
+            # reclaim only above the filtered session VWAP and range midpoint.
+            if not near_recent_high:
+                reject(f"not near recent high ({cur_close:.2f} vs {session_high:.2f})")
+                volume_total = float(intraday["volume"].sum())
+                if rvol < 3.0 or volume_total <= 0:
+                    return None
+                typical_price = (intraday["high"] + intraday["low"] + intraday["close"]) / 3
+                session_vwap = float((typical_price * intraday["volume"]).sum() / volume_total)
+                range_midpoint = (session_high + session_low) / 2
+                if (cur_close <= session_vwap or cur_close <= range_midpoint):
+                    return None
+
+                confirmation = momentum_confirmation()
+                if confirmation is None:
+                    return None
+                macd_hist, current_rsi = confirmation
+
+                conf = 0.78
+                conf += min((rvol - 3.0) * 0.02, 0.04)
+                conf += min((price_up_pct - MOMENTUM_CONTINUATION["min_price_up_pct"]) * 0.005, 0.02)
+                conf = min(_sa_metrics_boost(symbol, conf), 0.84)
+                atr14 = _calc_atr14(daily)
+                return Signal(
+                    symbol, "buy", cur_close, round(conf, 2),
+                    f"Momentum continuation high-RVOL pullback/reclaim rvol={rvol:.1f}x "
+                    f"up={price_up_pct:.1f}% above VWAP and range midpoint "
+                    f"MACD hist={macd_hist:.4f} RSI={current_rsi:.1f}",
+                    "MomentumContinuationPullback",
+                    atr_stop=atr14 * ATR_STOP_MULTIPLIER if atr14 > 0 else None,
+                )
+
+            confirmation = momentum_confirmation()
+            if confirmation is None:
+                return None
+            macd_hist, current_rsi = confirmation
 
             conf  = 0.74
             conf += min((rvol - MOMENTUM_CONTINUATION["min_rvol"]) * 0.05, 0.12)
@@ -1578,7 +1664,8 @@ class MomentumContinuationStrategy:
             atr14 = _calc_atr14(daily)
             return Signal(
                 symbol, "buy", cur_close, round(conf, 2),
-                f"Momentum continuation rvol={rvol:.1f}x up={price_up_pct:.1f}% break of session high",
+                f"Momentum continuation rvol={rvol:.1f}x up={price_up_pct:.1f}% break of session high "
+                f"MACD hist={macd_hist:.4f} RSI={current_rsi:.1f}",
                 "MomentumContinuation",
                 atr_stop=atr14 * ATR_STOP_MULTIPLIER if atr14 > 0 else None,
             )

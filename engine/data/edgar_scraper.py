@@ -8,7 +8,7 @@ and resolves company → ticker via SEC's own company_tickers.json (CIK lookup).
 No API key or authentication required.
 Uses stdlib xml.etree + requests only — no extra dependencies.
 
-Feed updates every ~10 minutes. We poll on the same cadence.
+Feed updates frequently during filing hours. We poll on a two-minute cadence.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from typing import Dict, List, Optional, Set
 
 log = logging.getLogger("ApexTrader")
 
-# ── EDGAR ATOM feed — free, public, updated ~every 10 min ─────────────────
+# ── EDGAR ATOM feed — free, public, polled every two minutes ───────────────
 _EDGAR_FEED_URL = (
     "https://www.sec.gov/cgi-bin/browse-edgar"
     "?action=getcurrent&type=8-K&dateb=&owner=include&count=40&output=atom"
@@ -96,7 +96,7 @@ _WARRANT_RE    = re.compile(r"^[A-Z]{2,4}[WRU]$")
 # ── State ──────────────────────────────────────────────────────────────────
 _seen_filing_ids: Set[str] = set()
 _last_fetch_ts: float = 0.0
-_FETCH_TTL = 600  # 10 minutes
+_FETCH_TTL = 120  # 2 minutes
 
 
 def get_edgar_triggered_tickers() -> List[str]:

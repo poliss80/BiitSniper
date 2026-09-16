@@ -146,6 +146,21 @@ def _enforce_schwab_rate_limit():
         _schwab_last_request_time = time.time()
 
 
+def _filter_current_day_minute_bars(df: pd.DataFrame, now: datetime.datetime | None = None) -> pd.DataFrame:
+    """Keep only bars from the current America/New_York calendar date."""
+    if df.empty or "time" not in df.columns:
+        return df
+
+    reference_time = now if now is not None else datetime.datetime.now(ET)
+    current_date = reference_time.astimezone(ET).date()
+    timestamps = pd.to_datetime(df["time"])
+    if timestamps.dt.tz is None:
+        timestamps = timestamps.dt.tz_localize(ET)
+    else:
+        timestamps = timestamps.dt.tz_convert(ET)
+    return df.loc[timestamps.dt.date == current_date].copy()
+
+
 # ── Core bar fetch ────────────────────────────────────────────────────────────
 
 def _get_bars_schwab(symbol: str, period: str, interval: str, log) -> pd.DataFrame:
@@ -253,6 +268,9 @@ def _get_bars_schwab(symbol: str, period: str, interval: str, log) -> pd.DataFra
             "close": [c.get("close", 0) for c in candles],
             "volume": [c.get("volume", 0) for c in candles],
         })
+
+        if period == "1d" and interval.lower().endswith("m"):
+            df = _filter_current_day_minute_bars(df)
         
         if not df.empty:
             _last_feed_used[symbol] = "schwab"

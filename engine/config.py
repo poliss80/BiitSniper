@@ -501,7 +501,7 @@ SECTOR_SYMPATHY_INTERVAL_MIN = int(os.getenv("SECTOR_SYMPATHY_INTERVAL_MIN", "15
 
 # EDGAR 8-K feed scanner — injects tickers from material event filings (free, no auth)
 USE_EDGAR_SCANNER            = os.getenv("USE_EDGAR_SCANNER",    "true").lower() in ("1", "true", "yes")
-EDGAR_SCANNER_INTERVAL_MIN   = int(os.getenv("EDGAR_SCANNER_INTERVAL_MIN",   "10"))
+EDGAR_SCANNER_INTERVAL_MIN   = int(os.getenv("EDGAR_SCANNER_INTERVAL_MIN",   "2"))
 USE_PREOPEN_INTELLIGENCE     = os.getenv("USE_PREOPEN_INTELLIGENCE", "true").lower() in ("1", "true", "yes")
 PREOPEN_INTELLIGENCE_SCAN_INTERVAL_MIN = int(os.getenv("PREOPEN_INTELLIGENCE_SCAN_INTERVAL_MIN", "15"))
 PREOPEN_INTELLIGENCE_MAX_TICKERS = int(os.getenv("PREOPEN_INTELLIGENCE_MAX_TICKERS", "20"))
@@ -680,7 +680,7 @@ LONG_ONLY_MODE            = os.getenv("LONG_ONLY_MODE", "false").lower() in ("1"
 MIN_SIGNAL_CONFIDENCE     = float(os.getenv("MIN_SIGNAL_CONFIDENCE",     "0.72"))
 MIN_SHORT_CONFIDENCE_BEAR = float(os.getenv("MIN_SHORT_CONFIDENCE_BEAR", "0.65"))
 SHORT_FAIL_COOLDOWN_MIN   = 5    # Re-try failed short symbols immediately
-MAX_SIGNALS_PER_CYCLE     = int(os.getenv("MAX_SIGNALS_PER_CYCLE", "3"))
+MAX_SIGNALS_PER_CYCLE     = int(os.getenv("MAX_SIGNALS_PER_CYCLE", "5"))
 
 # Parallel Scanning
 SCAN_WORKERS        = 8    # Threads scanning symbols concurrently (kept below Alpaca pool defaults)
