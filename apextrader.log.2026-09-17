@@ -1,0 +1,28 @@
+2026-09-17 09:06:29,095 [INFO] Restored position exit state: EMAT, FPS, BBNX, ADPT
+2026-09-17 09:06:29,127 [INFO] Entry log rebuilt from today's orders: EMAT, FPS, BBNX, ADPT
+2026-09-17 09:06:29,157 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-17 09:06:29,189 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-17 09:06:29,261 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-17 09:06:29,262 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-17 09:06:29,262 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-17 09:06:29,262 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-17 09:06:29,263 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-17 09:06:29,263 [INFO] ======================================================================
+2026-09-17 09:06:29,263 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-17 09:06:29,263 [INFO] ======================================================================
+2026-09-17 09:06:29,263 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-17 09:06:29,263 [INFO] Priority 2 (Established): 16 stocks
+2026-09-17 09:06:29,263 [INFO] Total Universe: 42 stocks
+2026-09-17 09:06:29,263 [INFO] Scan: 3 min fixed
+2026-09-17 09:06:29,263 [INFO] ======================================================================
+2026-09-17 09:06:29,293 [INFO] Equity:          $97,208.94
+2026-09-17 09:06:29,293 [INFO] Buying Power:    $388,710.13
+2026-09-17 09:06:29,293 [INFO] PDT Status:      No
+2026-09-17 09:06:29,293 [INFO] Day Trade Count: None
+2026-09-17 09:06:29,293 [INFO] ======================================================================
+2026-09-17 09:06:29,293 [INFO] Starting… Press Ctrl+C to stop
+2026-09-17 09:06:29,293 [INFO] ======================================================================
+2026-09-17 09:06:29,293 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-17 09:06:29,293 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-17 09:06:29,294 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-17 09:06:29,294 [INFO] Waiting up to 90s for startup TI capture…

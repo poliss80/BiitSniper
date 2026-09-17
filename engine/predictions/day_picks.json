@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-16T15:47:03-04:00",
-  "date": "2026-09-16",
+  "generated_at": "2026-09-17T09:12:56-04:00",
+  "date": "2026-09-17",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "ADPT",
+      "symbol": "AEMD",
       "action": "buy",
-      "price": 26.68,
-      "confidence": 0.92,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.12"
+      "price": 8.1212,
+      "confidence": 0.94,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +452.5% | PM vol 6591% of avg daily"
     }
   ]
 }
