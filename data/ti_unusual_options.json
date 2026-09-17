@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T22:10:45Z",
+  "updated": "2026-09-16T22:22:14Z",
   "tickers": [
     "GLOO",
     "SPRU",
@@ -35,21 +35,21 @@
     "TXG",
     "DHI",
     "TCOM",
-    "XTND",
-    "TBBB",
     "OCUL",
     "WXET",
-    "BWET",
-    "XP",
-    "DTE",
-    "MOO",
-    "GSHD",
-    "CYPH",
-    "SN",
-    "AGI",
-    "WLK",
+    "HGER",
+    "NYT",
+    "CERY",
+    "CCI",
+    "CX",
+    "TBBB",
+    "CABA",
+    "SMST",
+    "HOS",
     "GPRE",
     "RVTY",
-    "INSW"
+    "AADX",
+    "ARTV",
+    "XRP"
   ]
 }

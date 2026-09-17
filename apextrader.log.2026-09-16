@@ -10359,3 +10359,173 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='paper-api.alpaca.
 2026-09-16 18:15:17,559 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
 2026-09-16 18:15:17,560 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
 2026-09-16 18:15:17,560 [INFO] Heartbeat: 2026-09-16T18:15:17.560599
+2026-09-16 18:17:10,298 [INFO] Stopped by user
+2026-09-16 18:17:10,848 [INFO] ======================================================================
+2026-09-16 18:17:10,849 [INFO] STATUS
+2026-09-16 18:17:10,849 [INFO] Equity:     $97,206.82
+2026-09-16 18:17:10,849 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 18:17:10,849 [INFO] Positions:  4
+2026-09-16 18:17:10,850 [INFO] Unrealized: $0.18
+2026-09-16 18:17:10,850 [INFO]   ADPT: 1 @ $27.24 | $0.45 (+1.65%)
+2026-09-16 18:17:10,850 [INFO]   BBNX: 1 @ $21.80 | $0.25 (+1.15%)
+2026-09-16 18:17:10,850 [INFO]   EMAT: 1 @ $3.80 | $0.01 (+0.26%)
+2026-09-16 18:17:10,850 [INFO]   FPS: 1 @ $35.60 | $-0.53 (-1.48%)
+2026-09-16 18:17:10,850 [INFO] ======================================================================
+2026-09-16 18:17:16,345 [INFO] Restored position exit state: EMAT, FPS, BBNX, ADPT
+2026-09-16 18:17:16,380 [INFO] Entry log rebuilt from today's orders: EMAT, FPS, BBNX, ADPT
+2026-09-16 18:17:16,415 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-16 18:17:16,443 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-16 18:17:16,521 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-16 18:17:16,522 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-16 18:17:16,522 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-16 18:17:16,523 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-16 18:17:16,524 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-16 18:17:16,524 [INFO] ======================================================================
+2026-09-16 18:17:16,524 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-16 18:17:16,524 [INFO] ======================================================================
+2026-09-16 18:17:16,525 [INFO] Priority 1 (Momentum): 134 stocks
+2026-09-16 18:17:16,525 [INFO] Priority 2 (Established): 16 stocks
+2026-09-16 18:17:16,525 [INFO] Total Universe: 154 stocks
+2026-09-16 18:17:16,525 [INFO] Scan: 3 min fixed
+2026-09-16 18:17:16,525 [INFO] ======================================================================
+2026-09-16 18:17:16,556 [INFO] Equity:          $97,206.82
+2026-09-16 18:17:16,600 [INFO] Buying Power:    $388,717.89
+2026-09-16 18:17:16,600 [INFO] PDT Status:      No
+2026-09-16 18:17:16,601 [INFO] Day Trade Count: None
+2026-09-16 18:17:16,601 [INFO] ======================================================================
+2026-09-16 18:17:16,601 [INFO] Starting… Press Ctrl+C to stop
+2026-09-16 18:17:16,601 [INFO] ======================================================================
+2026-09-16 18:17:16,602 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-16 18:17:16,603 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-16 18:17:16,603 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-16 18:17:16,604 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-16 18:18:46,610 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-16 18:18:51,763 [INFO] ======================================================================
+2026-09-16 18:18:51,765 [INFO] NEW DAY: 2026-09-16 | Start equity: $97,206.85
+2026-09-16 18:18:51,785 [INFO] Universe pruned: no expired tickers
+2026-09-16 18:18:51,786 [INFO] ======================================================================
+2026-09-16 18:18:51,789 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:18:51,790 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:21:51,950 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:21:51,950 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:21:51,951 [INFO] Heartbeat: 2026-09-16T18:21:51.951237
+2026-09-16 18:24:51,973 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:24:51,974 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:24:51,974 [INFO] Heartbeat: 2026-09-16T18:24:51.974287
+2026-09-16 18:27:51,997 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:27:51,997 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:27:51,998 [INFO] Heartbeat: 2026-09-16T18:27:51.998206
+2026-09-16 18:30:52,022 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:30:52,022 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:30:52,022 [INFO] Heartbeat: 2026-09-16T18:30:52.022598
+2026-09-16 18:33:52,048 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:33:52,048 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:33:52,048 [INFO] Heartbeat: 2026-09-16T18:33:52.048850
+2026-09-16 18:36:52,074 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:36:52,075 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:36:52,075 [INFO] Heartbeat: 2026-09-16T18:36:52.075414
+2026-09-16 18:39:52,105 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:39:52,105 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:39:52,106 [INFO] Heartbeat: 2026-09-16T18:39:52.106103
+2026-09-16 18:42:52,134 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:42:52,135 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:42:52,135 [INFO] Heartbeat: 2026-09-16T18:42:52.135376
+2026-09-16 18:45:52,161 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:45:52,162 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:45:52,162 [INFO] Heartbeat: 2026-09-16T18:45:52.162450
+2026-09-16 18:48:52,187 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:48:52,188 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:48:52,188 [INFO] Heartbeat: 2026-09-16T18:48:52.188483
+2026-09-16 18:48:53,988 [INFO] ======================================================================
+2026-09-16 18:48:53,988 [INFO] STATUS
+2026-09-16 18:48:53,988 [INFO] Equity:     $97,208.01
+2026-09-16 18:48:53,989 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 18:48:53,989 [INFO] Positions:  4
+2026-09-16 18:48:53,989 [INFO] Unrealized: $1.37
+2026-09-16 18:48:53,990 [INFO]   ADPT: 1 @ $27.24 | $0.64 (+2.35%)
+2026-09-16 18:48:53,990 [INFO]   BBNX: 1 @ $21.80 | $0.42 (+1.93%)
+2026-09-16 18:48:53,991 [INFO]   EMAT: 1 @ $3.80 | $0.01 (+0.26%)
+2026-09-16 18:48:53,991 [INFO]   FPS: 1 @ $35.60 | $0.30 (+0.84%)
+2026-09-16 18:48:53,992 [INFO] ======================================================================
+2026-09-16 18:48:53,997 [INFO] Universe pruned: 132 expired ticker(s): ['AADX', 'ADPT', 'AEHL', 'AGI', 'AIXI', 'ALAR', 'ALHC', 'ALMU', 'ALVO', 'AMDL']…
+2026-09-16 18:51:54,029 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:51:54,030 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:51:54,030 [INFO] Heartbeat: 2026-09-16T18:51:54.030528
+2026-09-16 18:54:54,066 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:54:54,067 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:54:54,067 [INFO] Heartbeat: 2026-09-16T18:54:54.067421
+2026-09-16 18:57:54,094 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 18:57:54,095 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 18:57:54,095 [INFO] Heartbeat: 2026-09-16T18:57:54.095402
+2026-09-16 19:00:54,121 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:00:54,122 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:00:54,122 [INFO] Heartbeat: 2026-09-16T19:00:54.122336
+2026-09-16 19:03:54,176 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:03:54,176 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:03:54,176 [INFO] Heartbeat: 2026-09-16T19:03:54.176611
+2026-09-16 19:06:54,202 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:06:54,202 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:06:54,202 [INFO] Heartbeat: 2026-09-16T19:06:54.202803
+2026-09-16 19:09:54,228 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:09:54,229 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:09:54,229 [INFO] Heartbeat: 2026-09-16T19:09:54.229280
+2026-09-16 19:12:54,263 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:12:54,264 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:12:54,264 [INFO] Heartbeat: 2026-09-16T19:12:54.264531
+2026-09-16 19:15:54,354 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:15:54,355 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:15:54,355 [INFO] Heartbeat: 2026-09-16T19:15:54.355694
+2026-09-16 19:18:54,381 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:18:54,381 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:18:54,382 [INFO] Heartbeat: 2026-09-16T19:18:54.382092
+2026-09-16 19:18:55,573 [INFO] ======================================================================
+2026-09-16 19:18:55,615 [INFO] STATUS
+2026-09-16 19:18:55,616 [INFO] Equity:     $97,207.83
+2026-09-16 19:18:55,617 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 19:18:55,617 [INFO] Positions:  4
+2026-09-16 19:18:55,618 [INFO] Unrealized: $1.19
+2026-09-16 19:18:55,618 [INFO]   ADPT: 1 @ $27.24 | $0.64 (+2.35%)
+2026-09-16 19:18:55,619 [INFO]   BBNX: 1 @ $21.80 | $0.34 (+1.56%)
+2026-09-16 19:18:55,619 [INFO]   EMAT: 1 @ $3.80 | $0.01 (+0.26%)
+2026-09-16 19:18:55,619 [INFO]   FPS: 1 @ $35.60 | $0.20 (+0.56%)
+2026-09-16 19:18:55,619 [INFO] ======================================================================
+2026-09-16 19:18:55,625 [INFO] Universe pruned: no expired tickers
+2026-09-16 19:21:55,648 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:21:55,649 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:21:55,649 [INFO] Heartbeat: 2026-09-16T19:21:55.649311
+2026-09-16 19:24:55,670 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:24:55,670 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:24:55,671 [INFO] Heartbeat: 2026-09-16T19:24:55.671088
+2026-09-16 19:27:55,694 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:27:55,694 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:27:55,694 [INFO] Heartbeat: 2026-09-16T19:27:55.694737
+2026-09-16 19:30:55,717 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:30:55,718 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:30:55,718 [INFO] Heartbeat: 2026-09-16T19:30:55.718459
+2026-09-16 19:33:55,743 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:33:55,743 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:33:55,744 [INFO] Heartbeat: 2026-09-16T19:33:55.744216
+2026-09-16 19:36:55,768 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:36:55,769 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:36:55,769 [INFO] Heartbeat: 2026-09-16T19:36:55.769422
+2026-09-16 19:39:55,795 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:39:55,796 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:39:55,796 [INFO] Heartbeat: 2026-09-16T19:39:55.796373
+2026-09-16 19:42:55,820 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 19:42:55,820 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 19:42:55,820 [INFO] Heartbeat: 2026-09-16T19:42:55.820848
+2026-09-16 20:46:58,521 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-16 20:46:58,521 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-16 20:46:58,522 [INFO] Heartbeat: 2026-09-16T20:46:58.522018
+2026-09-16 20:47:00,515 [INFO] ======================================================================
+2026-09-16 20:47:00,516 [INFO] STATUS
+2026-09-16 20:47:00,516 [INFO] Equity:     $97,207.92
+2026-09-16 20:47:00,516 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-16 20:47:00,516 [INFO] Positions:  4
+2026-09-16 20:47:00,516 [INFO] Unrealized: $1.28
+2026-09-16 20:47:00,516 [INFO]   ADPT: 1 @ $27.24 | $0.64 (+2.35%)
+2026-09-16 20:47:00,516 [INFO]   BBNX: 1 @ $21.80 | $0.35 (+1.61%)
+2026-09-16 20:47:00,516 [INFO]   EMAT: 1 @ $3.80 | $-0.01 (-0.26%)
+2026-09-16 20:47:00,516 [INFO]   FPS: 1 @ $35.60 | $0.30 (+0.84%)
+2026-09-16 20:47:00,516 [INFO] ======================================================================
+2026-09-16 20:47:00,522 [INFO] Universe pruned: no expired tickers
