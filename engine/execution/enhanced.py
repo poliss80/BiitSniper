@@ -53,6 +53,8 @@ from engine.config import (
     MARGIN_EOD_FORCE_CLOSE, EOD_CLOSE_STRATEGIES,
     LONG_ONLY_MODE,
     STALE_ORDER_MINUTES, STALE_ORDER_MINUTES_INTRADAY,
+    STALE_ORDER_MINUTES_EXTENDED,
+    MAX_EXTENDED_HOURS_QUOTE_DIVERGENCE_PCT,
     KILL_MODE_TRAIL_PCT,
     SMALL_ACCOUNT_EQUITY_THRESHOLD, SMALL_ACCOUNT_MAX_POSITIONS,
     SMALL_ACCOUNT_MIN_POSITION_DOLLARS,
@@ -947,16 +949,32 @@ class EnhancedExecutor:
             if side == OrderSide.BUY:
                 if ask <= 0:
                     return round(bid, 2), None
+                quote_price = ask
                 limit = round(ask * 0.9995, 2)
                 if limit <= 0:
                     return fallback, "bad quote"
+                if signal_price > 0:
+                    divergence = abs(quote_price - signal_price) / signal_price * 100
+                    if divergence > MAX_EXTENDED_HOURS_QUOTE_DIVERGENCE_PCT:
+                        return limit, (
+                            f"quote ${quote_price:.2f} diverges from signal "
+                            f"${signal_price:.2f} by {divergence:.1f}%"
+                        )
                 return limit, None
 
             if bid <= 0:
                 return round(ask, 2), None
+            quote_price = bid
             limit = round(bid * 1.0005, 2)
             if limit <= 0:
                 return fallback, "bad quote"
+            if signal_price > 0:
+                divergence = abs(quote_price - signal_price) / signal_price * 100
+                if divergence > MAX_EXTENDED_HOURS_QUOTE_DIVERGENCE_PCT:
+                    return limit, (
+                        f"quote ${quote_price:.2f} diverges from signal "
+                        f"${signal_price:.2f} by {divergence:.1f}%"
+                    )
             return limit, None
         except Exception as exc:
             log.warning("After-hours quote lookup failed for %s: %s", symbol, exc)
@@ -1117,6 +1135,26 @@ class EnhancedExecutor:
             except Exception:
                 # Can't verify — keep cache entry intact to avoid double-submit risk
                 return False, f"Could not verify order status for {signal.symbol} (id={cached_id}) — skipping to be safe"
+
+        # Reconcile broker state after restarts or stale-order replacements.
+        # The in-memory cache alone can point at an old canceled order while a
+        # replacement limit is still live.
+        try:
+            active_statuses = {"new", "partially_filled", "pending_new", "accepted", "held"}
+            for broker_order in self.client.get_orders() or []:
+                if str(getattr(broker_order, "symbol", "")) != signal.symbol:
+                    continue
+                raw_status = getattr(broker_order, "status", "")
+                broker_status = str(getattr(raw_status, "value", raw_status)).lower()
+                if "." in broker_status:
+                    broker_status = broker_status.rsplit(".", 1)[-1]
+                if broker_status in active_statuses:
+                    broker_id = str(getattr(broker_order, "id", "") or "")
+                    if broker_id:
+                        self.order_cache[signal.symbol] = broker_id
+                    return False, f"Pending broker order already active for {signal.symbol} (id={broker_id})"
+        except Exception as broker_order_error:
+            return False, f"Could not reconcile broker orders for {signal.symbol}: {broker_order_error}"
 
         positions = self._get_positions()
 
@@ -2354,7 +2392,11 @@ class EnhancedExecutor:
                 parts = coid.split("-", 2)   # ["apex", strategy, symbol]
                 if len(parts) >= 2 and parts[1] in EOD_CLOSE_STRATEGIES:
                     is_intraday = True
-            cutoff_secs = (STALE_ORDER_MINUTES_INTRADAY if is_intraday else STALE_ORDER_MINUTES) * 60
+            if not regular:
+                cutoff_minutes = STALE_ORDER_MINUTES_EXTENDED
+            else:
+                cutoff_minutes = STALE_ORDER_MINUTES_INTRADAY if is_intraday else STALE_ORDER_MINUTES
+            cutoff_secs = cutoff_minutes * 60
 
             age_secs = (now_utc - created_at).total_seconds()
             if age_secs < cutoff_secs:
@@ -2367,7 +2409,7 @@ class EnhancedExecutor:
 
             log.info(
                 f"STALE ORDER: {sym} {side} {qty} — age {age_secs/60:.1f}m "
-                f"(cutoff {'intraday 30m' if is_intraday else '6h'}) "
+                f"(cutoff {cutoff_minutes}m) "
                 f"→ {'market' if regular else 'limit @ current price'}"
             )
 
@@ -2402,9 +2444,10 @@ class EnhancedExecutor:
                     # Best-effort limit at current price for extended hours
                     try:
                         bar = self.client.get_latest_quote(sym)
-                        cur_price = round(
-                            (float(bar.ask_price) + float(bar.bid_price)) / 2, 2
-                        )
+                        if side == OrderSide.BUY:
+                            cur_price = round(float(bar.ask_price or 0), 2)
+                        else:
+                            cur_price = round(float(bar.bid_price or 0), 2)
                     except Exception:
                         cur_price = float(getattr(order, "limit_price", None) or 0)
                     if cur_price <= 0:
@@ -2417,7 +2460,10 @@ class EnhancedExecutor:
                         extended_hours=True,
                     )
 
-                self.client.submit_order(req)
+                replacement = self.client.submit_order(req)
+                replacement_id = str(getattr(replacement, "id", "") or "")
+                if replacement_id:
+                    self.order_cache[sym] = replacement_id
                 log.info(f"STALE ORDER {sym}: replaced successfully")
             except Exception as e:
                 log.warning(f"STALE ORDER {sym}: replace failed: {e}")

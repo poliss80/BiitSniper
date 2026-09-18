@@ -659,6 +659,8 @@ TRENDLINE_BREAKOUT = {
 # Stale order upgrade: unfilled orders older than this get re-submitted as market/limit
 STALE_ORDER_MINUTES          = 360  # minutes before an unfilled order is considered stale
 STALE_ORDER_MINUTES_INTRADAY =  30  # intraday strategies (ORB, surge, etc.) — cancel if unfilled after 30 min
+STALE_ORDER_MINUTES_EXTENDED = int(os.getenv("STALE_ORDER_MINUTES_EXTENDED", "3"))
+MAX_EXTENDED_HOURS_QUOTE_DIVERGENCE_PCT = float(os.getenv("MAX_EXTENDED_HOURS_QUOTE_DIVERGENCE_PCT", "5.0"))
 
 # ─────────────────────────────────────────────────────────────────
 # PDT Rules

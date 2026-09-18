@@ -5096,3 +5096,272 @@ Stacktrace:
 2026-09-18 16:29:28,264 [INFO] LIVE PROBE BZH: sizing 3302 → 1 share(s); no automatic scale-in
 2026-09-18 16:29:29,704 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
 2026-09-18 16:29:30,778 [INFO] Heartbeat: 2026-09-18T16:29:30.778413
+2026-09-18 16:32:35,301 [INFO] Quarterly P&L: -5.7% (target >= 50%)
+2026-09-18 16:32:35,303 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:32:35,437 [ERROR] Trade Ideas scan failed: HTTPConnectionPool(host='localhost', port=51838): Read timed out. (read timeout=120)
+2026-09-18 16:32:35,528 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:32:35,532 [INFO] [SCAN] 12 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX
+2026-09-18 16:32:35,532 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:32:38,696 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:32:39,302 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:32:39,308 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:32:42,926 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 457171 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.72 | day_vol=265751
+2026-09-18 16:32:45,496 [INFO] [GUARDRAIL SUMMARY] Rejected: 5 | DollarVol: 3 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-18 16:32:45,496 [INFO] [FUNNEL] targets=12 guardrail_rejected=5 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:32:45,496 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:32:45,496 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:32:45,549 [INFO] Live holdings: 3 excluded
+2026-09-18 16:32:45,550 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:32:45,550 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:32:45,551 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:32:45,842 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:32:45,843 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:32:45,843 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:32:45,843 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:32:45,878 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:32:45,981 [INFO] LIVE PROBE BZH: sizing 3301 → 1 share(s); no automatic scale-in
+2026-09-18 16:32:46,372 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:32:47,474 [INFO] Heartbeat: 2026-09-18T16:32:47.474488
+2026-09-18 16:35:47,874 [INFO] Quarterly P&L: -5.7% (target >= 50%)
+2026-09-18 16:35:47,874 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:35:53,802 [INFO] [EDGAR] 8-K match: FLUX — 8-K - Flux Power Holdings, Inc. (0001083743) (Filer)
+2026-09-18 16:35:53,802 [INFO] [EDGAR] 8-K match: IVFH — 8-K - INNOVATIVE FOOD HOLDINGS INC (0000312257) (Filer)
+2026-09-18 16:35:53,802 [INFO] [EDGAR] 8-K match: HFFG — 8-K - HF Foods Group Inc. (0001680873) (Filer)
+2026-09-18 16:35:53,803 [INFO] [EDGAR] 8-K match: ELME — 8-K - Elme Communities (0000104894) (Filer)
+2026-09-18 16:35:53,803 [INFO] [EDGAR] 8-K match: STZ — 8-K - CONSTELLATION BRANDS, INC. (0000016918) (Filer)
+2026-09-18 16:35:53,803 [INFO] [EDGAR] 8-K match: BSEM — 8-K - BioStem Technologies, Inc. (0001658678) (Filer)
+2026-09-18 16:35:53,804 [INFO] [EDGAR] 8-K match: LBRT — 8-K - Liberty Energy Inc. (0001694028) (Filer)
+2026-09-18 16:35:53,804 [INFO] [EDGAR] 7 newly triggered tickers: ['FLUX', 'IVFH', 'HFFG', 'ELME', 'STZ', 'BSEM', 'LBRT']
+2026-09-18 16:35:53,805 [INFO] [EDGAR] Adding FLUX to P2 + scan queue for monitoring
+2026-09-18 16:35:53,806 [INFO] [EDGAR] Adding IVFH to P2 + scan queue for monitoring
+2026-09-18 16:35:53,806 [INFO] [EDGAR] Adding HFFG to P2 + scan queue for monitoring
+2026-09-18 16:35:53,806 [INFO] [EDGAR] Adding ELME to P2 + scan queue for monitoring
+2026-09-18 16:35:53,806 [INFO] [EDGAR] Adding STZ to P2 + scan queue for monitoring
+2026-09-18 16:35:53,806 [INFO] [EDGAR] Adding BSEM to P2 + scan queue for monitoring
+2026-09-18 16:35:53,806 [INFO] [EDGAR] Adding LBRT to P2 + scan queue for monitoring
+2026-09-18 16:35:54,142 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 16:35:54,200 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:35:54,201 [INFO] [SCAN] 19 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, FLUX, IVFH, HFFG, ELME, STZ, BSEM, LBRT
+2026-09-18 16:35:54,201 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:35:57,220 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:35:57,600 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:35:58,007 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:36:01,092 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 475873 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.79 | day_vol=265851
+2026-09-18 16:36:01,527 [WARNING] [GUARDRAIL] FLUX blocked: dollar volume 63640 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.55 | day_vol=115709
+2026-09-18 16:36:04,842 [WARNING] [GUARDRAIL] IVFH blocked: price 0.20 < adaptive_min_price 0.25
+2026-09-18 16:36:05,122 [WARNING] [GUARDRAIL] HFFG blocked: dollar volume 409979 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.57 | day_vol=261133
+2026-09-18 16:36:05,253 [WARNING] [GUARDRAIL] ELME blocked: dollar volume 690919 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.69 | day_vol=408828
+2026-09-18 16:36:08,256 [INFO] [GUARDRAIL SUMMARY] Rejected: 11 | DollarVol: 6 | RVOL: 1 | GapChase: 3 | MinPrice: 1 | Other: 0
+2026-09-18 16:36:08,256 [INFO] [FUNNEL] targets=19 guardrail_rejected=11 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:36:08,256 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:36:08,256 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:36:08,313 [INFO] Live holdings: 3 excluded
+2026-09-18 16:36:08,313 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:36:08,313 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:36:08,314 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:36:08,601 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:36:08,601 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:36:08,602 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:36:08,602 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:36:08,629 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:36:08,735 [INFO] LIVE PROBE BZH: sizing 3301 → 1 share(s); no automatic scale-in
+2026-09-18 16:36:09,175 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:36:10,232 [INFO] Heartbeat: 2026-09-18T16:36:10.232280
+2026-09-18 16:39:10,640 [INFO] Quarterly P&L: -5.8% (target >= 50%)
+2026-09-18 16:39:10,641 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:39:10,802 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:39:10,803 [INFO] [SCAN] 19 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, FLUX, IVFH, HFFG, ELME, STZ, BSEM, LBRT
+2026-09-18 16:39:10,803 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:39:13,730 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:39:14,174 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:39:14,656 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:39:17,940 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 475873 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.79 | day_vol=265851
+2026-09-18 16:39:21,515 [WARNING] [GUARDRAIL] FLUX blocked: dollar volume 63640 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.55 | day_vol=115709
+2026-09-18 16:39:21,645 [WARNING] [GUARDRAIL] IVFH blocked: price 0.20 < adaptive_min_price 0.25
+2026-09-18 16:39:22,072 [WARNING] [GUARDRAIL] HFFG blocked: dollar volume 392967 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.50 | day_vol=261978
+2026-09-18 16:39:22,276 [WARNING] [GUARDRAIL] ELME blocked: dollar volume 690919 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.69 | day_vol=408828
+2026-09-18 16:39:25,294 [INFO] [GUARDRAIL SUMMARY] Rejected: 10 | DollarVol: 6 | RVOL: 1 | GapChase: 2 | MinPrice: 1 | Other: 0
+2026-09-18 16:39:25,294 [INFO] [FUNNEL] targets=19 guardrail_rejected=10 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:39:25,294 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:39:25,294 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:39:25,356 [INFO] Live holdings: 3 excluded
+2026-09-18 16:39:25,357 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:39:25,357 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:39:25,359 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:39:25,725 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:39:25,725 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:39:25,725 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:39:25,725 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:39:25,752 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:39:25,863 [INFO] LIVE PROBE BZH: sizing 3298 → 1 share(s); no automatic scale-in
+2026-09-18 16:39:26,236 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:39:27,305 [INFO] Heartbeat: 2026-09-18T16:39:27.305642
+2026-09-18 16:39:37,372 [INFO] ======================================================================
+2026-09-18 16:39:37,372 [INFO] STATUS
+2026-09-18 16:39:37,372 [INFO] Equity:     $91,617.95
+2026-09-18 16:39:37,373 [INFO] Daily P&L:  $0.00  |  Trades: 11
+2026-09-18 16:39:37,373 [INFO] Positions:  3
+2026-09-18 16:39:37,373 [INFO] Unrealized: $127.08
+2026-09-18 16:39:37,373 [INFO]   BAC261002C00058000: 2 @ $0.94 | $-17.00 (-9.09%)
+2026-09-18 16:39:37,373 [INFO]   BSOL: 1996 @ $15.54 | $129.83 (+0.42%)
+2026-09-18 16:39:37,373 [INFO]   SDGR: 6 @ $26.64 | $14.25 (+8.91%)
+2026-09-18 16:39:37,373 [INFO] ======================================================================
+2026-09-18 16:39:37,376 [INFO] Universe pruned: 50 expired ticker(s): ['AEHL', 'BLSG', 'BMNZ', 'CANG', 'CD', 'COIG', 'CONI', 'CONL', 'CONX', 'DAIC']…
+2026-09-18 16:42:27,828 [INFO] Quarterly P&L: -5.7% (target >= 50%)
+2026-09-18 16:42:27,828 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:42:27,985 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:42:27,986 [INFO] [SCAN] 19 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, FLUX, IVFH, HFFG, ELME, STZ, BSEM, LBRT
+2026-09-18 16:42:27,986 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:42:30,970 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:42:31,406 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:42:31,813 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:42:35,038 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 457922 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.72 | day_vol=266234
+2026-09-18 16:42:38,642 [WARNING] [GUARDRAIL] FLUX blocked: dollar volume 63640 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.55 | day_vol=115709
+2026-09-18 16:42:39,053 [WARNING] [GUARDRAIL] IVFH blocked: price 0.20 < adaptive_min_price 0.25
+2026-09-18 16:42:39,256 [WARNING] [GUARDRAIL] HFFG blocked: dollar volume 392967 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.50 | day_vol=261978
+2026-09-18 16:42:39,360 [WARNING] [GUARDRAIL] ELME blocked: dollar volume 690919 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.69 | day_vol=408828
+2026-09-18 16:42:42,393 [INFO] [GUARDRAIL SUMMARY] Rejected: 10 | DollarVol: 6 | RVOL: 1 | GapChase: 2 | MinPrice: 1 | Other: 0
+2026-09-18 16:42:42,393 [INFO] [FUNNEL] targets=19 guardrail_rejected=10 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:42:42,393 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:42:42,393 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:42:42,450 [INFO] Live holdings: 3 excluded
+2026-09-18 16:42:42,450 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:42:42,450 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:42:42,452 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:42:42,793 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:42:42,794 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:42:42,794 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:42:42,794 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:42:42,821 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:42:42,943 [INFO] LIVE PROBE BZH: sizing 3301 → 1 share(s); no automatic scale-in
+2026-09-18 16:42:43,276 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:42:44,356 [INFO] Heartbeat: 2026-09-18T16:42:44.356187
+2026-09-18 16:45:44,755 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:45:44,755 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:45:44,907 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:45:44,908 [INFO] [SCAN] 19 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, FLUX, IVFH, HFFG, ELME, STZ, BSEM, LBRT
+2026-09-18 16:45:44,908 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:45:47,983 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:45:48,473 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:45:48,598 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:45:52,264 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 457922 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.72 | day_vol=266234
+2026-09-18 16:45:55,677 [WARNING] [GUARDRAIL] FLUX blocked: dollar volume 63640 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.55 | day_vol=115709
+2026-09-18 16:45:55,968 [WARNING] [GUARDRAIL] IVFH blocked: price 0.20 < adaptive_min_price 0.25
+2026-09-18 16:45:56,267 [WARNING] [GUARDRAIL] HFFG blocked: dollar volume 383057 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.46 | day_vol=262368
+2026-09-18 16:45:56,426 [WARNING] [GUARDRAIL] ELME blocked: dollar volume 761445 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.74 | day_vol=437612
+2026-09-18 16:45:59,230 [INFO] [GUARDRAIL SUMMARY] Rejected: 10 | DollarVol: 6 | RVOL: 1 | GapChase: 2 | MinPrice: 1 | Other: 0
+2026-09-18 16:45:59,230 [INFO] [FUNNEL] targets=19 guardrail_rejected=10 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:45:59,230 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:45:59,230 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:45:59,288 [INFO] Live holdings: 3 excluded
+2026-09-18 16:45:59,288 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:45:59,288 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:45:59,290 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:45:59,568 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.10 below VWAP 29.18
+2026-09-18 16:45:59,568 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:45:59,568 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:45:59,568 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:45:59,597 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:45:59,925 [INFO] LIVE PROBE BZH: sizing 3304 → 1 share(s); no automatic scale-in
+2026-09-18 16:46:00,258 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:46:01,315 [INFO] Heartbeat: 2026-09-18T16:46:01.315486
+2026-09-18 16:49:01,783 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:49:01,784 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:49:01,888 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 16:49:04,753 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 16:49:04,813 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:49:04,814 [INFO] [SCAN] 19 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, FLUX, IVFH, HFFG, ELME, STZ, BSEM, LBRT
+2026-09-18 16:49:04,814 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:49:07,754 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:49:08,176 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:49:08,591 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:49:12,167 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 455541 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.70 | day_vol=267745
+2026-09-18 16:49:15,947 [WARNING] [GUARDRAIL] FLUX blocked: dollar volume 63640 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.55 | day_vol=115709
+2026-09-18 16:49:16,064 [WARNING] [GUARDRAIL] IVFH blocked: price 0.20 < adaptive_min_price 0.25
+2026-09-18 16:49:16,354 [WARNING] [GUARDRAIL] HFFG blocked: dollar volume 383057 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.46 | day_vol=262368
+2026-09-18 16:49:16,523 [WARNING] [GUARDRAIL] ELME blocked: dollar volume 806932 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.74 | day_vol=463754
+2026-09-18 16:49:19,776 [INFO] [GUARDRAIL SUMMARY] Rejected: 9 | DollarVol: 6 | RVOL: 1 | GapChase: 1 | MinPrice: 1 | Other: 0
+2026-09-18 16:49:19,777 [INFO] [FUNNEL] targets=19 guardrail_rejected=9 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:49:19,777 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:49:19,777 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:49:19,834 [INFO] Live holdings: 3 excluded
+2026-09-18 16:49:19,835 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:49:19,835 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:49:19,836 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:49:22,285 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.11 below VWAP 29.18
+2026-09-18 16:49:22,285 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:49:22,285 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:49:22,285 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:49:22,313 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:49:22,488 [INFO] LIVE PROBE BZH: sizing 3304 → 1 share(s); no automatic scale-in
+2026-09-18 16:49:22,870 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:49:23,931 [INFO] Heartbeat: 2026-09-18T16:49:23.931284
+2026-09-18 16:52:24,978 [INFO] Quarterly P&L: -5.8% (target >= 50%)
+2026-09-18 16:52:24,978 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:52:25,077 [ERROR] Trade Ideas scrape hard-timeout (203s) — killing Chrome/chromedriver and resetting future
+2026-09-18 16:52:25,673 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:52:25,674 [INFO] [SCAN] 68 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, FLUX, IVFH, HFFG, ELME, STZ, BSEM, LBRT, ABG, AMBQ, AMBR, ANGX, ARXS, ASYS, BETA, BIRK, BLDR, BTGO, CALY, DK, DSP, DT, EG, ELVN, EWU, FAC, FOUR, FTCI, GEL, GEMI, GLOO, GLUE, HALO, HUBS, IHRT, ILMN, IMNM, KOD, LUXE, NMRA, NNVC, NUCL, NVCT, OMC, ORBS, PAAI, PROK, ROP, SECZ, SEIC, SNDX, SUIG, TPL, TRLV, TRX, UROY, VOR
+2026-09-18 16:52:25,675 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:52:28,672 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:52:29,244 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:52:29,358 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:52:32,954 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 455541 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.70 | day_vol=267745
+2026-09-18 16:52:36,429 [WARNING] [GUARDRAIL] FLUX blocked: dollar volume 63640 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.55 | day_vol=115709
+2026-09-18 16:52:36,662 [WARNING] [GUARDRAIL] IVFH blocked: price 0.20 < adaptive_min_price 0.25
+2026-09-18 16:52:36,717 [WARNING] [GUARDRAIL] HFFG blocked: dollar volume 370441 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.41 | day_vol=262724
+2026-09-18 16:52:37,346 [WARNING] [GUARDRAIL] ELME blocked: dollar volume 806932 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.74 | day_vol=463754
+2026-09-18 16:52:56,991 [WARNING] [GUARDRAIL] EWU blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=782863 | avg_daily_vol=1876120
+2026-09-18 16:53:30,838 [INFO] [GUARDRAIL SUMMARY] Rejected: 12 | DollarVol: 6 | RVOL: 2 | GapChase: 3 | MinPrice: 1 | Other: 0
+2026-09-18 16:53:30,838 [INFO] [FUNNEL] targets=68 guardrail_rejected=12 (rvol=2) -> signals_generated=12 -> conf_gate(-10) -> sector_cap(-0) -> final=2
+2026-09-18 16:53:30,838 [INFO] [SCAN] Breakdown — Sweepea: 2, Technical: 1, TrendlineBreakout: 8, VWAPReclaim: 1 | Errors: 0 | Total: 2
+2026-09-18 16:53:30,839 [INFO] [SCAN] TOP5_RAW #1: HALO BUY $109.68 conf=86% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $2.75
+2026-09-18 16:53:30,839 [INFO] [SCAN] TOP5_RAW #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:53:30,899 [INFO] Live holdings: 3 excluded
+2026-09-18 16:53:30,900 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 2 eligible
+2026-09-18 16:53:30,900 [INFO] [TRADE] TOP5_ELIGIBLE #1: HALO BUY $109.68 conf=86% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $2.75
+2026-09-18 16:53:30,900 [INFO] [TRADE] TOP5_ELIGIBLE #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:53:32,172 [INFO] Scan email sent
+2026-09-18 16:53:32,497 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.11 below VWAP 29.18
+2026-09-18 16:53:32,498 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:53:32,498 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:53:32,498 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-18 16:53:32,597 [INFO] EXECUTE: BUY HALO @ $109.68 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $2.75
+2026-09-18 16:53:32,948 [INFO] LIVE PROBE HALO: sizing 1003 → 1 share(s); no automatic scale-in
+2026-09-18 16:53:33,308 [INFO] BUY LIMIT HALO: 1 @ $119.09 (ext-hours quote-first) | Sweepea
+2026-09-18 16:53:34,409 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:53:34,503 [INFO] LIVE PROBE BZH: sizing 3302 → 1 share(s); no automatic scale-in
+2026-09-18 16:53:34,574 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:53:35,648 [INFO] Heartbeat: 2026-09-18T16:53:35.648488
+2026-09-18 16:53:48,602 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 16:53:48,602 [INFO] ======================================================================
+2026-09-18 16:53:48,602 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 16:53:48,604 [INFO] Universe pruned: no expired tickers
+2026-09-18 16:53:48,604 [INFO] ======================================================================
+2026-09-18 16:53:48,605 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 16:53:48,606 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 16:53:48,608 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 16:53:48,612 [INFO] Restored position exit state: AAPL
+2026-09-18 16:53:48,612 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 16:53:48,614 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
+2026-09-18 16:56:09,926 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 16:56:09,926 [INFO] ======================================================================
+2026-09-18 16:56:09,926 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 16:56:09,928 [INFO] Universe pruned: no expired tickers
+2026-09-18 16:56:09,928 [INFO] ======================================================================
+2026-09-18 16:56:09,929 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 16:56:09,931 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 16:56:09,933 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 16:56:09,936 [INFO] Restored position exit state: AAPL
+2026-09-18 16:56:09,937 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 16:56:09,939 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
+2026-09-18 16:57:42,797 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 16:57:42,798 [INFO] ======================================================================
+2026-09-18 16:57:42,798 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 16:57:42,799 [INFO] Universe pruned: no expired tickers
+2026-09-18 16:57:42,799 [INFO] ======================================================================
+2026-09-18 16:57:42,801 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 16:57:42,801 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 16:57:42,803 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 16:57:42,807 [INFO] Restored position exit state: AAPL
+2026-09-18 16:57:42,807 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 16:57:42,810 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
