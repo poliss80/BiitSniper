@@ -663,6 +663,13 @@ def scan_and_trade(ctx: AppContext) -> None:
     """
     _session.reset_daily(ctx.client)
 
+    # Initialize the market snapshot before any early-return path. Probe
+    # management can run outside an active trading window and still needs the
+    # executor's market state for regime and timestamp decisions.
+    if ctx.market_state is None:
+        ctx.market_state = MarketState.from_now()
+    ctx.executor.update_market_state(ctx.market_state)
+
     if not _manage_intraday_window(ctx):
         _run_live_probe_scale_check(ctx, "SYSTEM")
         log.info("[SYSTEM] Outside an active intraday window or waiting for portfolio flatten")

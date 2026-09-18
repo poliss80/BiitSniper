@@ -35,6 +35,14 @@ OPTIONS_MAX_MLEG_CONTRACTS  = int(os.getenv("OPTIONS_MAX_MLEG_CONTRACTS", "2")) 
 # Example: OPTIONS_ALLOWED_STRATEGIES=MomentumCall,CoveredCall
 _raw_allowed = os.getenv("OPTIONS_ALLOWED_STRATEGIES", "")
 OPTIONS_ALLOWED_STRATEGIES  = {s.strip() for s in _raw_allowed.split(",") if s.strip()} if _raw_allowed.strip() else set()
+_raw_long_term_strategies = os.getenv("LONG_TERM_HOLD_STRATEGIES", "").strip()
+LONG_TERM_HOLD_STRATEGIES = {
+    s.strip() for s in _raw_long_term_strategies.split(",") if s.strip()
+}
+_raw_long_term_tickers = os.getenv("LONG_TERM_HOLD_TICKERS", "").strip()
+LONG_TERM_HOLD_TICKERS = {
+    s.strip().upper() for s in _raw_long_term_tickers.split(",") if s.strip()
+}
 OPTIONS_DTE_MIN             = int(os.getenv("OPTIONS_DTE_MIN", "14"))             # min days-to-expiry at entry (14 avoids forced same-day close = PDT hit)
 OPTIONS_DTE_MAX             = int(os.getenv("OPTIONS_DTE_MAX", "40"))             # max days-to-expiry at entry
 OPTIONS_DELTA_TARGET        = float(os.getenv("OPTIONS_DELTA_TARGET", "0.55"))    # target delta — 0.55 = ATM/slight ITM (higher profit/point)

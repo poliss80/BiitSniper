@@ -8,3 +8,136 @@
 2026-09-18 10:47:20,453 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
 2026-09-18 10:47:20,493 [INFO] Restored position exit state: AAPL
 2026-09-18 10:47:20,496 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 10:48:57,417 [INFO] Restored position exit state: SDGR, SRFM, LSTA
+2026-09-18 10:48:57,458 [INFO] Entry log rebuilt from today's orders: SDGR, SRFM, LSTA
+2026-09-18 10:48:57,494 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-18 10:48:57,531 [INFO] [OPTIONS] Reconciled BUY position: SOXL261002C00130000 1x call @130.0 entry=$4.35
+2026-09-18 10:48:57,531 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-18 10:48:57,614 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-18 10:48:57,615 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-18 10:48:57,615 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-18 10:48:57,615 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-18 10:48:57,616 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-18 10:48:57,616 [INFO] ======================================================================
+2026-09-18 10:48:57,616 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-18 10:48:57,616 [INFO] ======================================================================
+2026-09-18 10:48:57,616 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-18 10:48:57,616 [INFO] Priority 2 (Established): 16 stocks
+2026-09-18 10:48:57,616 [INFO] Total Universe: 42 stocks
+2026-09-18 10:48:57,616 [INFO] Scan: 3 min fixed
+2026-09-18 10:48:57,616 [INFO] ======================================================================
+2026-09-18 10:48:57,647 [INFO] Equity:          $93,693.28
+2026-09-18 10:48:57,647 [INFO] Buying Power:    $372,283.09
+2026-09-18 10:48:57,647 [INFO] PDT Status:      No
+2026-09-18 10:48:57,648 [INFO] Day Trade Count: None
+2026-09-18 10:48:57,648 [INFO] ======================================================================
+2026-09-18 10:48:57,648 [INFO] Starting… Press Ctrl+C to stop
+2026-09-18 10:48:57,648 [INFO] ======================================================================
+2026-09-18 10:48:57,648 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-18 10:48:57,649 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-18 10:48:57,649 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 10:48:57,699 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-18 10:49:02,747 [WARNING] Startup TI capture failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 10:49:02,782 [INFO] ======================================================================
+2026-09-18 10:49:02,782 [INFO] NEW DAY: 2026-09-18 | Start equity: $93,693.46
+2026-09-18 10:49:02,786 [INFO] Universe pruned: no expired tickers
+2026-09-18 10:49:02,786 [INFO] ======================================================================
+2026-09-18 10:49:02,787 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-18 10:49:02,787 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-18 10:52:02,816 [WARNING] [SYSTEM] live probe scale check skipped: EnhancedExecutor requires market_state to be set before execution
+2026-09-18 10:52:02,816 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-18 10:52:02,816 [INFO] Heartbeat: 2026-09-18T10:52:02.816828
+2026-09-18 10:55:04,552 [INFO] Options scan: starting — 115 ticker(s) in universe
+2026-09-18 10:55:32,256 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-18 10:55:33,204 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-18 10:55:43,728 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-18 10:55:47,954 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-18 10:56:01,620 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-18 10:56:07,570 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-18 10:56:07,573 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 10:56:09,304 [INFO] Options scan: 2 signal(s) | universe=115 | strategies: ['TrendPullbackSpread', 'MeanReversion']
+2026-09-18 10:56:09,305 [INFO] [OPTIONS] 2 candidates | open=0 | top: TQQQ call conf=81%
+2026-09-18 10:56:10,832 [INFO] [OPTIONS] TQQQ261002C00074000 Alpaca pricing: last=$1.34 bid=$1.29 ask=$1.44 limit=$1.34
+2026-09-18 10:56:10,868 [INFO] [OPTIONS][RETRY] Started retry thread for TQQQ order 246d91f6-905a-4810-9a0b-5fe316fa282f (retry 0)
+2026-09-18 10:56:10,868 [INFO] [OPTIONS] EXECUTED TQQQ call TrendPullbackSpread 1c conf=81% legs=1 open_window=False
+2026-09-18 10:56:10,868 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 246d91f6-905a-4810-9a0b-5fe316fa282f for TQQQ
+2026-09-18 10:56:10,870 [INFO] [OPTIONS] Options: 1 position(s)
+  TQQQ261002C00074000 | 1x TrendPullbackSpread entry=$0.32 DTE=14
+2026-09-18 10:56:11,366 [INFO] Quarterly P&L: -3.7% (target >= 50%)
+2026-09-18 10:56:11,927 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 10:56:12,048 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 10:56:13,596 [INFO] [EDGAR] CIK map loaded: 8,022 companies
+2026-09-18 10:56:19,886 [INFO] [EDGAR] 8-K match: FFAI — 8-K - FARADAY FUTURE INTELLIGENT ELECTRIC INC. (0001805521) (Filer)
+2026-09-18 10:56:19,887 [INFO] [EDGAR] 8-K match: WHK — 8-K - WhiteHawk Minerals Corp. (0001921603) (Filer)
+2026-09-18 10:56:19,887 [INFO] [EDGAR] 8-K match: AMCI — 8-K - AMC Robotics Corp (0001937891) (Filer)
+2026-09-18 10:56:19,888 [INFO] [EDGAR] 8-K match: EMAT — 8-K - Evolution Metals & Technologies Corp. (0001866226) (Filer)
+2026-09-18 10:56:19,888 [INFO] [EDGAR] 4 newly triggered tickers: ['FFAI', 'WHK', 'AMCI', 'EMAT']
+2026-09-18 10:56:19,891 [INFO] [EDGAR] Adding FFAI to P2 + scan queue for monitoring
+2026-09-18 10:56:19,891 [INFO] [EDGAR] Adding WHK to P2 + scan queue for monitoring
+2026-09-18 10:56:19,891 [INFO] [EDGAR] Adding AMCI to P2 + scan queue for monitoring
+2026-09-18 10:56:19,891 [INFO] [EDGAR] Adding EMAT to P2 + scan queue for monitoring
+2026-09-18 10:56:20,417 [INFO] [ALPACA-MOVERS] Adding NCPL to P2 + scan queue for monitoring
+2026-09-18 10:56:20,418 [INFO] [ALPACA-MOVERS] Adding SSM to P2 + scan queue for monitoring
+2026-09-18 10:56:20,418 [INFO] [ALPACA-MOVERS] 2 gainers queued for scan: ['NCPL', 'SSM']
+2026-09-18 10:56:20,484 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 10:56:20,501 [INFO] [SCAN] 6 symbols (filtered, 8 workers): FFAI, WHK, AMCI, EMAT, NCPL, SSM
+2026-09-18 10:56:20,502 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 10:56:22,549 [INFO] [RVOL@TIME] FFAI: today_vol=473655, avg_intraday_vol=242564 (4 sessions), elapsed_min=86, rvol=1.953, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 10:56:22,757 [INFO] [RVOL@TIME] WHK: today_vol=82334, avg_intraday_vol=57777 (4 sessions), elapsed_min=86, rvol=1.425, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 10:56:22,836 [WARNING] [GUARDRAIL] AMCI blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-18 10:56:22,995 [INFO] [RVOL@TIME] EMAT: today_vol=568900, avg_intraday_vol=247217 (4 sessions), elapsed_min=86, rvol=2.301, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 10:56:23,209 [INFO] [RVOL@TIME] SSM: today_vol=12014134, avg_intraday_vol=90108 (3 sessions), elapsed_min=86, rvol=133.330, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-18 10:56:23,366 [INFO] [RVOL@TIME] NCPL: today_vol=33378000, avg_intraday_vol=171025 (4 sessions), elapsed_min=86, rvol=195.164, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 10:56:26,291 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-18 10:56:26,291 [INFO] [FUNNEL] targets=6 guardrail_rejected=2 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 10:56:26,291 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 10:56:26,368 [INFO] LIVE PROBE SRFM: scale-in skipped; gain -0.40% < 0.50%
+2026-09-18 10:56:26,369 [INFO] LIVE PROBE LSTA: scale-in skipped; gain -1.78% < 0.50%
+2026-09-18 10:56:26,369 [INFO] [SCAN] No signals this cycle
+2026-09-18 10:56:26,370 [INFO] Heartbeat: 2026-09-18T10:56:26.369986

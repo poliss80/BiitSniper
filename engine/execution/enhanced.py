@@ -65,6 +65,7 @@ from engine.config import (
     LIVE_PROBE_SCALE_IN_MAX_TOTAL_RISK_PCT,
     LIVE_PROBE_MAX_TOTAL_BUYING_POWER_PCT,
     LIVE_PROBE_SCALE_IN_ATM_OPTION_ENABLED,
+    LONG_TERM_HOLD_STRATEGIES, LONG_TERM_HOLD_TICKERS,
     LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES,
     LIVE_PROBE_SCALE_IN_ATM_OPTION_MAX_ATTEMPTS,
     LIVE_PROBE_SCALE_IN_ATM_OPTION_MAX_MINUTES,
@@ -223,6 +224,7 @@ class EnhancedExecutor:
                 "entry_price": entry_price,
                 "atr_stop": info.get("atr_stop"),
                 "regime_at_entry": info.get("regime_at_entry", "unknown"),
+                "long_term_hold": bool(info.get("long_term_hold", False)),
                 "scaled_in": sym in self._live_probe_scaled_in,
                 "intermediate_target": self._intermediate_targets.get(sym),
                 "final_target": self._tp_targets.get(sym),
@@ -269,6 +271,7 @@ class EnhancedExecutor:
                     "entry_price": float(saved["entry_price"]),
                     "atr_stop": float(saved.get("atr_stop") or 0),
                     "regime_at_entry": saved.get("regime_at_entry", "unknown"),
+                    "long_term_hold": bool(saved.get("long_term_hold", False)),
                 }
                 if saved.get("intermediate_target") is not None:
                     self._intermediate_targets[sym] = float(saved["intermediate_target"])
@@ -314,6 +317,10 @@ class EnhancedExecutor:
             "entry_price": entry_price,
             "atr_stop": float(getattr(signal, "atr_stop", 0) or 0),
             "regime_at_entry": regime_at_entry,
+            "long_term_hold": (
+                signal.symbol.upper() in LONG_TERM_HOLD_TICKERS
+                or signal.strategy in LONG_TERM_HOLD_STRATEGIES
+            ),
         }
         if hasattr(self, "_save_exit_state"):
             self._save_exit_state()
@@ -856,6 +863,7 @@ class EnhancedExecutor:
                         "strategy": "restored",
                         "date": today,
                         "confidence": 0.0,
+                        "long_term_hold": sym.upper() in LONG_TERM_HOLD_TICKERS,
                     }
             if self._entry_log:
                 log.info(
@@ -2061,6 +2069,9 @@ class EnhancedExecutor:
 
             entry_info = self._entry_log.get(sym)
             is_margin_force = sym in margin_force_syms
+            if entry_info and entry_info.get("long_term_hold") and not is_margin_force:
+                log.info(f"EOD HOLD {sym}: long-term hold policy active")
+                continue
             if not EOD_CLOSE_ALL and not is_margin_force:
                 if not entry_info:
                     continue
@@ -2382,6 +2393,8 @@ class EnhancedExecutor:
         state_changed = False
 
         for sym in list(all_syms):
+            if self._entry_log.get(sym, {}).get("long_term_hold"):
+                continue
             pos = positions.get(sym)
             if pos is None:
                 to_clean.append(sym)
@@ -2531,6 +2544,8 @@ class EnhancedExecutor:
 
         state_changed = False
         for sym, info in list(self._entry_log.items()):
+            if info.get("long_term_hold"):
+                continue
             entry_time = info.get("entry_time")
             if entry_time is None:
                 continue
