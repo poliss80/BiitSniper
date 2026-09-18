@@ -1,15 +1,6 @@
 {
-  "generated_at": "2026-09-18T12:21:04-04:00",
+  "generated_at": "2026-09-18T12:29:30-04:00",
   "date": "2026-09-18",
   "market_regime": "bull",
-  "picks": [
-    {
-      "symbol": "HELP",
-      "action": "buy",
-      "price": 14.02,
-      "confidence": 0.91,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.90"
-    }
-  ]
+  "picks": []
 }

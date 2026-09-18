@@ -60,6 +60,7 @@ from engine.config import (
     LIVE_PROBE_MODE, LIVE_PROBE_SHARES, LIVE_PROBE_MAX_ENTRIES_PER_DAY,
     LIVE_PROBE_SCALE_IN_ENABLED,
     LIVE_PROBE_SCALE_IN_MIN_GAIN_PCT, LIVE_PROBE_SCALE_IN_BUYING_POWER_PCT,
+    LIVE_PROBE_SCALE_IN_MAX_STAGES,
     LIVE_PROBE_SCALE_IN_MAX_MULTIPLE, LIVE_PROBE_SCALE_IN_MIN_HOLD_MINUTES,
     LIVE_PROBE_SCALE_IN_REQUIRE_VWAP, LIVE_PROBE_SCALE_IN_REQUIRE_NEW_HIGH,
     LIVE_PROBE_SCALE_IN_NEAR_HIGH_PCT,
@@ -227,6 +228,8 @@ class EnhancedExecutor:
                 "regime_at_entry": info.get("regime_at_entry", "unknown"),
                 "long_term_hold": bool(info.get("long_term_hold", False)),
                 "ti_profile": info.get("ti_profile", ""),
+                "scale_in_stage": int(info.get("scale_in_stage", 0) or 0),
+                "atm_option_done": bool(info.get("atm_option_done", False)),
                 "scaled_in": sym in self._live_probe_scaled_in,
                 "intermediate_target": self._intermediate_targets.get(sym),
                 "final_target": self._tp_targets.get(sym),
@@ -275,6 +278,8 @@ class EnhancedExecutor:
                     "regime_at_entry": saved.get("regime_at_entry", "unknown"),
                     "long_term_hold": bool(saved.get("long_term_hold", False)),
                     "ti_profile": saved.get("ti_profile", ""),
+                    "scale_in_stage": int(saved.get("scale_in_stage", 0) or 0),
+                    "atm_option_done": bool(saved.get("atm_option_done", False)),
                 }
                 if saved.get("intermediate_target") is not None:
                     self._intermediate_targets[sym] = float(saved["intermediate_target"])
@@ -619,6 +624,7 @@ class EnhancedExecutor:
                             log.info(f"LIVE PROBE {sym}: ATM option retry window expired")
                             continue
                         if self._place_live_probe_atm_option(sym, current_price, market_state, options_executor):
+                            info["atm_option_done"] = True
                             pending_scale_ins.pop(sym, None)
                             state_changed = True
                         else:
@@ -703,18 +709,27 @@ class EnhancedExecutor:
                             f"failed: {protection_error}"
                         )
                         continue
+                    stage = int(info.get("scale_in_stage", 0) or 0) + 1
+                    info["scale_in_stage"] = stage
+                    # Mark the position as scaled immediately so reset logic
+                    # retains it; the stage counter independently controls the
+                    # next permitted scale-in.
                     self._mark_live_probe_scaled_in(sym)
-                    if self._is_option_market_open(market_state):
-                        if self._place_live_probe_atm_option(sym, current_price, market_state, options_executor):
-                            pending_scale_ins.pop(sym, None)
+                    if not info.get("atm_option_done"):
+                        if self._is_option_market_open(market_state):
+                            if self._place_live_probe_atm_option(sym, current_price, market_state, options_executor):
+                                info["atm_option_done"] = True
+                                pending_scale_ins.pop(sym, None)
+                            else:
+                                pending_scale_in["atm_option_pending"] = True
+                                pending_scale_in["atm_attempt_count"] = 1
+                                pending_scale_in["atm_retry_started_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
                         else:
-                            pending_scale_in["atm_option_pending"] = True
-                            pending_scale_in["atm_attempt_count"] = 1
+                            pending_scale_in["atm_option_deferred"] = True
+                            pending_scale_in["atm_attempt_count"] = 0
                             pending_scale_in["atm_retry_started_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
                     else:
-                        pending_scale_in["atm_option_deferred"] = True
-                        pending_scale_in["atm_attempt_count"] = 0
-                        pending_scale_in["atm_retry_started_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                        pending_scale_ins.pop(sym, None)
                     state_changed = True
                     log.info(f"LIVE PROBE {sym}: scale-in filled; protection replaced for {effective_qty} shares")
                     continue
@@ -745,7 +760,7 @@ class EnhancedExecutor:
                 log.info(f"LIVE PROBE {sym}: scale-in order still pending fill confirmation")
                 continue
 
-            if sym in self._live_probe_scaled_in:
+            if int(info.get("scale_in_stage", 0) or 0) >= LIVE_PROBE_SCALE_IN_MAX_STAGES:
                 continue
 
             gain_pct = ((current_price - entry_price) / entry_price * 100) * (1 if is_long else -1)
