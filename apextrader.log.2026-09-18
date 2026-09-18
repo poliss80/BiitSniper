@@ -3503,3 +3503,1596 @@ Stacktrace:
 2026-09-18 14:06:55,781 [INFO] Restored position exit state: AAPL
 2026-09-18 14:06:55,781 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
 2026-09-18 14:06:55,783 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
+2026-09-18 14:07:15,479 [INFO] Stopped by user
+2026-09-18 14:07:15,562 [INFO] ======================================================================
+2026-09-18 14:07:15,562 [INFO] STATUS
+2026-09-18 14:07:15,562 [INFO] Equity:     $98,496.19
+2026-09-18 14:07:15,562 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-18 14:07:15,562 [INFO] Positions:  6
+2026-09-18 14:07:15,562 [INFO] Unrealized: $4801.04
+2026-09-18 14:07:15,562 [INFO]   BAC261002C00058000: 5 @ $1.06 | $-69.00 (-13.04%)
+2026-09-18 14:07:15,562 [INFO]   BSOL: 101 @ $15.39 | $11.21 (+0.72%)
+2026-09-18 14:07:15,562 [INFO]   FWDI: 40001 @ $7.45 | $4850.28 (+1.63%)
+2026-09-18 14:07:15,562 [INFO]   LUXE: 1 @ $10.07 | $-0.12 (-1.19%)
+2026-09-18 14:07:15,562 [INFO]   SDGR: 6 @ $26.64 | $14.67 (+9.18%)
+2026-09-18 14:07:15,562 [INFO]   TQQQ261002C00074000: 2 @ $1.35 | $-6.00 (-2.22%)
+2026-09-18 14:07:15,562 [INFO] ======================================================================
+2026-09-18 14:07:18,719 [INFO] Restored position exit state: SDGR, LUXE, FWDI, BSOL
+2026-09-18 14:07:18,755 [INFO] Entry log rebuilt from today's orders: SDGR, LUXE, FWDI, BSOL
+2026-09-18 14:07:18,790 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-18 14:07:18,823 [INFO] [OPTIONS] Reconciled BUY position: BAC261002C00058000 5x call @58.0 entry=$1.06
+2026-09-18 14:07:18,823 [INFO] [OPTIONS] Reconciled BUY position: TQQQ261002C00074000 2x call @74.0 entry=$1.35
+2026-09-18 14:07:18,823 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-18 14:07:18,902 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-18 14:07:18,902 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-18 14:07:18,902 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-18 14:07:18,902 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-18 14:07:18,904 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-18 14:07:18,904 [INFO] ======================================================================
+2026-09-18 14:07:18,904 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-18 14:07:18,905 [INFO] ======================================================================
+2026-09-18 14:07:18,905 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-18 14:07:18,905 [INFO] Priority 2 (Established): 16 stocks
+2026-09-18 14:07:18,905 [INFO] Total Universe: 42 stocks
+2026-09-18 14:07:18,905 [INFO] Scan: 3 min fixed
+2026-09-18 14:07:18,905 [INFO] ======================================================================
+2026-09-18 14:07:18,939 [INFO] Equity:          $98,496.17
+2026-09-18 14:07:18,940 [INFO] Buying Power:    $0.00
+2026-09-18 14:07:18,940 [INFO] PDT Status:      No
+2026-09-18 14:07:18,940 [INFO] Day Trade Count: None
+2026-09-18 14:07:18,940 [INFO] ======================================================================
+2026-09-18 14:07:18,941 [INFO] Starting… Press Ctrl+C to stop
+2026-09-18 14:07:18,941 [INFO] ======================================================================
+2026-09-18 14:07:18,942 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-18 14:07:18,942 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-18 14:07:18,943 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 14:07:18,944 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-18 14:07:22,438 [WARNING] Startup TI capture failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 14:07:22,471 [INFO] ======================================================================
+2026-09-18 14:07:22,472 [INFO] NEW DAY: 2026-09-18 | Start equity: $98,496.53
+2026-09-18 14:07:22,474 [INFO] Universe pruned: no expired tickers
+2026-09-18 14:07:22,475 [INFO] ======================================================================
+2026-09-18 14:07:23,780 [INFO] Options scan: starting — 114 ticker(s) in universe
+2026-09-18 14:07:54,670 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-18 14:07:55,256 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-18 14:08:05,027 [INFO] Schwab: Refreshing access token...
+2026-09-18 14:08:05,447 [INFO] Schwab: Refreshing access token...
+2026-09-18 14:08:05,612 [INFO] Schwab: Refreshing access token...
+2026-09-18 14:08:05,646 [INFO] Schwab: Refreshing access token...
+2026-09-18 14:08:05,762 [INFO] Schwab: Refreshing access token...
+2026-09-18 14:08:06,170 [INFO] Schwab: Refreshing access token...
+2026-09-18 14:08:06,945 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 14:08:07,702 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 14:08:07,726 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 14:08:07,884 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 14:08:07,978 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 14:08:08,243 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 14:08:08,366 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-18 14:08:09,697 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-18 14:08:25,137 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-18 14:08:28,613 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-18 14:08:28,616 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:08:29,752 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:08:31,057 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:08:32,636 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:08:34,010 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:08:35,305 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:08:36,631 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:08:38,356 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:08:39,633 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:08:41,090 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:08:42,498 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:08:45,811 [INFO] Options scan: 2 signal(s) | universe=114 | strategies: ['MeanReversion', 'TrendPullbackSpread']
+2026-09-18 14:08:45,811 [INFO] [OPTIONS] 2 candidates | open=0 | top: BAC call conf=82%
+2026-09-18 14:08:47,462 [INFO] [OPTIONS] Insufficient budget for BAC (remaining=$0.00, total=$0.00, per_contract=$93.00)
+2026-09-18 14:08:48,387 [INFO] [OPTIONS] Insufficient budget for TQQQ (remaining=$0.00, total=$0.00, per_contract=$35.00)
+2026-09-18 14:08:48,390 [INFO] [OPTIONS] No option order executed this cycle | open=0 | rejections=BAC/MeanReversion: insufficient options budget ($0.00 remaining) ; TQQQ/TrendPullbackSpread: insufficient options budget ($0.00 remaining)
+2026-09-18 14:08:48,390 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:08:48,826 [INFO] Quarterly P&L: +1.5% (target >= 50%)
+2026-09-18 14:08:49,107 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:08:49,247 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 14:08:51,020 [INFO] [EDGAR] CIK map loaded: 8,031 companies
+2026-09-18 14:08:56,050 [INFO] [EDGAR] 8-K match: FFAI — 8-K - FARADAY FUTURE INTELLIGENT ELECTRIC INC. (0001805521) (Filer)
+2026-09-18 14:08:56,052 [INFO] [EDGAR] 8-K match: WHK — 8-K - WhiteHawk Minerals Corp. (0001921603) (Filer)
+2026-09-18 14:08:56,052 [INFO] [EDGAR] 8-K match: AMCI — 8-K - AMC Robotics Corp (0001937891) (Filer)
+2026-09-18 14:08:56,053 [INFO] [EDGAR] 3 newly triggered tickers: ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:08:56,057 [INFO] [EDGAR] Adding FFAI to P2 + scan queue for monitoring
+2026-09-18 14:08:56,057 [INFO] [EDGAR] Adding WHK to P2 + scan queue for monitoring
+2026-09-18 14:08:56,058 [INFO] [EDGAR] Adding AMCI to P2 + scan queue for monitoring
+2026-09-18 14:08:56,913 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 14:08:56,978 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:08:56,979 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:08:56,979 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:08:58,110 [INFO] [RVOL@TIME] FFAI: today_vol=851440, avg_intraday_vol=716577 (4 sessions), elapsed_min=278, rvol=1.188, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:08:58,267 [INFO] [RVOL@TIME] WHK: today_vol=203786, avg_intraday_vol=134840 (4 sessions), elapsed_min=278, rvol=1.511, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:08:58,478 [INFO] [RVOL@TIME] AMCI: today_vol=159974, avg_intraday_vol=202662 (1 sessions), elapsed_min=278, rvol=0.789, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:09:01,640 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 14:09:01,640 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 14:09:01,640 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 14:09:01,972 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.25 below VWAP 29.40
+2026-09-18 14:09:01,972 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.09% < 0.25%
+2026-09-18 14:09:02,223 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:09:02,437 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.53
+2026-09-18 14:09:02,438 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:12:03,415 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:12:03,416 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:12:37,477 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:12:38,763 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:12:40,378 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:12:42,205 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:12:43,593 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:12:45,091 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:12:46,556 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:12:48,395 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:12:49,908 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:12:51,295 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:12:53,207 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:12:54,544 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:12:55,291 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:12:55,292 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:12:55,292 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:12:55,293 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:12:55,294 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:12:55,374 [INFO] Quarterly P&L: -1.6% (target >= 50%)
+2026-09-18 14:12:55,375 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:12:55,581 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:12:55,583 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:12:55,583 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:12:56,709 [INFO] [RVOL@TIME] FFAI: today_vol=854340, avg_intraday_vol=723986 (4 sessions), elapsed_min=282, rvol=1.180, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:12:56,851 [INFO] [RVOL@TIME] WHK: today_vol=206510, avg_intraday_vol=137281 (4 sessions), elapsed_min=282, rvol=1.504, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:12:57,139 [INFO] [RVOL@TIME] AMCI: today_vol=160272, avg_intraday_vol=205578 (1 sessions), elapsed_min=282, rvol=0.780, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:13:00,217 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 14:13:00,218 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 14:13:01,133 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.34 below VWAP 29.40
+2026-09-18 14:13:01,134 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.04% < 0.25%
+2026-09-18 14:13:01,409 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:13:01,836 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.53
+2026-09-18 14:13:01,837 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:13:01,837 [INFO] Heartbeat: 2026-09-18T14:13:01.837583
+2026-09-18 14:16:02,802 [WARNING] Schwab API degraded: 0.0% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-18 14:16:02,805 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:16:02,805 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:16:36,149 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:16:37,451 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:16:38,902 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:16:40,711 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:16:42,185 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:16:43,516 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:16:44,980 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:16:46,953 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:16:48,430 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:16:49,803 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:16:51,333 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:16:52,758 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:16:55,269 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:16:55,269 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:16:55,269 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:16:55,270 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:16:55,270 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:16:55,341 [INFO] Quarterly P&L: -0.2% (target >= 50%)
+2026-09-18 14:16:55,341 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:16:55,513 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:16:55,514 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:16:55,515 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:16:56,719 [INFO] [RVOL@TIME] FFAI: today_vol=856721, avg_intraday_vol=734123 (4 sessions), elapsed_min=286, rvol=1.167, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:16:56,871 [INFO] [RVOL@TIME] WHK: today_vol=208399, avg_intraday_vol=139462 (4 sessions), elapsed_min=286, rvol=1.494, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:16:56,970 [INFO] [RVOL@TIME] AMCI: today_vol=160272, avg_intraday_vol=208494 (1 sessions), elapsed_min=286, rvol=0.769, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:16:58,820 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 14:16:58,820 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-18 14:16:58,820 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 14:16:59,182 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.20 below VWAP 29.40
+2026-09-18 14:16:59,182 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.04% < 0.25%
+2026-09-18 14:16:59,437 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:16:59,727 [INFO] LIVE PROBE BSOL: scale-in skipped; insufficient buying power
+2026-09-18 14:16:59,728 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:16:59,728 [INFO] Heartbeat: 2026-09-18T14:16:59.728607
+2026-09-18 14:20:00,789 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:20:00,790 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:20:44,003 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:20:45,277 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:20:46,644 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:20:48,558 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:20:49,854 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:20:51,218 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:20:52,646 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:20:54,636 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:20:55,978 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:20:57,392 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:20:59,039 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:21:01,115 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:21:02,711 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 14:21:02,711 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:21:02,712 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:21:02,712 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:21:02,713 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:21:02,783 [INFO] Quarterly P&L: +0.3% (target >= 50%)
+2026-09-18 14:21:02,783 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:21:15,991 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 14:21:16,062 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:21:16,064 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:21:16,064 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:21:17,238 [INFO] [RVOL@TIME] FFAI: today_vol=860721, avg_intraday_vol=750794 (4 sessions), elapsed_min=291, rvol=1.146, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:21:17,442 [INFO] [RVOL@TIME] WHK: today_vol=209459, avg_intraday_vol=140893 (4 sessions), elapsed_min=291, rvol=1.487, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:21:17,558 [INFO] [RVOL@TIME] AMCI: today_vol=161292, avg_intraday_vol=212139 (1 sessions), elapsed_min=291, rvol=0.760, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:21:20,036 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 14:21:20,036 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-18 14:21:20,036 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 14:21:20,440 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.32 below VWAP 29.40
+2026-09-18 14:21:20,440 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.49% < 0.25%
+2026-09-18 14:21:20,663 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:21:21,140 [INFO] LIVE PROBE BSOL: scale-in skipped; insufficient buying power
+2026-09-18 14:21:21,141 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:21:21,141 [INFO] Heartbeat: 2026-09-18T14:21:21.141231
+2026-09-18 14:24:22,094 [INFO] Schwab API recovered: 100.0% success rate — switching back to Schwab-first
+2026-09-18 14:24:22,098 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:24:22,148 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:24:55,792 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:24:57,014 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:24:58,438 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:25:00,226 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:25:01,848 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:25:03,228 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:25:04,650 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:25:06,759 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:25:08,081 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:25:09,570 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:25:11,093 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:25:12,394 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:25:15,043 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 14:25:15,044 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:25:15,044 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:25:15,046 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:25:15,047 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:25:15,114 [INFO] Quarterly P&L: -2.2% (target >= 50%)
+2026-09-18 14:25:15,115 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:25:15,272 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 14:25:15,391 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:25:15,392 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:25:15,392 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:25:16,589 [INFO] [RVOL@TIME] FFAI: today_vol=863208, avg_intraday_vol=758113 (4 sessions), elapsed_min=295, rvol=1.139, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:25:16,696 [INFO] [RVOL@TIME] WHK: today_vol=211823, avg_intraday_vol=142151 (4 sessions), elapsed_min=295, rvol=1.490, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:25:16,862 [INFO] [RVOL@TIME] AMCI: today_vol=161437, avg_intraday_vol=212286 (1 sessions), elapsed_min=295, rvol=0.760, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:25:20,035 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 14:25:20,036 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-18 14:25:20,036 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 14:25:20,364 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.22 below VWAP 29.39
+2026-09-18 14:25:20,364 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.39% < 0.25%
+2026-09-18 14:25:20,597 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:25:20,827 [INFO] LIVE PROBE BSOL: scale-in skipped; insufficient buying power
+2026-09-18 14:25:20,828 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:25:20,828 [INFO] Heartbeat: 2026-09-18T14:25:20.828263
+2026-09-18 14:28:21,798 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:28:21,799 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:28:55,176 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:28:56,594 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:28:58,039 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:28:59,714 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:29:01,120 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:29:02,469 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:29:04,230 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:29:06,090 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:29:07,368 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:29:09,050 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:29:10,587 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:29:11,875 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:29:12,718 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 14:29:12,719 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:29:12,719 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:29:12,720 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:29:12,720 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:29:12,816 [INFO] Quarterly P&L: -2.0% (target >= 50%)
+2026-09-18 14:29:12,866 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:29:12,975 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 14:29:13,066 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:29:13,067 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:29:13,067 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:29:14,480 [INFO] [RVOL@TIME] FFAI: today_vol=864700, avg_intraday_vol=770260 (4 sessions), elapsed_min=299, rvol=1.123, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:29:14,588 [INFO] [RVOL@TIME] WHK: today_vol=218494, avg_intraday_vol=142934 (4 sessions), elapsed_min=299, rvol=1.529, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:29:14,775 [INFO] [RVOL@TIME] AMCI: today_vol=162201, avg_intraday_vol=212440 (1 sessions), elapsed_min=299, rvol=0.764, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:29:17,788 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 14:29:17,788 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.70
+2026-09-18 14:29:17,788 [INFO] [SCAN] Breakdown — TrendlineBreakout: 3 | Errors: 0 | Total: 0
+2026-09-18 14:29:18,156 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.16 below VWAP 29.39
+2026-09-18 14:29:18,157 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -0.89% < 0.25%
+2026-09-18 14:29:18,452 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:29:18,747 [INFO] LIVE PROBE BSOL: scale-in skipped; insufficient buying power
+2026-09-18 14:29:18,747 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:29:18,748 [INFO] Heartbeat: 2026-09-18T14:29:18.748122
+2026-09-18 14:32:19,147 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:32:19,147 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:32:59,778 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:33:00,439 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:33:01,265 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:33:02,450 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:33:03,205 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:33:03,962 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:33:04,697 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:33:05,599 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:33:06,338 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:33:07,283 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:33:08,045 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:33:08,700 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:33:10,683 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:33:10,684 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:33:10,684 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:33:10,684 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:33:10,684 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:33:10,751 [INFO] Quarterly P&L: -2.0% (target >= 50%)
+2026-09-18 14:33:10,752 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:33:12,098 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 14:33:12,171 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:33:12,171 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:33:12,171 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:33:13,298 [INFO] [RVOL@TIME] FFAI: today_vol=866138, avg_intraday_vol=775600 (4 sessions), elapsed_min=303, rvol=1.117, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:33:13,466 [INFO] [RVOL@TIME] WHK: today_vol=220844, avg_intraday_vol=143174 (4 sessions), elapsed_min=303, rvol=1.542, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:33:13,649 [INFO] [RVOL@TIME] AMCI: today_vol=162301, avg_intraday_vol=210862 (1 sessions), elapsed_min=303, rvol=0.770, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:33:15,848 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 14:33:15,848 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.67
+2026-09-18 14:33:15,848 [INFO] [SCAN] Breakdown — TrendlineBreakout: 3 | Errors: 0 | Total: 0
+2026-09-18 14:33:16,161 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.16 below VWAP 29.39
+2026-09-18 14:33:16,161 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.04% < 0.25%
+2026-09-18 14:33:16,620 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:33:16,863 [INFO] LIVE PROBE BSOL: scale-in skipped; insufficient buying power
+2026-09-18 14:33:16,863 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:33:16,863 [INFO] Heartbeat: 2026-09-18T14:33:16.863906
+2026-09-18 14:36:17,355 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:36:17,356 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:36:50,789 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:36:52,093 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:36:53,780 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:36:55,662 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:36:57,087 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:36:58,388 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:37:00,133 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:37:02,405 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:37:04,434 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:37:05,897 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:37:07,805 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:37:09,121 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:37:10,188 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:37:10,189 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:37:10,189 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:37:10,190 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:37:10,190 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:37:10,254 [INFO] Quarterly P&L: -1.3% (target >= 50%)
+2026-09-18 14:37:10,255 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:37:10,445 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:37:10,446 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:37:10,446 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:37:11,597 [INFO] [RVOL@TIME] FFAI: today_vol=874920, avg_intraday_vol=785551 (4 sessions), elapsed_min=307, rvol=1.114, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:37:11,740 [INFO] [RVOL@TIME] WHK: today_vol=230578, avg_intraday_vol=144409 (4 sessions), elapsed_min=307, rvol=1.597, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:37:12,100 [INFO] [RVOL@TIME] AMCI: today_vol=162301, avg_intraday_vol=213646 (1 sessions), elapsed_min=307, rvol=0.760, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:37:14,735 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 14:37:14,735 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.64
+2026-09-18 14:37:14,736 [INFO] [SCAN] Breakdown — TrendlineBreakout: 3 | Errors: 0 | Total: 0
+2026-09-18 14:37:15,056 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.20 below VWAP 29.39
+2026-09-18 14:37:15,056 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -0.99% < 0.25%
+2026-09-18 14:37:15,432 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:37:15,694 [INFO] LIVE PROBE BSOL: scale-in skipped; insufficient buying power
+2026-09-18 14:37:15,695 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:37:15,695 [INFO] Heartbeat: 2026-09-18T14:37:15.695242
+2026-09-18 14:39:06,620 [INFO] ======================================================================
+2026-09-18 14:39:06,620 [INFO] STATUS
+2026-09-18 14:39:06,620 [INFO] Equity:     $95,102.59
+2026-09-18 14:39:06,621 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-18 14:39:06,621 [INFO] Positions:  6
+2026-09-18 14:39:06,621 [INFO] Unrealized: $1407.44
+2026-09-18 14:39:06,621 [INFO]   BAC261002C00058000: 5 @ $1.06 | $-74.00 (-13.99%)
+2026-09-18 14:39:06,621 [INFO]   BSOL: 101 @ $15.39 | $16.01 (+1.03%)
+2026-09-18 14:39:06,622 [INFO]   FWDI: 40001 @ $7.45 | $1450.20 (+0.49%)
+2026-09-18 14:39:06,622 [INFO]   LUXE: 1 @ $10.07 | $-0.09 (-0.89%)
+2026-09-18 14:39:06,622 [INFO]   SDGR: 6 @ $26.64 | $15.33 (+9.59%)
+2026-09-18 14:39:06,622 [INFO]   TQQQ261002C00074000: 2 @ $1.35 | $0.00 (+0.00%)
+2026-09-18 14:39:06,623 [INFO] ======================================================================
+2026-09-18 14:39:06,627 [INFO] Universe pruned: no expired tickers
+2026-09-18 14:40:17,040 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:40:17,041 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:40:51,118 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:40:52,305 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:40:53,703 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:40:55,332 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:40:56,786 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:40:58,069 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:40:59,445 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:41:01,233 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:41:02,605 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:41:04,200 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:41:05,887 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:41:07,307 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:41:10,218 [INFO] Options scan: 1 signal(s) filtered by market regime BULLISH (strength=1.00): TQQQ(TrendPullbackSpread,conf=0.85 -> 0.79 BELOW_THRESHOLD)
+2026-09-18 14:41:10,218 [INFO] Options scan: 1 signal(s) | universe=117 | strategies: ['MeanReversion']
+2026-09-18 14:41:10,218 [INFO] [OPTIONS] 1 candidates | open=0 | top: BAC call conf=82%
+2026-09-18 14:41:11,192 [INFO] [OPTIONS] Insufficient budget for BAC (remaining=$0.00, total=$0.00, per_contract=$94.50)
+2026-09-18 14:41:11,195 [INFO] [OPTIONS] No option order executed this cycle | open=0 | rejections=BAC/MeanReversion: insufficient options budget ($0.00 remaining)
+2026-09-18 14:41:11,195 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:41:11,633 [INFO] Quarterly P&L: -1.8% (target >= 50%)
+2026-09-18 14:41:11,824 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:41:12,007 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:41:12,008 [INFO] [SCAN] 3 symbols (filtered, 8 workers): FFAI, WHK, AMCI
+2026-09-18 14:41:12,008 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:41:13,287 [INFO] [RVOL@TIME] FFAI: today_vol=875140, avg_intraday_vol=791807 (4 sessions), elapsed_min=311, rvol=1.105, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:41:13,321 [INFO] [RVOL@TIME] WHK: today_vol=231278, avg_intraday_vol=146293 (4 sessions), elapsed_min=311, rvol=1.581, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:41:13,511 [INFO] [RVOL@TIME] AMCI: today_vol=162301, avg_intraday_vol=214257 (1 sessions), elapsed_min=311, rvol=0.758, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:41:15,985 [INFO] [FUNNEL] targets=3 guardrail_rejected=0 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 14:41:15,985 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.61
+2026-09-18 14:41:15,985 [INFO] [SCAN] Breakdown — TrendlineBreakout: 3 | Errors: 0 | Total: 0
+2026-09-18 14:41:16,486 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.20 below VWAP 29.39
+2026-09-18 14:41:16,487 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -0.79% < 0.25%
+2026-09-18 14:41:16,800 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:41:17,073 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 14:41:17,073 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:41:17,074 [INFO] Heartbeat: 2026-09-18T14:41:17.074029
+2026-09-18 14:44:18,011 [INFO] Options scan: injecting 3 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI']
+2026-09-18 14:44:18,012 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-18 14:45:02,924 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:45:04,146 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:45:05,460 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:45:07,350 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:45:08,812 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:45:10,170 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:45:11,460 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:45:14,162 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:45:17,396 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:45:20,090 [WARNING] Schwab: Failed to get quote for LCID: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/LCID; Alpaca fallback failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-09-18 14:45:24,853 [WARNING] Schwab: Failed to get quote for BCRX: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/BCRX; Alpaca fallback failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2026-09-18 14:45:26,888 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:45:28,337 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:45:28,338 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=116, no_BreakoutRetest=116, no_TrendPullbackSpread=115, no_IronCondor=115, no_Butterfly=115, no_signal=115
+2026-09-18 14:45:28,338 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:45:28,338 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:45:28,339 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:45:28,439 [INFO] Quarterly P&L: -1.6% (target >= 50%)
+2026-09-18 14:45:28,439 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:45:28,579 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 14:45:33,142 [INFO] [ALPACA-MOVERS] Adding NCPL to P2 + scan queue for monitoring
+2026-09-18 14:45:33,143 [INFO] [ALPACA-MOVERS] Adding TRUG to P2 + scan queue for monitoring
+2026-09-18 14:45:33,144 [INFO] [ALPACA-MOVERS] 2 gainers queued for scan: ['NCPL', 'TRUG']
+2026-09-18 14:45:33,225 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:45:33,229 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 14:45:33,230 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:45:35,176 [INFO] [RVOL@TIME] WHK: today_vol=232685, avg_intraday_vol=147493 (4 sessions), elapsed_min=315, rvol=1.578, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:45:35,202 [INFO] [RVOL@TIME] FFAI: today_vol=875140, avg_intraday_vol=808327 (4 sessions), elapsed_min=315, rvol=1.083, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:45:35,429 [INFO] [RVOL@TIME] NCPL: today_vol=102387152, avg_intraday_vol=18994125 (4 sessions), elapsed_min=315, rvol=5.390, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:45:35,553 [INFO] [RVOL@TIME] AMCI: today_vol=162501, avg_intraday_vol=217013 (1 sessions), elapsed_min=315, rvol=0.749, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:45:35,651 [INFO] [RVOL@TIME] TRUG: today_vol=160904479, avg_intraday_vol=27680052 (4 sessions), elapsed_min=315, rvol=5.813, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:45:40,210 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 0 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-18 14:45:40,211 [INFO] [FUNNEL] targets=5 guardrail_rejected=1 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 14:45:40,211 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.60
+2026-09-18 14:45:40,211 [INFO] [SCAN] Breakdown — TrendlineBreakout: 3 | Errors: 0 | Total: 0
+2026-09-18 14:45:40,710 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.05 below VWAP 29.39
+2026-09-18 14:45:40,710 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -0.79% < 0.25%
+2026-09-18 14:45:40,956 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:45:41,303 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 14:45:41,304 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:45:41,304 [INFO] Heartbeat: 2026-09-18T14:45:41.304526
+2026-09-18 14:48:42,220 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 14:48:42,220 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 14:49:16,656 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:49:17,804 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:49:19,098 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:49:20,724 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:49:22,123 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:49:23,344 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:49:24,613 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:49:26,357 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:49:27,633 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:49:28,958 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:49:30,347 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:49:31,559 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:49:33,899 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:49:33,900 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 14:49:33,900 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:49:33,900 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:49:33,901 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:49:33,980 [INFO] Quarterly P&L: -2.4% (target >= 50%)
+2026-09-18 14:49:33,980 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:49:34,077 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 14:49:34,138 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:49:34,139 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 14:49:34,139 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:49:35,900 [INFO] [RVOL@TIME] FFAI: today_vol=876358, avg_intraday_vol=813636 (4 sessions), elapsed_min=319, rvol=1.077, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:49:36,312 [INFO] [RVOL@TIME] NCPL: today_vol=102731068, avg_intraday_vol=18837962 (4 sessions), elapsed_min=319, rvol=5.453, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:49:36,346 [INFO] [RVOL@TIME] AMCI: today_vol=162501, avg_intraday_vol=219769 (1 sessions), elapsed_min=319, rvol=0.739, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:49:36,482 [INFO] [RVOL@TIME] WHK: today_vol=235876, avg_intraday_vol=148226 (4 sessions), elapsed_min=319, rvol=1.591, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:49:36,541 [INFO] [RVOL@TIME] TRUG: today_vol=161074677, avg_intraday_vol=27773345 (4 sessions), elapsed_min=319, rvol=5.800, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:49:39,484 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 0 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-18 14:49:39,485 [INFO] [FUNNEL] targets=5 guardrail_rejected=1 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 14:49:39,485 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 14:49:39,881 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.98 below VWAP 29.38
+2026-09-18 14:49:39,881 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -0.99% < 0.25%
+2026-09-18 14:49:40,123 [INFO] LIVE PROBE FWDI: scale-in skipped; price not within 0.20% of post-entry high 7.68
+2026-09-18 14:49:40,408 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 14:49:40,449 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:49:40,449 [INFO] Heartbeat: 2026-09-18T14:49:40.449712
+2026-09-18 14:52:41,427 [WARNING] Schwab API degraded: 0.0% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-18 14:52:41,431 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 14:52:41,431 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 14:53:15,162 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:53:16,395 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:53:17,790 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:53:19,388 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:53:20,772 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:53:22,230 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:53:23,705 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:53:25,708 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:53:27,012 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:53:28,311 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:53:29,815 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:53:31,233 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:53:32,049 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:53:32,049 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 14:53:32,050 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:53:32,051 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:53:32,052 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:53:32,113 [INFO] Quarterly P&L: -3.6% (target >= 50%)
+2026-09-18 14:53:32,113 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:53:32,333 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:53:32,336 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 14:53:32,336 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:53:34,133 [INFO] [RVOL@TIME] FFAI: today_vol=878110, avg_intraday_vol=823159 (4 sessions), elapsed_min=323, rvol=1.067, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:53:34,399 [INFO] [RVOL@TIME] AMCI: today_vol=162501, avg_intraday_vol=222524 (1 sessions), elapsed_min=323, rvol=0.730, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:53:34,428 [INFO] [RVOL@TIME] WHK: today_vol=239439, avg_intraday_vol=150352 (4 sessions), elapsed_min=323, rvol=1.593, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:53:34,706 [INFO] [RVOL@TIME] NCPL: today_vol=102973419, avg_intraday_vol=18652182 (4 sessions), elapsed_min=323, rvol=5.521, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:53:34,863 [INFO] [RVOL@TIME] TRUG: today_vol=161553817, avg_intraday_vol=27816511 (4 sessions), elapsed_min=323, rvol=5.808, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:53:37,195 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 14:53:37,195 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 14:53:37,195 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 14:53:37,524 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.93 below VWAP 29.37
+2026-09-18 14:53:37,524 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -0.99% < 0.25%
+2026-09-18 14:53:37,524 [INFO] LIVE PROBE FWDI: scale-in skipped; gain +0.02% < 0.25%
+2026-09-18 14:53:37,852 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 14:53:37,853 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:53:37,853 [INFO] Heartbeat: 2026-09-18T14:53:37.853347
+2026-09-18 14:56:38,858 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 14:56:38,858 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 14:57:22,636 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 14:57:23,899 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 14:57:25,435 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 14:57:27,422 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 14:57:28,942 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 14:57:30,305 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 14:57:31,877 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 14:57:33,881 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 14:57:35,485 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 14:57:37,080 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 14:57:38,716 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 14:57:41,155 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 14:57:44,672 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 14:57:44,673 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 14:57:44,673 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 14:57:44,673 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 14:57:44,674 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 14:57:44,745 [INFO] Quarterly P&L: -5.3% (target >= 50%)
+2026-09-18 14:57:44,746 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 14:57:52,754 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 14:57:52,830 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 14:57:52,831 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 14:57:52,831 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 14:57:54,648 [INFO] [RVOL@TIME] WHK: today_vol=242439, avg_intraday_vol=150987 (4 sessions), elapsed_min=327, rvol=1.606, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:57:54,775 [INFO] [RVOL@TIME] FFAI: today_vol=886399, avg_intraday_vol=836879 (4 sessions), elapsed_min=327, rvol=1.059, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:57:55,034 [INFO] [RVOL@TIME] TRUG: today_vol=162724094, avg_intraday_vol=27872066 (4 sessions), elapsed_min=327, rvol=5.838, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:57:55,062 [INFO] [RVOL@TIME] NCPL: today_vol=103547334, avg_intraday_vol=18537161 (4 sessions), elapsed_min=327, rvol=5.586, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 14:57:55,163 [INFO] [RVOL@TIME] AMCI: today_vol=162501, avg_intraday_vol=222605 (1 sessions), elapsed_min=327, rvol=0.730, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 14:57:58,018 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 14:57:58,019 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 14:57:58,019 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 14:57:58,455 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.87 below VWAP 29.36
+2026-09-18 14:57:58,455 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.19% < 0.25%
+2026-09-18 14:57:58,456 [INFO] LIVE PROBE FWDI: scale-in skipped; gain -0.39% < 0.25%
+2026-09-18 14:57:58,719 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 14:57:58,719 [INFO] [SCAN] No signals this cycle
+2026-09-18 14:57:58,719 [INFO] Heartbeat: 2026-09-18T14:57:58.719841
+2026-09-18 15:00:59,788 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.87 below VWAP 29.36
+2026-09-18 15:00:59,789 [INFO] LIVE PROBE LUXE: scale-in skipped; gain -1.09% < 0.25%
+2026-09-18 15:00:59,789 [INFO] LIVE PROBE FWDI: scale-in skipped; gain -0.79% < 0.25%
+2026-09-18 15:00:59,794 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 15:00:59,795 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-18 15:00:59,795 [INFO] Heartbeat: 2026-09-18T15:00:59.795302
+2026-09-18 15:04:00,780 [INFO] INTRADAY 15:03 ET RESET: retaining scaled-in live-probe positions: ['BSOL', 'SDGR']
+2026-09-18 15:04:01,115 [INFO] INTRADAY 15:03 ET RESET: cancelled order 1951501c-6594-40b7-b24c-921c88f65a06 (FWDI)
+2026-09-18 15:04:01,143 [INFO] INTRADAY 15:03 ET RESET: cancelled order e55ea933-4401-4543-9da9-023f3fb8a36e (LUXE)
+2026-09-18 15:04:01,179 [WARNING] INTRADAY 15:03 ET RESET: close submitted for BAC261002C00058000 qty=5
+2026-09-18 15:04:01,210 [WARNING] INTRADAY 15:03 ET RESET: close submitted for FWDI qty=40001
+2026-09-18 15:04:01,241 [WARNING] INTRADAY 15:03 ET RESET: close submitted for LUXE qty=1
+2026-09-18 15:04:01,279 [WARNING] INTRADAY 15:03 ET RESET: close submitted for TQQQ261002C00074000 qty=2
+2026-09-18 15:04:01,279 [INFO] INTRADAY 15:03 ET RESET: close requests submitted; continuing without waiting for confirmation: ['BAC261002C00058000', 'FWDI', 'LUXE', 'TQQQ261002C00074000']
+2026-09-18 15:04:01,348 [INFO] Schwab API recovered: 100.0% success rate — switching back to Schwab-first
+2026-09-18 15:04:01,351 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:04:01,352 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:04:35,086 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:04:36,401 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:04:37,849 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:04:39,609 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:04:40,983 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:04:42,333 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:04:43,818 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:04:45,776 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:04:47,216 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:04:48,590 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:04:50,138 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:04:51,474 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:04:53,940 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:04:53,940 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:04:53,940 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:04:53,941 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:04:53,941 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:04:54,003 [INFO] Quarterly P&L: -5.9% (target >= 50%)
+2026-09-18 15:04:54,004 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:04:54,098 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 15:04:54,161 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:04:54,162 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:04:54,162 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:04:56,107 [INFO] [RVOL@TIME] WHK: today_vol=247063, avg_intraday_vol=158577 (4 sessions), elapsed_min=334, rvol=1.558, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:04:56,126 [INFO] [RVOL@TIME] FFAI: today_vol=893567, avg_intraday_vol=850397 (4 sessions), elapsed_min=334, rvol=1.051, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:04:56,363 [INFO] [RVOL@TIME] AMCI: today_vol=181209, avg_intraday_vol=224942 (1 sessions), elapsed_min=334, rvol=0.806, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:04:56,547 [INFO] [RVOL@TIME] NCPL: today_vol=104105613, avg_intraday_vol=18301464 (4 sessions), elapsed_min=334, rvol=5.688, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:04:56,599 [INFO] [RVOL@TIME] TRUG: today_vol=163204958, avg_intraday_vol=27952020 (4 sessions), elapsed_min=334, rvol=5.839, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:05:00,379 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 0 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-18 15:05:00,380 [INFO] [FUNNEL] targets=5 guardrail_rejected=1 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 15:05:00,380 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 15:05:00,905 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.04 below VWAP 29.35
+2026-09-18 15:05:01,218 [INFO] LIVE PROBE BSOL: scale-in skipped; price not within 0.20% of post-entry high 15.55
+2026-09-18 15:05:01,219 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:05:01,219 [INFO] Heartbeat: 2026-09-18T15:05:01.219683
+2026-09-18 15:08:02,289 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:08:02,289 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:08:02,293 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:02,444 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:02,599 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:02,750 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:02,900 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:03,051 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:03,201 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:03,351 [INFO] Schwab: Refreshing access token...
+2026-09-18 15:08:04,687 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:04,844 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:05,089 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:05,118 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:05,358 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:05,432 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:05,500 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:05,641 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 15:08:31,479 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-18 15:08:43,509 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-18 15:09:01,261 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-18 15:09:01,264 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:09:02,849 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:09:04,464 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:09:06,314 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:09:07,794 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:09:09,273 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:09:10,915 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:09:13,046 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:09:14,439 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:09:15,789 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:09:17,386 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:09:18,848 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:09:19,488 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:09:19,489 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:09:19,489 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:09:19,490 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:09:19,490 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:09:20,444 [INFO] Quarterly P&L: -5.9% (target >= 50%)
+2026-09-18 15:09:20,444 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:09:20,547 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff727031bf5+4ca5]
+	msedgedriver!(No symbol) [0x7ff726f82774]
+	msedgedriver!GetHandleVerifier [0x7ff7273b13cf+38447f]
+	msedgedriver!(No symbol) [0x7ff726cf7312]
+	msedgedriver!(No symbol) [0x7ff726d85ab6]
+	msedgedriver!(No symbol) [0x7ff726d9d26f]
+	msedgedriver!(No symbol) [0x7ff726d5599c]
+	msedgedriver!(No symbol) [0x7ff726d54c1d]
+	msedgedriver!(No symbol) [0x7ff726d557c3]
+	msedgedriver!(No symbol) [0x7ff726e8c442]
+	msedgedriver!(No symbol) [0x7ff726e9be69]
+	msedgedriver!GetHandleVerifier [0x7ff7270d9b25+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff7270e0001+b30b1]
+	msedgedriver!(No symbol) [0x7ff726f8e4ef]
+	msedgedriver!(No symbol) [0x7ff726f88ec4]
+	msedgedriver!(No symbol) [0x7ff726f88fea]
+	msedgedriver!(No symbol) [0x7ff726f7a5a8]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 15:09:22,668 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 15:09:22,732 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:09:22,733 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:09:22,733 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:09:24,512 [INFO] [RVOL@TIME] FFAI: today_vol=897211, avg_intraday_vol=861399 (4 sessions), elapsed_min=339, rvol=1.042, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:09:24,611 [INFO] [RVOL@TIME] AMCI: today_vol=194404, avg_intraday_vol=227996 (1 sessions), elapsed_min=339, rvol=0.853, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:09:24,790 [INFO] [RVOL@TIME] WHK: today_vol=259178, avg_intraday_vol=164044 (4 sessions), elapsed_min=339, rvol=1.580, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:09:24,935 [INFO] [RVOL@TIME] NCPL: today_vol=104290625, avg_intraday_vol=18146245 (4 sessions), elapsed_min=339, rvol=5.747, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:09:25,103 [INFO] [RVOL@TIME] TRUG: today_vol=163415743, avg_intraday_vol=28019840 (4 sessions), elapsed_min=339, rvol=5.832, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:09:26,962 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:09:26,963 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 15:09:26,963 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 15:09:27,270 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.77 below VWAP 29.34
+2026-09-18 15:09:27,519 [INFO] LIVE PROBE SCALE-IN BSOL: +1895 shares at +1.05% pending fill confirmation
+2026-09-18 15:09:27,525 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:09:27,525 [INFO] Heartbeat: 2026-09-18T15:09:27.525634
+2026-09-18 15:09:27,589 [INFO] ======================================================================
+2026-09-18 15:09:27,589 [INFO] STATUS
+2026-09-18 15:09:27,589 [INFO] Equity:     $91,519.97
+2026-09-18 15:09:27,590 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-18 15:09:27,590 [INFO] Positions:  2
+2026-09-18 15:09:27,590 [INFO] Unrealized: $29.04
+2026-09-18 15:09:27,590 [INFO]   BSOL: 101 @ $15.39 | $16.26 (+1.05%)
+2026-09-18 15:09:27,590 [INFO]   SDGR: 6 @ $26.64 | $12.78 (+7.99%)
+2026-09-18 15:09:27,592 [INFO] ======================================================================
+2026-09-18 15:09:27,595 [INFO] Universe pruned: no expired tickers
+2026-09-18 15:12:29,178 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:12:29,179 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:12:54,591 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-18 15:13:07,596 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-18 15:13:21,488 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-18 15:13:21,491 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:13:23,283 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:13:25,199 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:13:27,564 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:13:29,594 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:13:31,190 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:13:32,956 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:13:35,702 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:13:37,707 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:13:39,494 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:13:41,490 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:13:43,158 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:13:46,236 [INFO] Options scan: 2 signal(s) | universe=119 | strategies: ['MeanReversion', 'TrendPullbackSpread']
+2026-09-18 15:13:46,236 [INFO] [OPTIONS] 2 candidates | open=0 | top: BAC call conf=82%
+2026-09-18 15:13:49,675 [INFO] [OPTIONS] BAC261002C00058000 Alpaca pricing: last=$0.90 bid=$0.91 ask=$0.95 limit=$0.90
+2026-09-18 15:13:49,713 [INFO] [OPTIONS][RETRY] Started retry thread for BAC order e985bf78-c47c-4c50-9196-67f10d7cf373 (retry 0)
+2026-09-18 15:13:49,714 [INFO] [OPTIONS] EXECUTED BAC call MeanReversion 1c conf=82% legs=1 open_window=False
+2026-09-18 15:13:49,715 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order e985bf78-c47c-4c50-9196-67f10d7cf373 for BAC
+2026-09-18 15:13:49,718 [INFO] [OPTIONS] Options: 1 position(s)
+  BAC261002C00058000 | 1x MeanReversion entry=$0.94 DTE=14
+2026-09-18 15:13:50,406 [INFO] Quarterly P&L: -5.8% (target >= 50%)
+2026-09-18 15:13:50,660 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:13:50,929 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:13:50,931 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:13:50,931 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:13:52,750 [INFO] [RVOL@TIME] FFAI: today_vol=899611, avg_intraday_vol=866090 (4 sessions), elapsed_min=343, rvol=1.039, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:13:52,959 [INFO] [RVOL@TIME] WHK: today_vol=262550, avg_intraday_vol=168413 (4 sessions), elapsed_min=343, rvol=1.559, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:13:53,098 [INFO] [RVOL@TIME] AMCI: today_vol=194404, avg_intraday_vol=230686 (1 sessions), elapsed_min=343, rvol=0.843, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:13:53,303 [INFO] [RVOL@TIME] NCPL: today_vol=104386643, avg_intraday_vol=18002889 (4 sessions), elapsed_min=343, rvol=5.798, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:13:53,542 [INFO] [RVOL@TIME] TRUG: today_vol=163852957, avg_intraday_vol=28069634 (4 sessions), elapsed_min=343, rvol=5.837, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:13:56,712 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:13:56,713 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 15:13:56,713 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 15:13:57,176 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.98 below VWAP 29.33
+2026-09-18 15:13:59,225 [INFO] [OPTIONS] BSOL261016C00014000 Alpaca pricing: last=$1.98 bid=$1.92 ask=$2.07 limit=$1.98
+2026-09-18 15:13:59,275 [INFO] [OPTIONS][RETRY] Started retry thread for BSOL order 8d96f5a7-2f8c-4ee7-baf9-fc1dccbb73f6 (retry 0)
+2026-09-18 15:13:59,276 [INFO] [OPTIONS] EXECUTED BSOL call LiveProbeATMScaleIn 1c conf=100% legs=1 open_window=False
+2026-09-18 15:13:59,276 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 8d96f5a7-2f8c-4ee7-baf9-fc1dccbb73f6 for BSOL
+2026-09-18 15:13:59,279 [INFO] LIVE PROBE ATM OPTION BSOL: 1x $14.00 call submitted
+2026-09-18 15:13:59,280 [INFO] LIVE PROBE BSOL: scale-in filled; protection replaced for 1996 shares
+2026-09-18 15:13:59,286 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:13:59,287 [INFO] Heartbeat: 2026-09-18T15:13:59.287148
+2026-09-18 15:16:50,869 [INFO] [OPTIONS][RETRY] Order e985bf78-c47c-4c50-9196-67f10d7cf373 for BAC still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-18 15:16:50,870 [INFO] [OPTIONS][RETRY] Cancelling order e985bf78-c47c-4c50-9196-67f10d7cf373 for BAC (unfilled qty: 1)
+2026-09-18 15:16:50,900 [INFO] [OPTIONS][RETRY] Retrying BAC order at more aggressive limit: 0.91 (retry 1)
+2026-09-18 15:16:50,941 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for BAC: 85000bc1-e4ab-4f4c-b2a8-70347a732117
+2026-09-18 15:16:50,943 [INFO] [OPTIONS][RETRY] Started retry thread for BAC order 85000bc1-e4ab-4f4c-b2a8-70347a732117 (retry 1)
+2026-09-18 15:16:50,944 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 85000bc1-e4ab-4f4c-b2a8-70347a732117 for BAC
+2026-09-18 15:16:59,333 [INFO] [OPTIONS][RETRY] Order 8d96f5a7-2f8c-4ee7-baf9-fc1dccbb73f6 for BSOL still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-18 15:16:59,333 [INFO] [OPTIONS][RETRY] Cancelling order 8d96f5a7-2f8c-4ee7-baf9-fc1dccbb73f6 for BSOL (unfilled qty: 1)
+2026-09-18 15:16:59,363 [INFO] [OPTIONS][RETRY] Retrying BSOL order at more aggressive limit: 2.0 (retry 1)
+2026-09-18 15:16:59,399 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for BSOL: 501894ca-14a4-40a4-a2aa-2683e74416ff
+2026-09-18 15:16:59,401 [INFO] [OPTIONS][RETRY] Started retry thread for BSOL order 501894ca-14a4-40a4-a2aa-2683e74416ff (retry 1)
+2026-09-18 15:16:59,401 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 501894ca-14a4-40a4-a2aa-2683e74416ff for BSOL
+2026-09-18 15:17:00,519 [WARNING] Schwab API degraded: 0.0% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-18 15:17:00,524 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:17:00,525 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:17:34,542 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:17:36,289 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:17:38,362 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:17:42,094 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:17:44,205 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:17:46,009 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:17:47,785 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:17:50,526 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:17:52,408 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:17:54,324 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:17:56,453 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:17:58,240 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:17:59,012 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:17:59,014 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:17:59,014 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:17:59,016 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:17:59,018 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:17:59,085 [INFO] Quarterly P&L: -5.8% (target >= 50%)
+2026-09-18 15:17:59,085 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:17:59,245 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:17:59,246 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:17:59,247 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:18:01,022 [INFO] [RVOL@TIME] FFAI: today_vol=918620, avg_intraday_vol=875652 (4 sessions), elapsed_min=348, rvol=1.049, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:18:01,215 [INFO] [RVOL@TIME] WHK: today_vol=269014, avg_intraday_vol=173328 (4 sessions), elapsed_min=348, rvol=1.552, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:18:01,312 [INFO] [RVOL@TIME] AMCI: today_vol=194404, avg_intraday_vol=234049 (1 sessions), elapsed_min=348, rvol=0.831, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:18:01,591 [INFO] [RVOL@TIME] NCPL: today_vol=104501158, avg_intraday_vol=17828326 (4 sessions), elapsed_min=348, rvol=5.862, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:18:01,689 [INFO] [RVOL@TIME] TRUG: today_vol=164076221, avg_intraday_vol=28102638 (4 sessions), elapsed_min=348, rvol=5.838, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:18:03,614 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:18:03,614 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 15:18:03,615 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 15:18:03,976 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.94 below VWAP 29.32
+2026-09-18 15:18:03,977 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:18:03,977 [INFO] Heartbeat: 2026-09-18T15:18:03.977430
+2026-09-18 15:19:52,112 [INFO] [OPTIONS][RETRY] Order 85000bc1-e4ab-4f4c-b2a8-70347a732117 for BAC still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-18 15:19:52,113 [INFO] [OPTIONS][RETRY] Cancelling order 85000bc1-e4ab-4f4c-b2a8-70347a732117 for BAC (unfilled qty: 1)
+2026-09-18 15:19:52,141 [INFO] [OPTIONS][RETRY] Retrying BAC order at more aggressive limit: 0.93 (retry 2)
+2026-09-18 15:19:52,174 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for BAC: 185afcad-a83a-4cf4-b9f6-69b028f09e02
+2026-09-18 15:19:52,176 [INFO] [OPTIONS][RETRY] Started retry thread for BAC order 185afcad-a83a-4cf4-b9f6-69b028f09e02 (retry 2)
+2026-09-18 15:19:52,177 [INFO] [OPTIONS][RETRY] Max retries reached for BAC order 185afcad-a83a-4cf4-b9f6-69b028f09e02, giving up.
+2026-09-18 15:19:59,455 [INFO] [OPTIONS][RETRY] Order 501894ca-14a4-40a4-a2aa-2683e74416ff for BSOL still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-18 15:19:59,455 [INFO] [OPTIONS][RETRY] Cancelling order 501894ca-14a4-40a4-a2aa-2683e74416ff for BSOL (unfilled qty: 1)
+2026-09-18 15:19:59,485 [INFO] [OPTIONS][RETRY] Retrying BSOL order at more aggressive limit: 2.04 (retry 2)
+2026-09-18 15:19:59,517 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for BSOL: 82cb150f-8c3c-4693-830b-98702b1ddc04
+2026-09-18 15:19:59,518 [INFO] [OPTIONS][RETRY] Started retry thread for BSOL order 82cb150f-8c3c-4693-830b-98702b1ddc04 (retry 2)
+2026-09-18 15:19:59,519 [INFO] [OPTIONS][RETRY] Max retries reached for BSOL order 82cb150f-8c3c-4693-830b-98702b1ddc04, giving up.
+2026-09-18 15:21:04,161 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:21:04,162 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:21:48,906 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:21:50,416 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:21:52,394 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:21:54,494 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:21:56,407 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:21:58,209 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:22:00,054 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:22:02,429 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:22:04,258 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:22:06,104 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:22:08,230 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:22:09,865 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:22:12,719 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 15:22:12,720 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:22:12,720 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:22:12,721 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:22:12,721 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:22:12,782 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:22:12,784 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:22:20,353 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 15:22:20,422 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:22:20,423 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:22:20,424 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:22:22,209 [INFO] [RVOL@TIME] FFAI: today_vol=926968, avg_intraday_vol=880491 (4 sessions), elapsed_min=352, rvol=1.053, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:22:22,390 [INFO] [RVOL@TIME] WHK: today_vol=281713, avg_intraday_vol=176790 (4 sessions), elapsed_min=352, rvol=1.593, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:22:22,511 [INFO] [RVOL@TIME] AMCI: today_vol=194404, avg_intraday_vol=234521 (1 sessions), elapsed_min=352, rvol=0.829, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:22:22,727 [INFO] [RVOL@TIME] NCPL: today_vol=104679665, avg_intraday_vol=17706622 (4 sessions), elapsed_min=352, rvol=5.912, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:22:22,793 [INFO] [RVOL@TIME] TRUG: today_vol=164322039, avg_intraday_vol=28165942 (4 sessions), elapsed_min=352, rvol=5.834, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:22:26,683 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:22:26,683 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 15:22:26,684 [INFO] [SCAN] Breakdown — TrendlineBreakout: 3 | Errors: 0 | Total: 0
+2026-09-18 15:22:27,007 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.95 below VWAP 29.32
+2026-09-18 15:22:27,009 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:22:27,009 [INFO] Heartbeat: 2026-09-18T15:22:27.009919
+2026-09-18 15:25:28,266 [INFO] Schwab API recovered: 100.0% success rate — switching back to Schwab-first
+2026-09-18 15:25:28,270 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:25:28,270 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:26:02,399 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:26:04,015 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:26:05,798 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:26:07,785 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:26:09,726 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:26:11,347 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:26:13,149 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:26:15,910 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:26:17,642 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:26:19,342 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:26:21,269 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:26:23,315 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:26:24,039 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 15:26:24,040 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:26:24,040 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:26:24,041 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:26:24,041 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:26:24,117 [INFO] Quarterly P&L: -5.7% (target >= 50%)
+2026-09-18 15:26:24,118 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:26:24,232 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 15:26:24,307 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:26:24,309 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:26:24,309 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:26:26,518 [INFO] [RVOL@TIME] WHK: today_vol=287741, avg_intraday_vol=178249 (4 sessions), elapsed_min=356, rvol=1.614, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:26:26,551 [INFO] [RVOL@TIME] FFAI: today_vol=932860, avg_intraday_vol=891218 (4 sessions), elapsed_min=356, rvol=1.047, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:26:26,838 [INFO] [RVOL@TIME] AMCI: today_vol=194404, avg_intraday_vol=234534 (1 sessions), elapsed_min=356, rvol=0.829, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:26:26,898 [INFO] [RVOL@TIME] NCPL: today_vol=104920185, avg_intraday_vol=17597212 (4 sessions), elapsed_min=356, rvol=5.962, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:26:27,059 [INFO] [RVOL@TIME] TRUG: today_vol=164574117, avg_intraday_vol=28253419 (4 sessions), elapsed_min=356, rvol=5.825, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:26:30,983 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:26:30,983 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-18 15:26:30,983 [INFO] [SCAN] Breakdown — Technical: 1, TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 15:26:31,474 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.91 below VWAP 29.31
+2026-09-18 15:26:31,475 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:26:31,475 [INFO] Heartbeat: 2026-09-18T15:26:31.475333
+2026-09-18 15:29:32,738 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:29:32,738 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:30:07,389 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:30:08,957 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:30:10,807 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:30:13,269 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:30:15,145 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:30:16,799 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:30:18,607 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:30:21,035 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:30:22,752 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:30:24,721 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:30:26,803 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:30:28,565 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:30:31,473 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 15:30:31,473 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:30:31,474 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:30:31,474 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:30:31,474 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:30:31,540 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:30:31,542 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:30:31,680 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff6b38d1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff6b3822654]
+	msedgedriver!GetHandleVerifier [0x7ff6b3c5138f+38455f]
+	msedgedriver!(No symbol) [0x7ff6b3597312]
+	msedgedriver!(No symbol) [0x7ff6b3625ab6]
+	msedgedriver!(No symbol) [0x7ff6b363d26f]
+	msedgedriver!(No symbol) [0x7ff6b35f599c]
+	msedgedriver!(No symbol) [0x7ff6b35f4c1d]
+	msedgedriver!(No symbol) [0x7ff6b35f57c3]
+	msedgedriver!(No symbol) [0x7ff6b372be52]
+	msedgedriver!(No symbol) [0x7ff6b373b879]
+	msedgedriver!GetHandleVerifier [0x7ff6b3979a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff6b397fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff6b382e3cf]
+	msedgedriver!(No symbol) [0x7ff6b3828da4]
+	msedgedriver!(No symbol) [0x7ff6b3828eca]
+	msedgedriver!(No symbol) [0x7ff6b381a488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 15:30:31,786 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:30:31,789 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:30:31,789 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:30:33,433 [INFO] [RVOL@TIME] FFAI: today_vol=949369, avg_intraday_vol=895318 (4 sessions), elapsed_min=360, rvol=1.060, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:30:33,752 [INFO] [RVOL@TIME] AMCI: today_vol=195445, avg_intraday_vol=237169 (1 sessions), elapsed_min=360, rvol=0.824, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:30:34,034 [INFO] [RVOL@TIME] NCPL: today_vol=105019037, avg_intraday_vol=17484142 (4 sessions), elapsed_min=360, rvol=6.007, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:30:34,047 [INFO] [RVOL@TIME] WHK: today_vol=295792, avg_intraday_vol=179877 (4 sessions), elapsed_min=360, rvol=1.644, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:30:34,341 [INFO] [RVOL@TIME] TRUG: today_vol=164856990, avg_intraday_vol=28326713 (4 sessions), elapsed_min=360, rvol=5.820, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:30:36,170 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:30:36,171 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 15:30:36,171 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 15:30:36,171 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 15:30:36,566 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.98 below VWAP 29.31
+2026-09-18 15:30:36,567 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:30:36,567 [INFO] Heartbeat: 2026-09-18T15:30:36.567541
+2026-09-18 15:33:37,867 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:33:37,867 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:34:23,492 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:34:25,196 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:34:27,101 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:34:29,287 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:34:31,068 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:34:32,753 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:34:34,627 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:34:37,066 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:34:38,867 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:34:40,627 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:34:42,620 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:34:44,344 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:34:45,296 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:34:45,297 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:34:45,298 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:34:45,299 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:34:45,300 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:34:45,383 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:34:45,383 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:34:59,912 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 15:34:59,987 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:34:59,988 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:34:59,989 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:35:01,726 [INFO] [RVOL@TIME] FFAI: today_vol=986680, avg_intraday_vol=909711 (4 sessions), elapsed_min=365, rvol=1.085, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:35:01,935 [INFO] [RVOL@TIME] WHK: today_vol=319777, avg_intraday_vol=182424 (4 sessions), elapsed_min=365, rvol=1.753, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:35:02,168 [INFO] [RVOL@TIME] AMCI: today_vol=195781, avg_intraday_vol=240463 (1 sessions), elapsed_min=365, rvol=0.814, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:35:02,232 [INFO] [RVOL@TIME] NCPL: today_vol=105288374, avg_intraday_vol=17487198 (4 sessions), elapsed_min=365, rvol=6.021, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:35:02,404 [INFO] [RVOL@TIME] TRUG: today_vol=165190308, avg_intraday_vol=28403325 (4 sessions), elapsed_min=365, rvol=5.816, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:35:05,735 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:35:05,735 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 15:35:05,736 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-18 15:35:06,105 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.80 below VWAP 29.31
+2026-09-18 15:35:06,105 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:35:06,106 [INFO] Heartbeat: 2026-09-18T15:35:06.105952
+2026-09-18 15:38:07,399 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:38:07,399 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:38:41,222 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:38:42,857 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:38:44,644 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:38:47,281 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:38:49,145 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:38:50,742 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:38:52,719 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:38:55,186 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:38:57,387 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:38:59,155 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:39:01,259 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:39:03,034 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:39:06,190 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:39:06,191 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:39:06,191 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:39:06,192 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:39:06,193 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:39:06,262 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:39:06,262 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:39:06,441 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:39:06,443 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:39:06,443 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:39:08,285 [INFO] [RVOL@TIME] FFAI: today_vol=993672, avg_intraday_vol=919854 (4 sessions), elapsed_min=369, rvol=1.080, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:39:08,359 [INFO] [RVOL@TIME] WHK: today_vol=329420, avg_intraday_vol=184139 (4 sessions), elapsed_min=369, rvol=1.789, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:39:08,494 [INFO] [RVOL@TIME] AMCI: today_vol=195781, avg_intraday_vol=243098 (1 sessions), elapsed_min=369, rvol=0.805, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:39:08,732 [INFO] [RVOL@TIME] NCPL: today_vol=105377855, avg_intraday_vol=17414681 (4 sessions), elapsed_min=369, rvol=6.051, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:39:08,825 [INFO] [RVOL@TIME] TRUG: today_vol=166075009, avg_intraday_vol=28507681 (4 sessions), elapsed_min=369, rvol=5.826, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:39:11,629 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:39:11,630 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-18 15:39:11,630 [INFO] [SCAN] Breakdown — Technical: 1, TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-18 15:39:11,982 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.98 below VWAP 29.30
+2026-09-18 15:39:11,983 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:39:11,984 [INFO] Heartbeat: 2026-09-18T15:39:11.983939
+2026-09-18 15:39:32,067 [INFO] ======================================================================
+2026-09-18 15:39:32,068 [INFO] STATUS
+2026-09-18 15:39:32,068 [INFO] Equity:     $91,758.33
+2026-09-18 15:39:32,068 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-18 15:39:32,069 [INFO] Positions:  3
+2026-09-18 15:39:32,069 [INFO] Unrealized: $267.43
+2026-09-18 15:39:32,069 [INFO]   BAC261002C00058000: 1 @ $0.93 | $-2.00 (-2.15%)
+2026-09-18 15:39:32,069 [INFO]   BSOL: 1996 @ $15.54 | $255.78 (+0.83%)
+2026-09-18 15:39:32,070 [INFO]   SDGR: 6 @ $26.64 | $13.65 (+8.54%)
+2026-09-18 15:39:32,070 [INFO] ======================================================================
+2026-09-18 15:39:32,076 [INFO] Universe pruned: no expired tickers
+2026-09-18 15:42:13,450 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:42:13,451 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:42:47,697 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:42:49,550 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:42:51,913 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:42:54,417 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:42:56,512 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:42:58,298 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:43:00,430 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:43:04,527 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:43:06,436 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:43:08,381 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:43:10,508 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:43:12,216 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:43:12,878 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:43:12,878 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:43:12,879 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:43:12,879 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:43:12,879 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:43:12,982 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:43:12,983 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:43:13,162 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:43:13,169 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:43:13,169 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:43:15,052 [INFO] [RVOL@TIME] FFAI: today_vol=1002647, avg_intraday_vol=925639 (4 sessions), elapsed_min=373, rvol=1.083, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:43:15,350 [INFO] [RVOL@TIME] AMCI: today_vol=197319, avg_intraday_vol=244480 (1 sessions), elapsed_min=373, rvol=0.807, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:43:15,451 [INFO] [RVOL@TIME] WHK: today_vol=335299, avg_intraday_vol=190111 (4 sessions), elapsed_min=373, rvol=1.764, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:43:15,608 [INFO] [RVOL@TIME] NCPL: today_vol=105439905, avg_intraday_vol=17316046 (4 sessions), elapsed_min=373, rvol=6.089, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:43:15,613 [INFO] [RVOL@TIME] TRUG: today_vol=166434288, avg_intraday_vol=28622203 (4 sessions), elapsed_min=373, rvol=5.815, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:43:18,624 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:43:18,624 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-18 15:43:18,625 [INFO] [SCAN] Breakdown — Technical: 1 | Errors: 0 | Total: 0
+2026-09-18 15:43:19,076 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.95 below VWAP 29.30
+2026-09-18 15:43:19,077 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:43:19,077 [INFO] Heartbeat: 2026-09-18T15:43:19.077608
+2026-09-18 15:46:20,676 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:46:20,677 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:47:06,281 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:47:07,715 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:47:09,410 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:47:11,455 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:47:13,412 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:47:15,061 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:47:16,822 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:47:18,986 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:47:20,638 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:47:22,370 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:47:24,144 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:47:25,690 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:47:28,535 [INFO] Options scan: 1 signal(s) filtered by market regime BULLISH (strength=1.00): TQQQ(TrendPullbackSpread,conf=0.85 -> 0.79 BELOW_THRESHOLD)
+2026-09-18 15:47:28,535 [INFO] Options scan: 1 signal(s) | universe=119 | strategies: ['MeanReversion']
+2026-09-18 15:47:28,536 [INFO] [OPTIONS] 1 candidates | open=0 | top: BAC call conf=82%
+2026-09-18 15:47:30,951 [INFO] [OPTIONS] BAC261002C00058000 Alpaca pricing: last=$0.91 bid=$0.90 ask=$0.99 limit=$0.91
+2026-09-18 15:47:30,986 [INFO] [OPTIONS][RETRY] Started retry thread for BAC order 212547d8-5ee1-44fd-acd9-2179b40eb144 (retry 0)
+2026-09-18 15:47:30,987 [INFO] [OPTIONS] EXECUTED BAC call MeanReversion 1c conf=82% legs=1 open_window=False
+2026-09-18 15:47:30,988 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 212547d8-5ee1-44fd-acd9-2179b40eb144 for BAC
+2026-09-18 15:47:30,993 [INFO] [OPTIONS] Options: 1 position(s)
+  BAC261002C00058000 | 1x MeanReversion entry=$0.92 DTE=14
+2026-09-18 15:47:31,490 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:47:31,710 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:47:31,812 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 15:47:35,284 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 15:47:35,378 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:47:35,380 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:47:35,380 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:47:37,149 [INFO] [RVOL@TIME] FFAI: today_vol=1017802, avg_intraday_vol=937125 (4 sessions), elapsed_min=377, rvol=1.086, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:47:37,465 [INFO] [RVOL@TIME] WHK: today_vol=356286, avg_intraday_vol=191000 (4 sessions), elapsed_min=377, rvol=1.865, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:47:37,486 [INFO] [RVOL@TIME] AMCI: today_vol=200097, avg_intraday_vol=247101 (1 sessions), elapsed_min=377, rvol=0.810, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:47:37,654 [INFO] [RVOL@TIME] NCPL: today_vol=105689824, avg_intraday_vol=17226802 (4 sessions), elapsed_min=377, rvol=6.135, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:47:37,753 [INFO] [RVOL@TIME] TRUG: today_vol=166664372, avg_intraday_vol=28679710 (4 sessions), elapsed_min=377, rvol=5.811, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:47:39,636 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:47:39,637 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 15:47:39,637 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 15:47:39,638 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 15:47:40,795 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.84 below VWAP 29.29
+2026-09-18 15:47:40,796 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:47:40,798 [INFO] Heartbeat: 2026-09-18T15:47:40.798657
+2026-09-18 15:50:32,219 [INFO] [OPTIONS][RETRY] Order 212547d8-5ee1-44fd-acd9-2179b40eb144 for BAC still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-18 15:50:32,220 [INFO] [OPTIONS][RETRY] Cancelling order 212547d8-5ee1-44fd-acd9-2179b40eb144 for BAC (unfilled qty: 1)
+2026-09-18 15:50:32,255 [INFO] [OPTIONS][RETRY] Retrying BAC order at more aggressive limit: 0.92 (retry 1)
+2026-09-18 15:50:32,313 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for BAC: b9674a07-4116-47be-928a-747e690db76e
+2026-09-18 15:50:32,315 [INFO] [OPTIONS][RETRY] Started retry thread for BAC order b9674a07-4116-47be-928a-747e690db76e (retry 1)
+2026-09-18 15:50:32,316 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order b9674a07-4116-47be-928a-747e690db76e for BAC
+2026-09-18 15:50:40,981 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:50:40,982 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:51:15,938 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:51:17,475 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:51:19,434 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:51:21,676 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:51:23,633 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:51:25,524 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:51:27,594 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:51:30,016 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:51:31,908 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:51:33,810 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:51:35,731 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:51:37,433 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:51:37,991 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 15:51:37,991 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:51:37,991 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:51:37,992 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:51:37,993 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:51:38,060 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:51:38,060 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:51:38,247 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.32)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff6b38d1ad5+4ca5]
+	msedgedriver!(No symbol) [0x7ff6b3822654]
+	msedgedriver!GetHandleVerifier [0x7ff6b3c5138f+38455f]
+	msedgedriver!(No symbol) [0x7ff6b3597312]
+	msedgedriver!(No symbol) [0x7ff6b3625ab6]
+	msedgedriver!(No symbol) [0x7ff6b363d26f]
+	msedgedriver!(No symbol) [0x7ff6b35f599c]
+	msedgedriver!(No symbol) [0x7ff6b35f4c1d]
+	msedgedriver!(No symbol) [0x7ff6b35f57c3]
+	msedgedriver!(No symbol) [0x7ff6b372be52]
+	msedgedriver!(No symbol) [0x7ff6b373b879]
+	msedgedriver!GetHandleVerifier [0x7ff6b3979a05+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff6b397fee1+b30b1]
+	msedgedriver!(No symbol) [0x7ff6b382e3cf]
+	msedgedriver!(No symbol) [0x7ff6b3828da4]
+	msedgedriver!(No symbol) [0x7ff6b3828eca]
+	msedgedriver!(No symbol) [0x7ff6b381a488]
+	KERNEL32!BaseThreadInitThunk [0x7ffc2143ccb7+17]
+	ntdll!RtlUserThreadStart [0x7ffc21d6ad6c+2c]
+
+2026-09-18 15:51:38,328 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:51:38,330 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:51:38,330 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:51:40,097 [INFO] [RVOL@TIME] FFAI: today_vol=1039501, avg_intraday_vol=957658 (4 sessions), elapsed_min=381, rvol=1.085, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:51:40,265 [INFO] [RVOL@TIME] WHK: today_vol=363792, avg_intraday_vol=192220 (4 sessions), elapsed_min=381, rvol=1.893, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:51:40,493 [INFO] [RVOL@TIME] AMCI: today_vol=224366, avg_intraday_vol=247259 (1 sessions), elapsed_min=381, rvol=0.907, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:51:40,568 [INFO] [RVOL@TIME] NCPL: today_vol=105809757, avg_intraday_vol=17126382 (4 sessions), elapsed_min=381, rvol=6.178, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:51:40,957 [INFO] [RVOL@TIME] TRUG: today_vol=166804829, avg_intraday_vol=28826207 (4 sessions), elapsed_min=381, rvol=5.787, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:51:43,041 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:51:43,042 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 15:51:43,042 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 15:51:43,043 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 15:51:43,693 [INFO] LIVE PROBE SDGR: scale-in skipped; price 28.78 below VWAP 29.28
+2026-09-18 15:51:43,694 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:51:43,694 [INFO] Heartbeat: 2026-09-18T15:51:43.694265
+2026-09-18 15:53:33,519 [INFO] [OPTIONS][RETRY] Order b9674a07-4116-47be-928a-747e690db76e for BAC still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-18 15:53:33,519 [INFO] [OPTIONS][RETRY] Cancelling order b9674a07-4116-47be-928a-747e690db76e for BAC (unfilled qty: 1)
+2026-09-18 15:53:33,554 [INFO] [OPTIONS][RETRY] Retrying BAC order at more aggressive limit: 0.94 (retry 2)
+2026-09-18 15:53:33,595 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for BAC: 79c48b83-4dd1-43b7-80fd-8c1e945dca07
+2026-09-18 15:53:33,597 [INFO] [OPTIONS][RETRY] Started retry thread for BAC order 79c48b83-4dd1-43b7-80fd-8c1e945dca07 (retry 2)
+2026-09-18 15:53:33,598 [INFO] [OPTIONS][RETRY] Max retries reached for BAC order 79c48b83-4dd1-43b7-80fd-8c1e945dca07, giving up.
+2026-09-18 15:54:43,835 [WARNING] Schwab API degraded: 0.0% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-18 15:54:43,838 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:54:43,839 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:55:17,797 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:55:19,421 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:55:21,236 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:55:23,352 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:55:25,257 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:55:26,923 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:55:28,797 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:55:31,231 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:55:32,897 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:55:34,820 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:55:36,705 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:55:38,344 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:55:41,299 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.85 -> 0.65 BELOW_THRESHOLD)
+2026-09-18 15:55:41,299 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:55:41,299 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:55:41,300 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:55:41,301 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:55:41,428 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 15:55:41,429 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:55:41,650 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:55:41,652 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:55:41,652 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 15:55:43,491 [INFO] [RVOL@TIME] FFAI: today_vol=1057189, avg_intraday_vol=988590 (4 sessions), elapsed_min=385, rvol=1.069, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:55:43,570 [INFO] [RVOL@TIME] WHK: today_vol=374048, avg_intraday_vol=199062 (4 sessions), elapsed_min=385, rvol=1.879, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:55:43,766 [INFO] [RVOL@TIME] AMCI: today_vol=224566, avg_intraday_vol=250103 (1 sessions), elapsed_min=385, rvol=0.898, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 15:55:43,863 [INFO] [RVOL@TIME] NCPL: today_vol=106065849, avg_intraday_vol=17037068 (4 sessions), elapsed_min=385, rvol=6.226, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:55:44,101 [INFO] [RVOL@TIME] TRUG: today_vol=166918500, avg_intraday_vol=28899446 (4 sessions), elapsed_min=385, rvol=5.776, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 15:55:45,894 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 15:55:45,895 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 15:55:45,895 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 15:55:45,896 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 15:55:46,238 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.03 below VWAP 29.27
+2026-09-18 15:55:46,239 [INFO] [SCAN] No signals this cycle
+2026-09-18 15:55:46,240 [INFO] Heartbeat: 2026-09-18T15:55:46.240314
+2026-09-18 15:58:47,591 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['FFAI', 'WHK', 'AMCI', 'NCPL', 'TRUG']
+2026-09-18 15:58:47,592 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-18 15:59:34,038 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-18 15:59:35,696 [INFO] Schwab: quote unavailable for UPXI; Alpaca fallback used
+2026-09-18 15:59:37,546 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-18 15:59:39,571 [INFO] Schwab: quote unavailable for KORU; Alpaca fallback used
+2026-09-18 15:59:41,270 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-18 15:59:42,931 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-18 15:59:45,031 [INFO] Schwab: quote unavailable for AMWL; Alpaca fallback used
+2026-09-18 15:59:47,368 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-18 15:59:49,058 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-18 15:59:50,703 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-18 15:59:52,663 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-18 15:59:54,279 [INFO] Schwab: quote unavailable for FFAI; Alpaca fallback used
+2026-09-18 15:59:54,875 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): BAC(MeanReversion, unusual_volume_blocked_in_NEUTRAL); TQQQ(TrendPullbackSpread,conf=0.86 -> 0.66 BELOW_THRESHOLD)
+2026-09-18 15:59:54,876 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=118, no_BreakoutRetest=118, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-18 15:59:54,877 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_OpeningRangeBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumContinuationCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_GapBreakoutCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MomentumCall: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearPut: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BearCallSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_ShortSqueeze: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_MeanReversion: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_BreakoutRetest: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_TrendPullbackSpread: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_IronCondor: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_Butterfly: FTCI, SPRU, DFDV, GLOO, HELP, SECZ | no_signal: FTCI, SPRU, DFDV, GLOO, HELP, SECZ
+2026-09-18 15:59:54,878 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-18 15:59:54,878 [INFO] [OPTIONS] Options: no open positions
+2026-09-18 15:59:54,952 [INFO] Quarterly P&L: -5.5% (target >= 50%)
+2026-09-18 15:59:54,953 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 15:59:58,491 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 15:59:58,560 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 15:59:58,562 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 15:59:58,563 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:00:00,374 [INFO] [RVOL@TIME] FFAI: today_vol=1077014, avg_intraday_vol=1014934 (4 sessions), elapsed_min=390, rvol=1.061, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 16:00:00,625 [INFO] [RVOL@TIME] WHK: today_vol=407429, avg_intraday_vol=233080 (4 sessions), elapsed_min=390, rvol=1.748, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 16:00:00,871 [INFO] [RVOL@TIME] AMCI: today_vol=231414, avg_intraday_vol=260628 (1 sessions), elapsed_min=390, rvol=0.888, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-18 16:00:01,129 [INFO] [RVOL@TIME] NCPL: today_vol=106524145, avg_intraday_vol=17276077 (4 sessions), elapsed_min=390, rvol=6.166, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 16:00:01,266 [INFO] [RVOL@TIME] TRUG: today_vol=167360554, avg_intraday_vol=29106935 (4 sessions), elapsed_min=390, rvol=5.750, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-18 16:00:03,164 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 0 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 16:00:03,165 [INFO] [FUNNEL] targets=5 guardrail_rejected=2 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 16:00:03,166 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 16:00:03,166 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 16:00:03,665 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.19
+2026-09-18 16:00:03,665 [INFO] [SCAN] No signals this cycle
+2026-09-18 16:00:03,666 [INFO] Heartbeat: 2026-09-18T16:00:03.666281
+2026-09-18 16:03:04,985 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:03:04,987 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:03:05,144 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:03:05,146 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 16:03:05,147 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:03:07,180 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:03:08,996 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 16:03:08,996 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 16:03:08,997 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 16:03:08,997 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 16:03:09,358 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.19
+2026-09-18 16:03:09,359 [INFO] [SCAN] No signals this cycle
+2026-09-18 16:03:09,359 [INFO] Heartbeat: 2026-09-18T16:03:09.359608
+2026-09-18 16:06:10,730 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:06:10,730 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:06:10,943 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:06:10,946 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 16:06:10,947 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:06:13,078 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:06:14,781 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 16:06:14,782 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 16:06:14,783 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 16:06:14,783 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 16:06:15,238 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.00 below VWAP 29.19
+2026-09-18 16:06:15,239 [INFO] [SCAN] No signals this cycle
+2026-09-18 16:06:15,240 [INFO] Heartbeat: 2026-09-18T16:06:15.240165
+2026-09-18 16:09:16,584 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:09:16,585 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:09:16,682 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 16:09:16,753 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:09:16,755 [INFO] [SCAN] 5 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG
+2026-09-18 16:09:16,755 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:09:16,758 [INFO] Schwab: Refreshing access token...
+2026-09-18 16:09:16,908 [INFO] Schwab: Refreshing access token...
+2026-09-18 16:09:17,060 [INFO] Schwab: Refreshing access token...
+2026-09-18 16:09:17,242 [INFO] Schwab: Refreshing access token...
+2026-09-18 16:09:17,393 [INFO] Schwab: Refreshing access token...
+2026-09-18 16:09:19,410 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 16:09:19,809 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 16:09:20,008 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 16:09:20,300 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 16:09:20,499 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-18 16:09:22,848 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:09:23,175 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 16:09:23,175 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 16:09:23,176 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 16:09:23,177 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 16:09:23,609 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.04 below VWAP 29.19
+2026-09-18 16:09:23,610 [INFO] [SCAN] No signals this cycle
+2026-09-18 16:09:23,611 [INFO] Heartbeat: 2026-09-18T16:09:23.611203
+2026-09-18 16:09:33,690 [INFO] ======================================================================
+2026-09-18 16:09:33,691 [INFO] STATUS
+2026-09-18 16:09:33,691 [INFO] Equity:     $91,803.92
+2026-09-18 16:09:33,692 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-18 16:09:33,692 [INFO] Positions:  3
+2026-09-18 16:09:33,692 [INFO] Unrealized: $313.05
+2026-09-18 16:09:33,692 [INFO]   BAC261002C00058000: 2 @ $0.94 | $-17.00 (-9.09%)
+2026-09-18 16:09:33,692 [INFO]   BSOL: 1996 @ $15.54 | $315.66 (+1.02%)
+2026-09-18 16:09:33,692 [INFO]   SDGR: 6 @ $26.64 | $14.39 (+9.00%)
+2026-09-18 16:09:33,693 [INFO] ======================================================================
+2026-09-18 16:09:33,699 [INFO] Universe pruned: no expired tickers
+2026-09-18 16:12:26,641 [INFO] Quarterly P&L: -5.5% (target >= 50%)
+2026-09-18 16:12:26,644 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:12:26,779 [ERROR] Trade Ideas scrape hard-timeout (190s) — killing Chrome/chromedriver and resetting future
+2026-09-18 16:12:37,476 [INFO] [EDGAR] 8-K match: AEYE — 8-K - AUDIOEYE INC (0001362190) (Filer)
+2026-09-18 16:12:37,477 [INFO] [EDGAR] 8-K match: CV — 8-K - CapsoVision, Inc (0001378325) (Filer)
+2026-09-18 16:12:37,479 [INFO] [EDGAR] 8-K match: NWTG — 8-K - Newton Golf Company, Inc. (0001934245) (Filer)
+2026-09-18 16:12:37,481 [INFO] [EDGAR] 8-K match: MG — 8-K - Mistras Group, Inc. (0001436126) (Filer)
+2026-09-18 16:12:37,482 [INFO] [EDGAR] 8-K match: BZH — 8-K - BEAZER HOMES USA INC (0000915840) (Filer)
+2026-09-18 16:12:37,483 [INFO] [EDGAR] 8-K match: CRMT — 8-K - AMERICAS CARMART INC (0000799850) (Filer)
+2026-09-18 16:12:37,486 [INFO] [EDGAR] 8-K match: PDEX — 8-K - PRO DEX INC (0000788920) (Filer)
+2026-09-18 16:12:37,488 [INFO] [EDGAR] 7 newly triggered tickers: ['AEYE', 'CV', 'NWTG', 'MG', 'BZH', 'CRMT', 'PDEX']
+2026-09-18 16:12:37,499 [INFO] [EDGAR] Adding AEYE to P2 + scan queue for monitoring
+2026-09-18 16:12:37,501 [INFO] [EDGAR] Adding CV to P2 + scan queue for monitoring
+2026-09-18 16:12:37,501 [INFO] [EDGAR] Adding NWTG to P2 + scan queue for monitoring
+2026-09-18 16:12:37,502 [INFO] [EDGAR] Adding MG to P2 + scan queue for monitoring
+2026-09-18 16:12:37,503 [INFO] [EDGAR] Adding BZH to P2 + scan queue for monitoring
+2026-09-18 16:12:37,504 [INFO] [EDGAR] Adding CRMT to P2 + scan queue for monitoring
+2026-09-18 16:12:37,504 [INFO] [EDGAR] Adding PDEX to P2 + scan queue for monitoring
+2026-09-18 16:12:40,025 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 16:12:40,130 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:12:40,137 [INFO] [SCAN] 12 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX
+2026-09-18 16:12:40,138 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:12:43,259 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:12:43,685 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:12:44,059 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:12:46,954 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 437290 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.85 | day_vol=236373
+2026-09-18 16:13:01,982 [INFO] [GUARDRAIL SUMMARY] Rejected: 6 | DollarVol: 3 | RVOL: 1 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 16:13:01,983 [INFO] [FUNNEL] targets=12 guardrail_rejected=6 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:13:01,985 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-18 16:13:01,986 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:13:01,987 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:13:02,089 [INFO] Live holdings: 3 excluded
+2026-09-18 16:13:02,090 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:13:02,092 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:13:03,377 [INFO] Scan email sent
+2026-09-18 16:13:03,813 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.04 below VWAP 29.19
+2026-09-18 16:13:03,814 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:13:03,856 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:13:04,283 [INFO] LIVE PROBE BZH: sizing 3307 → 1 share(s); no automatic scale-in
+2026-09-18 16:13:07,304 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:13:08,409 [INFO] Heartbeat: 2026-09-18T16:13:08.408979
+2026-09-18 16:16:09,849 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:16:09,850 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:16:10,028 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:16:10,032 [INFO] [SCAN] 62 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, AEHL, BLSG, BMNZ, CANG, CD, COIG, CONI, CONL, CONX, DAIC, DFDV, DSP, ETHD, FWDI, GEMI, GENI, GWAV, HELP, IMCC, INDP, KDK, KRRO, LGVN, LRHC, MEDS, MKDW, MRAL, MST, MSTX, NCT, PUR, QCML, QCMU, QMLS, RIOX, RTB, SBIT, SECZ, SION, SLON, SMST, SOLT, SVRN, TJGC, USDE, USDEW, VEEA, WNTR, XENE, XRTX
+2026-09-18 16:16:10,033 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:16:13,082 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:16:13,510 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:16:13,766 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:16:16,977 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 459409 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.86 | day_vol=246994
+2026-09-18 16:16:20,655 [WARNING] [GUARDRAIL] AEHL blocked: RVOL 0.38 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=219458 | avg_daily_vol=582902
+2026-09-18 16:16:21,111 [WARNING] [GUARDRAIL] BLSG blocked: dollar volume 622889 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.82 | day_vol=163060
+2026-09-18 16:16:38,967 [WARNING] [GUARDRAIL] GWAV blocked: dollar volume 309028 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.45 | day_vol=126134
+2026-09-18 16:16:49,270 [WARNING] [GUARDRAIL] LRHC blocked: dollar volume 200192 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.56 | day_vol=78200
+2026-09-18 16:16:56,783 [WARNING] [GUARDRAIL] NCT blocked: dollar volume 411269 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=6.26 | day_vol=65698
+2026-09-18 16:17:33,137 [INFO] [GUARDRAIL SUMMARY] Rejected: 17 | DollarVol: 7 | RVOL: 2 | GapChase: 8 | MinPrice: 0 | Other: 0
+2026-09-18 16:17:33,139 [INFO] [FUNNEL] targets=62 guardrail_rejected=17 (rvol=2) -> signals_generated=7 -> conf_gate(-5) -> sector_cap(-0) -> final=2
+2026-09-18 16:17:33,141 [INFO] [SCAN] Breakdown — Momentum: 1, Sweepea: 2, Technical: 1, TrendlineBreakout: 3 | Errors: 0 | Total: 2
+2026-09-18 16:17:33,143 [INFO] [SCAN] TOP5_RAW #1: HELP BUY $14.02 conf=91% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:17:33,144 [INFO] [SCAN] TOP5_RAW #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:17:36,647 [INFO] Live holdings: 3 excluded
+2026-09-18 16:17:36,650 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 2 eligible
+2026-09-18 16:17:36,653 [INFO] [TRADE] TOP5_ELIGIBLE #1: HELP BUY $14.02 conf=91% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:17:36,654 [INFO] [TRADE] TOP5_ELIGIBLE #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:17:36,663 [INFO] Scan email throttled: age=275s, changed=True, min=600s
+2026-09-18 16:17:37,073 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.19
+2026-09-18 16:17:37,075 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:17:37,076 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-18 16:17:37,121 [INFO] EXECUTE: BUY HELP @ $14.02 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:17:37,518 [INFO] LIVE PROBE HELP: sizing 7854 → 1 share(s); no automatic scale-in
+2026-09-18 16:17:49,228 [INFO] BUY LIMIT HELP: 1 @ $12.39 (ext-hours quote-first) | Sweepea
+2026-09-18 16:17:50,517 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:17:50,834 [INFO] LIVE PROBE BZH: sizing 3303 → 1 share(s); no automatic scale-in
+2026-09-18 16:17:51,181 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:17:52,496 [INFO] Heartbeat: 2026-09-18T16:17:52.496015
+2026-09-18 16:20:54,533 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:20:54,769 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:20:54,944 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:20:54,947 [INFO] [SCAN] 62 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, AEHL, BLSG, BMNZ, CANG, CD, COIG, CONI, CONL, CONX, DAIC, DFDV, DSP, ETHD, FWDI, GEMI, GENI, GWAV, HELP, IMCC, INDP, KDK, KRRO, LGVN, LRHC, MEDS, MKDW, MRAL, MST, MSTX, NCT, PUR, QCML, QCMU, QMLS, RIOX, RTB, SBIT, SECZ, SION, SLON, SMST, SOLT, SVRN, TJGC, USDE, USDEW, VEEA, WNTR, XENE, XRTX
+2026-09-18 16:20:54,948 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:20:57,912 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:20:58,363 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:20:58,659 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:21:01,674 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 448327 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.70 | day_vol=263722
+2026-09-18 16:21:02,540 [WARNING] [GUARDRAIL] AEHL blocked: RVOL 0.38 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=219821 | avg_daily_vol=582902
+2026-09-18 16:21:05,312 [WARNING] [GUARDRAIL] BLSG blocked: dollar volume 622889 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.82 | day_vol=163060
+2026-09-18 16:21:17,921 [WARNING] [GUARDRAIL] GWAV blocked: dollar volume 309028 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.45 | day_vol=126134
+2026-09-18 16:21:24,670 [WARNING] [GUARDRAIL] LRHC blocked: dollar volume 200192 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.56 | day_vol=78200
+2026-09-18 16:21:29,555 [WARNING] [GUARDRAIL] NCT blocked: dollar volume 415787 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=6.30 | day_vol=65998
+2026-09-18 16:21:51,611 [INFO] [GUARDRAIL SUMMARY] Rejected: 17 | DollarVol: 7 | RVOL: 2 | GapChase: 8 | MinPrice: 0 | Other: 0
+2026-09-18 16:21:51,611 [INFO] [FUNNEL] targets=62 guardrail_rejected=17 (rvol=2) -> signals_generated=6 -> conf_gate(-4) -> sector_cap(-0) -> final=2
+2026-09-18 16:21:51,612 [INFO] [SCAN] Breakdown — Momentum: 1, Sweepea: 2, Technical: 1, TrendlineBreakout: 2 | Errors: 0 | Total: 2
+2026-09-18 16:21:51,613 [INFO] [SCAN] TOP5_RAW #1: HELP BUY $14.02 conf=91% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:21:51,613 [INFO] [SCAN] TOP5_RAW #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:21:51,682 [INFO] Live holdings: 3 excluded
+2026-09-18 16:21:51,683 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 2 eligible
+2026-09-18 16:21:51,684 [INFO] [TRADE] TOP5_ELIGIBLE #1: HELP BUY $14.02 conf=91% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:21:51,684 [INFO] [TRADE] TOP5_ELIGIBLE #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:21:51,688 [INFO] Scan email throttled: age=530s, changed=True, min=600s
+2026-09-18 16:21:52,080 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:21:52,081 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:21:52,081 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:21:52,082 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-18 16:21:52,114 [INFO] EXECUTE: BUY HELP @ $14.02 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:21:52,245 [INFO] Short-float cap HELP: 7857→1309 shares (20% equity max, equity $91,804)
+2026-09-18 16:21:52,245 [INFO] LIVE PROBE HELP: sizing 1309 → 1 share(s); no automatic scale-in
+2026-09-18 16:21:53,510 [INFO] BUY LIMIT HELP: 1 @ $12.39 (ext-hours quote-first) | Sweepea
+2026-09-18 16:21:54,625 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:21:54,717 [INFO] LIVE PROBE BZH: sizing 3305 → 1 share(s); no automatic scale-in
+2026-09-18 16:21:54,784 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:21:55,860 [INFO] Heartbeat: 2026-09-18T16:21:55.859911
+2026-09-18 16:24:57,125 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-18 16:24:57,125 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:25:11,878 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-18 16:25:11,957 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:25:11,960 [INFO] [SCAN] 62 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX, AEHL, BLSG, BMNZ, CANG, CD, COIG, CONI, CONL, CONX, DAIC, DFDV, DSP, ETHD, FWDI, GEMI, GENI, GWAV, HELP, IMCC, INDP, KDK, KRRO, LGVN, LRHC, MEDS, MKDW, MRAL, MST, MSTX, NCT, PUR, QCML, QCMU, QMLS, RIOX, RTB, SBIT, SECZ, SION, SLON, SMST, SOLT, SVRN, TJGC, USDE, USDEW, VEEA, WNTR, XENE, XRTX
+2026-09-18 16:25:11,961 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:25:14,921 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:25:15,253 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:25:15,699 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:25:18,865 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 445726 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.68 | day_vol=265313
+2026-09-18 16:25:19,379 [WARNING] [GUARDRAIL] AEHL blocked: RVOL 0.38 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=219921 | avg_daily_vol=582902
+2026-09-18 16:25:22,567 [WARNING] [GUARDRAIL] BLSG blocked: dollar volume 622889 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.82 | day_vol=163060
+2026-09-18 16:25:34,789 [WARNING] [GUARDRAIL] GWAV blocked: dollar volume 309028 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.45 | day_vol=126134
+2026-09-18 16:25:42,240 [WARNING] [GUARDRAIL] LRHC blocked: dollar volume 200192 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.56 | day_vol=78200
+2026-09-18 16:25:47,135 [WARNING] [GUARDRAIL] NCT blocked: dollar volume 418307 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=6.30 | day_vol=66398
+2026-09-18 16:26:09,735 [INFO] [GUARDRAIL SUMMARY] Rejected: 16 | DollarVol: 7 | RVOL: 2 | GapChase: 7 | MinPrice: 0 | Other: 0
+2026-09-18 16:26:09,736 [INFO] [FUNNEL] targets=62 guardrail_rejected=16 (rvol=2) -> signals_generated=9 -> conf_gate(-7) -> sector_cap(-0) -> final=2
+2026-09-18 16:26:09,737 [INFO] [SCAN] Breakdown — Momentum: 1, Sweepea: 2, Technical: 1, TrendlineBreakout: 5 | Errors: 0 | Total: 2
+2026-09-18 16:26:09,737 [INFO] [SCAN] TOP5_RAW #1: HELP BUY $14.02 conf=91% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:26:09,737 [INFO] [SCAN] TOP5_RAW #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:26:09,830 [INFO] Live holdings: 3 excluded
+2026-09-18 16:26:09,831 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 2 eligible
+2026-09-18 16:26:09,831 [INFO] [TRADE] TOP5_ELIGIBLE #1: HELP BUY $14.02 conf=91% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:26:09,831 [INFO] [TRADE] TOP5_ELIGIBLE #2: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:26:10,650 [INFO] Scan email sent
+2026-09-18 16:26:11,178 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:26:11,178 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:26:11,178 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:26:11,179 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-18 16:26:11,214 [INFO] EXECUTE: BUY HELP @ $14.02 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.90
+2026-09-18 16:26:11,344 [INFO] Short-float cap HELP: 7848→1308 shares (20% equity max, equity $91,693)
+2026-09-18 16:26:11,345 [INFO] LIVE PROBE HELP: sizing 1308 → 1 share(s); no automatic scale-in
+2026-09-18 16:26:12,486 [INFO] BUY LIMIT HELP: 1 @ $12.39 (ext-hours quote-first) | Sweepea
+2026-09-18 16:26:13,619 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:26:13,714 [INFO] LIVE PROBE BZH: sizing 3301 → 1 share(s); no automatic scale-in
+2026-09-18 16:26:13,778 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:26:14,854 [INFO] Heartbeat: 2026-09-18T16:26:14.854363
+2026-09-18 16:29:16,206 [INFO] Quarterly P&L: -5.7% (target >= 50%)
+2026-09-18 16:29:16,207 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 16:29:16,308 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 16:29:16,377 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 16:29:16,379 [INFO] [SCAN] 12 symbols (filtered, 8 workers): FFAI, WHK, AMCI, NCPL, TRUG, AEYE, CV, NWTG, MG, BZH, CRMT, PDEX
+2026-09-18 16:29:16,379 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 16:29:19,565 [WARNING] [GUARDRAIL] AMCI blocked: RVOL 0.42 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=592353 | avg_daily_vol=1402038
+2026-09-18 16:29:19,728 [WARNING] [GUARDRAIL] AEYE blocked: dollar volume 782987 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=7.34 | day_vol=106674
+2026-09-18 16:29:20,207 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 14710 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.17 | day_vol=12573
+2026-09-18 16:29:23,074 [WARNING] [GUARDRAIL] CRMT blocked: dollar volume 445726 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.68 | day_vol=265313
+2026-09-18 16:29:27,388 [INFO] [GUARDRAIL SUMMARY] Rejected: 6 | DollarVol: 3 | RVOL: 1 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-18 16:29:27,388 [INFO] [FUNNEL] targets=12 guardrail_rejected=6 (rvol=1) -> signals_generated=2 -> conf_gate(-1) -> sector_cap(-0) -> final=1
+2026-09-18 16:29:27,389 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1 | Errors: 0 | Total: 1
+2026-09-18 16:29:27,389 [INFO] [SCAN] TOP5_RAW #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:29:27,461 [INFO] Live holdings: 3 excluded
+2026-09-18 16:29:27,462 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-18 16:29:27,463 [INFO] [TRADE] TOP5_ELIGIBLE #1: BZH BUY $33.33 conf=85% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:29:27,469 [INFO] Scan email suppressed: all top-5 tickers (['BZH']) already notified within 3h
+2026-09-18 16:29:27,828 [INFO] LIVE PROBE SDGR: scale-in skipped; price 29.02 below VWAP 29.18
+2026-09-18 16:29:27,828 [INFO] LIVE PROBE BZH: scale-in skipped; broker fill price unavailable
+2026-09-18 16:29:27,828 [INFO] LIVE PROBE HELP: scale-in skipped; broker fill price unavailable
+2026-09-18 16:29:27,829 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-18 16:29:27,866 [INFO] EXECUTE: BUY BZH @ $33.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.09
+2026-09-18 16:29:28,264 [INFO] LIVE PROBE BZH: sizing 3302 → 1 share(s); no automatic scale-in
+2026-09-18 16:29:29,704 [INFO] BUY LIMIT BZH: 1 @ $28.62 (ext-hours quote-first) | Sweepea
+2026-09-18 16:29:30,778 [INFO] Heartbeat: 2026-09-18T16:29:30.778413
