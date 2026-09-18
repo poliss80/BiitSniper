@@ -532,7 +532,7 @@ class EquityExitLifecycleTests(unittest.TestCase):
                 super().__init__([MockPosition("AAPL", "1", 101.0, avg_entry_price=100.0)])
                 self.open_orders = [
                     SimpleNamespace(symbol="AAPL", id="tracked-scale-in-order", type="market"),
-                    SimpleNamespace(symbol="AAPL", id="existing-trailing-stop", type="trailing_stop"),
+                    SimpleNamespace(symbol="AAPL", id="existing-trailing-stop", type=SimpleNamespace(value="trailing_stop")),
                     SimpleNamespace(symbol="AAPL", id="unrelated-order", type="limit"),
                 ]
                 self.cancelled_orders = []
@@ -548,7 +548,12 @@ class EquityExitLifecycleTests(unittest.TestCase):
                 protective_orders = {
                     "stop", "stop_limit", "trailing_stop",
                 }
-                if any(getattr(open_order, "type", "") in protective_orders for open_order in self.open_orders) and order.side == enhanced.OrderSide.SELL:
+                def is_protective(open_order):
+                    raw_type = getattr(open_order, "type", "")
+                    order_type = str(getattr(raw_type, "value", raw_type)).lower()
+                    return order_type in protective_orders
+
+                if any(is_protective(open_order) for open_order in self.open_orders) and order.side == enhanced.OrderSide.SELL:
                     raise RuntimeError("potential wash trade detected")
                 self.orders.append(order)
                 return SimpleNamespace(id="tracked-scale-in-order")

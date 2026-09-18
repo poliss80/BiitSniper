@@ -637,13 +637,32 @@ class EnhancedExecutor:
                             open_id = str(getattr(open_order, "id", "") or "")
                             if not open_id or open_id == order_id:
                                 continue
-                            open_type = str(getattr(open_order, "type", "")).lower()
+                            raw_type = getattr(open_order, "type", "")
+                            open_type = str(getattr(raw_type, "value", raw_type)).lower()
+                            if "." in open_type:
+                                open_type = open_type.rsplit(".", 1)[-1]
                             if open_type in {"stop", "stop_limit", "trailing_stop"}:
                                 try:
                                     self.client.cancel_order_by_id(open_id)
                                 except Exception as cancel_error:
                                     log.debug(f"LIVE PROBE {sym}: protection cleanup skipped: {cancel_error}")
-                        time.sleep(0.4)
+                        # Alpaca cancellation is asynchronous; wait until held quantity is released.
+                        deadline = time.time() + 3.0
+                        while time.time() < deadline:
+                            active_protection = False
+                            for open_order in self.client.get_orders() or []:
+                                if str(getattr(open_order, "symbol", "")) != sym:
+                                    continue
+                                raw_type = getattr(open_order, "type", "")
+                                open_type = str(getattr(raw_type, "value", raw_type)).lower()
+                                if "." in open_type:
+                                    open_type = open_type.rsplit(".", 1)[-1]
+                                if open_type in {"stop", "stop_limit", "trailing_stop"}:
+                                    active_protection = True
+                                    break
+                            if not active_protection:
+                                break
+                            time.sleep(0.2)
                         trail_pct = get_dynamic_tier(sym, current_price)["ts"]
                         self.client.submit_order(TrailingStopOrderRequest(
                             symbol=sym, qty=abs(qty),

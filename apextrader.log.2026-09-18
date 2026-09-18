@@ -1,0 +1,10 @@
+2026-09-18 10:47:20,383 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 10:47:20,388 [INFO] ======================================================================
+2026-09-18 10:47:20,392 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 10:47:20,406 [INFO] Universe pruned: no expired tickers
+2026-09-18 10:47:20,409 [INFO] ======================================================================
+2026-09-18 10:47:20,427 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 10:47:20,434 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 10:47:20,453 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 10:47:20,493 [INFO] Restored position exit state: AAPL
+2026-09-18 10:47:20,496 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close

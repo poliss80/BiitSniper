@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-17T09:12:56-04:00",
-  "date": "2026-09-17",
+  "generated_at": "2026-09-18T09:58:14-04:00",
+  "date": "2026-09-18",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "AEMD",
+      "symbol": "LSTA",
       "action": "buy",
-      "price": 8.1212,
-      "confidence": 0.94,
-      "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +452.5% | PM vol 6591% of avg daily"
+      "price": 1.67,
+      "confidence": 0.8661,
+      "strategy": "GapBreakout",
+      "reason": "Gap up 13.6% from $1.47 | volume x2.6"
     }
   ]
 }
