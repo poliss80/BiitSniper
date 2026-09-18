@@ -869,6 +869,8 @@ TI_MAX_GAP_CHASE_PCT     = float(os.getenv("TI_MAX_GAP_CHASE_PCT",   "7.0"))   #
 TI_RVOL_MIN              = float(os.getenv("TI_RVOL_MIN",             "1.5"))   # Require 1.5x RVOL (raised from 1.3x)
 TI_MIN_DOLLAR_VOLUME     = float(os.getenv("TI_MIN_DOLLAR_VOLUME",    "1500000"))  # $1.5M liquidity floor
 TI_MAX_OVERNIGHT_GAP_PCT = 12.0       # Skip if >12% overnight/pre-market gap
+SQUEEZE_TP1_PCT = float(os.getenv("SQUEEZE_TP1_PCT", "8.0"))
+SQUEEZE_TP2_PCT = float(os.getenv("SQUEEZE_TP2_PCT", "18.0"))
 
 # ─────────────────────────────────────────────────────────────────
 # Midday Chop Filter (11:30 AM – 1:00 PM ET)
@@ -994,6 +996,26 @@ def is_high_short_float(symbol: str) -> bool:
             _hsf_tier2_cache["symbols"] = frozenset()
         _hsf_tier2_cache["ts"] = now
     return symbol in _hsf_tier2_cache["symbols"]
+
+
+def classify_ti_profile(symbol: str, strategy: str = "") -> str:
+    """Classify a discovered ticker for profile-specific risk and exits."""
+    symbol = symbol.upper()
+    strategy = strategy.lower()
+    if "squeeze" in strategy or "floatrotation" in strategy or "trendbreaker" in strategy:
+        return "squeeze"
+    if symbol in {"MST", "MSTX", "CONL", "CONX", "CYPH", "BITU", "BITB", "BSOL", "ETHD", "ETHB", "SOLZ", "FSOL", "GEMI", "BTCS", "KORU"}:
+        return "crypto_leverage"
+    if is_high_short_float(symbol):
+        return "high_short_float"
+    try:
+        if symbol in _load_options_universe():
+            return "unusual_options"
+    except Exception:
+        pass
+    if symbol in {"SPY", "QQQ", "IWM", "DIA", "AAPL", "MSFT", "NVDA", "AMD", "AMZN", "META", "TSLA", "GOOGL", "EFA", "EWJ", "IJR", "VNQ"}:
+        return "large_cap_liquid"
+    return "ti_momentum"
 
 # OOM and cache management
 OPTIONS_CHAIN_CACHE_MAX = int(os.getenv("OPTIONS_CHAIN_CACHE_MAX", "300"))  # max symbols in options chain cache

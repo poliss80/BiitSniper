@@ -79,7 +79,7 @@ from engine.config import (
     TP_RATCHET_ENABLED, TP_RATCHET_ARM_PCT, TP_RATCHET_GIVEBACK_PCT,
     DEAD_MONEY_MINUTES, DEAD_MONEY_MAX_ADVERSE_DRIFT_PCT,
     TIME_LOSS_ATR_MULTIPLIER, TIME_LOSS_ATR_MIN_PCT, TIME_LOSS_ATR_MAX_PCT,
-    ATR_STOP_MULTIPLIER,
+    ATR_STOP_MULTIPLIER, SQUEEZE_TP1_PCT, SQUEEZE_TP2_PCT, classify_ti_profile,
     ORB,
     LIVE,
 )
@@ -225,6 +225,7 @@ class EnhancedExecutor:
                 "atr_stop": info.get("atr_stop"),
                 "regime_at_entry": info.get("regime_at_entry", "unknown"),
                 "long_term_hold": bool(info.get("long_term_hold", False)),
+                "ti_profile": info.get("ti_profile", ""),
                 "scaled_in": sym in self._live_probe_scaled_in,
                 "intermediate_target": self._intermediate_targets.get(sym),
                 "final_target": self._tp_targets.get(sym),
@@ -272,6 +273,7 @@ class EnhancedExecutor:
                     "atr_stop": float(saved.get("atr_stop") or 0),
                     "regime_at_entry": saved.get("regime_at_entry", "unknown"),
                     "long_term_hold": bool(saved.get("long_term_hold", False)),
+                    "ti_profile": saved.get("ti_profile", ""),
                 }
                 if saved.get("intermediate_target") is not None:
                     self._intermediate_targets[sym] = float(saved["intermediate_target"])
@@ -321,6 +323,7 @@ class EnhancedExecutor:
                 signal.symbol.upper() in LONG_TERM_HOLD_TICKERS
                 or signal.strategy in LONG_TERM_HOLD_STRATEGIES
             ),
+            "ti_profile": classify_ti_profile(signal.symbol, signal.strategy),
         }
         if hasattr(self, "_save_exit_state"):
             self._save_exit_state()
@@ -1285,16 +1288,17 @@ class EnhancedExecutor:
             self._submitted_entry_orders[signal.symbol] = order
 
             # Set dual-phase TP targets from entry price
-            _ep  = signal.price
-            _int_price   = round(_ep * (1 + TP_INTERMEDIATE_PCT / 100), 2) if order_type == OrderType.LONG \
-                           else round(_ep * (1 - TP_INTERMEDIATE_PCT / 100), 2)
-            _final_price = round(_ep * (1 + TP_FINAL_PCT / 100), 2) if order_type == OrderType.LONG \
-                           else round(_ep * (1 - TP_FINAL_PCT / 100), 2)
+            _ep = signal.price
+            ti_profile = classify_ti_profile(signal.symbol, signal.strategy)
+            _tp1_pct = SQUEEZE_TP1_PCT if ti_profile in {"squeeze", "high_short_float"} else TP_INTERMEDIATE_PCT
+            _tp2_pct = SQUEEZE_TP2_PCT if ti_profile in {"squeeze", "high_short_float"} else TP_FINAL_PCT
+            _int_price = round(_ep * (1 + _tp1_pct / 100), 2) if order_type == OrderType.LONG else round(_ep * (1 - _tp1_pct / 100), 2)
+            _final_price = round(_ep * (1 + _tp2_pct / 100), 2) if order_type == OrderType.LONG else round(_ep * (1 - _tp2_pct / 100), 2)
             self._intermediate_targets[signal.symbol] = _int_price
             self._tp_targets[signal.symbol]           = _final_price
             log.info(
-                f"TP targets set {signal.symbol}: tighten@${_int_price:.2f} (+{TP_INTERMEDIATE_PCT:.0f}%) "
-                f"close@${_final_price:.2f} (+{TP_FINAL_PCT:.0f}%)"
+                f"TP targets set {signal.symbol}: tighten@${_int_price:.2f} (+{_tp1_pct:.0f}%) "
+                f"close@${_final_price:.2f} (+{_tp2_pct:.0f}%) profile={ti_profile}"
             )
 
         except Exception as e:

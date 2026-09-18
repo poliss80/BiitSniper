@@ -16,6 +16,7 @@ from engine.options.strategies import (
     _build_equity_parity_call,
     _filter_signals_by_market_regime,
 )
+from engine.config import classify_ti_profile
 
 
 class OptionsEquityParityTests(unittest.TestCase):
@@ -65,6 +66,11 @@ class OptionsEquityParityTests(unittest.TestCase):
     def test_new_strategy_names_are_registered(self):
         self.assertEqual(MarketStructureBreakoutCallStrategy.name, "MarketStructureBreakoutCall")
         self.assertEqual(OpeningRangeBreakoutCallStrategy.name, "OpeningRangeBreakoutCall")
+
+    def test_ti_profiles_distinguish_leverage_and_liquid_names(self):
+        self.assertEqual(classify_ti_profile("MSTX"), "crypto_leverage")
+        self.assertEqual(classify_ti_profile("SPY"), "large_cap_liquid")
+        self.assertEqual(classify_ti_profile("TEST", "EarlySqueeze"), "squeeze")
 
 
 if __name__ == "__main__":
