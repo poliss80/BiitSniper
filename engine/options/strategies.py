@@ -64,6 +64,7 @@ from engine.config import (
     GAP_BREAKOUT,
     MARKET_STRUCTURE_BREAKOUT,
     ORB,
+    is_high_short_float,
     get_options_universe,
 )
 import os
@@ -2296,6 +2297,45 @@ class BearCallSpreadStrategy:
 _squeeze_yf_cache: Dict[str, tuple] = {}
 # Per-symbol daily cache: symbol -> (date, rs_13w_pct)
 _squeeze_rs_cache: Dict[str, tuple] = {}
+_squeeze_schwab_cache: Dict[str, tuple] = {}
+
+
+def _fetch_schwab_squeeze_confirmation(symbol: str) -> Optional[Dict]:
+    """Fetch a short-lived Schwab quote/candle confirmation for squeeze entries."""
+    now = time.monotonic()
+    cached = _squeeze_schwab_cache.get(symbol)
+    if cached and now - cached[0] < 120:
+        return cached[1]
+    try:
+        from engine.broker.schwab_client import get_schwab_market_data_client
+        client = get_schwab_market_data_client()
+        quote_payload = client.get_quote(symbol) or {}
+        candle_payload = client.get_candles(
+            symbol, period_type="day", period=1,
+            frequency_type="minute", frequency=5,
+        ) or {}
+        quote = quote_payload.get(symbol, quote_payload) if isinstance(quote_payload, dict) else {}
+        candles = candle_payload.get("candles", []) if isinstance(candle_payload, dict) else []
+        if not quote or len(candles) < 3:
+            _squeeze_schwab_cache[symbol] = (now, None)
+            return None
+        closes = [float(c.get("close", 0) or 0) for c in candles if float(c.get("close", 0) or 0) > 0]
+        volumes = [float(c.get("volume", 0) or 0) for c in candles]
+        if len(closes) < 3 or not volumes or sum(volumes[:-1]) <= 0:
+            _squeeze_schwab_cache[symbol] = (now, None)
+            return None
+        result = {
+            "last": closes[-1],
+            "return_5m": (closes[-1] / closes[-2] - 1) * 100,
+            "volume_ratio": volumes[-1] / (sum(volumes[:-1]) / max(len(volumes) - 1, 1)),
+            "source": "schwab",
+        }
+        _squeeze_schwab_cache[symbol] = (now, result)
+        return result
+    except Exception as schwab_error:
+        log.debug(f"ShortSqueeze {symbol}: Schwab confirmation unavailable: {schwab_error}")
+        _squeeze_schwab_cache[symbol] = (now, None)
+        return None
 
 
 def _fetch_squeeze_fundamentals(symbol: str) -> Optional[Dict]:
@@ -2378,10 +2418,76 @@ class ShortSqueezeStrategy:
 
     def scan(self, symbol: str) -> Optional[OptionSignal]:
         f = _get_filters()
-        if not OPTIONS_ENABLED:
+        if not OPTIONS_ENABLED or symbol in _INVERSE_ETFS:
             return None
-        # yfinance removed — short squeeze strategy disabled
-        return None
+        # Use the maintained HSF/TI universe instead of the removed yfinance
+        # fundamentals dependency. The option chain remains the final liquidity gate.
+        if not (is_high_short_float(symbol) or symbol in _SQUEEZE_CANDIDATES):
+            return None
+        try:
+            schwab_confirmation = _fetch_schwab_squeeze_confirmation(symbol)
+            if schwab_confirmation is None:
+                log.debug(f"ShortSqueeze {symbol}: no current Schwab quote/candle confirmation")
+                return None
+            if schwab_confirmation["return_5m"] <= 0 or schwab_confirmation["volume_ratio"] < 1.0:
+                return None
+            ctx = _fetch_bar_context(symbol)
+            if ctx is None or len(ctx.closes) < 25:
+                return None
+            if not _is_bull_regime():
+                return None
+            if ctx.rsi is None or not (42 <= ctx.rsi <= 78):
+                return None
+            if ctx.vol_ratio < 1.5:
+                return None
+            ema8 = float(ctx.closes.ewm(span=8, adjust=False).mean().iloc[-1])
+            ema21 = float(ctx.closes.ewm(span=21, adjust=False).mean().iloc[-1])
+            if ema8 <= ema21 or ctx.chg_pct < _get_move_threshold(symbol):
+                return None
+            if not _no_earnings_soon(symbol, OPTIONS_EARNINGS_AVOID_DAYS):
+                return None
+            chain = _get_options_chain(symbol)
+            if chain is None:
+                return None
+            row = _pick_strike(chain.calls, ctx.spot, 0.35, f)
+            if row is None:
+                return None
+            strike = float(row["strike"])
+            if strike <= ctx.spot:
+                return None
+            mid = float(row.get("mid", row.get("lastprice", 0)) or 0)
+            dte = (chain.expiry - datetime.date.today()).days
+            if mid <= 0 or dte < OPTIONS_DTE_MIN or dte > min(OPTIONS_DTE_MAX, 30):
+                return None
+            if mid / ctx.spot * 100 > f["MAX_PREMIUM_SPOT"]:
+                return None
+            rr = _calc_rr(chain.atr14, dte, mid)
+            if rr < f["MIN_RR"]:
+                return None
+            confidence = 0.78
+            confidence += min(0.08, (ctx.vol_ratio - 1.5) * 0.03)
+            confidence += min(0.05, max(0.0, ctx.chg_pct - _get_move_threshold(symbol)) * 0.01)
+            return OptionSignal(
+                symbol=symbol, option_type="call", action="buy_to_open",
+                strike=strike, expiry=chain.expiry, mid_price=mid,
+                confidence=round(min(0.94, confidence), 3),
+                reason=(
+                    f"Confirmed HSF squeeze candidate RVOL={ctx.vol_ratio:.1f}x "
+                    f"move={ctx.chg_pct:.1f}% RSI={ctx.rsi:.0f} IVrank={chain.iv_rank:.0f} "
+                    f"Schwab5m={schwab_confirmation['return_5m']:+.2f}% "
+                    f"SchwabVol={schwab_confirmation['volume_ratio']:.1f}x R/R={rr:.1f}x | {dte}DTE"
+                ),
+                strategy=self.name,
+                iv_pct=float(row.get("iv_pct", chain.hv_30)),
+                iv_rank=chain.iv_rank,
+                delta=float(row.get("delta", 0.35)),
+                open_interest=int(row.get("openinterest", 0)),
+                rr_ratio=rr,
+                breakeven=round(strike + mid, 2),
+            )
+        except Exception as squeeze_error:
+            log.debug(f"ShortSqueeze {symbol}: {squeeze_error}")
+            return None
         if symbol in _INVERSE_ETFS:
             return None
 
