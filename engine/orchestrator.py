@@ -666,7 +666,7 @@ def scan_and_trade(ctx: AppContext) -> None:
     # Initialize the market snapshot before any early-return path. Probe
     # management can run outside an active trading window and still needs the
     # executor's market state for regime and timestamp decisions.
-    if ctx.market_state is None:
+    if getattr(ctx, "market_state", None) is None:
         ctx.market_state = MarketState.from_now()
     ctx.executor.update_market_state(ctx.market_state)
 

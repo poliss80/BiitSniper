@@ -141,3 +141,54 @@ Stacktrace:
 2026-09-18 10:56:26,369 [INFO] LIVE PROBE LSTA: scale-in skipped; gain -1.78% < 0.50%
 2026-09-18 10:56:26,369 [INFO] [SCAN] No signals this cycle
 2026-09-18 10:56:26,370 [INFO] Heartbeat: 2026-09-18T10:56:26.369986
+2026-09-18 10:57:35,527 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 10:57:35,533 [INFO] ======================================================================
+2026-09-18 10:57:35,538 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 10:57:35,556 [INFO] Universe pruned: no expired tickers
+2026-09-18 10:57:35,561 [INFO] ======================================================================
+2026-09-18 10:57:35,596 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 10:57:35,604 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 10:57:35,624 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 10:57:35,666 [INFO] Restored position exit state: AAPL
+2026-09-18 10:57:35,670 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 10:57:35,699 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
+2026-09-18 10:58:50,995 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 10:58:50,996 [INFO] ======================================================================
+2026-09-18 10:58:50,996 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 10:58:50,999 [INFO] Universe pruned: no expired tickers
+2026-09-18 10:58:51,000 [INFO] ======================================================================
+2026-09-18 10:58:51,003 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 10:58:51,004 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 10:58:51,009 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 10:58:51,020 [INFO] Restored position exit state: AAPL
+2026-09-18 10:58:51,020 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 10:58:51,026 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)
+2026-09-18 11:00:36,661 [INFO] Restored position exit state: SDGR, SRFM, LSTA
+2026-09-18 11:00:36,698 [INFO] Entry log rebuilt from today's orders: SDGR, SRFM, LSTA
+2026-09-18 11:00:36,733 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-18 11:00:36,785 [INFO] [OPTIONS] Reconciled BUY position: SOXL261002C00130000 1x call @130.0 entry=$4.35
+2026-09-18 11:00:36,785 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-18 11:00:36,893 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-18 11:00:36,894 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-18 11:00:36,894 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-18 11:00:36,895 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-18 11:00:36,897 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-18 11:00:36,897 [INFO] ======================================================================
+2026-09-18 11:00:36,897 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-18 11:00:36,898 [INFO] ======================================================================
+2026-09-18 11:00:36,898 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-18 11:00:36,898 [INFO] Priority 2 (Established): 16 stocks
+2026-09-18 11:00:36,899 [INFO] Total Universe: 42 stocks
+2026-09-18 11:00:36,899 [INFO] Scan: 3 min fixed
+2026-09-18 11:00:36,899 [INFO] ======================================================================
+2026-09-18 11:00:36,937 [INFO] Equity:          $93,713.79
+2026-09-18 11:00:36,938 [INFO] Buying Power:    $371,748.48
+2026-09-18 11:00:36,938 [INFO] PDT Status:      No
+2026-09-18 11:00:36,938 [INFO] Day Trade Count: None
+2026-09-18 11:00:36,938 [INFO] ======================================================================
+2026-09-18 11:00:36,939 [INFO] Starting… Press Ctrl+C to stop
+2026-09-18 11:00:36,939 [INFO] ======================================================================
+2026-09-18 11:00:36,941 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-18 11:00:36,942 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-18 11:00:36,942 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-18 11:00:36,944 [INFO] Waiting up to 90s for startup TI capture…
