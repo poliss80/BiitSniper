@@ -62,6 +62,7 @@ from engine.config import (
     LIVE_PROBE_SCALE_IN_MIN_GAIN_PCT, LIVE_PROBE_SCALE_IN_BUYING_POWER_PCT,
     LIVE_PROBE_SCALE_IN_MAX_MULTIPLE, LIVE_PROBE_SCALE_IN_MIN_HOLD_MINUTES,
     LIVE_PROBE_SCALE_IN_REQUIRE_VWAP, LIVE_PROBE_SCALE_IN_REQUIRE_NEW_HIGH,
+    LIVE_PROBE_SCALE_IN_NEAR_HIGH_PCT,
     LIVE_PROBE_SCALE_IN_MAX_TOTAL_RISK_PCT,
     LIVE_PROBE_MAX_TOTAL_BUYING_POWER_PCT,
     LIVE_PROBE_SCALE_IN_ATM_OPTION_ENABLED,
@@ -402,6 +403,14 @@ class EnhancedExecutor:
                 prior_high = float(bars["high"].iloc[:-1].max())
                 if last_high <= prior_high and current_price <= prior_high:
                     return False, f"no new post-entry high above {prior_high:.2f}"
+            else:
+                prior_high = float(bars["high"].iloc[:-1].max())
+                near_high_floor = prior_high * (1.0 - LIVE_PROBE_SCALE_IN_NEAR_HIGH_PCT / 100.0)
+                if max(last_close, current_price) < near_high_floor:
+                    return False, (
+                        f"price not within {LIVE_PROBE_SCALE_IN_NEAR_HIGH_PCT:.2f}% "
+                        f"of post-entry high {prior_high:.2f}"
+                    )
             return True, None
         except Exception as confirmation_error:
             return False, f"confirmation data error: {confirmation_error}"
