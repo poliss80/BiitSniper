@@ -1130,3 +1130,49 @@ OSError: Could not find a suitable TLS CA certificate bundle, invalid path: C:\U
 2026-09-18 11:49:48,551 [WARNING] LIVE PROBE scale-in check failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
 2026-09-18 11:49:48,552 [INFO] [SCAN] No signals this cycle
 2026-09-18 11:49:48,552 [INFO] Heartbeat: 2026-09-18T11:49:48.552355
+2026-09-18 11:52:48,575 [WARNING] [CRYPTO] get_all_positions failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,579 [ERROR] [OPTIONS] Cycle error: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+Traceback (most recent call last):
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\engine\orchestrator.py", line 203, in _run_options_cycle
+    all_positions = ctx.client.get_all_positions()
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\trading\client.py", line 244, in get_all_positions
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 225, in get
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 131, in _request
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 195, in _one_request
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\requests\sessions.py", line 651, in request
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\requests\sessions.py", line 784, in send
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\requests\adapters.py", line 668, in send
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\requests\adapters.py", line 332, in cert_verify
+OSError: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,585 [WARNING] Could not refresh daily P&L: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,587 [WARNING] Quarterly target check error: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,587 [INFO] [SCAN] Market sentiment: neutral
+2026-09-18 11:52:48,588 [WARNING] update_stale_orders: fetch failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,590 [WARNING] check_tp_targets: fetch failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,591 [WARNING] check_dead_money: fetch failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,596 [WARNING] [ALPACA-MOVERS] Screener fetch failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,599 [WARNING] get_live_holdings failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,600 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-18 11:52:48,601 [INFO] [SCAN] 6 symbols (filtered, 8 workers): FFAI, WHK, AMCI, EMAT, NCPL, TNMG
+2026-09-18 11:52:48,601 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-18 11:52:48,607 [INFO] [GUARDRAIL SUMMARY] Rejected: 6 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 6
+2026-09-18 11:52:48,608 [INFO] [FUNNEL] targets=6 guardrail_rejected=6 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-18 11:52:48,608 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-18 11:52:48,609 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-18 11:52:48,609 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-18 11:52:48,611 [WARNING] LIVE PROBE scale-in check failed: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:52:48,612 [INFO] [SCAN] No signals this cycle
+2026-09-18 11:52:48,612 [INFO] Heartbeat: 2026-09-18T11:52:48.612277
+2026-09-18 11:53:18,618 [ERROR] Status error: Could not find a suitable TLS CA certificate bundle, invalid path: C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\certifi\cacert.pem
+2026-09-18 11:53:18,620 [INFO] Universe pruned: no expired tickers
+2026-09-18 11:53:46,360 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-18 11:53:46,361 [INFO] ======================================================================
+2026-09-18 11:53:46,361 [INFO] NEW DAY: 2026-09-18 | Start equity: $0.00
+2026-09-18 11:53:46,362 [INFO] Universe pruned: no expired tickers
+2026-09-18 11:53:46,362 [INFO] ======================================================================
+2026-09-18 11:53:46,363 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-18 11:53:46,364 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: last=$0.43 bid=$0.39 ask=$0.44 limit=$0.43
+2026-09-18 11:53:46,365 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 11:53:46,369 [INFO] Restored position exit state: AAPL
+2026-09-18 11:53:46,369 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-18 11:53:46,371 [INFO] Options scan: 2 signal(s) filtered by market regime BEARISH (strength=-0.90): TEST(MomentumContinuationCall,conf=0.90 -> -0.10 BELOW_THRESHOLD); TEST(GapBreakoutCall,conf=0.90 -> -0.10 BELOW_THRESHOLD)

@@ -71,6 +71,7 @@ _ADAPTIVE_MIN_CONF = 0.60
 _ADAPTIVE_STEP_RVOL = 0.2
 _ADAPTIVE_STEP_CONF = 0.03
 from .strategies import get_strategy_instances, MomentumStrategy, TechnicalStrategy, SentimentStrategy
+from engine.data.alpaca_news import annotate_signal_with_news
 from engine.utils.market import _is_bull_regime, _INVERSE_ETFS
 
 # Rotating scan offset — advances by SCAN_MAX_SYMBOLS each call so different
@@ -773,7 +774,8 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
 
         if not candidates:
             return None
-        return max(candidates, key=lambda s: s.confidence)
+        signal = max(candidates, key=lambda s: s.confidence)
+        return annotate_signal_with_news(signal)
 
 
 

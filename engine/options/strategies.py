@@ -247,6 +247,10 @@ class OptionSignal:
     put_short_strike: Optional[float] = None   # short (ITM) put strike
     call_short_strike: Optional[float] = None  # short (ITM) call strike
     call_long_strike: Optional[float] = None   # long (OTM) call strike
+    news_direction: str = "neutral"
+    news_score: float = 0.0
+    news_catalyst: str = "none"
+    news_risk_flags: tuple = ()
 
 
 @dataclass
@@ -3677,12 +3681,21 @@ def scan_options_universe(
         if sig and sig.confidence >= conf_threshold:
             signals.append(sig)
 
+    # News is a small confidence/risk adjustment after technical and option
+    # quality gates; it never creates a signal by itself.
+    try:
+        from engine.data.alpaca_news import annotate_signal_with_news
+        for signal in signals:
+            annotate_signal_with_news(signal)
+    except Exception as news_error:
+        log.debug(f"Options news enrichment unavailable: {news_error}")
+
     # Rank by composite: confidence * min(R/R, 3.0)
     def _score(s: OptionSignal) -> float:
         return s.confidence * min(s.rr_ratio if s.rr_ratio > 0 else 1.0, 3.0)
 
     signals.sort(key=_score, reverse=True)
-    
+
     # Apply market regime filtering and confidence adjustments
     bull_strength = get_bull_strength()
     market_regime = get_market_regime()

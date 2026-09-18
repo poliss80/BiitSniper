@@ -53,6 +53,10 @@ class Signal:
     atr_stop:   Optional[float] = None   # ATR-based stop distance ($); None = use % fallback
     trailing_stop: Optional[float] = None  # Trailing stop price (updated dynamically)
     highest_price: Optional[float] = None  # Highest price since entry
+    news_direction: str = "neutral"
+    news_score: float = 0.0
+    news_catalyst: str = "none"
+    news_risk_flags: tuple = ()
 
 
 def _calc_atr14(bars: pd.DataFrame, period: int = 14) -> float:
