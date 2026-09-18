@@ -287,6 +287,39 @@ class EquityExitLifecycleTests(unittest.TestCase):
         self.assertEqual(executor._place_live_probe_atm_option.call_count, 2)
         self.assertNotIn("AAPL", executor._live_probe_scale_in_pending)
 
+    def test_broker_fill_quantity_protects_stale_position_snapshot(self):
+        class FilledOrderClient(MockClient):
+            def get_account(self):
+                return SimpleNamespace(equity=10_000.0, buying_power=10_000.0)
+
+            def get_order_by_id(self, order_id):
+                return SimpleNamespace(status="filled", filled_qty="2")
+
+        client = FilledOrderClient([MockPosition("AAPL", "1", 101.0, avg_entry_price=100.0)])
+        executor = build_executor(client, Path(tempfile.gettempdir()) / "unused_probe_state.json")
+        executor._get_account = lambda **_kwargs: SimpleNamespace(equity=10_000.0, buying_power=10_000.0)
+        executor._current_market_state = lambda: SimpleNamespace(
+            is_regular_hours=True,
+            now=datetime.datetime(2026, 8, 20, 10, 30),
+            resolve_regime=lambda: True,
+        )
+        executor._entry_log["AAPL"] = {"entry_price": 100.0}
+        executor._live_probe_scale_in_pending["AAPL"] = {
+            "prior_qty": 1,
+            "order_id": "scale-in-order",
+        }
+        executor._place_live_probe_atm_option = Mock(return_value=True)
+
+        with patch.object(enhanced, "LIVE_PROBE_MODE", True), patch.object(
+            enhanced, "LIVE_PROBE_SCALE_IN_ENABLED", True
+        ), patch.object(enhanced, "get_dynamic_tier", return_value={"ts": 6.0}), patch.object(
+            enhanced.time, "sleep"
+        ):
+            executor.check_live_probe_scale_ins(Mock())
+
+        self.assertEqual(client.orders[0].qty, 2)
+        self.assertIn("AAPL", executor._live_probe_scaled_in)
+
     def test_live_probe_confirmation_normalizes_timezone_aware_bars(self):
         executor = object.__new__(EnhancedExecutor)
         entry_time = datetime.datetime(2026, 9, 4, 7, 45)

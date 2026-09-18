@@ -618,10 +618,15 @@ class EnhancedExecutor:
                     continue
                 order_id = str(pending_scale_in.get("order_id") or "")
                 order_status = ""
+                broker_filled_qty = 0
                 if order_id:
                     try:
                         broker_order = self.client.get_order_by_id(order_id)
-                        order_status = str(getattr(broker_order, "status", "")).lower()
+                        raw_status = getattr(broker_order, "status", "")
+                        order_status = str(getattr(raw_status, "value", raw_status)).lower()
+                        if "." in order_status:
+                            order_status = order_status.rsplit(".", 1)[-1]
+                        broker_filled_qty = int(float(getattr(broker_order, "filled_qty", 0) or 0))
                     except Exception as order_error:
                         log.debug(f"LIVE PROBE {sym}: unable to query scale-in order {order_id}: {order_error}")
                 if order_status in {"canceled", "cancelled", "rejected", "expired"}:
@@ -629,7 +634,9 @@ class EnhancedExecutor:
                     state_changed = True
                     log.info(f"LIVE PROBE {sym}: scale-in order {order_status}; eligible to retry")
                     continue
-                if abs(qty) > pending_scale_in["prior_qty"]:
+                prior_qty = int(pending_scale_in["prior_qty"])
+                effective_qty = max(abs(qty), broker_filled_qty)
+                if effective_qty > prior_qty:
                     try:
                         if order_id:
                             try:
@@ -672,7 +679,7 @@ class EnhancedExecutor:
                             time.sleep(0.2)
                         trail_pct = get_dynamic_tier(sym, current_price)["ts"]
                         self.client.submit_order(TrailingStopOrderRequest(
-                            symbol=sym, qty=abs(qty),
+                            symbol=sym, qty=effective_qty,
                             side=OrderSide.SELL if is_long else OrderSide.BUY,
                             type=AlpacaOrderType.TRAILING_STOP,
                             time_in_force=TimeInForce.GTC,
@@ -697,24 +704,31 @@ class EnhancedExecutor:
                         pending_scale_in["atm_attempt_count"] = 0
                         pending_scale_in["atm_retry_started_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
                     state_changed = True
-                    log.info(f"LIVE PROBE {sym}: scale-in filled; protection replaced for {abs(qty)} shares")
+                    log.info(f"LIVE PROBE {sym}: scale-in filled; protection replaced for {effective_qty} shares")
                     continue
                 if "filled" in order_status:
-                    log.info(f"LIVE PROBE {sym}: scale-in filled at broker; awaiting position quantity refresh")
+                    log.info(f"LIVE PROBE {sym}: broker fill confirmed; awaiting position quantity refresh")
                     continue
                 pending_scale_in["poll_count"] = int(pending_scale_in.get("poll_count", 0) or 0) + 1
                 if pending_scale_in["poll_count"] >= LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES:
+                    cancellation_confirmed = not order_id
                     if order_id:
                         try:
                             self.client.cancel_order_by_id(order_id)
+                            cancellation_confirmed = True
                         except Exception as cancel_error:
                             log.debug(f"LIVE PROBE {sym}: stale scale-in cancellation failed: {cancel_error}")
-                    pending_scale_ins.pop(sym, None)
-                    state_changed = True
-                    log.info(
-                        f"LIVE PROBE {sym}: stale scale-in order canceled after "
-                        f"{LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES} checks"
-                    )
+                    if cancellation_confirmed:
+                        pending_scale_ins.pop(sym, None)
+                        state_changed = True
+                        log.info(
+                            f"LIVE PROBE {sym}: stale scale-in order canceled after "
+                            f"{LIVE_PROBE_SCALE_IN_ORDER_TTL_CYCLES} checks"
+                        )
+                    else:
+                        pending_scale_in["poll_count"] = 0
+                        state_changed = True
+                        log.warning(f"LIVE PROBE {sym}: stale order retained; cancellation not confirmed")
                     continue
                 log.info(f"LIVE PROBE {sym}: scale-in order still pending fill confirmation")
                 continue
@@ -1948,12 +1962,19 @@ class EnhancedExecutor:
         if scaled_in_symbols:
             log.info(f"{reason}: retaining scaled-in live-probe positions: {sorted(scaled_in_symbols)}")
 
+        long_term_symbols = {
+            symbol for symbol in active
+            if self._entry_log.get(symbol, {}).get("long_term_hold")
+        }
+        if long_term_symbols:
+            log.info(f"{reason}: retaining long-term positions: {sorted(long_term_symbols)}")
+
         if not active:
             self._flatten_in_progress = set()
             self._flatten_failed = set()
             return True
 
-        retained = set(scaled_in_symbols)
+        retained = set(scaled_in_symbols) | long_term_symbols
         if allow_momentum_exemptions:
             retained |= self._momentum_exemptions(positions)
         ignored = getattr(self, "_flatten_ignored", set()) & active

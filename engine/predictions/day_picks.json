@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-18T09:58:14-04:00",
+  "generated_at": "2026-09-18T11:37:44-04:00",
   "date": "2026-09-18",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "LSTA",
+      "symbol": "BSOL",
       "action": "buy",
-      "price": 1.67,
-      "confidence": 0.8661,
-      "strategy": "GapBreakout",
-      "reason": "Gap up 13.6% from $1.47 | volume x2.6"
+      "price": 15.265,
+      "confidence": 0.89,
+      "strategy": "MomentumContinuation",
+      "reason": "Momentum continuation rvol=5.8x up=4.3% break of session high MACD hist=0.0017 RSI=56.2"
     }
   ]
 }

@@ -715,10 +715,13 @@ def scan_and_trade(ctx: AppContext) -> None:
 
     market_state = ctx.market_state
     if not market_state.is_market_open:
-        if not cfg.FORCE_SCAN:
+        if not cfg.FORCE_SCAN and not cfg.EXTENDED_HOURS_EQUITY_TRADING:
             log.info("[SYSTEM] Market closed — skipping scan")
             return
-        log.warning("[SYSTEM] FORCE_SCAN active — bypassing market-hours gate")
+        if cfg.FORCE_SCAN:
+            log.warning("[SYSTEM] FORCE_SCAN active — bypassing market-hours gate")
+        else:
+            log.info("[SYSTEM] Extended-hours equity trading active — scanning equities")
 
     if _check_kill_mode(ctx):
         log.info("[SYSTEM] Kill mode active — aborting cycle")
