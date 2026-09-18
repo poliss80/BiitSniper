@@ -154,8 +154,34 @@ class SchwabMarketDataClient:
             response.raise_for_status()
             return response.json()
         except Exception as e:
-            log.warning(f"Schwab: Failed to get quote for {symbol}: {e}")
-            return None
+            # Schwab can return 404 for valid/newly-listed symbols. Use Alpaca
+            # market data as a quote fallback so one provider does not suppress
+            # squeeze confirmation for the entire symbol.
+            try:
+                from alpaca.data.historical import StockHistoricalDataClient
+                from alpaca.data.requests import StockLatestQuoteRequest
+                from engine.config import API_KEY, API_SECRET
+
+                alpaca_client = StockHistoricalDataClient(API_KEY, API_SECRET)
+                quotes = alpaca_client.get_stock_latest_quote(
+                    StockLatestQuoteRequest(symbol_or_symbols=symbol)
+                )
+                quote = quotes[symbol]
+                log.info(f"Schwab: quote unavailable for {symbol}; Alpaca fallback used")
+                return {
+                    symbol: {
+                        "bidPrice": float(getattr(quote, "bid_price", 0) or 0),
+                        "askPrice": float(getattr(quote, "ask_price", 0) or 0),
+                        "lastPrice": float(getattr(quote, "ask_price", 0) or getattr(quote, "bid_price", 0) or 0),
+                        "source": "alpaca_fallback",
+                    }
+                }
+            except Exception as fallback_error:
+                log.warning(
+                    f"Schwab: Failed to get quote for {symbol}: {e}; "
+                    f"Alpaca fallback failed: {fallback_error}"
+                )
+                return None
     
     def get_candles(self, symbol: str, period_type: str = "day", period: int = 5, 
                    frequency_type: str = "minute", frequency: int = 15,
