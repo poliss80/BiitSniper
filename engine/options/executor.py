@@ -55,6 +55,8 @@ from engine.config import (
     OPTIONS_TRAIL_DRAWDOWN_PCT,
         OPTIONS_LIVE_PROBE_MODE,
         OPTIONS_LIVE_PROBE_STOP_LOSS_PCT,
+        OPTIONS_EXIT_CONFIRM_CYCLES,
+        OPTIONS_MAX_EXIT_SPREAD_PCT,
     API_KEY, API_SECRET, PAPER,
 )
 from engine.utils import MarketState
@@ -381,6 +383,8 @@ class OptionsExecutor:
         self._MONITOR_INTERVAL = 20   # seconds between P&L checks (fast enough to catch intraday moves)
         self._last_iv_convert_ts: float = 0.0
         self._IV_CONVERT_INTERVAL = 600.0  # check spread-conversion every 10 min max
+        # (occ_symbol, reason) -> consecutive cycles a normal exit condition has held
+        self._exit_confirm: Dict[Tuple[str, str], int] = {}
         self._reconcile_positions()
 
     def _reconcile_positions(self) -> None:
@@ -1662,6 +1666,39 @@ class OptionsExecutor:
         except Exception as e:
             log.warning(f"PDT Status Check Failed: {e}")
             return False, 0
+
+    # ── Exit confirmation & liquidity gates ─────────────────────────────────
+
+    def _purge_exit_state(self, occ_sym: str) -> None:
+        """Drop all pending exit-confirmation state for a position."""
+        for key in [k for k in self._exit_confirm if k[0] == occ_sym]:
+            del self._exit_confirm[key]
+
+    def _price_exit_allowed(self, occ_sym: str, reason: str, active: bool, wide_spread: bool) -> bool:
+        """Gate for normal (mark-driven) exits: confirmation across monitor cycles.
+
+        Returns True only after the condition has held for OPTIONS_EXIT_CONFIRM_CYCLES
+        consecutive monitor cycles. Pending state resets when the condition stops, when
+        the quote spread is too wide, or (via _purge_exit_state) when the position is
+        closed or externally absent. Hard risk exits (theta guard / DTE, butterfly and
+        condor DTE<=3 emergency) bypass this gate entirely and fire immediately.
+        """
+        key = (occ_sym, reason)
+        required = max(1, OPTIONS_EXIT_CONFIRM_CYCLES)
+        if not active or wide_spread:
+            self._exit_confirm.pop(key, None)
+            return False
+        count = self._exit_confirm.get(key, 0) + 1
+        if count < required:
+            self._exit_confirm[key] = count
+            log.info(
+                f"OPTIONS: {occ_sym} '{reason}' pending confirmation "
+                f"({count}/{required} cycles)"
+            )
+            return False
+        self._exit_confirm.pop(key, None)
+        return True
+
     def monitor_positions(self) -> None:
         """
         Check open options (Single & MLEG) and close at target/stop.
@@ -1685,6 +1722,10 @@ class OptionsExecutor:
         to_close: List[str] = []
         stop_symbols: List[str] = []
         today = datetime.date.today()
+
+        # Purge confirmation state for symbols no longer tracked (closed or externally absent)
+        for _key in [k for k in self._exit_confirm if k[0] not in self._positions]:
+            del self._exit_confirm[_key]
 
         # PDT/Account Status Logic (disabled)
         # pdt_small_account, dt_left_today = self._check_pdt_status()
@@ -1720,6 +1761,7 @@ class OptionsExecutor:
                 )
                 if any_leg_missing:
                     log.info(f"OPTIONS: {occ_sym} leg(s) closed externally — clearing tracker")
+                    self._purge_exit_state(occ_sym)
                     del self._positions[occ_sym]
                     continue
 
@@ -1732,7 +1774,13 @@ class OptionsExecutor:
                 entry_cost_dollars = entry_mark * pos.contracts * CONTRACT_SIZE
                 if entry_cost_dollars < 0.01:
                     continue
-                
+
+                # Consolidated quote side prices for the liquidity (wide-spread) gate:
+                # Schwab spread bid/ask for multi-leg when available, otherwise the
+                # computed Alpaca fallback; fresh Alpaca quote bid/ask for single legs.
+                _quote_bid: Optional[float] = None
+                _quote_ask: Optional[float] = None
+
                 if is_mleg:
                     # Multi-leg (spread, butterfly, condor): Use consolidated Schwab pricing
                     from engine.utils.schwab_pricing import get_spread_complete_pricing
@@ -1806,6 +1854,7 @@ class OptionsExecutor:
                                 spread_mark = max(0.0, spread_mark)
                             
                             current_mark = spread_mark
+                            _quote_bid, _quote_ask = spread_bid, spread_ask
                             pnl_pct = (spread_mark - entry_price_signed) / abs(entry_price_signed) * 100
                             
                             log.debug(
@@ -1820,6 +1869,8 @@ class OptionsExecutor:
                     else:
                         # Use Schwab pricing data
                         current_mark = pricing_data["spread_mark"]
+                        _quote_bid = pricing_data["spread_bid"]
+                        _quote_ask = pricing_data["spread_ask"]
                         pnl_pct = pricing_data["pnl_mark_pct"]
                         dte_from_pricing = pricing_data["dte"]
                         
@@ -1843,7 +1894,9 @@ class OptionsExecutor:
                     if _s is None or _s.latest_quote is None:
                         raise ValueError(f"no snapshot/quote for {pos.legs[0]['occ_symbol']}")
                     
-                    current_mark = (float(_s.latest_quote.bid_price) + float(_s.latest_quote.ask_price)) / 2.0
+                    _quote_bid = float(_s.latest_quote.bid_price)
+                    _quote_ask = float(_s.latest_quote.ask_price)
+                    current_mark = (_quote_bid + _quote_ask) / 2.0
                     
                     log.debug(
                         f"[OPTIONS] {pos.symbol} {pos.strategy} (single-leg) "
@@ -1867,7 +1920,27 @@ class OptionsExecutor:
                     f"pnl={pnl_pct:+.1f}% peak={pos.peak_pnl_pct:.1f}%"
                 )
 
-                if pos.is_live_probe and not is_mleg and pnl_pct <= -OPTIONS_LIVE_PROBE_STOP_LOSS_PCT:
+                # Liquidity gate: a wide bid/ask spread makes the mark unreliable, so
+                # normal price-driven exits are deferred (hard theta/DTE/emergency exits
+                # are NOT affected and still fire immediately).
+                wide_spread = False
+                if (
+                    _quote_bid is not None and _quote_ask is not None
+                    and _quote_ask >= _quote_bid and abs(current_mark) > 1e-9
+                ):
+                    _spread_pct = (_quote_ask - _quote_bid) / abs(current_mark) * 100
+                    if _spread_pct > OPTIONS_MAX_EXIT_SPREAD_PCT:
+                        wide_spread = True
+                        log.warning(
+                            f"OPTIONS: {occ_sym} wide quote spread {_spread_pct:.1f}% > "
+                            f"{OPTIONS_MAX_EXIT_SPREAD_PCT:.1f}% max "
+                            f"(bid=${_quote_bid:.2f} mark=${current_mark:.2f} ask=${_quote_ask:.2f}) "
+                            f"— deferring price-driven exits"
+                        )
+
+                if pos.is_live_probe and not is_mleg and self._price_exit_allowed(
+                    occ_sym, "live_probe_stop", pnl_pct <= -OPTIONS_LIVE_PROBE_STOP_LOSS_PCT, wide_spread
+                ):
                     log.warning(
                         f"OPTIONS PROBE: {pos.symbol} stop hit ({pnl_pct:.1f}% <= "
                         f"-{OPTIONS_LIVE_PROBE_STOP_LOSS_PCT:.0f}%) — closing"
@@ -1925,7 +1998,9 @@ class OptionsExecutor:
                     #                or +45% above entry (normal mode).
                     # Only close if mark is positive (we receive money on close).
                     _target_mark = entry_mark if pos.breakeven_mode else entry_mark * (1 + OPTIONS_PROFIT_TARGET_PCT / 100)
-                    if occ_sym not in to_close and current_mark > 0 and current_mark >= _target_mark:
+                    if occ_sym not in to_close and self._price_exit_allowed(
+                        occ_sym, "target", current_mark > 0 and current_mark >= _target_mark, wide_spread
+                    ):
                         if not pdt_block:
                             _reason = "break-even" if pos.breakeven_mode else f"target +{OPTIONS_PROFIT_TARGET_PCT:.0f}%"
                             log.info(
@@ -1962,7 +2037,16 @@ class OptionsExecutor:
                     continue   # skip standard % stop / trailing stop for mleg structures
                 # ── End butterfly/condor logic ────────────────────────────────
 
-                if pnl_pct >= OPTIONS_PROFIT_TARGET_1_PCT and not pos.tier1_closed:
+                # Normal profit-target exits (tier-1 scale-out and tier-2 second-half
+                # target) require confirmation across monitor cycles and are deferred
+                # while the quote spread is too wide.
+                _target_active = (
+                    (pnl_pct >= OPTIONS_PROFIT_TARGET_1_PCT and not pos.tier1_closed)
+                    or (pnl_pct >= OPTIONS_PROFIT_TARGET_2_PCT and pos.tier1_closed)
+                )
+                _target_ok = self._price_exit_allowed(occ_sym, "target", _target_active, wide_spread)
+
+                if _target_ok and pnl_pct >= OPTIONS_PROFIT_TARGET_1_PCT and not pos.tier1_closed:
                     # SCALE-OUT: Close 50% of position at +50%, hold 50% with new +20% stop
                     if not pdt_block:
                         _is_short = pos.action == "sell_to_open"
@@ -2043,7 +2127,7 @@ class OptionsExecutor:
                                     f"target at +{OPTIONS_PROFIT_TARGET_2_PCT:.0f}%"
                                 )
 
-                elif pnl_pct >= OPTIONS_PROFIT_TARGET_2_PCT and pos.tier1_closed:
+                elif _target_ok and pnl_pct >= OPTIONS_PROFIT_TARGET_2_PCT and pos.tier1_closed:
                     # Second half: close remaining at max profit target
                     if not pdt_block:
                         log.info(
@@ -2053,7 +2137,9 @@ class OptionsExecutor:
                         to_close.append(occ_sym)
 
                 # ── Second-half stop loss (if scaled out): New stop at +20% (breakeven guard) ────
-                if pos.tier1_closed and pnl_pct <= OPTIONS_PROFIT_TARGET_1_STOP_PCT:
+                if pos.tier1_closed and self._price_exit_allowed(
+                    occ_sym, "second_half_stop", pnl_pct <= OPTIONS_PROFIT_TARGET_1_STOP_PCT, wide_spread
+                ):
                     # Second half hit its new stop at +20% — close to lock minimum gain
                     if not pdt_block and not in_grace_period:
                         log.warning(
@@ -2064,7 +2150,9 @@ class OptionsExecutor:
 
                 # ── Percentage-based stop loss: ONLY for naked options, NOT spreads ────
                 # Multi-leg spreads have complex mark pricing; SL is managed by Schwab stop orders.
-                elif not _is_mleg and pnl_pct <= -_eff_stop:
+                elif not _is_mleg and self._price_exit_allowed(
+                    occ_sym, "stop", pnl_pct <= -_eff_stop, wide_spread
+                ):
                     # Grace period: don't stop-out within first N days of entry
                     if in_grace_period:
                         # Still within grace period — hold even if stop is hit
@@ -2096,8 +2184,13 @@ class OptionsExecutor:
                 if (
                     not in_grace_period
                     and not pdt_block
-                    and pos.peak_pnl_pct >= trail_activate
-                    and pnl_pct <= pos.peak_pnl_pct - trail_drawdown
+                    and self._price_exit_allowed(
+                        occ_sym,
+                        "trailing_stop",
+                        pos.peak_pnl_pct >= trail_activate
+                        and pnl_pct <= pos.peak_pnl_pct - trail_drawdown,
+                        wide_spread,
+                    )
                 ):
                     log.info(
                         f"OPTIONS: {pos.symbol} trailing stop (conf={pos.entry_confidence:.0%}) — "
@@ -2190,6 +2283,7 @@ class OptionsExecutor:
                                 f"${close_mid:.2f} (mark negative) — letting expire worthless. "
                                 f"Closing would exceed defined max loss."
                             )
+                            self._purge_exit_state(occ_sym)
                             del self._positions[occ_sym]
                             return
 
@@ -2233,27 +2327,44 @@ class OptionsExecutor:
                 side = OrderSide.SELL if pos.action == "buy_to_open" else OrderSide.BUY
                 _close_limit = None
 
-                # First try: use passed-in all_positions for the mark price
-                if all_positions:
-                    _lp = all_positions.get(occ_sym)
+                # Primary: fresh Alpaca option snapshot — executable side of the quote.
+                # Sell-to-close a long at the bid (97% of bid to guarantee a fill, as
+                # before); buy-to-close a short at the ask (103% of ask). The broker
+                # Position.current_price is often bid-side/stale and must NOT drive
+                # close pricing.
+                try:
+                    from alpaca.data.requests import OptionSnapshotRequest
+                    _snaps = self.data_client.get_option_snapshot(
+                        OptionSnapshotRequest(symbol_or_symbols=[occ_sym])
+                    )
+                    _snap = _snaps.get(occ_sym) if _snaps else None
+                    if _snap is not None and _snap.latest_quote is not None:
+                        _bid = float(_snap.latest_quote.bid_price)
+                        _ask = float(_snap.latest_quote.ask_price)
+                        if side == OrderSide.SELL and _bid > 0.01:
+                            _close_limit = round(_bid * 0.97, 2)
+                        elif side == OrderSide.BUY and _ask > 0.01:
+                            _close_limit = round(_ask * 1.03, 2)
+                except Exception as _qe:
+                    log.debug(f"[OPTIONS] Fresh snapshot unavailable for {occ_sym}: {_qe}")
+
+                # Fallback only when no fresh quote exists: broker current_price
+                # (often bid-side/stale) — logged transparently.
+                if _close_limit is None:
+                    _lp = all_positions.get(occ_sym) if all_positions else None
+                    if _lp is None:
+                        try:
+                            _lp = {p.symbol: p for p in self.client.get_all_positions()}.get(occ_sym)
+                        except Exception as _fe:
+                            log.debug(f"[OPTIONS] Could not fetch broker fallback price for {occ_sym}: {_fe}")
                     if _lp is not None:
                         _cur = float(_lp.current_price)
                         if _cur > 0.01:
-                            # Selling to close: accept 97% of mid to guarantee a fill
-                            # Buying to close: pay up 3% to get out quickly
+                            log.warning(
+                                f"[OPTIONS] {occ_sym} no fresh option quote — falling back to broker "
+                                f"current_price ${_cur:.2f} for close limit (may be bid-side/stale)"
+                            )
                             _close_limit = round(_cur * 0.97, 2) if side == OrderSide.SELL else round(_cur * 1.03, 2)
-
-                # Second try: fetch a fresh broker quote if still no limit price
-                if _close_limit is None:
-                    try:
-                        _fresh = {p.symbol: p for p in self.client.get_all_positions()}
-                        _lp = _fresh.get(occ_sym)
-                        if _lp is not None:
-                            _cur = float(_lp.current_price)
-                            if _cur > 0.01:
-                                _close_limit = round(_cur * 0.97, 2) if side == OrderSide.SELL else round(_cur * 1.03, 2)
-                    except Exception as _fe:
-                        log.debug(f"[OPTIONS] Could not fetch fresh quote for {occ_sym}: {_fe}")
 
                 # Final fallback: near-worthless or unquoted contract — use floor limit
                 # Alpaca requires a minimum limit price of $0.05 for options.
@@ -2282,6 +2393,7 @@ class OptionsExecutor:
                     f"{pos.contracts} remaining"
                 )
             else:
+                self._purge_exit_state(occ_sym)
                 del self._positions[occ_sym]
 
         except Exception as e:
@@ -2298,6 +2410,7 @@ class OptionsExecutor:
                     f"[OPTIONS] No quote available to close {occ_sym} — contract likely expired/worthless. "
                     f"Removing from tracker (max loss realized)."
                 )
+                self._purge_exit_state(occ_sym)
                 self._positions.pop(occ_sym, None)
             else:
                 log.error(f"Options close failed for {occ_sym}: {e}", exc_info=True)

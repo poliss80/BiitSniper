@@ -641,8 +641,10 @@ def _manage_intraday_window(ctx: AppContext) -> bool:
     elif phase == "third" and phase_state in ("final_reset", "pre_session"):
         _save_intraday_state(today, "session_3")
     _WINDOW_FLAT_STATE[key] = True
-    if ctx.options_executor is not None:
-        ctx.options_executor._positions.clear()
+    # Options tracking is intentionally retained across equity session resets:
+    # EnhancedExecutor.flatten_portfolio excludes us_option positions, so tracked
+    # options are still open and must keep being managed (theta guard, stops,
+    # targets) by OptionsExecutor.
     if ctx.crypto_trader is not None:
         ctx.crypto_trader._sync_positions()
     return True

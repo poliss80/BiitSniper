@@ -89,6 +89,12 @@ OPTIONS_TRAIL_ACTIVATE_PCT  = float(os.getenv("OPTIONS_TRAIL_ACTIVATE_PCT", "15.
 OPTIONS_TRAIL_DRAWDOWN_PCT  = float(os.getenv("OPTIONS_TRAIL_DRAWDOWN_PCT", "10.0"))  # was 20% — close if drops 10pp from peak (tight exit)
 OPTIONS_LIVE_PROBE_MODE = os.getenv("OPTIONS_LIVE_PROBE_MODE", "false").lower() in ("1", "true", "yes")
 OPTIONS_LIVE_PROBE_STOP_LOSS_PCT = float(os.getenv("OPTIONS_LIVE_PROBE_STOP_LOSS_PCT", "10.0"))
+# Exit flattening controls: normal mark-driven exits (target / ordinary stop / live-probe stop /
+# second-half stop / trailing) must persist across consecutive monitor cycles before closing, and
+# are deferred entirely while the quote spread is too wide. Hard risk exits (theta guard / DTE and
+# butterfly-condor DTE<=3 emergency) always fire immediately regardless of these settings.
+OPTIONS_EXIT_CONFIRM_CYCLES = int(os.getenv("OPTIONS_EXIT_CONFIRM_CYCLES", "2"))        # consecutive cycles a normal exit signal must persist
+OPTIONS_MAX_EXIT_SPREAD_PCT = float(os.getenv("OPTIONS_MAX_EXIT_SPREAD_PCT", "15.0"))   # defer normal exits when bid/ask spread exceeds this % of mark
 
 # Spread-Specific Stop-Loss Strategy (NEW)
 # ─────────────────────────────────────────────────────────────────
