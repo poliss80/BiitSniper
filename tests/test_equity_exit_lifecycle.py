@@ -956,7 +956,103 @@ class EquityExitLifecycleTests(unittest.TestCase):
 
         self.assertEqual(executor.client.cancelled, [])
 
-    def test_single_option_limit_uses_alpaca_last_executed_trade(self):
+    def test_option_retry_cancels_final_retry_order_without_resubmitting(self):
+        class FinalRetryClient:
+            def __init__(self):
+                self.cancelled = []
+                self.submitted = []
+
+            def get_orders(self):
+                return [SimpleNamespace(id="option-order", filled_qty="0")]
+
+            def cancel_order_by_id(self, order_id):
+                self.cancelled.append(order_id)
+
+            def submit_order(self, order):
+                self.submitted.append(order)
+
+        executor = object.__new__(OptionsExecutor)
+        executor.client = FinalRetryClient()
+
+        with patch.object(OptionsExecutor, "_ORDER_RETRY_TIMEOUT", 0):
+            executor._adaptive_limit_retry(
+                "option-order", "buy", 1.25, "SOFI", 2, "SOFI260918C00015000",
+                False, None, retry_count=OptionsExecutor._ORDER_MAX_RETRIES,
+            )
+
+        # Final retry order must still be monitored and canceled, never left live
+        self.assertEqual(executor.client.cancelled, ["option-order"])
+        self.assertEqual(executor.client.submitted, [])
+
+    def test_option_retry_looks_up_status_when_order_not_open(self):
+        class LookupClient:
+            def __init__(self):
+                self.cancelled = []
+                self.looked_up = []
+
+            def get_orders(self):
+                return []
+
+            def get_order_by_id(self, order_id):
+                self.looked_up.append(order_id)
+                return SimpleNamespace(id=order_id, status="filled", filled_qty="1")
+
+            def cancel_order_by_id(self, order_id):
+                self.cancelled.append(order_id)
+
+            def get_all_positions(self):
+                return []
+
+        executor = object.__new__(OptionsExecutor)
+        executor.client = LookupClient()
+        executor._positions = {}
+
+        with patch.object(OptionsExecutor, "_ORDER_RETRY_TIMEOUT", 0):
+            executor._adaptive_limit_retry(
+                "option-order", "buy", 1.25, "SOFI", 1, "SOFI260918C00015000", False, None
+            )
+
+        self.assertEqual(executor.client.looked_up, ["option-order"])
+        self.assertEqual(executor.client.cancelled, [])
+
+    def test_option_retry_resubmits_only_unfilled_quantity(self):
+        class PartialFillClient:
+            def __init__(self):
+                self.cancelled = []
+                self.submitted = []
+
+            def get_orders(self):
+                return [SimpleNamespace(id="option-order", filled_qty="1")]
+
+            def cancel_order_by_id(self, order_id):
+                self.cancelled.append(order_id)
+
+            def submit_order(self, order):
+                self.submitted.append(order)
+                return SimpleNamespace(id="retry-order", status="new")
+
+            def get_all_positions(self):
+                return []
+
+        executor = object.__new__(OptionsExecutor)
+        executor.client = PartialFillClient()
+        executor._positions = {}
+
+        with patch.object(OptionsExecutor, "_ORDER_RETRY_TIMEOUT", 0), patch(
+            "engine.options.executor.threading"
+        ) as mock_threading:
+            executor._adaptive_limit_retry(
+                "option-order", "buy", 1.25, "SOFI", 3, "SOFI260918C00015000", False, None
+            )
+
+        self.assertEqual(executor.client.cancelled, ["option-order"])
+        self.assertEqual(len(executor.client.submitted), 1)
+        # Partially filled 1 of 3 — resubmit must target only the 2 unfilled contracts
+        self.assertEqual(float(executor.client.submitted[0].qty), 2.0)
+        mock_threading.Thread.assert_called_once()
+        self.assertEqual(mock_threading.Thread.call_args.kwargs["args"][4], 2)
+
+    def test_single_option_limit_uses_current_quote_when_valid(self):
         executor = object.__new__(OptionsExecutor)
         executor.data_client = SimpleNamespace(
             get_option_snapshot=lambda _request: {
@@ -967,10 +1063,239 @@ class EquityExitLifecycleTests(unittest.TestCase):
             }
         )
 
+        # Executable quote-derived limits win over the stale last trade
+        self.assertEqual(
+            executor._get_alpaca_option_limit("SOFI260918C00019500", is_buy=True),
+            0.44,
+        )
+        self.assertEqual(
+            executor._get_alpaca_option_limit("SOFI260918C00019500", is_buy=False),
+            0.39,
+        )
+
+    def test_single_option_limit_falls_back_to_last_trade_without_valid_quote(self):
+        executor = object.__new__(OptionsExecutor)
+        executor.data_client = SimpleNamespace(
+            get_option_snapshot=lambda _request: {
+                "SOFI260918C00019500": SimpleNamespace(
+                    latest_trade=SimpleNamespace(price="0.43"),
+                    latest_quote=SimpleNamespace(bid_price="0.00", ask_price="0.00"),
+                )
+            }
+        )
+
         self.assertEqual(
             executor._get_alpaca_option_limit("SOFI260918C00019500", is_buy=True),
             0.43,
         )
+
+    def test_single_option_limit_returns_none_without_quote_or_trade(self):
+        executor = object.__new__(OptionsExecutor)
+        executor.data_client = SimpleNamespace(
+            get_option_snapshot=lambda _request: {
+                "SOFI260918C00019500": SimpleNamespace(
+                    latest_trade=None,
+                    latest_quote=SimpleNamespace(bid_price="0.00", ask_price="0.00"),
+                )
+            }
+        )
+
+        self.assertIsNone(
+            executor._get_alpaca_option_limit("SOFI260918C00019500", is_buy=True)
+        )
+
+    @staticmethod
+    def _make_option_order_setup(submit_response, open_orders=None):
+        class OrderClient:
+            def __init__(self):
+                self.submitted = []
+                self.open_orders = list(open_orders or [])
+
+            def get_all_positions(self):
+                return []
+
+            def get_account(self):
+                return SimpleNamespace(
+                    equity=100_000.0,
+                    buying_power=100_000.0,
+                    options_buying_power=None,
+                    trading_blocked=False,
+                    account_blocked=False,
+                )
+
+            def submit_order(self, order):
+                self.submitted.append(order)
+                return submit_response
+
+            def get_orders(self):
+                return list(self.open_orders)
+
+        executor = object.__new__(OptionsExecutor)
+        executor.client = OrderClient()
+        executor._positions = {}
+        executor._get_alpaca_option_limit = Mock(return_value=1.30)
+        signal = OptionSignal(
+            "SOFI", "call", "buy_to_open", 15.0, datetime.date(2026, 10, 16), 1.25,
+            1.0, "test", "TestMomentum", iv_rank=10.0, contract_cap=1,
+            force_single_leg=True,
+        )
+        market_state = SimpleNamespace(is_open_window=False)
+        return executor, signal, market_state
+
+    def test_place_option_order_without_order_id_returns_false_and_does_not_track(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(id=None, status="new", filled_qty="0", qty="1")
+        )
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("engine.options.executor.threading") as mock_threading, patch(
+            "requests.get", side_effect=RuntimeError("offline")
+        ):
+            result = executor.place_option_order(signal, market_state)
+
+        self.assertFalse(result)
+        self.assertEqual(len(executor.client.submitted), 1)
+        self.assertEqual(executor._positions, {})
+        mock_threading.Thread.assert_not_called()
+        self.assertIn("order id", executor._last_rejection_reason)
+
+    def test_place_option_order_pending_acceptance_is_not_tracked_as_executed(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(id="order-1", status="accepted", filled_qty="0", qty="1")
+        )
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("engine.options.executor.threading") as mock_threading, patch(
+            "engine.options.executor.log"
+        ) as mock_log, patch("requests.get", side_effect=RuntimeError("offline")):
+            result = executor.place_option_order(signal, market_state)
+
+        # Submission succeeded, but no fill => no phantom position, no EXECUTED log
+        self.assertTrue(result)
+        self.assertEqual(executor._positions, {})
+        mock_threading.Thread.assert_called_once()  # retry monitor watches the open order
+        logged = " ".join(str(c) for c in mock_log.info.call_args_list)
+        self.assertIn("SUBMITTED", logged)
+        self.assertNotIn("EXECUTED", logged)
+
+    def test_place_option_order_tracks_position_only_on_confirmed_fill(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(
+                id="order-1", status="filled", filled_qty="1", qty="1",
+                filled_avg_price="1.30",
+            )
+        )
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("engine.options.executor.threading") as mock_threading, patch(
+            "engine.options.executor.log"
+        ) as mock_log, patch("requests.get", side_effect=RuntimeError("offline")):
+            result = executor.place_option_order(signal, market_state)
+
+        self.assertTrue(result)
+        primary_occ = "SOFI261016C00015000"
+        self.assertIn(primary_occ, executor._positions)
+        self.assertAlmostEqual(executor._positions[primary_occ].entry_price, 1.30)
+        mock_threading.Thread.assert_not_called()  # no retry monitor for a filled order
+        logged = " ".join(str(c) for c in mock_log.info.call_args_list)
+        self.assertIn("EXECUTED", logged)
+
+    def test_place_option_order_blocked_by_pending_open_entry_order(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(id="order-2", status="filled", filled_qty="1", qty="1",
+                            filled_avg_price="1.30"),
+            open_orders=[
+                SimpleNamespace(
+                    id="order-1", status="accepted", side="buy", symbol="SOFI261016C00015000",
+                    order_class="", legs=None,
+                )
+            ],
+        )
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("requests.get", side_effect=RuntimeError("offline")):
+            result = executor.place_option_order(signal, market_state)
+
+        self.assertFalse(result)
+        self.assertEqual(executor.client.submitted, [])  # no duplicate submission
+        self.assertEqual(executor._positions, {})
+        self.assertIn("pending", executor._last_rejection_reason)
+
+    def test_place_option_order_blocked_by_pending_mleg_entry_for_same_underlying(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(id="order-2", status="filled", filled_qty="1", qty="1",
+                            filled_avg_price="1.30"),
+            open_orders=[
+                SimpleNamespace(
+                    id="order-1", status="new", side=None, symbol="",
+                    order_class="mleg",
+                    legs=[
+                        SimpleNamespace(symbol="SOFI261016C00015000", position_intent="buy_to_open"),
+                        SimpleNamespace(symbol="SOFI261016C00017500", position_intent="sell_to_open"),
+                    ],
+                )
+            ],
+        )
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("requests.get", side_effect=RuntimeError("offline")):
+            result = executor.place_option_order(signal, market_state)
+
+        self.assertFalse(result)
+        self.assertEqual(executor.client.submitted, [])
+        self.assertIn("pending", executor._last_rejection_reason)
+
+    def test_place_option_order_ignores_canceled_and_other_underlying_orders(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(id="order-2", status="filled", filled_qty="1", qty="1",
+                            filled_avg_price="1.30"),
+            open_orders=[
+                # Canceled order for the same underlying — must not block
+                SimpleNamespace(
+                    id="order-0", status="canceled", side="buy", symbol="SOFI261016C00015000",
+                    order_class="", legs=None,
+                ),
+                # Open entry for a different underlying — must not block
+                SimpleNamespace(
+                    id="order-1", status="new", side="buy", symbol="AAPL261016C00200000",
+                    order_class="", legs=None,
+                ),
+            ],
+        )
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("engine.options.executor.threading"), patch(
+            "requests.get", side_effect=RuntimeError("offline")
+        ):
+            result = executor.place_option_order(signal, market_state)
+
+        self.assertTrue(result)
+        self.assertEqual(len(executor.client.submitted), 1)
+        self.assertIn("SOFI261016C00015000", executor._positions)
+
+    def test_place_option_order_open_order_lookup_failure_does_not_block(self):
+        executor, signal, market_state = self._make_option_order_setup(
+            SimpleNamespace(id="order-1", status="filled", filled_qty="1", qty="1",
+                            filled_avg_price="1.30")
+        )
+        executor.client.get_orders = Mock(side_effect=RuntimeError("api down"))
+
+        with patch("engine.options.executor.PAPER", True), patch(
+            "engine.options.executor.OPTIONS_LIVE_PROBE_MODE", False
+        ), patch("engine.options.executor.threading"), patch(
+            "requests.get", side_effect=RuntimeError("offline")
+        ):
+            result = executor.place_option_order(signal, market_state)
+
+        self.assertTrue(result)
+        self.assertEqual(len(executor.client.submitted), 1)
+        self.assertIn("SOFI261016C00015000", executor._positions)
 
     def test_after_hours_eod_close_uses_executable_limit_order(self):
         class FixedDateTime(datetime.datetime):

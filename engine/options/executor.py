@@ -260,12 +260,20 @@ class OptionsExecutor:
     _ORDER_MAX_RETRIES = 2
     _ORDER_RETRY_STEP = 0.01    # 1% more aggressive each retry
 
+    def _reconcile_after_fill(self, symbol: str) -> None:
+        """Best-effort re-hydration of tracked positions from broker state after a
+        confirmed fill. _reconcile_positions() is idempotent (skips already-tracked
+        symbols), so it is safe to call mid-session from the retry thread."""
+        try:
+            self._reconcile_positions()
+        except Exception as e:
+            log.warning(f"[OPTIONS][RETRY] Post-fill reconcile for {symbol} failed: {e}")
+
     def _adaptive_limit_retry(self, order_id, side, orig_limit, symbol, contracts, occ_sym, is_mleg, payload, retry_count=0):
-        """After timeout, cancel and resubmit limit order at more aggressive price, up to max retries."""
+        """After timeout, check the order; cancel any unfilled remainder and resubmit at a
+        more aggressive price, up to max retries. The final retry order is still monitored
+        and canceled if unfilled — it is never left live."""
         log.info(f"[OPTIONS][RETRY] Started retry thread for {symbol} order {order_id} (retry {retry_count})")
-        if retry_count >= self._ORDER_MAX_RETRIES:
-            log.info(f"[OPTIONS][RETRY] Max retries reached for {symbol} order {order_id}, giving up.")
-            return
         log.info(f"[OPTIONS][RETRY] Waiting {self._ORDER_RETRY_TIMEOUT}s before checking order {order_id} for {symbol}")
         time.sleep(self._ORDER_RETRY_TIMEOUT)
         # Check if order is still open
@@ -273,7 +281,26 @@ class OptionsExecutor:
         log.debug(f"[OPTIONS][RETRY] Open orders after timeout: {[getattr(o, 'id', None) for o in open_orders]}")
         order = next((o for o in open_orders if getattr(o, "id", None) == order_id), None)
         if order is None:
-            log.info(f"[OPTIONS][RETRY] Order {order_id} for {symbol} not found (likely filled or canceled externally), no retry needed.")
+            # Not in the open-order list — look up the actual final status instead of
+            # assuming it was filled or canceled externally.
+            try:
+                looked_up = self.client.get_order_by_id(order_id)
+                raw_status = getattr(looked_up, "status", "")
+                status = str(getattr(raw_status, "value", raw_status) or "").lower()
+            except Exception as e:
+                log.warning(
+                    f"[OPTIONS][RETRY] Order {order_id} for {symbol} not open and status "
+                    f"lookup failed: {e} — no retry attempted"
+                )
+                return
+            if status == "filled":
+                log.info(f"[OPTIONS][RETRY] Order {order_id} for {symbol} confirmed filled — reconciling tracked positions")
+                self._reconcile_after_fill(symbol)
+            else:
+                log.info(
+                    f"[OPTIONS][RETRY] Order {order_id} for {symbol} no longer open "
+                    f"(status={status or 'unknown'}) — no retry needed"
+                )
             return
         try:
             filled_qty = int(float(getattr(order, "filled_qty", 0) or 0))
@@ -281,28 +308,40 @@ class OptionsExecutor:
             filled_qty = 0
             log.warning(f"[OPTIONS][RETRY] Invalid filled quantity for {symbol} order {order_id}; treating as unfilled")
         log.info(f"[OPTIONS][RETRY] Order {order_id} for {symbol} still open after timeout. Filled qty: {filled_qty}, Contracts: {contracts}")
-        if filled_qty >= contracts:
+        remaining_qty = contracts - filled_qty
+        if remaining_qty <= 0:
             log.info(f"[OPTIONS][RETRY] Order {order_id} for {symbol} fully filled, no retry needed.")
+            self._reconcile_after_fill(symbol)
             return
-        # Cancel and resubmit at more aggressive price
-        log.info(f"[OPTIONS][RETRY] Cancelling order {order_id} for {symbol} (unfilled qty: {contracts - filled_qty})")
+        # Cancel the unfilled remainder before deciding whether to resubmit
+        log.info(f"[OPTIONS][RETRY] Cancelling order {order_id} for {symbol} (unfilled qty: {remaining_qty})")
         self.client.cancel_order_by_id(order_id)
+        if filled_qty > 0:
+            # Partial fill — reconcile so the filled portion is tracked from broker state
+            self._reconcile_after_fill(symbol)
+        if retry_count >= self._ORDER_MAX_RETRIES:
+            log.info(
+                f"[OPTIONS][RETRY] Max retries reached for {symbol} order {order_id} — "
+                f"unfilled remainder ({remaining_qty}) canceled, giving up."
+            )
+            return
         if side == "buy":
             new_limit = round(orig_limit * (1 + self._ORDER_RETRY_STEP * (retry_count + 1)), 2)
         else:
             new_limit = round(orig_limit * (1 - self._ORDER_RETRY_STEP * (retry_count + 1)), 2)
-        log.info(f"[OPTIONS][RETRY] Retrying {symbol} order at more aggressive limit: {new_limit} (retry {retry_count+1})")
+        log.info(f"[OPTIONS][RETRY] Retrying {symbol} order at more aggressive limit: {new_limit} for remaining qty {remaining_qty} (retry {retry_count+1})")
         if is_mleg:
             payload["limit_price"] = str(new_limit)
+            payload["qty"] = str(int(remaining_qty))
             resp = self.client.post("/orders", payload)
             new_order_id = getattr(resp, "id", None)
             log.info(f"[OPTIONS][RETRY] Submitted new MLEG order for {symbol}: {new_order_id}")
             if new_order_id:
-                threading.Thread(target=self._adaptive_limit_retry, args=(new_order_id, side, new_limit, symbol, contracts, occ_sym, is_mleg, payload, retry_count+1), daemon=True).start()
+                threading.Thread(target=self._adaptive_limit_retry, args=(new_order_id, side, new_limit, symbol, remaining_qty, occ_sym, is_mleg, payload, retry_count+1), daemon=True).start()
         else:
             order_req = LimitOrderRequest(
                 symbol=occ_sym,
-                qty=contracts,
+                qty=remaining_qty,
                 side=OrderSide.BUY if side == "buy" else OrderSide.SELL,
                 limit_price=new_limit,
                 time_in_force=TimeInForce.DAY
@@ -311,7 +350,7 @@ class OptionsExecutor:
             new_order_id = getattr(resp, "id", None)
             log.info(f"[OPTIONS][RETRY] Submitted new SINGLE order for {symbol}: {new_order_id}")
             if new_order_id:
-                threading.Thread(target=self._adaptive_limit_retry, args=(new_order_id, side, new_limit, symbol, contracts, occ_sym, is_mleg, payload, retry_count+1), daemon=True).start()
+                threading.Thread(target=self._adaptive_limit_retry, args=(new_order_id, side, new_limit, symbol, remaining_qty, occ_sym, is_mleg, payload, retry_count+1), daemon=True).start()
 
     def _calculate_gross_notional(self, extra: Optional[dict] = None) -> float:
         """
@@ -671,7 +710,9 @@ class OptionsExecutor:
         return max(0, min(contracts, 10))  # hard cap: never more than 10 contracts
 
     def _get_alpaca_option_limit(self, occ_sym: str, is_buy: bool) -> Optional[float]:
-        """Return an Alpaca option limit using the latest executed trade when available."""
+        """Return an executable Alpaca option limit: buy at the ask / sell at the bid when a
+        valid current quote exists; fall back to the latest executed trade only when no
+        valid bid/ask is available."""
         try:
             from alpaca.data.requests import OptionSnapshotRequest
 
@@ -679,31 +720,46 @@ class OptionsExecutor:
                 OptionSnapshotRequest(symbol_or_symbols=[occ_sym])
             )
             snapshot = snapshots.get(occ_sym)
-            trade = getattr(snapshot, "latest_trade", None)
-            last_price = float(getattr(trade, "price", 0) or 0)
             quote = getattr(snapshot, "latest_quote", None)
             bid = float(getattr(quote, "bid_price", 0) or 0)
             ask = float(getattr(quote, "ask_price", 0) or 0)
+            if bid > 0 and ask > 0 and ask >= bid:
+                limit = ask if is_buy else bid
+                log.info(
+                    f"[OPTIONS] {occ_sym} Alpaca pricing: bid=${bid:.2f} ask=${ask:.2f} "
+                    f"limit=${limit:.2f} ({'ask' if is_buy else 'bid'})"
+                )
+                return round(limit, 2)
+
+            trade = getattr(snapshot, "latest_trade", None)
+            last_price = float(getattr(trade, "price", 0) or 0)
             if last_price > 0:
                 log.info(
-                    f"[OPTIONS] {occ_sym} Alpaca pricing: last=${last_price:.2f} "
-                    f"bid=${bid:.2f} ask=${ask:.2f} limit=${last_price:.2f}"
+                    f"[OPTIONS] {occ_sym} Alpaca pricing: no valid bid/ask quote; "
+                    f"falling back to last=${last_price:.2f}"
                 )
                 return round(last_price, 2)
 
-            if bid <= 0 or ask <= 0 or ask < bid:
-                log.warning(f"[OPTIONS] {occ_sym} has no valid Alpaca last trade or bid/ask quote")
-                return None
-
-            limit = ask if is_buy else bid
-            log.info(
-                f"[OPTIONS] {occ_sym} Alpaca pricing: no last trade; bid=${bid:.2f} "
-                f"ask=${ask:.2f} limit=${limit:.2f}"
-            )
-            return round(limit, 2)
+            log.warning(f"[OPTIONS] {occ_sym} has no valid Alpaca bid/ask quote or last trade")
+            return None
         except Exception as e:
             log.warning(f"[OPTIONS] {occ_sym} Alpaca pricing unavailable: {e}")
             return None
+
+    @staticmethod
+    def _order_fill_confirmed(resp) -> bool:
+        """True only when the broker response confirms a full fill. Mere acceptance
+        (status new/accepted/pending) does NOT count as an executed position."""
+        raw_status = getattr(resp, "status", None)
+        status = str(getattr(raw_status, "value", raw_status) or "").lower()
+        if status == "filled":
+            return True
+        try:
+            filled_qty = float(getattr(resp, "filled_qty", 0) or 0)
+            qty = float(getattr(resp, "qty", 0) or 0)
+        except (TypeError, ValueError):
+            return False
+        return qty > 0 and filled_qty >= qty
 
     # ── Order Placement ────────────────────────────────────────────────────────
 
@@ -857,6 +913,81 @@ class OptionsExecutor:
             and signal.force_single_leg
         )
 
+    @staticmethod
+    def _occ_root_matches(occ: str, underlying: str) -> bool:
+        """True if `occ` looks like an OCC option symbol rooted at `underlying`.
+
+        OCC format is <root><6-digit expiry><C/P><8-digit strike>, so requiring the
+        6 digits after the root avoids false matches like 'A' vs 'AA'.
+        """
+        occ = str(occ or "").upper()
+        root = str(underlying or "").upper()
+        if not occ or not root:
+            return False
+        return occ.startswith(root) and occ[len(root):len(root) + 6].isdigit()
+
+    def _has_pending_option_entry(self, symbol: str) -> bool:
+        """True if the broker already has an open (unfilled) option ENTRY order for
+        `symbol`'s underlying.
+
+        _positions only reflects confirmed fills, so a broker-accepted-but-unfilled
+        entry is invisible to the next scan cycle — this guard closes that gap.
+        Broker open orders are the source of truth, so it also works across restarts.
+        Narrow by design: only an open option entry for the SAME underlying blocks.
+        A lookup failure never blocks trading; canceled/filled/rejected orders never
+        block.
+        """
+        try:
+            open_orders = self.client.get_orders() or []
+        except Exception as e:
+            log.warning(
+                f"[OPTIONS] Could not inspect open orders for pending {symbol} entry: "
+                f"{e} — allowing entry attempt"
+            )
+            return False
+        _NON_BLOCKING_STATUSES = {
+            "filled", "canceled", "cancelled", "rejected", "expired",
+            "done_for_day", "replaced",
+        }
+        for order in open_orders:
+            raw_status = getattr(order, "status", "") or ""
+            status = str(getattr(raw_status, "value", raw_status)).lower()
+            if status in _NON_BLOCKING_STATUSES:
+                continue
+            raw_class = getattr(order, "order_class", "") or ""
+            order_class = str(getattr(raw_class, "value", raw_class)).lower()
+            legs = list(getattr(order, "legs", None) or [])
+            leg_symbols = [str(getattr(l, "symbol", "") or "") for l in legs]
+            top_symbol = str(getattr(order, "symbol", "") or "")
+            all_symbols = [top_symbol] + leg_symbols
+            # Only option orders for the same underlying can block (mleg orders
+            # carry an empty top-level symbol, so legs must be inspected).
+            if order_class != "mleg" and not any(
+                self._occ_root_matches(s, symbol) for s in all_symbols
+            ):
+                continue
+            if not any(self._occ_root_matches(s, symbol) for s in all_symbols):
+                continue
+            # Entry-side check: single-leg uses side; mleg uses leg position_intent
+            # when available. A close-only order is not a competing entry.
+            if legs:
+                intents = [
+                    str(getattr(l, "position_intent", "") or "").lower() for l in legs
+                ]
+                if any(intents) and not any("to_open" in i for i in intents):
+                    continue
+            else:
+                raw_side = getattr(order, "side", "") or ""
+                side = str(getattr(raw_side, "value", raw_side)).lower()
+                if side and side != "buy":
+                    continue
+            log.info(
+                f"[OPTIONS] Open option entry order {getattr(order, 'id', '?')} "
+                f"already pending for {symbol} — duplicate entry suppressed"
+            )
+            return True
+        return False
+
     def place_option_order(self, signal: OptionSignal, market_state: MarketState) -> bool:
         """
         Production-ready order placement for ApexTrader.
@@ -901,6 +1032,16 @@ class OptionsExecutor:
         except Exception as e:
             self._last_rejection_reason = f"position count check failed: {e}"
             log.warning(f"[OPTIONS] Could not verify portfolio position count: {e} — skipping entry")
+            return False
+
+        # 0b. Duplicate pending-entry guard — a broker-accepted-but-unfilled entry is
+        #     not in _positions yet, so the next scan cycle would resubmit it.
+        if self._has_pending_option_entry(signal.symbol):
+            self._last_rejection_reason = f"pending option entry already open for {signal.symbol}"
+            log.info(
+                f"[OPTIONS] Pending option entry already open for {signal.symbol} "
+                f"— skipping duplicate entry"
+            )
             return False
 
         # Fetch budget once — reused by the gross-notional pre-check (section 0) and
@@ -1349,7 +1490,8 @@ class OptionsExecutor:
                 log.debug(f"[OPTIONS] Submitting MLEG {signal.symbol}: {json.dumps(payload)}")
                 resp = self.client.post("/orders", payload)
                 order_id = getattr(resp, "id", None)
-                if order_id:
+                order_filled = self._order_fill_confirmed(resp)
+                if order_id and not order_filled:
                     threading.Thread(target=self._adaptive_limit_retry, args=(order_id, "buy" if "buy" in signal.action else "sell", float(payload["limit_price"]), signal.symbol, contracts, "", True, payload, 0), daemon=True).start()
 
             # ── CASE B: SINGLE OPTION (Standard) ─────────────────────────────
@@ -1371,8 +1513,35 @@ class OptionsExecutor:
                 log.debug(f"[OPTIONS] Submitting SINGLE {occ_sym} @ limit=${limit_price:.2f}")
                 resp = self.client.submit_order(order_req)
                 order_id = getattr(resp, "id", None)
-                if order_id:
+                order_filled = self._order_fill_confirmed(resp)
+                if order_id and not order_filled:
                     threading.Thread(target=self._adaptive_limit_retry, args=(order_id, "buy" if "buy" in signal.action else "sell", float(limit_price), signal.symbol, contracts, occ_sym, False, None, 0), daemon=True).start()
+
+            # ── Fill Confirmation Gate ───────────────────────────────────────
+            # Never track a position or log EXECUTED on mere broker acceptance.
+            # Unfilled orders are monitored by the retry thread; filled broker
+            # positions are picked up via _reconcile_positions (idempotent).
+            if not order_id:
+                self._last_rejection_reason = "broker returned no order id"
+                log.warning(
+                    f"[OPTIONS] {signal.symbol} order submission returned no order id — "
+                    f"treating as failed; position NOT tracked"
+                )
+                return False
+            if not order_filled:
+                log.info(
+                    f"[OPTIONS] SUBMITTED {signal.symbol} {signal.option_type} {signal.strategy} "
+                    f"{contracts}c order={order_id} — awaiting fill confirmation; "
+                    f"position will be tracked on fill via reconciliation"
+                )
+                return True
+            # Confirmed fill: prefer the broker-reported average fill price for entry tracking
+            try:
+                _fill_px = float(getattr(resp, "filled_avg_price", 0) or 0)
+            except (TypeError, ValueError):
+                _fill_px = 0.0
+            if _fill_px > 0:
+                _net_entry_price = abs(_fill_px)
 
             # 5. Tracking — store all leg OCC symbols for strategy-agnostic close/monitor
             primary_occ = _alpaca_option_symbol(signal.symbol, signal.expiry, cp_type, signal.strike)

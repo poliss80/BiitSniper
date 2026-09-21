@@ -1514,3 +1514,300 @@ alpaca.common.exceptions.APIError: {"code":42210000,"message":"invalid legs: [le
 2026-09-21 11:06:55,219 [INFO] Universe pruned: no expired tickers
 2026-09-21 11:09:55,650 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['RXRX', 'TPET', 'NVTS', 'NCMI']
 2026-09-21 11:09:55,650 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-21 11:10:37,100 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 11:10:39,315 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 11:10:41,528 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 11:10:43,552 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 11:10:44,849 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 11:10:47,315 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 11:10:48,800 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 11:10:56,468 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=117, no_BreakoutRetest=117, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-21 11:10:56,468 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_OpeningRangeBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumContinuationCall: FR, KRG, EME, OII, MRSH, DBD | no_GapBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumCall: FR, KRG, EME, OII, MRSH, DBD | no_BearPut: FR, KRG, EME, OII, MRSH, DBD | no_BearCallSpread: FR, KRG, EME, OII, MRSH, DBD | no_ShortSqueeze: FR, KRG, EME, OII, MRSH, DBD | no_MeanReversion: FR, KRG, EME, OII, MRSH, DBD | no_BreakoutRetest: FR, KRG, EME, OII, MRSH, DBD | no_TrendPullbackSpread: FR, KRG, EME, OII, MRSH, DBD | no_IronCondor: FR, KRG, EME, OII, MRSH, DBD | no_Butterfly: FR, KRG, EME, OII, MRSH, DBD | no_signal: FR, KRG, EME, OII, MRSH, DBD
+2026-09-21 11:10:56,469 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 11:10:56,469 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 11:10:57,085 [INFO] Quarterly P&L: -3.1% (target >= 50%)
+2026-09-21 11:10:57,085 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 11:10:59,416 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-21 11:10:59,477 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 11:10:59,477 [INFO] [SCAN] 3 symbols (filtered, 8 workers): RXRX, TPET, NCMI
+2026-09-21 11:10:59,477 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 11:11:00,634 [INFO] [RVOL@TIME] RXRX: today_vol=9104079, avg_intraday_vol=5327495 (4 sessions), elapsed_min=101, rvol=1.709, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:11:00,815 [INFO] [RVOL@TIME] TPET: today_vol=66974, avg_intraday_vol=278333 (4 sessions), elapsed_min=101, rvol=0.241, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:11:00,815 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.24 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=66974 | avg_intraday_vol=278333
+2026-09-21 11:11:00,905 [INFO] [RVOL@TIME] NCMI: today_vol=202276, avg_intraday_vol=218646 (4 sessions), elapsed_min=101, rvol=0.925, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:11:02,113 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 11:11:02,113 [INFO] [FUNNEL] targets=3 guardrail_rejected=1 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-21 11:11:02,113 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.70
+2026-09-21 11:11:02,113 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-21 11:11:02,113 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-21 11:11:02,172 [INFO] LIVE PROBE SDGR: scale-in skipped; gain +0.23% < 0.25%
+2026-09-21 11:11:02,173 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.73% < 0.25%
+2026-09-21 11:11:03,594 [INFO] LIVE PROBE LINT: ATM option skipped; no usable option chain
+2026-09-21 11:11:03,594 [INFO] LIVE PROBE LINT: scale-in filled; protection replaced for 102 shares
+2026-09-21 11:11:03,597 [INFO] [SCAN] No signals this cycle
+2026-09-21 11:11:03,597 [INFO] Heartbeat: 2026-09-21T11:11:03.597911
+2026-09-21 11:14:04,443 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['RXRX', 'TPET', 'NVTS', 'NCMI']
+2026-09-21 11:14:04,443 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-21 11:14:38,084 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 11:14:39,034 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 11:14:39,809 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 11:14:40,643 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 11:14:41,369 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 11:14:42,184 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 11:14:42,926 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 11:14:45,039 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=117, no_BreakoutRetest=117, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-21 11:14:45,040 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_OpeningRangeBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumContinuationCall: FR, KRG, EME, OII, MRSH, DBD | no_GapBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumCall: FR, KRG, EME, OII, MRSH, DBD | no_BearPut: FR, KRG, EME, OII, MRSH, DBD | no_BearCallSpread: FR, KRG, EME, OII, MRSH, DBD | no_ShortSqueeze: FR, KRG, EME, OII, MRSH, DBD | no_MeanReversion: FR, KRG, EME, OII, MRSH, DBD | no_BreakoutRetest: FR, KRG, EME, OII, MRSH, DBD | no_TrendPullbackSpread: FR, KRG, EME, OII, MRSH, DBD | no_IronCondor: FR, KRG, EME, OII, MRSH, DBD | no_Butterfly: FR, KRG, EME, OII, MRSH, DBD | no_signal: FR, KRG, EME, OII, MRSH, DBD
+2026-09-21 11:14:45,040 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 11:14:45,040 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 11:14:45,389 [INFO] Quarterly P&L: -3.0% (target >= 50%)
+2026-09-21 11:14:45,601 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 11:14:45,750 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 11:14:45,751 [INFO] [SCAN] 3 symbols (filtered, 8 workers): RXRX, TPET, NCMI
+2026-09-21 11:14:45,751 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 11:14:47,026 [INFO] [RVOL@TIME] RXRX: today_vol=9177631, avg_intraday_vol=5400450 (4 sessions), elapsed_min=104, rvol=1.699, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:14:47,040 [INFO] [RVOL@TIME] TPET: today_vol=67472, avg_intraday_vol=282999 (4 sessions), elapsed_min=104, rvol=0.238, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:14:47,041 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.24 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=67472 | avg_intraday_vol=282999
+2026-09-21 11:14:47,163 [INFO] [RVOL@TIME] NCMI: today_vol=203657, avg_intraday_vol=217053 (4 sessions), elapsed_min=104, rvol=0.938, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:14:48,788 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 11:14:48,789 [INFO] [FUNNEL] targets=3 guardrail_rejected=1 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-21 11:14:48,789 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.67
+2026-09-21 11:14:48,789 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-21 11:14:48,844 [INFO] LIVE PROBE SDGR: scale-in skipped; gain +0.10% < 0.25%
+2026-09-21 11:14:48,844 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.69% < 0.25%
+2026-09-21 11:14:48,844 [INFO] LIVE PROBE LINT: ATM option skipped; no usable option chain
+2026-09-21 11:14:48,846 [INFO] [SCAN] No signals this cycle
+2026-09-21 11:14:48,847 [INFO] Heartbeat: 2026-09-21T11:14:48.846980
+2026-09-21 11:17:49,246 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['RXRX', 'TPET', 'NVTS', 'NCMI']
+2026-09-21 11:17:49,246 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-21 11:18:22,768 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 11:18:23,706 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 11:18:24,491 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 11:18:25,207 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 11:18:26,104 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 11:18:26,816 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 11:18:27,528 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 11:18:29,061 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=117, no_BreakoutRetest=117, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-21 11:18:29,061 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_OpeningRangeBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumContinuationCall: FR, KRG, EME, OII, MRSH, DBD | no_GapBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumCall: FR, KRG, EME, OII, MRSH, DBD | no_BearPut: FR, KRG, EME, OII, MRSH, DBD | no_BearCallSpread: FR, KRG, EME, OII, MRSH, DBD | no_ShortSqueeze: FR, KRG, EME, OII, MRSH, DBD | no_MeanReversion: FR, KRG, EME, OII, MRSH, DBD | no_BreakoutRetest: FR, KRG, EME, OII, MRSH, DBD | no_TrendPullbackSpread: FR, KRG, EME, OII, MRSH, DBD | no_IronCondor: FR, KRG, EME, OII, MRSH, DBD | no_Butterfly: FR, KRG, EME, OII, MRSH, DBD | no_signal: FR, KRG, EME, OII, MRSH, DBD
+2026-09-21 11:18:29,061 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 11:18:29,062 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 11:18:29,119 [INFO] Quarterly P&L: -3.2% (target >= 50%)
+2026-09-21 11:18:29,119 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 11:18:29,217 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-21 11:18:29,286 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 11:18:29,286 [INFO] [SCAN] 3 symbols (filtered, 8 workers): RXRX, TPET, NCMI
+2026-09-21 11:18:29,286 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 11:18:30,501 [INFO] [RVOL@TIME] RXRX: today_vol=9500058, avg_intraday_vol=5500054 (4 sessions), elapsed_min=108, rvol=1.727, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:18:30,674 [INFO] [RVOL@TIME] NCMI: today_vol=206365, avg_intraday_vol=246709 (4 sessions), elapsed_min=108, rvol=0.836, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:18:30,804 [INFO] [RVOL@TIME] TPET: today_vol=67572, avg_intraday_vol=288879 (4 sessions), elapsed_min=108, rvol=0.234, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:18:30,804 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.23 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=67572 | avg_intraday_vol=288879
+2026-09-21 11:18:32,017 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 11:18:32,018 [INFO] [FUNNEL] targets=3 guardrail_rejected=1 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-21 11:18:32,018 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.64
+2026-09-21 11:18:32,019 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-21 11:18:32,372 [INFO] LIVE PROBE SCALE-IN SDGR: +181 shares at +0.66% pending fill confirmation
+2026-09-21 11:18:32,373 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.60% < 0.25%
+2026-09-21 11:18:32,373 [INFO] LIVE PROBE LINT: ATM option skipped; no usable option chain
+2026-09-21 11:18:32,377 [INFO] [SCAN] No signals this cycle
+2026-09-21 11:18:32,377 [INFO] Heartbeat: 2026-09-21T11:18:32.377819
+2026-09-21 11:21:33,589 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['RXRX', 'TPET', 'NVTS', 'NCMI']
+2026-09-21 11:21:33,590 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-21 11:22:16,844 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 11:22:19,749 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 11:22:21,252 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 11:22:22,864 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 11:22:24,584 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 11:22:26,123 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 11:22:27,579 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 11:22:33,262 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): SDGR(CoveredCall, other_blocked_in_NEUTRAL)
+2026-09-21 11:22:33,263 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=117, no_BreakoutRetest=117, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-21 11:22:33,263 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_OpeningRangeBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumContinuationCall: FR, KRG, EME, OII, MRSH, DBD | no_GapBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumCall: FR, KRG, EME, OII, MRSH, DBD | no_BearPut: FR, KRG, EME, OII, MRSH, DBD | no_BearCallSpread: FR, KRG, EME, OII, MRSH, DBD | no_ShortSqueeze: FR, KRG, EME, OII, MRSH, DBD | no_MeanReversion: FR, KRG, EME, OII, MRSH, DBD | no_BreakoutRetest: FR, KRG, EME, OII, MRSH, DBD | no_TrendPullbackSpread: FR, KRG, EME, OII, MRSH, DBD | no_IronCondor: FR, KRG, EME, OII, MRSH, DBD | no_Butterfly: FR, KRG, EME, OII, MRSH, DBD | no_signal: FR, KRG, EME, OII, MRSH, DBD
+2026-09-21 11:22:33,263 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 11:22:33,264 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 11:22:33,333 [INFO] Quarterly P&L: -3.2% (target >= 50%)
+2026-09-21 11:22:33,334 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 11:22:33,440 [ERROR] Trade Ideas scan failed: HTTPConnectionPool(host='localhost', port=54850): Read timed out. (read timeout=120)
+2026-09-21 11:22:43,476 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-21 11:22:43,558 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 11:22:43,559 [INFO] [SCAN] 3 symbols (filtered, 8 workers): RXRX, TPET, NCMI
+2026-09-21 11:22:43,559 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 11:22:44,718 [INFO] [RVOL@TIME] RXRX: today_vol=9684400, avg_intraday_vol=5735355 (4 sessions), elapsed_min=112, rvol=1.689, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:22:44,891 [INFO] [RVOL@TIME] TPET: today_vol=67672, avg_intraday_vol=292309 (4 sessions), elapsed_min=112, rvol=0.232, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:22:44,891 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.23 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=67672 | avg_intraday_vol=292309
+2026-09-21 11:22:45,067 [INFO] [RVOL@TIME] NCMI: today_vol=207165, avg_intraday_vol=246760 (4 sessions), elapsed_min=112, rvol=0.840, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:22:47,371 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 11:22:47,371 [INFO] [FUNNEL] targets=3 guardrail_rejected=1 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-21 11:22:47,371 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.61
+2026-09-21 11:22:47,372 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-21 11:22:51,345 [INFO] [OPTIONS] SDGR261016C00030000 Alpaca pricing: last=$2.70 bid=$2.40 ask=$3.02 limit=$2.70
+2026-09-21 11:22:51,384 [INFO] [OPTIONS][RETRY] Started retry thread for SDGR order 25b7b919-fd1a-4436-bfe6-856b17f0da11 (retry 0)
+2026-09-21 11:22:51,385 [INFO] [OPTIONS] EXECUTED SDGR call LiveProbeATMScaleIn 1c conf=100% legs=1 open_window=False
+2026-09-21 11:22:51,385 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 25b7b919-fd1a-4436-bfe6-856b17f0da11 for SDGR
+2026-09-21 11:22:51,389 [INFO] LIVE PROBE ATM OPTION SDGR: 1x $30.00 call submitted
+2026-09-21 11:22:51,389 [INFO] LIVE PROBE SDGR: scale-in filled; protection replaced for 787 shares
+2026-09-21 11:22:51,390 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.60% < 0.25%
+2026-09-21 11:22:51,390 [INFO] LIVE PROBE LINT: ATM option retry window expired
+2026-09-21 11:22:51,395 [INFO] [SCAN] No signals this cycle
+2026-09-21 11:22:51,395 [INFO] Heartbeat: 2026-09-21T11:22:51.395449
+2026-09-21 11:23:32,241 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 11:23:32,241 [INFO] ======================================================================
+2026-09-21 11:23:32,241 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 11:23:32,242 [INFO] Universe pruned: no expired tickers
+2026-09-21 11:23:32,242 [INFO] ======================================================================
+2026-09-21 11:23:32,244 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 11:23:32,244 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 11:23:32,245 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 11:23:32,245 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 11:23:32,245 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 11:23:32,246 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:23:32,250 [INFO] Restored position exit state: AAPL
+2026-09-21 11:23:32,250 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:23:55,077 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 11:23:55,078 [INFO] ======================================================================
+2026-09-21 11:23:55,078 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 11:23:55,078 [INFO] Universe pruned: no expired tickers
+2026-09-21 11:23:55,078 [INFO] ======================================================================
+2026-09-21 11:23:55,080 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 11:23:55,081 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 11:23:55,081 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 11:23:55,081 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 11:23:55,081 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 11:23:55,083 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:23:55,087 [INFO] Restored position exit state: AAPL
+2026-09-21 11:23:55,087 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:25:02,116 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 11:25:02,117 [INFO] ======================================================================
+2026-09-21 11:25:02,117 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 11:25:02,119 [INFO] Universe pruned: no expired tickers
+2026-09-21 11:25:02,119 [INFO] ======================================================================
+2026-09-21 11:25:02,122 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 11:25:02,123 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 11:25:02,123 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 11:25:02,123 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 11:25:02,123 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 11:25:02,125 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:25:02,128 [INFO] Restored position exit state: AAPL
+2026-09-21 11:25:02,128 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:25:40,213 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 11:25:40,213 [INFO] ======================================================================
+2026-09-21 11:25:40,214 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 11:25:40,215 [INFO] Universe pruned: no expired tickers
+2026-09-21 11:25:40,215 [INFO] ======================================================================
+2026-09-21 11:25:40,216 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 11:25:40,218 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 11:25:40,218 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 11:25:40,219 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 11:25:40,219 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 11:25:40,221 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:25:40,224 [INFO] Restored position exit state: AAPL
+2026-09-21 11:25:40,225 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:25:51,894 [INFO] [OPTIONS][RETRY] Order 25b7b919-fd1a-4436-bfe6-856b17f0da11 for SDGR still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-21 11:25:51,895 [INFO] [OPTIONS][RETRY] Cancelling order 25b7b919-fd1a-4436-bfe6-856b17f0da11 for SDGR (unfilled qty: 1)
+2026-09-21 11:25:51,924 [INFO] [OPTIONS][RETRY] Retrying SDGR order at more aggressive limit: 2.73 (retry 1)
+2026-09-21 11:25:51,930 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['RXRX', 'TPET', 'NVTS', 'NCMI']
+2026-09-21 11:25:51,930 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-21 11:25:51,978 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SDGR: 68549a27-9c7f-4626-9677-24a040b6d578
+2026-09-21 11:25:51,998 [INFO] [OPTIONS][RETRY] Started retry thread for SDGR order 68549a27-9c7f-4626-9677-24a040b6d578 (retry 1)
+2026-09-21 11:25:51,999 [INFO] [OPTIONS][RETRY] Waiting 180s before checking order 68549a27-9c7f-4626-9677-24a040b6d578 for SDGR
+2026-09-21 11:26:25,323 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 11:26:26,454 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 11:26:27,360 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 11:26:28,135 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 11:26:29,030 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 11:26:29,875 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 11:26:30,577 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 11:26:32,210 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): SDGR(CoveredCall, other_blocked_in_NEUTRAL)
+2026-09-21 11:26:32,210 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=117, no_BreakoutRetest=117, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-21 11:26:32,210 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_OpeningRangeBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumContinuationCall: FR, KRG, EME, OII, MRSH, DBD | no_GapBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumCall: FR, KRG, EME, OII, MRSH, DBD | no_BearPut: FR, KRG, EME, OII, MRSH, DBD | no_BearCallSpread: FR, KRG, EME, OII, MRSH, DBD | no_ShortSqueeze: FR, KRG, EME, OII, MRSH, DBD | no_MeanReversion: FR, KRG, EME, OII, MRSH, DBD | no_BreakoutRetest: FR, KRG, EME, OII, MRSH, DBD | no_TrendPullbackSpread: FR, KRG, EME, OII, MRSH, DBD | no_IronCondor: FR, KRG, EME, OII, MRSH, DBD | no_Butterfly: FR, KRG, EME, OII, MRSH, DBD | no_signal: FR, KRG, EME, OII, MRSH, DBD
+2026-09-21 11:26:32,210 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 11:26:32,210 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 11:26:32,268 [INFO] Quarterly P&L: -3.0% (target >= 50%)
+2026-09-21 11:26:32,268 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 11:26:32,416 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 11:26:32,416 [INFO] [SCAN] 3 symbols (filtered, 8 workers): RXRX, TPET, NCMI
+2026-09-21 11:26:32,416 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 11:26:33,588 [INFO] [RVOL@TIME] RXRX: today_vol=9815197, avg_intraday_vol=5846202 (4 sessions), elapsed_min=116, rvol=1.679, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:26:33,804 [INFO] [RVOL@TIME] TPET: today_vol=71961, avg_intraday_vol=303607 (4 sessions), elapsed_min=116, rvol=0.237, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:26:33,804 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.24 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=71961 | avg_intraday_vol=303607
+2026-09-21 11:26:33,952 [INFO] [RVOL@TIME] NCMI: today_vol=208716, avg_intraday_vol=254296 (4 sessions), elapsed_min=116, rvol=0.821, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:26:35,155 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 11:26:35,155 [INFO] [FUNNEL] targets=3 guardrail_rejected=1 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-21 11:26:35,155 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.60
+2026-09-21 11:26:35,155 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-21 11:26:35,212 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.69% < 0.25%
+2026-09-21 11:26:35,213 [INFO] [SCAN] No signals this cycle
+2026-09-21 11:26:35,213 [INFO] Heartbeat: 2026-09-21T11:26:35.213175
+2026-09-21 11:28:52,362 [INFO] [OPTIONS][RETRY] Order 68549a27-9c7f-4626-9677-24a040b6d578 for SDGR still open after timeout. Filled qty: 0, Contracts: 1
+2026-09-21 11:28:52,362 [INFO] [OPTIONS][RETRY] Cancelling order 68549a27-9c7f-4626-9677-24a040b6d578 for SDGR (unfilled qty: 1)
+2026-09-21 11:28:52,396 [INFO] [OPTIONS][RETRY] Retrying SDGR order at more aggressive limit: 2.78 (retry 2)
+2026-09-21 11:28:52,426 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SDGR: 639359a1-23bd-4937-ab61-f41774468a7b
+2026-09-21 11:28:52,427 [INFO] [OPTIONS][RETRY] Started retry thread for SDGR order 639359a1-23bd-4937-ab61-f41774468a7b (retry 2)
+2026-09-21 11:28:52,428 [INFO] [OPTIONS][RETRY] Max retries reached for SDGR order 639359a1-23bd-4937-ab61-f41774468a7b, giving up.
+2026-09-21 11:29:35,286 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['RXRX', 'TPET', 'NVTS', 'NCMI']
+2026-09-21 11:29:35,286 [INFO] Options scan: starting — 117 ticker(s) in universe
+2026-09-21 11:30:08,702 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 11:30:10,002 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 11:30:11,123 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 11:30:12,153 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 11:30:13,864 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 11:30:14,866 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 11:30:15,822 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 11:30:19,501 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): SDGR(CoveredCall, other_blocked_in_NEUTRAL)
+2026-09-21 11:30:19,502 [INFO] Options scan: 0 signal(s) | universe=117 | fail summary: no_MarketStructureBreakoutCall=117, no_OpeningRangeBreakoutCall=117, no_MomentumContinuationCall=117, no_GapBreakoutCall=117, no_MomentumCall=117, no_BearPut=117, no_BearCallSpread=117, no_ShortSqueeze=117, no_MeanReversion=117, no_BreakoutRetest=117, no_TrendPullbackSpread=117, no_IronCondor=117, no_Butterfly=117, no_signal=117
+2026-09-21 11:30:19,502 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_OpeningRangeBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumContinuationCall: FR, KRG, EME, OII, MRSH, DBD | no_GapBreakoutCall: FR, KRG, EME, OII, MRSH, DBD | no_MomentumCall: FR, KRG, EME, OII, MRSH, DBD | no_BearPut: FR, KRG, EME, OII, MRSH, DBD | no_BearCallSpread: FR, KRG, EME, OII, MRSH, DBD | no_ShortSqueeze: FR, KRG, EME, OII, MRSH, DBD | no_MeanReversion: FR, KRG, EME, OII, MRSH, DBD | no_BreakoutRetest: FR, KRG, EME, OII, MRSH, DBD | no_TrendPullbackSpread: FR, KRG, EME, OII, MRSH, DBD | no_IronCondor: FR, KRG, EME, OII, MRSH, DBD | no_Butterfly: FR, KRG, EME, OII, MRSH, DBD | no_signal: FR, KRG, EME, OII, MRSH, DBD
+2026-09-21 11:30:19,502 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 11:30:19,502 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 11:30:19,561 [INFO] Quarterly P&L: -2.5% (target >= 50%)
+2026-09-21 11:30:19,561 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 11:30:19,714 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 11:30:19,714 [INFO] [SCAN] 3 symbols (filtered, 8 workers): RXRX, TPET, NCMI
+2026-09-21 11:30:19,714 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 11:30:20,828 [INFO] [RVOL@TIME] RXRX: today_vol=9990069, avg_intraday_vol=5981670 (4 sessions), elapsed_min=120, rvol=1.670, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:30:20,980 [INFO] [RVOL@TIME] TPET: today_vol=71961, avg_intraday_vol=306642 (4 sessions), elapsed_min=120, rvol=0.235, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:30:20,981 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.23 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=71961 | avg_intraday_vol=306642
+2026-09-21 11:30:21,166 [INFO] [RVOL@TIME] NCMI: today_vol=209423, avg_intraday_vol=284335 (4 sessions), elapsed_min=120, rvol=0.737, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 11:30:22,798 [INFO] [GUARDRAIL SUMMARY] Rejected: 1 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 11:30:22,799 [INFO] [FUNNEL] targets=3 guardrail_rejected=1 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-21 11:30:22,799 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-21 11:30:22,857 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.85% < 0.25%
+2026-09-21 11:30:22,857 [INFO] [SCAN] No signals this cycle
+2026-09-21 11:30:22,857 [INFO] Heartbeat: 2026-09-21T11:30:22.857951
+2026-09-21 11:30:25,415 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 11:30:25,415 [INFO] ======================================================================
+2026-09-21 11:30:25,415 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 11:30:25,416 [INFO] Universe pruned: no expired tickers
+2026-09-21 11:30:25,416 [INFO] ======================================================================
+2026-09-21 11:30:25,418 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 11:30:25,419 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 11:30:25,419 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 11:30:25,419 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 11:30:25,419 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 11:30:25,421 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:30:25,426 [INFO] Restored position exit state: AAPL
+2026-09-21 11:30:25,426 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:30:55,529 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 11:30:55,529 [INFO] ======================================================================
+2026-09-21 11:30:55,529 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 11:30:55,530 [INFO] Universe pruned: no expired tickers
+2026-09-21 11:30:55,530 [INFO] ======================================================================
+2026-09-21 11:30:55,531 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 11:30:55,532 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 11:30:55,532 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 11:30:55,532 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 11:30:55,532 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 11:30:55,533 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:30:55,537 [INFO] Restored position exit state: AAPL
+2026-09-21 11:30:55,538 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 11:31:42,178 [INFO] Stopped by user
+2026-09-21 11:31:42,646 [INFO] ======================================================================
+2026-09-21 11:31:42,647 [INFO] STATUS
+2026-09-21 11:31:42,647 [INFO] Equity:     $95,037.61
+2026-09-21 11:31:42,647 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-21 11:31:42,647 [INFO] Positions:  6
+2026-09-21 11:31:42,647 [INFO] Unrealized: $3554.58
+2026-09-21 11:31:42,647 [INFO]   BSOL: 1996 @ $15.54 | $1293.70 (+4.17%)
+2026-09-21 11:31:42,647 [INFO]   GRAL: 104 @ $105.59 | $226.36 (+2.06%)
+2026-09-21 11:31:42,647 [INFO]   INTW: 885 @ $32.45 | $1003.50 (+3.50%)
+2026-09-21 11:31:42,648 [INFO]   LINT: 102 @ $164.11 | $743.01 (+4.44%)
+2026-09-21 11:31:42,648 [INFO]   NVTS: 101 @ $12.23 | $-11.51 (-0.93%)
+2026-09-21 11:31:42,648 [INFO]   SDGR: 787 @ $30.17 | $299.52 (+1.26%)
+2026-09-21 11:31:42,648 [INFO] ======================================================================
