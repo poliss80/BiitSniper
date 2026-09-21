@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-21T10:04:07-04:00",
+  "generated_at": "2026-09-21T12:02:43-04:00",
   "date": "2026-09-21",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "GEO",
+      "symbol": "CRML",
       "action": "buy",
-      "price": 31.76,
-      "confidence": 0.85,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.14"
+      "price": 9.345,
+      "confidence": 0.92,
+      "strategy": "MomentumContinuation",
+      "reason": "Momentum continuation rvol=7.1x up=11.3% break of session high MACD hist=0.0097 RSI=67.6"
     }
   ]
 }
