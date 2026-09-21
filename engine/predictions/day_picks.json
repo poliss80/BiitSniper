@@ -1,23 +1,15 @@
 {
-  "generated_at": "2026-09-18T16:53:30-04:00",
-  "date": "2026-09-18",
+  "generated_at": "2026-09-21T10:04:07-04:00",
+  "date": "2026-09-21",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "HALO",
+      "symbol": "GEO",
       "action": "buy",
-      "price": 109.68,
-      "confidence": 0.86,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $2.75"
-    },
-    {
-      "symbol": "BZH",
-      "action": "buy",
-      "price": 33.33,
+      "price": 31.76,
       "confidence": 0.85,
       "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.09"
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.14"
     }
   ]
 }
