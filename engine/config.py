@@ -76,6 +76,11 @@ OPTIONS_MIN_RVOL_TI         = float(os.getenv("OPTIONS_MIN_RVOL_TI", "1.0"))    
 OPTIONS_MIN_ADV             = float(os.getenv("OPTIONS_MIN_ADV", "500_000"))     # min avg dollar volume for major caps
 OPTIONS_MIN_ADV_TI          = float(os.getenv("OPTIONS_MIN_ADV_TI", "150_000"))   # min ADV for TI unusual options (lower threshold for micro-cap unusual picks)
 OPTIONS_UNIVERSE_OVERRIDE   = os.getenv("OPTIONS_UNIVERSE_OVERRIDE", "").strip()  # comma-separated tickers to force a smaller options universe
+# Curated liquid options core (FANG + S&P 500 mega-caps + liquid ETFs) — strong options candidates
+# merged after TI unusual-options names but before the broad TI universe. Downstream
+# chain/ADV/liquidity gates remain authoritative; this only expands the candidate list.
+OPTIONS_LIQUID_CORE_ENABLED = os.getenv("OPTIONS_LIQUID_CORE_ENABLED", "true").strip().lower() in ("1", "true", "yes", "on")
+OPTIONS_LIQUID_CORE_EXTRA   = os.getenv("OPTIONS_LIQUID_CORE_EXTRA", "").strip()  # comma-separated extra tickers appended to the liquid core
 OPTIONS_STOP_COOLDOWN_DAYS  = int(os.getenv("OPTIONS_STOP_COOLDOWN_DAYS", "2"))   # no re-entry within N days after a stop on same symbol
 OPTIONS_IV_RANK_SPREAD_THRESHOLD = int(os.getenv("OPTIONS_IV_RANK_SPREAD_THRESHOLD", "60"))  # IV rank above this → force spread; below → allow naked
 OPTIONS_EARNINGS_AVOID_DAYS = int(os.getenv("OPTIONS_EARNINGS_AVOID_DAYS", "15")) # skip entries if earnings within N calendar days
@@ -120,6 +125,40 @@ _OPTIONS_FALLBACK_UNIVERSE = [
     "LITE", "AAOI",
 ]
 
+# Curated liquid options core: FANG + friends, broad S&P 500 mega-caps, and the
+# most liquid index/sector ETFs. These names always have deep, tight option chains
+# and are strong options candidates regardless of what the TI scrapes surface.
+# Controlled at runtime by OPTIONS_LIQUID_CORE_ENABLED / OPTIONS_LIQUID_CORE_EXTRA.
+_OPTIONS_LIQUID_CORE = [
+    # Index / sector ETFs — deepest chains, tightest spreads
+    "SPY", "QQQ", "IWM", "DIA", "XLF", "XLK", "XLE", "SMH",
+    # FANG + friends — perennial high-OI single names
+    "META", "AMZN", "AAPL", "NFLX", "GOOGL", "MSFT", "NVDA", "TSLA",
+    "AMD", "AVGO", "ORCL", "CRM",
+    # Broad S&P 500 mega-caps with liquid options
+    "JPM", "V", "MA", "UNH", "XOM", "LLY", "COST", "WMT", "HD", "JNJ",
+]
+
+def get_liquid_core() -> list:
+    """Return the curated liquid options core, honoring runtime env switches.
+
+    OPTIONS_LIQUID_CORE_ENABLED=false disables the core entirely;
+    OPTIONS_LIQUID_CORE_EXTRA="MELI,SHOP" appends extra tickers after the
+    built-in list. Deterministic order, duplicates removed.
+    """
+    if not OPTIONS_LIQUID_CORE_ENABLED:
+        return []
+    import re as _re
+    _VALID = _re.compile(r'^[A-Z]{1,5}$')
+    core = [t for t in _OPTIONS_LIQUID_CORE if _VALID.match(t)]
+    if OPTIONS_LIQUID_CORE_EXTRA:
+        core.extend(
+            t.strip().upper()
+            for t in OPTIONS_LIQUID_CORE_EXTRA.split(",")
+            if t and _VALID.match(t.strip().upper())
+        )
+    return list(dict.fromkeys(core))
+
 def _load_options_universe() -> list:
     """Load live TI unusual-options-volume tickers.
 
@@ -153,8 +192,12 @@ def get_options_universe(require_ti_file: bool = False) -> list:
     the TI equity universe contains (which is often micro-cap momentum names that
     have thin or no options chains).
 
-    Primary TI source appended after the core set: latest ti_primary.json.
-    Fallback: universe.json tier 1+2, then static _OPTIONS_FALLBACK_UNIVERSE.
+    Deterministic priority order:
+      1. TI unusual-options-volume scrape (ti_unusual_options.json)
+      2. Curated liquid FANG + S&P 500 core (OPTIONS_LIQUID_CORE_ENABLED)
+      3. Static liquid fallback core (_OPTIONS_FALLBACK_UNIVERSE)
+      4. Broad remaining TI names (latest ti_primary.json)
+    Fallback for (4): universe.json tier 1+2.
     """
     if OPTIONS_UNIVERSE_OVERRIDE:
         import re as _re
@@ -170,6 +213,10 @@ def get_options_universe(require_ti_file: bool = False) -> list:
     # Prioritize the latest Trade Ideas unusual-options scrape. Downstream
     # ADV, chain, liquidity, IV, and confidence gates still decide eligibility.
     unusual_options = list(dict.fromkeys(_load_options_universe()))
+
+    # Curated liquid FANG + S&P 500 core — strong options candidates evaluated
+    # right after the unusual-options names but before the broad TI universe.
+    liquid_core = get_liquid_core()
 
     # Always include index tickers in paper trading mode
     _index_tickers = ["SPX", "NDX", "RUT", "VIX"]
@@ -200,8 +247,9 @@ def get_options_universe(require_ti_file: bool = False) -> list:
     if not ti_universe and require_ti_file:
         raise FileNotFoundError("Primary TI universe (data/ti_primary.json or data/universe.json tiers 1+2) is missing or empty")
 
-    # Merge: unusual-options scrape first, then liquid core, then remaining TI names.
-    prioritized = list(dict.fromkeys(unusual_options + _core + ti_universe))
+    # Merge: unusual-options scrape first, then liquid core, then static fallback
+    # core, then remaining broad TI names.
+    prioritized = list(dict.fromkeys(unusual_options + liquid_core + _core + ti_universe))
     combined = prioritized
     return combined
 

@@ -4753,3 +4753,794 @@ alpaca.common.exceptions.APIError: {"code":42210000,"message":"invalid legs: [le
 2026-09-21 14:32:44,881 [INFO] LIVE PROBE MRNX: ATM option retry window expired
 2026-09-21 14:32:44,882 [INFO] [SCAN] No signals this cycle
 2026-09-21 14:32:44,883 [INFO] Heartbeat: 2026-09-21T14:32:44.883008
+2026-09-21 14:34:07,810 [INFO] Restored position exit state: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX
+2026-09-21 14:34:07,857 [INFO] Entry log rebuilt from today's orders: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX
+2026-09-21 14:34:07,886 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-21 14:34:07,919 [INFO] [OPTIONS] Reconciled BUY position: SDGR261016C00030000 75x call @30.0 entry=$3.17
+2026-09-21 14:34:07,919 [INFO] [OPTIONS] Reconciled BUY position: WBD261009C00030000 16x call @30.0 entry=$0.95
+2026-09-21 14:34:07,919 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-21 14:34:08,003 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-21 14:34:08,003 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-21 14:34:08,003 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-21 14:34:08,003 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-21 14:34:08,004 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-21 14:34:08,004 [INFO] ======================================================================
+2026-09-21 14:34:08,004 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-21 14:34:08,004 [INFO] ======================================================================
+2026-09-21 14:34:08,004 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-21 14:34:08,005 [INFO] Priority 2 (Established): 16 stocks
+2026-09-21 14:34:08,005 [INFO] Total Universe: 42 stocks
+2026-09-21 14:34:08,005 [INFO] Scan: 3 min fixed
+2026-09-21 14:34:08,005 [INFO] ======================================================================
+2026-09-21 14:34:08,041 [INFO] Equity:          $92,110.34
+2026-09-21 14:34:08,041 [INFO] Buying Power:    $45,935.24
+2026-09-21 14:34:08,041 [INFO] PDT Status:      No
+2026-09-21 14:34:08,041 [INFO] Day Trade Count: None
+2026-09-21 14:34:08,041 [INFO] ======================================================================
+2026-09-21 14:34:08,042 [INFO] Starting… Press Ctrl+C to stop
+2026-09-21 14:34:08,042 [INFO] ======================================================================
+2026-09-21 14:34:08,042 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-21 14:34:08,042 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-21 14:34:08,043 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-21 14:34:08,043 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-21 14:35:18,188 [INFO] Restored position exit state: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX
+2026-09-21 14:35:18,222 [INFO] Entry log rebuilt from today's orders: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX
+2026-09-21 14:35:18,254 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-21 14:35:18,282 [INFO] [OPTIONS] Reconciled BUY position: SDGR261016C00030000 75x call @30.0 entry=$3.17
+2026-09-21 14:35:18,282 [INFO] [OPTIONS] Reconciled BUY position: WBD261009C00030000 16x call @30.0 entry=$0.95
+2026-09-21 14:35:18,282 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-21 14:35:18,371 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-21 14:35:18,372 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-21 14:35:18,372 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-21 14:35:18,372 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-21 14:35:18,373 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-21 14:35:18,373 [INFO] ======================================================================
+2026-09-21 14:35:18,373 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-21 14:35:18,373 [INFO] ======================================================================
+2026-09-21 14:35:18,373 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-21 14:35:18,373 [INFO] Priority 2 (Established): 16 stocks
+2026-09-21 14:35:18,373 [INFO] Total Universe: 42 stocks
+2026-09-21 14:35:18,373 [INFO] Scan: 3 min fixed
+2026-09-21 14:35:18,373 [INFO] ======================================================================
+2026-09-21 14:35:18,404 [INFO] Equity:          $92,100.22
+2026-09-21 14:35:18,404 [INFO] Buying Power:    $45,906.88
+2026-09-21 14:35:18,404 [INFO] PDT Status:      No
+2026-09-21 14:35:18,404 [INFO] Day Trade Count: None
+2026-09-21 14:35:18,404 [INFO] ======================================================================
+2026-09-21 14:35:18,404 [INFO] Starting… Press Ctrl+C to stop
+2026-09-21 14:35:18,404 [INFO] ======================================================================
+2026-09-21 14:35:18,404 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-21 14:35:18,405 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-21 14:35:18,405 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-21 14:35:18,405 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-21 14:36:48,407 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-21 14:36:48,733 [INFO] ======================================================================
+2026-09-21 14:36:48,734 [INFO] NEW DAY: 2026-09-21 | Start equity: $91,941.94
+2026-09-21 14:36:48,735 [INFO] Universe pruned: no expired tickers
+2026-09-21 14:36:48,735 [INFO] ======================================================================
+2026-09-21 14:36:49,549 [INFO] Options scan: starting — 157 ticker(s) in universe
+2026-09-21 14:37:13,390 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-21 14:37:14,066 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-21 14:37:26,689 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-21 14:37:26,700 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-21 14:37:43,175 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-21 14:37:45,459 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-21 14:37:48,724 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 14:37:49,234 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 14:37:49,875 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-21 14:37:50,490 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 14:37:51,303 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 14:37:52,131 [INFO] Schwab: quote unavailable for SBIT; Alpaca fallback used
+2026-09-21 14:37:52,874 [INFO] Schwab: quote unavailable for ASST; Alpaca fallback used
+2026-09-21 14:37:53,546 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-21 14:37:54,224 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 14:37:55,084 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 14:37:55,763 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 14:37:56,430 [INFO] Schwab: quote unavailable for QBTZ; Alpaca fallback used
+2026-09-21 14:37:57,211 [INFO] Schwab: quote unavailable for EAF; Alpaca fallback used
+2026-09-21 14:37:58,350 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-21 14:37:59,033 [INFO] Schwab: quote unavailable for ARCT; Alpaca fallback used
+2026-09-21 14:37:59,903 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 14:38:00,528 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 14:38:01,212 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 14:38:02,054 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 14:38:02,895 [INFO] Schwab: quote unavailable for BIAF; Alpaca fallback used
+2026-09-21 14:38:03,727 [INFO] Schwab: quote unavailable for BMNZ; Alpaca fallback used
+2026-09-21 14:38:04,592 [INFO] Schwab: quote unavailable for DAMD; Alpaca fallback used
+2026-09-21 14:38:05,235 [INFO] Schwab: quote unavailable for HUTG; Alpaca fallback used
+2026-09-21 14:38:06,015 [INFO] Schwab: quote unavailable for METU; Alpaca fallback used
+2026-09-21 14:38:06,644 [INFO] Schwab: quote unavailable for MKDW; Alpaca fallback used
+2026-09-21 14:38:07,282 [INFO] Schwab: quote unavailable for RKLZ; Alpaca fallback used
+2026-09-21 14:38:08,041 [INFO] Schwab: quote unavailable for SMST; Alpaca fallback used
+2026-09-21 14:38:12,787 [INFO] Options scan: 1 signal(s) | universe=157 | strategies: ['CoveredCall']
+2026-09-21 14:38:12,787 [INFO] [OPTIONS] 1 candidates | open=0 | top: GRAL call conf=84%
+2026-09-21 14:38:13,119 [INFO] [OPTIONS] Open option entry order 476e32bd-fc9f-44d4-a015-6289b16610dc already pending for GRAL — duplicate entry suppressed
+2026-09-21 14:38:13,120 [INFO] [OPTIONS] Pending option entry already open for GRAL — skipping duplicate entry
+2026-09-21 14:38:13,120 [INFO] [OPTIONS] No option order executed this cycle | open=0 | rejections=GRAL/CoveredCall: pending option entry already open for GRAL
+2026-09-21 14:38:13,120 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 14:38:13,466 [INFO] Quarterly P&L: -5.6% (target >= 50%)
+2026-09-21 14:38:13,666 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 14:38:13,770 [WARNING] Trade Ideas scan still running (175s) — trading loop continues
+2026-09-21 14:38:14,612 [INFO] [EDGAR] CIK map loaded: 8,031 companies
+2026-09-21 14:38:27,314 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-21 14:38:27,417 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 14:38:27,417 [INFO] [SCAN] 45 symbols (filtered, 8 workers): ARMG, CRML, CRMU, CUE, DAMD, EMAT, ETS, GLND, GRML, IMCC, MKDW, NUAI, NVOX, PBLS, PRPL, PRTH, SMST, SVRN, VEEE, AEHL, AMDL, APMD, BIAF, BMNZ, BRVE, FBL, FJET, FTFT, KPLT, METD, METU, OPTX, PPHC, RKLZ, SBIT, SCTX, SLMT, SOXS, SST, TGL, USDE, USDEW, VGZ, VNCE, YDES
+2026-09-21 14:38:27,418 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 14:38:30,061 [INFO] [RVOL@TIME] ARMG: today_vol=2429626, avg_intraday_vol=829555 (4 sessions), elapsed_min=308, rvol=2.929, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:30,212 [INFO] [RVOL@TIME] CRML: today_vol=39441952, avg_intraday_vol=3215756 (4 sessions), elapsed_min=308, rvol=12.265, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:30,366 [INFO] [RVOL@TIME] CRMU: today_vol=2140334, avg_intraday_vol=602953 (4 sessions), elapsed_min=308, rvol=3.550, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:30,471 [INFO] [RVOL@TIME] CUE: today_vol=1270379, avg_intraday_vol=247094 (4 sessions), elapsed_min=308, rvol=5.141, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:30,623 [INFO] [RVOL@TIME] DAMD: today_vol=7172440, avg_intraday_vol=2104832 (4 sessions), elapsed_min=308, rvol=3.408, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:30,785 [INFO] [RVOL@TIME] EMAT: today_vol=1981200, avg_intraday_vol=899262 (4 sessions), elapsed_min=308, rvol=2.203, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:30,941 [INFO] [RVOL@TIME] ETS: today_vol=405466, avg_intraday_vol=516871 (4 sessions), elapsed_min=308, rvol=0.784, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:31,072 [INFO] [RVOL@TIME] GLND: today_vol=99510295, avg_intraday_vol=305958 (4 sessions), elapsed_min=308, rvol=325.242, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:33,622 [INFO] [RVOL@TIME] GRML: today_vol=112015368, avg_intraday_vol=351927 (4 sessions), elapsed_min=308, rvol=318.291, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:36,825 [INFO] [RVOL@TIME] IMCC: today_vol=648023, avg_intraday_vol=59322887 (1 sessions), elapsed_min=308, rvol=0.011, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 14:38:36,825 [WARNING] [GUARDRAIL] IMCC blocked: RVOL@TIME 0.01 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=648023 | avg_intraday_vol=59322887
+2026-09-21 14:38:38,611 [INFO] [RVOL@TIME] MKDW: today_vol=448733, avg_intraday_vol=1062879 (3 sessions), elapsed_min=308, rvol=0.422, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 14:38:38,611 [WARNING] [GUARDRAIL] MKDW blocked: RVOL@TIME 0.42 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=448733 | avg_intraday_vol=1062879
+2026-09-21 14:38:38,743 [INFO] [RVOL@TIME] NUAI: today_vol=15315752, avg_intraday_vol=3408250 (4 sessions), elapsed_min=308, rvol=4.494, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:38,987 [INFO] [RVOL@TIME] NVOX: today_vol=1403205, avg_intraday_vol=253169 (4 sessions), elapsed_min=308, rvol=5.543, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:39,058 [INFO] [RVOL@TIME] PBLS: today_vol=724606, avg_intraday_vol=492552 (4 sessions), elapsed_min=308, rvol=1.471, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:39,344 [WARNING] [GUARDRAIL] PRPL blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-21 14:38:39,517 [INFO] [RVOL@TIME] PRTH: today_vol=13492563, avg_intraday_vol=246697 (4 sessions), elapsed_min=308, rvol=54.693, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:39,662 [INFO] [RVOL@TIME] SMST: today_vol=2073151, avg_intraday_vol=1214067 (4 sessions), elapsed_min=308, rvol=1.708, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:40,413 [INFO] [RVOL@TIME] SVRN: today_vol=224119, avg_intraday_vol=262031 (2 sessions), elapsed_min=308, rvol=0.855, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-21 14:38:42,320 [WARNING] [GUARDRAIL] VEEE blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-21 14:38:42,867 [INFO] [RVOL@TIME] AEHL: today_vol=197028, avg_intraday_vol=1252324 (4 sessions), elapsed_min=308, rvol=0.157, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:42,868 [WARNING] [GUARDRAIL] AEHL blocked: RVOL@TIME 0.16 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=197028 | avg_intraday_vol=1252324
+2026-09-21 14:38:43,787 [INFO] [RVOL@TIME] AMDL: today_vol=2911860, avg_intraday_vol=1899469 (4 sessions), elapsed_min=308, rvol=1.533, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:45,665 [INFO] [RVOL@TIME] APMD: today_vol=581538, avg_intraday_vol=267959 (4 sessions), elapsed_min=308, rvol=2.170, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:46,276 [INFO] [RVOL@TIME] BIAF: today_vol=384490, avg_intraday_vol=5349559 (4 sessions), elapsed_min=308, rvol=0.072, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:46,277 [WARNING] [GUARDRAIL] BIAF blocked: RVOL@TIME 0.07 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=384490 | avg_intraday_vol=5349559
+2026-09-21 14:38:47,048 [INFO] [RVOL@TIME] BMNZ: today_vol=2846014, avg_intraday_vol=3420862 (4 sessions), elapsed_min=308, rvol=0.832, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:47,490 [INFO] [RVOL@TIME] BRVE: today_vol=647874, avg_intraday_vol=227853 (4 sessions), elapsed_min=308, rvol=2.843, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:47,783 [INFO] [RVOL@TIME] FBL: today_vol=1620466, avg_intraday_vol=717765 (4 sessions), elapsed_min=308, rvol=2.258, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:47,931 [INFO] [RVOL@TIME] FJET: today_vol=2755177, avg_intraday_vol=1208445 (4 sessions), elapsed_min=308, rvol=2.280, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:48,382 [INFO] [RVOL@TIME] FTFT: today_vol=310204, avg_intraday_vol=4659317 (4 sessions), elapsed_min=308, rvol=0.067, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:48,382 [WARNING] [GUARDRAIL] FTFT blocked: RVOL@TIME 0.07 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=310204 | avg_intraday_vol=4659317
+2026-09-21 14:38:49,802 [INFO] [RVOL@TIME] KPLT: today_vol=155804, avg_intraday_vol=199528 (4 sessions), elapsed_min=308, rvol=0.781, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:51,442 [INFO] [RVOL@TIME] METD: today_vol=2882612, avg_intraday_vol=614699 (4 sessions), elapsed_min=308, rvol=4.689, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:52,440 [INFO] [RVOL@TIME] METU: today_vol=7477069, avg_intraday_vol=3304510 (4 sessions), elapsed_min=308, rvol=2.263, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:54,302 [INFO] [RVOL@TIME] OPTX: today_vol=816552, avg_intraday_vol=254066 (4 sessions), elapsed_min=308, rvol=3.214, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:55,627 [INFO] [RVOL@TIME] PPHC: today_vol=58728, avg_intraday_vol=188748 (4 sessions), elapsed_min=308, rvol=0.311, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:55,627 [WARNING] [GUARDRAIL] PPHC blocked: RVOL@TIME 0.31 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=58728 | avg_intraday_vol=188748
+2026-09-21 14:38:55,768 [INFO] [RVOL@TIME] RKLZ: today_vol=390332, avg_intraday_vol=391479 (4 sessions), elapsed_min=308, rvol=0.997, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:56,086 [INFO] [RVOL@TIME] SBIT: today_vol=1269282, avg_intraday_vol=1136061 (4 sessions), elapsed_min=308, rvol=1.117, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:56,356 [INFO] [RVOL@TIME] SCTX: today_vol=234274, avg_intraday_vol=179965 (4 sessions), elapsed_min=308, rvol=1.302, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:58,360 [INFO] [RVOL@TIME] SLMT: today_vol=275022, avg_intraday_vol=990952 (1 sessions), elapsed_min=308, rvol=0.278, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 14:38:58,360 [WARNING] [GUARDRAIL] SLMT blocked: RVOL@TIME 0.28 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=275022 | avg_intraday_vol=990952
+2026-09-21 14:38:59,082 [INFO] [RVOL@TIME] SOXS: today_vol=51771667, avg_intraday_vol=28534858 (4 sessions), elapsed_min=308, rvol=1.814, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:38:59,986 [INFO] [RVOL@TIME] SST: today_vol=664091, avg_intraday_vol=407765 (4 sessions), elapsed_min=308, rvol=1.629, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:39:00,924 [INFO] [RVOL@TIME] TGL: today_vol=342009, avg_intraday_vol=1985510 (3 sessions), elapsed_min=309, rvol=0.172, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 14:39:00,925 [WARNING] [GUARDRAIL] TGL blocked: RVOL@TIME 0.17 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=342009 | avg_intraday_vol=1985510
+2026-09-21 14:39:01,736 [INFO] [RVOL@TIME] USDE: today_vol=4969256, avg_intraday_vol=5307289 (4 sessions), elapsed_min=309, rvol=0.936, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:39:03,007 [INFO] [RVOL@TIME] USDEW: today_vol=197216, avg_intraday_vol=1023597 (1 sessions), elapsed_min=309, rvol=0.193, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 14:39:03,007 [WARNING] [GUARDRAIL] USDEW blocked: RVOL@TIME 0.19 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=197216 | avg_intraday_vol=1023597
+2026-09-21 14:39:03,924 [INFO] [RVOL@TIME] VGZ: today_vol=5390210, avg_intraday_vol=777964 (4 sessions), elapsed_min=309, rvol=6.929, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:39:04,058 [INFO] [RVOL@TIME] VNCE: today_vol=467714, avg_intraday_vol=618797 (4 sessions), elapsed_min=309, rvol=0.756, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:39:04,221 [INFO] [RVOL@TIME] YDES: today_vol=575654, avg_intraday_vol=1024804 (4 sessions), elapsed_min=309, rvol=0.562, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:39:07,363 [INFO] [GUARDRAIL SUMMARY] Rejected: 14 | DollarVol: 0 | RVOL: 11 | GapChase: 3 | MinPrice: 0 | Other: 0
+2026-09-21 14:39:07,363 [INFO] [FUNNEL] targets=45 guardrail_rejected=14 (rvol=11) -> signals_generated=11 -> conf_gate(-10) -> sector_cap(-0) -> final=1
+2026-09-21 14:39:07,363 [INFO] [SCAN] Breakdown — MomentumContinuationPullback: 1, TrendlineBreakout: 10 | Errors: 0 | Total: 1
+2026-09-21 14:39:07,363 [INFO] [SCAN] TOP5_RAW #1: USDE BUY $12.89 conf=84% [MomentumContinuationPullback] — Momentum continuation high-RVOL pullback/reclaim rvol=5.1x up=10.1% above VWAP and range midpoint MACD hist=0.0026 RSI=55.7
+2026-09-21 14:39:07,424 [INFO] Live holdings: 13 excluded
+2026-09-21 14:39:07,425 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-21 14:39:07,425 [INFO] [TRADE] TOP5_ELIGIBLE #1: USDE BUY $12.89 conf=84% [MomentumContinuationPullback] — Momentum continuation high-RVOL pullback/reclaim rvol=5.1x up=10.1% above VWAP and range midpoint MACD hist=0.0026 RSI=55.7
+2026-09-21 14:39:08,480 [INFO] Scan email sent
+2026-09-21 14:39:08,537 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.48% < 0.25%
+2026-09-21 14:39:08,537 [INFO] LIVE PROBE STKE: scale-in skipped; gain +0.00% < 0.25%
+2026-09-21 14:39:08,537 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-21 14:39:08,573 [INFO] EXECUTE: BUY USDE @ $12.89 | MomentumContinuationPullback | Momentum continuation high-RVOL pullback/reclaim rvol=5.1x up=10.1% above VWAP and range midpoint MACD hist=0.0026 RSI=55.7
+2026-09-21 14:39:08,893 [INFO]   BP downsize USDE: 7135 -> 3355 shares (BP $45,530, usable $43,254, cost $43,243)
+2026-09-21 14:39:08,893 [INFO] LIVE PROBE USDE: sizing 3355 → 1 share(s); no automatic scale-in
+2026-09-21 14:39:08,924 [INFO] TP targets set USDE: tighten@$13.66 (+6%) close@$15.47 (+20%) profile=ti_momentum
+2026-09-21 14:39:09,662 [INFO] Trailing stop placed USDE: 8.0% GTC (1 shares)
+2026-09-21 14:39:09,663 [INFO] BUY USDE: 1 @ $12.89 | TRAILING SL 8.0% | Tier: EXTREME | MomentumContinuationPullback
+2026-09-21 14:42:11,116 [INFO] Options scan: starting — 161 ticker(s) in universe
+2026-09-21 14:42:59,019 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 14:43:00,225 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 14:43:02,171 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 14:43:03,993 [INFO] Schwab: quote unavailable for CONI; Alpaca fallback used
+2026-09-21 14:43:06,106 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 14:43:08,323 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 14:43:10,209 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 14:43:12,560 [INFO] Schwab: quote unavailable for VCX; Alpaca fallback used
+2026-09-21 14:43:15,887 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 14:43:18,853 [INFO] Schwab: quote unavailable for BTBT; Alpaca fallback used
+2026-09-21 14:43:21,327 [INFO] Schwab: quote unavailable for EAF; Alpaca fallback used
+2026-09-21 14:43:23,011 [INFO] Schwab: quote unavailable for VOR; Alpaca fallback used
+2026-09-21 14:43:25,198 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 14:43:27,045 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 14:43:28,261 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 14:43:29,765 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 14:43:31,787 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-21 14:43:33,957 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-21 14:43:35,815 [INFO] Schwab: quote unavailable for METU; Alpaca fallback used
+2026-09-21 14:43:37,093 [INFO] Schwab: quote unavailable for MKDW; Alpaca fallback used
+2026-09-21 14:43:38,152 [INFO] Schwab: quote unavailable for BIAF; Alpaca fallback used
+2026-09-21 14:43:39,445 [INFO] Schwab: quote unavailable for DAMD; Alpaca fallback used
+2026-09-21 14:43:40,576 [INFO] Schwab: quote unavailable for SMST; Alpaca fallback used
+2026-09-21 14:43:42,372 [INFO] Schwab: quote unavailable for RKLZ; Alpaca fallback used
+2026-09-21 14:43:44,679 [INFO] Schwab: quote unavailable for BMNZ; Alpaca fallback used
+2026-09-21 14:43:45,940 [INFO] Schwab: quote unavailable for SBIT; Alpaca fallback used
+2026-09-21 14:43:52,736 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): GRAL(CoveredCall, unusual_volume_blocked_in_NEUTRAL)
+2026-09-21 14:43:52,736 [INFO] Options scan: 0 signal(s) | universe=161 | fail summary: no_MarketStructureBreakoutCall=161, no_OpeningRangeBreakoutCall=161, no_MomentumContinuationCall=161, no_GapBreakoutCall=161, no_MomentumCall=161, no_BearPut=161, no_BearCallSpread=161, no_ShortSqueeze=161, no_MeanReversion=161, no_BreakoutRetest=161, no_TrendPullbackSpread=161, no_IronCondor=161, no_Butterfly=161, no_signal=161
+2026-09-21 14:43:52,736 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_OpeningRangeBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumContinuationCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_GapBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearPut: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearCallSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_ShortSqueeze: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MeanReversion: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BreakoutRetest: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_TrendPullbackSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_IronCondor: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_Butterfly: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_signal: CRML, STKE, HBR, OPTX, VGZ, ZTO
+2026-09-21 14:43:52,736 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 14:43:52,736 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 14:43:53,094 [INFO] Quarterly P&L: -5.2% (target >= 50%)
+2026-09-21 14:43:53,095 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 14:43:53,206 [INFO] Trade Ideas [PRIORITY_1_MOMENTUM] market_scope_360(50) + momentum_scanner(20) + unusual_options_volume(50): +50 new, 0 existing → top-10: ['GRML', 'GLND', 'VEEE', 'CRMU', 'SVRN', 'GRAL', 'CRML', 'PRTH', 'ARMG', 'NUAI']
+2026-09-21 14:43:53,206 [INFO] ── TI top-20 [PRIORITY_1_MOMENTUM] (primary=50 secondary=70): GRML, GLND, VEEE, CRMU, SVRN, GRAL, CRML, PRTH, ARMG, NUAI, MRNX, SST, USDE, FJET, INTW, FBL, LINT, METU, TGL, USGG
+2026-09-21 14:43:53,206 [INFO] Trade Ideas [PRIORITY_2_ESTABLISHED] high_short_float(50): +49 new, 1 existing → top-10: ['GRML', 'GLND', 'VEEE', 'CRMU', 'SVRN', 'GRAL', 'CRML', 'PRTH', 'ARMG', 'NUAI']
+2026-09-21 14:43:53,206 [INFO] ── TI top-20 [PRIORITY_2_ESTABLISHED] (primary=50 secondary=0): GRML, GLND, VEEE, CRMU, SVRN, GRAL, CRML, PRTH, ARMG, NUAI, MRNX, SST, USDE, FJET, INTW, METU, FBL, LINT, TGL, USGG
+2026-09-21 14:43:53,268 [INFO] [SCAN] 67 symbols (filtered, 8 workers): GRML, GLND, VEEE, CRMU, SVRN, CRML, PRTH, ARMG, NUAI, SST, FJET, METU, FBL, TGL, VGZ, SLMT, OPTX, AMDL, HUTG, CUE, IMCC, MKDW, ETS, BIAF, FTFT, DAMD, EMAT, NVOX, PRPL, SMST, RKLZ, PBLS, VNCE, APMD, BRVE, BMNZ, SCTX, SOXS, AEHL, PPHC, METD, SBIT, YDES, KPLT, USDEW, HBR, ZTO, AEXA, IVVD, SUIG, TPB, AIBZ, VNET, CONI, AIPI, OPRX, ADAM, YMAX, MGPI, MLKN, THYP, FWDI, AVL, ECO, EE, MG, YMAG
+2026-09-21 14:43:53,269 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 14:44:01,477 [INFO] [RVOL@TIME] FJET: today_vol=2772908, avg_intraday_vol=1222951 (4 sessions), elapsed_min=314, rvol=2.267, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:01,673 [INFO] [RVOL@TIME] METU: today_vol=7516026, avg_intraday_vol=3353549 (4 sessions), elapsed_min=314, rvol=2.241, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:01,678 [INFO] [RVOL@TIME] NUAI: today_vol=15413256, avg_intraday_vol=3447678 (4 sessions), elapsed_min=314, rvol=4.471, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:02,365 [INFO] [RVOL@TIME] SST: today_vol=666850, avg_intraday_vol=414584 (4 sessions), elapsed_min=314, rvol=1.608, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:03,325 [INFO] [RVOL@TIME] FBL: today_vol=1635854, avg_intraday_vol=724157 (4 sessions), elapsed_min=314, rvol=2.259, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:03,465 [INFO] [RVOL@TIME] TGL: today_vol=342138, avg_intraday_vol=1979153 (3 sessions), elapsed_min=314, rvol=0.173, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-21 14:44:03,465 [WARNING] [GUARDRAIL] TGL blocked: RVOL@TIME 0.17 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=342138 | avg_intraday_vol=1979153
+2026-09-21 14:44:09,734 [INFO] [RVOL@TIME] OPTX: today_vol=818982, avg_intraday_vol=256881 (4 sessions), elapsed_min=314, rvol=3.188, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:11,315 [INFO] [RVOL@TIME] AMDL: today_vol=2921040, avg_intraday_vol=1918925 (4 sessions), elapsed_min=314, rvol=1.522, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:13,653 [INFO] [RVOL@TIME] BIAF: today_vol=391373, avg_intraday_vol=5388758 (4 sessions), elapsed_min=314, rvol=0.073, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:13,653 [WARNING] [GUARDRAIL] BIAF blocked: RVOL@TIME 0.07 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=391373 | avg_intraday_vol=5388758
+2026-09-21 14:44:14,693 [INFO] [RVOL@TIME] DAMD: today_vol=7193559, avg_intraday_vol=2121318 (4 sessions), elapsed_min=314, rvol=3.391, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:15,640 [INFO] [RVOL@TIME] EMAT: today_vol=2002900, avg_intraday_vol=908360 (4 sessions), elapsed_min=314, rvol=2.205, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:16,542 [INFO] [RVOL@TIME] NVOX: today_vol=1409371, avg_intraday_vol=256361 (4 sessions), elapsed_min=314, rvol=5.498, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:19,913 [INFO] [RVOL@TIME] PBLS: today_vol=752969, avg_intraday_vol=503040 (4 sessions), elapsed_min=314, rvol=1.497, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:20,056 [INFO] [RVOL@TIME] RKLZ: today_vol=393733, avg_intraday_vol=400663 (4 sessions), elapsed_min=314, rvol=0.983, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:20,057 [WARNING] [GUARDRAIL] RKLZ blocked: RVOL@TIME 0.98 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=393733 | avg_intraday_vol=400663
+2026-09-21 14:44:20,578 [INFO] [RVOL@TIME] VNCE: today_vol=469164, avg_intraday_vol=623769 (4 sessions), elapsed_min=314, rvol=0.752, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:20,578 [WARNING] [GUARDRAIL] VNCE blocked: RVOL@TIME 0.75 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=469164 | avg_intraday_vol=623769
+2026-09-21 14:44:21,996 [INFO] [RVOL@TIME] APMD: today_vol=586660, avg_intraday_vol=282032 (4 sessions), elapsed_min=314, rvol=2.080, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:23,854 [INFO] [RVOL@TIME] BRVE: today_vol=654829, avg_intraday_vol=231834 (4 sessions), elapsed_min=314, rvol=2.825, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:24,609 [INFO] [RVOL@TIME] SCTX: today_vol=235320, avg_intraday_vol=182851 (4 sessions), elapsed_min=314, rvol=1.287, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:26,849 [INFO] [RVOL@TIME] PPHC: today_vol=58828, avg_intraday_vol=190754 (4 sessions), elapsed_min=314, rvol=0.308, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:26,849 [WARNING] [GUARDRAIL] PPHC blocked: RVOL@TIME 0.31 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=58828 | avg_intraday_vol=190754
+2026-09-21 14:44:29,197 [INFO] [RVOL@TIME] YDES: today_vol=575854, avg_intraday_vol=1039149 (4 sessions), elapsed_min=314, rvol=0.554, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:29,197 [WARNING] [GUARDRAIL] YDES blocked: RVOL@TIME 0.55 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=575854 | avg_intraday_vol=1039149
+2026-09-21 14:44:29,849 [INFO] [RVOL@TIME] KPLT: today_vol=156422, avg_intraday_vol=202102 (4 sessions), elapsed_min=314, rvol=0.774, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:29,849 [WARNING] [GUARDRAIL] KPLT blocked: RVOL@TIME 0.77 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=156422 | avg_intraday_vol=202102
+2026-09-21 14:44:30,317 [INFO] [RVOL@TIME] METD: today_vol=2892062, avg_intraday_vol=627082 (4 sessions), elapsed_min=314, rvol=4.612, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:33,736 [WARNING] [GUARDRAIL] AEXA blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-21 14:44:33,739 [INFO] [RVOL@TIME] ZTO: today_vol=7397969, avg_intraday_vol=1084630 (4 sessions), elapsed_min=314, rvol=6.821, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:34,731 [INFO] [RVOL@TIME] IVVD: today_vol=12383504, avg_intraday_vol=3242066 (4 sessions), elapsed_min=314, rvol=3.820, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:35,142 [INFO] [RVOL@TIME] TPB: today_vol=651886, avg_intraday_vol=152785 (4 sessions), elapsed_min=314, rvol=4.267, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:35,416 [INFO] [RVOL@TIME] AIBZ: today_vol=519777, avg_intraday_vol=309432 (4 sessions), elapsed_min=314, rvol=1.680, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:36,089 [INFO] [RVOL@TIME] VNET: today_vol=6801224, avg_intraday_vol=1381891 (4 sessions), elapsed_min=314, rvol=4.922, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:39,380 [INFO] [RVOL@TIME] AIPI: today_vol=354030, avg_intraday_vol=273521 (4 sessions), elapsed_min=314, rvol=1.294, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:39,469 [INFO] [RVOL@TIME] OPRX: today_vol=143177, avg_intraday_vol=312608 (1 sessions), elapsed_min=314, rvol=0.458, threshold=0.65 (adaptive=1.00 session_discount=0.65 iex_scale=False)
+2026-09-21 14:44:39,469 [WARNING] [GUARDRAIL] OPRX blocked: RVOL@TIME 0.46 < rvol_threshold 0.65 (adaptive=1.00 sessions=1 discount=0.65) | today_vol=143177 | avg_intraday_vol=312608
+2026-09-21 14:44:42,960 [INFO] [RVOL@TIME] ADAM: today_vol=1847148, avg_intraday_vol=740567 (4 sessions), elapsed_min=314, rvol=2.494, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:43,418 [INFO] [RVOL@TIME] YMAX: today_vol=1737259, avg_intraday_vol=1330683 (4 sessions), elapsed_min=314, rvol=1.306, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:43,642 [INFO] [RVOL@TIME] MGPI: today_vol=414348, avg_intraday_vol=185986 (4 sessions), elapsed_min=314, rvol=2.228, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:43,849 [INFO] [RVOL@TIME] MLKN: today_vol=629215, avg_intraday_vol=242199 (4 sessions), elapsed_min=314, rvol=2.598, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:46,102 [INFO] [RVOL@TIME] AVL: today_vol=1185249, avg_intraday_vol=982315 (4 sessions), elapsed_min=314, rvol=1.207, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:48,605 [INFO] [RVOL@TIME] ECO: today_vol=626784, avg_intraday_vol=665221 (4 sessions), elapsed_min=314, rvol=0.942, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:48,605 [WARNING] [GUARDRAIL] ECO blocked: RVOL@TIME 0.94 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=626784 | avg_intraday_vol=665221
+2026-09-21 14:44:48,924 [INFO] [RVOL@TIME] EE: today_vol=477904, avg_intraday_vol=369467 (4 sessions), elapsed_min=314, rvol=1.293, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:49,634 [INFO] [RVOL@TIME] MG: today_vol=434364, avg_intraday_vol=658755 (4 sessions), elapsed_min=314, rvol=0.659, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:49,634 [WARNING] [GUARDRAIL] MG blocked: RVOL@TIME 0.66 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=434364 | avg_intraday_vol=658755
+2026-09-21 14:44:50,609 [INFO] [RVOL@TIME] YMAG: today_vol=895198, avg_intraday_vol=847336 (4 sessions), elapsed_min=314, rvol=1.056, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:44:53,096 [INFO] [GUARDRAIL SUMMARY] Rejected: 39 | DollarVol: 0 | RVOL: 11 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 14:44:53,096 [INFO] [FUNNEL] targets=67 guardrail_rejected=39 (rvol=11) -> signals_generated=11 -> conf_gate(-11) -> sector_cap(-0) -> final=0
+2026-09-21 14:44:53,096 [INFO] [SCAN] Breakdown — Sweepea: 1, Technical: 1, TrendlineBreakout: 9 | Errors: 0 | Total: 0
+2026-09-21 14:44:53,156 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.32% < 0.25%
+2026-09-21 14:44:53,613 [INFO] LIVE PROBE STKE: scale-in skipped; price not within 0.20% of post-entry high 1.56
+2026-09-21 14:44:53,614 [INFO] LIVE PROBE USDE: scale-in skipped; gain -0.09% < 0.25%
+2026-09-21 14:44:53,614 [INFO] [SCAN] No signals this cycle
+2026-09-21 14:44:53,614 [INFO] Heartbeat: 2026-09-21T14:44:53.614231
+2026-09-21 14:47:54,018 [INFO] Options scan: starting — 161 ticker(s) in universe
+2026-09-21 14:48:35,469 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 14:48:35,937 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 14:48:36,695 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 14:48:37,533 [INFO] Schwab: quote unavailable for CONI; Alpaca fallback used
+2026-09-21 14:48:38,447 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 14:48:39,272 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 14:48:42,110 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 14:48:42,760 [INFO] Schwab: quote unavailable for VCX; Alpaca fallback used
+2026-09-21 14:48:43,448 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 14:48:44,319 [INFO] Schwab: quote unavailable for BTBT; Alpaca fallback used
+2026-09-21 14:48:45,227 [INFO] Schwab: quote unavailable for EAF; Alpaca fallback used
+2026-09-21 14:48:46,148 [INFO] Schwab: quote unavailable for VOR; Alpaca fallback used
+2026-09-21 14:48:47,042 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 14:48:47,844 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 14:48:48,489 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 14:48:49,170 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 14:48:49,881 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-21 14:48:50,531 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-21 14:48:51,438 [INFO] Schwab: quote unavailable for METU; Alpaca fallback used
+2026-09-21 14:48:52,140 [INFO] Schwab: quote unavailable for MKDW; Alpaca fallback used
+2026-09-21 14:48:53,090 [INFO] Schwab: quote unavailable for BIAF; Alpaca fallback used
+2026-09-21 14:48:53,842 [INFO] Schwab: quote unavailable for DAMD; Alpaca fallback used
+2026-09-21 14:48:54,568 [INFO] Schwab: quote unavailable for SMST; Alpaca fallback used
+2026-09-21 14:48:55,274 [INFO] Schwab: quote unavailable for RKLZ; Alpaca fallback used
+2026-09-21 14:48:56,115 [INFO] Schwab: quote unavailable for BMNZ; Alpaca fallback used
+2026-09-21 14:48:56,872 [INFO] Schwab: quote unavailable for SBIT; Alpaca fallback used
+2026-09-21 14:49:04,238 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): GRAL(CoveredCall, unusual_volume_blocked_in_NEUTRAL); WBD(CoveredCall, other_blocked_in_NEUTRAL)
+2026-09-21 14:49:04,238 [INFO] Options scan: 0 signal(s) | universe=161 | fail summary: no_MarketStructureBreakoutCall=161, no_OpeningRangeBreakoutCall=161, no_MomentumContinuationCall=161, no_GapBreakoutCall=161, no_MomentumCall=161, no_BearPut=161, no_BearCallSpread=161, no_ShortSqueeze=161, no_MeanReversion=161, no_BreakoutRetest=161, no_TrendPullbackSpread=161, no_IronCondor=161, no_Butterfly=161, no_signal=161
+2026-09-21 14:49:04,239 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_OpeningRangeBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumContinuationCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_GapBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearPut: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearCallSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_ShortSqueeze: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MeanReversion: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BreakoutRetest: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_TrendPullbackSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_IronCondor: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_Butterfly: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_signal: CRML, STKE, HBR, OPTX, VGZ, ZTO
+2026-09-21 14:49:04,239 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 14:49:04,239 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 14:49:04,317 [INFO] Quarterly P&L: -4.5% (target >= 50%)
+2026-09-21 14:49:04,317 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 14:49:07,621 [INFO] [EDGAR] 8-K match: GLXZ — 8-K - Galaxy Gaming, Inc. (0000013156) (Filer)
+2026-09-21 14:49:07,621 [INFO] [EDGAR] 8-K match: NVTS — 8-K/A - Navitas Semiconductor Corp (0001821769) (Filer)
+2026-09-21 14:49:07,622 [INFO] [EDGAR] 8-K match: RXRX — 8-K - RECURSION PHARMACEUTICALS, INC. (0001601830) (Filer)
+2026-09-21 14:49:07,622 [INFO] [EDGAR] 8-K match: TPET — 8-K - Trio Petroleum Corp (0001898766) (Filer)
+2026-09-21 14:49:07,622 [INFO] [EDGAR] 4 newly triggered tickers: ['GLXZ', 'NVTS', 'RXRX', 'TPET']
+2026-09-21 14:49:07,623 [INFO] [EDGAR] Adding GLXZ to P2 + scan queue for monitoring
+2026-09-21 14:49:07,623 [INFO] [EDGAR] Adding NVTS to P2 + scan queue for monitoring
+2026-09-21 14:49:07,624 [INFO] [EDGAR] Adding RXRX to P2 + scan queue for monitoring
+2026-09-21 14:49:07,624 [INFO] [EDGAR] Adding TPET to P2 + scan queue for monitoring
+2026-09-21 14:49:07,943 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-21 14:49:08,013 [INFO] [SCAN] 68 symbols (filtered, 8 workers): GLXZ, RXRX, TPET, GRML, GLND, VEEE, CRMU, SVRN, CRML, PRTH, ARMG, NUAI, SST, FJET, METU, FBL, TGL, VGZ, SLMT, OPTX, AMDL, HUTG, CUE, IMCC, MKDW, ETS, BIAF, FTFT, DAMD, EMAT, NVOX, PRPL, SMST, RKLZ, PBLS, VNCE, APMD, BRVE, BMNZ, SCTX, SOXS, AEHL, PPHC, METD, SBIT, YDES, KPLT, MNTS, VCX, IAG, TRON, ONL, IQQ, CVEO, AARD, CMTL, DMAC, ASYS, BTBT, FAC, EAF, SHOP, ARMP, BMNG, ASTH, NXDT, CAN, VOR
+2026-09-21 14:49:08,013 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 14:49:10,722 [INFO] [RVOL@TIME] GLXZ: today_vol=12936, avg_intraday_vol=882795 (1 sessions), elapsed_min=319, rvol=0.015, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 14:49:10,723 [WARNING] [GUARDRAIL] GLXZ blocked: RVOL@TIME 0.01 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=12936 | avg_intraday_vol=882795
+2026-09-21 14:49:10,799 [INFO] [RVOL@TIME] RXRX: today_vol=22550827, avg_intraday_vol=12169975 (4 sessions), elapsed_min=319, rvol=1.853, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:11,143 [INFO] [RVOL@TIME] TPET: today_vol=101858, avg_intraday_vol=772206 (4 sessions), elapsed_min=319, rvol=0.132, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:11,143 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.13 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=101858 | avg_intraday_vol=772206
+2026-09-21 14:49:17,329 [INFO] [RVOL@TIME] NUAI: today_vol=15766769, avg_intraday_vol=3493947 (4 sessions), elapsed_min=319, rvol=4.513, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:17,474 [INFO] [RVOL@TIME] SST: today_vol=668293, avg_intraday_vol=414176 (4 sessions), elapsed_min=319, rvol=1.614, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:17,647 [INFO] [RVOL@TIME] FJET: today_vol=2845860, avg_intraday_vol=1244905 (4 sessions), elapsed_min=319, rvol=2.286, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:17,873 [INFO] [RVOL@TIME] METU: today_vol=7563087, avg_intraday_vol=3390811 (4 sessions), elapsed_min=319, rvol=2.230, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:20,187 [INFO] [RVOL@TIME] FBL: today_vol=1654488, avg_intraday_vol=750585 (4 sessions), elapsed_min=319, rvol=2.204, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:20,590 [INFO] [RVOL@TIME] TGL: today_vol=342138, avg_intraday_vol=1979724 (3 sessions), elapsed_min=319, rvol=0.173, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-21 14:49:20,590 [WARNING] [GUARDRAIL] TGL blocked: RVOL@TIME 0.17 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=342138 | avg_intraday_vol=1979724
+2026-09-21 14:49:22,055 [INFO] [RVOL@TIME] OPTX: today_vol=820276, avg_intraday_vol=258766 (4 sessions), elapsed_min=319, rvol=3.170, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:25,485 [INFO] [RVOL@TIME] AMDL: today_vol=2922309, avg_intraday_vol=1935073 (4 sessions), elapsed_min=319, rvol=1.510, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:29,824 [INFO] [RVOL@TIME] BIAF: today_vol=393703, avg_intraday_vol=5414938 (4 sessions), elapsed_min=319, rvol=0.073, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:29,824 [WARNING] [GUARDRAIL] BIAF blocked: RVOL@TIME 0.07 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=393703 | avg_intraday_vol=5414938
+2026-09-21 14:49:31,124 [INFO] [RVOL@TIME] DAMD: today_vol=7223316, avg_intraday_vol=2132867 (4 sessions), elapsed_min=319, rvol=3.387, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:31,673 [INFO] [RVOL@TIME] EMAT: today_vol=2027117, avg_intraday_vol=917407 (4 sessions), elapsed_min=319, rvol=2.210, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:31,919 [INFO] [RVOL@TIME] NVOX: today_vol=1413552, avg_intraday_vol=259338 (4 sessions), elapsed_min=319, rvol=5.451, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:34,617 [INFO] [RVOL@TIME] RKLZ: today_vol=396184, avg_intraday_vol=409615 (4 sessions), elapsed_min=319, rvol=0.967, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:34,617 [WARNING] [GUARDRAIL] RKLZ blocked: RVOL@TIME 0.97 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=396184 | avg_intraday_vol=409615
+2026-09-21 14:49:35,217 [INFO] [RVOL@TIME] PBLS: today_vol=762646, avg_intraday_vol=506342 (4 sessions), elapsed_min=319, rvol=1.506, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:35,335 [INFO] [RVOL@TIME] VNCE: today_vol=480226, avg_intraday_vol=627292 (4 sessions), elapsed_min=319, rvol=0.766, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:35,343 [WARNING] [GUARDRAIL] VNCE blocked: RVOL@TIME 0.77 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=480226 | avg_intraday_vol=627292
+2026-09-21 14:49:36,837 [INFO] [RVOL@TIME] APMD: today_vol=589388, avg_intraday_vol=287762 (4 sessions), elapsed_min=319, rvol=2.048, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:37,347 [INFO] [RVOL@TIME] BRVE: today_vol=659779, avg_intraday_vol=233507 (4 sessions), elapsed_min=319, rvol=2.826, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:39,992 [INFO] [RVOL@TIME] SCTX: today_vol=236456, avg_intraday_vol=187978 (4 sessions), elapsed_min=319, rvol=1.258, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:41,578 [INFO] [RVOL@TIME] PPHC: today_vol=58828, avg_intraday_vol=195063 (4 sessions), elapsed_min=319, rvol=0.302, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:41,578 [WARNING] [GUARDRAIL] PPHC blocked: RVOL@TIME 0.30 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=58828 | avg_intraday_vol=195063
+2026-09-21 14:49:44,254 [INFO] [RVOL@TIME] METD: today_vol=2900812, avg_intraday_vol=638914 (4 sessions), elapsed_min=319, rvol=4.540, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:45,587 [INFO] [RVOL@TIME] YDES: today_vol=583062, avg_intraday_vol=1057229 (4 sessions), elapsed_min=319, rvol=0.552, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:45,587 [WARNING] [GUARDRAIL] YDES blocked: RVOL@TIME 0.55 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=583062 | avg_intraday_vol=1057229
+2026-09-21 14:49:45,947 [INFO] [RVOL@TIME] KPLT: today_vol=161276, avg_intraday_vol=204769 (4 sessions), elapsed_min=319, rvol=0.788, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:45,948 [WARNING] [GUARDRAIL] KPLT blocked: RVOL@TIME 0.79 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=161276 | avg_intraday_vol=204769
+2026-09-21 14:49:46,465 [INFO] [RVOL@TIME] VCX: today_vol=354133, avg_intraday_vol=426992 (4 sessions), elapsed_min=319, rvol=0.829, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:46,465 [WARNING] [GUARDRAIL] VCX blocked: RVOL@TIME 0.83 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=354133 | avg_intraday_vol=426992
+2026-09-21 14:49:46,652 [INFO] [RVOL@TIME] MNTS: today_vol=491485, avg_intraday_vol=546178 (4 sessions), elapsed_min=319, rvol=0.900, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:46,652 [WARNING] [GUARDRAIL] MNTS blocked: RVOL@TIME 0.90 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=491485 | avg_intraday_vol=546178
+2026-09-21 14:49:47,012 [INFO] [RVOL@TIME] IAG: today_vol=3919700, avg_intraday_vol=2207520 (4 sessions), elapsed_min=319, rvol=1.776, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:49,781 [INFO] [RVOL@TIME] TRON: today_vol=569900, avg_intraday_vol=730143 (4 sessions), elapsed_min=319, rvol=0.781, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:49,782 [WARNING] [GUARDRAIL] TRON blocked: RVOL@TIME 0.78 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=569900 | avg_intraday_vol=730143
+2026-09-21 14:49:49,800 [INFO] [RVOL@TIME] ONL: today_vol=145448, avg_intraday_vol=222590 (3 sessions), elapsed_min=319, rvol=0.653, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-21 14:49:49,801 [WARNING] [GUARDRAIL] ONL blocked: RVOL@TIME 0.65 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=145448 | avg_intraday_vol=222590
+2026-09-21 14:49:50,467 [INFO] [RVOL@TIME] IQQ: today_vol=270944, avg_intraday_vol=516582 (4 sessions), elapsed_min=319, rvol=0.524, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:50,467 [WARNING] [GUARDRAIL] IQQ blocked: RVOL@TIME 0.52 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=270944 | avg_intraday_vol=516582
+2026-09-21 14:49:50,594 [WARNING] [RVOL@TIME FALLBACK] CVEO: no valid prior-session bars — fractional legacy RVOL: rvol=0.605, threshold=1.00 (avg_daily=85437 elapsed_frac=0.818 iex_scale=False)
+2026-09-21 14:49:50,594 [WARNING] [GUARDRAIL] CVEO blocked: RVOL_FALLBACK 0.60 < rvol_threshold 1.00 (adaptive=1.00) | today_vol=42276 | denom=69883
+2026-09-21 14:49:51,184 [INFO] [RVOL@TIME] AARD: today_vol=36748, avg_intraday_vol=374852 (2 sessions), elapsed_min=319, rvol=0.098, threshold=0.80 (adaptive=1.00 session_discount=0.80 iex_scale=False)
+2026-09-21 14:49:51,184 [WARNING] [GUARDRAIL] AARD blocked: RVOL@TIME 0.10 < rvol_threshold 0.80 (adaptive=1.00 sessions=2 discount=0.80) | today_vol=36748 | avg_intraday_vol=374852
+2026-09-21 14:49:51,626 [INFO] [RVOL@TIME] CMTL: today_vol=246512, avg_intraday_vol=345566 (4 sessions), elapsed_min=319, rvol=0.713, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:51,626 [WARNING] [GUARDRAIL] CMTL blocked: RVOL@TIME 0.71 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=246512 | avg_intraday_vol=345566
+2026-09-21 14:49:53,606 [INFO] [RVOL@TIME] DMAC: today_vol=158541, avg_intraday_vol=340805 (4 sessions), elapsed_min=319, rvol=0.465, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:53,607 [WARNING] [GUARDRAIL] DMAC blocked: RVOL@TIME 0.47 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=158541 | avg_intraday_vol=340805
+2026-09-21 14:49:54,330 [INFO] [RVOL@TIME] ASYS: today_vol=148451, avg_intraday_vol=294710 (4 sessions), elapsed_min=319, rvol=0.504, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:54,330 [WARNING] [GUARDRAIL] ASYS blocked: RVOL@TIME 0.50 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=148451 | avg_intraday_vol=294710
+2026-09-21 14:49:55,416 [INFO] [RVOL@TIME] FAC: today_vol=432315, avg_intraday_vol=232748 (4 sessions), elapsed_min=319, rvol=1.857, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:55,452 [INFO] [RVOL@TIME] EAF: today_vol=572943, avg_intraday_vol=628525 (4 sessions), elapsed_min=319, rvol=0.912, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:55,452 [WARNING] [GUARDRAIL] EAF blocked: RVOL@TIME 0.91 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=572943 | avg_intraday_vol=628525
+2026-09-21 14:49:55,809 [INFO] [RVOL@TIME] SHOP: today_vol=7539061, avg_intraday_vol=2600065 (4 sessions), elapsed_min=319, rvol=2.900, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:56,144 [INFO] [RVOL@TIME] ARMP: today_vol=32219, avg_intraday_vol=472067 (3 sessions), elapsed_min=319, rvol=0.068, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-21 14:49:56,144 [WARNING] [GUARDRAIL] ARMP blocked: RVOL@TIME 0.07 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=32219 | avg_intraday_vol=472067
+2026-09-21 14:49:58,253 [INFO] [RVOL@TIME] ASTH: today_vol=234103, avg_intraday_vol=311643 (4 sessions), elapsed_min=319, rvol=0.751, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:58,253 [WARNING] [GUARDRAIL] ASTH blocked: RVOL@TIME 0.75 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=234103 | avg_intraday_vol=311643
+2026-09-21 14:49:58,676 [INFO] [RVOL@TIME] NXDT: today_vol=98195, avg_intraday_vol=313506 (4 sessions), elapsed_min=319, rvol=0.313, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:49:58,676 [WARNING] [GUARDRAIL] NXDT blocked: RVOL@TIME 0.31 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=98195 | avg_intraday_vol=313506
+2026-09-21 14:49:59,122 [INFO] [RVOL@TIME] VOR: today_vol=1051587, avg_intraday_vol=767927 (4 sessions), elapsed_min=319, rvol=1.369, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:50:01,389 [INFO] [GUARDRAIL SUMMARY] Rejected: 49 | DollarVol: 0 | RVOL: 23 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-21 14:50:01,389 [INFO] [FUNNEL] targets=68 guardrail_rejected=49 (rvol=23) -> signals_generated=4 -> conf_gate(-3) -> sector_cap(-0) -> final=1
+2026-09-21 14:50:01,390 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-21 14:50:01,390 [INFO] [SCAN] Breakdown — Sweepea: 1, TrendlineBreakout: 3 | Errors: 0 | Total: 1
+2026-09-21 14:50:01,390 [INFO] [SCAN] TOP5_RAW #1: IAG BUY $20.35 conf=90% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.82
+2026-09-21 14:50:01,491 [INFO] Live holdings: 14 excluded
+2026-09-21 14:50:01,492 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-21 14:50:01,492 [INFO] [TRADE] TOP5_ELIGIBLE #1: IAG BUY $20.35 conf=90% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.82
+2026-09-21 14:50:02,328 [INFO] Scan email sent
+2026-09-21 14:50:02,411 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.24% < 0.25%
+2026-09-21 14:50:02,614 [INFO] LIVE PROBE STKE: scale-in skipped; price not within 0.20% of post-entry high 1.57
+2026-09-21 14:50:02,839 [INFO] LIVE PROBE USDE: scale-in skipped; price 12.98 below VWAP 13.05
+2026-09-21 14:50:02,840 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-21 14:50:02,878 [INFO] EXECUTE: BUY IAG @ $20.35 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.82
+2026-09-21 14:50:03,258 [INFO]   BP downsize IAG: 5415 -> 2145 shares (BP $45,963, usable $43,665, cost $43,651)
+2026-09-21 14:50:03,258 [INFO] LIVE PROBE IAG: sizing 2145 → 1 share(s); no automatic scale-in
+2026-09-21 14:50:03,298 [INFO] TP targets set IAG: tighten@$21.57 (+6%) close@$24.42 (+20%) profile=unusual_options
+2026-09-21 14:50:04,386 [INFO] Trailing stop placed IAG: 6.0% GTC (1 shares)
+2026-09-21 14:50:04,386 [INFO] BUY IAG: 1 @ $20.35 | TRAILING SL 6.0% | Tier: HIGH | Sweepea
+2026-09-21 14:50:05,472 [INFO] Heartbeat: 2026-09-21T14:50:05.472831
+2026-09-21 14:53:05,884 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['GLXZ', 'NVTS', 'RXRX', 'TPET']
+2026-09-21 14:53:05,884 [INFO] Options scan: starting — 165 ticker(s) in universe
+2026-09-21 14:53:45,461 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 14:53:46,025 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 14:53:46,747 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 14:53:47,371 [INFO] Schwab: quote unavailable for CONI; Alpaca fallback used
+2026-09-21 14:53:48,099 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 14:53:48,770 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 14:53:49,464 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 14:53:50,240 [INFO] Schwab: quote unavailable for VCX; Alpaca fallback used
+2026-09-21 14:53:51,027 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 14:53:51,696 [INFO] Schwab: quote unavailable for BTBT; Alpaca fallback used
+2026-09-21 14:53:52,430 [INFO] Schwab: quote unavailable for EAF; Alpaca fallback used
+2026-09-21 14:53:53,137 [INFO] Schwab: quote unavailable for VOR; Alpaca fallback used
+2026-09-21 14:53:53,966 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 14:53:54,652 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 14:53:55,331 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 14:53:56,015 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 14:53:56,716 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-21 14:53:57,364 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-21 14:53:58,128 [INFO] Schwab: quote unavailable for METU; Alpaca fallback used
+2026-09-21 14:53:58,813 [INFO] Schwab: quote unavailable for MKDW; Alpaca fallback used
+2026-09-21 14:53:59,627 [INFO] Schwab: quote unavailable for BIAF; Alpaca fallback used
+2026-09-21 14:54:00,329 [INFO] Schwab: quote unavailable for DAMD; Alpaca fallback used
+2026-09-21 14:54:01,178 [INFO] Schwab: quote unavailable for SMST; Alpaca fallback used
+2026-09-21 14:54:01,824 [INFO] Schwab: quote unavailable for RKLZ; Alpaca fallback used
+2026-09-21 14:54:02,510 [INFO] Schwab: quote unavailable for BMNZ; Alpaca fallback used
+2026-09-21 14:54:03,191 [INFO] Schwab: quote unavailable for SBIT; Alpaca fallback used
+2026-09-21 14:54:03,882 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 14:54:04,566 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 14:54:07,943 [INFO] Options scan: 2 signal(s) filtered by market regime NEUTRAL (strength=0.00): GRAL(CoveredCall, unusual_volume_blocked_in_NEUTRAL); WBD(CoveredCall, other_blocked_in_NEUTRAL)
+2026-09-21 14:54:07,943 [INFO] Options scan: 0 signal(s) | universe=165 | fail summary: no_MarketStructureBreakoutCall=165, no_OpeningRangeBreakoutCall=165, no_MomentumContinuationCall=165, no_GapBreakoutCall=165, no_MomentumCall=165, no_BearPut=165, no_BearCallSpread=165, no_ShortSqueeze=165, no_MeanReversion=165, no_BreakoutRetest=165, no_TrendPullbackSpread=165, no_IronCondor=165, no_Butterfly=165, no_signal=165
+2026-09-21 14:54:07,943 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_OpeningRangeBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumContinuationCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_GapBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearPut: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearCallSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_ShortSqueeze: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MeanReversion: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BreakoutRetest: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_TrendPullbackSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_IronCondor: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_Butterfly: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_signal: CRML, STKE, HBR, OPTX, VGZ, ZTO
+2026-09-21 14:54:07,944 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 14:54:07,944 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 14:54:08,020 [INFO] Quarterly P&L: -5.3% (target >= 50%)
+2026-09-21 14:54:08,021 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 14:54:08,188 [INFO] [SCAN] 67 symbols (filtered, 8 workers): GLXZ, RXRX, TPET, GRML, GLND, VEEE, CRMU, SVRN, CRML, PRTH, ARMG, NUAI, SST, FJET, METU, FBL, TGL, VGZ, SLMT, OPTX, AMDL, HUTG, CUE, IMCC, MKDW, ETS, BIAF, FTFT, DAMD, EMAT, NVOX, PRPL, SMST, RKLZ, PBLS, VNCE, APMD, BRVE, BMNZ, SCTX, SOXS, AEHL, PPHC, METD, SBIT, YDES, KPLT, AEXA, IVVD, SUIG, TPB, AIBZ, VNET, CONI, AIPI, OPRX, ADAM, YMAX, MGPI, MLKN, THYP, FWDI, AVL, ECO, EE, MG, YMAG
+2026-09-21 14:54:08,188 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 14:54:10,856 [INFO] [RVOL@TIME] GLXZ: today_vol=12936, avg_intraday_vol=874252 (1 sessions), elapsed_min=324, rvol=0.015, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 14:54:10,856 [WARNING] [GUARDRAIL] GLXZ blocked: RVOL@TIME 0.01 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=12936 | avg_intraday_vol=874252
+2026-09-21 14:54:11,038 [INFO] [RVOL@TIME] RXRX: today_vol=22799138, avg_intraday_vol=12340854 (4 sessions), elapsed_min=324, rvol=1.847, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:11,442 [INFO] [RVOL@TIME] TPET: today_vol=102450, avg_intraday_vol=790720 (4 sessions), elapsed_min=324, rvol=0.130, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:11,442 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.13 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=102450 | avg_intraday_vol=790720
+2026-09-21 14:54:17,481 [INFO] [RVOL@TIME] NUAI: today_vol=15959649, avg_intraday_vol=3551015 (4 sessions), elapsed_min=324, rvol=4.494, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:17,668 [INFO] [RVOL@TIME] SST: today_vol=678908, avg_intraday_vol=417978 (4 sessions), elapsed_min=324, rvol=1.624, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:17,814 [INFO] [RVOL@TIME] FJET: today_vol=2862264, avg_intraday_vol=1262792 (4 sessions), elapsed_min=324, rvol=2.267, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:17,991 [INFO] [RVOL@TIME] METU: today_vol=7617470, avg_intraday_vol=3422778 (4 sessions), elapsed_min=324, rvol=2.226, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:20,622 [INFO] [RVOL@TIME] FBL: today_vol=1677055, avg_intraday_vol=776944 (4 sessions), elapsed_min=324, rvol=2.159, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:20,795 [INFO] [RVOL@TIME] TGL: today_vol=342945, avg_intraday_vol=1981571 (3 sessions), elapsed_min=324, rvol=0.173, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-21 14:54:20,795 [WARNING] [GUARDRAIL] TGL blocked: RVOL@TIME 0.17 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=342945 | avg_intraday_vol=1981571
+2026-09-21 14:54:22,488 [INFO] [RVOL@TIME] OPTX: today_vol=822188, avg_intraday_vol=261577 (4 sessions), elapsed_min=324, rvol=3.143, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:25,608 [INFO] [RVOL@TIME] AMDL: today_vol=2936405, avg_intraday_vol=1948438 (4 sessions), elapsed_min=324, rvol=1.507, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:30,076 [INFO] [RVOL@TIME] BIAF: today_vol=397638, avg_intraday_vol=5437420 (4 sessions), elapsed_min=324, rvol=0.073, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:30,076 [WARNING] [GUARDRAIL] BIAF blocked: RVOL@TIME 0.07 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=397638 | avg_intraday_vol=5437420
+2026-09-21 14:54:31,844 [INFO] [RVOL@TIME] DAMD: today_vol=7242670, avg_intraday_vol=2147068 (4 sessions), elapsed_min=324, rvol=3.373, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:31,912 [INFO] [RVOL@TIME] EMAT: today_vol=2056181, avg_intraday_vol=926526 (4 sessions), elapsed_min=324, rvol=2.219, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:32,180 [INFO] [RVOL@TIME] NVOX: today_vol=1421408, avg_intraday_vol=268514 (4 sessions), elapsed_min=324, rvol=5.294, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:34,939 [INFO] [RVOL@TIME] RKLZ: today_vol=396184, avg_intraday_vol=419132 (4 sessions), elapsed_min=324, rvol=0.945, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:34,939 [WARNING] [GUARDRAIL] RKLZ blocked: RVOL@TIME 0.95 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=396184 | avg_intraday_vol=419132
+2026-09-21 14:54:35,125 [INFO] [RVOL@TIME] PBLS: today_vol=785180, avg_intraday_vol=511501 (4 sessions), elapsed_min=324, rvol=1.535, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:35,205 [INFO] [RVOL@TIME] VNCE: today_vol=493462, avg_intraday_vol=633579 (4 sessions), elapsed_min=324, rvol=0.779, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:35,206 [WARNING] [GUARDRAIL] VNCE blocked: RVOL@TIME 0.78 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=493462 | avg_intraday_vol=633579
+2026-09-21 14:54:37,172 [INFO] [RVOL@TIME] APMD: today_vol=594258, avg_intraday_vol=289328 (4 sessions), elapsed_min=324, rvol=2.054, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:37,222 [INFO] [RVOL@TIME] BRVE: today_vol=694929, avg_intraday_vol=235268 (4 sessions), elapsed_min=324, rvol=2.954, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:40,354 [INFO] [RVOL@TIME] SCTX: today_vol=243137, avg_intraday_vol=189152 (4 sessions), elapsed_min=324, rvol=1.285, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:41,999 [INFO] [RVOL@TIME] PPHC: today_vol=59801, avg_intraday_vol=198078 (4 sessions), elapsed_min=324, rvol=0.302, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:41,999 [WARNING] [GUARDRAIL] PPHC blocked: RVOL@TIME 0.30 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=59801 | avg_intraday_vol=198078
+2026-09-21 14:54:44,711 [INFO] [RVOL@TIME] METD: today_vol=2929100, avg_intraday_vol=646251 (4 sessions), elapsed_min=324, rvol=4.532, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:46,125 [INFO] [RVOL@TIME] YDES: today_vol=585604, avg_intraday_vol=1072548 (4 sessions), elapsed_min=324, rvol=0.546, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:46,126 [WARNING] [GUARDRAIL] YDES blocked: RVOL@TIME 0.55 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=585604 | avg_intraday_vol=1072548
+2026-09-21 14:54:46,331 [INFO] [RVOL@TIME] KPLT: today_vol=170982, avg_intraday_vol=205750 (4 sessions), elapsed_min=324, rvol=0.831, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:46,332 [WARNING] [GUARDRAIL] KPLT blocked: RVOL@TIME 0.83 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=170982 | avg_intraday_vol=205750
+2026-09-21 14:54:46,845 [INFO] [RVOL@TIME] IVVD: today_vol=12448326, avg_intraday_vol=3354757 (4 sessions), elapsed_min=324, rvol=3.711, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:46,873 [WARNING] [GUARDRAIL] AEXA blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-21 14:54:49,376 [INFO] [RVOL@TIME] TPB: today_vol=656438, avg_intraday_vol=160271 (4 sessions), elapsed_min=324, rvol=4.096, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:49,998 [INFO] [RVOL@TIME] AIBZ: today_vol=521177, avg_intraday_vol=332258 (4 sessions), elapsed_min=324, rvol=1.569, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:51,224 [INFO] [RVOL@TIME] AIPI: today_vol=358909, avg_intraday_vol=278423 (4 sessions), elapsed_min=324, rvol=1.289, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:51,307 [INFO] [RVOL@TIME] VNET: today_vol=6970221, avg_intraday_vol=1489910 (4 sessions), elapsed_min=324, rvol=4.678, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:51,491 [INFO] [RVOL@TIME] OPRX: today_vol=146118, avg_intraday_vol=322564 (1 sessions), elapsed_min=324, rvol=0.453, threshold=0.65 (adaptive=1.00 session_discount=0.65 iex_scale=False)
+2026-09-21 14:54:51,491 [WARNING] [GUARDRAIL] OPRX blocked: RVOL@TIME 0.45 < rvol_threshold 0.65 (adaptive=1.00 sessions=1 discount=0.65) | today_vol=146118 | avg_intraday_vol=322564
+2026-09-21 14:54:54,347 [INFO] [RVOL@TIME] ADAM: today_vol=1885377, avg_intraday_vol=760577 (4 sessions), elapsed_min=324, rvol=2.479, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:56,041 [INFO] [RVOL@TIME] YMAX: today_vol=1742692, avg_intraday_vol=1370289 (4 sessions), elapsed_min=324, rvol=1.272, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:56,181 [INFO] [RVOL@TIME] MGPI: today_vol=422874, avg_intraday_vol=197372 (4 sessions), elapsed_min=324, rvol=2.143, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:54:56,681 [INFO] [RVOL@TIME] MLKN: today_vol=636536, avg_intraday_vol=249669 (4 sessions), elapsed_min=324, rvol=2.550, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:55:01,003 [INFO] [RVOL@TIME] AVL: today_vol=1206912, avg_intraday_vol=999292 (4 sessions), elapsed_min=325, rvol=1.208, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:55:01,718 [INFO] [RVOL@TIME] ECO: today_vol=652192, avg_intraday_vol=681370 (4 sessions), elapsed_min=325, rvol=0.957, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:55:01,718 [WARNING] [GUARDRAIL] ECO blocked: RVOL@TIME 0.96 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=652192 | avg_intraday_vol=681370
+2026-09-21 14:55:02,682 [INFO] [RVOL@TIME] MG: today_vol=444344, avg_intraday_vol=679242 (4 sessions), elapsed_min=325, rvol=0.654, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:55:02,682 [WARNING] [GUARDRAIL] MG blocked: RVOL@TIME 0.65 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=444344 | avg_intraday_vol=679242
+2026-09-21 14:55:02,895 [INFO] [RVOL@TIME] EE: today_vol=489934, avg_intraday_vol=375022 (4 sessions), elapsed_min=325, rvol=1.306, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:55:03,080 [INFO] [RVOL@TIME] YMAG: today_vol=904883, avg_intraday_vol=886671 (4 sessions), elapsed_min=325, rvol=1.021, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-21 14:55:05,552 [INFO] [GUARDRAIL SUMMARY] Rejected: 40 | DollarVol: 0 | RVOL: 13 | GapChase: 1 | MinPrice: 0 | Other: 0
+2026-09-21 14:55:05,553 [INFO] [FUNNEL] targets=67 guardrail_rejected=40 (rvol=13) -> signals_generated=6 -> conf_gate(-6) -> sector_cap(-0) -> final=0
+2026-09-21 14:55:05,553 [INFO] [SCAN] Breakdown — Sweepea: 1, TrendlineBreakout: 5 | Errors: 0 | Total: 0
+2026-09-21 14:55:05,633 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.11% < 0.25%
+2026-09-21 14:55:05,956 [INFO] LIVE PROBE STKE: scale-in skipped; price not within 0.20% of post-entry high 1.57
+2026-09-21 14:55:05,956 [INFO] LIVE PROBE USDE: scale-in skipped; gain +0.08% < 0.25%
+2026-09-21 14:55:05,956 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.12% < 0.25%
+2026-09-21 14:55:05,956 [INFO] [SCAN] No signals this cycle
+2026-09-21 14:55:05,956 [INFO] Heartbeat: 2026-09-21T14:55:05.956589
+2026-09-21 14:58:06,324 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.36% < 0.25%
+2026-09-21 14:58:06,364 [INFO] LIVE PROBE SCALE-IN STKE: +100 shares at +2.60% pending fill confirmation
+2026-09-21 14:58:06,364 [INFO] LIVE PROBE USDE: scale-in skipped; gain +0.00% < 0.25%
+2026-09-21 14:58:06,364 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.12% < 0.25%
+2026-09-21 14:58:06,366 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-21 14:58:06,366 [INFO] Heartbeat: 2026-09-21T14:58:06.366167
+2026-09-21 15:01:06,914 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.32% < 0.25%
+2026-09-21 15:01:08,475 [INFO] LIVE PROBE STKE: ATM option skipped; no liquid ATM call
+2026-09-21 15:01:08,475 [INFO] LIVE PROBE STKE: scale-in filled; protection replaced for 101 shares
+2026-09-21 15:01:08,475 [INFO] LIVE PROBE USDE: scale-in skipped; gain -1.16% < 0.25%
+2026-09-21 15:01:08,475 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.17% < 0.25%
+2026-09-21 15:01:08,479 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-21 15:01:08,479 [INFO] Heartbeat: 2026-09-21T15:01:08.479299
+2026-09-21 15:04:08,825 [INFO] INTRADAY 15:03 ET RESET: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-21 15:04:10,216 [INFO] INTRADAY 15:03 ET RESET: cancelled order fd9d4f67-bbac-408c-8667-783636728699 (IAG)
+2026-09-21 15:04:10,246 [INFO] INTRADAY 15:03 ET RESET: cancelled order c45f97c7-f3bc-4a25-8a0c-3a1da2b7ec5f (USDE)
+2026-09-21 15:04:10,274 [INFO] INTRADAY 15:03 ET RESET: cancelled order 639359a1-23bd-4937-ab61-f41774468a7b (SDGR261016C00030000)
+2026-09-21 15:04:10,304 [WARNING] INTRADAY 15:03 ET RESET: close submitted for IAG qty=1
+2026-09-21 15:04:10,336 [WARNING] INTRADAY 15:03 ET RESET: close submitted for SDGR261016C00030000 qty=75
+2026-09-21 15:04:10,371 [WARNING] INTRADAY 15:03 ET RESET: close submitted for USDE qty=1
+2026-09-21 15:04:10,409 [WARNING] INTRADAY 15:03 ET RESET: close submitted for WBD261009C00030000 qty=16
+2026-09-21 15:04:10,409 [INFO] INTRADAY 15:03 ET RESET: close requests submitted; continuing without waiting for confirmation: ['IAG', 'SDGR261016C00030000', 'USDE', 'WBD261009C00030000']
+2026-09-21 15:04:10,484 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['GLXZ', 'NVTS', 'RXRX', 'TPET']
+2026-09-21 15:04:10,484 [INFO] Options scan: starting — 119 ticker(s) in universe
+2026-09-21 15:04:48,585 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 15:04:49,527 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 15:04:50,610 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 15:04:51,634 [INFO] Schwab: quote unavailable for CONI; Alpaca fallback used
+2026-09-21 15:04:52,949 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 15:04:54,214 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 15:04:55,572 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 15:04:57,448 [INFO] Schwab: quote unavailable for VCX; Alpaca fallback used
+2026-09-21 15:04:58,684 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 15:04:59,703 [INFO] Schwab: quote unavailable for BTBT; Alpaca fallback used
+2026-09-21 15:05:00,901 [INFO] Schwab: quote unavailable for EAF; Alpaca fallback used
+2026-09-21 15:05:02,402 [INFO] Schwab: quote unavailable for VOR; Alpaca fallback used
+2026-09-21 15:05:03,961 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 15:05:05,641 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 15:05:06,956 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 15:05:08,478 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 15:05:10,627 [INFO] Schwab: quote unavailable for NVTS; Alpaca fallback used
+2026-09-21 15:05:12,304 [INFO] Schwab: quote unavailable for TPET; Alpaca fallback used
+2026-09-21 15:05:35,009 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): GRAL(CoveredCall, unusual_volume_blocked_in_NEUTRAL)
+2026-09-21 15:05:35,009 [INFO] Options scan: 0 signal(s) | universe=119 | fail summary: no_MarketStructureBreakoutCall=119, no_OpeningRangeBreakoutCall=119, no_MomentumContinuationCall=119, no_GapBreakoutCall=119, no_MomentumCall=119, no_BearPut=119, no_BearCallSpread=119, no_ShortSqueeze=119, no_MeanReversion=119, no_BreakoutRetest=119, no_TrendPullbackSpread=119, no_IronCondor=119, no_Butterfly=119, no_signal=119
+2026-09-21 15:05:35,009 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_OpeningRangeBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumContinuationCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_GapBreakoutCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MomentumCall: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearPut: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BearCallSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_ShortSqueeze: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_MeanReversion: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_BreakoutRetest: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_TrendPullbackSpread: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_IronCondor: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_Butterfly: CRML, STKE, HBR, OPTX, VGZ, ZTO | no_signal: CRML, STKE, HBR, OPTX, VGZ, ZTO
+2026-09-21 15:05:35,009 [INFO] [OPTIONS] No qualifying signals this cycle | open=0
+2026-09-21 15:05:35,010 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 15:05:35,349 [INFO] Quarterly P&L: -5.0% (target >= 50%)
+2026-09-21 15:05:35,349 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 15:05:35,445 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-21 15:05:36,908 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-21 15:05:36,975 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 15:05:36,976 [INFO] [SCAN] 3 symbols (filtered, 8 workers): GLXZ, RXRX, TPET
+2026-09-21 15:05:36,977 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 15:05:36,996 [INFO] Schwab: Refreshing access token...
+2026-09-21 15:05:37,146 [INFO] Schwab: Refreshing access token...
+2026-09-21 15:05:37,296 [INFO] Schwab: Refreshing access token...
+2026-09-21 15:05:38,090 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-21 15:05:38,188 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-21 15:05:38,260 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-21 15:05:40,051 [INFO] [RVOL@TIME] TPET: today_vol=111276, avg_intraday_vol=808511 (4 sessions), elapsed_min=335, rvol=0.138, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:05:40,051 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.14 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=111276 | avg_intraday_vol=808511
+2026-09-21 15:05:40,248 [INFO] [RVOL@TIME] GLXZ: today_vol=12936, avg_intraday_vol=874979 (1 sessions), elapsed_min=335, rvol=0.015, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 15:05:40,248 [WARNING] [GUARDRAIL] GLXZ blocked: RVOL@TIME 0.01 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=12936 | avg_intraday_vol=874979
+2026-09-21 15:05:40,710 [INFO] [RVOL@TIME] RXRX: today_vol=23903192, avg_intraday_vol=12862793 (4 sessions), elapsed_min=335, rvol=1.858, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:05:43,623 [INFO] [GUARDRAIL SUMMARY] Rejected: 2 | DollarVol: 0 | RVOL: 2 | GapChase: 0 | MinPrice: 0 | Other: 0
+2026-09-21 15:05:43,623 [INFO] [FUNNEL] targets=3 guardrail_rejected=2 (rvol=2) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-21 15:05:43,623 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-21 15:05:43,623 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-21 15:05:43,680 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.48% < 0.25%
+2026-09-21 15:05:43,681 [INFO] LIVE PROBE STKE: ATM option skipped; no liquid ATM call
+2026-09-21 15:05:43,681 [INFO] LIVE PROBE USDE: scale-in skipped; broker fill price unavailable
+2026-09-21 15:05:43,681 [INFO] LIVE PROBE IAG: scale-in skipped; broker fill price unavailable
+2026-09-21 15:05:43,694 [INFO] [SCAN] No signals this cycle
+2026-09-21 15:05:43,694 [INFO] Heartbeat: 2026-09-21T15:05:43.694599
+2026-09-21 15:08:44,302 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['GLXZ', 'NVTS', 'RXRX', 'TPET']
+2026-09-21 15:08:44,302 [INFO] Options scan: starting — 165 ticker(s) in universe
+2026-09-21 15:08:59,442 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/e7a83654cf27ed3979b7da9eddebab80/element/f.7AFBEFED814DC7113984A858F931DDE9.d.7A50BF497C1E73FB38901450AB97F2A0.e.5801/text
+2026-09-21 15:09:02,137 [INFO] Stopped by user
+2026-09-21 15:09:02,200 [INFO] ======================================================================
+2026-09-21 15:09:02,200 [INFO] STATUS
+2026-09-21 15:09:02,200 [INFO] Equity:     $92,389.17
+2026-09-21 15:09:02,200 [INFO] Daily P&L:  $0.00  |  Trades: 2
+2026-09-21 15:09:02,200 [INFO] Positions:  11
+2026-09-21 15:09:02,200 [INFO] Unrealized: $2676.46
+2026-09-21 15:09:02,200 [INFO]   APPX: 1003 @ $13.80 | $496.18 (+3.58%)
+2026-09-21 15:09:02,200 [INFO]   BSOL: 1996 @ $15.54 | $1293.70 (+4.17%)
+2026-09-21 15:09:02,200 [INFO]   GRAL: 104 @ $105.59 | $331.92 (+3.02%)
+2026-09-21 15:09:02,201 [INFO]   INTW: 885 @ $32.45 | $-191.25 (-0.67%)
+2026-09-21 15:09:02,201 [INFO]   LINT: 102 @ $164.11 | $145.29 (+0.87%)
+2026-09-21 15:09:02,201 [INFO]   MRNX: 107 @ $113.37 | $296.15 (+2.44%)
+2026-09-21 15:09:02,201 [INFO]   NVTS: 101 @ $12.23 | $-2.92 (-0.24%)
+2026-09-21 15:09:02,201 [INFO]   SDGR: 787 @ $30.17 | $504.14 (+2.12%)
+2026-09-21 15:09:02,201 [INFO]   STKE: 101 @ $1.59 | $-4.50 (-2.80%)
+2026-09-21 15:09:02,201 [INFO]   USGG: 2098 @ $5.93 | $-163.67 (-1.32%)
+2026-09-21 15:09:02,201 [INFO]   WBD: 445 @ $30.87 | $-28.59 (-0.21%)
+2026-09-21 15:09:02,201 [INFO] ======================================================================
+2026-09-21 15:09:03,477 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=61435): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /session/e7a83654cf27ed3979b7da9eddebab80/element/f.7AFBEFED814DC7113984A858F931DDE9.d.7A50BF497C1E73FB38901450AB97F2A0.e.5801/text
+2026-09-21 15:09:07,527 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=61435): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /session/e7a83654cf27ed3979b7da9eddebab80/element/f.7AFBEFED814DC7113984A858F931DDE9.d.7A50BF497C1E73FB38901450AB97F2A0.e.5801/text
+2026-09-21 15:09:11,249 [INFO] Restored position exit state: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX
+2026-09-21 15:09:11,284 [INFO] Entry log rebuilt from today's orders: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX
+2026-09-21 15:09:11,316 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-21 15:09:11,343 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-21 15:09:11,446 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-21 15:09:11,446 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-21 15:09:11,447 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-21 15:09:11,447 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-21 15:09:11,447 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-21 15:09:11,447 [INFO] ======================================================================
+2026-09-21 15:09:11,447 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-21 15:09:11,447 [INFO] ======================================================================
+2026-09-21 15:09:11,447 [INFO] Priority 1 (Momentum): 71 stocks
+2026-09-21 15:09:11,447 [INFO] Priority 2 (Established): 17 stocks
+2026-09-21 15:09:11,447 [INFO] Total Universe: 92 stocks
+2026-09-21 15:09:11,448 [INFO] Scan: 3 min fixed
+2026-09-21 15:09:11,448 [INFO] ======================================================================
+2026-09-21 15:09:11,473 [INFO] Equity:          $92,358.31
+2026-09-21 15:09:11,473 [INFO] Buying Power:    $140,323.95
+2026-09-21 15:09:11,473 [INFO] PDT Status:      No
+2026-09-21 15:09:11,473 [INFO] Day Trade Count: None
+2026-09-21 15:09:11,474 [INFO] ======================================================================
+2026-09-21 15:09:11,474 [INFO] Starting… Press Ctrl+C to stop
+2026-09-21 15:09:11,474 [INFO] ======================================================================
+2026-09-21 15:09:11,474 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-21 15:09:11,474 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-21 15:09:11,474 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-21 15:09:11,475 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-21 15:10:41,474 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-21 15:10:41,812 [INFO] ======================================================================
+2026-09-21 15:10:41,812 [INFO] NEW DAY: 2026-09-21 | Start equity: $92,448.59
+2026-09-21 15:10:41,814 [INFO] Universe pruned: removed 48 expired ticker(s): ['AARD', 'ADAM', 'AEXA', 'AIBZ', 'AIPI', 'AMDL', 'APPX', 'ARMP', 'ASTH', 'ASYS']…
+2026-09-21 15:10:41,814 [INFO] ======================================================================
+2026-09-21 15:10:42,596 [INFO] Options scan: starting — 170 ticker(s) in universe
+2026-09-21 15:11:11,031 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-21 15:11:12,405 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-21 15:11:23,098 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-21 15:11:26,501 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-21 15:11:40,355 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-21 15:11:44,615 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-21 15:11:44,995 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 15:11:45,441 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 15:11:46,529 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 15:11:47,396 [INFO] Schwab: quote unavailable for CONI; Alpaca fallback used
+2026-09-21 15:11:48,077 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 15:11:48,785 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 15:11:49,541 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 15:11:50,236 [INFO] Schwab: quote unavailable for VCX; Alpaca fallback used
+2026-09-21 15:11:50,873 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 15:11:51,815 [INFO] Schwab: quote unavailable for BTBT; Alpaca fallback used
+2026-09-21 15:11:52,586 [INFO] Schwab: quote unavailable for EAF; Alpaca fallback used
+2026-09-21 15:11:53,307 [INFO] Schwab: quote unavailable for VOR; Alpaca fallback used
+2026-09-21 15:11:54,202 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 15:11:54,916 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 15:11:55,549 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 15:11:56,320 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-21 15:11:56,955 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-21 15:11:57,585 [INFO] Schwab: quote unavailable for BMNZ; Alpaca fallback used
+2026-09-21 15:11:58,331 [INFO] Schwab: quote unavailable for DAMD; Alpaca fallback used
+2026-09-21 15:11:58,953 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-21 15:11:59,620 [INFO] Schwab: quote unavailable for MKDW; Alpaca fallback used
+2026-09-21 15:12:00,319 [INFO] Schwab: quote unavailable for RKLZ; Alpaca fallback used
+2026-09-21 15:12:01,076 [INFO] Schwab: quote unavailable for SMST; Alpaca fallback used
+2026-09-21 15:12:02,000 [INFO] Schwab: quote unavailable for BIAF; Alpaca fallback used
+2026-09-21 15:12:02,900 [INFO] Schwab: quote unavailable for METU; Alpaca fallback used
+2026-09-21 15:12:03,642 [INFO] Schwab: quote unavailable for SBIT; Alpaca fallback used
+2026-09-21 15:12:04,390 [INFO] Schwab: quote unavailable for USDEW; Alpaca fallback used
+2026-09-21 15:12:11,293 [INFO] Options scan: 1 signal(s) | universe=170 | strategies: ['CoveredCall']
+2026-09-21 15:12:11,293 [INFO] [OPTIONS] 1 candidates | open=0 | top: SDGR call conf=84%
+2026-09-21 15:12:12,287 [WARNING] [SCHWAB] No bid/ask for SDGR261016C00038500 at strike 38.5
+2026-09-21 15:12:12,288 [WARNING] [OPTIONS] SDGR failed to fetch Schwab pricing, using estimated limit=$-1.54
+2026-09-21 15:12:12,314 [ERROR] [OPTIONS] CRITICAL FAILURE for SDGR: {"code":42210000,"message":"invalid legs: [leg.1 asset \"SDGR261016C00038500\" not found]"}
+Traceback (most recent call last):
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 198, in _one_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\requests\models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error: Unprocessable Entity for url: https://paper-api.alpaca.markets/v2/orders
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\engine\options\executor.py", line 1491, in place_option_order
+    resp = self.client.post("/orders", payload)
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 240, in post
+    return self._request("POST", path, data)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 131, in _request
+    return self._one_request(method, url, opts, retry)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\spoli\Desktop\BitSniper\BiitSniper\apextrader\Lib\site-packages\alpaca\common\rest.py", line 207, in _one_request
+    raise APIError(error, http_error)
+alpaca.common.exceptions.APIError: {"code":42210000,"message":"invalid legs: [leg.1 asset \"SDGR261016C00038500\" not found]"}
+2026-09-21 15:12:12,318 [INFO] [OPTIONS] No option order executed this cycle | open=0 | rejections=SDGR/CoveredCall: unspecified rejection
+2026-09-21 15:12:12,318 [INFO] [OPTIONS] Options: no open positions
+2026-09-21 15:12:12,664 [INFO] Quarterly P&L: -4.9% (target >= 50%)
+2026-09-21 15:12:12,884 [INFO] [SCAN] Market sentiment: neutral
+2026-09-21 15:12:12,977 [ERROR] Trade Ideas scrape hard-timeout (182s) — killing Chrome/chromedriver and resetting future
+2026-09-21 15:12:14,286 [INFO] [EDGAR] CIK map loaded: 8,031 companies
+2026-09-21 15:12:15,542 [INFO] [EDGAR] 8-K match: GLXZ — 8-K - Galaxy Gaming, Inc. (0000013156) (Filer)
+2026-09-21 15:12:15,542 [INFO] [EDGAR] 8-K match: NVTS — 8-K/A - Navitas Semiconductor Corp (0001821769) (Filer)
+2026-09-21 15:12:15,543 [INFO] [EDGAR] 8-K match: RXRX — 8-K - RECURSION PHARMACEUTICALS, INC. (0001601830) (Filer)
+2026-09-21 15:12:15,543 [INFO] [EDGAR] 8-K match: TPET — 8-K - Trio Petroleum Corp (0001898766) (Filer)
+2026-09-21 15:12:15,543 [INFO] [EDGAR] 4 newly triggered tickers: ['GLXZ', 'NVTS', 'RXRX', 'TPET']
+2026-09-21 15:12:15,545 [INFO] [EDGAR] Adding GLXZ to P2 + scan queue for monitoring
+2026-09-21 15:12:15,545 [INFO] [EDGAR] Adding NVTS to P2 + scan queue for monitoring
+2026-09-21 15:12:15,545 [INFO] [EDGAR] Adding RXRX to P2 + scan queue for monitoring
+2026-09-21 15:12:15,545 [INFO] [EDGAR] Adding TPET to P2 + scan queue for monitoring
+2026-09-21 15:12:15,860 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-21 15:12:15,917 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-21 15:12:15,918 [INFO] [SCAN] 48 symbols (filtered, 8 workers): GLXZ, RXRX, TPET, ARMG, CRML, CRMU, CUE, DAMD, EMAT, ETS, GLND, GRML, IMCC, MKDW, NUAI, NVOX, PRTH, RKLZ, SCTX, SMST, SVRN, VEEE, AEHL, AMDL, APMD, BIAF, BMNZ, BRVE, FBL, FGL, FJET, FTFT, INDP, METD, METU, OPTX, PBLS, PRPL, QCMU, SLMT, SOXS, SST, TGL, USDE, VGZ, VNCE, VOGX, YDES
+2026-09-21 15:12:15,918 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-21 15:12:18,569 [INFO] [RVOL@TIME] GLXZ: today_vol=12936, avg_intraday_vol=865249 (1 sessions), elapsed_min=342, rvol=0.015, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 15:12:18,569 [WARNING] [GUARDRAIL] GLXZ blocked: RVOL@TIME 0.01 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=12936 | avg_intraday_vol=865249
+2026-09-21 15:12:18,664 [INFO] [RVOL@TIME] RXRX: today_vol=24187971, avg_intraday_vol=13324133 (4 sessions), elapsed_min=342, rvol=1.815, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:18,865 [INFO] [RVOL@TIME] TPET: today_vol=111276, avg_intraday_vol=813664 (4 sessions), elapsed_min=342, rvol=0.137, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:18,865 [WARNING] [GUARDRAIL] TPET blocked: RVOL@TIME 0.14 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=111276 | avg_intraday_vol=813664
+2026-09-21 15:12:19,017 [INFO] [RVOL@TIME] ARMG: today_vol=2506773, avg_intraday_vol=880417 (4 sessions), elapsed_min=342, rvol=2.847, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:19,223 [INFO] [RVOL@TIME] CRML: today_vol=41268231, avg_intraday_vol=3465590 (4 sessions), elapsed_min=342, rvol=11.908, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:19,292 [INFO] [RVOL@TIME] CRMU: today_vol=2261451, avg_intraday_vol=739189 (3 sessions), elapsed_min=342, rvol=3.059, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 15:12:19,599 [INFO] [RVOL@TIME] CUE: today_vol=1390442, avg_intraday_vol=271163 (4 sessions), elapsed_min=342, rvol=5.128, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:19,622 [INFO] [RVOL@TIME] DAMD: today_vol=7587664, avg_intraday_vol=2225660 (4 sessions), elapsed_min=342, rvol=3.409, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:22,135 [INFO] [RVOL@TIME] ETS: today_vol=440139, avg_intraday_vol=543459 (4 sessions), elapsed_min=342, rvol=0.810, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:22,306 [INFO] [RVOL@TIME] EMAT: today_vol=2100985, avg_intraday_vol=996930 (4 sessions), elapsed_min=342, rvol=2.107, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:27,007 [INFO] [RVOL@TIME] GLND: today_vol=104154571, avg_intraday_vol=330997 (4 sessions), elapsed_min=342, rvol=314.670, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:27,323 [INFO] [RVOL@TIME] GRML: today_vol=121222235, avg_intraday_vol=379318 (4 sessions), elapsed_min=342, rvol=319.580, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:27,601 [INFO] [RVOL@TIME] IMCC: today_vol=662457, avg_intraday_vol=60877204 (1 sessions), elapsed_min=342, rvol=0.011, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 15:12:27,601 [WARNING] [GUARDRAIL] IMCC blocked: RVOL@TIME 0.01 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=662457 | avg_intraday_vol=60877204
+2026-09-21 15:12:27,689 [INFO] [RVOL@TIME] MKDW: today_vol=477920, avg_intraday_vol=1191268 (3 sessions), elapsed_min=342, rvol=0.401, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 15:12:27,689 [WARNING] [GUARDRAIL] MKDW blocked: RVOL@TIME 0.40 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=477920 | avg_intraday_vol=1191268
+2026-09-21 15:12:27,894 [INFO] [RVOL@TIME] NUAI: today_vol=16383674, avg_intraday_vol=3719558 (4 sessions), elapsed_min=342, rvol=4.405, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:28,616 [INFO] [RVOL@TIME] NVOX: today_vol=1442553, avg_intraday_vol=284352 (4 sessions), elapsed_min=342, rvol=5.073, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:30,427 [INFO] [RVOL@TIME] PRTH: today_vol=14319685, avg_intraday_vol=264305 (4 sessions), elapsed_min=342, rvol=54.179, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:30,631 [INFO] [RVOL@TIME] RKLZ: today_vol=398455, avg_intraday_vol=439797 (4 sessions), elapsed_min=342, rvol=0.906, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:30,724 [INFO] [RVOL@TIME] SCTX: today_vol=250967, avg_intraday_vol=206113 (4 sessions), elapsed_min=342, rvol=1.218, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:31,203 [INFO] [RVOL@TIME] SMST: today_vol=2142805, avg_intraday_vol=1376814 (4 sessions), elapsed_min=342, rvol=1.556, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:31,524 [INFO] [RVOL@TIME] SVRN: today_vol=235039, avg_intraday_vol=333017 (3 sessions), elapsed_min=342, rvol=0.706, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 15:12:35,115 [WARNING] [GUARDRAIL] VEEE blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-21 15:12:35,575 [INFO] [RVOL@TIME] AEHL: today_vol=207438, avg_intraday_vol=1565650 (4 sessions), elapsed_min=342, rvol=0.132, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:35,575 [WARNING] [GUARDRAIL] AEHL blocked: RVOL@TIME 0.13 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=207438 | avg_intraday_vol=1565650
+2026-09-21 15:12:36,341 [INFO] [RVOL@TIME] AMDL: today_vol=3023498, avg_intraday_vol=1996651 (4 sessions), elapsed_min=342, rvol=1.514, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:37,045 [INFO] [RVOL@TIME] APMD: today_vol=659947, avg_intraday_vol=306835 (4 sessions), elapsed_min=342, rvol=2.151, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:38,666 [INFO] [RVOL@TIME] BIAF: today_vol=416929, avg_intraday_vol=5505316 (4 sessions), elapsed_min=342, rvol=0.076, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:38,666 [WARNING] [GUARDRAIL] BIAF blocked: RVOL@TIME 0.08 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=416929 | avg_intraday_vol=5505316
+2026-09-21 15:12:39,148 [INFO] [RVOL@TIME] BMNZ: today_vol=3062145, avg_intraday_vol=3968816 (4 sessions), elapsed_min=342, rvol=0.772, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:39,155 [INFO] [RVOL@TIME] BRVE: today_vol=733724, avg_intraday_vol=258043 (4 sessions), elapsed_min=342, rvol=2.843, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:39,429 [INFO] [RVOL@TIME] FGL: today_vol=20258, avg_intraday_vol=548175 (3 sessions), elapsed_min=342, rvol=0.037, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 15:12:39,429 [WARNING] [GUARDRAIL] FGL blocked: RVOL@TIME 0.04 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=20258 | avg_intraday_vol=548175
+2026-09-21 15:12:39,530 [INFO] [RVOL@TIME] FBL: today_vol=1723021, avg_intraday_vol=804585 (4 sessions), elapsed_min=342, rvol=2.142, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:39,715 [INFO] [RVOL@TIME] FJET: today_vol=2951783, avg_intraday_vol=1362520 (4 sessions), elapsed_min=342, rvol=2.166, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:41,919 [INFO] [RVOL@TIME] FTFT: today_vol=329474, avg_intraday_vol=4816043 (4 sessions), elapsed_min=342, rvol=0.068, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:41,919 [WARNING] [GUARDRAIL] FTFT blocked: RVOL@TIME 0.07 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=329474 | avg_intraday_vol=4816043
+2026-09-21 15:12:42,499 [INFO] [RVOL@TIME] INDP: today_vol=412769, avg_intraday_vol=1193685 (4 sessions), elapsed_min=342, rvol=0.346, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:42,500 [WARNING] [GUARDRAIL] INDP blocked: RVOL@TIME 0.35 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=412769 | avg_intraday_vol=1193685
+2026-09-21 15:12:44,453 [INFO] [RVOL@TIME] METD: today_vol=3110776, avg_intraday_vol=677387 (4 sessions), elapsed_min=342, rvol=4.592, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:45,566 [INFO] [RVOL@TIME] METU: today_vol=7853357, avg_intraday_vol=3513705 (4 sessions), elapsed_min=342, rvol=2.235, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:45,792 [INFO] [RVOL@TIME] OPTX: today_vol=828380, avg_intraday_vol=276390 (4 sessions), elapsed_min=342, rvol=2.997, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:46,006 [INFO] [RVOL@TIME] PBLS: today_vol=858205, avg_intraday_vol=539764 (4 sessions), elapsed_min=342, rvol=1.590, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:47,642 [WARNING] [GUARDRAIL] PRPL blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-21 15:12:47,659 [INFO] [RVOL@TIME] QCMU: today_vol=199749, avg_intraday_vol=286398 (4 sessions), elapsed_min=342, rvol=0.697, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:47,781 [INFO] [RVOL@TIME] SLMT: today_vol=280097, avg_intraday_vol=1319973 (1 sessions), elapsed_min=342, rvol=0.212, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-21 15:12:47,781 [WARNING] [GUARDRAIL] SLMT blocked: RVOL@TIME 0.21 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=280097 | avg_intraday_vol=1319973
+2026-09-21 15:12:48,530 [INFO] [RVOL@TIME] SOXS: today_vol=56581110, avg_intraday_vol=31345347 (4 sessions), elapsed_min=342, rvol=1.805, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:51,063 [INFO] [RVOL@TIME] SST: today_vol=694628, avg_intraday_vol=431101 (4 sessions), elapsed_min=342, rvol=1.611, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:51,216 [INFO] [RVOL@TIME] TGL: today_vol=345837, avg_intraday_vol=1993533 (3 sessions), elapsed_min=342, rvol=0.173, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-21 15:12:51,216 [WARNING] [GUARDRAIL] TGL blocked: RVOL@TIME 0.17 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=345837 | avg_intraday_vol=1993533
+2026-09-21 15:12:52,869 [INFO] [RVOL@TIME] USDE: today_vol=5178365, avg_intraday_vol=5676906 (4 sessions), elapsed_min=342, rvol=0.912, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:53,868 [INFO] [RVOL@TIME] VGZ: today_vol=5748118, avg_intraday_vol=912436 (4 sessions), elapsed_min=342, rvol=6.300, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:54,086 [INFO] [RVOL@TIME] VNCE: today_vol=496160, avg_intraday_vol=655242 (4 sessions), elapsed_min=342, rvol=0.757, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:54,215 [INFO] [RVOL@TIME] VOGX: today_vol=160618, avg_intraday_vol=201059 (4 sessions), elapsed_min=342, rvol=0.799, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:54,697 [INFO] [RVOL@TIME] YDES: today_vol=587136, avg_intraday_vol=1143789 (4 sessions), elapsed_min=342, rvol=0.513, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-21 15:12:57,933 [INFO] [GUARDRAIL SUMMARY] Rejected: 15 | DollarVol: 0 | RVOL: 13 | GapChase: 2 | MinPrice: 0 | Other: 0
+2026-09-21 15:12:57,933 [INFO] [FUNNEL] targets=48 guardrail_rejected=15 (rvol=13) -> signals_generated=10 -> conf_gate(-10) -> sector_cap(-0) -> final=0
+2026-09-21 15:12:57,933 [INFO] [SCAN] Breakdown — TrendlineBreakout: 10 | Errors: 0 | Total: 0
+2026-09-21 15:12:57,985 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -0.44% < 0.25%
+2026-09-21 15:12:57,986 [INFO] LIVE PROBE STKE: ATM option skipped; no liquid ATM call
+2026-09-21 15:12:57,988 [INFO] [SCAN] No signals this cycle

@@ -773,6 +773,8 @@ def _scrape_toplists(
     return results
 
 
+# Fallback labels — used only when runtime dynamic discovery of the Momentum
+# Scanner Stock Race tiles finds nothing usable (e.g. TI changed the markup).
 _MOMENTUM_SCANNER_RACES = (
     "Relative Volume",
     "FANG and Friends",
@@ -780,24 +782,160 @@ _MOMENTUM_SCANNER_RACES = (
     "SP500 Moving Down",
 )
 
+# Conservative bound on how many race tiles are drag/dropped per scrape cycle.
+# Large enough to cover all normal tiles; protects against a broken or huge UI
+# causing excessive serial drag/drop work. Override via TI_MOMENTUM_SCANNER_MAX_RACES.
+_MOMENTUM_SCANNER_MAX_RACES_DEFAULT = 12
+
+# Longest accepted race-tile label — longer strings are markup noise, not names.
+_RACE_LABEL_MAX_LEN = 80
+
+
+def _momentum_scanner_max_races() -> int:
+    """Max Momentum Scanner race tiles processed per scrape (env-overridable)."""
+    import os
+
+    raw = (os.environ.get("TI_MOMENTUM_SCANNER_MAX_RACES") or "").strip()
+    if not raw:
+        return _MOMENTUM_SCANNER_MAX_RACES_DEFAULT
+    try:
+        value = int(raw)
+    except ValueError:
+        return _MOMENTUM_SCANNER_MAX_RACES_DEFAULT
+    return value if value > 0 else _MOMENTUM_SCANNER_MAX_RACES_DEFAULT
+
+
+def _race_label_slug(label: str) -> str:
+    """Stable readable slug for a race label, e.g. 'Relative Volume' → 'relative_volume'."""
+    return re.sub(r"[^a-z0-9]+", "_", label.strip().lower()).strip("_")
+
+
+def _is_usable_race_label(label: object) -> bool:
+    """
+    A race tile label must be descriptive text, not a ticker-looking token.
+    Tiles whose entire label is a symbol (e.g. 'SPY', 'AAPL') or a generic
+    all-caps UI word are not Stock Race selector tiles — rejecting the bare
+    ticker pattern keeps such labels from ever being treated as tickers.
+    """
+    if not isinstance(label, str):
+        return False
+    text = label.strip()
+    if not text or len(text) > _RACE_LABEL_MAX_LEN:
+        return False
+    if not re.search(r"[A-Za-z]", text):
+        return False
+    if re.fullmatch(r"[A-Z]{1,5}[0-9]?", text):
+        return False
+    return True
+
+
+def _resolve_race_labels(
+    raw_labels: list,
+    cap: Optional[int] = None,
+) -> list[tuple[str, str]]:
+    """
+    Turn raw discovered tile labels into ordered unique (label, result_key) pairs.
+
+    - drops empty / non-string / over-long / ticker-like labels
+    - de-duplicates (whitespace-normalised), first occurrence wins
+    - result keys are ``momentum_<slug>``; slug collisions get _2, _3, … suffixes
+    - applies *cap* (default: TI_MOMENTUM_SCANNER_MAX_RACES env, else 12)
+    - falls back to the known labels when nothing usable was discovered
+    """
+    if cap is None:
+        cap = _momentum_scanner_max_races()
+    cap = max(1, cap)
+
+    cleaned: list[str] = []
+    for raw in raw_labels:
+        if not _is_usable_race_label(raw):
+            continue
+        text = raw.strip()
+        if text not in cleaned:
+            cleaned.append(text)
+
+    if cleaned:
+        source = cleaned
+    else:
+        print(
+            f"[WARN ] No usable Momentum Scanner race tiles discovered — "
+            f"falling back to {len(_MOMENTUM_SCANNER_RACES)} known labels"
+        )
+        source = list(_MOMENTUM_SCANNER_RACES)
+
+    pairs: list[tuple[str, str]] = []
+    used_keys: set[str] = set()
+    for label in source[:cap]:
+        slug = _race_label_slug(label)
+        if not slug:
+            continue
+        key = f"momentum_{slug}"
+        base = key
+        suffix = 2
+        while key in used_keys:
+            key = f"{base}_{suffix}"
+            suffix += 1
+        used_keys.add(key)
+        pairs.append((label, key))
+    return pairs
+
+
+def _discover_race_tile_labels(driver: "webdriver.Edge") -> list:
+    """Read raw labels from every tile under the Momentum Scanner race selector."""
+    raw_labels: list = []
+    try:
+        tiles = driver.find_elements(
+            By.CSS_SELECTOR, "#race-selector-card-div .race-setup-div"
+        )
+    except Exception as exc:
+        print(f"[WARN ] Unable to enumerate Momentum Scanner race tiles: {exc}")
+        return raw_labels
+    for tile in tiles:
+        label = None
+        try:
+            label = tile.find_element(By.TAG_NAME, "img").get_attribute("data-bs-original-title")
+        except Exception:
+            pass
+        if not label:
+            try:
+                label = tile.get_attribute("data")
+            except Exception:
+                label = None
+        raw_labels.append(label)
+    return raw_labels
+
 
 def _scrape_momentum_scanner_races(driver: "webdriver.Edge") -> dict[str, list[str]]:
-    """Drag requested Stock Race tiles into the Momentum Scanner and capture each result."""
+    """Drag every discovered Stock Race tile into the Momentum Scanner and capture each result."""
     WebDriverWait(driver, TABLE_WAIT_SEC).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "#race-selector-card-div"))
     )
     results: dict[str, list[str]] = {}
 
-    for label in _MOMENTUM_SCANNER_RACES:
-        selector = (
-            ".race-setup-div img[data-bs-original-title="
-            f"'{label}'"
-            "]"
-        )
+    races = _resolve_race_labels(_discover_race_tile_labels(driver))
+    print(f"[INFO ] Momentum Scanner races to scrape: {len(races)} (cap {_momentum_scanner_max_races()})")
+
+    # Map label → tile image element once; avoids CSS-attribute quoting issues
+    # for odd labels and guarantees we only drag tiles that actually exist.
+    label_to_img: dict[str, object] = {}
+    try:
+        for img in driver.find_elements(
+            By.CSS_SELECTOR, ".race-setup-div img[data-bs-original-title]"
+        ):
+            try:
+                title = img.get_attribute("data-bs-original-title")
+            except Exception:
+                continue
+            if title and title.strip() not in label_to_img:
+                label_to_img[title.strip()] = img
+    except Exception as exc:
+        print(f"[WARN ] Unable to map Momentum Scanner race tiles: {exc}")
+
+    for label, key in races:
         try:
-            source = WebDriverWait(driver, TABLE_WAIT_SEC).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, selector))
-            )
+            source = label_to_img.get(label)
+            if source is None:
+                raise RuntimeError(f"no tile found with label '{label}'")
             target = driver.find_element(By.CSS_SELECTOR, "#ssw-race-div-1")
             driver.execute_script("arguments[0].scrollIntoView({block:'center'});", source)
             driver.execute_script("arguments[0].scrollIntoView({block:'center'});", target)
@@ -814,7 +952,6 @@ def _scrape_momentum_scanner_races(driver: "webdriver.Edge") -> dict[str, list[s
             if _is_valid_ti_ticker(match.group(1))
         ]
         tickers = list(dict.fromkeys(tickers))
-        key = f"momentum_{re.sub(r'[^a-z0-9]+', '_', label.lower()).strip('_')}"
         results[key] = tickers
         print(f"[OK   ] {label}: {len(tickers)} tickers — {tickers[:10]}{'…' if len(tickers) > 10 else ''}")
 
