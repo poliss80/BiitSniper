@@ -5976,3 +5976,77 @@ alpaca.common.exceptions.APIError: {"code":42210000,"message":"invalid legs: [le
 2026-09-21 15:30:14,581 [INFO] Trailing stop placed IAG: 6.0% GTC (1 shares)
 2026-09-21 15:30:14,581 [INFO] BUY IAG: 1 @ $20.35 | TRAILING SL 6.0% | Tier: HIGH | Sweepea
 2026-09-21 15:30:15,650 [INFO] Heartbeat: 2026-09-21T15:30:15.650115
+2026-09-21 15:33:16,044 [INFO] Schwab API recovered: 100.0% success rate — switching back to Schwab-first
+2026-09-21 15:33:16,045 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['GLXZ', 'NVTS', 'RXRX', 'TPET']
+2026-09-21 15:33:16,046 [INFO] Options scan: starting — 175 ticker(s) in universe
+2026-09-21 15:33:59,846 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-21 15:34:01,225 [INFO] Schwab: quote unavailable for OPTX; Alpaca fallback used
+2026-09-21 15:34:02,969 [INFO] Schwab: quote unavailable for VNET; Alpaca fallback used
+2026-09-21 15:34:04,882 [INFO] Schwab: quote unavailable for SMST; Alpaca fallback used
+2026-09-21 15:34:06,912 [INFO] Schwab: quote unavailable for CONI; Alpaca fallback used
+2026-09-21 15:34:08,889 [INFO] Schwab: quote unavailable for APPX; Alpaca fallback used
+2026-09-21 15:34:10,656 [INFO] Schwab: quote unavailable for MLKN; Alpaca fallback used
+2026-09-21 15:34:12,321 [INFO] Schwab: quote unavailable for MNTS; Alpaca fallback used
+2026-09-21 15:34:13,641 [INFO] Schwab: quote unavailable for VCX; Alpaca fallback used
+2026-09-21 15:34:16,264 [INFO] Schwab: quote unavailable for TRON; Alpaca fallback used
+2026-09-21 15:34:19,146 [INFO] Schwab: quote unavailable for CRWL; Alpaca fallback used
+2026-09-21 15:34:21,814 [INFO] Schwab: quote unavailable for KPTI; Alpaca fallback used
+2026-09-21 15:34:24,250 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-21 15:34:26,104 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-21 15:34:28,179 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-21 15:34:28,586 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-21 15:34:28,589 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-21 15:34:28,591 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-21 15:34:28,597 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-21 15:34:28,598 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-21 15:34:28,601 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-21 15:34:28,603 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-21 15:34:28,604 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-21 15:34:28,606 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-21 15:34:28,608 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-21 15:34:28,608 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-21 15:34:28,610 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-21 15:34:28,610 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-21 15:34:28,611 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-21 15:34:28,612 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-21 15:34:28,612 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-21 15:34:28,613 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-21 15:34:28,613 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-21 15:34:28,614 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-21 15:34:28,614 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-21 15:34:28,615 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-21 15:34:28,619 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-21 15:34:28,621 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-21 15:34:28,624 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-21 15:34:28,626 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-21 15:34:28,630 [INFO] Restored position exit state: AAPL
+2026-09-21 15:34:28,630 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-21 15:34:28,634 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-21 15:34:28,634 [INFO] ======================================================================
+2026-09-21 15:34:28,634 [INFO] NEW DAY: 2026-09-21 | Start equity: $0.00
+2026-09-21 15:34:28,636 [INFO] Universe pruned: removed 13 expired ticker(s): ['ALEC', 'AUR', 'BWMX', 'CMTL', 'ENTA', 'FSLY', 'HQ', 'HUTG', 'MOD', 'PS']…
+2026-09-21 15:34:28,636 [INFO] ======================================================================
+2026-09-21 15:34:28,637 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-21 15:34:28,638 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-21 15:34:28,638 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-21 15:34:28,638 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-21 15:34:28,638 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-21 15:34:28,640 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-21 15:34:28,642 [INFO] Restored position exit state: AAPL
+2026-09-21 15:34:28,642 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close

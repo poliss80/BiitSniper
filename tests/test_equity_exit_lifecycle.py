@@ -138,6 +138,49 @@ class EquityExitLifecycleTests(unittest.TestCase):
         self.assertTrue(executor.flatten_portfolio("INTRADAY FINAL RESET"))
         self.assertEqual(client.close_attempts, ["AAPL"])
 
+    def test_intraday_window_reset_retains_options_tracking(self):
+        """Regression: _manage_intraday_window must NOT clear
+        ctx.options_executor._positions — flatten_portfolio intentionally
+        excludes us_option positions, so tracked options are still open and
+        must remain monitored across equity session resets."""
+        from engine import orchestrator
+
+        fake_now = SimpleNamespace(
+            weekday=lambda: 0,  # Monday
+            hour=12,
+            minute=0,
+            date=lambda: datetime.date(2026, 9, 21),
+        )
+        fake_datetime = SimpleNamespace(datetime=SimpleNamespace(now=lambda tz=None: fake_now))
+        fake_cfg = SimpleNamespace(
+            INTRADAY_WINDOW_START="09:30",
+            INTRADAY_MORNING_CUTOFF="10:55",
+            INTRADAY_MORNING_RESET="11:00",
+            INTRADAY_RESET_TIME="11:00",
+            INTRADAY_FINAL_CUTOFF="14:58",
+            INTRADAY_FINAL_RESET="15:03",
+            AFTERHOURS_END="20:00",
+        )
+        options_executor = SimpleNamespace(_positions={"XYZ261030C00050000": object()})
+        ctx = SimpleNamespace(
+            executor=Mock(),
+            options_executor=options_executor,
+            crypto_trader=None,
+        )
+        ctx.executor.flatten_portfolio.return_value = True
+
+        # 12:00 ET, previously in session_1 -> session-2 boundary flatten fires
+        with patch.object(orchestrator, "datetime", fake_datetime), \
+             patch.object(orchestrator, "cfg", fake_cfg), \
+             patch.object(orchestrator, "_load_intraday_state", return_value="session_1"), \
+             patch.object(orchestrator, "_save_intraday_state") as save_state:
+            self.assertTrue(orchestrator._manage_intraday_window(ctx))
+
+        ctx.executor.flatten_portfolio.assert_called_once()
+        save_state.assert_called_once_with(datetime.date(2026, 9, 21), "session_2")
+        # The still-open option must remain tracked after the equity flatten
+        self.assertIn("XYZ261030C00050000", options_executor._positions)
+
     def test_flatten_skips_scaled_in_live_probe_positions_by_default(self):
         client = FlattenClient([MockPosition("AAPL", "10", 100.0)])
         executor = build_executor(client, Path(tempfile.gettempdir()) / "unused_flatten_state.json")
