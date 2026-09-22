@@ -1,0 +1,296 @@
+2026-09-22 07:52:42,446 [INFO] Restored position exit state: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX, IAG
+2026-09-22 07:52:42,476 [INFO] Entry log rebuilt from today's orders: SDGR, BSOL, NVTS, INTW, LINT, GRAL, USGG, APPX, WBD, STKE, MRNX, IAG
+2026-09-22 07:52:42,511 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-22 07:52:42,541 [INFO] [OPTIONS] Reconciled BUY position: MSTR261009C00165000 1x call @165.0 entry=$13.75
+2026-09-22 07:52:42,541 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-22 07:52:42,609 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-22 07:52:42,610 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-22 07:52:42,610 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-22 07:52:42,610 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-22 07:52:42,610 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-22 07:52:42,611 [INFO] ======================================================================
+2026-09-22 07:52:42,611 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-22 07:52:42,611 [INFO] ======================================================================
+2026-09-22 07:52:42,611 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-22 07:52:42,611 [INFO] Priority 2 (Established): 16 stocks
+2026-09-22 07:52:42,611 [INFO] Total Universe: 42 stocks
+2026-09-22 07:52:42,611 [INFO] Scan: 3 min fixed
+2026-09-22 07:52:42,611 [INFO] ======================================================================
+2026-09-22 07:52:42,643 [INFO] Equity:          $86,760.37
+2026-09-22 07:52:42,643 [INFO] Buying Power:    $0.00
+2026-09-22 07:52:42,643 [INFO] PDT Status:      No
+2026-09-22 07:52:42,643 [INFO] Day Trade Count: None
+2026-09-22 07:52:42,643 [INFO] ======================================================================
+2026-09-22 07:52:42,643 [INFO] Starting… Press Ctrl+C to stop
+2026-09-22 07:52:42,643 [INFO] ======================================================================
+2026-09-22 07:52:42,644 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-22 07:52:42,644 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-22 07:52:42,644 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-22 07:52:42,645 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-22 07:54:12,646 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-22 07:54:13,224 [INFO] ======================================================================
+2026-09-22 07:54:13,224 [INFO] NEW DAY: 2026-09-22 | Start equity: $85,865.79
+2026-09-22 07:54:13,226 [INFO] Universe pruned: no expired tickers
+2026-09-22 07:54:13,226 [INFO] ======================================================================
+2026-09-22 07:54:13,267 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 07:54:13,299 [INFO] Schwab: Refreshing access token...
+2026-09-22 07:54:14,171 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-22 07:54:15,201 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 07:54:15,202 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 07:54:15,258 [WARNING] INTRADAY 04:00 ET START: close submitted for GLND qty=25000
+2026-09-22 07:54:15,286 [WARNING] INTRADAY 04:00 ET START: close submitted for IAG qty=1
+2026-09-22 07:54:15,323 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 07:54:15,324 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 07:54:15,628 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.54% < 0.25%
+2026-09-22 07:54:15,628 [INFO] LIVE PROBE STKE: scale-in skipped; gain -3.74% < 0.25%
+2026-09-22 07:54:15,628 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.28% < 0.25%
+2026-09-22 07:54:15,628 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 07:57:16,023 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 07:57:16,064 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 07:57:16,064 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 07:57:16,122 [INFO] INTRADAY 04:00 ET START: cancelled order 17f6a362-2710-4a2a-8576-f8a28cfd0113 (IAG)
+2026-09-22 07:57:16,150 [INFO] INTRADAY 04:00 ET START: cancelled order 582a3f23-9ef2-4bfb-8ed0-b40c5eba7e07 (GLND)
+2026-09-22 07:57:16,180 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 07:57:16,180 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 07:57:16,245 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.54% < 0.25%
+2026-09-22 07:57:16,246 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 07:57:16,246 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.28% < 0.25%
+2026-09-22 07:57:16,246 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 07:57:16,246 [INFO] Heartbeat: 2026-09-22T07:57:16.246255
+2026-09-22 08:00:16,666 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:00:16,709 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:00:16,709 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:00:16,765 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:00:16,766 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:00:16,825 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.38% < 0.25%
+2026-09-22 08:00:16,826 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:00:16,826 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:00:16,826 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:00:16,826 [INFO] Heartbeat: 2026-09-22T08:00:16.826386
+2026-09-22 08:03:17,248 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:03:17,280 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:03:18,097 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:03:18,153 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:03:18,154 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:03:18,208 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.46% < 0.25%
+2026-09-22 08:03:18,208 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:03:18,209 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:03:18,209 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:03:18,209 [INFO] Heartbeat: 2026-09-22T08:03:18.209524
+2026-09-22 08:06:18,711 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:06:18,749 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:06:18,749 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:06:18,813 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:06:18,813 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:06:18,879 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.61% < 0.25%
+2026-09-22 08:06:18,879 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:06:18,879 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:06:18,880 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:06:18,880 [INFO] Heartbeat: 2026-09-22T08:06:18.880330
+2026-09-22 08:09:19,464 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:09:19,500 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:09:19,501 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:09:19,558 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:09:19,559 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:09:19,624 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.58% < 0.25%
+2026-09-22 08:09:19,624 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:09:19,624 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:09:19,624 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:09:19,625 [INFO] Heartbeat: 2026-09-22T08:09:19.625027
+2026-09-22 08:12:20,980 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:12:21,011 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:12:21,011 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:12:21,069 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:12:21,069 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:12:21,136 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.79% < 0.25%
+2026-09-22 08:12:21,136 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:12:21,136 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:12:21,136 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:12:21,136 [INFO] Heartbeat: 2026-09-22T08:12:21.136926
+2026-09-22 08:15:21,615 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:15:21,653 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:15:21,654 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:15:21,712 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:15:21,713 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:15:21,789 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.54% < 0.25%
+2026-09-22 08:15:21,790 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:15:21,790 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:15:21,790 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:15:21,790 [INFO] Heartbeat: 2026-09-22T08:15:21.790346
+2026-09-22 08:18:22,312 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:18:22,342 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:18:22,342 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:18:22,404 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:18:22,404 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:18:22,464 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.63% < 0.25%
+2026-09-22 08:18:22,464 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:18:22,464 [INFO] LIVE PROBE IAG: scale-in skipped; gain -1.33% < 0.25%
+2026-09-22 08:18:22,465 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:18:22,465 [INFO] Heartbeat: 2026-09-22T08:18:22.465156
+2026-09-22 08:21:22,990 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:21:23,022 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:21:23,022 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:21:23,078 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:21:23,078 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:21:23,136 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.63% < 0.25%
+2026-09-22 08:21:23,137 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:21:23,137 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.64% < 0.25%
+2026-09-22 08:21:23,137 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:21:23,137 [INFO] Heartbeat: 2026-09-22T08:21:23.137784
+2026-09-22 08:24:18,643 [INFO] ======================================================================
+2026-09-22 08:24:18,643 [INFO] STATUS
+2026-09-22 08:24:18,643 [INFO] Equity:     $87,879.71
+2026-09-22 08:24:18,643 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-22 08:24:18,644 [INFO] Positions:  14
+2026-09-22 08:24:18,644 [INFO] Unrealized: $-1829.30
+2026-09-22 08:24:18,644 [INFO]   APPX: 1003 @ $13.80 | $278.83 (+2.01%)
+2026-09-22 08:24:18,644 [INFO]   BSOL: 1996 @ $15.54 | $1293.70 (+4.17%)
+2026-09-22 08:24:18,644 [INFO]   GLND: 25000 @ $3.05 | $-2000.00 (-2.62%)
+2026-09-22 08:24:18,644 [INFO]   GRAL: 104 @ $105.59 | $100.00 (+0.91%)
+2026-09-22 08:24:18,645 [INFO]   IAG: 1 @ $20.27 | $-0.21 (-1.04%)
+2026-09-22 08:24:18,645 [INFO]   INTW: 885 @ $32.45 | $-607.20 (-2.11%)
+2026-09-22 08:24:18,645 [INFO]   LINT: 102 @ $164.11 | $-240.78 (-1.44%)
+2026-09-22 08:24:18,645 [INFO]   MRNX: 107 @ $113.37 | $-388.65 (-3.20%)
+2026-09-22 08:24:18,645 [INFO]   MSTR261009C00165000: 1 @ $13.75 | $-85.00 (-6.18%)
+2026-09-22 08:24:18,645 [INFO]   NVTS: 101 @ $12.23 | $-22.11 (-1.79%)
+2026-09-22 08:24:18,645 [INFO]   SDGR: 787 @ $30.17 | $8.33 (+0.03%)
+2026-09-22 08:24:18,646 [INFO]   STKE: 101 @ $1.59 | $-2.98 (-1.86%)
+2026-09-22 08:24:18,646 [INFO]   USGG: 2098 @ $5.93 | $-142.69 (-1.15%)
+2026-09-22 08:24:18,647 [INFO]   WBD: 445 @ $30.87 | $-20.53 (-0.15%)
+2026-09-22 08:24:18,647 [INFO] ======================================================================
+2026-09-22 08:24:18,652 [INFO] Universe pruned: 81 expired ticker(s): ['AKAN', 'AMDL', 'ANGX', 'AON', 'ASST', 'AXP', 'AXTA', 'AXTI', 'BABX', 'BB']…
+2026-09-22 08:24:23,685 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:24:23,724 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:24:23,725 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:24:23,790 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:24:23,790 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:24:23,889 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.79% < 0.25%
+2026-09-22 08:24:23,889 [INFO] LIVE PROBE STKE: scale-in skipped; gain -1.86% < 0.25%
+2026-09-22 08:24:23,890 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.99% < 0.25%
+2026-09-22 08:24:23,890 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:24:23,890 [INFO] Heartbeat: 2026-09-22T08:24:23.890439
+2026-09-22 08:27:24,319 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:27:24,358 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:27:24,358 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:27:24,423 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:27:24,423 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:27:24,502 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.71% < 0.25%
+2026-09-22 08:27:24,502 [INFO] LIVE PROBE STKE: scale-in skipped; gain -4.37% < 0.25%
+2026-09-22 08:27:24,502 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.64% < 0.25%
+2026-09-22 08:27:24,502 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:27:24,502 [INFO] Heartbeat: 2026-09-22T08:27:24.502489
+2026-09-22 08:30:24,957 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:30:24,992 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:30:24,992 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:30:25,049 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:30:25,049 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:30:25,112 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.71% < 0.25%
+2026-09-22 08:30:25,112 [INFO] LIVE PROBE STKE: scale-in skipped; gain -4.37% < 0.25%
+2026-09-22 08:30:25,112 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.64% < 0.25%
+2026-09-22 08:30:25,112 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:30:25,112 [INFO] Heartbeat: 2026-09-22T08:30:25.112761
+2026-09-22 08:33:25,594 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:33:25,631 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:33:25,631 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:33:25,686 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:33:25,687 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:33:25,746 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.79% < 0.25%
+2026-09-22 08:33:25,746 [INFO] LIVE PROBE STKE: scale-in skipped; gain -3.74% < 0.25%
+2026-09-22 08:33:25,746 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.64% < 0.25%
+2026-09-22 08:33:25,747 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:33:25,747 [INFO] Heartbeat: 2026-09-22T08:33:25.747373
+2026-09-22 08:36:26,203 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['APPX', 'BSOL', 'GRAL', 'INTW', 'LINT', 'MRNX', 'NVTS', 'SDGR', 'STKE', 'USGG', 'WBD']
+2026-09-22 08:36:26,239 [INFO] MOMENTUM RETAIN GLND: skipped; no protective stop found
+2026-09-22 08:36:26,240 [INFO] MOMENTUM RETAIN IAG: skipped; no protective stop found
+2026-09-22 08:36:26,298 [ERROR] INTRADAY 04:00 ET START: close failed for MSTR261009C00165000: {"code":42210000,"message":"options market orders are only allowed during market hours"}
+2026-09-22 08:36:26,299 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['MSTR261009C00165000']
+2026-09-22 08:36:26,368 [INFO] LIVE PROBE NVTS: scale-in skipped; gain -1.77% < 0.25%
+2026-09-22 08:36:26,368 [INFO] LIVE PROBE STKE: scale-in skipped; gain -3.11% < 0.25%
+2026-09-22 08:36:26,368 [INFO] LIVE PROBE IAG: scale-in skipped; gain -0.64% < 0.25%
+2026-09-22 08:36:26,368 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 08:36:26,368 [INFO] Heartbeat: 2026-09-22T08:36:26.368953
+2026-09-22 08:38:07,855 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-22 08:38:07,881 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-22 08:38:07,957 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-22 08:38:07,957 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-22 08:38:07,958 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-22 08:38:07,958 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-22 08:38:07,959 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-22 08:38:07,959 [INFO] ======================================================================
+2026-09-22 08:38:07,959 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-22 08:38:07,959 [INFO] ======================================================================
+2026-09-22 08:38:07,959 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-22 08:38:07,959 [INFO] Priority 2 (Established): 16 stocks
+2026-09-22 08:38:07,959 [INFO] Total Universe: 42 stocks
+2026-09-22 08:38:07,959 [INFO] Scan: 3 min fixed
+2026-09-22 08:38:07,959 [INFO] ======================================================================
+2026-09-22 08:38:07,990 [INFO] Equity:          $100,000.00
+2026-09-22 08:38:07,990 [INFO] Buying Power:    $400,000.00
+2026-09-22 08:38:07,990 [INFO] PDT Status:      No
+2026-09-22 08:38:07,990 [INFO] Day Trade Count: None
+2026-09-22 08:38:07,990 [INFO] ======================================================================
+2026-09-22 08:38:07,990 [INFO] Starting… Press Ctrl+C to stop
+2026-09-22 08:38:07,990 [INFO] ======================================================================
+2026-09-22 08:38:07,990 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-22 08:38:07,990 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-22 08:38:07,990 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-22 08:38:07,991 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-22 08:38:11,354 [WARNING] Startup TI capture failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff6537b1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff6537029d4]
+	msedgedriver!GetHandleVerifier [0x7ff653b313af+3841ff]
+	msedgedriver!(No symbol) [0x7ff653477312]
+	msedgedriver!(No symbol) [0x7ff653505ab6]
+	msedgedriver!(No symbol) [0x7ff65351d26f]
+	msedgedriver!(No symbol) [0x7ff6534d599c]
+	msedgedriver!(No symbol) [0x7ff6534d4c1d]
+	msedgedriver!(No symbol) [0x7ff6534d57c3]
+	msedgedriver!(No symbol) [0x7ff65360c4c2]
+	msedgedriver!(No symbol) [0x7ff65361bee9]
+	msedgedriver!GetHandleVerifier [0x7ff653859d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff653860261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65370e74f]
+	msedgedriver!(No symbol) [0x7ff653709124]
+	msedgedriver!(No symbol) [0x7ff65370924a]
+	msedgedriver!(No symbol) [0x7ff6536fa808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-22 08:38:11,380 [INFO] ======================================================================
+2026-09-22 08:38:11,381 [INFO] NEW DAY: 2026-09-22 | Start equity: $100,000.00
+2026-09-22 08:38:11,382 [INFO] Universe pruned: no expired tickers
+2026-09-22 08:38:11,382 [INFO] ======================================================================
+2026-09-22 08:38:12,641 [INFO] Quarterly P&L: +2.8% (target >= 50%)
+2026-09-22 08:38:12,957 [INFO] [SCAN] Market sentiment: neutral
+2026-09-22 08:38:12,987 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff6537b1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff6537029d4]
+	msedgedriver!GetHandleVerifier [0x7ff653b313af+3841ff]
+	msedgedriver!(No symbol) [0x7ff653477312]
+	msedgedriver!(No symbol) [0x7ff653505ab6]
+	msedgedriver!(No symbol) [0x7ff65351d26f]
+	msedgedriver!(No symbol) [0x7ff6534d599c]
+	msedgedriver!(No symbol) [0x7ff6534d4c1d]
+	msedgedriver!(No symbol) [0x7ff6534d57c3]
+	msedgedriver!(No symbol) [0x7ff65360c4c2]
+	msedgedriver!(No symbol) [0x7ff65361bee9]
+	msedgedriver!GetHandleVerifier [0x7ff653859d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff653860261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65370e74f]
+	msedgedriver!(No symbol) [0x7ff653709124]
+	msedgedriver!(No symbol) [0x7ff65370924a]
+	msedgedriver!(No symbol) [0x7ff6536fa808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-22 08:38:14,124 [INFO] [EDGAR] CIK map loaded: 8,046 companies
+2026-09-22 08:38:26,914 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-22 08:38:26,975 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-22 08:38:26,976 [INFO] [SCAN] 0 symbols (filtered, 8 workers): 
+2026-09-22 08:38:26,976 [INFO] [SCAN] No targets after filtering — skipping scan
