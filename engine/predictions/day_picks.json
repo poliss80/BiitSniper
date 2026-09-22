@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-21T15:30:09-04:00",
+  "generated_at": "2026-09-21T15:45:08-04:00",
   "date": "2026-09-21",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "IAG",
+      "symbol": "GLND",
       "action": "buy",
-      "price": 20.35,
-      "confidence": 0.9,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.82"
+      "price": 3.055,
+      "confidence": 0.84,
+      "strategy": "MomentumContinuationPullback",
+      "reason": "Momentum continuation high-RVOL pullback/reclaim rvol=169.6x up=5.0% above VWAP and range midpoint MACD hist=0.0137 RSI=77.1"
     }
   ]
 }
