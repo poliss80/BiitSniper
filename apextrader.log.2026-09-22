@@ -9976,3 +9976,45 @@ Stacktrace:
 2026-09-22 22:47:56,736 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
 2026-09-22 22:47:56,991 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
 2026-09-22 22:47:56,992 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:50:57,012 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:50:57,921 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.24419735"}
+2026-09-22 22:50:59,240 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 22:51:00,812 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:51:00,812 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:51:00,812 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:51:00,873 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:51:00,935 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:51:00,993 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:51:00,994 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:51:01,051 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:51:01,057 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:51:01,057 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:51:01,058 [INFO] Heartbeat: 2026-09-22T22:51:01.058179
+2026-09-22 22:54:01,079 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:54:01,490 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.24419735"}
+2026-09-22 22:54:02,228 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 22:54:03,814 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:54:03,814 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:54:03,814 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:54:03,873 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:54:03,931 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:54:03,993 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:54:03,993 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:54:04,058 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:54:04,062 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:54:04,063 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:54:04,063 [INFO] Heartbeat: 2026-09-22T22:54:04.063152
+2026-09-22 22:57:04,082 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:57:04,503 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.24419735"}
+2026-09-22 22:57:05,524 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 22:57:07,006 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:57:07,006 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:57:07,006 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:57:07,067 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:57:07,127 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:57:07,193 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:57:07,194 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:57:07,250 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:57:07,256 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:57:07,256 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:57:07,256 [INFO] Heartbeat: 2026-09-22T22:57:07.256863
