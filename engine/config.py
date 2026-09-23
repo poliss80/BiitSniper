@@ -623,6 +623,7 @@ CRYPTO_SL_PCT        = float(os.getenv("CRYPTO_SL_PCT",  "2.5"))         # stop-
 CRYPTO_RSI_BUY_MIN   = float(os.getenv("CRYPTO_RSI_BUY_MIN",  "42.0"))  # RSI must be above this to buy
 CRYPTO_RSI_BUY_MAX   = float(os.getenv("CRYPTO_RSI_BUY_MAX",  "70.0"))  # RSI must be below this to buy
 CRYPTO_RSI_SELL_MAX  = float(os.getenv("CRYPTO_RSI_SELL_MAX", "52.0"))  # RSI must be below this to close
+CRYPTO_MIN_CONFIDENCE = float(os.getenv("CRYPTO_MIN_CONFIDENCE", "0.70"))  # min signal confidence to buy
 
 # Scan interval during weekend (minutes)
 CRYPTO_SCAN_INTERVAL_MIN = int(os.getenv("CRYPTO_SCAN_INTERVAL_MIN", "30"))

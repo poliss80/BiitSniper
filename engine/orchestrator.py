@@ -514,6 +514,12 @@ def _run_crypto_cycle(ctx: AppContext) -> None:
         buys_this_cycle = 0
         for sig in signals:
             if sig.action == "buy":
+                if sig.confidence < cfg.CRYPTO_MIN_CONFIDENCE:
+                    log.info(
+                        f"[CRYPTO] SKIP {sig.symbol} conf={sig.confidence:.0%} "
+                        f"< min {cfg.CRYPTO_MIN_CONFIDENCE:.0%}"
+                    )
+                    continue
                 # No hard position-count cap — CRYPTO_MIN_NOTIONAL already
                 # stops new buys once available cash is too small to fund one.
                 if ctx.crypto_trader.execute_buy(sig):

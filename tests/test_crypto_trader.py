@@ -215,5 +215,35 @@ class TestCryptoTraderScanDedup(unittest.TestCase):
         mock_evaluate.assert_called_once_with(SYM)
 
 
+class TestCryptoMinConfidenceGate(unittest.TestCase):
+    """Regression: _run_crypto_cycle must skip buy signals below
+    CRYPTO_MIN_CONFIDENCE instead of executing every signal regardless
+    of confidence."""
+
+    def test_low_confidence_buy_is_skipped(self):
+        from types import SimpleNamespace as _NS
+        from engine import orchestrator
+
+        low_conf_sig = _NS(symbol=SYM, action="buy", price=1.0, confidence=0.65, reason="test")
+        high_conf_sig = _NS(symbol="ETH/USD", action="buy", price=1.0, confidence=0.90, reason="test")
+
+        crypto_trader = SimpleNamespace(
+            monitor_positions=lambda: None,
+            status_summary=lambda: "ok",
+            scan=lambda universe: [high_conf_sig, low_conf_sig],
+            execute_buy=lambda sig: True,
+        )
+        ctx = SimpleNamespace(crypto_trader=crypto_trader)
+
+        with patch.object(_cfg, "CRYPTO_MIN_CONFIDENCE", 0.70), patch.object(
+            orchestrator.cfg, "CRYPTO_MIN_CONFIDENCE", 0.70
+        ), patch.object(orchestrator.cfg, "CRYPTO_UNIVERSE", [SYM, "ETH/USD"]):
+            calls = []
+            crypto_trader.execute_buy = lambda sig: calls.append(sig.symbol) or True
+            orchestrator._run_crypto_cycle(ctx)
+
+        self.assertEqual(calls, ["ETH/USD"], "only the >=70% confidence signal should execute")
+
+
 if __name__ == "__main__":
     unittest.main()

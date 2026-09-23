@@ -10263,3 +10263,82 @@ Stacktrace:
 2026-09-22 23:19:28,651 [INFO] Startup TI capture — refreshing universe before first scan…
 2026-09-22 23:19:28,651 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
 2026-09-22 23:19:28,653 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-22 23:20:58,653 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-22 23:20:59,054 [INFO] ======================================================================
+2026-09-22 23:20:59,055 [INFO] NEW DAY: 2026-09-22 | Start equity: $97,683.12
+2026-09-22 23:20:59,058 [INFO] Universe pruned: no expired tickers
+2026-09-22 23:20:59,058 [INFO] ======================================================================
+2026-09-22 23:20:59,058 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:20:59,651 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-22 23:21:00,660 [INFO] [CRYPTO] 9 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), DOT/USD(1.2180→TP:1.2667), FIL/USD(1.0450→TP:1.0868), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170)
+2026-09-22 23:21:02,736 [INFO] [CRYPTO] #1: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:21:02,736 [INFO] [CRYPTO] #2: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:21:02,736 [INFO] [CRYPTO] #3: YFI/USD BUY @ 2359.6285 conf=72% | RSI=63.0 3-bar uptrend
+2026-09-22 23:21:02,736 [INFO] [CRYPTO] #4: XTZ/USD BUY @ 0.3477 conf=71% | RSI=60.2 3-bar uptrend
+2026-09-22 23:21:02,736 [INFO] [CRYPTO] #5: XRP/USD BUY @ 1.5722 conf=71% | RSI=61.5 3-bar uptrend
+2026-09-22 23:21:02,846 [INFO] [CRYPTO] LIMIT BUY ADA/USD qty=4200.174445 (~$1069) limit=0.2546 | software TP=0.2644 SL=0.2479 | conf=73% | RSI=63.7 3-bar uptrend | order=e87ee2b1-abf6-4e59-9706-ac9adf6690c1
+2026-09-22 23:21:02,941 [INFO] [CRYPTO] LIMIT BUY BONK/USD qty=270041322.314050 (~$980) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=73% | RSI=63.7 3-bar uptrend | order=f67db10f-5392-49f0-acde-71e92a5962b5
+2026-09-22 23:21:03,045 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=0.380240 (~$899) limit=2363.1679 | software TP=2454.0136 SL=2300.6378 | conf=72% | RSI=63.0 3-bar uptrend | order=df992b17-1233-460d-864a-78a842ba1854
+2026-09-22 23:21:03,142 [INFO] [CRYPTO] LIMIT BUY XTZ/USD qty=2365.560758 (~$824) limit=0.3482 | software TP=0.3616 SL=0.3390 | conf=71% | RSI=60.2 3-bar uptrend | order=fe72a4fb-795a-4f7d-a38a-bffe839c2730
+2026-09-22 23:21:03,258 [INFO] [CRYPTO] LIMIT BUY XRP/USD qty=479.509708 (~$755) limit=1.5746 | software TP=1.6351 SL=1.5329 | conf=71% | RSI=61.5 3-bar uptrend | order=2225060a-bdd4-45e8-b05a-8015074b2078
+2026-09-22 23:21:03,365 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1594.244781 (~$692) limit=0.4342 | software TP=0.4509 SL=0.4227 | conf=71% | RSI=60.8 3-bar uptrend | order=593ccaca-277e-495b-904d-ee977733d857
+2026-09-22 23:21:03,473 [INFO] [CRYPTO] LIMIT BUY DOGE/USD qty=6309.711013 (~$635) limit=0.1006 | software TP=0.1044 SL=0.0979 | conf=71% | RSI=60.2 3-bar uptrend | order=bd4ecb47-4b01-4544-97a1-2266e2ac9d31
+2026-09-22 23:21:03,570 [INFO] [CRYPTO] LIMIT BUY PAXG/USD qty=0.133178 (~$582) limit=4367.5415 | software TP=4535.4400 SL=4251.9750 | conf=70% | RSI=59.8 3-bar uptrend | order=f692fef7-c7bc-4a48-ab79-33ee4c5d8ef7
+2026-09-22 23:21:03,677 [INFO] [CRYPTO] LIMIT BUY SHIB/USD qty=87133986.928105 (~$533) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=70% | RSI=59.8 3-bar uptrend | order=7f87d61c-ff2a-4542-8f0a-831a6184a977
+2026-09-22 23:21:03,780 [INFO] [CRYPTO] LIMIT BUY ETH/USD qty=0.177280 (~$489) limit=2757.3298 | software TP=2863.3280 SL=2684.3700 | conf=69% | RSI=56.7 3-bar uptrend | order=7a2ca171-6381-439b-8fa8-ba9b136c83c4
+2026-09-22 23:21:03,872 [INFO] [CRYPTO] LIMIT BUY RENDER/USD qty=241.653237 (~$448) limit=1.8542 | software TP=1.9255 SL=1.8052 | conf=69% | RSI=57.3 3-bar uptrend | order=7535480b-86f5-47e4-81ee-1691fe01dfc2
+2026-09-22 23:21:03,973 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=929.402350 (~$411) limit=0.4419 | software TP=0.4589 SL=0.4302 | conf=69% | RSI=56.6 3-bar uptrend | order=ff0c9479-8aa1-4aed-9b36-8f8abd26f2fb
+2026-09-22 23:21:04,068 [INFO] [CRYPTO] LIMIT BUY LINK/USD qty=30.621976 (~$400) limit=13.0625 | software TP=13.5647 SL=12.7169 | conf=67% | RSI=54.5 3-bar uptrend | order=5d4434d5-c10c-4d79-9655-f8cac571396c
+2026-09-22 23:21:04,167 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=1564.713336 (~$400) limit=0.2556 | software TP=0.2655 SL=0.2489 | conf=67% | RSI=54.1 3-bar uptrend | order=8cc519ad-5682-4787-acd2-a7c870ce525b
+2026-09-22 23:21:04,272 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=3645.765402 (~$400) limit=0.1097 | software TP=0.1139 SL=0.1068 | conf=66% | RSI=53.1 3-bar uptrend | order=b905ab0e-6f6d-44f0-b5b6-8b8922878480
+2026-09-22 23:21:05,879 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:21:06,194 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:21:06,195 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:24:06,216 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:24:06,964 [INFO] [CRYPTO] BROKER SL placed for PAXG/USD stop=4251.9750 limit=4230.7151 qty=0.13284482 | order=944ddf1a-4484-499c-9e5c-0533720832c0
+2026-09-22 23:24:07,055 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] BROKER SL placed for XTZ/USD stop=0.3390 limit=0.3373 qty=2359.64449608 | order=9d2f61f4-9724-4853-aa49-15273f4c8bac
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] Position closed externally: ADA/USD
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] Position closed externally: BONK/USD
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] Position closed externally: YFI/USD
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] Position closed externally: XRP/USD
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 23:24:07,311 [INFO] [CRYPTO] Position closed externally: DOGE/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: SHIB/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: ETH/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: RENDER/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: LINK/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 23:24:07,312 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 23:24:07,969 [INFO] [CRYPTO] 11 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), DOT/USD(1.2180→TP:1.2667), FIL/USD(1.0450→TP:1.0868), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XTZ/USD(0.3482→TP:0.3616), PAXG/USD(4367.5415→TP:4535.4400)
+2026-09-22 23:24:08,353 [INFO] ok
+2026-09-22 23:24:08,354 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-22 23:24:08,354 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-22 23:24:08,354 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-22 23:24:08,355 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-22 23:24:08,355 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-22 23:24:08,356 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-22 23:24:08,356 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-22 23:24:09,717 [INFO] [CRYPTO] #1: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:24:09,718 [INFO] [CRYPTO] #2: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:24:09,718 [INFO] [CRYPTO] #3: YFI/USD BUY @ 2359.6285 conf=72% | RSI=63.0 3-bar uptrend
+2026-09-22 23:24:09,718 [INFO] [CRYPTO] #4: XRP/USD BUY @ 1.5722 conf=71% | RSI=61.5 3-bar uptrend
+2026-09-22 23:24:09,718 [INFO] [CRYPTO] #5: LDO/USD BUY @ 0.4335 conf=71% | RSI=60.8 3-bar uptrend
+2026-09-22 23:24:09,813 [INFO] [CRYPTO] LIMIT BUY ADA/USD qty=1571.083702 (~$400) limit=0.2546 | software TP=0.2644 SL=0.2479 | conf=73% | RSI=63.7 3-bar uptrend | order=4d26dfee-436f-4ef8-9a5d-7d52c5274a2e
+2026-09-22 23:24:09,908 [INFO] [CRYPTO] LIMIT BUY BONK/USD qty=110192837.465565 (~$400) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=73% | RSI=63.7 3-bar uptrend | order=2b3c9b90-c247-4cb5-9c10-24a0e4bb3664
+2026-09-22 23:24:10,000 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=0.169264 (~$400) limit=2363.1679 | software TP=2454.0136 SL=2300.6378 | conf=72% | RSI=63.0 3-bar uptrend | order=86c38d21-85d5-470d-b78e-24de5d7a524d
+2026-09-22 23:24:10,090 [INFO] [CRYPTO] LIMIT BUY XRP/USD qty=254.031420 (~$400) limit=1.5746 | software TP=1.6351 SL=1.5329 | conf=71% | RSI=61.5 3-bar uptrend | order=f6972b08-2d7e-45b5-9a51-cfbfdde86df6
+2026-09-22 23:24:10,180 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=921.235897 (~$400) limit=0.4342 | software TP=0.4509 SL=0.4227 | conf=71% | RSI=60.8 3-bar uptrend | order=914bafdb-0d3d-4cf8-8464-03f84dea4789
+2026-09-22 23:24:10,267 [INFO] [CRYPTO] LIMIT BUY DOGE/USD qty=3977.502451 (~$400) limit=0.1006 | software TP=0.1044 SL=0.0979 | conf=71% | RSI=60.2 3-bar uptrend | order=15981ef5-3440-429f-ab8f-89f37ab2f16e
+2026-09-22 23:24:10,362 [INFO] [CRYPTO] LIMIT BUY SHIB/USD qty=65359477.124183 (~$400) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=70% | RSI=59.8 3-bar uptrend | order=36ceb662-8cd9-400c-8421-b321489956f8
+2026-09-22 23:24:10,456 [INFO] [CRYPTO] LIMIT BUY ETH/USD qty=0.145068 (~$400) limit=2757.3298 | software TP=2863.3280 SL=2684.3700 | conf=69% | RSI=56.7 3-bar uptrend | order=43354dc8-c221-4ddd-9027-c65608c16e46
+2026-09-22 23:24:10,575 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=118.18, min=400.0) — skipping
+2026-09-22 23:24:10,629 [WARNING] [CRYPTO] Insufficient cash balance for ONDO/USD (available=118.18, min=400.0) — skipping
+2026-09-22 23:24:10,686 [WARNING] [CRYPTO] Insufficient cash balance for LINK/USD (available=118.18, min=400.0) — skipping
+2026-09-22 23:24:10,748 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=118.18, min=400.0) — skipping
+2026-09-22 23:24:10,801 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=118.18, min=400.0) — skipping
+2026-09-22 23:24:10,859 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:24:10,863 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:24:10,864 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:24:10,864 [INFO] Heartbeat: 2026-09-22T23:24:10.864218
