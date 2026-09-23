@@ -2015,11 +2015,11 @@ class EnhancedExecutor:
 
         option_symbols = {
             p.symbol for p in positions
-            if str(getattr(p, "asset_class", "")).lower() == "us_option"
+            if getattr(p, "asset_class", "") == "us_option"
         }
         crypto_symbols = {
             p.symbol for p in positions
-            if str(getattr(p, "asset_class", "")).lower() == "crypto"
+            if getattr(p, "asset_class", "") == "crypto"
         }
         active = {
             p.symbol for p in positions

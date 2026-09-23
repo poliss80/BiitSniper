@@ -163,3 +163,599 @@
 2026-09-23 05:27:26,324 [INFO]   WBD: 1 @ $30.82 | $-0.03 (-0.10%)
 2026-09-23 05:27:26,324 [INFO]   XRPUSD: 732.440816377 @ $1.57 | $19.40 (+1.68%)
 2026-09-23 05:27:26,324 [INFO] ======================================================================
+2026-09-23 05:27:43,808 [INFO] Restored position exit state: MAZE, RSKD, WBD, EAF
+2026-09-23 05:27:43,839 [INFO] Entry log rebuilt from today's orders: MAZE, RSKD, WBD, EAF
+2026-09-23 05:27:43,869 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-23 05:27:43,897 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-23 05:27:43,962 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-23 05:27:43,962 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-23 05:27:43,963 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-23 05:27:43,963 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-23 05:27:43,963 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-23 05:27:43,963 [INFO] ======================================================================
+2026-09-23 05:27:43,963 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-23 05:27:43,963 [INFO] ======================================================================
+2026-09-23 05:27:43,963 [INFO] Priority 1 (Momentum): 92 stocks
+2026-09-23 05:27:43,963 [INFO] Priority 2 (Established): 16 stocks
+2026-09-23 05:27:43,963 [INFO] Total Universe: 112 stocks
+2026-09-23 05:27:43,963 [INFO] Scan: 3 min fixed
+2026-09-23 05:27:43,963 [INFO] ======================================================================
+2026-09-23 05:27:43,987 [INFO] Equity:          $97,625.55
+2026-09-23 05:27:43,987 [INFO] Buying Power:    $151,268.01
+2026-09-23 05:27:43,987 [INFO] PDT Status:      No
+2026-09-23 05:27:43,987 [INFO] Day Trade Count: None
+2026-09-23 05:27:43,988 [INFO] ======================================================================
+2026-09-23 05:27:43,988 [INFO] Starting… Press Ctrl+C to stop
+2026-09-23 05:27:43,988 [INFO] ======================================================================
+2026-09-23 05:27:43,988 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-23 05:27:43,988 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-23 05:27:43,988 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-23 05:27:43,989 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-23 05:27:46,857 [WARNING] Startup TI capture failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff6537b1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff6537029d4]
+	msedgedriver!GetHandleVerifier [0x7ff653b313af+3841ff]
+	msedgedriver!(No symbol) [0x7ff653477312]
+	msedgedriver!(No symbol) [0x7ff653505ab6]
+	msedgedriver!(No symbol) [0x7ff65351d26f]
+	msedgedriver!(No symbol) [0x7ff6534d599c]
+	msedgedriver!(No symbol) [0x7ff6534d4c1d]
+	msedgedriver!(No symbol) [0x7ff6534d57c3]
+	msedgedriver!(No symbol) [0x7ff65360c4c2]
+	msedgedriver!(No symbol) [0x7ff65361bee9]
+	msedgedriver!GetHandleVerifier [0x7ff653859d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff653860261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65370e74f]
+	msedgedriver!(No symbol) [0x7ff653709124]
+	msedgedriver!(No symbol) [0x7ff65370924a]
+	msedgedriver!(No symbol) [0x7ff6536fa808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-23 05:27:46,884 [INFO] ======================================================================
+2026-09-23 05:27:46,884 [INFO] NEW DAY: 2026-09-23 | Start equity: $97,625.55
+2026-09-23 05:27:46,885 [INFO] Universe pruned: no expired tickers
+2026-09-23 05:27:46,885 [INFO] ======================================================================
+2026-09-23 05:27:46,886 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:27:47,795 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:27:47,881 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:27:48,939 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:27:50,382 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:27:50,383 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:27:50,383 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:27:50,383 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:27:50,383 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:27:50,413 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:27:50,442 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:27:50,443 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:27:51,155 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:27:51,155 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:27:51,214 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:27:51,243 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:27:51,269 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:27:51,299 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:27:51,326 [WARNING] INTRADAY 04:00 ET START: close submitted for EAF qty=1
+2026-09-23 05:27:51,352 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:27:51,379 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:27:51,405 [WARNING] INTRADAY 04:00 ET START: close submitted for GRML qty=1
+2026-09-23 05:27:51,430 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:27:51,455 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:27:51,485 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:27:51,512 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:27:51,538 [WARNING] INTRADAY 04:00 ET START: close submitted for SGRY qty=1
+2026-09-23 05:27:51,564 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:27:51,590 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:27:51,617 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:27:51,642 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:27:51,671 [WARNING] INTRADAY 04:00 ET START: close submitted for WBD qty=1
+2026-09-23 05:27:51,697 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:27:51,697 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:27:51,989 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-23 05:27:52,231 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:27:52,231 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:30:52,252 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:30:53,350 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:30:53,409 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:30:54,503 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:30:56,082 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:30:56,083 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:30:56,083 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:30:56,083 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:30:56,083 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:30:56,115 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:30:56,148 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:30:56,149 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:30:56,149 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:30:56,150 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:30:56,211 [INFO] INTRADAY 04:00 ET START: cancelled order 4eda3562-8465-46b5-9ccf-efcc96d13ccb (WBD)
+2026-09-23 05:30:56,239 [INFO] INTRADAY 04:00 ET START: cancelled order a758ee3b-3d89-4629-86e3-164f809f9631 (SGRY)
+2026-09-23 05:30:56,267 [INFO] INTRADAY 04:00 ET START: cancelled order dea4a3ea-63c5-4c7b-90e6-d75171937df3 (GRML)
+2026-09-23 05:30:56,296 [INFO] INTRADAY 04:00 ET START: cancelled order 70b74e3d-45ed-4668-9f26-90bf28e557ee (EAF)
+2026-09-23 05:30:56,326 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:30:56,354 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:30:56,384 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:30:56,413 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:30:56,444 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:30:56,471 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:30:56,500 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:30:56,528 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:30:56,556 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:30:56,585 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:30:56,613 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:30:56,643 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:30:56,672 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:30:56,698 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:30:56,726 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:30:56,727 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:30:56,781 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-23 05:30:56,781 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:30:56,782 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:30:56,782 [INFO] Heartbeat: 2026-09-23T05:30:56.782144
+2026-09-23 05:33:56,803 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:33:57,673 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:33:57,729 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:33:58,657 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:34:00,141 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:34:00,142 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:34:00,142 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:34:00,142 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:34:00,142 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:34:00,168 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:34:00,199 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:34:00,199 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:34:00,199 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:34:00,199 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:34:00,261 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:34:00,287 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:34:00,312 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:34:00,338 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:34:00,364 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:34:00,395 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:34:00,425 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:34:00,453 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:34:00,483 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:34:00,509 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:34:00,535 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:34:00,561 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:34:00,587 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:34:00,616 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:34:00,642 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:34:00,642 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:34:00,698 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:34:00,698 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:34:00,698 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:34:00,698 [INFO] Heartbeat: 2026-09-23T05:34:00.698616
+2026-09-23 05:37:00,721 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:37:01,799 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:37:01,859 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:37:02,888 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:37:04,506 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:37:04,507 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:37:04,507 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:37:04,507 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:37:04,507 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:37:04,537 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:37:04,567 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:37:04,567 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:37:04,567 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:37:04,568 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:37:04,623 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:37:04,648 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:37:04,673 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:37:04,699 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:37:04,726 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:37:04,754 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:37:04,779 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:37:04,810 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:37:04,838 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:37:04,865 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:37:04,891 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:37:04,917 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:37:04,945 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:37:04,974 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:37:05,005 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:37:05,005 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:37:05,062 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:37:05,063 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:37:05,063 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:37:05,063 [INFO] Heartbeat: 2026-09-23T05:37:05.063417
+2026-09-23 05:40:05,082 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:40:06,248 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:40:06,320 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:40:07,341 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:40:09,062 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:40:09,063 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:40:09,063 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:40:09,063 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:40:09,063 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:40:09,096 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:40:09,129 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:40:09,129 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:40:09,130 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:40:09,130 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:40:09,195 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:40:09,226 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:40:09,257 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:40:09,287 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:40:09,317 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:40:09,352 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:40:09,383 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:40:09,415 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:40:09,448 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:40:09,482 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:40:09,515 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:40:09,546 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:40:09,578 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:40:09,609 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:40:09,643 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:40:09,643 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:40:09,709 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:40:09,709 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:40:09,710 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:40:09,710 [INFO] Heartbeat: 2026-09-23T05:40:09.710181
+2026-09-23 05:43:09,730 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:43:10,622 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:43:10,679 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:43:11,556 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:43:12,954 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:43:12,955 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:43:12,955 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:43:12,955 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:43:12,955 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:43:12,982 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:43:13,013 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:43:13,013 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:43:13,013 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:43:13,013 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:43:13,067 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:43:13,108 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:43:13,135 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:43:13,162 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:43:13,190 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:43:13,217 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:43:13,243 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:43:13,269 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:43:13,295 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:43:13,324 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:43:13,350 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:43:13,377 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:43:13,409 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:43:13,436 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:43:13,462 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:43:13,463 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:43:13,519 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:43:13,519 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:43:13,519 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:43:13,519 [INFO] Heartbeat: 2026-09-23T05:43:13.519826
+2026-09-23 05:46:13,541 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:46:14,456 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:46:14,518 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:46:15,413 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:46:16,907 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:46:16,907 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:46:16,907 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:46:16,907 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:46:16,908 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:46:16,937 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:46:16,965 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:46:16,966 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:46:16,966 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:46:16,966 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:46:17,023 [ERROR] INTRADAY 04:00 ET START: close failed for AAVEUSD: {"available":"0.000026449","balance":"26.444300519","code":40310000,"message":"insufficient balance for AAVE (requested: 26.444300519, available: 0.000026449)","symbol":"USD"}
+2026-09-23 05:46:17,050 [ERROR] INTRADAY 04:00 ET START: close failed for ADAUSD: {"available":"0.041618491","balance":"41618.486203501","code":40310000,"message":"insufficient balance for ADA (requested: 41618.486203501, available: 0.041618491)","symbol":"USD"}
+2026-09-23 05:46:17,079 [ERROR] INTRADAY 04:00 ET START: close failed for AVAXUSD: {"available":"0","balance":"388.234891372","code":40310000,"message":"insufficient balance for AVAX (requested: 388.234891372, available: 0)","symbol":"USD"}
+2026-09-23 05:46:17,108 [ERROR] INTRADAY 04:00 ET START: close failed for DOGEUSD: {"available":"0.010271785","balance":"10271.782643015","code":40310000,"message":"insufficient balance for DOGE (requested: 10271.782643015, available: 0.010271785)","symbol":"USD"}
+2026-09-23 05:46:17,136 [ERROR] INTRADAY 04:00 ET START: close failed for ETHUSD: {"available":"0.000000327","balance":"0.321864567","code":40310000,"message":"insufficient balance for ETH (requested: 0.321864567, available: 0.000000327)","symbol":"USD"}
+2026-09-23 05:46:17,167 [ERROR] INTRADAY 04:00 ET START: close failed for FILUSD: {"available":"0.00375871","balance":"3758.70269229","code":40310000,"message":"insufficient balance for FIL (requested: 3758.70269229, available: 0.00375871)","symbol":"USD"}
+2026-09-23 05:46:17,195 [ERROR] INTRADAY 04:00 ET START: close failed for LINKUSD: {"available":"0.000030586","balance":"30.576042806","code":40310000,"message":"insufficient balance for LINK (requested: 30.576042806, available: 0.000030586)","symbol":"USD"}
+2026-09-23 05:46:17,225 [ERROR] INTRADAY 04:00 ET START: close failed for LTCUSD: {"available":"0","balance":"44.171921679","code":40310000,"message":"insufficient balance for LTC (requested: 44.171921679, available: 0)","symbol":"USD"}
+2026-09-23 05:46:17,252 [ERROR] INTRADAY 04:00 ET START: close failed for PAXGUSD: {"available":"0.000000135","balance":"0.132844955","code":40310000,"message":"insufficient balance for PAXG (requested: 0.132844955, available: 0.000000135)","symbol":"USD"}
+2026-09-23 05:46:17,280 [ERROR] INTRADAY 04:00 ET START: close failed for PEPEUSD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.709127232, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:46:17,310 [ERROR] INTRADAY 04:00 ET START: close failed for SHIBUSD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264723.856209157, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:46:17,338 [ERROR] INTRADAY 04:00 ET START: close failed for SKYUSD: {"available":"0","balance":"67508.927206607","code":40310000,"message":"insufficient balance for SKY (requested: 67508.927206607, available: 0)","symbol":"USD"}
+2026-09-23 05:46:17,365 [ERROR] INTRADAY 04:00 ET START: close failed for SOLUSD: {"available":"0","balance":"21.571246904","code":40310000,"message":"insufficient balance for SOL (requested: 21.571246904, available: 0)","symbol":"USD"}
+2026-09-23 05:46:17,395 [ERROR] INTRADAY 04:00 ET START: close failed for TRUMPUSD: {"available":"0.000000004","balance":"0.001234764","code":40310000,"message":"insufficient balance for TRUMP (requested: 0.001234764, available: 0.000000004)","symbol":"USD"}
+2026-09-23 05:46:17,420 [ERROR] INTRADAY 04:00 ET START: close failed for XRPUSD: {"available":"0.000732447","balance":"732.440816377","code":40310000,"message":"insufficient balance for XRP (requested: 732.440816377, available: 0.000732447)","symbol":"USD"}
+2026-09-23 05:46:17,420 [WARNING] INTRADAY 04:00 ET START: close submissions failed; remaining=['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:46:17,475 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:46:17,476 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:46:17,476 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-23 05:46:17,476 [INFO] Heartbeat: 2026-09-23T05:46:17.476388
+2026-09-23 05:46:50,088 [INFO] Stopped by user
+2026-09-23 05:46:50,142 [INFO] ======================================================================
+2026-09-23 05:46:50,142 [INFO] STATUS
+2026-09-23 05:46:50,142 [INFO] Equity:     $97,818.72
+2026-09-23 05:46:50,142 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-23 05:46:50,143 [INFO] Positions:  21
+2026-09-23 05:46:50,143 [INFO] Unrealized: $2374.98
+2026-09-23 05:46:50,143 [INFO]   AAVEUSD: 26.444300519 @ $146.62 | $92.43 (+2.38%)
+2026-09-23 05:46:50,143 [INFO]   ADAUSD: 41618.486203501 @ $0.25 | $8.27 (+0.08%)
+2026-09-23 05:46:50,143 [INFO]   AVAXUSD: 388.234891372 @ $11.05 | $21.38 (+0.50%)
+2026-09-23 05:46:50,143 [INFO]   DOGEUSD: 10271.782643015 @ $0.10 | $-5.81 (-0.56%)
+2026-09-23 05:46:50,143 [INFO]   EAF: 1 @ $11.07 | $0.05 (+0.45%)
+2026-09-23 05:46:50,143 [INFO]   ETHUSD: 0.321864567 @ $2757.33 | $-6.74 (-0.76%)
+2026-09-23 05:46:50,143 [INFO]   FILUSD: 3758.70269229 @ $1.04 | $45.10 (+1.15%)
+2026-09-23 05:46:50,143 [INFO]   GRML: 1 @ $13.50 | $4.60 (+34.07%)
+2026-09-23 05:46:50,143 [INFO]   LINKUSD: 30.576042806 @ $13.06 | $-3.62 (-0.91%)
+2026-09-23 05:46:50,143 [INFO]   LTCUSD: 44.171921679 @ $62.25 | $4.86 (+0.18%)
+2026-09-23 05:46:50,143 [INFO]   MAZE: 970 @ $28.80 | $238.44 (+0.85%)
+2026-09-23 05:46:50,143 [INFO]   PAXGUSD: 0.132844955 @ $4361.31 | $-9.37 (-1.62%)
+2026-09-23 05:46:50,143 [INFO]   PEPEUSD: 398296459.709127232 @ $0.00 | $-9.16 (-0.47%)
+2026-09-23 05:46:50,143 [INFO]   RSKD: 4428 @ $6.93 | $1801.53 (+5.87%)
+2026-09-23 05:46:50,143 [INFO]   SGRY: 1 @ $15.76 | $0.09 (+0.57%)
+2026-09-23 05:46:50,143 [INFO]   SHIBUSD: 152264723.856209157 @ $0.00 | $-1.52 (-0.16%)
+2026-09-23 05:46:50,143 [INFO]   SKYUSD: 67508.927206607 @ $0.07 | $199.42 (+4.25%)
+2026-09-23 05:46:50,143 [INFO]   SOLUSD: 21.571246904 @ $118.20 | $-18.55 (-0.73%)
+2026-09-23 05:46:50,143 [INFO]   TRUMPUSD: 0.001234764 @ $2.23 | $-0.00 (-3.05%)
+2026-09-23 05:46:50,143 [INFO]   WBD: 1 @ $30.82 | $-0.04 (-0.13%)
+2026-09-23 05:46:50,143 [INFO]   XRPUSD: 732.440816377 @ $1.57 | $13.62 (+1.18%)
+2026-09-23 05:46:50,143 [INFO] ======================================================================
+2026-09-23 05:46:53,942 [INFO] Restored position exit state: MAZE, RSKD, WBD, EAF
+2026-09-23 05:46:53,976 [INFO] Entry log rebuilt from today's orders: MAZE, RSKD, WBD, EAF
+2026-09-23 05:46:54,007 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-23 05:46:54,032 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-23 05:46:54,105 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-23 05:46:54,105 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-23 05:46:54,105 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-23 05:46:54,105 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-23 05:46:54,106 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-23 05:46:54,106 [INFO] ======================================================================
+2026-09-23 05:46:54,106 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-23 05:46:54,106 [INFO] ======================================================================
+2026-09-23 05:46:54,106 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-23 05:46:54,106 [INFO] Priority 2 (Established): 16 stocks
+2026-09-23 05:46:54,106 [INFO] Total Universe: 42 stocks
+2026-09-23 05:46:54,106 [INFO] Scan: 3 min fixed
+2026-09-23 05:46:54,106 [INFO] ======================================================================
+2026-09-23 05:46:54,131 [INFO] Equity:          $97,818.72
+2026-09-23 05:46:54,131 [INFO] Buying Power:    $151,935.64
+2026-09-23 05:46:54,132 [INFO] PDT Status:      No
+2026-09-23 05:46:54,132 [INFO] Day Trade Count: None
+2026-09-23 05:46:54,132 [INFO] ======================================================================
+2026-09-23 05:46:54,132 [INFO] Starting… Press Ctrl+C to stop
+2026-09-23 05:46:54,132 [INFO] ======================================================================
+2026-09-23 05:46:54,132 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-23 05:46:54,133 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-23 05:46:54,133 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-23 05:46:54,134 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-23 05:48:24,135 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-23 05:48:24,694 [INFO] ======================================================================
+2026-09-23 05:48:24,694 [INFO] NEW DAY: 2026-09-23 | Start equity: $97,830.10
+2026-09-23 05:48:24,698 [INFO] Universe pruned: removed 14 expired ticker(s): ['AMZU', 'AXP', 'BIDU', 'BITI', 'CMS', 'EWY', 'MSTY', 'NIKE', 'SMCZ', 'SOXS']…
+2026-09-23 05:48:24,698 [INFO] ======================================================================
+2026-09-23 05:48:24,698 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:48:25,634 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:48:25,729 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:48:26,931 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:48:28,537 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:48:28,537 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:48:28,537 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:48:28,537 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:48:28,537 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:48:28,567 [INFO] INTRADAY 04:00 ET START: retaining crypto positions: ['AAVEUSD', 'ADAUSD', 'AVAXUSD', 'DOGEUSD', 'ETHUSD', 'FILUSD', 'LINKUSD', 'LTCUSD', 'PAXGUSD', 'PEPEUSD', 'SHIBUSD', 'SKYUSD', 'SOLUSD', 'TRUMPUSD', 'XRPUSD']
+2026-09-23 05:48:28,567 [INFO] INTRADAY 04:00 ET START: retaining scaled-in live-probe positions: ['MAZE', 'RSKD']
+2026-09-23 05:48:28,597 [INFO] MOMENTUM RETAIN EAF: skipped; no protective stop found
+2026-09-23 05:48:28,597 [INFO] MOMENTUM RETAIN GRML: skipped; no protective stop found
+2026-09-23 05:48:29,437 [INFO] MOMENTUM RETAIN SGRY: skipped; no protective stop found
+2026-09-23 05:48:29,439 [INFO] MOMENTUM RETAIN WBD: skipped; no protective stop found
+2026-09-23 05:48:29,499 [WARNING] INTRADAY 04:00 ET START: close submitted for EAF qty=1
+2026-09-23 05:48:29,537 [WARNING] INTRADAY 04:00 ET START: close submitted for GRML qty=1
+2026-09-23 05:48:29,566 [WARNING] INTRADAY 04:00 ET START: close submitted for SGRY qty=1
+2026-09-23 05:48:29,595 [WARNING] INTRADAY 04:00 ET START: close submitted for WBD qty=1
+2026-09-23 05:48:29,595 [INFO] INTRADAY 04:00 ET START: close requests submitted; continuing without waiting for confirmation: ['EAF', 'GRML', 'SGRY', 'WBD']
+2026-09-23 05:48:30,230 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-23 05:48:30,293 [WARNING] [CRYPTO] SL order placement failed for SHIB/USD: {"available":"152.264723857","balance":"152264723.856209157","code":40310000,"message":"insufficient balance for SHIB (requested: 152264571.5914853, available: 152.264723857)","symbol":"USD"}
+2026-09-23 05:48:30,761 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-23 05:48:31,191 [INFO] Quarterly P&L: +0.6% (target >= 50%)
+2026-09-23 05:48:31,449 [INFO] [SCAN] Market sentiment: neutral
+2026-09-23 05:48:31,483 [INFO] STALE ORDER: XRP/USD OrderSide.SELL 732 — age 54.0m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:31,841 [WARNING] STALE ORDER XRP/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:31,842 [INFO] STALE ORDER: TRUMP/USD OrderSide.SELL 0 — age 57.1m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:32,196 [WARNING] STALE ORDER TRUMP/USD: replace failed: {"code":40010001,"message":"qty must be \u003e 0"}
+2026-09-23 05:48:32,197 [INFO] STALE ORDER: ADA/USD OrderSide.SELL 41618 — age 100.1m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:32,553 [WARNING] STALE ORDER ADA/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:32,553 [INFO] STALE ORDER: SHIB/USD OrderSide.SELL 152264571 — age 231.8m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:32,908 [WARNING] STALE ORDER SHIB/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:32,908 [INFO] STALE ORDER: ETH/USD OrderSide.SELL 0 — age 231.8m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:33,261 [WARNING] STALE ORDER ETH/USD: replace failed: {"code":40010001,"message":"qty must be \u003e 0"}
+2026-09-23 05:48:33,261 [INFO] STALE ORDER: DOGE/USD OrderSide.SELL 10271 — age 234.9m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:33,615 [WARNING] STALE ORDER DOGE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:33,615 [INFO] STALE ORDER: LINK/USD OrderSide.SELL 30 — age 351.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:33,971 [WARNING] STALE ORDER LINK/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:33,971 [INFO] STALE ORDER: PAXG/USD OrderSide.SELL 0 — age 384.4m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:34,323 [WARNING] STALE ORDER PAXG/USD: replace failed: {"code":40010001,"message":"qty must be \u003e 0"}
+2026-09-23 05:48:34,324 [INFO] STALE ORDER: POL/USD OrderSide.BUY 3645 — age 387.5m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:34,681 [WARNING] STALE ORDER POL/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:34,681 [INFO] STALE ORDER: WIF/USD OrderSide.BUY 1564 — age 387.5m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:35,041 [WARNING] STALE ORDER WIF/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:35,041 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 929 — age 387.5m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:35,397 [WARNING] STALE ORDER ONDO/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:35,398 [INFO] STALE ORDER: RENDER/USD OrderSide.BUY 241 — age 387.5m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:35,753 [WARNING] STALE ORDER RENDER/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:35,754 [INFO] STALE ORDER: FIL/USD OrderSide.SELL 3758 — age 398.1m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:36,111 [WARNING] STALE ORDER FIL/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:36,111 [INFO] STALE ORDER: AAVE/USD OrderSide.SELL 26 — age 401.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:36,468 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:36,468 [INFO] STALE ORDER: PEPE/USD OrderSide.SELL 398296061 — age 420.7m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:36,825 [WARNING] STALE ORDER PEPE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:36,825 [INFO] STALE ORDER: SOL/USD OrderSide.SELL 21 — age 463.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:37,185 [WARNING] STALE ORDER SOL/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:37,185 [INFO] STALE ORDER: LTC/USD OrderSide.SELL 44 — age 463.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:37,541 [WARNING] STALE ORDER LTC/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:37,541 [INFO] STALE ORDER: SKY/USD OrderSide.SELL 67508 — age 469.7m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:37,897 [WARNING] STALE ORDER SKY/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:37,898 [INFO] STALE ORDER: AVAX/USD OrderSide.SELL 388 — age 469.7m (cutoff 3m) → limit @ current price
+2026-09-23 05:48:38,259 [WARNING] STALE ORDER AVAX/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:48:38,322 [WARNING] Trade Ideas scan still running (104s) — trading loop continues
+2026-09-23 05:48:39,615 [INFO] [EDGAR] CIK map loaded: 8,046 companies
+2026-09-23 05:48:40,729 [INFO] [EDGAR] 8-K match: SKFG — 8-K/A - Stark Focus Group, Inc. (0001794942) (Filer)
+2026-09-23 05:48:40,729 [INFO] [EDGAR] 8-K match: RTB — 8-K - RTB Digital, Inc. (0001419275) (Filer)
+2026-09-23 05:48:40,730 [INFO] [EDGAR] 8-K match: PHGE — 8-K - Tessera Defense & Homeland Security Inc. (0001739174) (Filer)
+2026-09-23 05:48:40,730 [INFO] [EDGAR] 8-K match: DHTI — 8-K - Dalrada Technology Group, Inc. (0000725394) (Filer)
+2026-09-23 05:48:40,730 [INFO] [EDGAR] 8-K match: TALO — 8-K - TALOS ENERGY INC. (0001724965) (Filer)
+2026-09-23 05:48:40,730 [INFO] [EDGAR] 8-K match: HALO — 8-K - HALOZYME THERAPEUTICS, INC. (0001159036) (Filer)
+2026-09-23 05:48:40,731 [INFO] [EDGAR] 8-K match: ACRE — 8-K - Ares Commercial Real Estate Corp (0001529377) (Filer)
+2026-09-23 05:48:40,731 [INFO] [EDGAR] 7 newly triggered tickers: ['SKFG', 'RTB', 'PHGE', 'DHTI', 'TALO', 'HALO', 'ACRE']
+2026-09-23 05:48:40,732 [INFO] [EDGAR] Adding SKFG to P2 + scan queue for monitoring
+2026-09-23 05:48:40,733 [INFO] [EDGAR] Adding RTB to P2 + scan queue for monitoring
+2026-09-23 05:48:40,733 [INFO] [EDGAR] Adding PHGE to P2 + scan queue for monitoring
+2026-09-23 05:48:40,733 [INFO] [EDGAR] Adding DHTI to P2 + scan queue for monitoring
+2026-09-23 05:48:40,733 [INFO] [EDGAR] Adding TALO to P2 + scan queue for monitoring
+2026-09-23 05:48:40,733 [INFO] [EDGAR] Adding HALO to P2 + scan queue for monitoring
+2026-09-23 05:48:40,733 [INFO] [EDGAR] Adding ACRE to P2 + scan queue for monitoring
+2026-09-23 05:48:55,494 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → SKFG(1.75:news-bullish, priority-queue), RTB(1.75:news-bullish, priority-queue), PHGE(1.75:news-bullish, priority-queue), DHTI(1.75:news-bullish, priority-queue), TALO(1.75:news-bullish, priority-queue), HALO(1.75:news-bullish, priority-queue), ACRE(1.75:news-bullish, priority-queue), MARA(0.35:news-bullish, universe-seed), WULF(0.35:news-bullish, universe-seed), CORZ(0.35:news-bullish, universe-seed)
+2026-09-23 05:48:55,494 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/10, universe_seed=w1.00/0/3, sentiment=w1.00/0/10
+2026-09-23 05:48:55,553 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-23 05:48:55,555 [INFO] [SCAN] 56 symbols (filtered, 8 workers): SKFG, RTB, PHGE, DHTI, TALO, HALO, ACRE, KEYS, MA, MCK, NI, NKE, NMM, PS, RKT, RL, RSG, SN, TFC, VZ, AGQ, BABX, DCOY, GDXU, IONL, IONQ, IONX, IONZ, IPDN, JAGX, KORU, LGCL, MKT, NWCL, QPUX, SBSW, SKHL, SKUU, TLSI, WHLR, AG, AU, BABA, BTQ, CWEB, CYPH, GDXD, GFI, IMCC, INFQ, KOLD, LRHC, NG, PPLT, PSLV, QBTS
+2026-09-23 05:48:55,556 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-23 05:49:03,035 [INFO] [GUARDRAIL SUMMARY] Rejected: 56 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 56
+2026-09-23 05:49:03,036 [INFO] [FUNNEL] targets=56 guardrail_rejected=56 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-23 05:49:03,036 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-23 05:49:03,036 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-23 05:49:03,103 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:49:03,337 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:49:03,337 [INFO] [SCAN] No signals this cycle
+2026-09-23 05:52:03,359 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:52:03,888 [INFO] [CRYPTO] BROKER SL placed for AAVE/USD stop=142.9590 limit=142.2442 qty=26.44427407 | order=70fd85ff-cc07-4f41-9c44-5f07b90babd1
+2026-09-23 05:52:03,947 [INFO] [CRYPTO] BROKER SL placed for ADA/USD stop=0.2482 limit=0.2470 qty=41618.44458501 | order=8df0bfc7-9524-4119-8075-d2d5b71a70be
+2026-09-23 05:52:04,010 [INFO] [CRYPTO] BROKER SL placed for AVAX/USD stop=10.7785 limit=10.7247 qty=388.23450313 | order=bbd75ab1-a33d-4155-a667-7925a0d699e4
+2026-09-23 05:52:04,069 [INFO] [CRYPTO] BROKER SL placed for DOGE/USD stop=0.0981 limit=0.0976 qty=10271.77237123 | order=177f79de-4de2-4422-9b60-f0694ad2fa72
+2026-09-23 05:52:04,140 [INFO] [CRYPTO] BROKER SL placed for ETH/USD stop=2688.3966 limit=2674.9546 qty=0.32186424 | order=72963fa6-4809-4fe7-96fb-d72a8d098475
+2026-09-23 05:52:04,196 [INFO] [CRYPTO] BROKER SL placed for FIL/USD stop=1.0189 limit=1.0138 qty=3758.69893358 | order=f74da42a-93fc-49f1-8238-c3b753ed45cc
+2026-09-23 05:52:04,255 [INFO] [CRYPTO] BROKER SL placed for LINK/USD stop=12.7360 limit=12.6723 qty=30.57601222 | order=50dd0dcc-1837-4ef1-a2e8-cfdb3e3cf1a5
+2026-09-23 05:52:04,321 [INFO] [CRYPTO] BROKER SL placed for LTC/USD stop=60.6938 limit=60.3903 qty=44.17187750 | order=914eb48e-6e21-4fc0-ba07-888383fb97c5
+2026-09-23 05:52:04,380 [INFO] [CRYPTO] BROKER SL placed for PAXG/USD stop=4252.2773 limit=4231.0159 qty=0.13284482 | order=80fb58ba-919a-49e9-a6b6-10bd5d3e97ad
+2026-09-23 05:52:04,439 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=1dc17c1f-c2c8-4004-a8ec-2158447d40d5
+2026-09-23 05:52:04,498 [INFO] [CRYPTO] BROKER SL placed for SHIB/USD stop=0.0000 limit=0.0000 qty=152264571.59148529 | order=ba57082e-c79b-4018-8efb-b037773b2fe5
+2026-09-23 05:52:04,558 [INFO] [CRYPTO] BROKER SL placed for SKY/USD stop=0.0678 limit=0.0674 qty=67508.85969767 | order=f72f7016-c65a-442b-aee6-0306d80b4e6d
+2026-09-23 05:52:04,617 [INFO] [CRYPTO] BROKER SL placed for SOL/USD stop=115.2450 limit=114.6688 qty=21.57122533 | order=864537e1-c400-494e-b053-a377554ee65f
+2026-09-23 05:52:04,677 [INFO] [CRYPTO] BROKER SL placed for TRUMP/USD stop=2.1722 limit=2.1613 qty=0.00123476 | order=9c5c6b76-be73-4476-b52f-cc82dea9ba63
+2026-09-23 05:52:04,741 [INFO] [CRYPTO] BROKER SL placed for XRP/USD stop=1.5352 limit=1.5276 qty=732.44008393 | order=ce2e8eb9-4c75-4114-ac22-f71c8daae0c9
+2026-09-23 05:52:05,479 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:52:06,933 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:52:06,933 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:52:06,933 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:52:06,933 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:52:06,933 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:52:06,966 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-23 05:52:07,024 [INFO] Quarterly P&L: +0.6% (target >= 50%)
+2026-09-23 05:52:07,024 [INFO] [SCAN] Market sentiment: neutral
+2026-09-23 05:52:07,055 [INFO] STALE ORDER: WBD OrderSide.SELL 1 — age 3.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:52:07,384 [WARNING] STALE ORDER WBD: can't determine price, skipping
+2026-09-23 05:52:07,385 [INFO] STALE ORDER: SGRY OrderSide.SELL 1 — age 3.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:52:07,714 [WARNING] STALE ORDER SGRY: can't determine price, skipping
+2026-09-23 05:52:07,715 [INFO] STALE ORDER: GRML OrderSide.SELL 1 — age 3.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:52:08,044 [WARNING] STALE ORDER GRML: can't determine price, skipping
+2026-09-23 05:52:08,045 [INFO] STALE ORDER: EAF OrderSide.SELL 1 — age 3.6m (cutoff 3m) → limit @ current price
+2026-09-23 05:52:08,373 [WARNING] STALE ORDER EAF: can't determine price, skipping
+2026-09-23 05:52:08,432 [INFO] Trade Ideas [PRIORITY_1_MOMENTUM] market_scope_360(50) + momentum_scanner(21) + unusual_options_volume(14): +50 new, 0 existing → top-10: ['WHLR', 'IPDN', 'DCOY', 'IONL', 'IONX', 'GRML', 'TLSI', 'LGCL', 'QPUX', 'IONQ']
+2026-09-23 05:52:08,433 [INFO] ── TI top-20 [PRIORITY_1_MOMENTUM] (primary=50 secondary=35): WHLR, IPDN, DCOY, IONL, IONX, GRML, TLSI, LGCL, QPUX, IONQ, RGTX, LRHC, CYPH, GDXD, ZSL, RGTI, QBTS, BTQ, INFQ, RKLX
+2026-09-23 05:52:08,433 [INFO] Trade Ideas [PRIORITY_2_ESTABLISHED] high_short_float(50): +50 new, 0 existing → top-10: ['WHLR', 'IPDN', 'DCOY', 'IONL', 'IONX', 'GRML', 'TLSI', 'LGCL', 'QPUX', 'IONQ']
+2026-09-23 05:52:08,433 [INFO] ── TI top-20 [PRIORITY_2_ESTABLISHED] (primary=50 secondary=0): WHLR, IPDN, DCOY, IONL, IONX, GRML, TLSI, LGCL, QPUX, IONQ, RGTX, CYPH, GDXD, ZSL, RGTI, USDE, QBTS, LRHC, BTQ, INFQ
+2026-09-23 05:52:08,500 [INFO] [SCAN] 74 symbols (filtered, 8 workers): SKFG, RTB, PHGE, DHTI, TALO, HALO, ACRE, WHLR, IPDN, DCOY, IONL, IONX, TLSI, LGCL, QPUX, IONQ, RGTX, CYPH, GDXD, ZSL, RGTI, USDE, QBTS, LRHC, BTQ, INFQ, RKLX, XNDU, SKDD, QUBT, SMCX, JAGX, IONZ, BABX, GDXU, KORU, SBSW, AGQ, NWCL, SKHL, SKUU, AU, YINN, GFI, IMCC, BABA, CWEB, SHNY, PSLV, SIVR, AG, USAS, NG, SLV, KOLD, PPLT, MKT, KEYS, RKT, VZ, TFC, SN, MCK, NI, NKE, NMM, PS, RL, RSG, MA, SECZ, BMNZ, LAES, HIMS
+2026-09-23 05:52:08,500 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-23 05:52:11,314 [INFO] [GUARDRAIL SUMMARY] Rejected: 74 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 74
+2026-09-23 05:52:11,314 [INFO] [FUNNEL] targets=74 guardrail_rejected=74 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-23 05:52:11,315 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-23 05:52:11,315 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-23 05:52:11,371 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:52:11,372 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:52:11,372 [INFO] [SCAN] No signals this cycle
+2026-09-23 05:52:11,372 [INFO] Heartbeat: 2026-09-23T05:52:11.372776
+2026-09-23 05:55:11,394 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:55:12,902 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:55:14,454 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:55:14,454 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:55:14,454 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:55:14,454 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:55:14,454 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:55:14,483 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-23 05:55:14,545 [INFO] Quarterly P&L: +0.6% (target >= 50%)
+2026-09-23 05:55:14,545 [INFO] [SCAN] Market sentiment: neutral
+2026-09-23 05:55:14,576 [INFO] STALE ORDER: XRP/USD OrderSide.SELL 732 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:14,934 [WARNING] STALE ORDER XRP/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:14,934 [INFO] STALE ORDER: TRUMP/USD OrderSide.SELL 0 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:15,293 [WARNING] STALE ORDER TRUMP/USD: replace failed: {"code":40010001,"message":"qty must be \u003e 0"}
+2026-09-23 05:55:15,293 [INFO] STALE ORDER: SOL/USD OrderSide.SELL 21 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:15,650 [WARNING] STALE ORDER SOL/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:15,650 [INFO] STALE ORDER: SKY/USD OrderSide.SELL 67508 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:16,008 [WARNING] STALE ORDER SKY/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:16,008 [INFO] STALE ORDER: SHIB/USD OrderSide.SELL 152264571 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:16,365 [WARNING] STALE ORDER SHIB/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:16,365 [INFO] STALE ORDER: PEPE/USD OrderSide.SELL 398296061 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:16,720 [WARNING] STALE ORDER PEPE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:16,720 [INFO] STALE ORDER: PAXG/USD OrderSide.SELL 0 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:17,076 [WARNING] STALE ORDER PAXG/USD: replace failed: {"code":40010001,"message":"qty must be \u003e 0"}
+2026-09-23 05:55:17,076 [INFO] STALE ORDER: LTC/USD OrderSide.SELL 44 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:17,434 [WARNING] STALE ORDER LTC/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:17,435 [INFO] STALE ORDER: LINK/USD OrderSide.SELL 30 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:17,792 [WARNING] STALE ORDER LINK/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:17,792 [INFO] STALE ORDER: FIL/USD OrderSide.SELL 3758 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:18,149 [WARNING] STALE ORDER FIL/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:18,149 [INFO] STALE ORDER: ETH/USD OrderSide.SELL 0 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:18,505 [WARNING] STALE ORDER ETH/USD: replace failed: {"code":40010001,"message":"qty must be \u003e 0"}
+2026-09-23 05:55:18,505 [INFO] STALE ORDER: DOGE/USD OrderSide.SELL 10271 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:18,864 [WARNING] STALE ORDER DOGE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:18,864 [INFO] STALE ORDER: AVAX/USD OrderSide.SELL 388 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:19,224 [WARNING] STALE ORDER AVAX/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:19,224 [INFO] STALE ORDER: ADA/USD OrderSide.SELL 41618 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:19,580 [WARNING] STALE ORDER ADA/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:19,580 [INFO] STALE ORDER: AAVE/USD OrderSide.SELL 26 — age 3.2m (cutoff 3m) → limit @ current price
+2026-09-23 05:55:19,937 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-23 05:55:20,059 [INFO] [SCAN] 74 symbols (filtered, 8 workers): SKFG, RTB, PHGE, DHTI, TALO, HALO, ACRE, WHLR, IPDN, DCOY, IONL, IONX, TLSI, LGCL, QPUX, IONQ, RGTX, CYPH, GDXD, ZSL, RGTI, USDE, QBTS, LRHC, BTQ, INFQ, RKLX, XNDU, SKDD, QUBT, SMCX, JAGX, IONZ, BABX, GDXU, KORU, SBSW, AGQ, NWCL, SKHL, SKUU, AU, YINN, GFI, IMCC, BABA, CWEB, SHNY, PSLV, SIVR, AG, USAS, NG, SLV, KOLD, PPLT, MKT, KEYS, RKT, VZ, TFC, SN, MCK, NI, NKE, NMM, PS, RL, RSG, MA, SECZ, BMNZ, LAES, HIMS
+2026-09-23 05:55:20,059 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-23 05:55:20,109 [INFO] [GUARDRAIL SUMMARY] Rejected: 74 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 74
+2026-09-23 05:55:20,109 [INFO] [FUNNEL] targets=74 guardrail_rejected=74 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-23 05:55:20,110 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-23 05:55:20,110 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-23 05:55:20,110 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-23 05:55:20,166 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:55:20,168 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:55:20,168 [INFO] [SCAN] No signals this cycle
+2026-09-23 05:55:20,168 [INFO] Heartbeat: 2026-09-23T05:55:20.168782
+2026-09-23 05:58:20,189 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 05:58:21,639 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 05:58:23,225 [INFO] [CRYPTO] #1: XTZ/USD SELL @ 0.3399 conf=65% | RSI=46.2 3-bar downtrend
+2026-09-23 05:58:23,225 [INFO] [CRYPTO] #2: CRV/USD SELL @ 0.3581 conf=63% | RSI=47.4 3-bar downtrend
+2026-09-23 05:58:23,226 [INFO] [CRYPTO] #3: DOT/USD SELL @ 1.1876 conf=60% | RSI=49.2 3-bar downtrend
+2026-09-23 05:58:23,226 [INFO] [CRYPTO] #4: ONDO/USD SELL @ 0.4381 conf=58% | RSI=50.6 3-bar downtrend
+2026-09-23 05:58:23,226 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-23 05:58:23,257 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-23 05:58:23,314 [INFO] Quarterly P&L: +0.6% (target >= 50%)
+2026-09-23 05:58:23,315 [INFO] [SCAN] Market sentiment: neutral
+2026-09-23 05:58:23,457 [INFO] [SCAN] 74 symbols (filtered, 8 workers): SKFG, RTB, PHGE, DHTI, TALO, HALO, ACRE, WHLR, IPDN, DCOY, IONL, IONX, TLSI, LGCL, QPUX, IONQ, RGTX, CYPH, GDXD, ZSL, RGTI, USDE, QBTS, LRHC, BTQ, INFQ, RKLX, XNDU, SKDD, QUBT, SMCX, JAGX, IONZ, BABX, GDXU, KORU, SBSW, AGQ, NWCL, SKHL, SKUU, AU, YINN, GFI, IMCC, BABA, CWEB, SHNY, PSLV, SIVR, AG, USAS, NG, SLV, KOLD, PPLT, MKT, KEYS, RKT, VZ, TFC, SN, MCK, NI, NKE, NMM, PS, RL, RSG, MA, SECZ, BMNZ, LAES, HIMS
+2026-09-23 05:58:23,457 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-23 05:58:23,512 [INFO] [GUARDRAIL SUMMARY] Rejected: 74 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 74
+2026-09-23 05:58:23,512 [INFO] [FUNNEL] targets=74 guardrail_rejected=74 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-23 05:58:23,513 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-23 05:58:23,513 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-23 05:58:23,513 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-23 05:58:23,570 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.13% < 0.25%
+2026-09-23 05:58:23,571 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 05:58:23,571 [INFO] [SCAN] No signals this cycle
+2026-09-23 05:58:23,572 [INFO] Heartbeat: 2026-09-23T05:58:23.571942
+2026-09-23 06:01:23,588 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-23 06:01:24,570 [INFO] [CRYPTO] 15 open: AAVE/USD(146.6246→TP:152.4896), ADA/USD(0.2546→TP:0.2648), AVAX/USD(11.0549→TP:11.4971), DOGE/USD(0.1006→TP:0.1046), ETH/USD(2757.3298→TP:2867.6230), FIL/USD(1.0450→TP:1.0868), LINK/USD(13.0625→TP:13.5850), LTC/USD(62.2500→TP:64.7400), PAXG/USD(4361.3100→TP:4535.7624), PEPE/USD(0.0000→TP:0.0000), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), TRUMP/USD(2.2279→TP:2.3170), XRP/USD(1.5746→TP:1.6376)
+2026-09-23 06:01:25,944 [INFO] [CRYPTO] No signals this cycle
+2026-09-23 06:01:25,971 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-23 06:01:26,023 [INFO] Quarterly P&L: +0.6% (target >= 50%)
+2026-09-23 06:01:26,023 [INFO] [SCAN] Market sentiment: neutral
+2026-09-23 06:01:30,256 [INFO] [EDGAR] 8-K match: CTTH — 8-K - CTT PHARMACEUTICAL HOLDINGS, INC. (0001035422) (Filer)
+2026-09-23 06:01:30,256 [INFO] [EDGAR] 8-K match: RIME — 8-K - Algorhythm Holdings, Inc. (0000923601) (Filer)
+2026-09-23 06:01:30,257 [INFO] [EDGAR] 2 newly triggered tickers: ['CTTH', 'RIME']
+2026-09-23 06:01:30,259 [INFO] [EDGAR] Adding CTTH to P2 + scan queue for monitoring
+2026-09-23 06:01:30,259 [INFO] [EDGAR] Adding RIME to P2 + scan queue for monitoring
+2026-09-23 06:01:30,316 [INFO] [SCAN] 74 symbols (filtered, 8 workers): SKFG, RTB, PHGE, DHTI, TALO, HALO, ACRE, CTTH, RIME, WHLR, IPDN, DCOY, IONL, IONX, TLSI, LGCL, QPUX, IONQ, RGTX, CYPH, GDXD, ZSL, RGTI, USDE, QBTS, LRHC, BTQ, INFQ, RKLX, XNDU, SKDD, QUBT, SMCX, JAGX, IONZ, BABX, GDXU, KORU, SBSW, AGQ, NWCL, SKHL, SKUU, AU, YINN, GFI, IMCC, BABA, CWEB, SHNY, PSLV, SIVR, AG, USAS, NG, SLV, KOLD, PPLT, MKT, KEYS, RKT, VZ, TFC, SN, MCK, NI, NKE, NMM, PS, RL, RSG, MA, SECZ, BMNZ
+2026-09-23 06:01:30,316 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-23 06:01:31,117 [INFO] [GUARDRAIL SUMMARY] Rejected: 74 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 74
+2026-09-23 06:01:31,118 [INFO] [FUNNEL] targets=74 guardrail_rejected=74 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-23 06:01:31,118 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-23 06:01:31,118 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-23 06:01:31,118 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-23 06:01:31,176 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-23 06:01:31,177 [INFO] LIVE PROBE EAF: scale-in skipped; missing intraday bars for VWAP/new-high confirmation
+2026-09-23 06:01:31,177 [INFO] [SCAN] No signals this cycle
+2026-09-23 06:01:31,178 [INFO] Heartbeat: 2026-09-23T06:01:31.177965
