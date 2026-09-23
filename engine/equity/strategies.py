@@ -28,7 +28,7 @@ from engine.config import (
     PRE_MARKET_MOMENTUM, OPENING_BELL_SURGE, PM_HIGH_BREAKOUT, EARLY_SQUEEZE, BEAR_BREAKDOWN,
     SENTIMENT_STRATEGY, TRENDLINE_BREAKOUT,
     SWEEPEA_DYNAMIC_CONFIDENCE, SWEEPEA_REQUIRE_TREND, SWEEPEA_TREND_EMA_RISING_BARS,
-    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT,
+    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT, PARABOLIC_FADE_RECLAIM,
 )
 from scripts.trendline_breakout import detect_trendline_breakouts
 from scripts.auto_trendline import AutoTrendline, TrendlineConfig
@@ -1716,6 +1716,196 @@ class MomentumContinuationStrategy:
             return None
 
 
+class ParabolicFadeReclaimStrategy:
+    """Dormant until a stock has a TRUE parabolic spike (HOD >= min_initial_spike_pct
+    above the session open, prior close fallback), then only enters after:
+      1. a confirmed fade >= fade_threshold_pct off the high-of-day (genuine
+         exhaustion/shakeout, not still at the raw top),
+      2. a tight multi-bar 5-minute consolidation (closes inside a +/- band,
+         volume contracted vs the spike/flush candles) = seller exhaustion,
+      3. a reclaim: current close back above the EMA of 5m closes OR a break of
+         the consolidation micro-range high (whichever confirms first).
+    Catches the secondary trend continuation — never chases the initial vertical
+    move. Entry window defaults to 10:30 AM-3:00 PM ET (skips open noise and the
+    final 30 minutes)."""
+
+    def scan(self, symbol: str) -> Optional[Signal]:
+        def reject(reason: str) -> None:
+            log.debug("ParabolicFadeReclaim %s rejected: %s", symbol, reason)
+
+        try:
+            cfg = PARABOLIC_FADE_RECLAIM
+            if not cfg["enabled"]:
+                return None
+            if symbol in _INVERSE_ETFS:
+                return None
+
+            # Regular hours only, and only inside the entry window
+            now_et = datetime.datetime.now(ET)
+            mins_of_day = now_et.hour * 60 + now_et.minute
+            if mins_of_day < 9 * 60 + 30 or mins_of_day > 15 * 60 + 45:
+                return None
+            market_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
+            elapsed_min = max((now_et - market_open).total_seconds() / 60.0, 1.0)
+            if not cfg["entry_window_start_min"] <= elapsed_min <= cfg["entry_window_end_min"]:
+                reject(f"outside entry window (elapsed={elapsed_min:.0f}m)")
+                return None
+
+            intraday = get_bars(symbol, "1d", "1m")
+            daily    = get_bars(symbol, "20d", "1d")
+            if intraday.empty or daily.empty or len(daily) < 2:
+                reject("missing data")
+                return None
+
+            # Today's regular session only (providers can return multiple dates
+            # and extended-hours bars for a 1d/1m request).
+            timestamp_values = intraday["time"] if "time" in intraday.columns else intraday.index
+            timestamps = pd.Series(pd.to_datetime(timestamp_values, errors="coerce"), index=intraday.index)
+            if timestamps.dt.tz is not None:
+                timestamps = timestamps.dt.tz_convert(ET)
+            else:
+                timestamps = timestamps.dt.tz_localize(ET)
+            minutes = timestamps.dt.hour * 60 + timestamps.dt.minute
+            session_mask = (
+                (timestamps.dt.date == now_et.date())
+                & (minutes >= 9 * 60 + 30)
+                & (minutes <= 16 * 60)
+            )
+            session    = intraday.loc[session_mask].copy()
+            session_ts = timestamps.loc[session_mask]
+            if session.empty:
+                reject("missing current-day session data")
+                return None
+
+            cur_close = float(session["close"].iloc[-1])
+
+            # Spike basis: session open, falling back to prior close if invalid
+            session_open = float(session["open"].iloc[0])
+            if session_open <= 0:
+                session_open = float(daily["close"].iloc[-2])
+            if session_open <= 0:
+                reject("missing session open / prior close")
+                return None
+
+            # (1) True parabolic spike: HOD >= min_initial_spike_pct above basis
+            hod       = float(session["high"].max())
+            hod_pos   = int(session["high"].values.argmax())
+            hod_time  = session_ts.iloc[hod_pos]
+            spike_pct = (hod - session_open) / session_open * 100
+            if spike_pct < cfg["min_initial_spike_pct"]:
+                reject(f"no parabolic spike ({spike_pct:.0f}% < {cfg['min_initial_spike_pct']:.0f}%)")
+                return None
+
+            # (2) Confirmed fade: pulled back >= fade_threshold_pct from the HOD
+            post_spike = session.iloc[hod_pos + 1:]
+            if post_spike.empty:
+                reject("no post-spike fade yet")
+                return None
+            fade_low = float(post_spike["low"].min())
+            fade_pct = (hod - fade_low) / hod * 100
+            if fade_pct < cfg["fade_threshold_pct"]:
+                reject(f"insufficient fade ({fade_pct:.1f}% < {cfg['fade_threshold_pct']:.0f}% off HOD)")
+                return None
+
+            # Resample 1m -> 5m. Consolidation is judged on COMPLETED 5m bars only
+            # (exclude the currently forming bin that holds the latest 1m bar).
+            cur_bin        = session_ts.iloc[-1].floor("5min")
+            completed_mask = session_ts < cur_bin
+            completed      = session.loc[completed_mask].copy()
+            if completed.empty:
+                reject("no completed 5-minute bars")
+                return None
+            completed.index = pd.DatetimeIndex(session_ts.loc[completed_mask])
+            five = completed.resample("5min").agg({
+                "open": "first", "high": "max", "low": "min",
+                "close": "last", "volume": "sum",
+            }).dropna()
+            n_cons = int(cfg["consolidation_bars"])
+            if len(five) < max(n_cons, int(cfg["ema_period"])):
+                reject("insufficient 5-minute bars")
+                return None
+
+            # (3) Consolidation base: last n completed 5m bars in a tight +/- band
+            # on volume contracted vs the spike/flush candles.
+            cons = five.iloc[-n_cons:]
+            if cons.index[0] <= hod_time:
+                reject("consolidation overlaps the spike")
+                return None
+            cons_high = float(cons["high"].max())
+            cons_low  = float(cons["low"].min())
+            cons_mid  = (cons_high + cons_low) / 2
+            if cons_mid <= 0:
+                reject("invalid consolidation range")
+                return None
+            band_half = cons_mid * cfg["consolidation_band_pct"] / 100.0
+            closes_in_band = bool(cons["close"].between(cons_mid - band_half, cons_mid + band_half).all())
+            if not closes_in_band or (cons_high - cons_low) > 2 * band_half:
+                reject(f"consolidation range too wide ({(cons_high - cons_low) / cons_mid * 100:.1f}%)")
+                return None
+            spike_ref_vol = float(five["volume"].max())
+            cons_vol      = float(cons["volume"].mean())
+            if spike_ref_vol <= 0 or cons_vol >= spike_ref_vol:
+                reject("no volume contraction in consolidation")
+                return None
+            # Base must sit at/below the fade zone, not back at the raw top
+            if cons_mid > hod * (1 - cfg["fade_threshold_pct"] / 100.0):
+                reject("consolidation not below fade threshold")
+                return None
+
+            # RVOL quality floor (same style as MomentumContinuation)
+            day_vol       = float(session["volume"].sum())
+            avg_daily_vol = float(daily["volume"].iloc[:-1].mean())
+            if avg_daily_vol <= 0:
+                reject("missing average daily volume")
+                return None
+            elapsed_frac = max(elapsed_min / 390.0, 0.005)
+            rvol         = day_vol / (avg_daily_vol * elapsed_frac)
+            if rvol < cfg["min_rvol"]:
+                reject(f"insufficient RVOL ({rvol:.1f}x)")
+                return None
+
+            # (4) Reclaim trigger: close back above the EMA of 5m closes OR a
+            # break of the consolidation micro-range high (whichever confirms first)
+            ema           = float(five["close"].ewm(span=int(cfg["ema_period"]), adjust=False).mean().iloc[-1])
+            reclaim_ema   = cur_close > ema
+            reclaim_range = cur_close > cons_high
+            if not (reclaim_ema or reclaim_range):
+                reject(f"no reclaim (close={cur_close:.2f} ema={ema:.2f} cons_high={cons_high:.2f})")
+                return None
+            reclaim_level = ema if reclaim_ema else cons_high
+            reclaim_via   = "9ema" if reclaim_ema else "range-high"
+
+            # Stop: strictly below the consolidation swing low, capped at max_stop_pct
+            stop_dist = cur_close - cons_low
+            if stop_dist <= 0:
+                reject("entry at/below consolidation low")
+                return None
+            max_dist = cur_close * cfg["max_stop_pct"] / 100.0
+            capped   = stop_dist > max_dist
+            if capped:
+                stop_dist = max_dist
+            stop_pct = stop_dist / cur_close * 100.0
+
+            # Confidence scales with fade depth + reclaim strength + RVOL
+            fade_bonus    = min(max(fade_pct - cfg["fade_threshold_pct"], 0.0) * 0.004, 0.08)
+            reclaim_bonus = min(max((cur_close - reclaim_level) / reclaim_level * 100.0, 0.0) * 0.02, 0.05)
+            rvol_bonus    = min(max(rvol - cfg["min_rvol"], 0.0) * 0.03, 0.10)
+            conf = min(0.72 + fade_bonus + reclaim_bonus + rvol_bonus, 0.95)
+            conf = min(_sa_metrics_boost(symbol, conf), 0.95)
+
+            return Signal(
+                symbol, "buy", cur_close, round(conf, 2),
+                f"Parabolic fade+reclaim spike={spike_pct:.0f}% fade={fade_pct:.1f}% off HOD "
+                f"cons={n_cons}x5m +/-{cfg['consolidation_band_pct']:.1f}% vol-contract "
+                f"rvol={rvol:.1f}x reclaim={reclaim_via} stop={stop_pct:.1f}%{'(capped)' if capped else ''} | "
+                f"TP plan: 50% off at 1:1 R:R (+{stop_pct:.1f}%), trail remainder",
+                "ParabolicFadeReclaim",
+                atr_stop=stop_dist,
+            )
+        except Exception:
+            return None
+
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Bear Breakdown Strategy
 # ──────────────────────────────────────────────────────────────────────────────
@@ -2012,6 +2202,7 @@ def get_strategy_instances(bull_regime: bool = True):
         PMHighBreakoutStrategy(),
         EarlySqueezeDetector(),
         MomentumContinuationStrategy(),
+        ParabolicFadeReclaimStrategy(),
         PowerOf3Strategy(),
         TrendlineBreakoutStrategy(),
     ]

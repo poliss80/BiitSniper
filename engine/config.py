@@ -802,6 +802,19 @@ MOMENTUM_CONTINUATION = {
     "enabled": os.getenv("MC_ENABLED", "true").lower() in ("1","true","yes"),
 }
 
+PARABOLIC_FADE_RECLAIM = {
+    "min_initial_spike_pct": float(os.getenv("PFR_MIN_INITIAL_SPIKE_PCT", "100.0")),  # HOD must be >= +100% from session open (prior close fallback)
+    "fade_threshold_pct": float(os.getenv("PFR_FADE_THRESHOLD_PCT", "20.0")),          # required pullback off high-of-day (15-30% exhaustion band)
+    "entry_window_start_min": int(os.getenv("PFR_ENTRY_WINDOW_START_MIN", "60")),      # 10:30 AM ET — skips open noise
+    "entry_window_end_min": int(os.getenv("PFR_ENTRY_WINDOW_END_MIN", "330")),         # 3:00 PM ET — skips final 30 min
+    "consolidation_bars": int(os.getenv("PFR_CONSOLIDATION_BARS", "3")),               # consecutive tight 5m bars required
+    "consolidation_band_pct": float(os.getenv("PFR_CONSOLIDATION_BAND_PCT", "1.5")),   # +/- band around consolidation midpoint
+    "ema_period": int(os.getenv("PFR_EMA_PERIOD", "9")),                               # EMA on 5m closes for the reclaim trigger
+    "max_stop_pct": float(os.getenv("PFR_MAX_STOP_PCT", "4.0")),                       # cap on stop distance below entry
+    "min_rvol": float(os.getenv("PFR_MIN_RVOL", "2.0")),                              # relative volume floor (same style as MomentumContinuation)
+    "enabled": os.getenv("PFR_ENABLED", "true").lower() in ("1","true","yes"),
+}
+
 SENTIMENT_STRATEGY = {
     "enabled": True,
     "min_sentiment_score": 0.6,
