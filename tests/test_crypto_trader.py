@@ -185,5 +185,35 @@ class TestCryptoTraderSLQtySafety(unittest.TestCase):
         self.assertEqual(submitted_qty, math.floor(qty * (1 - 1e-6) * 1e8) / 1e8)
 
 
+class TestCryptoTraderScanDedup(unittest.TestCase):
+    """Regression: scan() must not resubmit a duplicate buy signal for a
+    symbol whose earlier entry order is still open — this is what allowed
+    10-12 duplicate unfilled buy orders per symbol to accumulate across
+    bot restarts (in-memory _positions is empty on restart, but the stale
+    order is still resting on the broker)."""
+
+    def setUp(self):
+        self._universe_patch = patch.object(_cfg, "CRYPTO_UNIVERSE", [SYM])
+        self._universe_patch.start()
+        self.addCleanup(self._universe_patch.stop)
+
+    def test_scan_skips_symbol_with_open_buy_order(self):
+        client = MockTradingClient(orders=[_make_order(side="buy")])
+        trader = CryptoTrader(client)
+        with patch.object(trader, "_evaluate") as mock_evaluate:
+            signals = trader.scan([SYM])
+
+        mock_evaluate.assert_not_called()
+        self.assertEqual(signals, [])
+
+    def test_scan_evaluates_symbol_without_open_buy_order(self):
+        client = MockTradingClient(orders=[])
+        trader = CryptoTrader(client)
+        with patch.object(trader, "_evaluate", return_value=None) as mock_evaluate:
+            trader.scan([SYM])
+
+        mock_evaluate.assert_called_once_with(SYM)
+
+
 if __name__ == "__main__":
     unittest.main()

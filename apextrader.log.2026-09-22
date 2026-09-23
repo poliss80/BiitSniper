@@ -10018,3 +10018,248 @@ Stacktrace:
 2026-09-22 22:57:07,256 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
 2026-09-22 22:57:07,256 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
 2026-09-22 22:57:07,256 [INFO] Heartbeat: 2026-09-22T22:57:07.256863
+2026-09-22 23:00:07,284 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:00:08,166 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.24419735"}
+2026-09-22 23:00:09,395 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 23:00:11,298 [INFO] [CRYPTO] #1: FIL/USD BUY @ 1.0440 conf=76% | RSI=69.8 3-bar uptrend
+2026-09-22 23:00:11,298 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:00:11,298 [INFO] [CRYPTO] #3: DOT/USD BUY @ 1.2187 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-22 23:00:11,299 [INFO] [CRYPTO] #4: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:00:11,299 [INFO] [CRYPTO] #5: TRUMP/USD BUY @ 2.2445 conf=73% | RSI=65.0 3-bar uptrend
+2026-09-22 23:00:11,358 [WARNING] [CRYPTO] Insufficient cash balance for FIL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,416 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,473 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,531 [WARNING] [CRYPTO] Insufficient cash balance for BONK/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,593 [WARNING] [CRYPTO] Insufficient cash balance for TRUMP/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,650 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,710 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,768 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,827 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,886 [WARNING] [CRYPTO] Insufficient cash balance for DOGE/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:11,944 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,001 [WARNING] [CRYPTO] Insufficient cash balance for SHIB/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,058 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,117 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,181 [WARNING] [CRYPTO] Insufficient cash balance for ONDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,240 [WARNING] [CRYPTO] Insufficient cash balance for LINK/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,348 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,413 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 23:00:12,413 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 23:00:12,474 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:00:12,481 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:00:12,481 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:00:12,481 [INFO] Heartbeat: 2026-09-22T23:00:12.481555
+2026-09-22 23:03:12,501 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:03:12,893 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.24419735"}
+2026-09-22 23:03:13,660 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 23:03:15,139 [INFO] [CRYPTO] #1: FIL/USD BUY @ 1.0440 conf=76% | RSI=69.8 3-bar uptrend
+2026-09-22 23:03:15,139 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:03:15,139 [INFO] [CRYPTO] #3: DOT/USD BUY @ 1.2187 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-22 23:03:15,139 [INFO] [CRYPTO] #4: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:03:15,139 [INFO] [CRYPTO] #5: TRUMP/USD BUY @ 2.2445 conf=73% | RSI=65.0 3-bar uptrend
+2026-09-22 23:03:15,193 [WARNING] [CRYPTO] Insufficient cash balance for FIL/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,245 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,307 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,359 [WARNING] [CRYPTO] Insufficient cash balance for BONK/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,413 [WARNING] [CRYPTO] Insufficient cash balance for TRUMP/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,476 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,531 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,586 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,646 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,701 [WARNING] [CRYPTO] Insufficient cash balance for DOGE/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,759 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,815 [WARNING] [CRYPTO] Insufficient cash balance for SHIB/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,868 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,921 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:15,976 [WARNING] [CRYPTO] Insufficient cash balance for ONDO/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:16,032 [WARNING] [CRYPTO] Insufficient cash balance for LINK/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:16,090 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:16,148 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=259.78, min=400.0) — skipping
+2026-09-22 23:03:16,149 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 23:03:16,206 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:03:18,333 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:03:18,333 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:03:18,333 [INFO] Heartbeat: 2026-09-22T23:03:18.333950
+2026-09-22 23:05:44,795 [INFO] Stopped by user
+2026-09-22 23:05:45,173 [INFO] ======================================================================
+2026-09-22 23:05:45,173 [INFO] STATUS
+2026-09-22 23:05:45,173 [INFO] Equity:     $97,885.24
+2026-09-22 23:05:45,173 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-22 23:05:45,174 [INFO] Positions:  12
+2026-09-22 23:05:45,174 [INFO] Unrealized: $2212.54
+2026-09-22 23:05:45,174 [INFO]   AAVEUSD: 26.444300519 @ $146.62 | $49.59 (+1.28%)
+2026-09-22 23:05:45,174 [INFO]   AVAXUSD: 388.234891372 @ $11.05 | $85.44 (+1.99%)
+2026-09-22 23:05:45,174 [INFO]   EAF: 1 @ $11.07 | $0.05 (+0.45%)
+2026-09-22 23:05:45,174 [INFO]   GRML: 1 @ $13.50 | $0.93 (+6.89%)
+2026-09-22 23:05:45,174 [INFO]   LTCUSD: 44.171921679 @ $62.25 | $-6.54 (-0.24%)
+2026-09-22 23:05:45,174 [INFO]   MAZE: 970 @ $28.80 | $1.47 (+0.01%)
+2026-09-22 23:05:45,175 [INFO]   PEPEUSD: 398296459.709127232 @ $0.00 | $-5.18 (-0.27%)
+2026-09-22 23:05:45,175 [INFO]   RSKD: 4428 @ $6.93 | $2133.63 (+6.96%)
+2026-09-22 23:05:45,175 [INFO]   SGRY: 1 @ $15.76 | $-0.06 (-0.38%)
+2026-09-22 23:05:45,175 [INFO]   SKYUSD: 67508.927206607 @ $0.07 | $-50.70 (-1.08%)
+2026-09-22 23:05:45,175 [INFO]   SOLUSD: 21.571246904 @ $118.20 | $3.88 (+0.15%)
+2026-09-22 23:05:45,175 [INFO]   WBD: 1 @ $30.82 | $0.01 (+0.03%)
+2026-09-22 23:05:45,175 [INFO] ======================================================================
+2026-09-22 23:05:50,405 [INFO] Restored position exit state: MAZE, RSKD, WBD, EAF
+2026-09-22 23:05:50,444 [INFO] Entry log rebuilt from today's orders: MAZE, RSKD, WBD, EAF
+2026-09-22 23:05:50,475 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-22 23:05:50,501 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-22 23:05:50,575 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-22 23:05:50,575 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-22 23:05:50,575 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-22 23:05:50,575 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-22 23:05:50,576 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-22 23:05:50,576 [INFO] ======================================================================
+2026-09-22 23:05:50,576 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-22 23:05:50,576 [INFO] ======================================================================
+2026-09-22 23:05:50,576 [INFO] Priority 1 (Momentum): 131 stocks
+2026-09-22 23:05:50,576 [INFO] Priority 2 (Established): 16 stocks
+2026-09-22 23:05:50,576 [INFO] Total Universe: 151 stocks
+2026-09-22 23:05:50,576 [INFO] Scan: 3 min fixed
+2026-09-22 23:05:50,576 [INFO] ======================================================================
+2026-09-22 23:05:50,604 [INFO] Equity:          $97,885.24
+2026-09-22 23:05:50,604 [INFO] Buying Power:    $237,776.13
+2026-09-22 23:05:50,604 [INFO] PDT Status:      No
+2026-09-22 23:05:50,604 [INFO] Day Trade Count: None
+2026-09-22 23:05:50,605 [INFO] ======================================================================
+2026-09-22 23:05:50,605 [INFO] Starting… Press Ctrl+C to stop
+2026-09-22 23:05:50,605 [INFO] ======================================================================
+2026-09-22 23:05:50,606 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-22 23:05:50,606 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-22 23:05:50,606 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-22 23:05:50,608 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-22 23:07:20,611 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-22 23:07:21,641 [INFO] ======================================================================
+2026-09-22 23:07:21,642 [INFO] NEW DAY: 2026-09-22 | Start equity: $97,902.33
+2026-09-22 23:07:21,646 [INFO] Universe pruned: removed 59 expired ticker(s): ['AEHL', 'AKAN', 'AMZZ', 'ARTY', 'ASPN', 'BABX', 'BB', 'BIAF', 'BNC', 'BSP']…
+2026-09-22 23:07:21,647 [INFO] ======================================================================
+2026-09-22 23:07:21,647 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:07:21,776 [INFO] [CRYPTO] BROKER SL placed for AAVE/USD stop=142.9590 limit=142.2442 qty=26.44427407 | order=d4bad175-d719-4c57-b8a1-83d5f55fa26b
+2026-09-22 23:07:22,073 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-22 23:07:23,361 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 23:07:25,951 [INFO] [CRYPTO] #1: FIL/USD BUY @ 1.0440 conf=76% | RSI=69.8 3-bar uptrend
+2026-09-22 23:07:25,951 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:07:25,951 [INFO] [CRYPTO] #3: DOT/USD BUY @ 1.2187 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-22 23:07:25,951 [INFO] [CRYPTO] #4: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:07:25,951 [INFO] [CRYPTO] #5: TRUMP/USD BUY @ 2.2445 conf=73% | RSI=65.0 3-bar uptrend
+2026-09-22 23:07:26,074 [INFO] [CRYPTO] LIMIT BUY FIL/USD qty=3768.123000 (~$3940) limit=1.0456 | software TP=1.0858 SL=1.0179 | conf=76% | RSI=69.8 3-bar uptrend | order=646bd415-970a-43cf-83ab-6c3992646f2d
+2026-09-22 23:07:26,166 [INFO] [CRYPTO] LIMIT BUY ADA/USD qty=14186.375224 (~$3612) limit=0.2546 | software TP=0.2644 SL=0.2479 | conf=73% | RSI=63.7 3-bar uptrend | order=487f86a1-0455-46fd-80bd-458e23fb3e0d
+2026-09-22 23:07:26,263 [INFO] [CRYPTO] LIMIT BUY DOT/USD qty=2712.606299 (~$3311) limit=1.2206 | software TP=1.2675 SL=1.1883 | conf=73% | RSI=65.1 3-bar uptrend | order=537d54a6-6f4c-4dbc-b5c5-ed18cf792104
+2026-09-22 23:07:26,367 [INFO] [CRYPTO] LIMIT BUY BONK/USD qty=836239669.421488 (~$3036) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=73% | RSI=63.7 3-bar uptrend | order=40e42fbd-c3f6-4c95-b31e-3f2dc16ce6ff
+2026-09-22 23:07:26,463 [INFO] [CRYPTO] LIMIT BUY TRUMP/USD qty=1237.852742 (~$2783) limit=2.2479 | software TP=2.3343 SL=2.1884 | conf=73% | RSI=65.0 3-bar uptrend | order=c0b66c39-1e0e-48cc-8393-6463316492a4
+2026-09-22 23:07:26,557 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=1.080232 (~$2553) limit=2363.1679 | software TP=2454.0136 SL=2300.6378 | conf=72% | RSI=63.0 3-bar uptrend | order=e58bbbf9-64c9-435c-b62c-157e8d4214bf
+2026-09-22 23:07:26,557 [INFO] [CRYPTO] Max positions (12) reached — stopping buys this cycle
+2026-09-22 23:07:27,995 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:07:28,345 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:07:28,345 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:10:28,368 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:10:28,814 [INFO] [CRYPTO] BROKER SL placed for DOT/USD stop=1.1883 limit=1.1823 qty=2705.82207726 | order=5185290c-223a-4cc7-aa53-3d4c98ce1ff1
+2026-09-22 23:10:28,881 [INFO] [CRYPTO] BROKER SL placed for FIL/USD stop=1.0179 limit=1.0129 qty=3758.69893358 | order=17fe1236-4711-4df9-81f3-8c8afd488d34
+2026-09-22 23:10:29,009 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-22 23:10:29,187 [INFO] [CRYPTO] BROKER SL placed for TRUMP/USD stop=2.1884 limit=2.1775 qty=1234.75687564 | order=84dfe738-edef-4901-8109-2cb7bdaa558c
+2026-09-22 23:10:29,188 [INFO] [CRYPTO] Position closed externally: ADA/USD
+2026-09-22 23:10:29,188 [INFO] [CRYPTO] Position closed externally: BONK/USD
+2026-09-22 23:10:29,188 [INFO] [CRYPTO] Position closed externally: YFI/USD
+2026-09-22 23:10:29,762 [INFO] [CRYPTO] 9 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), FIL/USD(1.0456→TP:1.0858), DOT/USD(1.2206→TP:1.2675), TRUMP/USD(2.2479→TP:2.3343)
+2026-09-22 23:10:32,041 [INFO] [CRYPTO] #1: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:10:32,041 [INFO] [CRYPTO] #2: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:10:32,041 [INFO] [CRYPTO] #3: YFI/USD BUY @ 2359.6285 conf=72% | RSI=63.0 3-bar uptrend
+2026-09-22 23:10:32,041 [INFO] [CRYPTO] #4: XTZ/USD BUY @ 0.3477 conf=71% | RSI=60.2 3-bar uptrend
+2026-09-22 23:10:32,042 [INFO] [CRYPTO] #5: XRP/USD BUY @ 1.5722 conf=71% | RSI=61.5 3-bar uptrend
+2026-09-22 23:10:32,131 [INFO] [CRYPTO] LIMIT BUY ADA/USD qty=9190.996763 (~$2340) limit=0.2546 | software TP=0.2644 SL=0.2479 | conf=73% | RSI=63.7 3-bar uptrend | order=67aa4d58-86a0-4edf-b25a-1eae0ca7dcb2
+2026-09-22 23:10:32,225 [INFO] [CRYPTO] LIMIT BUY BONK/USD qty=590920110.192837 (~$2145) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=73% | RSI=63.7 3-bar uptrend | order=520898fa-157b-4726-b9ff-dd5424395001
+2026-09-22 23:10:32,312 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=0.832053 (~$1966) limit=2363.1679 | software TP=2454.0136 SL=2300.6378 | conf=72% | RSI=63.0 3-bar uptrend | order=72af9adb-d188-4ac3-8670-68a062f6e0bd
+2026-09-22 23:10:32,313 [INFO] [CRYPTO] Max positions (12) reached — stopping buys this cycle
+2026-09-22 23:10:32,370 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:10:32,376 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:10:32,377 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:10:32,377 [INFO] Heartbeat: 2026-09-22T23:10:32.377286
+2026-09-22 23:13:32,401 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:13:33,624 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-22 23:13:33,765 [INFO] [CRYPTO] Position closed externally: ADA/USD
+2026-09-22 23:13:33,765 [INFO] [CRYPTO] Position closed externally: BONK/USD
+2026-09-22 23:13:33,766 [INFO] [CRYPTO] Position closed externally: YFI/USD
+2026-09-22 23:13:34,788 [INFO] [CRYPTO] 9 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), FIL/USD(1.0456→TP:1.0858), DOT/USD(1.2206→TP:1.2675), TRUMP/USD(2.2479→TP:2.3343)
+2026-09-22 23:13:37,002 [INFO] [CRYPTO] #1: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:13:37,003 [INFO] [CRYPTO] #2: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:13:37,003 [INFO] [CRYPTO] #3: YFI/USD BUY @ 2359.6285 conf=72% | RSI=63.0 3-bar uptrend
+2026-09-22 23:13:37,003 [INFO] [CRYPTO] #4: XTZ/USD BUY @ 0.3477 conf=71% | RSI=60.2 3-bar uptrend
+2026-09-22 23:13:37,004 [INFO] [CRYPTO] #5: XRP/USD BUY @ 1.5722 conf=71% | RSI=61.5 3-bar uptrend
+2026-09-22 23:13:37,107 [INFO] [CRYPTO] LIMIT BUY ADA/USD qty=7079.420991 (~$1802) limit=0.2546 | software TP=0.2644 SL=0.2479 | conf=73% | RSI=63.7 3-bar uptrend | order=c83614a6-2f52-4cb9-9e46-0943eb46fadc
+2026-09-22 23:13:37,212 [INFO] [CRYPTO] LIMIT BUY BONK/USD qty=455159779.614325 (~$1652) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=73% | RSI=63.7 3-bar uptrend | order=6cf5225e-6e33-4480-ae32-54004fd9c08e
+2026-09-22 23:13:37,315 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=0.640894 (~$1515) limit=2363.1679 | software TP=2454.0136 SL=2300.6378 | conf=72% | RSI=63.0 3-bar uptrend | order=bb5c68e7-c4ab-4434-a9da-1d9107180f50
+2026-09-22 23:13:37,316 [INFO] [CRYPTO] Max positions (12) reached — stopping buys this cycle
+2026-09-22 23:13:37,385 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:13:37,393 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:13:37,394 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:13:37,394 [INFO] Heartbeat: 2026-09-22T23:13:37.394231
+2026-09-22 23:16:37,416 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 23:16:37,949 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398.296459732","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296061.4126675, available: 398.296459732)","symbol":"USD"}
+2026-09-22 23:16:38,081 [INFO] [CRYPTO] Position closed externally: ADA/USD
+2026-09-22 23:16:38,082 [INFO] [CRYPTO] Position closed externally: BONK/USD
+2026-09-22 23:16:38,082 [INFO] [CRYPTO] Position closed externally: YFI/USD
+2026-09-22 23:16:38,648 [INFO] [CRYPTO] 9 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280), FIL/USD(1.0456→TP:1.0858), DOT/USD(1.2206→TP:1.2675), TRUMP/USD(2.2479→TP:2.3343)
+2026-09-22 23:16:42,919 [INFO] [CRYPTO] #1: ADA/USD BUY @ 0.2542 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:16:42,919 [INFO] [CRYPTO] #2: BONK/USD BUY @ 0.0000 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-22 23:16:42,919 [INFO] [CRYPTO] #3: YFI/USD BUY @ 2359.6285 conf=72% | RSI=63.0 3-bar uptrend
+2026-09-22 23:16:42,919 [INFO] [CRYPTO] #4: XTZ/USD BUY @ 0.3477 conf=71% | RSI=60.2 3-bar uptrend
+2026-09-22 23:16:42,919 [INFO] [CRYPTO] #5: XRP/USD BUY @ 1.5722 conf=71% | RSI=61.5 3-bar uptrend
+2026-09-22 23:16:43,009 [INFO] [CRYPTO] LIMIT BUY ADA/USD qty=5452.956589 (~$1388) limit=0.2546 | software TP=0.2644 SL=0.2479 | conf=73% | RSI=63.7 3-bar uptrend | order=eab4722e-a478-4740-81ed-46f7f024a7b7
+2026-09-22 23:16:43,104 [INFO] [CRYPTO] LIMIT BUY BONK/USD qty=350586776.859504 (~$1273) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=73% | RSI=63.7 3-bar uptrend | order=f51a35de-07c9-4063-a983-dc54172ef5cd
+2026-09-22 23:16:43,203 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=0.493651 (~$1167) limit=2363.1679 | software TP=2454.0136 SL=2300.6378 | conf=72% | RSI=63.0 3-bar uptrend | order=6d477e14-b1e8-455f-b0ec-b65c35da5d07
+2026-09-22 23:16:43,203 [INFO] [CRYPTO] Max positions (12) reached — stopping buys this cycle
+2026-09-22 23:16:43,271 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 23:16:43,278 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 23:16:43,278 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 23:16:43,278 [INFO] Heartbeat: 2026-09-22T23:16:43.278960
+2026-09-22 23:19:23,252 [INFO] Stopped by user
+2026-09-22 23:19:23,681 [INFO] ======================================================================
+2026-09-22 23:19:23,681 [INFO] STATUS
+2026-09-22 23:19:23,681 [INFO] Equity:     $97,683.12
+2026-09-22 23:19:23,681 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-22 23:19:23,681 [INFO] Positions:  15
+2026-09-22 23:19:23,682 [INFO] Unrealized: $2035.44
+2026-09-22 23:19:23,682 [INFO]   AAVEUSD: 26.444300519 @ $146.62 | $70.75 (+1.82%)
+2026-09-22 23:19:23,682 [INFO]   AVAXUSD: 388.234891372 @ $11.05 | $85.44 (+1.99%)
+2026-09-22 23:19:23,682 [INFO]   DOTUSD: 2705.824783091 @ $1.22 | $-16.25 (-0.49%)
+2026-09-22 23:19:23,682 [INFO]   EAF: 1 @ $11.07 | $0.05 (+0.45%)
+2026-09-22 23:19:23,682 [INFO]   FILUSD: 3758.70269229 @ $1.04 | $-145.57 (-3.71%)
+2026-09-22 23:19:23,682 [INFO]   GRML: 1 @ $13.50 | $0.93 (+6.89%)
+2026-09-22 23:19:23,683 [INFO]   LTCUSD: 44.171921679 @ $62.25 | $40.78 (+1.48%)
+2026-09-22 23:19:23,683 [INFO]   MAZE: 970 @ $28.80 | $1.47 (+0.01%)
+2026-09-22 23:19:23,683 [INFO]   PEPEUSD: 398296459.709127232 @ $0.00 | $-5.18 (-0.27%)
+2026-09-22 23:19:23,683 [INFO]   RSKD: 4428 @ $6.93 | $2133.63 (+6.96%)
+2026-09-22 23:19:23,683 [INFO]   SGRY: 1 @ $15.76 | $-0.06 (-0.38%)
+2026-09-22 23:19:23,683 [INFO]   SKYUSD: 67508.927206607 @ $0.07 | $-50.70 (-1.08%)
+2026-09-22 23:19:23,683 [INFO]   SOLUSD: 21.571246904 @ $118.20 | $3.88 (+0.15%)
+2026-09-22 23:19:23,683 [INFO]   TRUMPUSD: 1234.758110404 @ $2.23 | $-83.75 (-3.04%)
+2026-09-22 23:19:23,683 [INFO]   WBD: 1 @ $30.82 | $0.01 (+0.03%)
+2026-09-22 23:19:23,684 [INFO] ======================================================================
+2026-09-22 23:19:28,452 [INFO] Restored position exit state: MAZE, RSKD, WBD, EAF
+2026-09-22 23:19:28,487 [INFO] Entry log rebuilt from today's orders: MAZE, RSKD, WBD, EAF
+2026-09-22 23:19:28,519 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-22 23:19:28,547 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-22 23:19:28,616 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-22 23:19:28,616 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-22 23:19:28,616 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-22 23:19:28,616 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-22 23:19:28,617 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-22 23:19:28,617 [INFO] ======================================================================
+2026-09-22 23:19:28,617 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-22 23:19:28,617 [INFO] ======================================================================
+2026-09-22 23:19:28,617 [INFO] Priority 1 (Momentum): 132 stocks
+2026-09-22 23:19:28,617 [INFO] Priority 2 (Established): 16 stocks
+2026-09-22 23:19:28,617 [INFO] Total Universe: 152 stocks
+2026-09-22 23:19:28,617 [INFO] Scan: 3 min fixed
+2026-09-22 23:19:28,617 [INFO] ======================================================================
+2026-09-22 23:19:28,644 [INFO] Equity:          $97,683.12
+2026-09-22 23:19:28,644 [INFO] Buying Power:    $99,985.25
+2026-09-22 23:19:28,644 [INFO] PDT Status:      No
+2026-09-22 23:19:28,644 [INFO] Day Trade Count: None
+2026-09-22 23:19:28,644 [INFO] ======================================================================
+2026-09-22 23:19:28,644 [INFO] Starting… Press Ctrl+C to stop
+2026-09-22 23:19:28,644 [INFO] ======================================================================
+2026-09-22 23:19:28,651 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-22 23:19:28,651 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-22 23:19:28,651 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-22 23:19:28,653 [INFO] Waiting up to 90s for startup TI capture…

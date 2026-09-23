@@ -290,6 +290,11 @@ class CryptoTrader:
         for sym in symbols:
             if sym in self._positions:
                 continue  # already holding, skip new entry
+            # An unfilled entry order can outlive an in-memory-only position
+            # tracker across bot restarts; without this check every restart
+            # would resubmit a duplicate buy for the same still-open order.
+            if self._has_open_buy_order(sym):
+                continue
             sig = self._evaluate(sym)
             if sig:
                 signals.append(sig)

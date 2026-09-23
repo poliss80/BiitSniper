@@ -514,10 +514,8 @@ def _run_crypto_cycle(ctx: AppContext) -> None:
         buys_this_cycle = 0
         for sig in signals:
             if sig.action == "buy":
-                # Stop if we've hit the max positions cap
-                if len(ctx.crypto_trader._positions) >= cfg.CRYPTO_MAX_POSITIONS:
-                    log.info(f"[CRYPTO] Max positions ({cfg.CRYPTO_MAX_POSITIONS}) reached — stopping buys this cycle")
-                    break
+                # No hard position-count cap — CRYPTO_MIN_NOTIONAL already
+                # stops new buys once available cash is too small to fund one.
                 if ctx.crypto_trader.execute_buy(sig):
                     buys_this_cycle += 1
         if buys_this_cycle == 0 and signals:
