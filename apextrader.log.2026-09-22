@@ -9683,3 +9683,296 @@ Stacktrace:
 2026-09-22 22:01:56,866 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
 2026-09-22 22:01:56,867 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
 2026-09-22 22:01:56,867 [INFO] Heartbeat: 2026-09-22T22:01:56.867129
+2026-09-22 22:04:56,891 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:04:57,771 [INFO] [CRYPTO] BROKER SL placed for LTC/USD stop=61.5415 limit=61.2338 qty=44.171922 | order=6df8adad-67a5-41c2-9d0b-f847c480e029
+2026-09-22 22:04:57,805 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:04:57,843 [INFO] [CRYPTO] BROKER SL placed for SOL/USD stop=115.5180 limit=114.9404 qty=21.571247 | order=da2250ed-0dfa-41ec-90d7-34a0a4fe25a2
+2026-09-22 22:04:57,843 [INFO] [CRYPTO] Position closed externally: AAVE/USD
+2026-09-22 22:04:57,843 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:04:57,844 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:04:57,844 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:04:58,797 [INFO] [CRYPTO] 5 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000)
+2026-09-22 22:05:00,437 [INFO] [CRYPTO] #1: AAVE/USD BUY @ 146.4050 conf=71% | RSI=61.4 3-bar uptrend
+2026-09-22 22:05:00,438 [INFO] [CRYPTO] #2: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:05:00,438 [INFO] [CRYPTO] #3: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:05:00,438 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:05:00,529 [INFO] [CRYPTO] LIMIT BUY AAVE/USD qty=10.411963 (~$1527) limit=146.6246 | software TP=152.2612 SL=142.7449 | conf=71% | RSI=61.4 3-bar uptrend | order=76d09e67-68f3-4448-92e1-2970900bbfc3
+2026-09-22 22:05:00,619 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=3239.454891 (~$1399) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=c3d55cf6-956c-4f84-a7da-bf24d70df281
+2026-09-22 22:05:00,710 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=11746.961363 (~$1283) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=7ecc28cf-423c-4236-a083-2cd24cd94530
+2026-09-22 22:05:00,807 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=4674.624419 (~$1176) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=9f821713-4be7-4330-8c13-e17cd5153c36
+2026-09-22 22:05:00,865 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:05:00,874 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:05:00,875 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:05:00,875 [INFO] Heartbeat: 2026-09-22T22:05:00.875458
+2026-09-22 22:08:00,897 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:08:01,279 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:08:01,310 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:08:01,310 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:08:01,310 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:08:01,310 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:08:01,787 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:08:03,398 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:08:03,398 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:08:03,399 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:08:03,485 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=2495.211061 (~$1078) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=2ef5e302-838a-47d3-bb3e-84a96b90996a
+2026-09-22 22:08:03,573 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=9048.148247 (~$988) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=a39e3e3f-318f-4c0f-b7aa-b0438d126ad6
+2026-09-22 22:08:03,664 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=3600.650618 (~$906) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=900292f7-8ef5-4a09-989d-c5d9a8eebee4
+2026-09-22 22:08:03,722 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:08:03,728 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:08:03,729 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:08:03,729 [INFO] Heartbeat: 2026-09-22T22:08:03.729258
+2026-09-22 22:11:03,750 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:11:04,573 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:11:04,604 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:11:04,605 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:11:04,605 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:11:04,605 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:11:05,557 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:11:07,186 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:11:07,186 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:11:07,186 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:11:07,282 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1921.941228 (~$830) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=a0f15f71-9db6-4415-bf51-0508ac4d4827
+2026-09-22 22:11:07,378 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=6969.369863 (~$761) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=5b5fc4f0-1c0a-4288-98ab-e174ca857c74
+2026-09-22 22:11:07,472 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=2773.425239 (~$698) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=b84bf552-130d-4202-9114-886d639b594b
+2026-09-22 22:11:07,534 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:11:07,540 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:11:07,541 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:11:07,541 [INFO] Heartbeat: 2026-09-22T22:11:07.541332
+2026-09-22 22:14:07,568 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:14:08,606 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:14:08,637 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:14:08,638 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:14:08,638 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:14:08,638 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:14:09,615 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:14:11,340 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:14:11,340 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:14:11,340 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:14:11,438 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1480.385723 (~$640) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=967cd69d-6d86-471a-a1aa-5abd08a4d7ea
+2026-09-22 22:14:11,666 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=5368.231585 (~$586) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=27609bf3-86c1-40f6-96f2-c5bd8fe5aba4
+2026-09-22 22:14:11,756 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=2136.220395 (~$537) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=ad614802-a076-410c-a898-9624a3700fdd
+2026-09-22 22:14:11,819 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:14:11,825 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:14:11,825 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:14:11,826 [INFO] Heartbeat: 2026-09-22T22:14:11.826353
+2026-09-22 22:17:11,850 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:17:12,963 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:17:12,993 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:17:12,993 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:17:12,994 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:17:12,994 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:17:14,016 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:17:15,704 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:17:15,705 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:17:15,705 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:17:15,798 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1140.266455 (~$493) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=fc366cfe-8d48-4f78-841f-281f454e7678
+2026-09-22 22:17:15,892 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=4134.846886 (~$452) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=39349f72-4518-47b2-8445-27d50b89c575
+2026-09-22 22:17:15,993 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=1645.426770 (~$414) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=9b5d0662-6567-43eb-8ea0-a10689494f71
+2026-09-22 22:17:16,054 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:17:16,061 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:17:16,061 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:17:16,062 [INFO] Heartbeat: 2026-09-22T22:17:16.062108
+2026-09-22 22:20:16,082 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:20:16,984 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:20:17,018 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:20:17,019 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:20:17,020 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:20:17,020 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:20:17,958 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:20:19,565 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:20:19,566 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:20:19,566 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:20:19,659 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=925.935528 (~$400) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=8d7ec078-bbb2-483f-ba20-388488c9cade
+2026-09-22 22:20:19,751 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=3662.884250 (~$400) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=e06488ca-22e5-4a4b-9cde-ea7bc6f7d1c4
+2026-09-22 22:20:19,847 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=1590.129999 (~$400) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=e994e133-623a-4791-aa43-a317c0e0f655
+2026-09-22 22:20:19,912 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:20:19,925 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:20:19,926 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:20:19,926 [INFO] Heartbeat: 2026-09-22T22:20:19.926808
+2026-09-22 22:23:19,949 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:23:20,776 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:23:20,809 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:23:20,809 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:23:20,810 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:23:20,810 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:23:21,760 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:23:23,643 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:23:23,643 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:23:23,643 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:23:23,737 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=925.935528 (~$400) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=6b8c9eeb-926a-47bf-9da2-f7d1667ff3d7
+2026-09-22 22:23:23,834 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=3662.884250 (~$400) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=c3a14047-84ca-4992-a8ab-5690fa9ccc48
+2026-09-22 22:23:23,926 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=1590.129999 (~$400) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=1160ee2c-15ce-4d23-a9e9-b5d6e0524bfb
+2026-09-22 22:23:23,985 [INFO] LIVE PROBE WBD: scale-in skipped; gain -0.10% < 0.25%
+2026-09-22 22:23:23,992 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:23:23,992 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:23:23,993 [INFO] Heartbeat: 2026-09-22T22:23:23.992983
+2026-09-22 22:25:54,837 [INFO] ======================================================================
+2026-09-22 22:25:54,837 [INFO] STATUS
+2026-09-22 22:25:54,837 [INFO] Equity:     $97,733.16
+2026-09-22 22:25:54,837 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-22 22:25:54,838 [INFO] Positions:  12
+2026-09-22 22:25:54,838 [INFO] Unrealized: $2060.46
+2026-09-22 22:25:54,838 [INFO]   AAVEUSD: 26.444300519 @ $146.62 | $18.92 (+0.49%)
+2026-09-22 22:25:54,838 [INFO]   AVAXUSD: 388.234891372 @ $11.05 | $13.62 (+0.32%)
+2026-09-22 22:25:54,839 [INFO]   EAF: 1 @ $11.07 | $0.05 (+0.45%)
+2026-09-22 22:25:54,839 [INFO]   GRML: 1 @ $13.50 | $0.93 (+6.89%)
+2026-09-22 22:25:54,840 [INFO]   LTCUSD: 44.171921679 @ $62.25 | $-6.54 (-0.24%)
+2026-09-22 22:25:54,840 [INFO]   MAZE: 970 @ $28.80 | $-47.03 (-0.17%)
+2026-09-22 22:25:54,840 [INFO]   PEPEUSD: 398296459.709127232 @ $0.00 | $-5.18 (-0.27%)
+2026-09-22 22:25:54,840 [INFO]   RSKD: 4428 @ $6.93 | $2133.63 (+6.96%)
+2026-09-22 22:25:54,841 [INFO]   SGRY: 1 @ $15.76 | $-0.06 (-0.38%)
+2026-09-22 22:25:54,841 [INFO]   SKYUSD: 67508.927206607 @ $0.07 | $-50.70 (-1.08%)
+2026-09-22 22:25:54,841 [INFO]   SOLUSD: 21.571246904 @ $118.20 | $2.80 (+0.11%)
+2026-09-22 22:25:54,842 [INFO]   WBD: 1 @ $30.82 | $0.01 (+0.03%)
+2026-09-22 22:25:54,842 [INFO] ======================================================================
+2026-09-22 22:25:54,848 [INFO] Universe pruned: no expired tickers
+2026-09-22 22:26:24,852 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:26:24,930 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:26:24,962 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:26:24,962 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:26:24,962 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:26:24,963 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:26:25,894 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:26:27,478 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:26:27,478 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:26:27,479 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:26:27,574 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=925.935528 (~$400) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=726b0b67-1da9-4c68-86b1-803d4fe13ef3
+2026-09-22 22:26:27,665 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=3662.884250 (~$400) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=9b4e8e86-3660-4106-b9f6-f852a1a1cd23
+2026-09-22 22:26:27,759 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=1590.129999 (~$400) limit=0.2516 | software TP=0.2612 SL=0.2449 | conf=65% | RSI=51.0 3-bar uptrend | order=d53c503a-07ea-4017-8898-241db1c7b4a4
+2026-09-22 22:26:27,821 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:26:27,827 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:26:27,828 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:26:27,828 [INFO] Heartbeat: 2026-09-22T22:26:27.828362
+2026-09-22 22:29:27,849 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:29:28,835 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:29:28,866 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:29:28,866 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:29:28,867 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:29:28,867 [INFO] [CRYPTO] Position closed externally: WIF/USD
+2026-09-22 22:29:29,845 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:29:31,521 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:29:31,521 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:29:31,522 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:29:31,611 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=925.935528 (~$400) limit=0.4320 | software TP=0.4486 SL=0.4206 | conf=70% | RSI=58.8 3-bar uptrend | order=2ed7ae13-0f29-4665-b603-74f07a5f8dd7
+2026-09-22 22:29:31,701 [INFO] [CRYPTO] LIMIT BUY POL/USD qty=3662.884250 (~$400) limit=0.1092 | software TP=0.1134 SL=0.1063 | conf=65% | RSI=49.9 3-bar uptrend | order=cc6aa350-d0bc-421c-9f9c-9852a822d7fc
+2026-09-22 22:29:31,762 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:29:31,822 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:29:31,828 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:29:31,828 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:29:31,828 [INFO] Heartbeat: 2026-09-22T22:29:31.828657
+2026-09-22 22:32:31,873 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:32:32,708 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:32:32,746 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:32:32,746 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-22 22:32:32,746 [INFO] [CRYPTO] Position closed externally: POL/USD
+2026-09-22 22:32:33,702 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:32:35,375 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:32:35,376 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:32:35,376 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:32:35,442 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:32:35,522 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:32:35,589 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:32:35,590 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:32:35,656 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:32:35,679 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:32:35,679 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:32:35,680 [INFO] Heartbeat: 2026-09-22T22:32:35.680055
+2026-09-22 22:35:35,699 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:35:36,064 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:35:36,095 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:35:36,723 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:35:38,109 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:35:38,109 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:35:38,109 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:35:38,169 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:35:38,227 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:35:38,285 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:35:38,285 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:35:38,342 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:35:38,364 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:35:38,364 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:35:38,364 [INFO] Heartbeat: 2026-09-22T22:35:38.364469
+2026-09-22 22:38:38,387 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:38:39,333 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.03115063"}
+2026-09-22 22:38:39,382 [WARNING] [CRYPTO] SL order placement failed for PEPE/USD: {"available":"398296459.709127232","balance":"398296459.709127232","code":40310000,"message":"insufficient balance for PEPE (requested: 398296459.70912725, available: 398296459.709127232)","symbol":"USD"}
+2026-09-22 22:38:40,473 [INFO] [CRYPTO] 6 open: SKY/USD(0.0697→TP:0.0724), AVAX/USD(11.1076→TP:11.5346), LTC/USD(63.2142→TP:65.6443), SOL/USD(118.6577→TP:123.2192), PEPE/USD(0.0000→TP:0.0000), AAVE/USD(146.6246→TP:152.2612)
+2026-09-22 22:38:42,304 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:38:42,304 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:38:42,304 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:38:42,367 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:38:42,455 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:38:42,525 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:38:42,525 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:38:42,602 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:38:42,611 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:38:42,611 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
+2026-09-22 22:38:42,611 [INFO] Heartbeat: 2026-09-22T22:38:42.611754
+2026-09-22 22:39:24,184 [INFO] Stopped by user
+2026-09-22 22:39:24,284 [INFO] ======================================================================
+2026-09-22 22:39:24,284 [INFO] STATUS
+2026-09-22 22:39:24,284 [INFO] Equity:     $97,759.96
+2026-09-22 22:39:24,284 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-22 22:39:24,284 [INFO] Positions:  12
+2026-09-22 22:39:24,284 [INFO] Unrealized: $2087.26
+2026-09-22 22:39:24,285 [INFO]   AAVEUSD: 26.444300519 @ $146.62 | $18.92 (+0.49%)
+2026-09-22 22:39:24,285 [INFO]   AVAXUSD: 388.234891372 @ $11.05 | $40.52 (+0.94%)
+2026-09-22 22:39:24,285 [INFO]   EAF: 1 @ $11.07 | $0.05 (+0.45%)
+2026-09-22 22:39:24,285 [INFO]   GRML: 1 @ $13.50 | $0.93 (+6.89%)
+2026-09-22 22:39:24,285 [INFO]   LTCUSD: 44.171921679 @ $62.25 | $-6.54 (-0.24%)
+2026-09-22 22:39:24,285 [INFO]   MAZE: 970 @ $28.80 | $-47.03 (-0.17%)
+2026-09-22 22:39:24,286 [INFO]   PEPEUSD: 398296459.709127232 @ $0.00 | $-5.18 (-0.27%)
+2026-09-22 22:39:24,286 [INFO]   RSKD: 4428 @ $6.93 | $2133.63 (+6.96%)
+2026-09-22 22:39:24,286 [INFO]   SGRY: 1 @ $15.76 | $-0.06 (-0.38%)
+2026-09-22 22:39:24,286 [INFO]   SKYUSD: 67508.927206607 @ $0.07 | $-50.70 (-1.08%)
+2026-09-22 22:39:24,286 [INFO]   SOLUSD: 21.571246904 @ $118.20 | $2.70 (+0.11%)
+2026-09-22 22:39:24,286 [INFO]   WBD: 1 @ $30.82 | $0.01 (+0.03%)
+2026-09-22 22:39:24,286 [INFO] ======================================================================
+2026-09-22 22:46:18,780 [INFO] Restored position exit state: MAZE, RSKD, WBD, EAF
+2026-09-22 22:46:18,817 [INFO] Entry log rebuilt from today's orders: MAZE, RSKD, WBD, EAF
+2026-09-22 22:46:18,849 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-22 22:46:18,881 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-22 22:46:18,956 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-22 22:46:18,956 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-22 22:46:18,956 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-22 22:46:18,957 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-22 22:46:18,957 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-22 22:46:18,958 [INFO] ======================================================================
+2026-09-22 22:46:18,958 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-22 22:46:18,958 [INFO] ======================================================================
+2026-09-22 22:46:18,958 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-22 22:46:18,958 [INFO] Priority 2 (Established): 16 stocks
+2026-09-22 22:46:18,958 [INFO] Total Universe: 42 stocks
+2026-09-22 22:46:18,958 [INFO] Scan: 3 min fixed
+2026-09-22 22:46:18,958 [INFO] ======================================================================
+2026-09-22 22:46:19,006 [INFO] Equity:          $97,776.61
+2026-09-22 22:46:19,006 [INFO] Buying Power:    $49,558.97
+2026-09-22 22:46:19,007 [INFO] PDT Status:      No
+2026-09-22 22:46:19,007 [INFO] Day Trade Count: None
+2026-09-22 22:46:19,007 [INFO] ======================================================================
+2026-09-22 22:46:19,007 [INFO] Starting… Press Ctrl+C to stop
+2026-09-22 22:46:19,007 [INFO] ======================================================================
+2026-09-22 22:46:19,008 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-22 22:46:19,008 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-22 22:46:19,009 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-22 22:46:19,010 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-22 22:47:49,012 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-22 22:47:50,105 [INFO] ======================================================================
+2026-09-22 22:47:50,105 [INFO] NEW DAY: 2026-09-22 | Start equity: $97,783.52
+2026-09-22 22:47:50,108 [INFO] Universe pruned: no expired tickers
+2026-09-22 22:47:50,109 [INFO] ======================================================================
+2026-09-22 22:47:50,109 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-22 22:47:50,240 [WARNING] [CRYPTO] SL order placement failed for AAVE/USD: {"buy_limit_price":"145.15490625","code":40310000,"existing_order_id":"775eeea9-9ad7-4860-81f8-9f3a5e0496bb","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, sell limit price should be greater than existing buy limit price","sell_limit_price":"142.24419735"}
+2026-09-22 22:47:50,550 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=ff983495-12d4-4355-a22c-85d3e727956f
+2026-09-22 22:47:51,793 [INFO] [CRYPTO] 6 open: AAVE/USD(146.6246→TP:152.4896), AVAX/USD(11.0549→TP:11.4971), LTC/USD(62.2500→TP:64.7400), PEPE/USD(0.0000→TP:0.0000), SKY/USD(0.0695→TP:0.0723), SOL/USD(118.2000→TP:122.9280)
+2026-09-22 22:47:53,470 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4313 conf=70% | RSI=58.8 3-bar uptrend
+2026-09-22 22:47:53,471 [INFO] [CRYPTO] #2: POL/USD BUY @ 0.1090 conf=65% | RSI=49.9 3-bar uptrend
+2026-09-22 22:47:53,471 [INFO] [CRYPTO] #3: WIF/USD BUY @ 0.2512 conf=65% | RSI=51.0 3-bar uptrend
+2026-09-22 22:47:53,530 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:47:53,591 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:47:53,651 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=235.53, min=400.0) — skipping
+2026-09-22 22:47:53,651 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-22 22:47:53,716 [INFO] Schwab: Refreshing access token...
+2026-09-22 22:47:55,416 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-22 22:47:56,736 [INFO] LIVE PROBE WBD: scale-in skipped; gain +0.03% < 0.25%
+2026-09-22 22:47:56,991 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
+2026-09-22 22:47:56,992 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten

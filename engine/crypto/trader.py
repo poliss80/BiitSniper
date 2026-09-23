@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import datetime
 import logging
+import math
 import time
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
@@ -216,7 +217,15 @@ class CryptoTrader:
                 # Check for an existing open SL order before placing a new one (avoids
                 # "available: 0" errors when restarting with existing positions + SL orders)
                 existing_sl = self._find_existing_sl_order(sym_norm)
-                sl_order_id = existing_sl or self._place_sl_order(sym_norm, qty, sl_price)
+                if existing_sl:
+                    sl_order_id = existing_sl
+                elif self._has_open_buy_order(sym_norm):
+                    # Entry buy limit still resting — a sell SL below it would trip
+                    # Alpaca's wash-trade guard (40310000). Defer to a later cycle.
+                    log.debug(f"[CRYPTO] Deferring SL for {sym_norm} — entry buy order still open")
+                    sl_order_id = None
+                else:
+                    sl_order_id = self._place_sl_order(sym_norm, qty, sl_price)
                 self._positions[sym_norm] = CryptoPosition(
                     symbol=sym_norm,
                     entry_price=entry,
@@ -232,7 +241,11 @@ class CryptoTrader:
                 # Position already tracked — place broker SL if not yet done
                 tracked = self._positions[sym_norm]
                 if tracked.sl_order_id is None:
-                    tracked.sl_order_id = self._place_sl_order(sym_norm, qty, tracked.sl_price)
+                    if self._has_open_buy_order(sym_norm):
+                        # Entry buy limit still resting — defer SL to avoid wash-trade rejection
+                        log.debug(f"[CRYPTO] Deferring SL for {sym_norm} — entry buy order still open")
+                    else:
+                        tracked.sl_order_id = self._place_sl_order(sym_norm, qty, tracked.sl_price)
                 # Refresh qty from broker (may differ from estimated qty)
                 tracked.qty = qty
 
@@ -470,6 +483,34 @@ class CryptoTrader:
             log.debug(f"[CRYPTO] _find_existing_sl_order failed for {symbol}: {e}")
         return None
 
+    def _has_open_buy_order(self, symbol: str) -> bool:
+        """Return True if any open BUY order exists for *symbol*.
+
+        Used to defer SL placement while the entry buy limit is still resting —
+        placing a sell limit below a resting buy limit triggers Alpaca's
+        wash-trade rejection (40310000).
+        """
+        try:
+            from alpaca.trading.requests import GetOrdersRequest
+            from alpaca.trading.enums import OrderSide, QueryOrderStatus
+            alpaca_sym = self._alpaca_sym(symbol)
+            # Fetch all open BUY orders without a symbol filter — Alpaca's
+            # per-symbol filter is unreliable for crypto pairs; we match in Python.
+            req = GetOrdersRequest(
+                status=QueryOrderStatus.OPEN,
+                side=OrderSide.BUY,
+                limit=100,
+            )
+            orders = self._client.get_orders(req)
+            log.debug(f"[CRYPTO] _has_open_buy_order: {len(orders)} open BUY orders for {symbol}")
+            for o in orders:
+                o_sym = str(getattr(o, "symbol", "")).upper()
+                if o_sym == alpaca_sym.upper():
+                    return True
+        except Exception as e:
+            log.debug(f"[CRYPTO] _has_open_buy_order failed for {symbol}: {e}")
+        return False
+
     def _place_sl_order(self, symbol: str, qty: float, sl_price: float) -> Optional[str]:
         """Submit a broker-side GTC stop-limit SELL order for the SL level.
 
@@ -483,9 +524,16 @@ class CryptoTrader:
         try:
             alpaca_sym  = self._alpaca_sym(symbol)
             limit_price = round(sl_price * 0.995, 8)  # 0.5% below stop for fill assurance
+            # Qty safety: broker qty strings with many decimals can come back
+            # microscopically inflated after float() round-trips; submitting the
+            # raw value then fails with "insufficient balance" (40310000).
+            # Shave by 1e-6 relative and floor to 8 decimals (never rounds up),
+            # so the submitted qty is always <= the true available balance while
+            # keeping enough precision for low-priced tokens (e.g. PEPE).
+            safe_qty    = math.floor(qty * (1 - 1e-6) * 1e8) / 1e8
             order_req   = StopLimitOrderRequest(
                 symbol=alpaca_sym,
-                qty=qty,
+                qty=safe_qty,
                 side=OrderSide.SELL,
                 time_in_force=TimeInForce.GTC,
                 stop_price=sl_price,
@@ -494,7 +542,7 @@ class CryptoTrader:
             order = self._client.submit_order(order_req)
             log.info(
                 f"[CRYPTO] BROKER SL placed for {symbol} stop={sl_price:.4f} "
-                f"limit={limit_price:.4f} qty={qty:.6f} | order={order.id}"
+                f"limit={limit_price:.4f} qty={safe_qty:.8f} | order={order.id}"
             )
             return str(order.id)
         except Exception as e:
