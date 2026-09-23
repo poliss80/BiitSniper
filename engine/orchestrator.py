@@ -672,28 +672,19 @@ def scan_and_trade(ctx: AppContext) -> None:
         ctx.market_state = MarketState.from_now()
     ctx.executor.update_market_state(ctx.market_state)
 
-    if not _manage_intraday_window(ctx):
-        _run_live_probe_scale_check(ctx, "SYSTEM")
-        log.info("[SYSTEM] Outside an active intraday window or waiting for portfolio flatten")
-        return
-
-    # ── Hard cutoff: no trading after AFTERHOURS_END (20:00 ET) ──────────────
+    # ── Weekend / FORCE_CRYPTO: crypto must be evaluated BEFORE the equity
+    # intraday-window gate below, which returns early outside 04:00-20:00 ET
+    # and on weekends — otherwise crypto could never run post-market or on
+    # weekends regardless of these flags. Uses a direct date check (not the
+    # cached ctx.market_state, which is only refreshed once the equity window
+    # is open) so weekend/weekday detection stays correct across midnight.
     import pytz as _ptz
     _now_et = __import__('datetime').datetime.now(_ptz.timezone("America/New_York"))
-    _end_h, _end_m = map(int, cfg.AFTERHOURS_END.split(":"))
-    if _now_et.hour > _end_h or (_now_et.hour == _end_h and _now_et.minute >= _end_m):
-        log.debug(f"[SYSTEM] After {cfg.AFTERHOURS_END} ET — no scanning")
-        return
-
-    ctx.market_state = MarketState.from_now()
-    ctx.market_state.resolve_regime()
-
-    # ── Weekend / FORCE_CRYPTO: crypto-only, skip all equity / options logic ──
-    _is_weekend = not ctx.market_state.weekday
+    _is_weekend = _now_et.weekday() >= 5
     if _is_weekend or cfg.FORCE_CRYPTO:
         if cfg.CRYPTO_ENABLED:
             if cfg.FORCE_CRYPTO and not _is_weekend:
-                log.info("[SYSTEM] FORCE_CRYPTO=true — running crypto cycle on weekday")
+                log.info("[SYSTEM] FORCE_CRYPTO=true — running crypto cycle")
             else:
                 log.info("[SYSTEM] Weekend — running CRYPTO-ONLY cycle (equity/options suspended)")
             _run_crypto_cycle(ctx)
@@ -706,6 +697,20 @@ def scan_and_trade(ctx: AppContext) -> None:
             if not cfg.FORCE_EQUITY:
                 log.info("[SYSTEM] Weekend — equity market closed, CRYPTO_ENABLED=false, nothing to do")
                 return
+
+    if not _manage_intraday_window(ctx):
+        _run_live_probe_scale_check(ctx, "SYSTEM")
+        log.info("[SYSTEM] Outside an active intraday window or waiting for portfolio flatten")
+        return
+
+    # ── Hard cutoff: no trading after AFTERHOURS_END (20:00 ET) ──────────────
+    _end_h, _end_m = map(int, cfg.AFTERHOURS_END.split(":"))
+    if _now_et.hour > _end_h or (_now_et.hour == _end_h and _now_et.minute >= _end_m):
+        log.debug(f"[SYSTEM] After {cfg.AFTERHOURS_END} ET — no scanning")
+        return
+
+    ctx.market_state = MarketState.from_now()
+    ctx.market_state.resolve_regime()
 
     ctx.executor.update_market_state(ctx.market_state)
     _run_options_cycle(ctx, ctx.market_state)
