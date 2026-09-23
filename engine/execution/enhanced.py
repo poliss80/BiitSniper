@@ -2017,12 +2017,20 @@ class EnhancedExecutor:
             p.symbol for p in positions
             if str(getattr(p, "asset_class", "")).lower() == "us_option"
         }
+        crypto_symbols = {
+            p.symbol for p in positions
+            if str(getattr(p, "asset_class", "")).lower() == "crypto"
+        }
         active = {
             p.symbol for p in positions
-            if float(getattr(p, "qty", 0) or 0) != 0 and p.symbol not in option_symbols
+            if float(getattr(p, "qty", 0) or 0) != 0
+            and p.symbol not in option_symbols
+            and p.symbol not in crypto_symbols
         }
         if option_symbols:
             log.info(f"{reason}: retaining options positions: {sorted(option_symbols)}")
+        if crypto_symbols:
+            log.info(f"{reason}: retaining crypto positions: {sorted(crypto_symbols)}")
 
         scaled_in_symbols = set(getattr(self, "_live_probe_scaled_in", set())) & active
         if scaled_in_symbols:

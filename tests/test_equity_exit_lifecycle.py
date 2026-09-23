@@ -138,6 +138,16 @@ class EquityExitLifecycleTests(unittest.TestCase):
         self.assertTrue(executor.flatten_portfolio("INTRADAY FINAL RESET"))
         self.assertEqual(client.close_attempts, ["AAPL"])
 
+    def test_flatten_retains_crypto_positions(self):
+        client = FlattenClient([
+            MockPosition("AAPL", "10", 100.0),
+            MockPosition("BTC/USD", "1", 60000.0, asset_class="crypto"),
+        ])
+        executor = build_executor(client, Path(tempfile.gettempdir()) / "unused_flatten_state.json")
+
+        self.assertTrue(executor.flatten_portfolio("INTRADAY FINAL RESET"))
+        self.assertEqual(client.close_attempts, ["AAPL"])
+
     def test_intraday_window_reset_retains_options_tracking(self):
         """Regression: _manage_intraday_window must NOT clear
         ctx.options_executor._positions — flatten_portfolio intentionally
