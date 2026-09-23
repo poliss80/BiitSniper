@@ -10342,3 +10342,56 @@ Stacktrace:
 2026-09-22 23:24:10,863 [INFO] LIVE PROBE EAF: scale-in skipped; price not within 0.20% of post-entry high 11.68
 2026-09-22 23:24:10,864 [INFO] [SYSTEM] Outside an active intraday window or waiting for portfolio flatten
 2026-09-22 23:24:10,864 [INFO] Heartbeat: 2026-09-22T23:24:10.864218
+2026-09-22 23:24:27,805 [INFO] Stopped by user
+2026-09-22 23:24:27,863 [INFO] ======================================================================
+2026-09-22 23:24:27,863 [INFO] STATUS
+2026-09-22 23:24:27,863 [INFO] Equity:     $97,681.84
+2026-09-22 23:24:27,863 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-22 23:24:27,863 [INFO] Positions:  17
+2026-09-22 23:24:27,863 [INFO] Unrealized: $2037.66
+2026-09-22 23:24:27,863 [INFO]   AAVEUSD: 26.444300519 @ $146.62 | $70.75 (+1.82%)
+2026-09-22 23:24:27,863 [INFO]   AVAXUSD: 388.234891372 @ $11.05 | $85.44 (+1.99%)
+2026-09-22 23:24:27,864 [INFO]   DOTUSD: 2705.824783091 @ $1.22 | $-16.25 (-0.49%)
+2026-09-22 23:24:27,864 [INFO]   EAF: 1 @ $11.07 | $0.05 (+0.45%)
+2026-09-22 23:24:27,864 [INFO]   FILUSD: 3758.70269229 @ $1.04 | $-145.57 (-3.71%)
+2026-09-22 23:24:27,864 [INFO]   GRML: 1 @ $13.50 | $0.93 (+6.89%)
+2026-09-22 23:24:27,864 [INFO]   LTCUSD: 44.171921679 @ $62.25 | $40.78 (+1.48%)
+2026-09-22 23:24:27,864 [INFO]   MAZE: 970 @ $28.80 | $1.47 (+0.01%)
+2026-09-22 23:24:27,864 [INFO]   PAXGUSD: 0.132844955 @ $4361.31 | $-3.39 (-0.58%)
+2026-09-22 23:24:27,864 [INFO]   PEPEUSD: 398296459.709127232 @ $0.00 | $-5.18 (-0.27%)
+2026-09-22 23:24:27,864 [INFO]   RSKD: 4428 @ $6.93 | $2133.63 (+6.96%)
+2026-09-22 23:24:27,864 [INFO]   SGRY: 1 @ $15.76 | $-0.06 (-0.38%)
+2026-09-22 23:24:27,864 [INFO]   SKYUSD: 67508.927206607 @ $0.07 | $-50.70 (-1.08%)
+2026-09-22 23:24:27,864 [INFO]   SOLUSD: 21.571246904 @ $118.20 | $22.00 (+0.86%)
+2026-09-22 23:24:27,864 [INFO]   TRUMPUSD: 1234.758110404 @ $2.23 | $-83.75 (-3.04%)
+2026-09-22 23:24:27,864 [INFO]   WBD: 1 @ $30.82 | $0.01 (+0.03%)
+2026-09-22 23:24:27,864 [INFO]   XTZUSD: 2359.646855735 @ $0.35 | $-12.51 (-1.52%)
+2026-09-22 23:24:27,864 [INFO] ======================================================================
+2026-09-22 23:24:31,459 [INFO] Restored position exit state: MAZE, RSKD, WBD, EAF
+2026-09-22 23:24:31,496 [INFO] Entry log rebuilt from today's orders: MAZE, RSKD, WBD, EAF
+2026-09-22 23:24:31,535 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-22 23:24:31,566 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-22 23:24:31,642 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-22 23:24:31,642 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-22 23:24:31,642 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-22 23:24:31,643 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-22 23:24:31,643 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-22 23:24:31,644 [INFO] ======================================================================
+2026-09-22 23:24:31,644 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-22 23:24:31,644 [INFO] ======================================================================
+2026-09-22 23:24:31,644 [INFO] Priority 1 (Momentum): 152 stocks
+2026-09-22 23:24:31,644 [INFO] Priority 2 (Established): 16 stocks
+2026-09-22 23:24:31,644 [INFO] Total Universe: 172 stocks
+2026-09-22 23:24:31,644 [INFO] Scan: 3 min fixed
+2026-09-22 23:24:31,644 [INFO] ======================================================================
+2026-09-22 23:24:31,672 [INFO] Equity:          $97,681.84
+2026-09-22 23:24:31,672 [INFO] Buying Power:    $49,128.37
+2026-09-22 23:24:31,672 [INFO] PDT Status:      No
+2026-09-22 23:24:31,672 [INFO] Day Trade Count: None
+2026-09-22 23:24:31,672 [INFO] ======================================================================
+2026-09-22 23:24:31,672 [INFO] Starting… Press Ctrl+C to stop
+2026-09-22 23:24:31,672 [INFO] ======================================================================
+2026-09-22 23:24:31,674 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-22 23:24:31,674 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-22 23:24:31,674 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-22 23:24:31,675 [INFO] Waiting up to 90s for startup TI capture…
