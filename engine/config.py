@@ -816,6 +816,18 @@ PARABOLIC_FADE_RECLAIM = {
     "enabled": os.getenv("PFR_ENABLED", "true").lower() in ("1","true","yes"),
 }
 
+POC_RECLAIM = {
+    "enabled": os.getenv("POC_ENABLED", "true").lower() in ("1", "true", "yes"),
+    "lookback_days": int(os.getenv("POC_LOOKBACK_DAYS", "20")),              # daily bars used to build the volume profile
+    "bins": int(os.getenv("POC_BINS", "50")),                                # volume-profile histogram bins
+    "deviation_threshold_pct": float(os.getenv("POC_DEVIATION_THRESHOLD_PCT", "0.5")),  # % below POC required to arm the setup
+    "volume_ma_period": int(os.getenv("POC_VOLUME_MA_PERIOD", "20")),        # 1m bars used for the volume moving average
+    "volume_confirm_mult": float(os.getenv("POC_VOLUME_CONFIRM_MULT", "1.5")),  # reclaim bar volume must exceed MA x this
+    "entry_window_start_min": int(os.getenv("POC_ENTRY_WINDOW_START_MIN", "15")),   # 9:45 AM ET — skip open noise
+    "entry_window_end_min": int(os.getenv("POC_ENTRY_WINDOW_END_MIN", "375")),      # 3:45 PM ET — skip closing minutes
+    "max_stop_pct": float(os.getenv("POC_MAX_STOP_PCT", "5.0")),            # cap on stop distance below entry
+}
+
 SENTIMENT_STRATEGY = {
     "enabled": True,
     "min_sentiment_score": 0.6,

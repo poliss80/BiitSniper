@@ -23,6 +23,7 @@ from engine.utils.bars import (
     calc_rsi,
     calc_macd,
     calculate_atr,
+    calculate_poc,
 )
 
 from engine.utils.market import (

@@ -18,6 +18,7 @@ from typing import Dict, Tuple
 # Add tenacity for retry logic
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
 
+import numpy as np
 import pandas as pd
 import pytz
 
@@ -464,6 +465,30 @@ def calc_macd(prices: pd.Series) -> Dict:
     macd   = exp1 - exp2
     signal = macd.ewm(span=9, adjust=False).mean()
     return {"macd": macd, "signal": signal, "hist": macd - signal}
+
+
+def calculate_poc(bars: pd.DataFrame, bins: int = 50) -> float:
+    """Volume Point of Control: midpoint of the price bin with the highest
+    traded volume, from a volume profile built by binning 'close' into
+    `bins` buckets spanning the ['low'.min(), 'high'.max()] range and
+    weighting each bucket by 'volume'. Returns 0.0 on insufficient data.
+    """
+    if bars.empty or len(bars) < 2:
+        return 0.0
+    try:
+        price_min = float(bars["low"].min())
+        price_max = float(bars["high"].max())
+        if not np.isfinite(price_min) or not np.isfinite(price_max) or price_max <= price_min:
+            return 0.0
+        hist, bin_edges = np.histogram(
+            bars["close"], bins=bins, weights=bars["volume"], range=(price_min, price_max)
+        )
+        if hist.sum() <= 0:
+            return 0.0
+        max_bin = int(np.argmax(hist))
+        return float((bin_edges[max_bin] + bin_edges[max_bin + 1]) / 2)
+    except Exception:
+        return 0.0
 
 
 def calculate_atr(bars: pd.DataFrame, period: int = 14) -> float:

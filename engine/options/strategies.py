@@ -34,9 +34,10 @@ import pandas as pd
 import psutil
 import pytz
 from engine.options._options_today import _calc_iv_rank
-from engine.utils import MarketState, get_bars, calc_rsi, calc_macd
+from engine.utils import MarketState, get_bars, calc_rsi, calc_macd, calculate_poc
 from engine.config import (
     OPTIONS_ENABLED,
+    POC_RECLAIM,
     OPTIONS_ALLOWED_STRATEGIES,
     OPTIONS_DTE_MIN,
     OPTIONS_DTE_MAX,
@@ -1405,6 +1406,96 @@ class MomentumContinuationCallStrategy:
             return _build_equity_parity_call(symbol, current, chain, reason, confidence, self.name)
         except Exception as error:
             log.debug(f"MomentumContinuationCall {symbol}: {error}")
+            return None
+
+
+# Per-symbol state (reset daily), mirrors engine.equity.strategies.PocReclaimStrategy
+_poc_state: Dict[str, dict] = {}
+
+
+class PocReclaimCallStrategy:
+    """Translate the equity POC deviation+reclaim setup into a liquid call.
+
+    Reference POC comes from a rolling daily volume profile. State machine:
+    IDLE -> DEVIATED_BELOW (close < POC * (1 - deviation_threshold_pct)) ->
+    signal fires once close reclaims back above POC on a volume-confirmed bar.
+    """
+
+    name = "PocReclaimCall"
+
+    def scan(self, symbol: str) -> Optional[OptionSignal]:
+        cfg = POC_RECLAIM
+        if not OPTIONS_ENABLED or not cfg["enabled"] or symbol in _INVERSE_ETFS or not _is_bull_regime():
+            return None
+        now_et = datetime.datetime.now(pytz.timezone("America/New_York"))
+        minutes_of_day = now_et.hour * 60 + now_et.minute
+        if minutes_of_day < 9 * 60 + 30 or minutes_of_day > 16 * 60:
+            return None
+        market_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
+        elapsed_min = max((now_et - market_open).total_seconds() / 60.0, 1.0)
+        if not cfg["entry_window_start_min"] <= elapsed_min <= cfg["entry_window_end_min"]:
+            return None
+        try:
+            daily = get_bars(symbol, f"{cfg['lookback_days']}d", "1d")
+            if daily.empty or len(daily) < 10:
+                return None
+            reference_poc = calculate_poc(daily, bins=cfg["bins"])
+            if reference_poc <= 0:
+                return None
+
+            session = _get_current_session_bars(symbol)
+            vol_period = int(cfg["volume_ma_period"])
+            if session is None or len(session) < vol_period + 2:
+                return None
+
+            cur_close = float(session["close"].iloc[-1])
+            cur_low   = float(session["low"].iloc[-1])
+            cur_vol   = float(session["volume"].iloc[-1])
+            vol_ma    = float(session["volume"].iloc[-(vol_period + 1):-1].mean())
+
+            today_date = now_et.date()
+            state = _poc_state.get(symbol)
+            if state is None or state.get("date") != today_date:
+                state = {"date": today_date, "phase": "IDLE", "swing_low": None}
+                _poc_state[symbol] = state
+
+            deviation_price = reference_poc * (1 - cfg["deviation_threshold_pct"] / 100.0)
+
+            if state["phase"] == "IDLE":
+                if cur_close < deviation_price:
+                    state["phase"] = "DEVIATED_BELOW"
+                    state["swing_low"] = cur_low
+                return None
+
+            prior_low = state.get("swing_low")
+            state["swing_low"] = min(prior_low, cur_low) if prior_low is not None else cur_low
+
+            if cur_close <= reference_poc:
+                return None
+            if vol_ma <= 0 or cur_vol < vol_ma * cfg["volume_confirm_mult"]:
+                return None
+
+            swing_low = state["swing_low"]
+            stop_dist = cur_close - swing_low
+            if stop_dist <= 0:
+                state["phase"] = "IDLE"
+                state["swing_low"] = None
+                return None
+
+            vol_ratio     = cur_vol / vol_ma
+            deviation_pct = (reference_poc - swing_low) / reference_poc * 100.0
+            confidence = min(0.95, 0.72 + min(0.08, deviation_pct * 0.01) + min(0.10, vol_ratio * 0.03))
+
+            state["phase"] = "IDLE"
+            state["swing_low"] = None
+
+            chain = _get_options_chain(symbol)
+            if chain is None:
+                return None
+            reason = f"Equity POC reclaim poc=${reference_poc:.2f} deviation={deviation_pct:.1f}% vol x{vol_ratio:.1f}"
+            return _build_equity_parity_call(symbol, cur_close, chain, reason, confidence, self.name)
+        except Exception as error:
+            log.debug(f"PocReclaimCall {symbol}: {error}")
             return None
 
 
@@ -3572,6 +3663,7 @@ def scan_options_universe(
     structure_strat     = MarketStructureBreakoutCallStrategy()
     orb_strat           = OpeningRangeBreakoutCallStrategy()
     continuation_strat  = MomentumContinuationCallStrategy()
+    poc_reclaim_strat   = PocReclaimCallStrategy()
     gap_breakout_strat  = GapBreakoutCallStrategy()
     momentum_strat      = MomentumCallStrategy()
     bear_put_strat      = BearPutStrategy()
@@ -3658,7 +3750,7 @@ def scan_options_universe(
         # Try all strategies in priority order; one signal per symbol per cycle
         # OPTIONS_ALLOWED_STRATEGIES restricts to a named subset when non-empty.
         _allowed = OPTIONS_ALLOWED_STRATEGIES  # empty set = all enabled
-        for strat in (structure_strat, orb_strat, continuation_strat, gap_breakout_strat, momentum_strat, bear_put_strat, bear_call_strat, squeeze_strat, mean_rev_strat,
+        for strat in (structure_strat, orb_strat, continuation_strat, poc_reclaim_strat, gap_breakout_strat, momentum_strat, bear_put_strat, bear_call_strat, squeeze_strat, mean_rev_strat,
                       retest_strat, trend_spread_strat, iron_condor_strat, butterfly_strat):
             if _allowed and strat.name not in _allowed:
                 continue

@@ -21,14 +21,14 @@ from typing import Optional
 
 
 
-from engine.utils import get_bars, calc_rsi, calc_macd, get_premarket_bars
+from engine.utils import get_bars, calc_rsi, calc_macd, get_premarket_bars, calculate_poc
 from engine.config import (
     SWEEPEA, TECHNICAL, MOMENTUM, GAP_BREAKOUT, ORB, VWAP_RECLAIM, FLOAT_ROTATION, LONG_ONLY_MODE,
     ATR_STOP_MULTIPLIER, ATR_TP_RATIO, HIGH_SHORT_FLOAT_STOCKS, is_high_short_float,
     PRE_MARKET_MOMENTUM, OPENING_BELL_SURGE, PM_HIGH_BREAKOUT, EARLY_SQUEEZE, BEAR_BREAKDOWN,
     SENTIMENT_STRATEGY, TRENDLINE_BREAKOUT,
     SWEEPEA_DYNAMIC_CONFIDENCE, SWEEPEA_REQUIRE_TREND, SWEEPEA_TREND_EMA_RISING_BARS,
-    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT, PARABOLIC_FADE_RECLAIM,
+    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT, PARABOLIC_FADE_RECLAIM, POC_RECLAIM,
 )
 from scripts.trendline_breakout import detect_trendline_breakouts
 from scripts.auto_trendline import AutoTrendline, TrendlineConfig
@@ -1907,6 +1907,156 @@ class ParabolicFadeReclaimStrategy:
 
 
 # ──────────────────────────────────────────────────────────────────────────────
+# POC (Point of Control) Reclaim Strategy
+# ──────────────────────────────────────────────────────────────────────────────
+# Per-symbol state (reset daily): IDLE while price sits at/above the reference
+# POC; DEVIATED_BELOW once price closes >= deviation_threshold_pct below POC.
+# The long entry only fires from DEVIATED_BELOW once price reclaims back above
+# the POC on a volume-confirmed bar (institutional participation, not noise).
+_poc_state: dict = {}
+
+
+class PocReclaimStrategy:
+    """Point of Control (POC) deviation + reclaim, long-only.
+
+    The reference POC is the highest-volume price level from a rolling daily
+    volume profile (POC_RECLAIM['lookback_days'] days). Setup:
+      1. Price deviates >= deviation_threshold_pct below the POC (state -> DEVIATED_BELOW),
+      2. Price reclaims back above the POC on a bar with volume >=
+         volume_confirm_mult x the trailing volume moving average (Volume
+         Confirmation guardrail — filters retail noise from genuine reclaims),
+      3. Entry fires; state resets to IDLE.
+    Regular market hours only, restricted to the configured entry window
+    (Time-of-Day guardrail — avoids the noisy open and thin closing minutes).
+    """
+
+    def scan(self, symbol: str) -> Optional[Signal]:
+        def reject(reason: str) -> None:
+            log.debug("PocReclaim %s rejected: %s", symbol, reason)
+
+        try:
+            cfg = POC_RECLAIM
+            if not cfg["enabled"]:
+                return None
+            if symbol in _INVERSE_ETFS:
+                return None
+
+            # Time-of-Day guardrail: regular hours only, inside the entry window
+            now_et = datetime.datetime.now(ET)
+            mins_of_day = now_et.hour * 60 + now_et.minute
+            if mins_of_day < 9 * 60 + 30 or mins_of_day > 16 * 60:
+                return None
+            market_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
+            elapsed_min = max((now_et - market_open).total_seconds() / 60.0, 1.0)
+            if not cfg["entry_window_start_min"] <= elapsed_min <= cfg["entry_window_end_min"]:
+                reject(f"outside entry window (elapsed={elapsed_min:.0f}m)")
+                return None
+
+            daily = get_bars(symbol, f"{cfg['lookback_days']}d", "1d")
+            if daily.empty or len(daily) < 10:
+                reject("insufficient daily bars for volume profile")
+                return None
+            reference_poc = calculate_poc(daily, bins=cfg["bins"])
+            if reference_poc <= 0:
+                reject("could not compute POC")
+                return None
+
+            intraday = get_bars(symbol, "1d", "1m")
+            vol_period = int(cfg["volume_ma_period"])
+            if intraday.empty or len(intraday) < vol_period + 2:
+                reject("insufficient intraday bars")
+                return None
+
+            # Today's regular session only
+            timestamp_values = intraday["time"] if "time" in intraday.columns else intraday.index
+            timestamps = pd.Series(pd.to_datetime(timestamp_values, errors="coerce"), index=intraday.index)
+            if timestamps.dt.tz is not None:
+                timestamps = timestamps.dt.tz_convert(ET)
+            else:
+                timestamps = timestamps.dt.tz_localize(ET)
+            minutes = timestamps.dt.hour * 60 + timestamps.dt.minute
+            session_mask = (
+                (timestamps.dt.date == now_et.date())
+                & (minutes >= 9 * 60 + 30)
+                & (minutes <= 16 * 60)
+            )
+            session = intraday.loc[session_mask]
+            if len(session) < vol_period + 2:
+                reject("missing current-day session data")
+                return None
+
+            cur_close = float(session["close"].iloc[-1])
+            cur_low   = float(session["low"].iloc[-1])
+            cur_vol   = float(session["volume"].iloc[-1])
+            vol_ma    = float(session["volume"].iloc[-(vol_period + 1):-1].mean())
+
+            # Per-symbol state, reset at the start of each trading day
+            today_date = now_et.date()
+            state = _poc_state.get(symbol)
+            if state is None or state.get("date") != today_date:
+                state = {"date": today_date, "phase": "IDLE", "swing_low": None}
+                _poc_state[symbol] = state
+
+            deviation_price = reference_poc * (1 - cfg["deviation_threshold_pct"] / 100.0)
+
+            if state["phase"] == "IDLE":
+                if cur_close < deviation_price:
+                    state["phase"] = "DEVIATED_BELOW"
+                    state["swing_low"] = cur_low
+                    log.debug("PocReclaim %s armed: deviated below POC $%.2f (close=%.2f)", symbol, reference_poc, cur_close)
+                else:
+                    reject(f"not deviated (close={cur_close:.2f} vs poc={reference_poc:.2f})")
+                return None
+
+            # DEVIATED_BELOW: keep tracking the swing low while we wait for the reclaim
+            prior_low = state.get("swing_low")
+            state["swing_low"] = min(prior_low, cur_low) if prior_low is not None else cur_low
+
+            if cur_close <= reference_poc:
+                reject(f"still below POC (close={cur_close:.2f} vs poc={reference_poc:.2f})")
+                return None
+
+            # Volume Confirmation guardrail — reclaim bar must show above-average participation
+            if vol_ma <= 0 or cur_vol < vol_ma * cfg["volume_confirm_mult"]:
+                reject(f"reclaim lacks volume confirmation (vol={cur_vol:.0f} vs ma={vol_ma:.0f})")
+                return None
+
+            swing_low = state["swing_low"]
+            stop_dist = cur_close - swing_low
+            if stop_dist <= 0:
+                reject("entry at/below swing low")
+                state["phase"] = "IDLE"
+                state["swing_low"] = None
+                return None
+            max_dist = cur_close * cfg["max_stop_pct"] / 100.0
+            capped   = stop_dist > max_dist
+            if capped:
+                stop_dist = max_dist
+            stop_pct = stop_dist / cur_close * 100.0
+
+            vol_ratio     = cur_vol / vol_ma
+            deviation_pct = (reference_poc - swing_low) / reference_poc * 100.0
+            conf = 0.72
+            conf += min(max(deviation_pct - cfg["deviation_threshold_pct"], 0.0) * 0.01, 0.08)
+            conf += min(max(vol_ratio - cfg["volume_confirm_mult"], 0.0) * 0.03, 0.10)
+            conf = min(conf, 0.95)
+
+            # Reset state after firing the entry
+            state["phase"] = "IDLE"
+            state["swing_low"] = None
+
+            return Signal(
+                symbol, "buy", cur_close, round(conf, 2),
+                f"POC reclaim poc=${reference_poc:.2f} deviation={deviation_pct:.1f}% "
+                f"vol x{vol_ratio:.1f} stop={stop_pct:.1f}%{'(capped)' if capped else ''}",
+                "PocReclaim",
+                atr_stop=stop_dist,
+            )
+        except Exception:
+            return None
+
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Bear Breakdown Strategy
 # ──────────────────────────────────────────────────────────────────────────────
 class BearBreakdownStrategy:
@@ -2203,6 +2353,7 @@ def get_strategy_instances(bull_regime: bool = True):
         EarlySqueezeDetector(),
         MomentumContinuationStrategy(),
         ParabolicFadeReclaimStrategy(),
+        PocReclaimStrategy(),
         PowerOf3Strategy(),
         TrendlineBreakoutStrategy(),
     ]
