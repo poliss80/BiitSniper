@@ -2236,3 +2236,83 @@
 2026-09-24 08:38:42,905 [INFO] LIVE PROBE SECZ: scale-in skipped; price 14.40 below VWAP 14.42
 2026-09-24 08:38:42,905 [INFO] [SCAN] No signals this cycle
 2026-09-24 08:38:42,905 [INFO] Heartbeat: 2026-09-24T08:38:42.905635
+2026-09-24 08:41:42,925 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-24 08:41:43,644 [INFO] [CRYPTO] 2 open: GRT/USD(0.0252→TP:0.0262), YFI/USD(2358.3546→TP:2452.6888)
+2026-09-24 08:41:46,366 [INFO] [CRYPTO] #1: POL/USD SELL @ 0.1010 conf=82% | RSI=36.8 3-bar downtrend
+2026-09-24 08:41:46,366 [INFO] [CRYPTO] #2: ARB/USD SELL @ 0.2152 conf=78% | RSI=38.9 3-bar downtrend
+2026-09-24 08:41:46,366 [INFO] [CRYPTO] #3: SUSHI/USD SELL @ 0.2472 conf=78% | RSI=38.9 3-bar downtrend
+2026-09-24 08:41:46,366 [INFO] [CRYPTO] #4: UNI/USD SELL @ 9.1452 conf=76% | RSI=40.1 3-bar downtrend
+2026-09-24 08:41:46,366 [INFO] [CRYPTO] #5: CRV/USD SELL @ 0.3338 conf=68% | RSI=44.8 3-bar downtrend
+2026-09-24 08:41:46,366 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-24 08:41:46,468 [INFO] Quarterly P&L: -5.0% (target >= 50%)
+2026-09-24 08:41:46,469 [INFO] [SCAN] Market sentiment: neutral
+2026-09-24 08:41:46,504 [INFO] STALE ORDER: SKYQ OrderSide.BUY 75000 — age 3.7m (cutoff 3m) → limit @ current price
+2026-09-24 08:41:46,870 [INFO] STALE ORDER SKYQ: replaced successfully
+2026-09-24 08:41:46,871 [INFO] STALE ORDER: SECZ OrderSide.BUY 100 — age 3.7m (cutoff 3m) → limit @ current price
+2026-09-24 08:41:47,249 [INFO] STALE ORDER SECZ: replaced successfully
+2026-09-24 08:41:47,249 [INFO] STALE ORDER: SECZ OrderSide.BUY 100 — age 3.7m (cutoff 3m) → limit @ current price
+2026-09-24 08:41:47,607 [INFO] STALE ORDER SECZ: replaced successfully
+2026-09-24 08:41:47,607 [INFO] STALE ORDER: SECZ OrderSide.BUY 100 — age 3.7m (cutoff 3m) → limit @ current price
+2026-09-24 08:41:47,975 [INFO] STALE ORDER SECZ: replaced successfully
+2026-09-24 08:41:47,976 [INFO] STALE ORDER: SECZ OrderSide.BUY 100 — age 3.7m (cutoff 3m) → limit @ current price
+2026-09-24 08:41:48,344 [INFO] STALE ORDER SECZ: replaced successfully
+2026-09-24 08:41:48,344 [INFO] STALE ORDER: SECZ OrderSide.BUY 100 — age 3.7m (cutoff 3m) → limit @ current price
+2026-09-24 08:41:48,707 [INFO] STALE ORDER SECZ: replaced successfully
+2026-09-24 08:41:59,555 [INFO] [SCAN] 74 symbols (filtered, 8 workers): TRUG, GPI, JAGX, FRMEP, FGNXP, SRI, IQV, DCOY, IRT, DRTTF, SUI, ELMT, NWTG, BTLN, GCTK, PFSA, VBIO, WETO, SRZN, GRML, KYTX, TSSI, SKYQ, FRVO, IONZ, GLND, SOXS, FTCI, DAMD, ZSQR, RGTZ, SMCZ, SMST, SKDD, PLTZ, SSG, RKLZ, CONI, VSA, NEOV, IPDN, SFIX, WHLR, VKTX, HAO, VWAV, MGM, SNX, ARMG, ACAD, IONX, HAFN, IONL, AVAT, MVLL, SOXL, IREG, DBGI, INTW, AMDL, RGTX, NBIL, BMNZ, MUZ, CYPH, MKT, BB, BEN, BOND, VOYG, ETR, BMNR, CI, NRG
+2026-09-24 08:41:59,555 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-24 08:42:02,330 [WARNING] [GUARDRAIL] TRUG blocked: dollar volume 79340 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.43 | day_vol=183488
+2026-09-24 08:42:02,595 [WARNING] [GUARDRAIL] DCOY blocked: dollar volume 485444 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.57 | day_vol=136055
+2026-09-24 08:42:02,830 [WARNING] [GUARDRAIL] BTLN blocked: dollar volume 39128 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.72 | day_vol=54344
+2026-09-24 08:42:02,999 [WARNING] [GUARDRAIL] NWTG blocked: dollar volume 231074 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=1.12 | day_vol=206316
+2026-09-24 08:42:08,995 [WARNING] [GUARDRAIL] TSSI blocked: dollar volume 1107541 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=9.99 | day_vol=110865
+2026-09-24 08:42:11,869 [WARNING] [GUARDRAIL] IONZ blocked: dollar volume 395953 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=23.55 | day_vol=16814
+2026-09-24 08:42:13,678 [WARNING] [GUARDRAIL] FTCI blocked: dollar volume 43941 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.69 | day_vol=16338
+2026-09-24 08:42:16,511 [WARNING] [GUARDRAIL] ZSQR blocked: dollar volume 228622 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.17 | day_vol=72075
+2026-09-24 08:42:16,695 [WARNING] [GUARDRAIL] RGTZ blocked: dollar volume 320633 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.99 | day_vol=20057
+2026-09-24 08:42:16,896 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 335966 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.85 | day_vol=69257
+2026-09-24 08:42:17,147 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 880306 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.52 | day_vol=70312
+2026-09-24 08:42:21,283 [WARNING] [GUARDRAIL] SSG blocked: dollar volume 880354 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.99 | day_vol=80105
+2026-09-24 08:42:21,370 [WARNING] [GUARDRAIL] RKLZ blocked: dollar volume 153410 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=16.32 | day_vol=9403
+2026-09-24 08:42:21,577 [WARNING] [GUARDRAIL] CONI blocked: dollar volume 356615 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=22.15 | day_vol=16100
+2026-09-24 08:42:26,492 [WARNING] [GUARDRAIL] HAO blocked: dollar volume 35092 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.86 | day_vol=12270
+2026-09-24 08:42:28,219 [WARNING] [GUARDRAIL] VWAV blocked: dollar volume 445009 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=5.30 | day_vol=83964
+2026-09-24 08:42:30,184 [WARNING] [GUARDRAIL] ARMG blocked: dollar volume 711288 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=25.79 | day_vol=27580
+2026-09-24 08:42:30,843 [WARNING] [GUARDRAIL] IONX blocked: dollar volume 837066 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=24.40 | day_vol=34306
+2026-09-24 08:42:32,776 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 414087 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=13.43 | day_vol=30833
+2026-09-24 08:42:34,847 [WARNING] [GUARDRAIL] AVAT blocked: dollar volume 36512 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.08 | day_vol=17554
+2026-09-24 08:42:35,626 [WARNING] [GUARDRAIL] MVLL blocked: RVOL 0.89 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=52946 | avg_daily_vol=2983878
+2026-09-24 08:42:36,285 [WARNING] [GUARDRAIL] SOXL blocked: RVOL 0.94 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=1447945 | avg_daily_vol=76702951
+2026-09-24 08:42:37,611 [WARNING] [GUARDRAIL] IREG blocked: dollar volume 641117 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=9.43 | day_vol=67987
+2026-09-24 08:42:39,119 [WARNING] [GUARDRAIL] INTW blocked: RVOL 0.83 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=118889 | avg_daily_vol=7165202
+2026-09-24 08:42:39,432 [WARNING] [GUARDRAIL] AMDL blocked: RVOL 0.25 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=54396 | avg_daily_vol=11083055
+2026-09-24 08:42:40,149 [WARNING] [GUARDRAIL] RGTX blocked: dollar volume 274553 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=9.35 | day_vol=29364
+2026-09-24 08:42:45,111 [WARNING] [GUARDRAIL] BMNR blocked: RVOL 0.46 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=391396 | avg_daily_vol=42329704
+2026-09-24 08:42:46,541 [WARNING] [GUARDRAIL] NRG blocked: dollar volume 482363 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=99.60 | day_vol=4843
+2026-09-24 08:42:46,543 [INFO] [GUARDRAIL SUMMARY] Rejected: 58 | DollarVol: 23 | RVOL: 5 | GapChase: 3 | MinPrice: 0 | Other: 14
+2026-09-24 08:42:46,543 [INFO] [FUNNEL] targets=74 guardrail_rejected=58 (rvol=5) -> signals_generated=4 -> conf_gate(-4) -> sector_cap(-0) -> final=0
+2026-09-24 08:42:46,543 [INFO] [SCAN] Breakdown — PreMarketMomentum: 1, Technical: 1, TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-24 08:42:46,601 [INFO] LIVE PROBE ACA: scale-in skipped; gain -0.15% < 0.25%
+2026-09-24 08:42:46,602 [INFO] LIVE PROBE QMCO: scale-in skipped; gain -5.76% < 0.25%
+2026-09-24 08:42:46,929 [INFO] LIVE PROBE SECZ: scale-in skipped; price 14.36 below VWAP 14.42
+2026-09-24 08:42:46,929 [INFO] [SCAN] No signals this cycle
+2026-09-24 08:42:46,929 [INFO] Heartbeat: 2026-09-24T08:42:46.929497
+2026-09-24 08:45:46,607 [INFO] Stopped by user
+2026-09-24 08:45:46,996 [INFO] ======================================================================
+2026-09-24 08:45:46,996 [INFO] STATUS
+2026-09-24 08:45:46,997 [INFO] Equity:     $92,281.71
+2026-09-24 08:45:46,997 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-24 08:45:46,997 [INFO] Positions:  12
+2026-09-24 08:45:46,997 [INFO] Unrealized: $-966.22
+2026-09-24 08:45:46,997 [INFO]   ACA: 1 @ $146.72 | $-0.22 (-0.15%)
+2026-09-24 08:45:46,997 [INFO]   FSLY: 567 @ $29.74 | $-791.33 (-4.69%)
+2026-09-24 08:45:46,997 [INFO]   GRTUSD: 0.167530378 @ $0.03 | $-0.00 (-2.08%)
+2026-09-24 08:45:46,998 [INFO]   HALO: 1 @ $112.58 | $-0.24 (-0.21%)
+2026-09-24 08:45:46,998 [INFO]   NNBR: 101 @ $3.89 | $-6.04 (-1.54%)
+2026-09-24 08:45:46,998 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-115.00 (-10.18%)
+2026-09-24 08:45:46,998 [INFO]   QMCO: 1 @ $26.90 | $-1.55 (-5.76%)
+2026-09-24 08:45:46,998 [INFO]   RSKD: 4428 @ $6.93 | $96.75 (+0.32%)
+2026-09-24 08:45:46,998 [INFO]   SECZ: 1 @ $14.27 | $0.09 (+0.63%)
+2026-09-24 08:45:46,998 [INFO]   SECZ261016C00010000: 1 @ $4.90 | $-70.00 (-14.29%)
+2026-09-24 08:45:46,998 [INFO]   SQQQ261009C00035000: 1 @ $1.15 | $-5.00 (-4.35%)
+2026-09-24 08:45:46,999 [INFO]   YFIUSD: 2.392136195 @ $2358.35 | $-73.68 (-1.31%)
+2026-09-24 08:45:46,999 [INFO] ======================================================================

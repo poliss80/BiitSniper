@@ -1,15 +1,23 @@
 {
-  "generated_at": "2026-09-24T07:40:30-04:00",
+  "generated_at": "2026-09-24T09:11:27-04:00",
   "date": "2026-09-24",
   "market_regime": "bull",
   "picks": [
     {
       "symbol": "GCTK",
       "action": "buy",
-      "price": 4.09,
+      "price": 2.34,
       "confidence": 0.94,
       "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +84.2% | PM vol 1647% of avg daily"
+      "reason": "Pre-mkt momentum: gap +5.4% | PM vol 5002% of avg daily"
+    },
+    {
+      "symbol": "GLND",
+      "action": "buy",
+      "price": 3.12,
+      "confidence": 0.915,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +24.3% | PM vol 162% of avg daily"
     }
   ]
 }
