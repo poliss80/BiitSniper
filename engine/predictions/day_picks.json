@@ -1,23 +1,47 @@
 {
-  "generated_at": "2026-09-24T09:11:27-04:00",
+  "generated_at": "2026-09-24T15:31:27-04:00",
   "date": "2026-09-24",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "GCTK",
+      "symbol": "QMCO",
       "action": "buy",
-      "price": 2.34,
-      "confidence": 0.94,
-      "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +5.4% | PM vol 5002% of avg daily"
+      "price": 25.97,
+      "confidence": 0.91,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.92"
     },
     {
-      "symbol": "GLND",
+      "symbol": "CDNA",
       "action": "buy",
-      "price": 3.12,
-      "confidence": 0.915,
-      "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +24.3% | PM vol 162% of avg daily"
+      "price": 54.31,
+      "confidence": 0.85,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $2.08"
+    },
+    {
+      "symbol": "SMWB",
+      "action": "buy",
+      "price": 8.58,
+      "confidence": 0.84,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.41"
+    },
+    {
+      "symbol": "TXG",
+      "action": "buy",
+      "price": 75.62,
+      "confidence": 0.83,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $4.67"
+    },
+    {
+      "symbol": "PRGO",
+      "action": "buy",
+      "price": 13.84,
+      "confidence": 0.82,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.57"
     }
   ]
 }
