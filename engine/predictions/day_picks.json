@@ -1,31 +1,15 @@
 {
-  "generated_at": "2026-09-25T07:33:24-04:00",
+  "generated_at": "2026-09-25T11:31:31-04:00",
   "date": "2026-09-25",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "APUS",
+      "symbol": "BENF",
       "action": "buy",
-      "price": 6.28,
-      "confidence": 0.94,
-      "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +174.2% | PM vol 2195% of avg daily"
-    },
-    {
-      "symbol": "GLND",
-      "action": "buy",
-      "price": 6.2415,
-      "confidence": 0.94,
-      "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +114.5% | PM vol 144% of avg daily"
-    },
-    {
-      "symbol": "INLF",
-      "action": "buy",
-      "price": 5.84,
-      "confidence": 0.94,
-      "strategy": "PreMarketMomentum",
-      "reason": "Pre-mkt momentum: gap +100.7% | PM vol 357% of avg daily"
+      "price": 1.7897,
+      "confidence": 0.9,
+      "strategy": "MomentumScalp",
+      "reason": "Momentum scalp up=11.2% rvol=20.8x near HOD $1.79 target +5% or ride on continuation"
     }
   ]
 }

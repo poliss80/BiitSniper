@@ -1801,6 +1801,30 @@ class MomentumScalpStrategy:
                 reject(f"insufficient RVOL ({rvol:.1f}x)")
                 return None
 
+            # Immediate candle-volume confirmation: the current 1-minute bar's
+            # volume must be >= bar_volume_mult x the average of the preceding
+            # up-to-20 minute bars (current bar excluded from the average).
+            if len(session) < 2:
+                reject("insufficient bars for candle-volume confirmation")
+                return None
+            cur_bar_vol = float(session["volume"].iloc[-1])
+            avg_bar_vol = float(session["volume"].iloc[:-1].tail(20).mean())
+            if avg_bar_vol <= 0:
+                reject("missing trailing average bar volume")
+                return None
+            barvol_ratio = cur_bar_vol / avg_bar_vol
+            if barvol_ratio < cfg["bar_volume_mult"]:
+                reject(f"weak current-bar volume ({barvol_ratio:.1f}x trailing avg)")
+                return None
+
+            # Breakout confirmation: current close must be above the highest high
+            # of the preceding min(5, available) session bars (current excluded) —
+            # stricter than the near-HOD guard above.
+            breakout_high = float(session["high"].iloc[:-1].tail(min(5, len(session) - 1)).max())
+            if cur_close <= breakout_high:
+                reject(f"no breakout ({cur_close:.2f} <= prior-bar high {breakout_high:.2f})")
+                return None
+
             stop_dist = cur_close - recent_low
             if stop_dist <= 0:
                 reject("entry at/below recent swing low")
@@ -1814,7 +1838,8 @@ class MomentumScalpStrategy:
 
             return Signal(
                 symbol, "buy", cur_close, round(conf, 2),
-                f"Momentum scalp up={price_up_pct:.1f}% rvol={rvol:.1f}x near HOD ${recent_high:.2f} "
+                f"Momentum scalp up={price_up_pct:.1f}% rvol={rvol:.1f}x barvol={barvol_ratio:.1f}x "
+                f"break>${breakout_high:.2f} near HOD ${recent_high:.2f} "
                 f"target +{cfg['tp_pct']:.0f}% or ride on continuation",
                 "MomentumScalp",
                 atr_stop=stop_dist,

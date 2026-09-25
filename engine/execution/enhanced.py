@@ -180,6 +180,7 @@ class EnhancedExecutor:
         self._intermediate_targets: Dict[str, float] = {}  # {symbol: tighten-trail price (+5%)}
         self._tightened:            set  = set()           # symbols whose trail has been tightened
         self._peak_price:          Dict[str, float] = {}  # {symbol: high-water mark for ratchet exit}
+        self._ratchet_armed:        set  = set()           # symbols whose peak has crossed the ratchet arm threshold (stays armed)
         self._scaled_out:           set  = set()           # legacy; kept for compatibility
         self.shorting_blocked: bool = False  # set true when broker rejects all short attempts for account
         self._pdt_stop_blocked: Dict[str, float] = {}  # {symbol: stop_price} — broker-rejected stops; monitored in software
@@ -238,6 +239,8 @@ class EnhancedExecutor:
                 "final_target": self._tp_targets.get(sym),
                 "tightened": sym in self._tightened,
                 "peak_price": self._peak_price.get(sym),
+                "ratchet_armed": sym in self._ratchet_armed,
+                "scalp_scaled_out": bool(info.get("scalp_scaled_out", False)),
             }
 
         try:
@@ -283,6 +286,7 @@ class EnhancedExecutor:
                     "ti_profile": saved.get("ti_profile", ""),
                     "scale_in_stage": int(saved.get("scale_in_stage", 0) or 0),
                     "atm_option_done": bool(saved.get("atm_option_done", False)),
+                    "scalp_scaled_out": bool(saved.get("scalp_scaled_out", False)),
                 }
                 if saved.get("intermediate_target") is not None:
                     self._intermediate_targets[sym] = float(saved["intermediate_target"])
@@ -292,6 +296,8 @@ class EnhancedExecutor:
                     self._tightened.add(sym)
                 if saved.get("peak_price") is not None:
                     self._peak_price[sym] = float(saved["peak_price"])
+                if saved.get("ratchet_armed"):
+                    self._ratchet_armed.add(sym)
                 if saved.get("scaled_in"):
                     self._live_probe_scaled_in.add(sym)
             self._live_probe_scale_in_pending = {
@@ -588,6 +594,8 @@ class EnhancedExecutor:
         pending_scale_ins = getattr(self, "_live_probe_scale_in_pending", {})
         confirmation_bars_cache = {}
         for sym, info in list(self._entry_log.items()):
+            if info.get("ti_profile") == "scalp":
+                continue  # Momentum Scalp never joins the probe pyramid/scale-in system
             pos = positions.get(sym)
             entry_price = float(getattr(pos, "avg_entry_price", 0) or 0) if pos is not None else 0
             if entry_price <= 0 and pos is not None:
@@ -1678,11 +1686,19 @@ class EnhancedExecutor:
             return False
 
         if LIVE_PROBE_MODE:
-            log.info(
-                f"LIVE PROBE {signal.symbol}: sizing {shares} → {LIVE_PROBE_SHARES} share(s); "
-                "no automatic scale-in"
-            )
-            shares = LIVE_PROBE_SHARES
+            if classify_ti_profile(signal.symbol, signal.strategy) == "scalp":
+                # Momentum Scalp keeps its calculated (max_bp_pct-capped) size —
+                # probe sizing would defeat the "go huge" fast in/out playbook.
+                log.info(
+                    f"LIVE PROBE {signal.symbol}: MomentumScalp exempt from probe sizing; "
+                    f"keeping calculated {shares} share(s)"
+                )
+            else:
+                log.info(
+                    f"LIVE PROBE {signal.symbol}: sizing {shares} → {LIVE_PROBE_SHARES} share(s); "
+                    "no automatic scale-in"
+                )
+                shares = LIVE_PROBE_SHARES
 
         # Create new signal with market-validated price for order submission
         market_signal = entry_signal
@@ -2239,6 +2255,7 @@ class EnhancedExecutor:
                 self._intermediate_targets.pop(sym, None)
                 self._tightened.discard(sym)
                 self._peak_price.pop(sym, None)
+                self._ratchet_armed.discard(sym)
 
                 pnl = float(pos.unrealized_pl)
                 strategy = entry_info.get("strategy", "unknown") if entry_info else "unknown"
@@ -2553,15 +2570,74 @@ class EnhancedExecutor:
                     gain_pct = ((cur - entry_px) / entry_px * 100) if entry_px > 0 else 0.0
                     if not is_long:
                         gain_pct = -gain_pct
+                    peak_gain = ((peak - entry_px) / entry_px * 100) if entry_px > 0 else 0.0
+                    if not is_long:
+                        peak_gain = -peak_gain
                     arm_pct, giveback_pct = self._ratchet_params(sym)
-                    if gain_pct >= arm_pct:
+                    # Arm once the PEAK crosses the threshold, then stay armed — the
+                    # giveback exit must not require current gain to still be >= arm_pct.
+                    if peak_gain >= arm_pct and sym not in self._ratchet_armed:
+                        self._ratchet_armed.add(sym)
+                        state_changed = True
+                    # Momentum Scalp: bank half at the fast target, then let the armed
+                    # ratchet manage the remainder (1-share positions close in full).
+                    entry_info = self._entry_log.get(sym, {})
+                    if (entry_info.get("ti_profile") == "scalp"
+                            and not entry_info.get("scalp_scaled_out")
+                            and gain_pct >= arm_pct):
+                        if abs(qty) <= 1:
+                            should_close = True
+                            close_log = (
+                                f"SCALP TP CLOSE {sym}: ${cur:.2f} hit +{arm_pct:.0f}% fast target "
+                                f"(+{gain_pct:.1f}%) — too small to scale out, closing in full"
+                            )
+                        else:
+                            half_qty = max(1, abs(qty) // 2)
+                            try:
+                                # Cancel standing protective orders first — otherwise the
+                                # shares stay "held_for_orders" and the partial sell is rejected.
+                                try:
+                                    sym_orders = [o for o in (self.client.get_orders() or []) if o.symbol == sym]
+                                    for _o in sym_orders:
+                                        try:
+                                            self.client.cancel_order_by_id(str(_o.id))
+                                        except Exception:
+                                            pass
+                                    if sym_orders:
+                                        time.sleep(0.4)
+                                except Exception:
+                                    pass
+                                side = OrderSide.SELL if is_long else OrderSide.BUY
+                                self.client.submit_order(MarketOrderRequest(
+                                    symbol=sym, qty=half_qty, side=side,
+                                    time_in_force=TimeInForce.DAY,
+                                ))
+                                entry_info["scalp_scaled_out"] = True
+                                self._ratchet_armed.add(sym)
+                                state_changed = True
+                                log.info(
+                                    f"SCALP SCALE-OUT {sym}: ${cur:.2f} hit +{arm_pct:.0f}% fast target "
+                                    f"→ sold {half_qty}/{abs(qty)} at market; ratchet ({giveback_pct:.0f}% giveback) "
+                                    f"now manages the remaining {abs(qty) - half_qty}"
+                                )
+                                # Re-place a tight protective trail on the remainder.
+                                try:
+                                    self.client.submit_order(TrailingStopOrderRequest(
+                                        symbol=sym, qty=abs(qty) - half_qty, side=side,
+                                        type=AlpacaOrderType.TRAILING_STOP,
+                                        time_in_force=TimeInForce.GTC,
+                                        trail_percent=giveback_pct,
+                                    ))
+                                except Exception as e:
+                                    log.warning(f"Scalp remainder trail failed {sym}: {e}")
+                            except Exception as e:
+                                log.warning(f"Scalp scale-out failed {sym}: {e}")
+                            continue  # partial done — ratchet governs the remainder
+                    if sym in self._ratchet_armed:
                         trigger = (peak * (1 - giveback_pct / 100) if is_long
                                    else peak * (1 + giveback_pct / 100))
                         if (is_long and cur <= trigger) or (not is_long and cur >= trigger):
                             should_close = True
-                            peak_gain = ((peak - entry_px) / entry_px * 100) if entry_px > 0 else 0.0
-                            if not is_long:
-                                peak_gain = -peak_gain
                             close_log = (
                                 f"RATCHET EXIT {sym}: ${cur:.2f} gave back "
                                 f"{giveback_pct:.0f}% from peak ${peak:.2f} "
@@ -2653,6 +2729,7 @@ class EnhancedExecutor:
             self._intermediate_targets.pop(sym, None)
             self._tightened.discard(sym)
             self._peak_price.pop(sym, None)
+            self._ratchet_armed.discard(sym)
             state_changed = True
 
         if state_changed:
@@ -2694,6 +2771,7 @@ class EnhancedExecutor:
                 self._intermediate_targets.pop(sym, None)
                 self._tightened.discard(sym)
                 self._peak_price.pop(sym, None)
+                self._ratchet_armed.discard(sym)
                 state_changed = True
                 continue
             qty = int(float(pos.qty))
@@ -2754,6 +2832,7 @@ class EnhancedExecutor:
                 self._intermediate_targets.pop(sym, None)
                 self._tightened.discard(sym)
                 self._peak_price.pop(sym, None)
+                self._ratchet_armed.discard(sym)
                 state_changed = True
             except Exception as e:
                 log.warning(f"Dead money close failed {sym}: {e}")

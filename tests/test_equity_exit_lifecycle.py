@@ -8,7 +8,10 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import pandas as pd
+import pytz
 
+from engine.equity import strategies as equity_strategies
+from engine.equity.strategies import MomentumScalpStrategy
 from engine.execution import enhanced
 from engine.execution.enhanced import EnhancedExecutor
 from engine.options.executor import OptionsExecutor
@@ -68,6 +71,7 @@ def build_executor(client, state_path):
     executor._intermediate_targets = {}
     executor._tightened = set()
     executor._peak_price = {}
+    executor._ratchet_armed = set()
     executor._live_probe_scaled_in = set()
     executor._live_probe_scale_in_pending = {}
     executor._exit_state_path = state_path
@@ -1466,6 +1470,268 @@ class RatchetExitTests(unittest.TestCase):
             ), patch.object(enhanced, "TP_RATCHET_GIVEBACK_PCT", 8.0):
                 executor.check_tp_targets()
             self.assertEqual(len(client.orders), 1, "restored peak should still trigger the giveback exit")
+
+
+class MomentumScalpSizingTests(unittest.TestCase):
+    """Requirement 1: a MomentumScalp entry keeps its calculated, max_bp_pct-capped
+    size even when LIVE_PROBE_MODE would otherwise shrink it to LIVE_PROBE_SHARES."""
+
+    def test_scalp_size_not_overridden_by_live_probe(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = MockClient([])
+            executor = build_executor(client, Path(directory) / "exit_state.json")
+            executor.use_bracket_orders = False
+            executor.pdt = Mock()
+            executor._submitted_entry_orders = {}
+            executor._halted_symbols = set()
+            executor._swap_cycle_closed = set()
+            executor._validate_trade = Mock(return_value=(True, None))
+            executor._can_submit_live_probe = Mock(return_value=True)
+            executor._validate_market_price = Mock(return_value=(True, 100.0))
+            executor._size_with_buying_power = Mock(return_value=(200, None))
+            executor._record_entry = Mock()
+            executor._get_positions = Mock(return_value={})
+            executor._get_account = Mock()
+            executor._create_simple_order = Mock(return_value=True)
+
+            signal = SimpleNamespace(
+                symbol="BBNX", strategy="MomentumScalp", price=100.0,
+                confidence=0.9, atr_stop=3.0,
+            )
+            acct = SimpleNamespace(equity=100_000.0, buying_power=100_000.0, daytrade_count=0)
+            scalp_cfg = {
+                "enabled": True, "min_rvol": 3.0, "min_price_up_pct": 5.0,
+                "break_lookback_min": 10, "position_size_mult": 2.0,
+                "max_bp_pct": 20.0, "tp_pct": 5.0, "ratchet_giveback_pct": 2.5,
+            }
+
+            with patch.object(enhanced, "LIVE_PROBE_MODE", True), patch.object(
+                enhanced, "LIVE_PROBE_SHARES", 1
+            ), patch.object(
+                enhanced, "MOMENTUM_SCALP", scalp_cfg
+            ), patch.object(
+                enhanced, "calculate_risk_adjusted_size",
+                return_value={"dollar_amount": 50_000.0, "stop_loss_pct": 3.0},
+            ), patch.object(enhanced, "MARGIN_LEVERAGE", 1.0), patch.object(
+                enhanced, "is_high_short_float", return_value=False
+            ):
+                result = executor._execute_entry(signal, acct, enhanced.OrderType.LONG)
+
+            self.assertTrue(result)
+            # Scalp keeps its calculated size (200) — NOT shrunk to LIVE_PROBE_SHARES (1)
+            self.assertEqual(executor._create_simple_order.call_args[0][1], 200)
+            # Dollar amount was capped at max_bp_pct (20%) of buying power ($100k → $20k)
+            sized_risk = executor._size_with_buying_power.call_args[0][2]
+            self.assertEqual(sized_risk["dollar_amount"], 20_000.0)
+
+
+class MomentumScalpExitTests(unittest.TestCase):
+    SCALP_CFG = {
+        "enabled": True, "min_rvol": 3.0, "min_price_up_pct": 5.0,
+        "break_lookback_min": 10, "position_size_mult": 2.0,
+        "max_bp_pct": 20.0, "tp_pct": 5.0, "ratchet_giveback_pct": 2.5,
+    }
+
+    def _executor(self, directory, pos):
+        client = MockClient([pos])
+        executor = build_executor(client, Path(directory) / "exit_state.json")
+        executor._record_probe_outcome = lambda *a, **k: None
+        return client, executor
+
+    def _scalp_entry(self, executor, sym, entry_price=100.0):
+        executor._entry_log[sym] = {
+            "strategy": "MomentumScalp", "ti_profile": "scalp",
+            "entry_time": datetime.datetime(2026, 9, 25, 10, 0),
+            "entry_price": entry_price,
+        }
+        executor._tp_targets[sym] = entry_price * 1.10
+        executor._intermediate_targets[sym] = entry_price * 1.05
+
+    def test_scalp_scale_out_then_ratchet_closes_remainder_below_arm(self):
+        """2-share scalp at +5% sells 1 share and arms the ratchet; a later retrace
+        closes the remainder even though current gain has fallen back below +5%."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                # +5% → scale out half (1 share) at market, arm the ratchet
+                executor.check_tp_targets()
+                market_sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+                self.assertEqual(len(market_sells), 1, "scalp should sell half at +5%")
+                self.assertEqual(market_sells[0].qty, 1)
+                self.assertTrue(executor._entry_log["BBNX"]["scalp_scaled_out"])
+                self.assertIn("BBNX", executor._ratchet_armed)
+                trails = [o for o in client.orders if isinstance(o, enhanced.TrailingStopOrderRequest)]
+                self.assertEqual(len(trails), 1, "remainder should get a fresh tight trail")
+                self.assertEqual(trails[0].qty, 1)
+
+                # Scalp state must survive a restart
+                executor._save_exit_state()
+                restored = build_executor(MockClient([pos]), Path(directory) / "exit_state.json")
+                restored._restore_exit_state()
+                self.assertTrue(restored._entry_log["BBNX"]["scalp_scaled_out"])
+                self.assertIn("BBNX", restored._ratchet_armed)
+                self.assertEqual(restored._peak_price["BBNX"], 105.0)
+
+                # Run to 106 (new peak), then retrace to 103.3 — below the 2.5%
+                # giveback trigger (106 * 0.975 = 103.35) with gain now only +3.3%,
+                # under the +5% arm. The armed ratchet must still exit.
+                client.orders.clear()
+                pos.qty = "1"
+                pos.current_price = 106.0
+                executor.check_tp_targets()
+                self.assertEqual(client.orders, [], "no giveback yet at the new peak")
+                pos.current_price = 103.3
+                executor.check_tp_targets()
+                closes = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+                self.assertEqual(
+                    len(closes), 1,
+                    "armed ratchet must close the remainder even below the +5% arm",
+                )
+                self.assertEqual(closes[0].qty, 1)
+
+    def test_scalp_one_share_closes_in_full_at_target(self):
+        """A 1-share scalp cannot scale out — it closes entirely at +5%."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("BBNX", "1", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                executor.check_tp_targets()
+            closes = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+            self.assertEqual(len(closes), 1)
+            self.assertEqual(closes[0].qty, 1)
+            self.assertFalse(executor._entry_log.get("BBNX", {}).get("scalp_scaled_out", False)
+                             and "BBNX" in executor._tp_targets,
+                             "closed scalp should be cleaned from tp targets")
+
+    def test_generic_ratchet_stays_armed_after_retrace_below_arm(self):
+        """Regression: once the peak crosses the arm threshold, the giveback exit
+        must fire even if current gain has fallen back below the arm."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("AAPL", "10", 109.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            executor._entry_log["AAPL"] = {
+                "strategy": "TI", "ti_profile": "ti_momentum",
+                "entry_time": datetime.datetime(2026, 9, 25, 10, 0),
+                "entry_price": 100.0,
+            }
+            executor._tp_targets["AAPL"] = 110.0
+
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "TP_RATCHET_ARM_PCT", 8.0
+            ), patch.object(enhanced, "TP_RATCHET_GIVEBACK_PCT", 2.0):
+                # +9% peak → arms, no giveback yet (trigger 106.82)
+                executor.check_tp_targets()
+                self.assertIn("AAPL", executor._ratchet_armed)
+                self.assertEqual(client.orders, [])
+                # Retrace to +6.8% — below the +8% arm, but past the giveback trigger
+                pos.current_price = 106.8
+                executor.check_tp_targets()
+                self.assertEqual(
+                    len(client.orders), 1,
+                    "armed ratchet must exit on giveback even below the arm threshold",
+                )
+
+
+class _ScalpFakeDatetime(datetime.datetime):
+    """datetime.now(tz) pinned to 2026-09-25 10:30 ET (elapsed=60 min, in-window)."""
+    @classmethod
+    def now(cls, tz=None):
+        return datetime.datetime(2026, 9, 25, 10, 30, 0, tzinfo=tz)
+
+
+_FAKE_SCALP_DATETIME_MODULE = SimpleNamespace(
+    datetime=_ScalpFakeDatetime,
+    timedelta=datetime.timedelta,
+    timezone=datetime.timezone,
+)
+
+
+class MomentumScalpScanTests(unittest.TestCase):
+    """MomentumScalp entry guards: immediate candle-volume confirmation
+    (current 1m bar >= bar_volume_mult x trailing up-to-20-bar avg) and a
+    strict breakout above the preceding 5 session bars (current excluded)."""
+
+    SCALP_CFG = {
+        "enabled": True, "min_rvol": 3.0, "min_price_up_pct": 5.0,
+        "break_lookback_min": 10, "bar_volume_mult": 1.5,
+        "position_size_mult": 2.0, "max_bp_pct": 20.0,
+        "tp_pct": 5.0, "ratchet_giveback_pct": 2.5,
+    }
+
+    @staticmethod
+    def _daily(n=20, avg_vol=1_000_000.0):
+        """20 daily bars, avg volume 1M (scan averages iloc[:-1] -> 1M)."""
+        closes = [50.0 + 0.3 * i for i in range(n)]
+        idx = pd.date_range(end="2026-09-24", periods=n, freq="B")
+        return pd.DataFrame({
+            "open":   closes,
+            "high":   [c + 0.3 for c in closes],
+            "low":    [c - 0.3 for c in closes],
+            "close":  closes,
+            "volume": [float(avg_vol)] * n,
+        }, index=idx)
+
+    @staticmethod
+    def _intraday(cur_vol=16_000.0, base_vol=8_000.0, breakout=True, n=60):
+        """60 x 1m bars 09:30-10:29 ET ramping 10.00 -> ~10.80 (+8% from open).
+        Base volume 8k/min -> day_vol ~480k -> rvol ~3.1x at elapsed=60 min.
+        breakout=True: last bar closes above the preceding 5-bar high;
+        breakout=False: last bar closes just under it, but still within 0.5%
+        of the recent high so only the breakout guard can reject."""
+        opens, highs, lows, closes, vols = [], [], [], [], []
+        for i in range(n):
+            price = 10.0 + 0.8 * i / (n - 1)
+            o, c = price, price + 0.01
+            opens.append(o)
+            closes.append(c)
+            highs.append(c + 0.02)
+            lows.append(o - 0.05)
+            vols.append(float(base_vol))
+        prior_5_high = max(highs[-6:-1])  # highest high of the 5 bars before the current one
+        vols[-1] = float(cur_vol)
+        closes[-1] = prior_5_high + 0.05 if breakout else prior_5_high - 0.01
+        opens[-1] = closes[-1] - 0.01
+        highs[-1] = closes[-1] + 0.02
+        idx = pd.date_range(start="2026-09-25 09:30", periods=n, freq="min")
+        return pd.DataFrame({
+            "open": opens, "high": highs, "low": lows,
+            "close": closes, "volume": vols,
+        }, index=idx)
+
+    def _scan(self, intraday, symbol="TEST"):
+        def fake_get_bars(sym, period, interval, *a, **k):
+            return intraday.copy() if interval == "1m" else self._daily().copy()
+        with patch.object(equity_strategies, "get_bars", side_effect=fake_get_bars), \
+             patch.object(equity_strategies, "_sa_metrics_boost", lambda s, c, *a, **k: c), \
+             patch.object(equity_strategies, "MOMENTUM_SCALP", self.SCALP_CFG), \
+             patch.object(equity_strategies, "datetime", _FAKE_SCALP_DATETIME_MODULE):
+            return MomentumScalpStrategy().scan(symbol)
+
+    def test_accepts_confirmed_breakout_bar(self):
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=True))
+        self.assertIsNotNone(sig, "extended runner with 2x bar volume and a breakout should fire")
+        self.assertEqual(sig.strategy, "MomentumScalp")
+        self.assertIn("barvol=2.0x", sig.reason)
+        self.assertIn("break>$", sig.reason)
+
+    def test_rejects_weak_current_bar_volume(self):
+        # Current bar at base volume (1.0x trailing avg < 1.5x) — breakout shape intact
+        sig = self._scan(self._intraday(cur_vol=8_000.0, breakout=True))
+        self.assertIsNone(sig, "weak current-bar volume must reject")
+
+    def test_rejects_close_below_prior_5bar_high(self):
+        # Strong bar volume, but close does not clear the preceding 5-bar high
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=False))
+        self.assertIsNone(sig, "no breakout above the preceding 5-bar high must reject")
 
 
 if __name__ == "__main__":

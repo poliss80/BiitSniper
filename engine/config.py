@@ -813,6 +813,7 @@ MOMENTUM_SCALP = {
     "min_rvol": float(os.getenv("SCALP_MIN_RVOL", "3.0")),                     # high-conviction volume floor
     "min_price_up_pct": float(os.getenv("SCALP_MIN_PRICE_UP_PCT", "5.0")),     # already extended on the day
     "break_lookback_min": int(os.getenv("SCALP_BREAK_LOOKBACK_MIN", "10")),    # must be at/near the very recent high
+    "bar_volume_mult": float(os.getenv("SCALP_BAR_VOLUME_MULT", "1.5")),       # current 1m bar volume must be >= this x trailing (up-to-20-bar) avg
     "position_size_mult": float(os.getenv("SCALP_POSITION_SIZE_MULT", "2.0")), # "go huge" size multiplier
     "max_bp_pct": float(os.getenv("SCALP_MAX_BP_PCT", "20.0")),               # hard cap: never exceed this % of buying power
     "tp_pct": float(os.getenv("SCALP_TP_PCT", "5.0")),                         # fast bank target

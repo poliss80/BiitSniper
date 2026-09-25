@@ -17418,3 +17418,1078 @@
 2026-09-25 08:10:19,849 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
 2026-09-25 08:10:19,849 [INFO] [SCAN] No signals this cycle
 2026-09-25 08:10:19,849 [INFO] Heartbeat: 2026-09-25T08:10:19.849905
+2026-09-25 08:13:19,866 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:13:20,814 [INFO] [CRYPTO] 9 open: AAVE/USD(145.0718→TP:150.8747), BAT/USD(0.0911→TP:0.0948), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3494→TP:0.3633), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:13:22,902 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:13:22,902 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:13:22,903 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:13:22,903 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:13:22,903 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:13:22,963 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,034 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,107 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,166 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,221 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,282 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,342 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,406 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:13:23,406 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:13:23,407 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:13:23,407 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:13:23,407 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:13:23,407 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:13:23,407 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:13:23,408 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:13:23,408 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:13:23,408 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:13:23,408 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:13:23,408 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:13:23,495 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:13:23,495 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:13:23,529 [INFO] STALE ORDER: DKI OrderSide.SELL 70000 — age 3.1m (cutoff 3m) → limit @ current price
+2026-09-25 08:13:23,887 [INFO] STALE ORDER DKI: replaced successfully
+2026-09-25 08:13:23,887 [INFO] Trade Ideas [PRIORITY_1_MOMENTUM] market_scope_360(50) + momentum_scanner(21) + unusual_options_volume(14): +12 new, 38 existing → top-10: ['INLF', 'GLNDW', 'WHLR', 'APUS', 'AKAM', 'AVAT', 'GLND', 'GRML', 'PRME', 'STEM']
+2026-09-25 08:13:23,887 [INFO] ── TI top-20 [PRIORITY_1_MOMENTUM] (primary=50 secondary=35): INLF, GLNDW, WHLR, APUS, AKAM, AVAT, GLND, GRML, PRME, STEM, CIFG, USDE, ARMG, XRPT, GENI, XXRP, KOLD, SOLT, CIFR, FRVO
+2026-09-25 08:13:23,888 [INFO] Trade Ideas [PRIORITY_2_ESTABLISHED] high_short_float(50): +5 new, 45 existing → top-10: ['INLF', 'GLNDW', 'WHLR', 'APUS', 'AKAM', 'GLND', 'AVAT', 'GRML', 'PRME', 'USDE']
+2026-09-25 08:13:23,888 [INFO] ── TI top-20 [PRIORITY_2_ESTABLISHED] (primary=50 secondary=0): INLF, GLNDW, WHLR, APUS, AKAM, GLND, AVAT, GRML, PRME, USDE, STEM, ARMG, CIFG, XRPT, GENI, XXRP, KOLD, SOLT, MGN, CIFR
+2026-09-25 08:13:23,950 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, AKAM, GLND, AVAT, GRML, PRME, USDE, STEM, ARMG, XRPT, GENI, XXRP, KOLD, SOLT, MGN, CIFR, FRVO, KORU, WSHP, VBIO, MVLL, NCT, SPHL, FOFO, ONEN, BOIL, SOXS, PFSA, XAIR, SKYQ, DAMD, ZS, UNG, GDXD, SKDD, SMCZ, ZSL, LION, BMNZ, BNO, SMST, USO, MUZ, IONL, UCO, MKT, TAK, TEVA, BAM, SYY, ALB, UPS, AXP, SHW, STT, OMF, WRBY, UHS, SLG, PGEN, DGXX, IRE, GDXU
+2026-09-25 08:13:23,950 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:13:26,570 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 273579 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=11.66 | day_vol=23463
+2026-09-25 08:13:26,857 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.18 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=16969 | avg_daily_vol=4754606
+2026-09-25 08:13:33,502 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 406203 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.41 | day_vol=119121
+2026-09-25 08:13:36,636 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 218674 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.20 | day_vol=35270
+2026-09-25 08:13:38,679 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 98602 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.09 | day_vol=24108
+2026-09-25 08:13:41,333 [WARNING] [GUARDRAIL] FRVO blocked: dollar volume 1205334 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.46 | day_vol=69034
+2026-09-25 08:13:46,013 [WARNING] [GUARDRAIL] WSHP blocked: dollar volume 28629 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.01 | day_vol=4764
+2026-09-25 08:13:46,540 [WARNING] [GUARDRAIL] MVLL blocked: dollar volume 1264129 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=36.18 | day_vol=34940
+2026-09-25 08:13:50,593 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 56544 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.24 | day_vol=17452
+2026-09-25 08:13:51,605 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 53926 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.90 | day_vol=18595
+2026-09-25 08:13:52,336 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 188194 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.80 | day_vol=67212
+2026-09-25 08:13:53,090 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.26 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15344 | avg_daily_vol=2906488
+2026-09-25 08:13:56,100 [WARNING] [GUARDRAIL] GDXD blocked: dollar volume 1281991 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=18.80 | day_vol=68191
+2026-09-25 08:13:56,361 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 407660 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.79 | day_vol=60041
+2026-09-25 08:13:57,150 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 114789 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.42 | day_vol=25941
+2026-09-25 08:13:57,924 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.46 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=72483 | avg_daily_vol=7825321
+2026-09-25 08:14:00,321 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:14:00,960 [WARNING] [GUARDRAIL] BMNZ blocked: dollar volume 1089495 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.75 | day_vol=290532
+2026-09-25 08:14:01,058 [WARNING] [GUARDRAIL] BNO blocked: dollar volume 781688 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=60.39 | day_vol=12944
+2026-09-25 08:14:01,823 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 651539 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.76 | day_vol=55403
+2026-09-25 08:14:02,418 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.27 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=72162 | avg_daily_vol=13132730
+2026-09-25 08:14:02,892 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 494219 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.59 | day_vol=31701
+2026-09-25 08:14:06,129 [WARNING] [GUARDRAIL] UCO blocked: dollar volume 769151 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=52.04 | day_vol=14780
+2026-09-25 08:14:08,145 [WARNING] [GUARDRAIL] UPS blocked: dollar volume 1041030 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=92.38 | day_vol=11269
+2026-09-25 08:14:08,282 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 687027 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.12 | day_vol=2237
+2026-09-25 08:14:09,973 [WARNING] [GUARDRAIL] PGEN blocked: dollar volume 165884 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=7.90 | day_vol=20998
+2026-09-25 08:14:10,115 [WARNING] [GUARDRAIL] DGXX blocked: dollar volume 60359 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.71 | day_vol=12815
+2026-09-25 08:14:10,252 [WARNING] [GUARDRAIL] IRE blocked: dollar volume 1195375 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.06 | day_vol=99119
+2026-09-25 08:14:11,306 [INFO] [GUARDRAIL SUMMARY] Rejected: 62 | DollarVol: 24 | RVOL: 4 | GapChase: 1 | MinPrice: 0 | Other: 17
+2026-09-25 08:14:11,306 [INFO] [FUNNEL] targets=75 guardrail_rejected=62 (rvol=4) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 08:14:11,306 [INFO] [SCAN] Breakdown — VWAPReclaim: 1 | Errors: 0 | Total: 0
+2026-09-25 08:14:11,306 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:14:11,306 [INFO] Heartbeat: 2026-09-25T08:14:11.306964
+2026-09-25 08:17:11,326 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:17:12,385 [INFO] [CRYPTO] 9 open: AAVE/USD(145.0718→TP:150.8747), BAT/USD(0.0911→TP:0.0948), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3494→TP:0.3633), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:17:14,783 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:17:14,783 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:17:14,783 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:17:14,784 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:17:14,784 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:17:14,845 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:14,907 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:14,969 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:15,033 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:15,090 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:15,187 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:15,251 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:15,311 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:17:15,312 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:17:15,312 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:17:15,312 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:17:15,312 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:17:15,312 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:17:15,313 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:17:15,313 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:17:15,313 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:17:15,313 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:17:15,313 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:17:15,314 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:17:15,408 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:17:15,409 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:17:15,439 [INFO] STALE ORDER: DKI OrderSide.SELL 70000 — age 3.9m (cutoff 3m) → limit @ current price
+2026-09-25 08:17:15,799 [INFO] STALE ORDER DKI: replaced successfully
+2026-09-25 08:17:28,431 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, AKAM, GLND, AVAT, GRML, PRME, USDE, STEM, ARMG, XRPT, GENI, XXRP, KOLD, SOLT, MGN, CIFR, FRVO, KORU, WSHP, VBIO, MVLL, NCT, SPHL, FOFO, ONEN, BOIL, SOXS, PFSA, XAIR, SKYQ, DAMD, ZS, UNG, GDXD, SKDD, SMCZ, ZSL, LION, BMNZ, BNO, SMST, USO, MUZ, IONL, UCO, MKT, TAK, TEVA, BAM, SYY, ALB, UPS, AXP, SHW, STT, OMF, WRBY, UHS, SLG, PGEN, DGXX, IRE, GDXU
+2026-09-25 08:17:28,431 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:17:31,264 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 342027 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=11.85 | day_vol=28863
+2026-09-25 08:17:31,538 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.19 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=17985 | avg_daily_vol=4754606
+2026-09-25 08:17:38,967 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 408272 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.42 | day_vol=119221
+2026-09-25 08:17:41,785 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 218587 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.18 | day_vol=35370
+2026-09-25 08:17:44,086 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 98602 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.09 | day_vol=24108
+2026-09-25 08:17:46,561 [WARNING] [GUARDRAIL] FRVO blocked: dollar volume 1235556 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.48 | day_vol=70684
+2026-09-25 08:17:50,650 [WARNING] [GUARDRAIL] WSHP blocked: dollar volume 32017 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=5.97 | day_vol=5363
+2026-09-25 08:17:51,106 [WARNING] [GUARDRAIL] MVLL blocked: RVOL 0.63 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=37880 | avg_daily_vol=2987559
+2026-09-25 08:17:55,175 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 58942 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.16 | day_vol=18652
+2026-09-25 08:17:56,518 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 54860 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.87 | day_vol=19115
+2026-09-25 08:17:56,823 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 188358 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.79 | day_vol=67512
+2026-09-25 08:17:58,623 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.35 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=20165 | avg_daily_vol=2906488
+2026-09-25 08:18:00,910 [WARNING] [GUARDRAIL] GDXD blocked: dollar volume 1308337 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=18.92 | day_vol=69151
+2026-09-25 08:18:01,335 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 411706 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.80 | day_vol=60545
+2026-09-25 08:18:01,682 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 114789 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.42 | day_vol=25941
+2026-09-25 08:18:03,439 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.48 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=74460 | avg_daily_vol=7825321
+2026-09-25 08:18:05,104 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:18:05,741 [WARNING] [GUARDRAIL] BMNZ blocked: dollar volume 1307341 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.80 | day_vol=344037
+2026-09-25 08:18:06,334 [WARNING] [GUARDRAIL] BNO blocked: dollar volume 781688 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=60.39 | day_vol=12944
+2026-09-25 08:18:06,552 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 989428 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.98 | day_vol=82590
+2026-09-25 08:18:07,884 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.30 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=77651 | avg_daily_vol=13132730
+2026-09-25 08:18:08,165 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 503165 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.50 | day_vol=32461
+2026-09-25 08:18:09,809 [WARNING] [GUARDRAIL] UCO blocked: dollar volume 880116 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=52.22 | day_vol=16854
+2026-09-25 08:18:11,287 [WARNING] [GUARDRAIL] UPS blocked: dollar volume 1195342 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=92.39 | day_vol=12938
+2026-09-25 08:18:12,349 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 725488 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.15 | day_vol=2362
+2026-09-25 08:18:12,511 [WARNING] [GUARDRAIL] PGEN blocked: dollar volume 167560 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=7.92 | day_vol=21148
+2026-09-25 08:18:13,275 [WARNING] [GUARDRAIL] DGXX blocked: dollar volume 78694 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.68 | day_vol=16815
+2026-09-25 08:18:13,392 [WARNING] [GUARDRAIL] IRE blocked: dollar volume 1194432 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.99 | day_vol=99619
+2026-09-25 08:18:14,463 [INFO] [GUARDRAIL SUMMARY] Rejected: 62 | DollarVol: 23 | RVOL: 5 | GapChase: 1 | MinPrice: 0 | Other: 17
+2026-09-25 08:18:14,464 [INFO] [FUNNEL] targets=75 guardrail_rejected=62 (rvol=5) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 08:18:14,464 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 08:18:14,464 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 08:18:14,464 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:18:14,465 [INFO] Heartbeat: 2026-09-25T08:18:14.465124
+2026-09-25 08:18:14,526 [INFO] ======================================================================
+2026-09-25 08:18:14,526 [INFO] STATUS
+2026-09-25 08:18:14,526 [INFO] Equity:     $110,364.02
+2026-09-25 08:18:14,526 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-25 08:18:14,527 [INFO] Positions:  12
+2026-09-25 08:18:14,527 [INFO] Unrealized: $4598.58
+2026-09-25 08:18:14,527 [INFO]   AAVEUSD: 17.038601323 @ $145.07 | $17.49 (+0.71%)
+2026-09-25 08:18:14,527 [INFO]   BATUSD: 0.024299102 @ $0.09 | $-0.00 (-1.22%)
+2026-09-25 08:18:14,527 [INFO]   BONKUSD: 107.870270262 @ $0.00 | $-0.00 (-0.25%)
+2026-09-25 08:18:14,528 [INFO]   CRVUSD: 0.009748511 @ $0.35 | $-0.00 (-2.00%)
+2026-09-25 08:18:14,528 [INFO]   DKI: 80000 @ $2.60 | $4000.00 (+1.92%)
+2026-09-25 08:18:14,528 [INFO]   DOGEUSD: 25276.287230627 @ $0.10 | $26.98 (+1.11%)
+2026-09-25 08:18:14,528 [INFO]   DOTUSD: 4205.955612411 @ $1.15 | $181.36 (+3.74%)
+2026-09-25 08:18:14,528 [INFO]   FILUSD: 2430.079470566 @ $1.00 | $0.75 (+0.03%)
+2026-09-25 08:18:14,529 [INFO]   GRTUSD: 0.167530378 @ $0.03 | $0.00 (+3.64%)
+2026-09-25 08:18:14,529 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-100.00 (-8.85%)
+2026-09-25 08:18:14,529 [INFO]   SECZ: 800 @ $15.91 | $472.00 (+3.71%)
+2026-09-25 08:18:14,529 [INFO]   SUSHIUSD: 0.011002881 @ $0.26 | $-0.00 (-0.56%)
+2026-09-25 08:18:14,530 [INFO] ======================================================================
+2026-09-25 08:18:14,533 [INFO] Universe pruned: 28 expired ticker(s): ['AGCO', 'ARM', 'BFLX', 'BRNX', 'CRDO', 'CYPH', 'EOSE', 'ETHD', 'FSLY', 'FWDI']…
+2026-09-25 08:21:14,553 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:21:15,679 [INFO] [CRYPTO] 9 open: AAVE/USD(145.0718→TP:150.8747), BAT/USD(0.0911→TP:0.0948), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3494→TP:0.3633), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:21:17,833 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:21:17,833 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:21:17,833 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:21:17,833 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:21:17,834 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:21:17,909 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:17,987 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,052 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,110 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,174 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,238 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,308 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,381 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:21:18,381 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:21:18,381 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:21:18,382 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:21:18,382 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:21:18,382 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:21:18,382 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:21:18,383 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:21:18,383 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:21:18,383 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:21:18,383 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:21:18,383 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:21:19,105 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:21:19,315 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:21:19,351 [INFO] STALE ORDER: DKI OrderSide.SELL 70000 — age 4.1m (cutoff 3m) → limit @ current price
+2026-09-25 08:21:19,721 [INFO] STALE ORDER DKI: replaced successfully
+2026-09-25 08:21:20,135 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 08:21:20,204 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, AKAM, GLND, AVAT, GRML, PRME, USDE, STEM, ARMG, XRPT, GENI, XXRP, KOLD, SOLT, MGN, CIFR, FRVO, KORU, WSHP, VBIO, MVLL, NCT, SPHL, FOFO, ONEN, BOIL, SOXS, PFSA, XAIR, SKYQ, DAMD, ZS, UNG, GDXD, SKDD, SMCZ, ZSL, LION, BMNZ, BNO, SMST, USO, MUZ, IONL, UCO, MKT, TAK, TEVA, BAM, SYY, ALB, UPS, AXP, SHW, STT, OMF, WRBY, UHS, SLG, PGEN, DGXX, IRE, GDXU
+2026-09-25 08:21:20,205 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:21:22,943 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 549035 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=11.71 | day_vol=46886
+2026-09-25 08:21:23,352 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.19 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=18483 | avg_daily_vol=4754606
+2026-09-25 08:21:29,588 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 410990 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.41 | day_vol=120525
+2026-09-25 08:21:33,048 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 218587 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.18 | day_vol=35370
+2026-09-25 08:21:34,702 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 96832 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.00 | day_vol=24208
+2026-09-25 08:21:39,830 [WARNING] [GUARDRAIL] FRVO blocked: dollar volume 1237635 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.46 | day_vol=70884
+2026-09-25 08:21:42,096 [WARNING] [GUARDRAIL] WSHP blocked: dollar volume 33367 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.07 | day_vol=5497
+2026-09-25 08:21:42,858 [WARNING] [GUARDRAIL] MVLL blocked: RVOL 0.65 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=38678 | avg_daily_vol=2987559
+2026-09-25 08:21:46,614 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 58942 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.16 | day_vol=18652
+2026-09-25 08:21:47,992 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 64302 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.85 | day_vol=22562
+2026-09-25 08:21:48,411 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 198448 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.77 | day_vol=71642
+2026-09-25 08:21:49,530 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.38 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=21881 | avg_daily_vol=2906488
+2026-09-25 08:21:52,792 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 422566 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.80 | day_vol=62142
+2026-09-25 08:21:53,238 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 124461 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.46 | day_vol=27906
+2026-09-25 08:21:54,282 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.49 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=76715 | avg_daily_vol=7825321
+2026-09-25 08:21:56,378 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:21:57,887 [WARNING] [GUARDRAIL] BNO blocked: dollar volume 794949 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=60.48 | day_vol=13144
+2026-09-25 08:21:58,221 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1075462 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.90 | day_vol=90375
+2026-09-25 08:21:59,247 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.30 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=79472 | avg_daily_vol=13132730
+2026-09-25 08:22:00,897 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 519176 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.54 | day_vol=33409
+2026-09-25 08:22:01,056 [WARNING] [GUARDRAIL] UCO blocked: dollar volume 898054 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=52.17 | day_vol=17214
+2026-09-25 08:22:03,028 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 192576 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=108.80 | day_vol=1770
+2026-09-25 08:22:04,064 [WARNING] [GUARDRAIL] UPS blocked: dollar volume 1195342 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=92.39 | day_vol=12938
+2026-09-25 08:22:04,954 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 725488 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.15 | day_vol=2362
+2026-09-25 08:22:05,118 [WARNING] [GUARDRAIL] PGEN blocked: dollar volume 167560 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=7.92 | day_vol=21148
+2026-09-25 08:22:05,566 [WARNING] [GUARDRAIL] DGXX blocked: dollar volume 176766 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.65 | day_vol=38046
+2026-09-25 08:22:05,739 [WARNING] [GUARDRAIL] IRE blocked: dollar volume 1298733 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.97 | day_vol=108499
+2026-09-25 08:22:06,675 [INFO] [GUARDRAIL SUMMARY] Rejected: 60 | DollarVol: 22 | RVOL: 5 | GapChase: 1 | MinPrice: 0 | Other: 16
+2026-09-25 08:22:06,675 [INFO] [FUNNEL] targets=75 guardrail_rejected=60 (rvol=5) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-25 08:22:06,675 [INFO] [SCAN] Breakdown — PreMarketMomentum: 2 | Errors: 0 | Total: 0
+2026-09-25 08:22:06,676 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:22:06,676 [INFO] Heartbeat: 2026-09-25T08:22:06.676300
+2026-09-25 08:25:06,694 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:25:07,812 [INFO] [CRYPTO] 9 open: AAVE/USD(145.0718→TP:150.8747), BAT/USD(0.0911→TP:0.0948), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3494→TP:0.3633), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:25:09,946 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:25:09,947 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:25:09,947 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:25:09,947 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:25:09,947 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:25:10,013 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,076 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,139 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,203 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,262 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,332 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,391 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,458 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:25:10,459 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:25:10,459 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:25:10,459 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:25:10,459 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:25:10,459 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:25:10,460 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:25:10,460 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:25:10,460 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:25:10,460 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:25:10,460 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:25:10,461 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:25:10,565 [INFO] Quarterly P&L: +13.4% (target >= 50%)
+2026-09-25 08:25:10,566 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:25:10,599 [INFO] STALE ORDER: DKI OrderSide.SELL 80000 — age 3.3m (cutoff 3m) → limit @ current price
+2026-09-25 08:25:10,928 [WARNING] STALE ORDER DKI: can't determine price, skipping
+2026-09-25 08:25:10,991 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, AKAM, GLND, AVAT, GRML, PRME, USDE, STEM, ARMG, XRPT, GENI, XXRP, KOLD, SOLT, MGN, CIFR, FRVO, KORU, WSHP, VBIO, MVLL, NCT, SPHL, FOFO, ONEN, BOIL, SOXS, PFSA, XAIR, SKYQ, DAMD, ZS, UNG, GDXD, SKDD, SMCZ, ZSL, LION, BMNZ, BNO, SMST, USO, MUZ, IONL, UCO, MKT, TAK, TEVA, BAM, SYY, ALB, UPS, AXP, SHW, STT, OMF, WRBY, UHS, SLG, PGEN, DGXX, IRE, GDXU
+2026-09-25 08:25:10,991 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:25:13,615 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 631276 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=11.93 | day_vol=52915
+2026-09-25 08:25:13,940 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.20 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=18683 | avg_daily_vol=4754606
+2026-09-25 08:25:20,584 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 443553 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.42 | day_vol=129694
+2026-09-25 08:25:23,882 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 222226 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.18 | day_vol=35970
+2026-09-25 08:25:25,495 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 98352 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.00 | day_vol=24588
+2026-09-25 08:25:28,699 [WARNING] [GUARDRAIL] FRVO blocked: dollar volume 1308174 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.44 | day_vol=75010
+2026-09-25 08:25:33,098 [WARNING] [GUARDRAIL] WSHP blocked: dollar volume 33481 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=5.97 | day_vol=5607
+2026-09-25 08:25:33,489 [WARNING] [GUARDRAIL] MVLL blocked: RVOL 0.65 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=38678 | avg_daily_vol=2987559
+2026-09-25 08:25:37,686 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 59351 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.16 | day_vol=18782
+2026-09-25 08:25:38,446 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 65267 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.88 | day_vol=22662
+2026-09-25 08:25:39,187 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 214038 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.74 | day_vol=78116
+2026-09-25 08:25:39,996 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.38 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=22181 | avg_daily_vol=2906488
+2026-09-25 08:25:43,345 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 427376 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.79 | day_vol=62942
+2026-09-25 08:25:44,137 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 129210 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.47 | day_vol=28906
+2026-09-25 08:25:44,856 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.55 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=86749 | avg_daily_vol=7825321
+2026-09-25 08:25:47,346 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:25:48,824 [WARNING] [GUARDRAIL] BNO blocked: dollar volume 885799 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=60.49 | day_vol=14644
+2026-09-25 08:25:49,437 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1075462 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.90 | day_vol=90375
+2026-09-25 08:25:49,577 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.30 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=79872 | avg_daily_vol=13132730
+2026-09-25 08:25:52,146 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 536244 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.65 | day_vol=34258
+2026-09-25 08:25:52,324 [WARNING] [GUARDRAIL] UCO blocked: dollar volume 913355 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=52.15 | day_vol=17514
+2026-09-25 08:25:54,269 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 192576 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=108.80 | day_vol=1770
+2026-09-25 08:25:55,341 [WARNING] [GUARDRAIL] UPS blocked: dollar volume 1300116 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=92.41 | day_vol=14069
+2026-09-25 08:25:56,085 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 740653 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.07 | day_vol=2412
+2026-09-25 08:25:56,425 [WARNING] [GUARDRAIL] PGEN blocked: dollar volume 172102 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=7.95 | day_vol=21648
+2026-09-25 08:25:56,730 [WARNING] [GUARDRAIL] DGXX blocked: dollar volume 181173 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.64 | day_vol=39046
+2026-09-25 08:25:56,822 [WARNING] [GUARDRAIL] IRE blocked: dollar volume 1344868 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.01 | day_vol=111979
+2026-09-25 08:25:57,862 [INFO] [GUARDRAIL SUMMARY] Rejected: 60 | DollarVol: 22 | RVOL: 5 | GapChase: 1 | MinPrice: 0 | Other: 16
+2026-09-25 08:25:57,862 [INFO] [FUNNEL] targets=75 guardrail_rejected=60 (rvol=5) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-25 08:25:57,862 [INFO] [SCAN] Breakdown — PreMarketMomentum: 2 | Errors: 0 | Total: 0
+2026-09-25 08:25:57,863 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:25:57,863 [INFO] Heartbeat: 2026-09-25T08:25:57.863205
+2026-09-25 08:28:57,879 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:28:59,071 [INFO] [CRYPTO] 9 open: AAVE/USD(145.0718→TP:150.8747), BAT/USD(0.0911→TP:0.0948), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3494→TP:0.3633), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:29:01,180 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:29:01,181 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:29:01,181 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:29:01,181 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:29:01,181 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:29:01,248 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,330 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,400 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,467 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,534 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,607 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,678 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,746 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:29:01,747 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:29:01,747 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:29:01,747 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:29:01,747 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:29:01,748 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:29:01,748 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:29:01,748 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:29:01,748 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:29:01,748 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:29:01,749 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:29:01,749 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:29:01,860 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:29:01,861 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:29:01,893 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 08:29:02,833 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 08:29:02,834 [INFO] [SCAN] 9 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX
+2026-09-25 08:29:02,834 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:29:04,945 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 669206 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=12.12 | day_vol=55215
+2026-09-25 08:29:05,028 [WARNING] [GUARDRAIL] GCTK blocked: dollar volume 208325 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.25 | day_vol=92589
+2026-09-25 08:29:05,162 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.20 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=18983 | avg_daily_vol=4754606
+2026-09-25 08:29:05,653 [INFO] [GUARDRAIL SUMMARY] Rejected: 9 | DollarVol: 2 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 5
+2026-09-25 08:29:05,653 [INFO] [FUNNEL] targets=9 guardrail_rejected=9 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 08:29:05,653 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 08:29:05,654 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 08:29:05,654 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:29:05,654 [INFO] Heartbeat: 2026-09-25T08:29:05.654243
+2026-09-25 08:32:05,670 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:32:06,813 [INFO] [CRYPTO] 9 open: AAVE/USD(145.0718→TP:150.8747), BAT/USD(0.0911→TP:0.0948), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3494→TP:0.3633), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:32:08,970 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:32:08,970 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:32:08,971 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:32:08,971 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:32:08,971 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:32:09,036 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,097 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,157 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,216 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,287 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,342 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,400 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,458 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:32:09,458 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:32:09,458 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:32:09,459 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:32:09,459 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:32:09,459 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:32:09,459 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:32:09,459 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:32:09,460 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:32:09,460 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:32:09,460 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:32:09,460 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:32:09,546 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:32:09,547 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:32:09,575 [ERROR] Trade Ideas scrape hard-timeout (188s) — killing Chrome/chromedriver and resetting future
+2026-09-25 08:32:10,419 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 08:32:10,496 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 08:32:10,496 [INFO] [SCAN] 56 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, ALB, AXP, BAM, FBIN, HASI, OMF, SHW, SLG, STT, SYY, TAK, TEVA, UHS, UPS, WRBY, AKAM, APUS, AVAT, BOIL, FOFO, GLND, GLNDW, GRML, INLF, MKT, NCT, ONEN, PFSA, SOXS, SPHL, STEM, UNG, USDEW, WHLR, XAIR, ARMG, BMNZ, DAMD, GDXD, GENI, GLNK, KOLD, KORU, LION, MGN, MUZ, PRME
+2026-09-25 08:32:10,496 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:32:13,142 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 669206 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=12.12 | day_vol=55215
+2026-09-25 08:32:13,292 [WARNING] [GUARDRAIL] GCTK blocked: dollar volume 214090 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.25 | day_vol=95151
+2026-09-25 08:32:13,445 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.20 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=19383 | avg_daily_vol=4754606
+2026-09-25 08:32:14,054 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 339456 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=108.80 | day_vol=3120
+2026-09-25 08:32:14,164 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 740653 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=307.07 | day_vol=2412
+2026-09-25 08:32:17,382 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.12 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=14519 | avg_daily_vol=6040509
+2026-09-25 08:32:18,013 [WARNING] [GUARDRAIL] AVAT blocked: dollar volume 136650 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.00 | day_vol=68325
+2026-09-25 08:32:20,668 [WARNING] [GUARDRAIL] FOFO blocked: dollar volume 45181 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.30 | day_vol=19644
+2026-09-25 08:32:20,988 [WARNING] [GUARDRAIL] GLNDW blocked: dollar volume 176280 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.15 | day_vol=82067
+2026-09-25 08:32:24,268 [WARNING] [GUARDRAIL] NCT blocked: dollar volume 248870 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.17 | day_vol=59681
+2026-09-25 08:32:24,566 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 59351 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.16 | day_vol=18782
+2026-09-25 08:32:24,920 [WARNING] [GUARDRAIL] PFSA blocked: dollar volume 857202 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.78 | day_vol=308346
+2026-09-25 08:32:26,550 [WARNING] [GUARDRAIL] SPHL blocked: dollar volume 18828 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.77 | day_vol=6797
+2026-09-25 08:32:27,927 [WARNING] [GUARDRAIL] STEM blocked: dollar volume 142858 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.41 | day_vol=32394
+2026-09-25 08:32:28,210 [WARNING] [GUARDRAIL] USDEW blocked: dollar volume 176422 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.63 | day_vol=38104
+2026-09-25 08:32:28,652 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 69312 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.83 | day_vol=24492
+2026-09-25 08:32:31,949 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 229620 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=6.17 | day_vol=37230
+2026-09-25 08:32:32,266 [WARNING] [GUARDRAIL] GLNK blocked: dollar volume 460260 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=12.42 | day_vol=37058
+2026-09-25 08:32:36,531 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:32:36,964 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 98752 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.00 | day_vol=24688
+2026-09-25 08:32:37,716 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 514534 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.39 | day_vol=151780
+2026-09-25 08:32:38,951 [INFO] [GUARDRAIL SUMMARY] Rejected: 41 | DollarVol: 19 | RVOL: 2 | GapChase: 2 | MinPrice: 0 | Other: 18
+2026-09-25 08:32:38,951 [INFO] [FUNNEL] targets=56 guardrail_rejected=41 (rvol=2) -> signals_generated=2 -> conf_gate(-0) -> sector_cap(-0) -> final=2
+2026-09-25 08:32:38,951 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-25 08:32:38,951 [INFO] [SCAN] Breakdown — PreMarketMomentum: 2 | Errors: 0 | Total: 2
+2026-09-25 08:32:38,951 [INFO] [SCAN] TOP5_RAW #1: GLND BUY $6.21 conf=94% [PreMarketMomentum] — Pre-mkt momentum: gap +113.4% | PM vol 227% of avg daily
+2026-09-25 08:32:38,952 [INFO] [SCAN] TOP5_RAW #2: GRML BUY $16.33 conf=86% [PreMarketMomentum] — Pre-mkt momentum: gap +45.9% | PM vol 40% of avg daily
+2026-09-25 08:32:39,016 [INFO] Live holdings: 11 excluded
+2026-09-25 08:32:39,016 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 2 eligible
+2026-09-25 08:32:39,016 [INFO] [TRADE] TOP5_ELIGIBLE #1: GLND BUY $6.21 conf=94% [PreMarketMomentum] — Pre-mkt momentum: gap +113.4% | PM vol 227% of avg daily
+2026-09-25 08:32:39,016 [INFO] [TRADE] TOP5_ELIGIBLE #2: GRML BUY $16.33 conf=86% [PreMarketMomentum] — Pre-mkt momentum: gap +45.9% | PM vol 40% of avg daily
+2026-09-25 08:32:39,871 [INFO] Scan email sent
+2026-09-25 08:32:39,871 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-25 08:32:39,901 [INFO] EXECUTE: BUY GLND @ $6.21 | PreMarketMomentum | Pre-mkt momentum: gap +113.4% | PM vol 227% of avg daily
+2026-09-25 08:32:40,028 [INFO] SWAP: closing CRVUSD (weakest) to make room for GLND (conf=94%)
+2026-09-25 08:32:40,059 [INFO] SWAP close submitted for CRVUSD; waiting for position count to fall below 3 before entering GLND
+2026-09-25 08:32:40,060 [INFO] Skip GLND: Swap close submitted for CRVUSD; retry after close
+2026-09-25 08:32:41,092 [INFO] EXECUTE: BUY GRML @ $16.33 | PreMarketMomentum | Pre-mkt momentum: gap +45.9% | PM vol 40% of avg daily
+2026-09-25 08:32:41,154 [INFO] SWAP: closing BATUSD (weakest) to make room for GRML (conf=86%)
+2026-09-25 08:32:41,186 [INFO] SWAP close submitted for BATUSD; waiting for position count to fall below 3 before entering GRML
+2026-09-25 08:32:41,187 [INFO] Skip GRML: Swap close submitted for BATUSD; retry after close
+2026-09-25 08:32:42,188 [INFO] Heartbeat: 2026-09-25T08:32:42.188202
+2026-09-25 08:35:42,208 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:35:42,526 [INFO] [CRYPTO] Position closed externally: BAT/USD
+2026-09-25 08:35:42,526 [INFO] [CRYPTO] Position closed externally: CRV/USD
+2026-09-25 08:35:43,009 [INFO] [CRYPTO] 7 open: AAVE/USD(145.0718→TP:150.8747), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:35:45,255 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:35:45,255 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:35:45,255 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:35:45,255 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:35:45,255 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:35:45,309 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,370 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,431 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,489 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,556 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,631 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,692 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,760 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,849 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:35:45,849 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:35:45,849 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:35:45,849 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:35:45,849 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:35:45,849 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:35:45,850 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:35:45,937 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:35:45,937 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:35:46,027 [INFO] [SCAN] 71 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, USDEW, GLND, AKAM, STEM, AVAT, XRPT, XXRP, GRML, PRME, USDE, ARMG, MGN, KOLD, GLNK, GENI, XRP, SOLT, KORU, NCT, SPHL, BOIL, FOFO, PFSA, XAIR, ONEN, SOXS, SKYQ, TWLO, DAMD, SMCZ, UNG, ZS, SKDD, MUZ, GDXD, SMST, ZSL, BMNZ, LION, RKLZ, IONL, TNON, MKT, OMF, FBIN, TEVA, ALB, AXP, UPS, HASI, SHW, BAM, TAK, SYY, WRBY, UHS, STT, SLG
+2026-09-25 08:35:46,028 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:35:48,946 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.21 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=19860 | avg_daily_vol=4754606
+2026-09-25 08:35:50,123 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 669206 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.12 | day_vol=55215
+2026-09-25 08:35:59,003 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 514534 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.39 | day_vol=151780
+2026-09-25 08:36:00,303 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 98752 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.00 | day_vol=24688
+2026-09-25 08:36:03,719 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 234096 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.14 | day_vol=38150
+2026-09-25 08:36:12,593 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 69312 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.83 | day_vol=24492
+2026-09-25 08:36:12,777 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 59351 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.16 | day_vol=18782
+2026-09-25 08:36:14,080 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 245190 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.75 | day_vol=89160
+2026-09-25 08:36:14,444 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.29 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=13759 | avg_daily_vol=2401738
+2026-09-25 08:36:16,933 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 133286 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.46 | day_vol=29888
+2026-09-25 08:36:17,441 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.54 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=31394 | avg_daily_vol=2906488
+2026-09-25 08:36:17,836 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 467043 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.79 | day_vol=68784
+2026-09-25 08:36:21,802 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1079257 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.81 | day_vol=91385
+2026-09-25 08:36:22,255 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.61 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=94942 | avg_daily_vol=7825321
+2026-09-25 08:36:24,346 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:36:25,663 [WARNING] [GUARDRAIL] RKLZ blocked: dollar volume 47342 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=13.80 | day_vol=3430
+2026-09-25 08:36:26,606 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 601126 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.67 | day_vol=38365
+2026-09-25 08:36:27,072 [WARNING] [GUARDRAIL] TNON blocked: dollar volume 114402 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.00 | day_vol=38134
+2026-09-25 08:36:27,399 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 339456 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=108.80 | day_vol=3120
+2026-09-25 08:36:28,229 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 771837 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.26 | day_vol=2512
+2026-09-25 08:36:28,404 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.12 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=14819 | avg_daily_vol=6040509
+2026-09-25 08:36:28,973 [INFO] [GUARDRAIL SUMMARY] Rejected: 57 | DollarVol: 16 | RVOL: 5 | GapChase: 0 | MinPrice: 0 | Other: 18
+2026-09-25 08:36:28,973 [INFO] [FUNNEL] targets=71 guardrail_rejected=57 (rvol=5) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-25 08:36:28,973 [INFO] [SCAN] Breakdown — PreMarketMomentum: 3 | Errors: 0 | Total: 0
+2026-09-25 08:36:28,973 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:36:28,973 [INFO] Heartbeat: 2026-09-25T08:36:28.973741
+2026-09-25 08:39:28,994 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:39:29,773 [INFO] [CRYPTO] 7 open: AAVE/USD(145.0718→TP:150.8747), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:39:31,924 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:39:31,924 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:39:31,924 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:39:31,924 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:39:31,924 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:39:31,981 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,047 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,113 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,187 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,254 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,332 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,430 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,499 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,563 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:39:32,563 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:39:32,564 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:39:32,565 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:39:32,565 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:39:32,565 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:39:32,654 [INFO] Quarterly P&L: +13.4% (target >= 50%)
+2026-09-25 08:39:32,655 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:39:33,630 [INFO] [SCAN] 71 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, USDEW, GLND, AKAM, STEM, AVAT, XRPT, XXRP, GRML, PRME, USDE, ARMG, MGN, KOLD, GLNK, GENI, XRP, SOLT, KORU, NCT, SPHL, BOIL, FOFO, PFSA, XAIR, ONEN, SOXS, SKYQ, TWLO, DAMD, SMCZ, UNG, ZS, SKDD, MUZ, GDXD, SMST, ZSL, BMNZ, LION, RKLZ, IONL, TNON, MKT, OMF, FBIN, TEVA, ALB, AXP, UPS, HASI, SHW, BAM, TAK, SYY, WRBY, UHS, STT, SLG
+2026-09-25 08:39:33,631 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:39:36,568 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.21 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=19960 | avg_daily_vol=4754606
+2026-09-25 08:39:37,493 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 743762 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.50 | day_vol=59501
+2026-09-25 08:39:46,515 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 519700 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.40 | day_vol=152853
+2026-09-25 08:39:47,897 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 98752 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.00 | day_vol=24688
+2026-09-25 08:39:51,310 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 238066 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.15 | day_vol=38710
+2026-09-25 08:40:00,488 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 08:40:00,733 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 80030 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.89 | day_vol=27692
+2026-09-25 08:40:02,019 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 264494 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.75 | day_vol=96005
+2026-09-25 08:40:02,352 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.31 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15116 | avg_daily_vol=2401738
+2026-09-25 08:40:02,751 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 134022 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.47 | day_vol=29988
+2026-09-25 08:40:05,454 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.59 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=34319 | avg_daily_vol=2906488
+2026-09-25 08:40:05,957 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 478822 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.80 | day_vol=70415
+2026-09-25 08:40:07,584 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1079257 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.81 | day_vol=91385
+2026-09-25 08:40:10,320 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.63 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=99311 | avg_daily_vol=7825321
+2026-09-25 08:40:12,082 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:40:12,231 [WARNING] [GUARDRAIL] RKLZ blocked: dollar volume 56214 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=13.88 | day_vol=4050
+2026-09-25 08:40:13,581 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 656804 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.68 | day_vol=41888
+2026-09-25 08:40:14,993 [WARNING] [GUARDRAIL] TNON blocked: dollar volume 118121 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.01 | day_vol=39243
+2026-09-25 08:40:16,004 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 363786 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.57 | day_vol=3320
+2026-09-25 08:40:16,181 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 793449 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.30 | day_vol=2582
+2026-09-25 08:40:16,484 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.13 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15269 | avg_daily_vol=6040509
+2026-09-25 08:40:16,829 [INFO] [GUARDRAIL SUMMARY] Rejected: 57 | DollarVol: 16 | RVOL: 5 | GapChase: 0 | MinPrice: 0 | Other: 18
+2026-09-25 08:40:16,829 [INFO] [FUNNEL] targets=71 guardrail_rejected=57 (rvol=5) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-25 08:40:16,830 [INFO] [SCAN] Breakdown — PreMarketMomentum: 3 | Errors: 0 | Total: 0
+2026-09-25 08:40:16,830 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:40:16,830 [INFO] Heartbeat: 2026-09-25T08:40:16.830159
+2026-09-25 08:43:16,846 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:43:17,668 [INFO] [CRYPTO] 7 open: AAVE/USD(145.0718→TP:150.8747), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:43:19,745 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:43:19,745 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:43:19,745 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:43:19,745 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:43:19,745 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:43:19,804 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:19,865 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:19,928 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:19,988 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:20,047 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:20,104 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:20,161 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:20,218 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:20,278 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:43:20,279 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:43:20,280 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:43:20,280 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:43:20,280 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:43:20,280 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:43:20,376 [INFO] Quarterly P&L: +13.4% (target >= 50%)
+2026-09-25 08:43:20,377 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:43:20,713 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 08:43:20,809 [INFO] [SCAN] 71 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, USDEW, GLND, AKAM, STEM, AVAT, XRPT, XXRP, GRML, PRME, USDE, ARMG, MGN, KOLD, GLNK, GENI, XRP, SOLT, KORU, NCT, SPHL, BOIL, FOFO, PFSA, XAIR, ONEN, SOXS, SKYQ, TWLO, DAMD, SMCZ, UNG, ZS, SKDD, MUZ, GDXD, SMST, ZSL, BMNZ, LION, RKLZ, IONL, TNON, MKT, OMF, FBIN, TEVA, ALB, AXP, UPS, HASI, SHW, BAM, TAK, SYY, WRBY, UHS, STT, SLG
+2026-09-25 08:43:20,809 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:43:23,754 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.21 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=20060 | avg_daily_vol=4754606
+2026-09-25 08:43:24,639 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 745012 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.50 | day_vol=59601
+2026-09-25 08:43:33,686 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 541623 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.41 | day_vol=158857
+2026-09-25 08:43:35,041 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 109482 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.14 | day_vol=26445
+2026-09-25 08:43:38,554 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 274015 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.18 | day_vol=44339
+2026-09-25 08:43:47,663 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 80030 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.89 | day_vol=27692
+2026-09-25 08:43:48,011 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 08:43:49,013 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 288254 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.75 | day_vol=104816
+2026-09-25 08:43:49,456 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.33 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15723 | avg_daily_vol=2401738
+2026-09-25 08:43:49,753 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 134493 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.47 | day_vol=30088
+2026-09-25 08:43:52,830 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.63 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=36719 | avg_daily_vol=2906488
+2026-09-25 08:43:52,950 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 491783 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.80 | day_vol=72321
+2026-09-25 08:43:54,427 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1079542 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.79 | day_vol=91565
+2026-09-25 08:43:57,584 [WARNING] [GUARDRAIL] ZSL blocked: RVOL 0.64 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=100251 | avg_daily_vol=7825321
+2026-09-25 08:43:59,244 [WARNING] [GUARDRAIL] LION blocked: dollar volume 27057 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=2555
+2026-09-25 08:43:59,542 [WARNING] [GUARDRAIL] RKLZ blocked: dollar volume 105759 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=13.87 | day_vol=7625
+2026-09-25 08:44:00,661 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 666570 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.67 | day_vol=42538
+2026-09-25 08:44:02,262 [WARNING] [GUARDRAIL] TNON blocked: dollar volume 118107 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.98 | day_vol=39620
+2026-09-25 08:44:02,419 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 363786 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.57 | day_vol=3320
+2026-09-25 08:44:03,225 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 793449 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.30 | day_vol=2582
+2026-09-25 08:44:03,362 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.13 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15512 | avg_daily_vol=6040509
+2026-09-25 08:44:03,956 [INFO] [GUARDRAIL SUMMARY] Rejected: 57 | DollarVol: 16 | RVOL: 5 | GapChase: 0 | MinPrice: 0 | Other: 18
+2026-09-25 08:44:03,956 [INFO] [FUNNEL] targets=71 guardrail_rejected=57 (rvol=5) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 08:44:03,956 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-25 08:44:03,956 [INFO] [SCAN] Breakdown — PreMarketMomentum: 1 | Errors: 0 | Total: 0
+2026-09-25 08:44:03,957 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:44:03,957 [INFO] Heartbeat: 2026-09-25T08:44:03.957429
+2026-09-25 08:47:03,977 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:47:04,948 [INFO] [CRYPTO] 7 open: AAVE/USD(145.0718→TP:150.8747), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:47:07,257 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:47:07,257 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:47:07,257 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:47:07,257 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:47:07,257 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:47:07,317 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,378 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,442 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,503 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,565 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,625 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,690 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,750 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,809 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:47:07,809 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:47:07,809 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:47:07,810 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:47:07,810 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:47:07,810 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:47:07,810 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:47:07,810 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:47:07,810 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:47:07,811 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:47:07,811 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:47:07,811 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:47:07,811 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:47:07,904 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:47:07,905 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:47:07,995 [INFO] [SCAN] 71 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, INLF, GLNDW, WHLR, APUS, USDEW, GLND, AKAM, STEM, AVAT, XRPT, XXRP, GRML, PRME, USDE, ARMG, MGN, KOLD, GLNK, GENI, XRP, SOLT, KORU, NCT, SPHL, BOIL, FOFO, PFSA, XAIR, ONEN, SOXS, SKYQ, TWLO, DAMD, SMCZ, UNG, ZS, SKDD, MUZ, GDXD, SMST, ZSL, BMNZ, LION, RKLZ, IONL, TNON, MKT, OMF, FBIN, TEVA, ALB, AXP, UPS, HASI, SHW, BAM, TAK, SYY, WRBY, UHS, STT, SLG
+2026-09-25 08:47:07,995 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:47:10,936 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.21 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=20260 | avg_daily_vol=4754606
+2026-09-25 08:47:11,843 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 801293 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.80 | day_vol=62601
+2026-09-25 08:47:20,768 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 548601 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.43 | day_vol=159942
+2026-09-25 08:47:22,270 [WARNING] [GUARDRAIL] MGN blocked: dollar volume 117432 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.25 | day_vol=27631
+2026-09-25 08:47:25,725 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 274015 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.18 | day_vol=44339
+2026-09-25 08:47:34,891 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 80030 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.89 | day_vol=27692
+2026-09-25 08:47:35,331 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 08:47:36,275 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 290297 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.75 | day_vol=105505
+2026-09-25 08:47:36,604 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.33 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15723 | avg_daily_vol=2401738
+2026-09-25 08:47:37,003 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 134493 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.47 | day_vol=30088
+2026-09-25 08:47:40,046 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.66 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=38179 | avg_daily_vol=2906488
+2026-09-25 08:47:40,319 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 534434 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.79 | day_vol=78709
+2026-09-25 08:47:41,826 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1090878 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.84 | day_vol=92135
+2026-09-25 08:47:46,547 [WARNING] [GUARDRAIL] LION blocked: dollar volume 28435 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.71 | day_vol=2655
+2026-09-25 08:47:46,630 [WARNING] [GUARDRAIL] RKLZ blocked: dollar volume 105759 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=13.87 | day_vol=7625
+2026-09-25 08:47:47,986 [WARNING] [GUARDRAIL] IONL blocked: dollar volume 694749 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=15.68 | day_vol=44308
+2026-09-25 08:47:49,426 [WARNING] [GUARDRAIL] TNON blocked: dollar volume 131187 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.00 | day_vol=43729
+2026-09-25 08:47:50,862 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 363786 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.57 | day_vol=3320
+2026-09-25 08:47:51,303 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 1033983 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.55 | day_vol=3362
+2026-09-25 08:47:51,483 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.13 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=15685 | avg_daily_vol=6040509
+2026-09-25 08:47:52,860 [INFO] [GUARDRAIL SUMMARY] Rejected: 56 | DollarVol: 16 | RVOL: 4 | GapChase: 0 | MinPrice: 0 | Other: 18
+2026-09-25 08:47:52,860 [INFO] [FUNNEL] targets=71 guardrail_rejected=56 (rvol=4) -> signals_generated=4 -> conf_gate(-4) -> sector_cap(-0) -> final=0
+2026-09-25 08:47:52,860 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-25 08:47:52,861 [INFO] [SCAN] Breakdown — PreMarketMomentum: 1, TrendlineBreakout: 2, VWAPReclaim: 1 | Errors: 0 | Total: 0
+2026-09-25 08:47:52,861 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:47:52,861 [INFO] Heartbeat: 2026-09-25T08:47:52.861392
+2026-09-25 08:48:17,924 [INFO] ======================================================================
+2026-09-25 08:48:17,924 [INFO] STATUS
+2026-09-25 08:48:17,924 [INFO] Equity:     $110,346.02
+2026-09-25 08:48:17,925 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-25 08:48:17,925 [INFO] Positions:  9
+2026-09-25 08:48:17,925 [INFO] Unrealized: $580.60
+2026-09-25 08:48:17,925 [INFO]   AAVEUSD: 17.038601323 @ $145.07 | $26.00 (+1.05%)
+2026-09-25 08:48:17,925 [INFO]   BONKUSD: 107.870270262 @ $0.00 | $-0.00 (-0.25%)
+2026-09-25 08:48:17,926 [INFO]   DOGEUSD: 25276.287230627 @ $0.10 | $55.56 (+2.29%)
+2026-09-25 08:48:17,926 [INFO]   DOTUSD: 4205.955612411 @ $1.15 | $182.29 (+3.76%)
+2026-09-25 08:48:17,926 [INFO]   FILUSD: 2430.079470566 @ $1.00 | $0.75 (+0.03%)
+2026-09-25 08:48:17,926 [INFO]   GRTUSD: 0.167530378 @ $0.03 | $0.00 (+3.64%)
+2026-09-25 08:48:17,926 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-100.00 (-8.85%)
+2026-09-25 08:48:17,927 [INFO]   SECZ: 800 @ $15.91 | $416.00 (+3.27%)
+2026-09-25 08:48:17,927 [INFO]   SUSHIUSD: 0.011002881 @ $0.26 | $-0.00 (-0.56%)
+2026-09-25 08:48:17,927 [INFO] ======================================================================
+2026-09-25 08:48:17,930 [INFO] Universe pruned: 13 expired ticker(s): ['BNO', 'CIFR', 'CRWG', 'DGXX', 'FRVO', 'GDXU', 'IRE', 'MVLL', 'PGEN', 'UCO']…
+2026-09-25 08:50:52,946 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:50:53,909 [INFO] [CRYPTO] 7 open: AAVE/USD(145.0718→TP:150.8747), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:50:56,144 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:50:56,144 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:50:56,144 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:50:56,144 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:50:56,145 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:50:56,204 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,263 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,321 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,381 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,445 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,502 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,560 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,620 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,678 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:50:56,678 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:50:56,678 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:50:56,678 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:50:56,679 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:50:56,679 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:50:56,679 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:50:56,679 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:50:56,679 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:50:56,680 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:50:56,680 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:50:56,680 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:50:56,680 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:50:56,783 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:50:56,784 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:50:56,816 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 08:51:02,700 [INFO] [EDGAR] 8-K match: HLSQ — 8-K - Tessera Defense & Homeland Security Inc. (0001739174) (Filer)
+2026-09-25 08:51:02,701 [INFO] [EDGAR] 1 newly triggered tickers: ['HLSQ']
+2026-09-25 08:51:02,704 [INFO] [EDGAR] Adding HLSQ to P2 + scan queue for monitoring
+2026-09-25 08:51:02,764 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 08:51:02,765 [INFO] [SCAN] 10 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, HLSQ
+2026-09-25 08:51:02,765 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:51:05,591 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 802573 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=12.80 | day_vol=62701
+2026-09-25 08:51:05,718 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.21 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=20260 | avg_daily_vol=4754606
+2026-09-25 08:51:05,844 [WARNING] [GUARDRAIL] GCTK blocked: dollar volume 289510 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.22 | day_vol=130410
+2026-09-25 08:51:06,741 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 10393 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.53 | day_vol=19770
+2026-09-25 08:51:06,743 [INFO] [GUARDRAIL SUMMARY] Rejected: 10 | DollarVol: 3 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 5
+2026-09-25 08:51:06,743 [INFO] [FUNNEL] targets=10 guardrail_rejected=10 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 08:51:06,743 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-25 08:51:06,743 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 08:51:06,744 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 08:51:06,744 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:51:06,744 [INFO] Heartbeat: 2026-09-25T08:51:06.744146
+2026-09-25 08:54:06,763 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:54:07,558 [INFO] [CRYPTO] 7 open: AAVE/USD(145.0718→TP:150.8747), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), FIL/USD(0.9970→TP:1.0369), GRT/USD(0.0252→TP:0.0262), SUSHI/USD(0.2612→TP:0.2716)
+2026-09-25 08:54:09,658 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:54:09,658 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:54:09,659 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:54:09,659 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:54:09,659 [INFO] [CRYPTO] #5: SOL/USD BUY @ 117.2650 conf=70% | RSI=58.9 3-bar uptrend
+2026-09-25 08:54:09,749 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:09,809 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:09,879 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:09,944 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:10,020 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:10,094 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:10,161 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:10,227 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:10,290 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:54:10,290 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:54:10,290 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:54:10,291 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:54:10,291 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:54:10,291 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:54:10,291 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:54:10,291 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:54:10,291 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:54:10,292 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:54:10,292 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:54:10,292 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:54:10,292 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:54:10,807 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 08:54:10,807 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:54:10,839 [ERROR] Trade Ideas scrape hard-timeout (194s) — killing Chrome/chromedriver and resetting future
+2026-09-25 08:54:11,572 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 08:54:11,642 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 08:54:11,642 [INFO] [SCAN] 57 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, HLSQ, AGCO, ALB, AXP, BAM, OMF, PBA, SHW, SLG, STT, SYY, TAK, TEVA, UHS, UPS, WRBY, AKAM, APUS, BOIL, CXW, FOFO, GLND, GLNDW, INLF, MKT, NCT, ONEN, PFSA, SKYQ, SPHL, STEM, SVRN, USDEW, WHLR, XAIR, ARMG, AVAT, DAMD, GDXD, GENI, GLNK, GRML, KOLD, LION, MUZ, PPLI, PRME, SKDD
+2026-09-25 08:54:11,643 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:54:14,333 [WARNING] [GUARDRAIL] GCTK blocked: dollar volume 309661 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.20 | day_vol=140755
+2026-09-25 08:54:14,416 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 804550 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=12.75 | day_vol=63102
+2026-09-25 08:54:14,580 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.22 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=21110 | avg_daily_vol=4754606
+2026-09-25 08:54:15,363 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 10393 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.53 | day_vol=19770
+2026-09-25 08:54:18,070 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 373060 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=109.05 | day_vol=3421
+2026-09-25 08:54:18,154 [WARNING] [GUARDRAIL] AXP blocked: RVOL 0.06 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=3362 | avg_daily_vol=3027700
+2026-09-25 08:54:18,765 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.14 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=17054 | avg_daily_vol=6040509
+2026-09-25 08:54:21,807 [WARNING] [GUARDRAIL] CXW blocked: dollar volume 526863 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=32.81 | day_vol=16058
+2026-09-25 08:54:22,158 [WARNING] [GUARDRAIL] FOFO blocked: dollar volume 50176 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.22 | day_vol=22602
+2026-09-25 08:54:22,712 [WARNING] [GUARDRAIL] GLNDW blocked: dollar volume 201725 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.20 | day_vol=91693
+2026-09-25 08:54:25,384 [WARNING] [GUARDRAIL] NCT blocked: dollar volume 282489 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.21 | day_vol=67098
+2026-09-25 08:54:25,608 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 08:54:26,328 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 319697 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.73 | day_vol=117191
+2026-09-25 08:54:28,158 [WARNING] [GUARDRAIL] SPHL blocked: dollar volume 21332 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.75 | day_vol=7757
+2026-09-25 08:54:29,092 [WARNING] [GUARDRAIL] STEM blocked: dollar volume 158431 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.40 | day_vol=36007
+2026-09-25 08:54:29,222 [WARNING] [GUARDRAIL] SVRN blocked: dollar volume 826800 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=53.00 | day_vol=15600
+2026-09-25 08:54:29,485 [WARNING] [GUARDRAIL] USDEW blocked: dollar volume 176422 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=4.63 | day_vol=38104
+2026-09-25 08:54:30,098 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 86676 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.00 | day_vol=28892
+2026-09-25 08:54:32,230 [WARNING] [GUARDRAIL] AVAT blocked: dollar volume 145473 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=2.02 | day_vol=72020
+2026-09-25 08:54:33,062 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 307261 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=6.18 | day_vol=49729
+2026-09-25 08:54:33,409 [WARNING] [GUARDRAIL] GLNK blocked: dollar volume 501494 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=12.52 | day_vol=40058
+2026-09-25 08:54:36,675 [WARNING] [GUARDRAIL] LION blocked: dollar volume 30441 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=10.70 | day_vol=2845
+2026-09-25 08:54:37,121 [WARNING] [GUARDRAIL] PPLI blocked: dollar volume 786598 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=39.45 | day_vol=19938
+2026-09-25 08:54:39,120 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 548379 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=3.41 | day_vol=160815
+2026-09-25 08:54:39,268 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 545496 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=6.80 | day_vol=80220
+2026-09-25 08:54:39,779 [INFO] [GUARDRAIL SUMMARY] Rejected: 44 | DollarVol: 22 | RVOL: 3 | GapChase: 2 | MinPrice: 0 | Other: 17
+2026-09-25 08:54:39,779 [INFO] [FUNNEL] targets=57 guardrail_rejected=44 (rvol=3) -> signals_generated=6 -> conf_gate(-2) -> sector_cap(-0) -> final=4
+2026-09-25 08:54:39,779 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-25 08:54:39,780 [INFO] [SCAN] Breakdown — PreMarketMomentum: 5, TrendlineBreakout: 1 | Errors: 0 | Total: 4
+2026-09-25 08:54:39,780 [INFO] [SCAN] TOP5_RAW #1: GLND BUY $6.26 conf=94% [PreMarketMomentum] — Pre-mkt momentum: gap +115.1% | PM vol 253% of avg daily
+2026-09-25 08:54:39,780 [INFO] [SCAN] TOP5_RAW #2: INLF BUY $6.27 conf=94% [PreMarketMomentum] — Pre-mkt momentum: gap +115.5% | PM vol 1612% of avg daily
+2026-09-25 08:54:39,780 [INFO] [SCAN] TOP5_RAW #3: PFSA BUY $2.83 conf=89% [PreMarketMomentum] — Pre-mkt momentum: gap +38.0% | PM vol 99% of avg daily
+2026-09-25 08:54:39,780 [INFO] [SCAN] TOP5_RAW #4: GRML BUY $16.50 conf=87% [PreMarketMomentum] — Pre-mkt momentum: gap +47.5% | PM vol 44% of avg daily
+2026-09-25 08:54:39,843 [INFO] Live holdings: 9 excluded
+2026-09-25 08:54:39,843 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 4 eligible
+2026-09-25 08:54:39,843 [INFO] [TRADE] TOP5_ELIGIBLE #1: GLND BUY $6.26 conf=94% [PreMarketMomentum] — Pre-mkt momentum: gap +115.1% | PM vol 253% of avg daily
+2026-09-25 08:54:39,843 [INFO] [TRADE] TOP5_ELIGIBLE #2: INLF BUY $6.27 conf=94% [PreMarketMomentum] — Pre-mkt momentum: gap +115.5% | PM vol 1612% of avg daily
+2026-09-25 08:54:39,843 [INFO] [TRADE] TOP5_ELIGIBLE #3: PFSA BUY $2.83 conf=89% [PreMarketMomentum] — Pre-mkt momentum: gap +38.0% | PM vol 99% of avg daily
+2026-09-25 08:54:39,843 [INFO] [TRADE] TOP5_ELIGIBLE #4: GRML BUY $16.50 conf=87% [PreMarketMomentum] — Pre-mkt momentum: gap +47.5% | PM vol 44% of avg daily
+2026-09-25 08:54:40,613 [INFO] Scan email sent
+2026-09-25 08:54:40,613 [INFO] Executing top 4 signal(s) (cap=5)
+2026-09-25 08:54:40,645 [INFO] EXECUTE: BUY GLND @ $6.26 | PreMarketMomentum | Pre-mkt momentum: gap +115.1% | PM vol 253% of avg daily
+2026-09-25 08:54:40,769 [INFO] SWAP: closing SUSHIUSD (weakest) to make room for GLND (conf=94%)
+2026-09-25 08:54:40,801 [INFO] SWAP close submitted for SUSHIUSD; waiting for position count to fall below 3 before entering GLND
+2026-09-25 08:54:40,801 [INFO] Skip GLND: Swap close submitted for SUSHIUSD; retry after close
+2026-09-25 08:54:41,836 [INFO] EXECUTE: BUY INLF @ $6.27 | PreMarketMomentum | Pre-mkt momentum: gap +115.5% | PM vol 1612% of avg daily
+2026-09-25 08:54:41,898 [INFO] SWAP: closing BONKUSD (weakest) to make room for INLF (conf=94%)
+2026-09-25 08:54:41,931 [INFO] SWAP close submitted for BONKUSD; waiting for position count to fall below 3 before entering INLF
+2026-09-25 08:54:41,931 [INFO] Skip INLF: Swap close submitted for BONKUSD; retry after close
+2026-09-25 08:54:42,964 [INFO] EXECUTE: BUY PFSA @ $2.83 | PreMarketMomentum | Pre-mkt momentum: gap +38.0% | PM vol 99% of avg daily
+2026-09-25 08:54:43,056 [INFO] SWAP: closing FILUSD (weakest) to make room for PFSA (conf=89%)
+2026-09-25 08:54:43,091 [INFO] SWAP close submitted for FILUSD; waiting for position count to fall below 3 before entering PFSA
+2026-09-25 08:54:43,091 [INFO] Skip PFSA: Swap close submitted for FILUSD; retry after close
+2026-09-25 08:54:44,132 [INFO] EXECUTE: BUY GRML @ $16.50 | PreMarketMomentum | Pre-mkt momentum: gap +47.5% | PM vol 44% of avg daily
+2026-09-25 08:54:44,198 [INFO] SWAP: closing AAVEUSD (weakest) to make room for GRML (conf=87%)
+2026-09-25 08:54:44,233 [INFO] SWAP close submitted for AAVEUSD; waiting for position count to fall below 3 before entering GRML
+2026-09-25 08:54:44,234 [INFO] Skip GRML: Swap close submitted for AAVEUSD; retry after close
+2026-09-25 08:54:45,234 [INFO] Heartbeat: 2026-09-25T08:54:45.234830
+2026-09-25 08:57:45,254 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 08:57:45,547 [INFO] [CRYPTO] Position closed externally: AAVE/USD
+2026-09-25 08:57:45,547 [INFO] [CRYPTO] Position closed externally: BONK/USD
+2026-09-25 08:57:45,547 [INFO] [CRYPTO] Position closed externally: FIL/USD
+2026-09-25 08:57:45,547 [INFO] [CRYPTO] Position closed externally: SUSHI/USD
+2026-09-25 08:57:45,897 [INFO] [CRYPTO] 3 open: DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), GRT/USD(0.0252→TP:0.0262)
+2026-09-25 08:57:48,438 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1101 conf=75% | RSI=67.8 3-bar uptrend
+2026-09-25 08:57:48,438 [INFO] [CRYPTO] #2: ADA/USD BUY @ 0.2520 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 08:57:48,438 [INFO] [CRYPTO] #3: RENDER/USD BUY @ 1.8817 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 08:57:48,438 [INFO] [CRYPTO] #4: FIL/USD BUY @ 1.0178 conf=73% | RSI=64.7 3-bar uptrend
+2026-09-25 08:57:48,439 [INFO] [CRYPTO] #5: YFI/USD BUY @ 2450.5370 conf=73% | RSI=65.1 3-bar uptrend
+2026-09-25 08:57:48,492 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,555 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,615 [WARNING] [CRYPTO] Insufficient cash balance for RENDER/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,682 [WARNING] [CRYPTO] Insufficient cash balance for FIL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,739 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,793 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,852 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,915 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:48,971 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:49,031 [WARNING] [CRYPTO] Insufficient cash balance for PAXG/USD (available=0.00, min=400.0) — skipping
+2026-09-25 08:57:49,031 [INFO] [CRYPTO] SKIP AAVE/USD conf=69% < min 70%
+2026-09-25 08:57:49,031 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 08:57:49,031 [INFO] [CRYPTO] SKIP SHIB/USD conf=69% < min 70%
+2026-09-25 08:57:49,031 [INFO] [CRYPTO] SKIP WIF/USD conf=69% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP SKY/USD conf=68% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP AVAX/USD conf=67% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP ARB/USD conf=67% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP CRV/USD conf=67% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP BTC/USD conf=66% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP UNI/USD conf=66% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP PEPE/USD conf=66% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 08:57:49,032 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 08:57:49,667 [INFO] Quarterly P&L: +13.6% (target >= 50%)
+2026-09-25 08:57:49,942 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 08:57:50,029 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, HLSQ, INLF, GLNDW, APUS, WHLR, SVRN, GLND, AKAM, USDEW, STEM, XXRP, UXRP, AVAT, XRPT, PRME, GRML, ARMG, USDE, PPLI, WTTR, GENI, KOLD, XRP, SPHL, XAIR, NCT, ONEN, BOIL, PFSA, FOFO, SKYQ, CXW, TWLO, ZS, SOXS, DAMD, ZSL, SMCZ, UNG, SKDD, LION, GDXD, BMNZ, MUZ, SMST, USO, XRPZ, GLNK, UCO, WTI, MKT, SYY, SHW, WRBY, TEVA, UPS, AXP, OMF, BAM, ALB, UHS, AGCO, PBA, TAK, STT, SLG
+2026-09-25 08:57:50,029 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 08:57:53,002 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.24 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=22782 | avg_daily_vol=4754606
+2026-09-25 08:57:53,729 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 10393 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.53 | day_vol=19770
+2026-09-25 08:57:53,866 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 812760 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.59 | day_vol=64556
+2026-09-25 08:58:02,936 [WARNING] [GUARDRAIL] UXRP blocked: dollar volume 754363 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=20.06 | day_vol=37607
+2026-09-25 08:58:03,476 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 548379 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.41 | day_vol=160815
+2026-09-25 08:58:07,702 [WARNING] [GUARDRAIL] PPLI blocked: dollar volume 786598 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=39.45 | day_vol=19938
+2026-09-25 08:58:08,314 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 346435 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.26 | day_vol=55341
+2026-09-25 08:58:12,532 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 86676 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.00 | day_vol=28892
+2026-09-25 08:58:12,963 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 08:58:17,312 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 328943 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.73 | day_vol=120373
+2026-09-25 08:58:17,611 [WARNING] [GUARDRAIL] CXW blocked: dollar volume 553212 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=33.00 | day_vol=16764
+2026-09-25 08:58:17,811 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.40 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=19243 | avg_daily_vol=2401738
+2026-09-25 08:58:18,095 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.75 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=43653 | avg_daily_vol=2906488
+2026-09-25 08:58:22,148 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 248636 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.46 | day_vol=55748
+2026-09-25 08:58:22,617 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 594785 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.81 | day_vol=87340
+2026-09-25 08:58:22,770 [WARNING] [GUARDRAIL] LION blocked: dollar volume 149439 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.64 | day_vol=14045
+2026-09-25 08:58:27,549 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1184915 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.80 | day_vol=100425
+2026-09-25 08:58:31,500 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.68 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=179397 | avg_daily_vol=13132730
+2026-09-25 08:58:31,618 [WARNING] [GUARDRAIL] XRPZ blocked: dollar volume 350686 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.58 | day_vol=19948
+2026-09-25 08:58:32,401 [WARNING] [GUARDRAIL] UCO blocked: RVOL 0.47 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=44466 | avg_daily_vol=4743266
+2026-09-25 08:58:33,132 [WARNING] [GUARDRAIL] WTI blocked: dollar volume 129230 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.77 | day_vol=34233
+2026-09-25 08:58:35,683 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.15 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=17554 | avg_daily_vol=6040509
+2026-09-25 08:58:36,138 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 1033983 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.55 | day_vol=3362
+2026-09-25 08:58:36,733 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 373060 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.05 | day_vol=3421
+2026-09-25 08:58:37,358 [INFO] [GUARDRAIL SUMMARY] Rejected: 60 | DollarVol: 18 | RVOL: 6 | GapChase: 0 | MinPrice: 0 | Other: 17
+2026-09-25 08:58:37,359 [INFO] [FUNNEL] targets=75 guardrail_rejected=60 (rvol=6) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 08:58:37,359 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 08:58:37,359 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 08:58:37,359 [INFO] [SCAN] No signals this cycle
+2026-09-25 08:58:37,359 [INFO] Heartbeat: 2026-09-25T08:58:37.359309
+2026-09-25 09:01:37,385 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 09:01:38,097 [INFO] [CRYPTO] 3 open: DOGE/USD(0.0960→TP:0.0999), DOT/USD(1.1517→TP:1.1977), GRT/USD(0.0252→TP:0.0262)
+2026-09-25 09:01:41,096 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1102 conf=76% | RSI=68.9 3-bar uptrend
+2026-09-25 09:01:41,096 [INFO] [CRYPTO] #2: SOL/USD BUY @ 118.3655 conf=74% | RSI=66.2 3-bar uptrend
+2026-09-25 09:01:41,096 [INFO] [CRYPTO] #3: ADA/USD BUY @ 0.2531 conf=74% | RSI=66.5 3-bar uptrend
+2026-09-25 09:01:41,096 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.9510 conf=74% | RSI=65.3 3-bar uptrend
+2026-09-25 09:01:41,096 [INFO] [CRYPTO] #5: XRP/USD BUY @ 1.5539 conf=73% | RSI=64.0 3-bar uptrend
+2026-09-25 09:01:41,166 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,233 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,309 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,414 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,480 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,546 [WARNING] [CRYPTO] Insufficient cash balance for SHIB/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,610 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,673 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,744 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP AVAX/USD conf=69% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP ARB/USD conf=69% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP AAVE/USD conf=69% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP SKY/USD conf=69% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP PEPE/USD conf=69% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP BTC/USD conf=68% < min 70%
+2026-09-25 09:01:41,745 [INFO] [CRYPTO] SKIP UNI/USD conf=68% < min 70%
+2026-09-25 09:01:41,746 [INFO] [CRYPTO] SKIP BCH/USD conf=66% < min 70%
+2026-09-25 09:01:41,746 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 09:01:41,746 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 09:01:41,850 [INFO] Quarterly P&L: +13.7% (target >= 50%)
+2026-09-25 09:01:41,850 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 09:01:43,196 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, HLSQ, INLF, GLNDW, APUS, WHLR, SVRN, GLND, AKAM, USDEW, STEM, XXRP, UXRP, AVAT, XRPT, PRME, GRML, ARMG, USDE, PPLI, WTTR, GENI, KOLD, XRP, SPHL, XAIR, NCT, ONEN, BOIL, PFSA, FOFO, SKYQ, CXW, TWLO, ZS, SOXS, DAMD, ZSL, SMCZ, UNG, SKDD, LION, GDXD, BMNZ, MUZ, SMST, USO, XRPZ, GLNK, UCO, WTI, MKT, SYY, SHW, WRBY, TEVA, UPS, AXP, OMF, BAM, ALB, UHS, AGCO, PBA, TAK, STT, SLG
+2026-09-25 09:01:43,196 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 09:01:43,201 [INFO] Schwab: Refreshing access token...
+2026-09-25 09:01:43,352 [INFO] Schwab: Refreshing access token...
+2026-09-25 09:01:43,502 [INFO] Schwab: Refreshing access token...
+2026-09-25 09:01:43,653 [INFO] Schwab: Refreshing access token...
+2026-09-25 09:01:43,803 [INFO] Schwab: Refreshing access token...
+2026-09-25 09:01:43,954 [INFO] Schwab: Refreshing access token...
+2026-09-25 09:01:44,027 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 09:01:44,175 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 09:01:44,241 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 09:01:44,447 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 09:01:44,476 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 09:01:44,779 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 09:01:45,981 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.24 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=23142 | avg_daily_vol=4754606
+2026-09-25 09:01:46,180 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 1037265 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.74 | day_vol=81418
+2026-09-25 09:01:46,929 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 10749 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.53 | day_vol=20447
+2026-09-25 09:01:55,909 [WARNING] [GUARDRAIL] UXRP blocked: dollar volume 755923 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=19.91 | day_vol=37967
+2026-09-25 09:01:56,654 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 547852 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.39 | day_vol=161456
+2026-09-25 09:02:00,713 [WARNING] [GUARDRAIL] PPLI blocked: dollar volume 780750 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=38.77 | day_vol=20138
+2026-09-25 09:02:01,448 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 350681 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.28 | day_vol=55841
+2026-09-25 09:02:05,567 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 87042 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.00 | day_vol=29014
+2026-09-25 09:02:06,311 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 09:02:10,478 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 362994 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.73 | day_vol=132965
+2026-09-25 09:02:10,629 [WARNING] [GUARDRAIL] CXW blocked: dollar volume 767616 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=33.21 | day_vol=23114
+2026-09-25 09:02:11,209 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.40 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=19343 | avg_daily_vol=2401738
+2026-09-25 09:02:11,979 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.76 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=44198 | avg_daily_vol=2906488
+2026-09-25 09:02:15,255 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 248636 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.46 | day_vol=55748
+2026-09-25 09:02:15,773 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 617094 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.82 | day_vol=90483
+2026-09-25 09:02:16,655 [WARNING] [GUARDRAIL] LION blocked: dollar volume 275287 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=25995
+2026-09-25 09:02:21,620 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1214186 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.82 | day_vol=102723
+2026-09-25 09:02:24,369 [WARNING] [GUARDRAIL] XRPZ blocked: dollar volume 355589 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.27 | day_vol=20590
+2026-09-25 09:02:26,157 [WARNING] [GUARDRAIL] WTI blocked: dollar volume 129230 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.77 | day_vol=34233
+2026-09-25 09:02:26,241 [WARNING] [GUARDRAIL] UCO blocked: RVOL 0.47 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=44466 | avg_daily_vol=4743266
+2026-09-25 09:02:26,527 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.72 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=189482 | avg_daily_vol=13132730
+2026-09-25 09:02:28,607 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.15 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=17654 | avg_daily_vol=6040509
+2026-09-25 09:02:28,914 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 1033983 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.55 | day_vol=3362
+2026-09-25 09:02:29,920 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 373060 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.05 | day_vol=3421
+2026-09-25 09:02:30,389 [INFO] [GUARDRAIL SUMMARY] Rejected: 60 | DollarVol: 18 | RVOL: 6 | GapChase: 0 | MinPrice: 0 | Other: 17
+2026-09-25 09:02:30,389 [INFO] [FUNNEL] targets=75 guardrail_rejected=60 (rvol=6) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-25 09:02:30,389 [INFO] [SCAN] Breakdown — PreMarketMomentum: 1, TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-25 09:02:30,389 [INFO] [SCAN] No signals this cycle
+2026-09-25 09:02:30,389 [INFO] Heartbeat: 2026-09-25T09:02:30.389888
+2026-09-25 09:05:30,412 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 09:05:30,789 [INFO] [CRYPTO] Position closed externally: DOGE/USD
+2026-09-25 09:05:30,789 [INFO] [CRYPTO] Position closed externally: DOT/USD
+2026-09-25 09:05:30,790 [INFO] [CRYPTO] Position closed externally: GRT/USD
+2026-09-25 09:05:30,790 [INFO] [CRYPTO] No open positions
+2026-09-25 09:05:33,844 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1102 conf=76% | RSI=68.9 3-bar uptrend
+2026-09-25 09:05:33,844 [INFO] [CRYPTO] #2: SOL/USD BUY @ 118.3655 conf=74% | RSI=66.2 3-bar uptrend
+2026-09-25 09:05:33,844 [INFO] [CRYPTO] #3: ADA/USD BUY @ 0.2531 conf=74% | RSI=66.5 3-bar uptrend
+2026-09-25 09:05:33,844 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.9510 conf=74% | RSI=65.3 3-bar uptrend
+2026-09-25 09:05:33,844 [INFO] [CRYPTO] #5: DOT/USD BUY @ 1.1740 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 09:05:33,899 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:33,958 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,014 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,074 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,147 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,211 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,276 [WARNING] [CRYPTO] Insufficient cash balance for SHIB/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,340 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,418 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,485 [WARNING] [CRYPTO] Insufficient cash balance for DOGE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,545 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:05:34,545 [INFO] [CRYPTO] SKIP AVAX/USD conf=69% < min 70%
+2026-09-25 09:05:34,545 [INFO] [CRYPTO] SKIP ARB/USD conf=69% < min 70%
+2026-09-25 09:05:34,545 [INFO] [CRYPTO] SKIP AAVE/USD conf=69% < min 70%
+2026-09-25 09:05:34,545 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 09:05:34,545 [INFO] [CRYPTO] SKIP SKY/USD conf=69% < min 70%
+2026-09-25 09:05:34,546 [INFO] [CRYPTO] SKIP PEPE/USD conf=69% < min 70%
+2026-09-25 09:05:34,546 [INFO] [CRYPTO] SKIP BTC/USD conf=68% < min 70%
+2026-09-25 09:05:34,546 [INFO] [CRYPTO] SKIP UNI/USD conf=68% < min 70%
+2026-09-25 09:05:34,546 [INFO] [CRYPTO] SKIP BCH/USD conf=66% < min 70%
+2026-09-25 09:05:34,546 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 09:05:34,546 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 09:05:34,632 [INFO] Quarterly P&L: +13.5% (target >= 50%)
+2026-09-25 09:05:34,632 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 09:05:34,966 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 09:05:35,025 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, HLSQ, INLF, GLNDW, APUS, WHLR, SVRN, GLND, AKAM, USDEW, STEM, XXRP, UXRP, AVAT, XRPT, PRME, GRML, ARMG, USDE, PPLI, WTTR, GENI, KOLD, XRP, SPHL, XAIR, NCT, ONEN, BOIL, PFSA, FOFO, SKYQ, CXW, TWLO, ZS, SOXS, DAMD, ZSL, SMCZ, UNG, SKDD, LION, GDXD, BMNZ, MUZ, SMST, USO, XRPZ, GLNK, UCO, WTI, MKT, SYY, SHW, WRBY, TEVA, UPS, AXP, OMF, BAM, ALB, UHS, AGCO, PBA, TAK, STT, SLG
+2026-09-25 09:05:35,025 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 09:05:38,004 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.26 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=24742 | avg_daily_vol=4754606
+2026-09-25 09:05:38,770 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 10749 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.53 | day_vol=20447
+2026-09-25 09:05:38,885 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 1043180 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.75 | day_vol=81818
+2026-09-25 09:05:47,882 [WARNING] [GUARDRAIL] UXRP blocked: dollar volume 759940 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=19.73 | day_vol=38517
+2026-09-25 09:05:48,515 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 564919 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.42 | day_vol=165181
+2026-09-25 09:05:52,695 [WARNING] [GUARDRAIL] PPLI blocked: dollar volume 780750 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=38.77 | day_vol=20138
+2026-09-25 09:05:53,377 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 375781 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.25 | day_vol=60125
+2026-09-25 09:05:57,518 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 87042 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.00 | day_vol=29014
+2026-09-25 09:05:58,150 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 09:06:02,328 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 395798 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.70 | day_vol=146592
+2026-09-25 09:06:02,778 [WARNING] [GUARDRAIL] CXW blocked: dollar volume 848573 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=33.39 | day_vol=25414
+2026-09-25 09:06:02,947 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.41 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=19543 | avg_daily_vol=2401738
+2026-09-25 09:06:03,111 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.78 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=45498 | avg_daily_vol=2906488
+2026-09-25 09:06:07,564 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 250076 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.47 | day_vol=55948
+2026-09-25 09:06:07,745 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 652698 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.80 | day_vol=95985
+2026-09-25 09:06:07,985 [WARNING] [GUARDRAIL] LION blocked: dollar volume 275287 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=25995
+2026-09-25 09:06:12,805 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1251669 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.75 | day_vol=106525
+2026-09-25 09:06:16,509 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.79 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=206907 | avg_daily_vol=13132730
+2026-09-25 09:06:16,630 [WARNING] [GUARDRAIL] XRPZ blocked: dollar volume 355589 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.27 | day_vol=20590
+2026-09-25 09:06:17,526 [WARNING] [GUARDRAIL] UCO blocked: RVOL 0.48 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=45231 | avg_daily_vol=4743266
+2026-09-25 09:06:18,134 [WARNING] [GUARDRAIL] WTI blocked: dollar volume 129706 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.76 | day_vol=34533
+2026-09-25 09:06:20,733 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.15 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=17854 | avg_daily_vol=6040509
+2026-09-25 09:06:20,999 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 1060371 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.80 | day_vol=3445
+2026-09-25 09:06:21,630 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 373060 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.05 | day_vol=3421
+2026-09-25 09:06:22,276 [INFO] [GUARDRAIL SUMMARY] Rejected: 60 | DollarVol: 18 | RVOL: 6 | GapChase: 0 | MinPrice: 0 | Other: 17
+2026-09-25 09:06:22,277 [INFO] [FUNNEL] targets=75 guardrail_rejected=60 (rvol=6) -> signals_generated=3 -> conf_gate(-3) -> sector_cap(-0) -> final=0
+2026-09-25 09:06:22,277 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-25 09:06:22,277 [INFO] [SCAN] Breakdown — PreMarketMomentum: 2, TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 09:06:22,277 [INFO] [SCAN] No signals this cycle
+2026-09-25 09:06:22,277 [INFO] Heartbeat: 2026-09-25T09:06:22.277423
+2026-09-25 09:09:22,297 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 09:09:22,670 [INFO] [CRYPTO] No open positions
+2026-09-25 09:09:25,915 [INFO] [CRYPTO] #1: POL/USD BUY @ 0.1102 conf=76% | RSI=68.9 3-bar uptrend
+2026-09-25 09:09:25,915 [INFO] [CRYPTO] #2: SOL/USD BUY @ 118.3655 conf=74% | RSI=66.2 3-bar uptrend
+2026-09-25 09:09:25,916 [INFO] [CRYPTO] #3: ADA/USD BUY @ 0.2531 conf=74% | RSI=66.5 3-bar uptrend
+2026-09-25 09:09:25,916 [INFO] [CRYPTO] #4: YFI/USD BUY @ 2450.9510 conf=74% | RSI=65.3 3-bar uptrend
+2026-09-25 09:09:25,916 [INFO] [CRYPTO] #5: DOT/USD BUY @ 1.1740 conf=73% | RSI=64.2 3-bar uptrend
+2026-09-25 09:09:25,983 [WARNING] [CRYPTO] Insufficient cash balance for POL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,046 [WARNING] [CRYPTO] Insufficient cash balance for SOL/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,115 [WARNING] [CRYPTO] Insufficient cash balance for ADA/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,176 [WARNING] [CRYPTO] Insufficient cash balance for YFI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,239 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,294 [WARNING] [CRYPTO] Insufficient cash balance for XRP/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,352 [WARNING] [CRYPTO] Insufficient cash balance for SHIB/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,410 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,470 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,527 [WARNING] [CRYPTO] Insufficient cash balance for DOGE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,588 [WARNING] [CRYPTO] Insufficient cash balance for XTZ/USD (available=0.00, min=400.0) — skipping
+2026-09-25 09:09:26,588 [INFO] [CRYPTO] SKIP AVAX/USD conf=69% < min 70%
+2026-09-25 09:09:26,588 [INFO] [CRYPTO] SKIP ARB/USD conf=69% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP AAVE/USD conf=69% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP HYPE/USD conf=69% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP SKY/USD conf=69% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP PEPE/USD conf=69% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP BTC/USD conf=68% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP UNI/USD conf=68% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP BCH/USD conf=66% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] SKIP TRUMP/USD conf=65% < min 70%
+2026-09-25 09:09:26,589 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 09:09:26,678 [INFO] Quarterly P&L: +13.6% (target >= 50%)
+2026-09-25 09:09:26,678 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 09:09:26,708 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 09:09:26,766 [INFO] [SCAN] 75 symbols (filtered, 8 workers): PGIM, AESI, GCTK, VST, PRCT, PNBK, ARE, USAC, JAGX, HLSQ, INLF, GLNDW, APUS, WHLR, SVRN, GLND, AKAM, USDEW, STEM, XXRP, UXRP, AVAT, XRPT, PRME, GRML, ARMG, USDE, PPLI, WTTR, GENI, KOLD, XRP, SPHL, XAIR, NCT, ONEN, BOIL, PFSA, FOFO, SKYQ, CXW, TWLO, ZS, SOXS, DAMD, ZSL, SMCZ, UNG, SKDD, LION, GDXD, BMNZ, MUZ, SMST, USO, XRPZ, GLNK, UCO, WTI, MKT, SYY, SHW, WRBY, TEVA, UPS, AXP, OMF, BAM, ALB, UHS, AGCO, PBA, TAK, STT, SLG
+2026-09-25 09:09:26,766 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 09:09:29,828 [WARNING] [GUARDRAIL] VST blocked: RVOL 0.26 < rvol_threshold 0.50 (adaptive=0.50 iex_scale=False) | day_vol=24942 | avg_daily_vol=4754606
+2026-09-25 09:09:30,479 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 22540 < eff_threshold 900000 (adaptive=900000 iex_scale=False) | price=0.52 | day_vol=42967
+2026-09-25 09:09:30,627 [WARNING] [GUARDRAIL] AESI blocked: dollar volume 1040562 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=12.67 | day_vol=82128
+2026-09-25 09:09:39,671 [WARNING] [GUARDRAIL] UXRP blocked: dollar volume 779118 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=19.75 | day_vol=39449
+2026-09-25 09:09:40,272 [WARNING] [GUARDRAIL] PRME blocked: dollar volume 640217 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.41 | day_vol=187747
+2026-09-25 09:09:44,551 [WARNING] [GUARDRAIL] PPLI blocked: dollar volume 780750 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=38.77 | day_vol=20138
+2026-09-25 09:09:44,901 [WARNING] [GUARDRAIL] GENI blocked: dollar volume 373934 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.20 | day_vol=60312
+2026-09-25 09:09:49,366 [WARNING] [GUARDRAIL] XAIR blocked: dollar volume 87042 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.00 | day_vol=29014
+2026-09-25 09:09:50,169 [WARNING] [GUARDRAIL] ONEN blocked: dollar volume 63291 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.27 | day_vol=19355
+2026-09-25 09:09:54,131 [WARNING] [GUARDRAIL] SKYQ blocked: dollar volume 399263 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=2.69 | day_vol=148425
+2026-09-25 09:09:54,534 [WARNING] [GUARDRAIL] CXW blocked: dollar volume 848573 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=33.39 | day_vol=25414
+2026-09-25 09:09:54,865 [WARNING] [GUARDRAIL] TWLO blocked: RVOL 0.41 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=19693 | avg_daily_vol=2401738
+2026-09-25 09:09:55,051 [WARNING] [GUARDRAIL] ZS blocked: RVOL 0.78 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=45498 | avg_daily_vol=2906488
+2026-09-25 09:09:58,921 [WARNING] [GUARDRAIL] SMCZ blocked: dollar volume 252399 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=4.44 | day_vol=56848
+2026-09-25 09:09:59,559 [WARNING] [GUARDRAIL] SKDD blocked: dollar volume 655539 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=6.77 | day_vol=96830
+2026-09-25 09:09:59,823 [WARNING] [GUARDRAIL] LION blocked: dollar volume 275287 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=10.59 | day_vol=25995
+2026-09-25 09:10:04,522 [WARNING] [GUARDRAIL] SMST blocked: dollar volume 1258465 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=11.73 | day_vol=107286
+2026-09-25 09:10:08,299 [WARNING] [GUARDRAIL] USO blocked: RVOL 0.86 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=227159 | avg_daily_vol=13132730
+2026-09-25 09:10:08,434 [WARNING] [GUARDRAIL] XRPZ blocked: dollar volume 355589 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=17.27 | day_vol=20590
+2026-09-25 09:10:09,311 [WARNING] [GUARDRAIL] UCO blocked: RVOL 0.48 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=45481 | avg_daily_vol=4743266
+2026-09-25 09:10:09,899 [WARNING] [GUARDRAIL] WTI blocked: dollar volume 129706 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=3.76 | day_vol=34533
+2026-09-25 09:10:12,513 [WARNING] [GUARDRAIL] UPS blocked: RVOL 0.15 < rvol_threshold 1.00 (adaptive=1.00 iex_scale=False) | day_vol=18009 | avg_daily_vol=6040509
+2026-09-25 09:10:12,764 [WARNING] [GUARDRAIL] AXP blocked: dollar volume 1060371 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=307.80 | day_vol=3445
+2026-09-25 09:10:13,377 [WARNING] [GUARDRAIL] ALB blocked: dollar volume 383789 < eff_threshold 1350000 (adaptive=1350000 iex_scale=False) | price=109.00 | day_vol=3521
+2026-09-25 09:10:14,064 [INFO] [GUARDRAIL SUMMARY] Rejected: 60 | DollarVol: 18 | RVOL: 6 | GapChase: 0 | MinPrice: 0 | Other: 16
+2026-09-25 09:10:14,065 [INFO] [FUNNEL] targets=75 guardrail_rejected=60 (rvol=6) -> signals_generated=6 -> conf_gate(-6) -> sector_cap(-0) -> final=0
+2026-09-25 09:10:14,065 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-25 09:10:14,065 [INFO] [SCAN] Breakdown — PreMarketMomentum: 2, TrendlineBreakout: 4 | Errors: 0 | Total: 0
+2026-09-25 09:10:14,065 [INFO] [SCAN] No signals this cycle
+2026-09-25 09:10:14,065 [INFO] Heartbeat: 2026-09-25T09:10:14.065711
+2026-09-25 09:11:52,154 [INFO] Stopped by user
+2026-09-25 09:11:52,621 [INFO] ======================================================================
+2026-09-25 09:11:52,621 [INFO] STATUS
+2026-09-25 09:11:52,621 [INFO] Equity:     $110,461.58
+2026-09-25 09:11:52,622 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-25 09:11:52,622 [INFO] Positions:  2
+2026-09-25 09:11:52,622 [INFO] Unrealized: $396.00
+2026-09-25 09:11:52,622 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-100.00 (-8.85%)
+2026-09-25 09:11:52,622 [INFO]   SECZ: 800 @ $15.91 | $496.00 (+3.90%)
+2026-09-25 09:11:52,622 [INFO] ======================================================================
