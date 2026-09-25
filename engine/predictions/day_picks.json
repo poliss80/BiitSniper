@@ -1,15 +1,31 @@
 {
-  "generated_at": "2026-09-24T19:58:39-04:00",
-  "date": "2026-09-24",
+  "generated_at": "2026-09-25T07:33:24-04:00",
+  "date": "2026-09-25",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "SMWB",
+      "symbol": "APUS",
       "action": "buy",
-      "price": 8.58,
-      "confidence": 0.84,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.41"
+      "price": 6.28,
+      "confidence": 0.94,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +174.2% | PM vol 2195% of avg daily"
+    },
+    {
+      "symbol": "GLND",
+      "action": "buy",
+      "price": 6.2415,
+      "confidence": 0.94,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +114.5% | PM vol 144% of avg daily"
+    },
+    {
+      "symbol": "INLF",
+      "action": "buy",
+      "price": 5.84,
+      "confidence": 0.94,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +100.7% | PM vol 357% of avg daily"
     }
   ]
 }
