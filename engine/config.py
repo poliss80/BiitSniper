@@ -814,6 +814,7 @@ MOMENTUM_SCALP = {
     "min_price_up_pct": float(os.getenv("SCALP_MIN_PRICE_UP_PCT", "5.0")),     # already extended on the day
     "break_lookback_min": int(os.getenv("SCALP_BREAK_LOOKBACK_MIN", "10")),    # must be at/near the very recent high
     "position_size_mult": float(os.getenv("SCALP_POSITION_SIZE_MULT", "2.0")), # "go huge" size multiplier
+    "max_bp_pct": float(os.getenv("SCALP_MAX_BP_PCT", "20.0")),               # hard cap: never exceed this % of buying power
     "tp_pct": float(os.getenv("SCALP_TP_PCT", "5.0")),                         # fast bank target
     "ratchet_giveback_pct": float(os.getenv("SCALP_RATCHET_GIVEBACK_PCT", "2.5")),  # tight trail once armed
 }

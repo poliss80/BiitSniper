@@ -1624,8 +1624,13 @@ class EnhancedExecutor:
         if MARGIN_LEVERAGE > 1.0:
             risk_info = dict(risk_info, dollar_amount=round(risk_info["dollar_amount"] * MARGIN_LEVERAGE, 2))
         if classify_ti_profile(signal.symbol, signal.strategy) == "scalp":
-            # "Go huge" — Momentum Scalp trades size up for the fast in/out play
+            # "Go huge" — Momentum Scalp trades size up for the fast in/out play,
+            # but never exceed max_bp_pct of available buying power (hard cap).
             risk_info = dict(risk_info, dollar_amount=round(risk_info["dollar_amount"] * MOMENTUM_SCALP["position_size_mult"], 2))
+            bp_cap = acct.buying_power * (MOMENTUM_SCALP["max_bp_pct"] / 100.0)
+            if risk_info["dollar_amount"] > bp_cap:
+                log.debug(f"[SIZE] {signal.symbol} scalp capped at {MOMENTUM_SCALP['max_bp_pct']:.0f}% BP: ${risk_info['dollar_amount']:,.0f} → ${bp_cap:,.0f}")
+                risk_info = dict(risk_info, dollar_amount=round(bp_cap, 2))
         log.debug(
             f"[SIZE] {signal.symbol} conf={signal.confidence:.0%} "
             f"scale={_conf_mult:.2f}× leverage={MARGIN_LEVERAGE:.0f}× → ${risk_info['dollar_amount']:,.0f}"
