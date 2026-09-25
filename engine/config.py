@@ -803,6 +803,21 @@ MOMENTUM_CONTINUATION = {
     "enabled": os.getenv("MC_ENABLED", "true").lower() in ("1","true","yes"),
 }
 
+# Momentum Scalp — the "go huge, sell in minutes" playbook: only fires on
+# already-extended runners with very high RVOL still pushing to new highs.
+# Sized larger than normal (position_size_mult) and exited fast (tp_pct),
+# unless momentum keeps confirming, in which case the tight ratchet
+# (ratchet_giveback_pct) lets it run instead of banking the fixed target.
+MOMENTUM_SCALP = {
+    "enabled": os.getenv("SCALP_ENABLED", "true").lower() in ("1", "true", "yes"),
+    "min_rvol": float(os.getenv("SCALP_MIN_RVOL", "3.0")),                     # high-conviction volume floor
+    "min_price_up_pct": float(os.getenv("SCALP_MIN_PRICE_UP_PCT", "5.0")),     # already extended on the day
+    "break_lookback_min": int(os.getenv("SCALP_BREAK_LOOKBACK_MIN", "10")),    # must be at/near the very recent high
+    "position_size_mult": float(os.getenv("SCALP_POSITION_SIZE_MULT", "2.0")), # "go huge" size multiplier
+    "tp_pct": float(os.getenv("SCALP_TP_PCT", "5.0")),                         # fast bank target
+    "ratchet_giveback_pct": float(os.getenv("SCALP_RATCHET_GIVEBACK_PCT", "2.5")),  # tight trail once armed
+}
+
 PARABOLIC_FADE_RECLAIM = {
     "min_initial_spike_pct": float(os.getenv("PFR_MIN_INITIAL_SPIKE_PCT", "100.0")),  # HOD must be >= +100% from session open (prior close fallback)
     "fade_threshold_pct": float(os.getenv("PFR_FADE_THRESHOLD_PCT", "20.0")),          # required pullback off high-of-day (15-30% exhaustion band)
@@ -1086,6 +1101,8 @@ def classify_ti_profile(symbol: str, strategy: str = "") -> str:
     """Classify a discovered ticker for profile-specific risk and exits."""
     symbol = symbol.upper()
     strategy = strategy.lower()
+    if "momentumscalp" in strategy:
+        return "scalp"
     if "squeeze" in strategy or "floatrotation" in strategy or "trendbreaker" in strategy:
         return "squeeze"
     if symbol in {"MST", "MSTX", "CONL", "CONX", "CYPH", "BITU", "BITB", "BSOL", "ETHD", "ETHB", "SOLZ", "FSOL", "GEMI", "BTCS", "KORU"}:

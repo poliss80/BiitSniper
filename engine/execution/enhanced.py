@@ -84,6 +84,7 @@ from engine.config import (
     DEAD_MONEY_MINUTES, DEAD_MONEY_MAX_ADVERSE_DRIFT_PCT,
     TIME_LOSS_ATR_MULTIPLIER, TIME_LOSS_ATR_MIN_PCT, TIME_LOSS_ATR_MAX_PCT,
     ATR_STOP_MULTIPLIER, SQUEEZE_TP1_PCT, SQUEEZE_TP2_PCT, classify_ti_profile,
+    MOMENTUM_SCALP,
     ORB,
     LIVE,
 )
@@ -1352,8 +1353,16 @@ class EnhancedExecutor:
             # Set dual-phase TP targets from entry price
             _ep = signal.price
             ti_profile = classify_ti_profile(signal.symbol, signal.strategy)
-            _tp1_pct = SQUEEZE_TP1_PCT if ti_profile in {"squeeze", "high_short_float"} else TP_INTERMEDIATE_PCT
-            _tp2_pct = SQUEEZE_TP2_PCT if ti_profile in {"squeeze", "high_short_float"} else TP_FINAL_PCT
+            _tp1_pct = (
+                SQUEEZE_TP1_PCT if ti_profile in {"squeeze", "high_short_float"} else
+                MOMENTUM_SCALP["tp_pct"] if ti_profile == "scalp" else
+                TP_INTERMEDIATE_PCT
+            )
+            _tp2_pct = (
+                SQUEEZE_TP2_PCT if ti_profile in {"squeeze", "high_short_float"} else
+                MOMENTUM_SCALP["tp_pct"] * 2 if ti_profile == "scalp" else
+                TP_FINAL_PCT
+            )
             _int_price = round(_ep * (1 + _tp1_pct / 100), 2) if order_type == OrderType.LONG else round(_ep * (1 - _tp1_pct / 100), 2)
             _final_price = round(_ep * (1 + _tp2_pct / 100), 2) if order_type == OrderType.LONG else round(_ep * (1 - _tp2_pct / 100), 2)
             self._intermediate_targets[signal.symbol] = _int_price
@@ -1614,6 +1623,9 @@ class EnhancedExecutor:
         risk_info = dict(risk_info, dollar_amount=round(risk_info["dollar_amount"] * _conf_mult, 2))
         if MARGIN_LEVERAGE > 1.0:
             risk_info = dict(risk_info, dollar_amount=round(risk_info["dollar_amount"] * MARGIN_LEVERAGE, 2))
+        if classify_ti_profile(signal.symbol, signal.strategy) == "scalp":
+            # "Go huge" — Momentum Scalp trades size up for the fast in/out play
+            risk_info = dict(risk_info, dollar_amount=round(risk_info["dollar_amount"] * MOMENTUM_SCALP["position_size_mult"], 2))
         log.debug(
             f"[SIZE] {signal.symbol} conf={signal.confidence:.0%} "
             f"scale={_conf_mult:.2f}× leverage={MARGIN_LEVERAGE:.0f}× → ${risk_info['dollar_amount']:,.0f}"
@@ -2477,6 +2489,14 @@ class EnhancedExecutor:
                 log.warning(f"STALE ORDER {sym}: replace failed: {e}")
 
     # ── ATR Take-Profit Checker ────────────────────────────────────────────────
+    def _ratchet_params(self, sym: str) -> Tuple[float, float]:
+        """Per-profile (arm_pct, giveback_pct) for the peak ratchet. Momentum
+        Scalp trades arm at their fast tp_pct target and use a tight giveback —
+        banking quickly unless momentum keeps confirming."""
+        if self._entry_log.get(sym, {}).get("ti_profile") == "scalp":
+            return MOMENTUM_SCALP["tp_pct"], MOMENTUM_SCALP["ratchet_giveback_pct"]
+        return TP_RATCHET_ARM_PCT, TP_RATCHET_GIVEBACK_PCT
+
     def check_tp_targets(self) -> None:
         """Dual-phase profit exit:
           Phase 1 (+TP_INTERMEDIATE_PCT, default +5%): cancel wide trail, place TP_INTERMEDIATE_TRAIL_PCT% trail
@@ -2528,9 +2548,10 @@ class EnhancedExecutor:
                     gain_pct = ((cur - entry_px) / entry_px * 100) if entry_px > 0 else 0.0
                     if not is_long:
                         gain_pct = -gain_pct
-                    if gain_pct >= TP_RATCHET_ARM_PCT:
-                        trigger = (peak * (1 - TP_RATCHET_GIVEBACK_PCT / 100) if is_long
-                                   else peak * (1 + TP_RATCHET_GIVEBACK_PCT / 100))
+                    arm_pct, giveback_pct = self._ratchet_params(sym)
+                    if gain_pct >= arm_pct:
+                        trigger = (peak * (1 - giveback_pct / 100) if is_long
+                                   else peak * (1 + giveback_pct / 100))
                         if (is_long and cur <= trigger) or (not is_long and cur >= trigger):
                             should_close = True
                             peak_gain = ((peak - entry_px) / entry_px * 100) if entry_px > 0 else 0.0
@@ -2538,7 +2559,7 @@ class EnhancedExecutor:
                                 peak_gain = -peak_gain
                             close_log = (
                                 f"RATCHET EXIT {sym}: ${cur:.2f} gave back "
-                                f"{TP_RATCHET_GIVEBACK_PCT:.0f}% from peak ${peak:.2f} "
+                                f"{giveback_pct:.0f}% from peak ${peak:.2f} "
                                 f"(peak +{peak_gain:.1f}%, exit +{gain_pct:.1f}%) → market close"
                             )
                 else:

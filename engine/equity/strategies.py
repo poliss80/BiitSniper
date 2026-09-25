@@ -28,7 +28,7 @@ from engine.config import (
     PRE_MARKET_MOMENTUM, OPENING_BELL_SURGE, PM_HIGH_BREAKOUT, EARLY_SQUEEZE, BEAR_BREAKDOWN,
     SENTIMENT_STRATEGY, TRENDLINE_BREAKOUT,
     SWEEPEA_DYNAMIC_CONFIDENCE, SWEEPEA_REQUIRE_TREND, SWEEPEA_TREND_EMA_RISING_BARS,
-    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT, PARABOLIC_FADE_RECLAIM, POC_RECLAIM,
+    MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT, PARABOLIC_FADE_RECLAIM, POC_RECLAIM, MOMENTUM_SCALP,
 )
 from scripts.trendline_breakout import detect_trendline_breakouts
 from scripts.auto_trendline import AutoTrendline, TrendlineConfig
@@ -1716,6 +1716,113 @@ class MomentumContinuationStrategy:
             return None
 
 
+class MomentumScalpStrategy:
+    """"Go huge, sell in minutes" playbook: only fires on already-extended
+    runners (>= min_price_up_pct on the day) with very high RVOL still
+    pushing to new highs. Tagged "MomentumScalp" so the execution layer sizes
+    it up (MOMENTUM_SCALP['position_size_mult']) and exits it fast — a fixed
+    tp_pct target unless momentum keeps confirming, in which case a tight
+    ratchet lets it run instead of banking the fixed target."""
+
+    def scan(self, symbol: str) -> Optional[Signal]:
+        def reject(reason: str) -> None:
+            log.debug("MomentumScalp %s rejected: %s", symbol, reason)
+
+        try:
+            cfg = MOMENTUM_SCALP
+            if not cfg["enabled"]:
+                return None
+            if symbol in _INVERSE_ETFS:
+                return None
+
+            # Regular hours only — skip premarket and the final minutes
+            now_et = datetime.datetime.now(ET)
+            mins_of_day = now_et.hour * 60 + now_et.minute
+            if mins_of_day < 9 * 60 + 30 or mins_of_day > 15 * 60 + 45:
+                return None
+            market_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
+            elapsed_min = max((now_et - market_open).total_seconds() / 60.0, 1.0)
+
+            intraday = get_bars(symbol, "1d", "1m")
+            daily    = get_bars(symbol, "20d", "1d")
+            if intraday.empty or daily.empty or len(daily) < 2:
+                reject("missing data")
+                return None
+
+            timestamp_values = intraday["time"] if "time" in intraday.columns else intraday.index
+            timestamps = pd.Series(pd.to_datetime(timestamp_values, errors="coerce"), index=intraday.index)
+            if timestamps.dt.tz is not None:
+                timestamps = timestamps.dt.tz_convert(ET)
+            else:
+                timestamps = timestamps.dt.tz_localize(ET)
+            minutes = timestamps.dt.hour * 60 + timestamps.dt.minute
+            session_mask = (
+                (timestamps.dt.date == now_et.date())
+                & (minutes >= 9 * 60 + 30)
+                & (minutes <= 16 * 60)
+            )
+            session = intraday.loc[session_mask]
+            if session.empty:
+                reject("missing current-day session data")
+                return None
+
+            cur_close    = float(session["close"].iloc[-1])
+            session_open = float(session["open"].iloc[0])
+            if session_open <= 0:
+                session_open = float(daily["close"].iloc[-2])
+            if session_open <= 0:
+                reject("missing session open")
+                return None
+
+            # Must already be extended >= min_price_up_pct above the session open
+            price_up_pct = (cur_close - session_open) / session_open * 100
+            if price_up_pct < cfg["min_price_up_pct"]:
+                reject(f"not extended enough ({price_up_pct:.1f}%)")
+                return None
+
+            # Must still be pushing — at/near the very recent high, not fading
+            lookback      = min(int(cfg["break_lookback_min"]), len(session))
+            recent_window = session.iloc[-lookback:]
+            recent_high   = float(recent_window["high"].max())
+            recent_low    = float(recent_window["low"].min())
+            if cur_close < recent_high * 0.995:
+                reject(f"fading off recent high ({cur_close:.2f} vs {recent_high:.2f})")
+                return None
+
+            # RVOL: intraday volume so far vs elapsed fraction of avg daily volume
+            day_vol       = float(session["volume"].sum())
+            avg_daily_vol = float(daily["volume"].iloc[:-1].mean())
+            if avg_daily_vol <= 0:
+                reject("missing average daily volume")
+                return None
+            elapsed_frac = max(elapsed_min / 390.0, 0.005)
+            rvol         = day_vol / (avg_daily_vol * elapsed_frac)
+            if rvol < cfg["min_rvol"]:
+                reject(f"insufficient RVOL ({rvol:.1f}x)")
+                return None
+
+            stop_dist = cur_close - recent_low
+            if stop_dist <= 0:
+                reject("entry at/below recent swing low")
+                return None
+
+            conf  = 0.75
+            conf += min(max(rvol - cfg["min_rvol"], 0.0) * 0.03, 0.10)
+            conf += min(max(price_up_pct - cfg["min_price_up_pct"], 0.0) * 0.01, 0.05)
+            conf  = min(conf, 0.95)
+            conf  = _sa_metrics_boost(symbol, conf)
+
+            return Signal(
+                symbol, "buy", cur_close, round(conf, 2),
+                f"Momentum scalp up={price_up_pct:.1f}% rvol={rvol:.1f}x near HOD ${recent_high:.2f} "
+                f"target +{cfg['tp_pct']:.0f}% or ride on continuation",
+                "MomentumScalp",
+                atr_stop=stop_dist,
+            )
+        except Exception:
+            return None
+
+
 class ParabolicFadeReclaimStrategy:
     """Dormant until a stock has a TRUE parabolic spike (HOD >= min_initial_spike_pct
     above the session open, prior close fallback), then only enters after:
@@ -2352,6 +2459,7 @@ def get_strategy_instances(bull_regime: bool = True):
         PMHighBreakoutStrategy(),
         EarlySqueezeDetector(),
         MomentumContinuationStrategy(),
+        MomentumScalpStrategy(),
         ParabolicFadeReclaimStrategy(),
         PocReclaimStrategy(),
         PowerOf3Strategy(),
