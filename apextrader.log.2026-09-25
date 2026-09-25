@@ -3462,3 +3462,1291 @@ Stacktrace:
 2026-09-25 12:18:35,143 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
 2026-09-25 12:18:35,143 [INFO] [SCAN] No signals this cycle
 2026-09-25 12:18:35,143 [INFO] Heartbeat: 2026-09-25T12:18:35.143191
+2026-09-25 12:19:00,736 [INFO] Stopped by user
+2026-09-25 12:19:00,802 [INFO] ======================================================================
+2026-09-25 12:19:00,802 [INFO] STATUS
+2026-09-25 12:19:00,803 [INFO] Equity:     $109,815.38
+2026-09-25 12:19:00,803 [INFO] Daily P&L:  $0.00  |  Trades: 2
+2026-09-25 12:19:00,803 [INFO] Positions:  2
+2026-09-25 12:19:00,803 [INFO] Unrealized: $-160.00
+2026-09-25 12:19:00,803 [INFO]   MSFT261009C00515000: 1 @ $9.90 | $60.00 (+6.06%)
+2026-09-25 12:19:00,803 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-220.00 (-19.47%)
+2026-09-25 12:19:00,803 [INFO] ======================================================================
+2026-09-25 12:19:05,621 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-25 12:19:05,651 [INFO] [OPTIONS] Reconciled BUY position: MSFT261009C00515000 1x call @515.0 entry=$9.90
+2026-09-25 12:19:05,651 [INFO] [OPTIONS] Reconciled BUY position: PLTR261009C00187500 1x call @187.5 entry=$11.30
+2026-09-25 12:19:05,651 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-25 12:19:05,730 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-25 12:19:05,731 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-25 12:19:05,731 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-25 12:19:05,731 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-25 12:19:05,732 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-25 12:19:05,732 [INFO] ======================================================================
+2026-09-25 12:19:05,733 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-25 12:19:05,733 [INFO] ======================================================================
+2026-09-25 12:19:05,733 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-25 12:19:05,733 [INFO] Priority 2 (Established): 16 stocks
+2026-09-25 12:19:05,733 [INFO] Total Universe: 42 stocks
+2026-09-25 12:19:05,733 [INFO] Scan: 3 min fixed
+2026-09-25 12:19:05,733 [INFO] ======================================================================
+2026-09-25 12:19:05,781 [INFO] Equity:          $109,825.38
+2026-09-25 12:19:05,781 [INFO] Buying Power:    $431,421.52
+2026-09-25 12:19:05,781 [INFO] PDT Status:      No
+2026-09-25 12:19:05,781 [INFO] Day Trade Count: None
+2026-09-25 12:19:05,781 [INFO] ======================================================================
+2026-09-25 12:19:05,781 [INFO] Starting… Press Ctrl+C to stop
+2026-09-25 12:19:05,782 [INFO] ======================================================================
+2026-09-25 12:19:05,783 [INFO] [STOP-THREAD] Software-stop fast-poll thread started (10s interval)
+2026-09-25 12:19:05,783 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-25 12:19:05,783 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 12:19:05,784 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-25 12:19:08,525 [WARNING] Startup TI capture failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff65d4e1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff65d4329d4]
+	msedgedriver!GetHandleVerifier [0x7ff65d8613af+3841ff]
+	msedgedriver!(No symbol) [0x7ff65d1a7312]
+	msedgedriver!(No symbol) [0x7ff65d235ab6]
+	msedgedriver!(No symbol) [0x7ff65d24d26f]
+	msedgedriver!(No symbol) [0x7ff65d20599c]
+	msedgedriver!(No symbol) [0x7ff65d204c1d]
+	msedgedriver!(No symbol) [0x7ff65d2057c3]
+	msedgedriver!(No symbol) [0x7ff65d33c4c2]
+	msedgedriver!(No symbol) [0x7ff65d34bee9]
+	msedgedriver!GetHandleVerifier [0x7ff65d589d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff65d590261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65d43e74f]
+	msedgedriver!(No symbol) [0x7ff65d439124]
+	msedgedriver!(No symbol) [0x7ff65d43924a]
+	msedgedriver!(No symbol) [0x7ff65d42a808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-25 12:19:08,597 [INFO] ======================================================================
+2026-09-25 12:19:08,598 [INFO] NEW DAY: 2026-09-25 | Start equity: $109,825.38
+2026-09-25 12:19:08,602 [INFO] Universe pruned: no expired tickers
+2026-09-25 12:19:08,602 [INFO] ======================================================================
+2026-09-25 12:19:08,602 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:19:08,662 [INFO] [CRYPTO] No open positions
+2026-09-25 12:19:13,533 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:19:13,534 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:19:13,534 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:19:13,534 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:19:13,535 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:19:13,629 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:13,691 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:13,766 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:13,846 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:13,934 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:14,001 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:14,065 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:14,139 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:19:14,139 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:19:14,140 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:19:16,788 [INFO] Options scan: starting — 88 ticker(s) in universe
+2026-09-25 12:19:33,780 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-25 12:19:35,361 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-25 12:19:47,198 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-25 12:19:50,095 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-25 12:20:01,288 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-25 12:20:08,013 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-25 12:20:08,016 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:20:35,907 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:20:39,165 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:20:43,025 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:20:51,093 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:20:52,224 [INFO] Options scan: 0 signal(s) | universe=88 | fail summary: no_MarketStructureBreakoutCall=88, no_OpeningRangeBreakoutCall=88, no_MomentumContinuationCall=88, no_PocReclaimCall=88, no_GapBreakoutCall=88, no_MomentumCall=88, no_BearPut=88, no_BearCallSpread=88, no_ShortSqueeze=88, no_MeanReversion=88, no_BreakoutRetest=88, no_TrendPullbackSpread=88, no_IronCondor=88, no_Butterfly=88, no_signal=88
+2026-09-25 12:20:52,224 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:20:52,224 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:20:52,225 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:20:53,134 [INFO] Quarterly P&L: +12.9% (target >= 50%)
+2026-09-25 12:20:53,508 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:20:53,538 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff65d4e1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff65d4329d4]
+	msedgedriver!GetHandleVerifier [0x7ff65d8613af+3841ff]
+	msedgedriver!(No symbol) [0x7ff65d1a7312]
+	msedgedriver!(No symbol) [0x7ff65d235ab6]
+	msedgedriver!(No symbol) [0x7ff65d24d26f]
+	msedgedriver!(No symbol) [0x7ff65d20599c]
+	msedgedriver!(No symbol) [0x7ff65d204c1d]
+	msedgedriver!(No symbol) [0x7ff65d2057c3]
+	msedgedriver!(No symbol) [0x7ff65d33c4c2]
+	msedgedriver!(No symbol) [0x7ff65d34bee9]
+	msedgedriver!GetHandleVerifier [0x7ff65d589d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff65d590261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65d43e74f]
+	msedgedriver!(No symbol) [0x7ff65d439124]
+	msedgedriver!(No symbol) [0x7ff65d43924a]
+	msedgedriver!(No symbol) [0x7ff65d42a808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-25 12:20:54,624 [INFO] [EDGAR] CIK map loaded: 8,004 companies
+2026-09-25 12:20:59,082 [INFO] [EDGAR] 8-K match: GLXZ — 8-K - Galaxy Gaming, Inc. (0000013156) (Filer)
+2026-09-25 12:20:59,083 [INFO] [EDGAR] 8-K match: AETN — 8-K - AETERNUM HEALTH, INC. (0000764630) (Filer)
+2026-09-25 12:20:59,083 [INFO] [EDGAR] 8-K match: HLSQ — 8-K - Tessera Defense & Homeland Security Inc. (0001739174) (Filer)
+2026-09-25 12:20:59,083 [INFO] [EDGAR] 3 newly triggered tickers: ['GLXZ', 'AETN', 'HLSQ']
+2026-09-25 12:20:59,084 [INFO] [EDGAR] Adding GLXZ to P2 + scan queue for monitoring
+2026-09-25 12:20:59,085 [INFO] [EDGAR] Adding AETN to P2 + scan queue for monitoring
+2026-09-25 12:20:59,085 [INFO] [EDGAR] Adding HLSQ to P2 + scan queue for monitoring
+2026-09-25 12:20:59,444 [INFO] [ALPACA-MOVERS] Adding APUS to P2 + scan queue for monitoring
+2026-09-25 12:20:59,444 [INFO] [ALPACA-MOVERS] Adding AIFF to P2 + scan queue for monitoring
+2026-09-25 12:20:59,445 [INFO] [ALPACA-MOVERS] 2 gainers queued for scan: ['APUS', 'AIFF']
+2026-09-25 12:20:59,512 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:20:59,513 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:20:59,513 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:21:01,453 [INFO] [RVOL@TIME] APUS: today_vol=15228744, avg_intraday_vol=16785090 (2 sessions), elapsed_min=171, rvol=0.907, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 12:21:01,818 [INFO] [RVOL@TIME] HLSQ: today_vol=320563, avg_intraday_vol=818965 (4 sessions), elapsed_min=171, rvol=0.391, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:21:01,818 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.39 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=320563 | avg_intraday_vol=818965
+2026-09-25 12:21:02,614 [INFO] [RVOL@TIME] AIFF: today_vol=36312783, avg_intraday_vol=304850 (3 sessions), elapsed_min=171, rvol=119.117, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:21:04,929 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 12:21:04,929 [INFO] [FUNNEL] targets=5 guardrail_rejected=4 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 12:21:04,930 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 12:21:04,930 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:24:04,948 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:24:05,349 [INFO] [CRYPTO] No open positions
+2026-09-25 12:24:09,814 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:24:09,814 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:24:09,814 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:24:09,815 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:24:09,815 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:24:09,883 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:09,944 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:09,997 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:10,071 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:10,157 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:10,222 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:10,292 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:10,358 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:24:10,358 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:24:10,359 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:24:10,818 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:24:10,819 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:24:37,762 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:24:53,324 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:24:54,963 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:24:57,285 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:25:01,234 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:25:03,564 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:25:03,837 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:25:03,837 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:25:03,838 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:25:03,838 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:25:04,024 [INFO] Quarterly P&L: +12.9% (target >= 50%)
+2026-09-25 12:25:04,025 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:25:04,115 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:25:04,116 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:25:04,117 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:25:06,214 [INFO] [RVOL@TIME] HLSQ: today_vol=326663, avg_intraday_vol=826027 (4 sessions), elapsed_min=175, rvol=0.395, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:25:06,215 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.40 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=326663 | avg_intraday_vol=826027
+2026-09-25 12:25:06,331 [INFO] [RVOL@TIME] APUS: today_vol=15288390, avg_intraday_vol=16898067 (2 sessions), elapsed_min=175, rvol=0.905, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 12:25:06,597 [INFO] [RVOL@TIME] AIFF: today_vol=36566914, avg_intraday_vol=307575 (3 sessions), elapsed_min=175, rvol=118.888, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:25:08,643 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 12:25:08,643 [INFO] [FUNNEL] targets=5 guardrail_rejected=4 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 12:25:08,644 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 12:25:08,644 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:25:08,644 [INFO] Heartbeat: 2026-09-25T12:25:08.644483
+2026-09-25 12:28:08,661 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:28:09,100 [INFO] [CRYPTO] No open positions
+2026-09-25 12:28:13,790 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:28:13,790 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:28:13,790 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:28:13,791 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:28:13,791 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:28:13,862 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:13,944 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,033 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,132 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,221 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,301 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,376 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,440 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:28:14,440 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:28:14,440 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:28:14,897 [WARNING] Schwab API degraded: 0.0% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-25 12:28:14,899 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:28:14,899 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:28:40,864 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:28:56,123 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:28:57,753 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:29:00,076 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:29:04,006 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:29:05,563 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:29:05,882 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:29:05,882 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:29:05,882 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:29:05,883 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:29:05,974 [INFO] Quarterly P&L: +13.0% (target >= 50%)
+2026-09-25 12:29:05,974 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:29:06,086 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:29:06,087 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:29:06,087 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:29:08,113 [INFO] [RVOL@TIME] HLSQ: today_vol=422225, avg_intraday_vol=832145 (4 sessions), elapsed_min=179, rvol=0.507, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:29:08,113 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 245298 < tw_dollar_vol 413077 (iex_scale=False) | price=0.51 | day_vol=480977
+2026-09-25 12:29:08,278 [INFO] [RVOL@TIME] APUS: today_vol=15339577, avg_intraday_vol=11381061 (3 sessions), elapsed_min=179, rvol=1.348, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:29:08,406 [INFO] [RVOL@TIME] AIFF: today_vol=36643444, avg_intraday_vol=318646 (3 sessions), elapsed_min=179, rvol=114.998, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:29:09,879 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 1 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:29:09,879 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 12:29:09,879 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-25 12:29:09,879 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 12:29:09,879 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:29:09,879 [INFO] Heartbeat: 2026-09-25T12:29:09.879640
+2026-09-25 12:32:09,899 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:32:10,304 [INFO] [CRYPTO] No open positions
+2026-09-25 12:32:16,228 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:32:16,229 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:32:16,229 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:32:16,229 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:32:16,229 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:32:16,336 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,411 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,479 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,548 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,622 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,704 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,792 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,878 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:32:16,878 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:32:16,878 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:32:17,434 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:32:17,435 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:33:28,061 [WARNING] Schwab: GS chain request error: HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. — retrying in 3.0s (attempt 1/3)
+2026-09-25 12:33:35,606 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:33:49,531 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:33:51,058 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:33:53,120 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:33:56,609 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:33:57,674 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:33:57,860 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:33:57,860 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:33:57,860 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:33:57,860 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:33:58,186 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 12:33:58,187 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:34:01,399 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 12:34:01,560 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:34:01,561 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:34:01,561 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:34:03,575 [INFO] [RVOL@TIME] APUS: today_vol=15463786, avg_intraday_vol=11459740 (3 sessions), elapsed_min=184, rvol=1.349, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:34:03,771 [INFO] [RVOL@TIME] HLSQ: today_vol=434245, avg_intraday_vol=847344 (4 sessions), elapsed_min=184, rvol=0.512, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:34:03,771 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 258619 < tw_dollar_vol 424615 (iex_scale=False) | price=0.53 | day_vol=492607
+2026-09-25 12:34:03,888 [INFO] [RVOL@TIME] AIFF: today_vol=36857906, avg_intraday_vol=320601 (3 sessions), elapsed_min=184, rvol=114.965, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:34:05,346 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 1 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:34:05,346 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=0) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 12:34:05,347 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-25 12:34:05,347 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 12:34:05,347 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:34:05,347 [INFO] Heartbeat: 2026-09-25T12:34:05.347162
+2026-09-25 12:37:05,365 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:37:05,685 [INFO] [CRYPTO] No open positions
+2026-09-25 12:37:09,983 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:37:09,984 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:37:09,984 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:37:09,984 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:37:09,984 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:37:10,063 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,128 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,196 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,305 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,391 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,478 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,578 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,649 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:37:10,649 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:37:10,649 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:37:11,110 [INFO] OPTIONS: PLTR261009C00187500 'stop' pending confirmation (1/2 cycles)
+2026-09-25 12:37:11,142 [INFO] Schwab API recovered: 100.0% success rate — switching back to Schwab-first
+2026-09-25 12:37:11,143 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:37:11,144 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:37:37,104 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:37:49,909 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:37:51,450 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:37:53,484 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:37:57,840 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:37:58,952 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:37:59,204 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:37:59,204 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:37:59,204 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:37:59,204 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:37:59,272 [INFO] Quarterly P&L: +12.9% (target >= 50%)
+2026-09-25 12:37:59,273 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:37:59,302 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 12:37:59,365 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:37:59,366 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:37:59,366 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:38:01,391 [INFO] [RVOL@TIME] HLSQ: today_vol=434245, avg_intraday_vol=865782 (4 sessions), elapsed_min=188, rvol=0.502, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:38:01,391 [WARNING] [GUARDRAIL] HLSQ blocked: dollar volume 258619 < tw_dollar_vol 433846 (iex_scale=False) | price=0.53 | day_vol=492607
+2026-09-25 12:38:01,592 [INFO] [RVOL@TIME] APUS: today_vol=15505215, avg_intraday_vol=11513447 (3 sessions), elapsed_min=188, rvol=1.347, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:38:01,730 [INFO] [RVOL@TIME] AIFF: today_vol=37087709, avg_intraday_vol=327570 (3 sessions), elapsed_min=188, rvol=113.221, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:38:02,894 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 1 | RVOL: 0 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 12:38:02,894 [INFO] [FUNNEL] targets=5 guardrail_rejected=4 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 12:38:02,894 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-25 12:38:02,894 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 12:38:02,894 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 12:38:02,894 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:38:02,894 [INFO] Heartbeat: 2026-09-25T12:38:02.894581
+2026-09-25 12:41:02,914 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:41:03,354 [INFO] [CRYPTO] No open positions
+2026-09-25 12:41:09,551 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:41:09,551 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:41:09,551 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:41:09,551 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:41:09,551 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:41:09,622 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:09,691 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:09,753 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:09,839 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:09,901 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:09,983 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:10,083 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:10,143 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:41:10,143 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:41:10,144 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:41:10,628 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:41:10,629 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:41:37,413 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:41:52,301 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:41:53,970 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:41:55,988 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:41:59,444 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:42:00,718 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:42:00,949 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:42:00,949 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:42:00,949 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:42:00,949 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:42:01,026 [INFO] Quarterly P&L: +13.0% (target >= 50%)
+2026-09-25 12:42:01,027 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:42:01,057 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff65d4e1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff65d4329d4]
+	msedgedriver!GetHandleVerifier [0x7ff65d8613af+3841ff]
+	msedgedriver!(No symbol) [0x7ff65d1a7312]
+	msedgedriver!(No symbol) [0x7ff65d235ab6]
+	msedgedriver!(No symbol) [0x7ff65d24d26f]
+	msedgedriver!(No symbol) [0x7ff65d20599c]
+	msedgedriver!(No symbol) [0x7ff65d204c1d]
+	msedgedriver!(No symbol) [0x7ff65d2057c3]
+	msedgedriver!(No symbol) [0x7ff65d33c4c2]
+	msedgedriver!(No symbol) [0x7ff65d34bee9]
+	msedgedriver!GetHandleVerifier [0x7ff65d589d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff65d590261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65d43e74f]
+	msedgedriver!(No symbol) [0x7ff65d439124]
+	msedgedriver!(No symbol) [0x7ff65d43924a]
+	msedgedriver!(No symbol) [0x7ff65d42a808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-25 12:42:01,132 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:42:01,133 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:42:01,133 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:42:03,220 [INFO] [RVOL@TIME] HLSQ: today_vol=437365, avg_intraday_vol=898781 (4 sessions), elapsed_min=192, rvol=0.487, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:42:03,220 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.49 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=437365 | avg_intraday_vol=898781
+2026-09-25 12:42:03,308 [INFO] [RVOL@TIME] AIFF: today_vol=37346839, avg_intraday_vol=332669 (3 sessions), elapsed_min=192, rvol=112.264, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:42:03,463 [INFO] [RVOL@TIME] APUS: today_vol=15519947, avg_intraday_vol=11544962 (3 sessions), elapsed_min=192, rvol=1.344, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:42:05,016 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:42:05,017 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 12:42:05,017 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.70
+2026-09-25 12:42:05,017 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 12:42:05,017 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:42:05,017 [INFO] Heartbeat: 2026-09-25T12:42:05.017530
+2026-09-25 12:45:05,039 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:45:05,439 [INFO] [CRYPTO] No open positions
+2026-09-25 12:45:12,317 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:45:12,317 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:45:12,317 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:45:12,317 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:45:12,317 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:45:12,386 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:12,475 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:12,547 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:12,698 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:12,862 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:12,968 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:13,052 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:13,124 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:45:13,124 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:45:13,124 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:45:13,746 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:45:13,746 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:45:54,219 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:46:17,555 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:46:21,951 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:46:27,517 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:46:35,452 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:46:38,868 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:46:39,492 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:46:39,492 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:46:39,492 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:46:39,493 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:46:40,350 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 12:46:40,350 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:46:42,629 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 12:46:42,709 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:46:42,710 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:46:42,710 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:46:44,931 [INFO] [RVOL@TIME] APUS: today_vol=15547232, avg_intraday_vol=11633706 (3 sessions), elapsed_min=196, rvol=1.336, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:46:45,152 [INFO] [RVOL@TIME] HLSQ: today_vol=437665, avg_intraday_vol=908762 (4 sessions), elapsed_min=196, rvol=0.482, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:46:45,152 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.48 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=437665 | avg_intraday_vol=908762
+2026-09-25 12:46:45,632 [INFO] [RVOL@TIME] AIFF: today_vol=37392128, avg_intraday_vol=334558 (3 sessions), elapsed_min=196, rvol=111.766, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:46:47,222 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:46:47,222 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 12:46:47,222 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.67
+2026-09-25 12:46:47,222 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 12:46:47,223 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 12:46:47,223 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:46:47,224 [INFO] Heartbeat: 2026-09-25T12:46:47.224177
+2026-09-25 12:49:47,246 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:49:47,624 [INFO] [CRYPTO] No open positions
+2026-09-25 12:49:52,201 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:49:52,201 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:49:52,201 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:49:52,201 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:49:52,201 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:49:52,272 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,347 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,438 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,515 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,577 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,651 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,814 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,889 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:49:52,889 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:49:52,889 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:49:53,428 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:49:53,429 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:50:20,051 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:50:35,511 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:50:37,568 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:50:39,991 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:50:43,463 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:50:44,948 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:50:45,203 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:50:45,203 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:50:45,204 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:50:45,204 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:50:45,280 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 12:50:45,281 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:50:45,375 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:50:45,376 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:50:45,376 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:50:47,474 [INFO] [RVOL@TIME] HLSQ: today_vol=437665, avg_intraday_vol=923353 (4 sessions), elapsed_min=200, rvol=0.474, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:50:47,474 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.47 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=437665 | avg_intraday_vol=923353
+2026-09-25 12:50:47,555 [INFO] [RVOL@TIME] AIFF: today_vol=37474946, avg_intraday_vol=338307 (3 sessions), elapsed_min=200, rvol=110.772, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:50:47,694 [INFO] [RVOL@TIME] APUS: today_vol=15573234, avg_intraday_vol=11752601 (3 sessions), elapsed_min=200, rvol=1.325, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:50:49,273 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:50:49,274 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 12:50:49,274 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.64
+2026-09-25 12:50:49,274 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 12:50:49,274 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:50:49,274 [INFO] Heartbeat: 2026-09-25T12:50:49.274920
+2026-09-25 12:51:09,346 [INFO] ======================================================================
+2026-09-25 12:51:09,347 [INFO] STATUS
+2026-09-25 12:51:09,347 [INFO] Equity:     $109,955.38
+2026-09-25 12:51:09,347 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-25 12:51:09,347 [INFO] Positions:  2
+2026-09-25 12:51:09,348 [INFO] Unrealized: $-20.00
+2026-09-25 12:51:09,348 [INFO]   MSFT261009C00515000: 1 @ $9.90 | $200.00 (+20.20%)
+2026-09-25 12:51:09,348 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-220.00 (-19.47%)
+2026-09-25 12:51:09,348 [INFO] ======================================================================
+2026-09-25 12:51:09,353 [INFO] Universe pruned: no expired tickers
+2026-09-25 12:53:49,374 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:53:49,739 [INFO] [CRYPTO] No open positions
+2026-09-25 12:53:53,628 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:53:53,629 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:53:53,629 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:53:53,629 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:53:53,629 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:53:53,708 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:53,773 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:53,834 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:53,900 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:53,970 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:54,070 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:54,142 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:54,257 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:53:54,257 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:53:54,258 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:53:54,892 [INFO] OPTIONS: MSFT261009C00515000 'target' pending confirmation (1/2 cycles)
+2026-09-25 12:53:54,979 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:53:54,979 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:54:21,368 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:54:35,534 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:54:37,153 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:54:39,374 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:54:43,570 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:54:44,696 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:54:44,931 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:54:44,957 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:54:44,957 [INFO] [OPTIONS] No qualifying signals this cycle | open=2
+2026-09-25 12:54:44,958 [INFO] [OPTIONS] Options: 2 position(s)
+  MSFT261009C00515000 | 1x reconciled entry=$9.90 DTE=14
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:54:45,364 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 12:54:45,564 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:54:45,652 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:54:45,653 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:54:45,653 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:54:47,734 [INFO] [RVOL@TIME] HLSQ: today_vol=445529, avg_intraday_vol=957854 (4 sessions), elapsed_min=204, rvol=0.465, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:54:47,734 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.47 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=445529 | avg_intraday_vol=957854
+2026-09-25 12:54:47,875 [INFO] [RVOL@TIME] APUS: today_vol=15601542, avg_intraday_vol=11851833 (3 sessions), elapsed_min=204, rvol=1.316, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:54:47,991 [INFO] [RVOL@TIME] AIFF: today_vol=37562401, avg_intraday_vol=347428 (3 sessions), elapsed_min=204, rvol=108.116, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:54:49,214 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:54:49,214 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 12:54:49,214 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.61
+2026-09-25 12:54:49,214 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 12:54:49,215 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 12:54:49,215 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:54:49,215 [INFO] Heartbeat: 2026-09-25T12:54:49.215170
+2026-09-25 12:57:49,238 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 12:57:50,089 [INFO] [CRYPTO] No open positions
+2026-09-25 12:57:55,223 [INFO] [CRYPTO] #1: DOT/USD BUY @ 1.1965 conf=76% | RSI=69.6 3-bar uptrend
+2026-09-25 12:57:55,224 [INFO] [CRYPTO] #2: ETH/USD BUY @ 2717.6175 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-25 12:57:55,224 [INFO] [CRYPTO] #3: AAVE/USD BUY @ 148.5750 conf=74% | RSI=66.1 3-bar uptrend
+2026-09-25 12:57:55,225 [INFO] [CRYPTO] #4: WIF/USD BUY @ 0.2452 conf=74% | RSI=65.2 3-bar uptrend
+2026-09-25 12:57:55,225 [INFO] [CRYPTO] #5: SUSHI/USD BUY @ 0.2627 conf=72% | RSI=63.2 3-bar uptrend
+2026-09-25 12:57:55,301 [WARNING] [CRYPTO] Insufficient cash balance for DOT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,371 [WARNING] [CRYPTO] Insufficient cash balance for ETH/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,453 [WARNING] [CRYPTO] Insufficient cash balance for AAVE/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,524 [WARNING] [CRYPTO] Insufficient cash balance for WIF/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,601 [WARNING] [CRYPTO] Insufficient cash balance for SUSHI/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,687 [WARNING] [CRYPTO] Insufficient cash balance for CRV/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,757 [WARNING] [CRYPTO] Insufficient cash balance for SKY/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,875 [WARNING] [CRYPTO] Insufficient cash balance for BAT/USD (available=0.00, min=400.0) — skipping
+2026-09-25 12:57:55,875 [INFO] [CRYPTO] SKIP TRUMP/USD conf=69% < min 70%
+2026-09-25 12:57:55,876 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 12:57:56,699 [INFO] OPTIONS: MSFT single contract at +28.9% — closing full position (can't scale out 1 contract)
+2026-09-25 12:57:56,777 [INFO] OPTIONS CLOSE (limit @12.20): SELL 1x MSFT261009C00515000
+2026-09-25 12:57:56,898 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 12:57:56,899 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 12:58:30,166 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 12:58:45,377 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 12:58:47,513 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 12:58:50,145 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 12:58:54,367 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 12:58:56,105 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 12:58:56,339 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 12:58:56,339 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 12:58:56,340 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 12:58:56,341 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 12:58:56,414 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 12:58:56,415 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 12:58:56,455 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 12:58:59,539 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 12:58:59,623 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 12:58:59,624 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 12:58:59,624 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 12:59:01,734 [INFO] [RVOL@TIME] HLSQ: today_vol=446761, avg_intraday_vol=993071 (4 sessions), elapsed_min=209, rvol=0.450, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 12:59:01,734 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.45 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=446761 | avg_intraday_vol=993071
+2026-09-25 12:59:01,804 [INFO] [RVOL@TIME] APUS: today_vol=15619638, avg_intraday_vol=11965171 (3 sessions), elapsed_min=209, rvol=1.305, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:59:01,971 [INFO] [RVOL@TIME] AIFF: today_vol=37708565, avg_intraday_vol=348706 (3 sessions), elapsed_min=209, rvol=108.138, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 12:59:03,318 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 12:59:03,318 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 12:59:03,319 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.60
+2026-09-25 12:59:03,319 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 12:59:03,319 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 12:59:03,319 [INFO] [SCAN] No signals this cycle
+2026-09-25 12:59:03,319 [INFO] Heartbeat: 2026-09-25T12:59:03.319936
+2026-09-25 13:02:03,342 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:02:04,114 [INFO] [CRYPTO] No open positions
+2026-09-25 13:02:10,799 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:02:10,799 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:02:10,799 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:02:10,799 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:02:10,799 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:02:10,799 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:02:11,665 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:02:11,666 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:02:37,776 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:02:56,181 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:02:58,850 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:03:02,199 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:03:07,269 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:03:09,107 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:03:09,462 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:03:09,463 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:03:09,463 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:03:09,463 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:03:09,529 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 13:03:09,530 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:03:09,562 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff65d4e1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff65d4329d4]
+	msedgedriver!GetHandleVerifier [0x7ff65d8613af+3841ff]
+	msedgedriver!(No symbol) [0x7ff65d1a7312]
+	msedgedriver!(No symbol) [0x7ff65d235ab6]
+	msedgedriver!(No symbol) [0x7ff65d24d26f]
+	msedgedriver!(No symbol) [0x7ff65d20599c]
+	msedgedriver!(No symbol) [0x7ff65d204c1d]
+	msedgedriver!(No symbol) [0x7ff65d2057c3]
+	msedgedriver!(No symbol) [0x7ff65d33c4c2]
+	msedgedriver!(No symbol) [0x7ff65d34bee9]
+	msedgedriver!GetHandleVerifier [0x7ff65d589d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff65d590261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65d43e74f]
+	msedgedriver!(No symbol) [0x7ff65d439124]
+	msedgedriver!(No symbol) [0x7ff65d43924a]
+	msedgedriver!(No symbol) [0x7ff65d42a808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-25 13:03:09,629 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:03:09,630 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 13:03:09,630 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:03:11,742 [INFO] [RVOL@TIME] HLSQ: today_vol=446961, avg_intraday_vol=1015489 (4 sessions), elapsed_min=213, rvol=0.440, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:03:11,743 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.44 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=446961 | avg_intraday_vol=1015489
+2026-09-25 13:03:11,792 [INFO] [RVOL@TIME] APUS: today_vol=15663401, avg_intraday_vol=12097272 (3 sessions), elapsed_min=213, rvol=1.295, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:03:11,955 [INFO] [RVOL@TIME] AIFF: today_vol=37796741, avg_intraday_vol=354388 (3 sessions), elapsed_min=213, rvol=106.654, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:03:13,826 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:03:13,826 [INFO] [FUNNEL] targets=5 guardrail_rejected=4 (rvol=1) -> signals_generated=1 -> conf_gate(-1) -> sector_cap(-0) -> final=0
+2026-09-25 13:03:13,827 [INFO] [SCAN] Breakdown — TrendlineBreakout: 1 | Errors: 0 | Total: 0
+2026-09-25 13:03:13,827 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:03:13,827 [INFO] Heartbeat: 2026-09-25T13:03:13.827765
+2026-09-25 13:06:13,848 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:06:14,199 [INFO] [CRYPTO] No open positions
+2026-09-25 13:06:20,159 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:06:20,159 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:06:20,159 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:06:20,159 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:06:20,160 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:06:20,160 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:06:20,638 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:06:20,638 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:06:20,642 [INFO] Schwab: Refreshing access token...
+2026-09-25 13:06:20,792 [INFO] Schwab: Refreshing access token...
+2026-09-25 13:06:20,943 [INFO] Schwab: Refreshing access token...
+2026-09-25 13:06:21,093 [INFO] Schwab: Refreshing access token...
+2026-09-25 13:06:21,243 [INFO] Schwab: Refreshing access token...
+2026-09-25 13:06:21,394 [INFO] Schwab: Refreshing access token...
+2026-09-25 13:06:21,412 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 13:06:21,743 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 13:06:21,773 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 13:06:21,925 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 13:06:22,126 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 13:06:22,708 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-25 13:06:46,703 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:07:05,900 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:07:08,109 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:07:10,566 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:07:15,006 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:07:16,239 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:07:16,478 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:07:16,478 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:07:16,478 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:07:16,478 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:07:16,574 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 13:07:16,574 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:07:16,667 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:07:16,668 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 13:07:16,668 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:07:18,716 [INFO] [RVOL@TIME] HLSQ: today_vol=449398, avg_intraday_vol=1026905 (4 sessions), elapsed_min=217, rvol=0.438, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:07:18,716 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.44 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=449398 | avg_intraday_vol=1026905
+2026-09-25 13:07:18,899 [INFO] [RVOL@TIME] APUS: today_vol=15688860, avg_intraday_vol=12267409 (3 sessions), elapsed_min=217, rvol=1.279, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:07:19,043 [INFO] [RVOL@TIME] AIFF: today_vol=37827954, avg_intraday_vol=386053 (2 sessions), elapsed_min=217, rvol=97.986, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:07:20,727 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 13:07:20,728 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-25 13:07:20,728 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-25 13:07:20,728 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:07:20,728 [INFO] Heartbeat: 2026-09-25T13:07:20.728597
+2026-09-25 13:10:20,749 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:10:21,605 [INFO] [CRYPTO] No open positions
+2026-09-25 13:10:29,773 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:10:29,773 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:10:29,774 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:10:29,774 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:10:29,774 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:10:29,774 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:10:30,739 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:10:30,739 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:11:10,073 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:12:00,469 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:12:08,641 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:12:25,582 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:12:53,317 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:12:56,850 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:12:57,385 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:12:57,386 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:12:57,386 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:12:57,386 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:12:57,744 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 13:12:57,745 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:13:10,754 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 13:13:10,816 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:13:10,816 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 13:13:10,817 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:13:12,952 [INFO] [RVOL@TIME] HLSQ: today_vol=449698, avg_intraday_vol=1045864 (4 sessions), elapsed_min=223, rvol=0.430, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:13:12,953 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.43 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=449698 | avg_intraday_vol=1045864
+2026-09-25 13:13:13,228 [INFO] [RVOL@TIME] APUS: today_vol=15721229, avg_intraday_vol=12511421 (3 sessions), elapsed_min=223, rvol=1.257, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:13:13,406 [INFO] [RVOL@TIME] AIFF: today_vol=38466843, avg_intraday_vol=365562 (3 sessions), elapsed_min=223, rvol=105.227, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:13:15,136 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:13:15,136 [INFO] [FUNNEL] targets=5 guardrail_rejected=4 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 13:13:15,136 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 13:13:15,136 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 13:13:15,136 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:13:15,136 [INFO] Heartbeat: 2026-09-25T13:13:15.136495
+2026-09-25 13:16:15,160 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:16:16,013 [INFO] [CRYPTO] No open positions
+2026-09-25 13:16:22,209 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:16:22,210 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:16:22,210 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:16:22,211 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:16:22,211 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:16:22,211 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:16:23,129 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:16:23,129 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:16:49,099 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:17:05,171 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:17:07,298 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:17:10,033 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:17:14,194 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:17:16,004 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:17:16,210 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:17:16,211 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:17:16,211 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:17:16,211 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:17:16,292 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 13:17:16,292 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:17:16,388 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:17:16,389 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 13:17:16,389 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:17:18,395 [INFO] [RVOL@TIME] HLSQ: today_vol=449698, avg_intraday_vol=1053453 (4 sessions), elapsed_min=227, rvol=0.427, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:17:18,395 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.43 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=449698 | avg_intraday_vol=1053453
+2026-09-25 13:17:18,607 [INFO] [RVOL@TIME] APUS: today_vol=15742445, avg_intraday_vol=12635769 (3 sessions), elapsed_min=227, rvol=1.246, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:17:18,707 [INFO] [RVOL@TIME] AIFF: today_vol=38935282, avg_intraday_vol=406899 (2 sessions), elapsed_min=227, rvol=95.688, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:17:21,348 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 13:17:21,348 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=2 -> conf_gate(-2) -> sector_cap(-0) -> final=0
+2026-09-25 13:17:21,349 [INFO] [SCAN] Breakdown — TrendlineBreakout: 2 | Errors: 0 | Total: 0
+2026-09-25 13:17:21,349 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:17:21,350 [INFO] Heartbeat: 2026-09-25T13:17:21.350101
+2026-09-25 13:20:21,371 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:20:22,199 [INFO] [CRYPTO] No open positions
+2026-09-25 13:20:27,257 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:20:27,258 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:20:27,258 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:20:27,258 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:20:27,258 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:20:27,258 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:20:28,180 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:20:28,180 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:20:42,988 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-25 13:20:56,597 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-25 13:21:14,415 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-25 13:21:14,419 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:21:53,401 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:21:59,401 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:22:02,753 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:22:11,341 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:22:13,298 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:22:13,502 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:22:13,502 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:22:13,502 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:22:13,502 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:22:14,349 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:22:14,350 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:22:14,383 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 13:22:14,447 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:22:14,448 [INFO] [SCAN] 5 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, APUS, AIFF
+2026-09-25 13:22:14,448 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:22:16,460 [INFO] [RVOL@TIME] HLSQ: today_vol=451530, avg_intraday_vol=1065975 (4 sessions), elapsed_min=232, rvol=0.424, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:22:16,460 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.42 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=451530 | avg_intraday_vol=1065975
+2026-09-25 13:22:16,642 [INFO] [RVOL@TIME] APUS: today_vol=15775998, avg_intraday_vol=12759243 (3 sessions), elapsed_min=232, rvol=1.236, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-25 13:22:16,796 [INFO] [RVOL@TIME] AIFF: today_vol=39294367, avg_intraday_vol=410692 (2 sessions), elapsed_min=232, rvol=95.678, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:22:19,221 [INFO] [GUARDRAIL SUMMARY] Rejected: 3 | DollarVol: 0 | RVOL: 1 | GapChase: 0 | MinPrice: 0 | Other: 2
+2026-09-25 13:22:19,221 [INFO] [FUNNEL] targets=5 guardrail_rejected=3 (rvol=1) -> signals_generated=1 -> conf_gate(-0) -> sector_cap(-0) -> final=1
+2026-09-25 13:22:19,221 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-25 13:22:19,221 [INFO] [SCAN] Breakdown — MomentumContinuation: 1 | Errors: 0 | Total: 1
+2026-09-25 13:22:19,222 [INFO] [SCAN] TOP5_RAW #1: APUS BUY $6.64 conf=92% [MomentumContinuation] — Momentum continuation rvol=935.8x up=7.9% break of session high MACD hist=0.0150 RSI=66.7
+2026-09-25 13:22:19,280 [INFO] Live holdings: 1 excluded
+2026-09-25 13:22:19,280 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 1 eligible
+2026-09-25 13:22:19,280 [INFO] [TRADE] TOP5_ELIGIBLE #1: APUS BUY $6.64 conf=92% [MomentumContinuation] — Momentum continuation rvol=935.8x up=7.9% break of session high MACD hist=0.0150 RSI=66.7
+2026-09-25 13:22:20,451 [INFO] Scan email sent
+2026-09-25 13:22:20,451 [INFO] Executing top 1 signal(s) (cap=5)
+2026-09-25 13:22:20,503 [INFO] EXECUTE: BUY APUS @ $6.64 | MomentumContinuation | Momentum continuation rvol=935.8x up=7.9% break of session high MACD hist=0.0150 RSI=66.7
+2026-09-25 13:22:20,853 [INFO] LIVE PROBE APUS: sizing 19886 → 1 share(s); no automatic scale-in
+2026-09-25 13:22:20,896 [INFO] TP targets set APUS: tighten@$7.04 (+6%) close@$7.97 (+20%) profile=ti_momentum
+2026-09-25 13:22:21,290 [INFO] Trailing stop placed APUS: 8.0% GTC (1 shares)
+2026-09-25 13:22:21,291 [INFO] BUY APUS: 1 @ $6.64 | TRAILING SL 8.0% | Tier: EXTREME | MomentumContinuation
+2026-09-25 13:22:22,375 [INFO] Heartbeat: 2026-09-25T13:22:22.375111
+2026-09-25 13:22:22,441 [INFO] ======================================================================
+2026-09-25 13:22:22,442 [INFO] STATUS
+2026-09-25 13:22:22,442 [INFO] Equity:     $110,040.36
+2026-09-25 13:22:22,442 [INFO] Daily P&L:  $0.00  |  Trades: 1
+2026-09-25 13:22:22,443 [INFO] Positions:  2
+2026-09-25 13:22:22,443 [INFO] Unrealized: $-210.00
+2026-09-25 13:22:22,443 [INFO]   APUS: 1 @ $6.65 | $-0.01 (-0.07%)
+2026-09-25 13:22:22,443 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-210.00 (-18.58%)
+2026-09-25 13:22:22,443 [INFO] ======================================================================
+2026-09-25 13:22:22,447 [INFO] Universe pruned: no expired tickers
+2026-09-25 13:25:22,469 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:25:23,439 [INFO] [CRYPTO] No open positions
+2026-09-25 13:25:29,620 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:25:29,620 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:25:29,620 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:25:29,621 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:25:29,621 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:25:29,621 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:25:30,595 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:25:30,596 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:25:46,813 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-25 13:26:01,571 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-25 13:26:20,707 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-25 13:26:20,712 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:26:39,653 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:26:42,078 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:26:44,648 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:26:49,031 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:26:51,108 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:26:51,345 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:26:51,346 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:26:51,346 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:26:51,346 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:26:52,614 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:26:52,615 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:26:52,715 [ERROR] Trade Ideas scan failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=153.0.4234.48)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff65d4e1e55+4ca5]
+	msedgedriver!(No symbol) [0x7ff65d4329d4]
+	msedgedriver!GetHandleVerifier [0x7ff65d8613af+3841ff]
+	msedgedriver!(No symbol) [0x7ff65d1a7312]
+	msedgedriver!(No symbol) [0x7ff65d235ab6]
+	msedgedriver!(No symbol) [0x7ff65d24d26f]
+	msedgedriver!(No symbol) [0x7ff65d20599c]
+	msedgedriver!(No symbol) [0x7ff65d204c1d]
+	msedgedriver!(No symbol) [0x7ff65d2057c3]
+	msedgedriver!(No symbol) [0x7ff65d33c4c2]
+	msedgedriver!(No symbol) [0x7ff65d34bee9]
+	msedgedriver!GetHandleVerifier [0x7ff65d589d85+acbd5]
+	msedgedriver!GetHandleVerifier [0x7ff65d590261+b30b1]
+	msedgedriver!(No symbol) [0x7ff65d43e74f]
+	msedgedriver!(No symbol) [0x7ff65d439124]
+	msedgedriver!(No symbol) [0x7ff65d43924a]
+	msedgedriver!(No symbol) [0x7ff65d42a808]
+	KERNEL32!BaseThreadInitThunk [0x7ffea9a7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffeaaa0caec+2c]
+
+2026-09-25 13:27:06,928 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 13:27:06,997 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:27:06,998 [INFO] [SCAN] 4 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF
+2026-09-25 13:27:06,998 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:27:08,837 [INFO] [RVOL@TIME] HLSQ: today_vol=457978, avg_intraday_vol=1092629 (4 sessions), elapsed_min=237, rvol=0.419, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:27:08,838 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.42 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=457978 | avg_intraday_vol=1092629
+2026-09-25 13:27:08,895 [INFO] [RVOL@TIME] AIFF: today_vol=39555317, avg_intraday_vol=419137 (2 sessions), elapsed_min=237, rvol=94.373, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:27:08,897 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:27:08,897 [INFO] [FUNNEL] targets=4 guardrail_rejected=4 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 13:27:08,897 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 13:27:08,897 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 13:27:08,960 [INFO] LIVE PROBE APUS: scale-in skipped; gain -2.18% < 0.25%
+2026-09-25 13:27:08,960 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:27:08,960 [INFO] Heartbeat: 2026-09-25T13:27:08.960703
+2026-09-25 13:30:08,983 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:30:09,428 [INFO] [CRYPTO] No open positions
+2026-09-25 13:30:15,333 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:30:15,333 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:30:15,333 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:30:15,333 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:30:15,334 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:30:15,334 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:30:15,913 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:30:15,913 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:30:42,388 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:30:59,007 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:31:01,037 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:31:05,472 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:31:11,244 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:31:13,920 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:31:14,247 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:31:14,248 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:31:14,248 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:31:14,249 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:31:14,711 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:31:15,006 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:31:15,204 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:31:15,204 [INFO] [SCAN] 4 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF
+2026-09-25 13:31:15,205 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:31:17,100 [INFO] [RVOL@TIME] AIFF: today_vol=40533615, avg_intraday_vol=423687 (2 sessions), elapsed_min=241, rvol=95.669, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:31:17,189 [INFO] [RVOL@TIME] HLSQ: today_vol=463678, avg_intraday_vol=1099698 (4 sessions), elapsed_min=241, rvol=0.422, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:31:17,189 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.42 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=463678 | avg_intraday_vol=1099698
+2026-09-25 13:31:17,190 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:31:17,190 [INFO] [FUNNEL] targets=4 guardrail_rejected=4 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 13:31:17,190 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 13:31:17,190 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 13:31:17,279 [INFO] LIVE PROBE APUS: scale-in skipped; gain -0.60% < 0.25%
+2026-09-25 13:31:17,279 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:31:17,279 [INFO] Heartbeat: 2026-09-25T13:31:17.279762
+2026-09-25 13:34:17,305 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:34:18,023 [INFO] [CRYPTO] No open positions
+2026-09-25 13:34:23,132 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:34:23,133 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:34:23,133 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:34:23,133 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:34:23,134 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:34:23,134 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:34:24,131 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:34:24,131 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:34:51,640 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:35:27,304 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:35:31,091 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:35:35,333 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:35:42,184 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:35:45,317 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:35:45,844 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:35:45,845 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:35:45,845 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:35:45,846 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:35:46,705 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:35:46,705 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:35:46,893 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:35:46,894 [INFO] [SCAN] 4 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF
+2026-09-25 13:35:46,894 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:35:48,880 [INFO] [RVOL@TIME] AIFF: today_vol=41844411, avg_intraday_vol=425548 (2 sessions), elapsed_min=245, rvol=98.331, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:35:49,742 [INFO] [RVOL@TIME] HLSQ: today_vol=464528, avg_intraday_vol=1116096 (4 sessions), elapsed_min=245, rvol=0.416, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:35:49,742 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.42 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=464528 | avg_intraday_vol=1116096
+2026-09-25 13:35:49,743 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:35:49,744 [INFO] [FUNNEL] targets=4 guardrail_rejected=4 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 13:35:49,744 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-25 13:35:49,744 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 13:35:49,744 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 13:35:49,803 [INFO] LIVE PROBE APUS: scale-in skipped; gain -0.75% < 0.25%
+2026-09-25 13:35:49,803 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:35:49,804 [INFO] Heartbeat: 2026-09-25T13:35:49.803982
+2026-09-25 13:38:49,821 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:38:50,602 [INFO] [CRYPTO] No open positions
+2026-09-25 13:38:54,894 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:38:54,894 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:38:54,895 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:38:54,895 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:38:54,895 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:38:54,895 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:38:55,741 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:38:55,741 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:39:27,207 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:39:41,016 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:39:42,735 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:39:44,874 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:39:48,175 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:39:49,466 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:39:49,694 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:39:49,694 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:39:49,694 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:39:49,695 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:39:49,772 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:39:49,772 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:39:51,095 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 13:39:51,160 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:39:51,161 [INFO] [SCAN] 4 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF
+2026-09-25 13:39:51,161 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:39:52,868 [INFO] [RVOL@TIME] HLSQ: today_vol=464728, avg_intraday_vol=1135348 (4 sessions), elapsed_min=249, rvol=0.409, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:39:52,868 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.41 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=464728 | avg_intraday_vol=1135348
+2026-09-25 13:39:53,018 [INFO] [RVOL@TIME] AIFF: today_vol=43023369, avg_intraday_vol=430686 (2 sessions), elapsed_min=249, rvol=99.895, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:39:53,020 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:39:53,020 [INFO] [FUNNEL] targets=4 guardrail_rejected=4 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 13:39:53,021 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-25 13:39:53,021 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 13:39:53,021 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 13:39:53,661 [INFO] LIVE PROBE APUS: scale-in skipped; price 6.89 below VWAP 7.77
+2026-09-25 13:39:53,661 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:39:53,661 [INFO] Heartbeat: 2026-09-25T13:39:53.661349
+2026-09-25 13:42:53,682 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:42:54,847 [INFO] [CRYPTO] No open positions
+2026-09-25 13:43:00,291 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:43:00,291 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:43:00,291 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:43:00,291 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:43:00,291 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:43:00,292 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:43:01,638 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'APUS', 'AIFF']
+2026-09-25 13:43:01,638 [INFO] Options scan: starting — 93 ticker(s) in universe
+2026-09-25 13:43:27,926 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:43:42,942 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:43:44,564 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:43:46,750 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:43:50,397 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:43:51,999 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:43:52,234 [INFO] Options scan: 0 signal(s) | universe=93 | fail summary: no_MarketStructureBreakoutCall=93, no_OpeningRangeBreakoutCall=93, no_MomentumContinuationCall=93, no_PocReclaimCall=93, no_GapBreakoutCall=93, no_MomentumCall=93, no_BearPut=93, no_BearCallSpread=93, no_ShortSqueeze=93, no_MeanReversion=93, no_BreakoutRetest=93, no_TrendPullbackSpread=93, no_IronCondor=93, no_Butterfly=93, no_signal=93
+2026-09-25 13:43:52,234 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_OpeningRangeBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumContinuationCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_PocReclaimCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_GapBreakoutCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_MomentumCall: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearPut: STT, ALB, SHW, WRBY, AXP, TEVA | no_BearCallSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_ShortSqueeze: STT, ALB, SHW, WRBY, AXP, TEVA | no_MeanReversion: STT, ALB, SHW, WRBY, AXP, TEVA | no_BreakoutRetest: STT, ALB, SHW, WRBY, AXP, TEVA | no_TrendPullbackSpread: STT, ALB, SHW, WRBY, AXP, TEVA | no_IronCondor: STT, ALB, SHW, WRBY, AXP, TEVA | no_Butterfly: STT, ALB, SHW, WRBY, AXP, TEVA | no_signal: STT, ALB, SHW, WRBY, AXP, TEVA
+2026-09-25 13:43:52,234 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:43:52,234 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:43:52,324 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:43:52,325 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:43:52,414 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-25 13:43:52,478 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-25 13:43:52,479 [INFO] [SCAN] 4 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF
+2026-09-25 13:43:52,479 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:43:54,279 [INFO] [RVOL@TIME] HLSQ: today_vol=466528, avg_intraday_vol=1140693 (4 sessions), elapsed_min=253, rvol=0.409, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:43:54,279 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.41 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=466528 | avg_intraday_vol=1140693
+2026-09-25 13:43:54,384 [INFO] [RVOL@TIME] AIFF: today_vol=43574198, avg_intraday_vol=437609 (2 sessions), elapsed_min=253, rvol=99.573, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:43:54,386 [INFO] [GUARDRAIL SUMMARY] Rejected: 4 | DollarVol: 0 | RVOL: 1 | GapChase: 1 | MinPrice: 0 | Other: 2
+2026-09-25 13:43:54,388 [INFO] [FUNNEL] targets=4 guardrail_rejected=4 (rvol=1) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-25 13:43:54,388 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-25 13:43:54,388 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-25 13:43:54,388 [INFO] [SCAN] No signals — market likely in downtrend or momentum gates not met
+2026-09-25 13:43:54,750 [INFO] LIVE PROBE APUS: scale-in skipped; price 6.80 below VWAP 7.76
+2026-09-25 13:43:54,750 [INFO] [SCAN] No signals this cycle
+2026-09-25 13:43:54,751 [INFO] Heartbeat: 2026-09-25T13:43:54.751293
+2026-09-25 13:46:54,770 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:46:55,774 [INFO] [CRYPTO] No open positions
+2026-09-25 13:47:00,266 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:47:00,266 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:47:00,266 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:47:00,267 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:47:00,267 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:47:00,267 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:47:00,881 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'AIFF']
+2026-09-25 13:47:00,881 [INFO] Options scan: starting — 171 ticker(s) in universe
+2026-09-25 13:47:56,061 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:47:56,906 [INFO] Schwab: quote unavailable for SHMD; Alpaca fallback used
+2026-09-25 13:47:58,804 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-25 13:48:03,098 [INFO] Schwab: quote unavailable for IREG; Alpaca fallback used
+2026-09-25 13:48:07,516 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-25 13:48:09,584 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-25 13:48:12,412 [INFO] Schwab: quote unavailable for KOD; Alpaca fallback used
+2026-09-25 13:48:26,398 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:48:28,264 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:48:30,556 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:48:34,297 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:48:35,798 [INFO] Schwab: quote unavailable for AESI; Alpaca fallback used
+2026-09-25 13:48:38,562 [WARNING] Schwab: Failed to get quote for MKT: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/MKT; Alpaca fallback failed: 'MKT'
+2026-09-25 13:48:41,488 [INFO] Schwab: quote unavailable for VWAV; Alpaca fallback used
+2026-09-25 13:48:43,270 [INFO] Schwab: quote unavailable for BOIL; Alpaca fallback used
+2026-09-25 13:48:45,150 [INFO] Schwab: quote unavailable for HUBC; Alpaca fallback used
+2026-09-25 13:48:46,328 [INFO] Schwab: quote unavailable for IRE; Alpaca fallback used
+2026-09-25 13:48:47,491 [INFO] Schwab: quote unavailable for LBGJ; Alpaca fallback used
+2026-09-25 13:48:49,126 [INFO] Schwab: quote unavailable for MRAL; Alpaca fallback used
+2026-09-25 13:48:52,017 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-25 13:48:52,849 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:48:53,352 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): TBBB(MomentumCall, unusual_volume_blocked_in_NEUTRAL)
+2026-09-25 13:48:53,353 [INFO] Options scan: 0 signal(s) | universe=171 | fail summary: no_MarketStructureBreakoutCall=171, no_OpeningRangeBreakoutCall=171, no_MomentumContinuationCall=171, no_PocReclaimCall=171, no_GapBreakoutCall=171, no_MomentumCall=170, no_BearPut=170, no_BearCallSpread=170, no_ShortSqueeze=170, no_MeanReversion=170, no_BreakoutRetest=170, no_TrendPullbackSpread=170, no_IronCondor=170, no_Butterfly=170, no_signal=170
+2026-09-25 13:48:53,353 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_OpeningRangeBreakoutCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_MomentumContinuationCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_PocReclaimCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_GapBreakoutCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_MomentumCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_BearPut: SHMD, WYY, KDK, STEM, GLND, MNTK | no_BearCallSpread: SHMD, WYY, KDK, STEM, GLND, MNTK | no_ShortSqueeze: SHMD, WYY, KDK, STEM, GLND, MNTK | no_MeanReversion: SHMD, WYY, KDK, STEM, GLND, MNTK | no_BreakoutRetest: SHMD, WYY, KDK, STEM, GLND, MNTK | no_TrendPullbackSpread: SHMD, WYY, KDK, STEM, GLND, MNTK | no_IronCondor: SHMD, WYY, KDK, STEM, GLND, MNTK | no_Butterfly: SHMD, WYY, KDK, STEM, GLND, MNTK | no_signal: SHMD, WYY, KDK, STEM, GLND, MNTK
+2026-09-25 13:48:53,353 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:48:53,353 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:48:53,712 [INFO] Quarterly P&L: +13.2% (target >= 50%)
+2026-09-25 13:48:53,713 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:48:53,810 [INFO] Trade Ideas [PRIORITY_1_MOMENTUM] market_scope_360(50) + momentum_scanner(21) + unusual_options_volume(50): +50 new, 0 existing → top-10: ['INLF', 'USDEW', 'APUS', 'WHLR', 'SLMT', 'USDE', 'BEG', 'AESI', 'DLLL', 'CNTN']
+2026-09-25 13:48:53,811 [INFO] ── TI top-20 [PRIORITY_1_MOMENTUM] (primary=50 secondary=71): INLF, USDEW, APUS, WHLR, SLMT, USDE, BEG, AESI, DLLL, CNTN, ALM, WNC, PPLI, MXL, QCML, QCMU, MAAS, GSUI, WFF, AVX
+2026-09-25 13:48:53,811 [INFO] Trade Ideas [PRIORITY_2_ESTABLISHED] high_short_float(50): +50 new, 0 existing → top-10: ['INLF', 'USDEW', 'APUS', 'WHLR', 'SLMT', 'USDE', 'BEG', 'AESI', 'DLLL', 'CNTN']
+2026-09-25 13:48:53,811 [INFO] ── TI top-20 [PRIORITY_2_ESTABLISHED] (primary=50 secondary=0): INLF, USDEW, APUS, WHLR, SLMT, USDE, BEG, AESI, DLLL, CNTN, WNC, ALM, PPLI, QCML, MXL, QCMU, MAAS, GSUI, WFF, AVX
+2026-09-25 13:48:53,879 [INFO] [SCAN] 74 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF, INLF, USDEW, WHLR, SLMT, USDE, BEG, AESI, DLLL, CNTN, WNC, ALM, PPLI, QCML, MXL, QCMU, MAAS, GSUI, WFF, AVX, STEM, VIAV, GLND, CRDO, GENI, WYY, ONEN, HOST, PFSA, NTRB, PUR, TRT, VWAV, VBIO, KDK, HUBC, INDP, KRSA, SRZN, FOFO, MRAL, MEDS, IREG, BRVE, FISN, BWET, TNMG, USEA, BOIL, IRE, LBGJ, MKT, SHMD, MNTK, QMCO, AMZZ, GOTU, GME, TBBB, UNHG, FLY, SUIG, PYPL, SCHL, TMF, UGP, HAYW, TWLO, SMCL, PAM, DNN
+2026-09-25 13:48:53,880 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:48:56,908 [INFO] [RVOL@TIME] HLSQ: today_vol=466528, avg_intraday_vol=1146905 (4 sessions), elapsed_min=258, rvol=0.407, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:48:56,909 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.41 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=466528 | avg_intraday_vol=1146905
+2026-09-25 13:48:56,972 [INFO] [RVOL@TIME] AIFF: today_vol=43929211, avg_intraday_vol=446257 (2 sessions), elapsed_min=258, rvol=98.439, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:48:58,648 [INFO] [RVOL@TIME] SLMT: today_vol=236173, avg_intraday_vol=512034 (2 sessions), elapsed_min=258, rvol=0.461, threshold=0.80 (adaptive=1.00 session_discount=0.80 iex_scale=False)
+2026-09-25 13:48:58,648 [WARNING] [GUARDRAIL] SLMT blocked: RVOL@TIME 0.46 < rvol_threshold 0.80 (adaptive=1.00 sessions=2 discount=0.80) | today_vol=236173 | avg_intraday_vol=512034
+2026-09-25 13:49:01,384 [INFO] [RVOL@TIME] AESI: today_vol=6746928, avg_intraday_vol=1071839 (4 sessions), elapsed_min=259, rvol=6.295, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:01,500 [INFO] [RVOL@TIME] BEG: today_vol=279280, avg_intraday_vol=320593 (4 sessions), elapsed_min=259, rvol=0.871, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:01,500 [WARNING] [GUARDRAIL] BEG blocked: RVOL@TIME 0.87 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=279280 | avg_intraday_vol=320593
+2026-09-25 13:49:01,636 [INFO] [RVOL@TIME] DLLL: today_vol=2548497, avg_intraday_vol=1594159 (4 sessions), elapsed_min=259, rvol=1.599, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:03,170 [INFO] [RVOL@TIME] CNTN: today_vol=731434, avg_intraday_vol=415206 (4 sessions), elapsed_min=259, rvol=1.762, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:03,536 [INFO] [RVOL@TIME] WNC: today_vol=584869, avg_intraday_vol=307468 (4 sessions), elapsed_min=259, rvol=1.902, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:03,539 [INFO] [RVOL@TIME] ALM: today_vol=5493742, avg_intraday_vol=2786183 (4 sessions), elapsed_min=259, rvol=1.972, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:03,689 [INFO] [RVOL@TIME] PPLI: today_vol=1131040, avg_intraday_vol=598705 (4 sessions), elapsed_min=259, rvol=1.889, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:06,156 [INFO] [RVOL@TIME] QCML: today_vol=538550, avg_intraday_vol=643942 (4 sessions), elapsed_min=259, rvol=0.836, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:06,156 [WARNING] [GUARDRAIL] QCML blocked: RVOL@TIME 0.84 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=538550 | avg_intraday_vol=643942
+2026-09-25 13:49:06,475 [INFO] [RVOL@TIME] MXL: today_vol=2333003, avg_intraday_vol=1264296 (4 sessions), elapsed_min=259, rvol=1.845, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:10,487 [INFO] [RVOL@TIME] QCMU: today_vol=118353, avg_intraday_vol=214701 (4 sessions), elapsed_min=259, rvol=0.551, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:10,488 [WARNING] [GUARDRAIL] QCMU blocked: RVOL@TIME 0.55 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=118353 | avg_intraday_vol=214701
+2026-09-25 13:49:11,376 [INFO] [RVOL@TIME] GSUI: today_vol=186190, avg_intraday_vol=332159 (4 sessions), elapsed_min=259, rvol=0.561, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:11,376 [WARNING] [GUARDRAIL] GSUI blocked: RVOL@TIME 0.56 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=186190 | avg_intraday_vol=332159
+2026-09-25 13:49:12,052 [INFO] [RVOL@TIME] WFF: today_vol=2701652, avg_intraday_vol=348284 (4 sessions), elapsed_min=259, rvol=7.757, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:13,001 [INFO] [RVOL@TIME] VIAV: today_vol=3463672, avg_intraday_vol=1534467 (4 sessions), elapsed_min=259, rvol=2.257, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:15,084 [INFO] [RVOL@TIME] MAAS: today_vol=108929, avg_intraday_vol=1705494 (4 sessions), elapsed_min=259, rvol=0.064, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:15,084 [WARNING] [GUARDRAIL] MAAS blocked: RVOL@TIME 0.06 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=108929 | avg_intraday_vol=1705494
+2026-09-25 13:49:15,572 [INFO] [RVOL@TIME] CRDO: today_vol=6055897, avg_intraday_vol=3484000 (4 sessions), elapsed_min=259, rvol=1.738, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:16,416 [INFO] [RVOL@TIME] GENI: today_vol=7956098, avg_intraday_vol=4886953 (4 sessions), elapsed_min=259, rvol=1.628, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:17,215 [INFO] [RVOL@TIME] WYY: today_vol=2271482, avg_intraday_vol=357272 (1 sessions), elapsed_min=259, rvol=6.358, threshold=0.65 (adaptive=1.00 session_discount=0.65 iex_scale=False)
+2026-09-25 13:49:19,122 [INFO] [RVOL@TIME] HOST: today_vol=189646, avg_intraday_vol=194746 (4 sessions), elapsed_min=259, rvol=0.974, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:19,123 [WARNING] [GUARDRAIL] HOST blocked: RVOL@TIME 0.97 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=189646 | avg_intraday_vol=194746
+2026-09-25 13:49:22,046 [INFO] [RVOL@TIME] PUR: today_vol=237798, avg_intraday_vol=254539 (4 sessions), elapsed_min=259, rvol=0.934, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:22,046 [WARNING] [GUARDRAIL] PUR blocked: RVOL@TIME 0.93 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=237798 | avg_intraday_vol=254539
+2026-09-25 13:49:23,668 [INFO] [RVOL@TIME] VWAV: today_vol=106216, avg_intraday_vol=279464 (4 sessions), elapsed_min=259, rvol=0.380, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:23,668 [WARNING] [GUARDRAIL] VWAV blocked: RVOL@TIME 0.38 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=106216 | avg_intraday_vol=279464
+2026-09-25 13:49:25,227 [INFO] [RVOL@TIME] KDK: today_vol=11269274, avg_intraday_vol=1144906 (4 sessions), elapsed_min=259, rvol=9.843, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:26,647 [INFO] [RVOL@TIME] INDP: today_vol=372640, avg_intraday_vol=729657 (4 sessions), elapsed_min=259, rvol=0.511, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:26,647 [WARNING] [GUARDRAIL] INDP blocked: RVOL@TIME 0.51 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=372640 | avg_intraday_vol=729657
+2026-09-25 13:49:28,532 [INFO] [RVOL@TIME] MRAL: today_vol=64448, avg_intraday_vol=172259 (4 sessions), elapsed_min=259, rvol=0.374, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:28,532 [WARNING] [GUARDRAIL] MRAL blocked: RVOL@TIME 0.37 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=64448 | avg_intraday_vol=172259
+2026-09-25 13:49:29,496 [INFO] [RVOL@TIME] MEDS: today_vol=241445, avg_intraday_vol=1015078 (4 sessions), elapsed_min=259, rvol=0.238, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:29,496 [WARNING] [GUARDRAIL] MEDS blocked: RVOL@TIME 0.24 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=241445 | avg_intraday_vol=1015078
+2026-09-25 13:49:31,169 [INFO] [RVOL@TIME] IREG: today_vol=627785, avg_intraday_vol=559623 (4 sessions), elapsed_min=259, rvol=1.122, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:31,369 [INFO] [RVOL@TIME] BRVE: today_vol=155833, avg_intraday_vol=402910 (4 sessions), elapsed_min=259, rvol=0.387, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:31,369 [WARNING] [GUARDRAIL] BRVE blocked: RVOL@TIME 0.39 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=155833 | avg_intraday_vol=402910
+2026-09-25 13:49:31,670 [INFO] [RVOL@TIME] FISN: today_vol=313198, avg_intraday_vol=378001 (4 sessions), elapsed_min=259, rvol=0.829, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:31,670 [WARNING] [GUARDRAIL] FISN blocked: RVOL@TIME 0.83 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=313198 | avg_intraday_vol=378001
+2026-09-25 13:49:31,998 [INFO] [RVOL@TIME] BWET: today_vol=54666, avg_intraday_vol=174198 (4 sessions), elapsed_min=259, rvol=0.314, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:31,998 [WARNING] [GUARDRAIL] BWET blocked: RVOL@TIME 0.31 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=54666 | avg_intraday_vol=174198
+2026-09-25 13:49:32,253 [INFO] [RVOL@TIME] TNMG: today_vol=36968, avg_intraday_vol=808439 (4 sessions), elapsed_min=259, rvol=0.046, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:32,253 [WARNING] [GUARDRAIL] TNMG blocked: RVOL@TIME 0.05 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=36968 | avg_intraday_vol=808439
+2026-09-25 13:49:33,327 [INFO] [RVOL@TIME] USEA: today_vol=157746, avg_intraday_vol=353816 (2 sessions), elapsed_min=259, rvol=0.446, threshold=0.80 (adaptive=1.00 session_discount=0.80 iex_scale=False)
+2026-09-25 13:49:33,327 [WARNING] [GUARDRAIL] USEA blocked: RVOL@TIME 0.45 < rvol_threshold 0.80 (adaptive=1.00 sessions=2 discount=0.80) | today_vol=157746 | avg_intraday_vol=353816
+2026-09-25 13:49:34,182 [INFO] [RVOL@TIME] BOIL: today_vol=3939691, avg_intraday_vol=6023133 (4 sessions), elapsed_min=259, rvol=0.654, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:34,182 [WARNING] [GUARDRAIL] BOIL blocked: RVOL@TIME 0.65 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=3939691 | avg_intraday_vol=6023133
+2026-09-25 13:49:35,048 [INFO] [RVOL@TIME] IRE: today_vol=4678164, avg_intraday_vol=3214938 (4 sessions), elapsed_min=259, rvol=1.455, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:35,839 [WARNING] [GUARDRAIL] LBGJ blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-25 13:49:36,282 [INFO] [RVOL@TIME] SHMD: today_vol=8033597, avg_intraday_vol=464740 (4 sessions), elapsed_min=259, rvol=17.286, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:38,066 [INFO] [RVOL@TIME] AMZZ: today_vol=78404, avg_intraday_vol=252133 (4 sessions), elapsed_min=259, rvol=0.311, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:38,066 [WARNING] [GUARDRAIL] AMZZ blocked: RVOL@TIME 0.31 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=78404 | avg_intraday_vol=252133
+2026-09-25 13:49:38,717 [INFO] [RVOL@TIME] GOTU: today_vol=614956, avg_intraday_vol=701331 (4 sessions), elapsed_min=259, rvol=0.877, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:38,717 [WARNING] [GUARDRAIL] GOTU blocked: RVOL@TIME 0.88 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=614956 | avg_intraday_vol=701331
+2026-09-25 13:49:40,603 [INFO] [RVOL@TIME] GME: today_vol=8533782, avg_intraday_vol=4875522 (4 sessions), elapsed_min=259, rvol=1.750, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:41,311 [INFO] [RVOL@TIME] TBBB: today_vol=511728, avg_intraday_vol=320537 (4 sessions), elapsed_min=259, rvol=1.596, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:42,003 [INFO] [RVOL@TIME] UNHG: today_vol=445898, avg_intraday_vol=423548 (4 sessions), elapsed_min=259, rvol=1.053, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:42,087 [INFO] [RVOL@TIME] FLY: today_vol=2332554, avg_intraday_vol=1069222 (4 sessions), elapsed_min=259, rvol=2.182, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:42,715 [INFO] [RVOL@TIME] SUIG: today_vol=838327, avg_intraday_vol=1412250 (4 sessions), elapsed_min=259, rvol=0.594, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:42,716 [WARNING] [GUARDRAIL] SUIG blocked: RVOL@TIME 0.59 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=838327 | avg_intraday_vol=1412250
+2026-09-25 13:49:43,436 [INFO] [RVOL@TIME] PYPL: today_vol=9274289, avg_intraday_vol=6018300 (4 sessions), elapsed_min=259, rvol=1.541, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:45,851 [INFO] [RVOL@TIME] TMF: today_vol=6862331, avg_intraday_vol=4324606 (4 sessions), elapsed_min=259, rvol=1.587, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:47,334 [INFO] [RVOL@TIME] UGP: today_vol=4099246, avg_intraday_vol=1869993 (4 sessions), elapsed_min=259, rvol=2.192, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:49,584 [INFO] [RVOL@TIME] HAYW: today_vol=4334046, avg_intraday_vol=1138392 (4 sessions), elapsed_min=259, rvol=3.807, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:49,928 [INFO] [RVOL@TIME] TWLO: today_vol=1931412, avg_intraday_vol=1309725 (4 sessions), elapsed_min=259, rvol=1.475, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:51,130 [INFO] [RVOL@TIME] SMCL: today_vol=509762, avg_intraday_vol=575549 (4 sessions), elapsed_min=259, rvol=0.886, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:51,130 [WARNING] [GUARDRAIL] SMCL blocked: RVOL@TIME 0.89 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=509762 | avg_intraday_vol=575549
+2026-09-25 13:49:51,321 [INFO] [RVOL@TIME] PAM: today_vol=126206, avg_intraday_vol=154752 (4 sessions), elapsed_min=259, rvol=0.816, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:51,321 [WARNING] [GUARDRAIL] PAM blocked: RVOL@TIME 0.82 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=126206 | avg_intraday_vol=154752
+2026-09-25 13:49:51,557 [INFO] [RVOL@TIME] DNN: today_vol=21385984, avg_intraday_vol=14895577 (4 sessions), elapsed_min=259, rvol=1.436, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:49:53,296 [INFO] [GUARDRAIL SUMMARY] Rejected: 48 | DollarVol: 0 | RVOL: 25 | GapChase: 1 | MinPrice: 0 | Other: 3
+2026-09-25 13:49:53,296 [INFO] [FUNNEL] targets=74 guardrail_rejected=48 (rvol=25) -> signals_generated=11 -> conf_gate(-9) -> sector_cap(-0) -> final=2
+2026-09-25 13:49:53,296 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-25 13:49:53,296 [INFO] [SCAN] Breakdown — Sweepea: 2, TrendlineBreakout: 9 | Errors: 0 | Total: 2
+2026-09-25 13:49:53,296 [INFO] [SCAN] TOP5_RAW #1: TBBB BUY $53.02 conf=93% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $1.50
+2026-09-25 13:49:53,296 [INFO] [SCAN] TOP5_RAW #2: MXL BUY $85.31 conf=89% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $6.13
+2026-09-25 13:49:53,362 [INFO] Live holdings: 2 excluded
+2026-09-25 13:49:53,363 [INFO] Confidence gate (long>=82%, short>=82%) + cross-ref: 2 eligible
+2026-09-25 13:49:53,363 [INFO] [TRADE] TOP5_ELIGIBLE #1: TBBB BUY $53.02 conf=93% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $1.50
+2026-09-25 13:49:53,363 [INFO] [TRADE] TOP5_ELIGIBLE #2: MXL BUY $85.31 conf=89% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $6.13
+2026-09-25 13:49:54,239 [INFO] Scan email sent
+2026-09-25 13:49:54,585 [INFO] LIVE PROBE APUS: scale-in skipped; price 6.81 below VWAP 7.76
+2026-09-25 13:49:54,585 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-25 13:49:54,613 [INFO] EXECUTE: BUY TBBB @ $53.02 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $1.50
+2026-09-25 13:49:54,928 [INFO] LIVE PROBE TBBB: sizing 2490 → 1 share(s); no automatic scale-in
+2026-09-25 13:49:54,970 [INFO] TP targets set TBBB: tighten@$56.20 (+6%) close@$63.62 (+20%) profile=unusual_options
+2026-09-25 13:49:55,876 [INFO] Trailing stop placed TBBB: 5.0% GTC (1 shares)
+2026-09-25 13:49:55,877 [INFO] BUY TBBB: 1 @ $53.02 | TRAILING SL 5.0% | Tier: MEDIUM | Sweepea
+2026-09-25 13:49:57,008 [INFO] EXECUTE: BUY MXL @ $85.31 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $6.13
+2026-09-25 13:49:57,442 [INFO] LIVE PROBE MXL: sizing 1547 → 1 share(s); no automatic scale-in
+2026-09-25 13:49:57,476 [INFO] TP targets set MXL: tighten@$90.43 (+6%) close@$102.37 (+20%) profile=ti_momentum
+2026-09-25 13:49:58,235 [INFO] Trailing stop placed MXL: 8.0% GTC (1 shares)
+2026-09-25 13:49:58,235 [INFO] BUY MXL: 1 @ $85.31 | TRAILING SL 8.0% | Tier: EXTREME | Sweepea
+2026-09-25 13:49:59,316 [INFO] Heartbeat: 2026-09-25T13:49:59.316587
+2026-09-25 13:52:24,742 [INFO] ======================================================================
+2026-09-25 13:52:24,742 [INFO] STATUS
+2026-09-25 13:52:24,742 [INFO] Equity:     $110,045.26
+2026-09-25 13:52:24,742 [INFO] Daily P&L:  $0.00  |  Trades: 3
+2026-09-25 13:52:24,742 [INFO] Positions:  4
+2026-09-25 13:52:24,742 [INFO] Unrealized: $-205.10
+2026-09-25 13:52:24,742 [INFO]   APUS: 1 @ $6.65 | $0.08 (+1.25%)
+2026-09-25 13:52:24,742 [INFO]   MXL: 1 @ $94.13 | $-0.14 (-0.15%)
+2026-09-25 13:52:24,742 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-205.00 (-18.14%)
+2026-09-25 13:52:24,742 [INFO]   TBBB: 1 @ $53.39 | $-0.04 (-0.07%)
+2026-09-25 13:52:24,743 [INFO] ======================================================================
+2026-09-25 13:52:24,745 [INFO] Universe pruned: no expired tickers
+2026-09-25 13:52:59,749 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-25 13:52:59,778 [INFO] [CRYPTO] No open positions
+2026-09-25 13:53:03,649 [INFO] [CRYPTO] #1: BTC/USD SELL @ 83908.9750 conf=72% | RSI=42.3 3-bar downtrend
+2026-09-25 13:53:03,649 [INFO] [CRYPTO] #2: BCH/USD SELL @ 333.1000 conf=72% | RSI=42.1 3-bar downtrend
+2026-09-25 13:53:03,650 [INFO] [CRYPTO] #3: PAXG/USD SELL @ 4271.2070 conf=66% | RSI=45.9 3-bar downtrend
+2026-09-25 13:53:03,650 [INFO] [CRYPTO] #4: LTC/USD SELL @ 69.8772 conf=61% | RSI=48.7 3-bar downtrend
+2026-09-25 13:53:03,650 [INFO] [CRYPTO] #5: BONK/USD SELL @ 0.0000 conf=56% | RSI=51.4 3-bar downtrend
+2026-09-25 13:53:03,650 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-25 13:53:04,340 [WARNING] Schwab API degraded: 76.6% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-25 13:53:04,342 [INFO] Options scan: injecting 4 priority-queue symbol(s): ['GLXZ', 'AETN', 'HLSQ', 'AIFF']
+2026-09-25 13:53:04,342 [INFO] Options scan: starting — 177 ticker(s) in universe
+2026-09-25 13:53:37,705 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.schwabapi.com', port=443): Read timed out. (read timeout=15)")': /marketdata/v1/pricehistory?frequencyType=minute&frequency=1&symbol=MA&startDate=1790272402699&endDate=1790358802699
+2026-09-25 13:53:47,799 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-25 13:53:48,290 [INFO] Schwab: quote unavailable for SHMD; Alpaca fallback used
+2026-09-25 13:53:49,016 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-25 13:53:49,799 [INFO] Schwab: quote unavailable for IREG; Alpaca fallback used
+2026-09-25 13:53:52,205 [INFO] Schwab: quote unavailable for CYPH; Alpaca fallback used
+2026-09-25 13:53:53,356 [INFO] Schwab: quote unavailable for NBIL; Alpaca fallback used
+2026-09-25 13:53:55,239 [INFO] Schwab: quote unavailable for KOD; Alpaca fallback used
+2026-09-25 13:54:06,841 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-25 13:54:08,494 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-25 13:54:10,525 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-25 13:54:13,916 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-25 13:54:15,277 [INFO] Schwab: quote unavailable for AESI; Alpaca fallback used
+2026-09-25 13:54:16,292 [INFO] Schwab: quote unavailable for VWAV; Alpaca fallback used
+2026-09-25 13:54:16,989 [INFO] Schwab: quote unavailable for HUBC; Alpaca fallback used
+2026-09-25 13:54:17,780 [INFO] Schwab: quote unavailable for MRAL; Alpaca fallback used
+2026-09-25 13:54:18,583 [INFO] Schwab: quote unavailable for BWET; Alpaca fallback used
+2026-09-25 13:54:19,448 [INFO] Schwab: quote unavailable for BOIL; Alpaca fallback used
+2026-09-25 13:54:20,282 [INFO] Schwab: quote unavailable for IRE; Alpaca fallback used
+2026-09-25 13:54:21,057 [INFO] Schwab: quote unavailable for LBGJ; Alpaca fallback used
+2026-09-25 13:54:21,817 [WARNING] Schwab: Failed to get quote for MKT: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/MKT; Alpaca fallback failed: 'MKT'
+2026-09-25 13:54:22,993 [INFO] Schwab: quote unavailable for KOLD; Alpaca fallback used
+2026-09-25 13:54:24,812 [INFO] Schwab: quote unavailable for AIFF; Alpaca fallback used
+2026-09-25 13:54:25,510 [INFO] Options scan: 1 signal(s) filtered by market regime NEUTRAL (strength=0.00): TBBB(MomentumCall, unusual_volume_blocked_in_NEUTRAL)
+2026-09-25 13:54:25,510 [INFO] Options scan: 0 signal(s) | universe=177 | fail summary: no_MarketStructureBreakoutCall=177, no_OpeningRangeBreakoutCall=177, no_MomentumContinuationCall=177, no_PocReclaimCall=177, no_GapBreakoutCall=177, no_MomentumCall=176, no_BearPut=176, no_BearCallSpread=176, no_ShortSqueeze=176, no_MeanReversion=176, no_BreakoutRetest=176, no_TrendPullbackSpread=176, no_IronCondor=176, no_Butterfly=176, no_signal=176
+2026-09-25 13:54:25,511 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_OpeningRangeBreakoutCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_MomentumContinuationCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_PocReclaimCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_GapBreakoutCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_MomentumCall: SHMD, WYY, KDK, STEM, GLND, MNTK | no_BearPut: SHMD, WYY, KDK, STEM, GLND, MNTK | no_BearCallSpread: SHMD, WYY, KDK, STEM, GLND, MNTK | no_ShortSqueeze: SHMD, WYY, KDK, STEM, GLND, MNTK | no_MeanReversion: SHMD, WYY, KDK, STEM, GLND, MNTK | no_BreakoutRetest: SHMD, WYY, KDK, STEM, GLND, MNTK | no_TrendPullbackSpread: SHMD, WYY, KDK, STEM, GLND, MNTK | no_IronCondor: SHMD, WYY, KDK, STEM, GLND, MNTK | no_Butterfly: SHMD, WYY, KDK, STEM, GLND, MNTK | no_signal: SHMD, WYY, KDK, STEM, GLND, MNTK
+2026-09-25 13:54:25,511 [INFO] [OPTIONS] No qualifying signals this cycle | open=1
+2026-09-25 13:54:25,511 [INFO] [OPTIONS] Options: 1 position(s)
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=14
+2026-09-25 13:54:25,970 [INFO] Quarterly P&L: +13.1% (target >= 50%)
+2026-09-25 13:54:25,971 [INFO] [SCAN] Market sentiment: neutral
+2026-09-25 13:54:28,902 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-25 13:54:28,978 [INFO] [SCAN] 73 symbols (filtered, 8 workers): GLXZ, AETN, HLSQ, AIFF, INLF, USDEW, WHLR, SLMT, USDE, BEG, AESI, DLLL, CNTN, WNC, ALM, PPLI, QCML, QCMU, MAAS, GSUI, WFF, AVX, STEM, VIAV, GLND, CRDO, GENI, WYY, ONEN, HOST, PFSA, NTRB, PUR, TRT, VWAV, VBIO, KDK, HUBC, INDP, KRSA, SRZN, FOFO, MRAL, MEDS, IREG, BRVE, FISN, BWET, TNMG, USEA, BOIL, IRE, IMNM, BUG, CYPH, HUTG, NBIL, FIP, NTRA, AARD, MGRC, VEON, KOD, TMDX, SXC, MQ, AAON, LOAR, BV, PROK, HHH, KOLD, SYNA
+2026-09-25 13:54:28,983 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-25 13:54:32,008 [INFO] [RVOL@TIME] HLSQ: today_vol=466528, avg_intraday_vol=1169569 (4 sessions), elapsed_min=264, rvol=0.399, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:32,008 [WARNING] [GUARDRAIL] HLSQ blocked: RVOL@TIME 0.40 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=466528 | avg_intraday_vol=1169569
+2026-09-25 13:54:32,107 [INFO] [RVOL@TIME] AIFF: today_vol=44292193, avg_intraday_vol=484396 (2 sessions), elapsed_min=264, rvol=91.438, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-25 13:54:33,988 [INFO] [RVOL@TIME] SLMT: today_vol=236173, avg_intraday_vol=519878 (2 sessions), elapsed_min=264, rvol=0.454, threshold=0.80 (adaptive=1.00 session_discount=0.80 iex_scale=False)
+2026-09-25 13:54:33,988 [WARNING] [GUARDRAIL] SLMT blocked: RVOL@TIME 0.45 < rvol_threshold 0.80 (adaptive=1.00 sessions=2 discount=0.80) | today_vol=236173 | avg_intraday_vol=519878
+2026-09-25 13:54:36,638 [INFO] [RVOL@TIME] BEG: today_vol=279480, avg_intraday_vol=326216 (4 sessions), elapsed_min=264, rvol=0.857, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:36,638 [WARNING] [GUARDRAIL] BEG blocked: RVOL@TIME 0.86 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=279480 | avg_intraday_vol=326216
+2026-09-25 13:54:36,801 [INFO] [RVOL@TIME] AESI: today_vol=6854685, avg_intraday_vol=1094421 (4 sessions), elapsed_min=264, rvol=6.263, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:36,933 [INFO] [RVOL@TIME] DLLL: today_vol=2552672, avg_intraday_vol=1606250 (4 sessions), elapsed_min=264, rvol=1.589, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:38,305 [INFO] [RVOL@TIME] CNTN: today_vol=732910, avg_intraday_vol=424523 (4 sessions), elapsed_min=264, rvol=1.726, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:38,472 [INFO] [RVOL@TIME] WNC: today_vol=593972, avg_intraday_vol=309661 (4 sessions), elapsed_min=264, rvol=1.918, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:38,619 [INFO] [RVOL@TIME] ALM: today_vol=5608734, avg_intraday_vol=2827225 (4 sessions), elapsed_min=264, rvol=1.984, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:38,737 [INFO] [RVOL@TIME] PPLI: today_vol=1162949, avg_intraday_vol=606176 (4 sessions), elapsed_min=264, rvol=1.919, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:41,319 [INFO] [RVOL@TIME] QCML: today_vol=539075, avg_intraday_vol=648208 (4 sessions), elapsed_min=264, rvol=0.832, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:41,319 [WARNING] [GUARDRAIL] QCML blocked: RVOL@TIME 0.83 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=539075 | avg_intraday_vol=648208
+2026-09-25 13:54:41,477 [INFO] [RVOL@TIME] QCMU: today_vol=118353, avg_intraday_vol=216726 (4 sessions), elapsed_min=264, rvol=0.546, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:41,477 [WARNING] [GUARDRAIL] QCMU blocked: RVOL@TIME 0.55 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=118353 | avg_intraday_vol=216726
+2026-09-25 13:54:46,151 [INFO] [RVOL@TIME] MAAS: today_vol=109884, avg_intraday_vol=1723547 (4 sessions), elapsed_min=264, rvol=0.064, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:46,151 [WARNING] [GUARDRAIL] MAAS blocked: RVOL@TIME 0.06 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=109884 | avg_intraday_vol=1723547
+2026-09-25 13:54:46,315 [INFO] [RVOL@TIME] GSUI: today_vol=186790, avg_intraday_vol=337259 (4 sessions), elapsed_min=264, rvol=0.554, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:46,316 [WARNING] [GUARDRAIL] GSUI blocked: RVOL@TIME 0.55 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=186790 | avg_intraday_vol=337259
+2026-09-25 13:54:46,484 [INFO] [RVOL@TIME] WFF: today_vol=2738506, avg_intraday_vol=359651 (4 sessions), elapsed_min=264, rvol=7.614, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:48,122 [INFO] [RVOL@TIME] VIAV: today_vol=3501880, avg_intraday_vol=1553885 (4 sessions), elapsed_min=264, rvol=2.254, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-25 13:54:48,416 [INFO] [RVOL@TIME] CRDO: today_vol=6123775, avg_intraday_vol=3511290 (4 sessions), elapsed_min=264, rvol=1.744, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)

@@ -1,15 +1,23 @@
 {
-  "generated_at": "2026-09-25T11:31:31-04:00",
+  "generated_at": "2026-09-25T13:49:53-04:00",
   "date": "2026-09-25",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "BENF",
+      "symbol": "TBBB",
       "action": "buy",
-      "price": 1.7897,
-      "confidence": 0.9,
-      "strategy": "MomentumScalp",
-      "reason": "Momentum scalp up=11.2% rvol=20.8x near HOD $1.79 target +5% or ride on continuation"
+      "price": 53.02,
+      "confidence": 0.93,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.50"
+    },
+    {
+      "symbol": "MXL",
+      "action": "buy",
+      "price": 85.31,
+      "confidence": 0.89,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $6.13"
     }
   ]
 }

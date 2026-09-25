@@ -60,7 +60,12 @@ try:
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
-    from selenium.common.exceptions import SessionNotCreatedException, TimeoutException
+    from selenium.common.exceptions import (
+        NoSuchWindowException,
+        SessionNotCreatedException,
+        TimeoutException,
+        WebDriverException,
+    )
     SELENIUM_OK = True
 except ImportError:
     SELENIUM_OK = False
@@ -167,6 +172,55 @@ TABLE_WAIT_SEC = 20
 PAGE_LOAD_SEC  = 15
 RENDER_GRACE_SEC = 2
 DROPDOWN_REFRESH_SEC = 2
+# Max seconds driver.get() may block before Selenium raises TimeoutException.
+# Keeps a stalled page load from hanging the entire scan loop indefinitely.
+PAGE_LOAD_TIMEOUT_SEC = 30
+
+
+def _apply_page_load_timeout(driver) -> None:
+    """Best-effort page-load timeout; safe for mocks and older drivers."""
+    try:
+        driver.set_page_load_timeout(PAGE_LOAD_TIMEOUT_SEC)
+    except (AttributeError, WebDriverException):
+        pass
+
+
+def _stop_page_loading(driver) -> None:
+    """Best-effort stop of an in-flight page load (CDP first, then window.stop())."""
+    try:
+        driver.execute_cdp_cmd("Page.stopLoading", {})
+        return
+    except Exception:
+        pass
+    try:
+        driver.execute_script("window.stop();")
+    except Exception:
+        pass
+
+
+def _navigate_to_scan_url(driver, url: str) -> bool:
+    """Navigate to *url* without blocking on page load when possible.
+
+    Prefers Chrome DevTools Protocol ``Page.navigate``, which returns promptly
+    even for an Edge session attached via the remote-debugging port (where a
+    blocking ``driver.get()`` may stall indefinitely despite the page-load
+    timeout).  Falls back to ``driver.get(url)`` when CDP is unavailable or
+    unsupported by the driver.
+
+    Returns True when CDP navigation was used, False on the ``get()`` fallback.
+    ``NoSuchWindowException`` (dead window/session) is always re-raised so the
+    caller's per-scan recovery/retry logic runs; ``TimeoutException`` from the
+    fallback ``get()`` also propagates to the caller.
+    """
+    try:
+        driver.execute_cdp_cmd("Page.navigate", {"url": url})
+        return True
+    except NoSuchWindowException:
+        raise  # dead session — let the caller's recovery logic handle it
+    except (AttributeError, WebDriverException):
+        pass  # CDP unavailable/unsupported — fall back to classic get()
+    driver.get(url)
+    return False
 
 
 # ── Persistent Edge driver singleton ─────────────────────────────
@@ -404,7 +458,7 @@ def _create_edge_driver(chrome_profile: Optional[str] = None, remote_debug_port:
             else:
                 driver = webdriver.Edge(service=service, options=retry_opts)
 
-    driver.set_page_load_timeout(45)
+    _apply_page_load_timeout(driver)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
     debug_hint = f" (remote-debug port {remote_debug_port})" if remote_debug_port > 0 else ""
     print(f"[INFO ] Edge browser opened{debug_hint}. Stays open across scrape cycles; re-attachable on restart.")
@@ -1064,6 +1118,7 @@ def scrape_tradeideas(
             "Install packages: pip install selenium webdriver-manager pillow"
         )
 
+    global _edge_driver
     results: dict[str, list[str]] = {}
     # Reuse the persistent Edge window; re-attach if already running, else open new.
     driver = _get_driver(chrome_profile=chrome_profile, remote_debug_port=remote_debug_port)
@@ -1102,49 +1157,99 @@ def scrape_tradeideas(
             url   = scan["url"]
             label = scan["label"]
 
-            print(f"\n[....] Loading {url}")
-            try:
-                driver.get(url)
-            except TimeoutException:
-                print(f"[WARN ] Page load timeout for {scan_key}; continuing with partial DOM")
-
-            # Wait for body/div to appear
-            for sel in ["body", "div"]:
+            tickers: list[str] = []
+            retried = False
+            while True:
                 try:
-                    WebDriverWait(driver, TABLE_WAIT_SEC).until(
-                        EC.presence_of_element_located((By.CSS_SELECTOR, sel))
-                    )
-                    break
-                except Exception:
-                    continue
+                    print(f"\n[....] Loading {url}")
+                    _apply_page_load_timeout(driver)
+                    try:
+                        _navigate_to_scan_url(driver, url)
+                    except TimeoutException:
+                        print(f"[WARN ] Page load timeout for {scan_key}; continuing with partial DOM")
+                        _stop_page_loading(driver)
 
-            # Short grace period for React heatmap to render.
-            time.sleep(RENDER_GRACE_SEC)
+                    # Wait for body/div to appear
+                    for sel in ["body", "div"]:
+                        try:
+                            WebDriverWait(driver, TABLE_WAIT_SEC).until(
+                                EC.presence_of_element_located((By.CSS_SELECTOR, sel))
+                            )
+                            break
+                        except Exception:
+                            continue
 
-            if scan.get("interaction") == "drag_drop":
-                local_select_minutes = 15 if select_minutes is None else select_minutes
-                toplist_results = _scrape_toplists(
-                    driver,
-                    select_minutes=local_select_minutes,
-                    update_config=update_config,
-                )
-                results.update(toplist_results)
-                tickers = [t for lst in toplist_results.values() for t in lst]
-            elif scan.get("interaction") == "stock_races":
-                race_results = _scrape_momentum_scanner_races(driver)
-                results.update(race_results)
-                tickers = [t for lst in race_results.values() for t in lst]
-            else:
-                # Optionally select a timeframe dropdown before scraping.
-                if select_minutes is not None:
-                    found = _try_select_timeframe(driver, select_minutes)
-                    if not found:
-                        print(f"[WARN ] Could not find {select_minutes}-min dropdown — scraping current view")
+                    # Short grace period for React heatmap to render.
+                    time.sleep(RENDER_GRACE_SEC)
+
+                    if scan.get("interaction") == "drag_drop":
+                        local_select_minutes = 15 if select_minutes is None else select_minutes
+                        toplist_results = _scrape_toplists(
+                            driver,
+                            select_minutes=local_select_minutes,
+                            update_config=update_config,
+                        )
+                        results.update(toplist_results)
+                        tickers = [t for lst in toplist_results.values() for t in lst]
+                    elif scan.get("interaction") == "stock_races":
+                        race_results = _scrape_momentum_scanner_races(driver)
+                        results.update(race_results)
+                        tickers = [t for lst in race_results.values() for t in lst]
                     else:
-                        time.sleep(DROPDOWN_REFRESH_SEC)
+                        # Optionally select a timeframe dropdown before scraping.
+                        if select_minutes is not None:
+                            found = _try_select_timeframe(driver, select_minutes)
+                            if not found:
+                                print(f"[WARN ] Could not find {select_minutes}-min dropdown — scraping current view")
+                            else:
+                                time.sleep(DROPDOWN_REFRESH_SEC)
 
-                tickers = _extract_tickers(driver)
-                results[scan_key] = tickers
+                        tickers = _extract_tickers(driver)
+                        results[scan_key] = tickers
+                    break  # scan completed (possibly with zero tickers)
+                except (NoSuchWindowException, SessionNotCreatedException, WebDriverException) as exc:
+                    # Browser window/session died (e.g. user closed the tab or Edge
+                    # re-attached to a stale handle).  Re-attach/recreate the driver
+                    # and retry THIS scan key exactly once — never kill browser
+                    # processes, and never abort the remaining scan keys.
+                    if retried:
+                        print(
+                            f"[WARN ] {scan_key} ({url}): browser session still broken after "
+                            f"driver recovery ({type(exc).__name__}: {exc}) — recording empty "
+                            f"result and continuing with the next scan"
+                        )
+                        results.setdefault(scan_key, [])
+                        tickers = []
+                        break
+                    retried = True
+                    print(
+                        f"[WARN ] {scan_key} ({url}): browser session lost "
+                        f"({type(exc).__name__}: {exc}) — re-attaching/recreating Edge "
+                        f"driver and retrying this scan once"
+                    )
+                    _edge_driver = None  # force re-attach on remote debug port / fresh window
+                    try:
+                        driver = _get_driver(
+                            chrome_profile=chrome_profile,
+                            remote_debug_port=remote_debug_port,
+                        )
+                    except Exception as exc2:
+                        print(
+                            f"[WARN ] {scan_key} ({url}): driver recovery failed ({exc2}) — "
+                            f"recording empty result and continuing with the next scan"
+                        )
+                        results.setdefault(scan_key, [])
+                        tickers = []
+                        break
+
+            if not tickers:
+                # Zero tickers is NOT an error (screen may be legitimately empty),
+                # but make it visible so login/UI failures are not silent.
+                print(
+                    f"[WARN ] {scan_key} ({url}): 0 valid tickers captured — "
+                    f"screen may be legitimately empty, or login/UI failed"
+                )
+
             print(f"[OK   ] {scan_key}: {len(tickers)} tickers — {tickers[:10]}{'…' if len(tickers)>10 else ''}")
 
             if scan["target"] == "BOTH":
@@ -1190,7 +1295,7 @@ def scrape_tradeideas(
 
             # Navigate away so the tab goes blank
             try:
-                driver.get("about:blank")
+                _navigate_to_scan_url(driver, "about:blank")
             except Exception:
                 pass
 
