@@ -101,6 +101,12 @@ def _is_inactive_asset_error(error: Exception) -> bool:
     return "40010001" in message or ("asset" in message and "not active" in message)
 
 
+# Grace window (seconds) before an accepted-but-invisible exit order is treated
+# as dead. Within the window an exit is never resubmitted — protects against
+# duplicate exits when the broker is slow to surface a fresh order in get_orders().
+PENDING_EXIT_GRACE_SECONDS = 30.0
+
+
 # ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 # Helpers
 # ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
@@ -186,6 +192,8 @@ class EnhancedExecutor:
         self._pdt_stop_blocked: Dict[str, float] = {}  # {symbol: stop_price} — broker-rejected stops; monitored in software
         self._pdt_overnight_forced: set = set()  # symbols where PDT also blocks close — forced overnight, no retries
         self._pdt_violation_alerted: bool = False  # tracks whether the PDT violation email has been sent this session
+        self._pending_exits: Dict[str, dict] = {}  # {symbol: pending exit order} — reconciled against broker fills before state clears
+        self._tp_check_lock = threading.Lock()  # nonblocking guard: scan thread vs 10s scalp monitor
         self._eod_close_done: object = None  # date of last completed EOD close (prevents duplicate runs)
         self.market_state: Optional[MarketState] = None
         self._options_cost_reserve: float = 0.0  # $ currently deployed in options — set by orchestrator each cycle
@@ -250,12 +258,21 @@ class EnhancedExecutor:
                     for sym, pending in self._live_probe_scale_in_pending.items()
                     if sym in entries
                 }
-                if not entries and not pending_scale_ins:
+                pending_exits = {
+                    sym: dict(pending)
+                    for sym, pending in self._pending_exit_map().items()
+                    if sym in entries
+                }
+                if not entries and not pending_scale_ins and not pending_exits:
                     self._exit_state_path.unlink(missing_ok=True)
                     return
                 temp_path = self._exit_state_path.with_suffix(".tmp")
                 temp_path.write_text(
-                    json.dumps({"entries": entries, "live_probe_scale_in_pending": pending_scale_ins}),
+                    json.dumps({
+                        "entries": entries,
+                        "live_probe_scale_in_pending": pending_scale_ins,
+                        "pending_exits": pending_exits,
+                    }),
                     encoding="utf-8",
                 )
                 temp_path.replace(self._exit_state_path)
@@ -303,6 +320,11 @@ class EnhancedExecutor:
             self._live_probe_scale_in_pending = {
                 sym: pending
                 for sym, pending in saved_state.get("live_probe_scale_in_pending", {}).items()
+                if sym in self._entry_log
+            }
+            self._pending_exits = {
+                sym: pending
+                for sym, pending in saved_state.get("pending_exits", {}).items()
                 if sym in self._entry_log
             }
             self._save_exit_state()
@@ -2456,10 +2478,10 @@ class EnhancedExecutor:
             )
 
             try:
-                self.client.cancel_order_by_id(order_id)
-                time.sleep(0.3)
-
                 if regular:
+                    self.client.cancel_order_by_id(order_id)
+                    time.sleep(0.3)
+
                     # If the original was a limit buy and the limit was more than 1%
                     # below the current ask, the order was defensive/passive — don't
                     # blast it to market (bad fill); just cancel and let the next
@@ -2483,18 +2505,26 @@ class EnhancedExecutor:
                         time_in_force=TimeInForce.DAY,
                     )
                 else:
-                    # Best-effort limit at current price for extended hours
+                    # Extended hours: resolve and validate the replacement price
+                    # BEFORE cancelling the working order. If no usable quote is
+                    # available, keep the existing exit order resting — cancelling
+                    # first would leave the position with no working exit at all.
                     try:
                         bar = self.client.get_latest_quote(sym)
                         if side == OrderSide.BUY:
                             cur_price = round(float(bar.ask_price or 0), 2)
                         else:
                             cur_price = round(float(bar.bid_price or 0), 2)
-                    except Exception:
-                        cur_price = float(getattr(order, "limit_price", None) or 0)
-                    if cur_price <= 0:
-                        log.warning(f"STALE ORDER {sym}: can't determine price, skipping")
+                    except Exception as quote_err:
+                        log.warning(
+                            f"STALE ORDER {sym}: quote unavailable ({quote_err}) — keeping working order"
+                        )
                         continue
+                    if cur_price <= 0:
+                        log.warning(f"STALE ORDER {sym}: can't determine price — keeping working order")
+                        continue
+                    self.client.cancel_order_by_id(order_id)
+                    time.sleep(0.3)
                     req = LimitOrderRequest(
                         symbol=sym, qty=qty, side=side,
                         limit_price=cur_price,
@@ -2510,6 +2540,88 @@ class EnhancedExecutor:
             except Exception as e:
                 log.warning(f"STALE ORDER {sym}: replace failed: {e}")
 
+    # ── Pending-exit reconciliation (fill-aware exit management) ─────────────
+    def _pending_exit_map(self) -> Dict[str, dict]:
+        """Lazily-initialized {symbol: pending exit} map.
+
+        A bot exit (scalp scale-out, ratchet/TP close, time-loss close) is
+        recorded here once the broker accepts the order. Exit state is cleared
+        only when the broker confirms the position is flat — never at submit.
+        """
+        pending = getattr(self, "_pending_exits", None)
+        if pending is None:
+            pending = {}
+            self._pending_exits = pending
+        return pending
+
+    @staticmethod
+    def _exit_order_still_open(sym: str, pending: dict, open_orders: list) -> bool:
+        """Match the recorded exit order against the broker's open orders."""
+        order_id = str(pending.get("order_id") or "")
+        coid = str(pending.get("coid") or "")
+        for order in open_orders or []:
+            if order_id and str(getattr(order, "id", "") or "") == order_id:
+                return True
+            if coid and str(getattr(order, "client_order_id", "") or "") == coid:
+                return True
+            if not order_id and not coid and getattr(order, "symbol", None) == sym:
+                return True
+        return False
+
+    def _reconcile_pending_exit(self, sym: str, qty_now: int, open_orders: list, now_ts: float) -> str:
+        """Classify a recorded pending exit against live broker state:
+          'filled_partial' — scale-out executed (position shrank by the sold qty)
+          'working'        — exit order live, position changing, or within grace
+          'retry'          — order gone with no fill effect; safe to re-evaluate
+        Never resubmit an exit while one is working — that is how duplicate
+        closes happen.
+        """
+        pending = self._pending_exit_map().get(sym)
+        if pending is None:
+            return "none"
+        qty_now = abs(int(qty_now))
+        orig_qty = abs(int(pending.get("orig_qty", qty_now) or qty_now))
+        order_is_open = self._exit_order_still_open(sym, pending, open_orders)
+        if pending.get("kind") == "scale_out":
+            filled_qty = max(0, orig_qty - qty_now)
+            requested_qty = int(pending.get("qty", 0) or 0)
+            if filled_qty >= requested_qty:
+                return "filled_partial"
+            if order_is_open:
+                return "working"
+            if filled_qty > 0:
+                # A terminal, partially-filled scale-out still booked profit;
+                # manage the smaller remaining position instead of duplicating
+                # the original sell quantity.
+                return "filled_partial"
+        elif qty_now != orig_qty and order_is_open:
+            # A still-working full close has changed the position size; wait for
+            # it to finish before deciding whether the remainder needs another exit.
+            return "working"
+        elif order_is_open:
+            return "working"
+        submitted_at = float(pending.get("submitted_at", 0) or 0)
+        if now_ts - submitted_at < PENDING_EXIT_GRACE_SECONDS:
+            # Fresh submit not yet visible in get_orders — wait, don't duplicate.
+            return "working"
+        return "retry"
+
+    def has_active_scalp_positions(self) -> bool:
+        """True when a MomentumScalp position still has live exit management.
+        Used by the 10s fast monitor; normal positions stay on the scan cadence."""
+        try:
+            tracked = (
+                set(self._tp_targets)
+                | set(self._intermediate_targets)
+                | set(self._pending_exit_map())
+            )
+        except Exception:
+            return False
+        return any(
+            self._entry_log.get(sym, {}).get("ti_profile") == "scalp"
+            for sym in tracked
+        )
+
     # ── ATR Take-Profit Checker ────────────────────────────────────────────────
     def _ratchet_params(self, sym: str) -> Tuple[float, float]:
         """Per-profile (arm_pct, giveback_pct) for the peak ratchet. Momentum
@@ -2519,12 +2631,27 @@ class EnhancedExecutor:
             return MOMENTUM_SCALP["tp_pct"], MOMENTUM_SCALP["ratchet_giveback_pct"]
         return TP_RATCHET_ARM_PCT, TP_RATCHET_GIVEBACK_PCT
 
-    def check_tp_targets(self) -> None:
+    def check_tp_targets(self, only_profiles: Optional[set] = None) -> None:
         """Dual-phase profit exit:
           Phase 1 (+TP_INTERMEDIATE_PCT, default +5%): cancel wide trail, place TP_INTERMEDIATE_TRAIL_PCT% trail
           Phase 2 (+TP_FINAL_PCT, default +10%): close full position at market
-        Called once per scan cycle.
+        Called once per scan cycle for every tracked position, and every 10s by
+        the fast monitor with only_profiles={"scalp"} for MomentumScalp names.
+        A nonblocking per-executor lock guarantees the scan thread and the fast
+        monitor can never race into duplicate exit orders.
         """
+        lock = getattr(self, "_tp_check_lock", None)
+        if lock is None:
+            lock = self._tp_check_lock = threading.Lock()
+        if not lock.acquire(blocking=False):
+            log.debug("check_tp_targets: skipped — another exit check is in flight")
+            return
+        try:
+            self._check_tp_targets_locked(only_profiles)
+        finally:
+            lock.release()
+
+    def _check_tp_targets_locked(self, only_profiles: Optional[set] = None) -> None:
         if not self._tp_targets and not self._intermediate_targets:
             return
         try:
@@ -2534,8 +2661,23 @@ class EnhancedExecutor:
             return
 
         all_syms = set(self._tp_targets) | set(self._intermediate_targets)
+        if only_profiles is not None:
+            all_syms = {
+                sym for sym in all_syms
+                if self._entry_log.get(sym, {}).get("ti_profile") in only_profiles
+            }
+            if not all_syms:
+                return
         to_clean = []
         state_changed = False
+        now_ts = time.time()
+        _open_orders_cache: Optional[list] = None
+
+        def _open_orders() -> list:
+            nonlocal _open_orders_cache
+            if _open_orders_cache is None:
+                _open_orders_cache = self.client.get_orders() or []
+            return _open_orders_cache
 
         for sym in list(all_syms):
             if self._entry_log.get(sym, {}).get("long_term_hold"):
@@ -2552,6 +2694,54 @@ class EnhancedExecutor:
             if cur <= 0:
                 continue
             is_long = qty > 0
+            close_side = OrderSide.SELL if is_long else OrderSide.BUY
+
+            # ── Pending exit reconciliation (fill-aware) ─────────────────────
+            # A submitted exit is never considered done at accept time: confirm
+            # the fill, keep waiting while it works, or release it only after it
+            # vanished with no fill effect past the grace window.
+            pending_exit = self._pending_exit_map().get(sym)
+            if pending_exit is not None:
+                try:
+                    open_orders = _open_orders()
+                except Exception as e:
+                    log.warning(f"Pending exit {sym}: order reconciliation failed ({e}) — waiting")
+                    continue
+                status = self._reconcile_pending_exit(sym, qty, open_orders, now_ts)
+                if status == "working":
+                    continue  # an exit order is live — never submit a duplicate
+                if status == "filled_partial":
+                    # Broker confirms the scale-out executed. Only NOW mark the
+                    # scalp as scaled out and protect the shares that remain.
+                    _arm_pct, _giveback_pct = self._ratchet_params(sym)
+                    entry_info = self._entry_log.get(sym, {})
+                    entry_info["scalp_scaled_out"] = True
+                    self._ratchet_armed.add(sym)
+                    self._pending_exit_map().pop(sym, None)
+                    state_changed = True
+                    log.info(
+                        f"SCALP SCALE-OUT FILLED {sym}: {pending_exit.get('qty')} sold, "
+                        f"{abs(qty)} remain — ratchet ({_giveback_pct:.0f}% giveback) + fresh trail engaged"
+                    )
+                    try:
+                        self.client.submit_order(TrailingStopOrderRequest(
+                            symbol=sym, qty=abs(qty), side=close_side,
+                            type=AlpacaOrderType.TRAILING_STOP,
+                            time_in_force=TimeInForce.GTC,
+                            trail_percent=_giveback_pct,
+                        ))
+                    except Exception as e:
+                        log.warning(f"Scalp remainder trail failed {sym}: {e}")
+                    continue  # ratchet governs the confirmed remainder
+                # status == "retry": order vanished with no fill effect
+                # (rejected/cancelled) — release the marker and re-evaluate below.
+                self._pending_exit_map().pop(sym, None)
+                state_changed = True
+                log.info(
+                    f"PENDING EXIT {sym}: {pending_exit.get('kind')} order "
+                    f"{pending_exit.get('coid') or pending_exit.get('order_id')} not open and "
+                    f"no fill detected — re-enabling exit evaluation"
+                )
 
             # ── Phase 2: profit exit (ratchet or legacy fixed target) ───────────
             final_tp = self._tp_targets.get(sym)
@@ -2597,7 +2787,7 @@ class EnhancedExecutor:
                                 # Cancel standing protective orders first — otherwise the
                                 # shares stay "held_for_orders" and the partial sell is rejected.
                                 try:
-                                    sym_orders = [o for o in (self.client.get_orders() or []) if o.symbol == sym]
+                                    sym_orders = [o for o in _open_orders() if o.symbol == sym]
                                     for _o in sym_orders:
                                         try:
                                             self.client.cancel_order_by_id(str(_o.id))
@@ -2607,32 +2797,32 @@ class EnhancedExecutor:
                                         time.sleep(0.4)
                                 except Exception:
                                     pass
-                                side = OrderSide.SELL if is_long else OrderSide.BUY
-                                self.client.submit_order(MarketOrderRequest(
-                                    symbol=sym, qty=half_qty, side=side,
+                                coid = f"apex-scalp-out-{sym}-{int(time.time())}"
+                                submitted = self.client.submit_order(MarketOrderRequest(
+                                    symbol=sym, qty=half_qty, side=close_side,
                                     time_in_force=TimeInForce.DAY,
+                                    client_order_id=coid,
                                 ))
-                                entry_info["scalp_scaled_out"] = True
-                                self._ratchet_armed.add(sym)
+                                # Accepted ≠ filled. scalp_scaled_out and the protective-stop
+                                # replacement wait for broker confirmation that the
+                                # position actually shrank (reconciliation at loop top).
+                                self._pending_exit_map()[sym] = {
+                                    "kind": "scale_out",
+                                    "qty": half_qty,
+                                    "orig_qty": abs(qty),
+                                    "coid": coid,
+                                    "order_id": str(getattr(submitted, "id", "") or ""),
+                                    "submitted_at": time.time(),
+                                }
                                 state_changed = True
                                 log.info(
-                                    f"SCALP SCALE-OUT {sym}: ${cur:.2f} hit +{arm_pct:.0f}% fast target "
-                                    f"→ sold {half_qty}/{abs(qty)} at market; ratchet ({giveback_pct:.0f}% giveback) "
-                                    f"now manages the remaining {abs(qty) - half_qty}"
+                                    f"SCALP SCALE-OUT SUBMITTED {sym}: ${cur:.2f} hit +{arm_pct:.0f}% fast target "
+                                    f"→ selling {half_qty}/{abs(qty)} at market ({coid}); completion and "
+                                    f"remainder protection deferred until the fill is confirmed"
                                 )
-                                # Re-place a tight protective trail on the remainder.
-                                try:
-                                    self.client.submit_order(TrailingStopOrderRequest(
-                                        symbol=sym, qty=abs(qty) - half_qty, side=side,
-                                        type=AlpacaOrderType.TRAILING_STOP,
-                                        time_in_force=TimeInForce.GTC,
-                                        trail_percent=giveback_pct,
-                                    ))
-                                except Exception as e:
-                                    log.warning(f"Scalp remainder trail failed {sym}: {e}")
                             except Exception as e:
                                 log.warning(f"Scalp scale-out failed {sym}: {e}")
-                            continue  # partial done — ratchet governs the remainder
+                            continue  # partial pending — ratchet governs after confirmation
                     if sym in self._ratchet_armed:
                         trigger = (peak * (1 - giveback_pct / 100) if is_long
                                    else peak * (1 + giveback_pct / 100))
@@ -2656,7 +2846,7 @@ class EnhancedExecutor:
                         # Cancel any standing protective order first — otherwise the
                         # shares stay "held_for_orders" and the market close is rejected.
                         try:
-                            sym_orders = [o for o in (self.client.get_orders() or []) if o.symbol == sym]
+                            sym_orders = [o for o in _open_orders() if o.symbol == sym]
                             for _o in sym_orders:
                                 try:
                                     self.client.cancel_order_by_id(str(_o.id))
@@ -2666,17 +2856,29 @@ class EnhancedExecutor:
                                 time.sleep(0.4)
                         except Exception:
                             pass
-                        side = OrderSide.SELL if is_long else OrderSide.BUY
-                        self.client.submit_order(MarketOrderRequest(
-                            symbol=sym, qty=abs(qty), side=side,
+                        coid = f"apex-tp-close-{sym}-{int(time.time())}"
+                        submitted = self.client.submit_order(MarketOrderRequest(
+                            symbol=sym, qty=abs(qty), side=close_side,
                             time_in_force=TimeInForce.DAY,
+                            client_order_id=coid,
                         ))
                         self._record_probe_outcome(sym, pos, "TP_CLOSE")
+                        # Accepted ≠ closed: keep the exit state (plus a pending
+                        # marker that blocks duplicate closes) until the broker
+                        # confirms the position is flat.
+                        self._pending_exit_map()[sym] = {
+                            "kind": "close",
+                            "qty": abs(qty),
+                            "orig_qty": abs(qty),
+                            "coid": coid,
+                            "order_id": str(getattr(submitted, "id", "") or ""),
+                            "submitted_at": time.time(),
+                        }
+                        state_changed = True
                         log.info(close_log)
-                        to_clean.append(sym)
                     except Exception as e:
                         log.warning(f"TP close failed {sym}: {e}")
-                    continue  # closed — skip phase-1
+                    continue  # close pending — reconciliation confirms flatness
 
                 if TP_RATCHET_ENABLED:
                     continue  # ratchet governs the winner; skip legacy phase-1 tighten
@@ -2694,7 +2896,7 @@ class EnhancedExecutor:
             # Cancel existing wide trailing stop
             stop_side = OrderSide.SELL if is_long else OrderSide.BUY
             try:
-                open_orders = self.client.get_orders() or []
+                open_orders = _open_orders()
                 for o in open_orders:
                     if (o.symbol == sym
                             and str(getattr(o, "type", "")).lower() == "trailing_stop"
@@ -2730,12 +2932,26 @@ class EnhancedExecutor:
             self._tightened.discard(sym)
             self._peak_price.pop(sym, None)
             self._ratchet_armed.discard(sym)
+            self._pending_exit_map().pop(sym, None)
             state_changed = True
 
         if state_changed:
             self._save_exit_state()
 
     def check_dead_money(self) -> None:
+        """Run time-loss management under the shared exit-check lock."""
+        lock = getattr(self, "_tp_check_lock", None)
+        if lock is None:
+            lock = self._tp_check_lock = threading.Lock()
+        if not lock.acquire(blocking=False):
+            log.debug("check_dead_money: skipped — another exit check is in flight")
+            return
+        try:
+            self._check_dead_money_locked()
+        finally:
+            lock.release()
+
+    def _check_dead_money_locked(self) -> None:
         """Close positions still moving adversely after DEAD_MONEY_MINUTES.
         A profitable or recovering position remains managed by its trailing stop and TP targets.
         """
@@ -2772,11 +2988,28 @@ class EnhancedExecutor:
                 self._tightened.discard(sym)
                 self._peak_price.pop(sym, None)
                 self._ratchet_armed.discard(sym)
+                self._pending_exit_map().pop(sym, None)
                 state_changed = True
                 continue
             qty = int(float(pos.qty))
             if qty == 0:
                 continue
+
+            # An exit order is already working for this symbol — never stack a
+            # second close on top of it. Release the marker only once the order
+            # is gone (past the visibility grace window) with no fill effect.
+            pending_exit = self._pending_exit_map().get(sym)
+            if pending_exit is not None:
+                try:
+                    dm_open_orders = self.client.get_orders() or []
+                except Exception as e:
+                    log.warning(f"Pending time-loss exit {sym}: order reconciliation failed ({e}) — waiting")
+                    continue
+                status = self._reconcile_pending_exit(sym, qty, dm_open_orders, time.time())
+                if status != "retry":
+                    continue
+                self._pending_exit_map().pop(sym, None)
+                state_changed = True
 
             entry_price = float(info.get("entry_price") or 0)
             current_price = float(getattr(pos, "current_price", 0) or 0)
@@ -2818,21 +3051,28 @@ class EnhancedExecutor:
                 except Exception:
                     pass
                 side = OrderSide.SELL if qty > 0 else OrderSide.BUY
-                self.client.submit_order(MarketOrderRequest(
+                coid = f"apex-tm-close-{sym}-{int(time.time())}"
+                submitted = self.client.submit_order(MarketOrderRequest(
                     symbol=sym, qty=abs(qty), side=side,
                     time_in_force=TimeInForce.DAY,
+                    client_order_id=coid,
                 ))
                 self._record_probe_outcome(sym, pos, "TIME_LOSS")
                 log.info(
                     f"TIME LOSS {sym}: held {elapsed_min:.0f} min, adverse drift {adverse_drift_pct:.2f}% "
                     f">= {adverse_threshold_pct:.2f}% → closing"
                 )
-                self._entry_log.pop(sym, None)
-                self._tp_targets.pop(sym, None)
-                self._intermediate_targets.pop(sym, None)
-                self._tightened.discard(sym)
-                self._peak_price.pop(sym, None)
-                self._ratchet_armed.discard(sym)
+                # Accepted ≠ closed: keep the exit state (plus a pending marker
+                # that blocks duplicate closes) until the broker confirms the
+                # position is flat.
+                self._pending_exit_map()[sym] = {
+                    "kind": "close",
+                    "qty": abs(qty),
+                    "orig_qty": abs(qty),
+                    "coid": coid,
+                    "order_id": str(getattr(submitted, "id", "") or ""),
+                    "submitted_at": time.time(),
+                }
                 state_changed = True
             except Exception as e:
                 log.warning(f"Dead money close failed {sym}: {e}")

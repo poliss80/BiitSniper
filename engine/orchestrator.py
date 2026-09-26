@@ -964,28 +964,40 @@ def scan_top3_only(ctx: AppContext) -> None:
 
 # ── Main loop ─────────────────────────────────────────────────────────────────
 
-# ── Software-stop fast-poll thread ───────────────────────────────────────────
+# ── Software-stop / scalp fast-poll thread ───────────────────────────────────
 # PDT-blocked stops need frequent polling regardless of the adaptive scan
-# interval (which can stretch to 20 min in calm markets).
-# This thread runs independently at a fixed 10-second cadence and only
-# makes a broker call when _pdt_stop_blocked is non-empty.
+# interval (which can stretch to 20 min in calm markets). MomentumScalp
+# positions ("go huge, sell fast") likewise need their +5% scale-out and
+# ratchet exits evaluated far faster than the 3-minute scan cadence.
+# This thread runs independently at a fixed 10-second cadence and only makes
+# broker calls when there is something to monitor. Non-scalp profit management
+# stays on the scan cadence; EnhancedExecutor.check_tp_targets holds a
+# nonblocking lock so the two paths can never race into duplicate exits.
+
+def _software_stop_poll_once(ctx: AppContext) -> None:
+    """One 10-second fast-monitor iteration: PDT software stops plus fast
+    profit monitoring for active MomentumScalp positions only."""
+    if ctx.executor._pdt_stop_blocked:
+        ctx.executor.check_software_stops()
+    if ctx.executor.has_active_scalp_positions():
+        ctx.executor.check_tp_targets(only_profiles={"scalp"})
+
 
 def _start_software_stop_thread(ctx: AppContext) -> None:
-    """Spawn a daemon thread that polls check_software_stops() every 10 seconds."""
+    """Spawn a daemon thread that polls software stops / scalp exits every 10 seconds."""
     import threading
 
     def _loop() -> None:
         while True:
             try:
-                if ctx.executor._pdt_stop_blocked:
-                    ctx.executor.check_software_stops()
+                _software_stop_poll_once(ctx)
             except Exception as e:
-                log.error(f"[STOP-THREAD] check_software_stops error: {e}", exc_info=True)
+                log.error(f"[STOP-THREAD] fast-monitor error: {e}", exc_info=True)
             time.sleep(10)
 
     t = threading.Thread(target=_loop, name="SoftwareStopPoller", daemon=True)
     t.start()
-    log.info("[STOP-THREAD] Software-stop fast-poll thread started (10s interval)")
+    log.info("[STOP-THREAD] Software-stop + scalp fast-poll thread started (10s interval)")
 
 
 def start() -> None:

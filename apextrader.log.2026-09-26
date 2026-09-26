@@ -38,3 +38,408 @@
 2026-09-26 09:59:26,196 [INFO] [CRYPTO] #5: ARB/USD SELL @ 0.2192 conf=70% | RSI=43.7 3-bar downtrend
 2026-09-26 09:59:26,308 [INFO] [CRYPTO] LIMIT BUY LTC/USD qty=23.254879 (~$1730) limit=74.4132 | software TP=77.2738 SL=72.4442 | conf=75% | RSI=67.8 3-bar uptrend | order=cad27cdb-8f4d-4e03-abd0-c87aed6c0823
 2026-09-26 09:59:26,402 [INFO] [CRYPTO] LIMIT BUY RENDER/USD qty=793.971707 (~$1586) limit=1.9979 | software TP=2.0747 SL=1.9450 | conf=74% | RSI=66.0 3-bar uptrend | order=96764b21-de72-4efd-8532-6448e4ec0d51
+2026-09-26 10:29:28,820 [INFO] [SYSTEM] Weekend — running CRYPTO-ONLY cycle (equity/options suspended)
+2026-09-26 10:29:29,788 [INFO] [CRYPTO] BROKER SL placed for LTC/USD stop=72.4442 limit=72.0820 qty=23.20369475 | order=400e8aa1-89f6-49d2-9ad2-bded11373c4b
+2026-09-26 10:29:29,788 [INFO] [CRYPTO] Position closed externally: RENDER/USD
+2026-09-26 10:29:30,286 [INFO] [CRYPTO] 1 open: LTC/USD(74.4132→TP:77.2738)
+2026-09-26 10:29:33,228 [INFO] [CRYPTO] #1: RENDER/USD BUY @ 2.0061 conf=75% | RSI=67.7 3-bar uptrend
+2026-09-26 10:29:33,229 [INFO] [CRYPTO] #2: YFI/USD BUY @ 2495.0070 conf=74% | RSI=65.5 3-bar uptrend
+2026-09-26 10:29:33,229 [INFO] [CRYPTO] #3: ONDO/USD BUY @ 0.5562 conf=73% | RSI=63.9 3-bar uptrend
+2026-09-26 10:29:33,229 [INFO] [CRYPTO] #4: LDO/USD BUY @ 0.4921 conf=72% | RSI=62.0 3-bar uptrend
+2026-09-26 10:29:33,229 [INFO] [CRYPTO] #5: BCH/USD BUY @ 339.4050 conf=67% | RSI=54.1 3-bar uptrend
+2026-09-26 10:29:33,335 [INFO] [CRYPTO] LIMIT BUY RENDER/USD qty=795.351493 (~$1598) limit=2.0091 | software TP=2.0863 SL=1.9559 | conf=75% | RSI=67.7 3-bar uptrend | order=e62ee9dc-3130-4d57-8785-97004691e3b7
+2026-09-26 10:29:33,427 [INFO] [CRYPTO] LIMIT BUY YFI/USD qty=0.586205 (~$1465) limit=2498.7495 | software TP=2594.8073 SL=2432.6318 | conf=74% | RSI=65.5 3-bar uptrend | order=9564448e-8731-4d17-8a04-18538cddce1a
+2026-09-26 10:29:33,518 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=2411.495678 (~$1343) limit=0.5571 | software TP=0.5785 SL=0.5423 | conf=73% | RSI=63.9 3-bar uptrend | order=78e74ee4-4925-450f-9356-cbc311a1e98d
+2026-09-26 10:29:33,609 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=2498.820019 (~$1231) limit=0.4928 | software TP=0.5117 SL=0.4798 | conf=72% | RSI=62.0 3-bar uptrend | order=5c5de619-0796-46f8-8b16-16ff58d348bc
+2026-09-26 10:29:33,609 [INFO] [CRYPTO] SKIP BCH/USD conf=67% < min 70%
+2026-09-26 10:29:33,609 [INFO] Heartbeat: 2026-09-26T10:29:33.609394
+2026-09-26 10:29:33,679 [INFO] ======================================================================
+2026-09-26 10:29:33,679 [INFO] STATUS
+2026-09-26 10:29:33,679 [INFO] Equity:     $108,069.57
+2026-09-26 10:29:33,679 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-26 10:29:33,680 [INFO] Positions:  8
+2026-09-26 10:29:33,680 [INFO] Unrealized: $-2173.91
+2026-09-26 10:29:33,680 [INFO]   IMXI: 101 @ $11.23 | $2.05 (+0.18%)
+2026-09-26 10:29:33,680 [INFO]   LTCUSD: 0.000023206 @ $72.11 | $0.00 (+0.48%)
+2026-09-26 10:29:33,680 [INFO]   MXL: 1 @ $94.42 | $-0.58 (-0.61%)
+2026-09-26 10:29:33,680 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-345.00 (-30.53%)
+2026-09-26 10:29:33,680 [INFO]   TBBB: 1 @ $53.74 | $-0.18 (-0.34%)
+2026-09-26 10:29:33,680 [INFO]   TBBB261016C00055000: 4 @ $1.19 | $-35.00 (-7.37%)
+2026-09-26 10:29:33,680 [INFO]   WFF: 35608 @ $2.45 | $-1780.40 (-2.04%)
+2026-09-26 10:29:33,681 [INFO]   YFIUSD: 0.584915567 @ $2485.08 | $-14.80 (-1.02%)
+2026-09-26 10:29:33,681 [INFO] ======================================================================
+2026-09-26 10:29:33,689 [INFO] Universe pruned: no expired tickers
+2026-09-26 10:54:06,915 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-26 10:54:06,918 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 10:54:06,920 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 10:54:06,930 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-26 10:54:06,935 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-26 10:54:06,937 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-26 10:54:06,940 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-26 10:54:06,942 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 10:54:06,945 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-26 10:54:06,947 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-26 10:54:06,947 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-26 10:54:06,948 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 10:54:06,948 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:54:06,948 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-26 10:54:06,948 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-26 10:54:06,948 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-26 10:54:06,948 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-26 10:54:06,949 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-26 10:54:06,950 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 10:54:06,950 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 10:54:06,950 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 10:54:06,950 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 10:54:06,951 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 10:54:06,951 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-26 10:54:06,952 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 10:54:06,954 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-26 10:54:06,959 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 10:54:06,962 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 10:54:06,963 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 10:54:06,966 [INFO] Restored position exit state: AAPL
+2026-09-26 10:54:06,967 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 10:54:06,971 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 10:54:06,971 [INFO] ======================================================================
+2026-09-26 10:54:06,971 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 10:54:06,973 [INFO] Universe pruned: no expired tickers
+2026-09-26 10:54:06,973 [INFO] ======================================================================
+2026-09-26 10:54:06,977 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-26 10:54:06,978 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-26 10:54:06,978 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-26 10:54:06,978 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-26 10:54:06,978 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-26 10:54:06,979 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434446); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:54:06,980 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790434446 not open and no fill detected — re-enabling exit evaluation
+2026-09-26 10:54:06,980 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434446); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:54:06,982 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-26 10:54:06,984 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434446); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:54:06,987 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434446); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:54:06,990 [INFO] Restored position exit state: BBNX
+2026-09-26 10:54:06,992 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434446); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:54:06,994 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-26 10:54:06,996 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434446); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:54:06,997 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 10:54:07,000 [INFO] Restored position exit state: BBNX
+2026-09-26 10:54:07,001 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-26 10:54:07,020 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-26 10:54:07,023 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 10:54:07,028 [INFO] Restored position exit state: AAPL
+2026-09-26 10:54:07,028 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 10:54:07,032 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:54:07,032 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 10:54:07,033 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:54:07,033 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 10:54:07,035 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:54:07,335 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 10:55:10,860 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 10:55:10,860 [INFO] ======================================================================
+2026-09-26 10:55:10,860 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 10:55:10,861 [INFO] Universe pruned: no expired tickers
+2026-09-26 10:55:10,862 [INFO] ======================================================================
+2026-09-26 10:55:10,874 [INFO] Restored position exit state: AAPL
+2026-09-26 10:55:10,875 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 10:58:12,491 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-26 10:58:12,494 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 10:58:12,496 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 10:58:12,502 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-26 10:58:12,505 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-26 10:58:12,507 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-26 10:58:12,509 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-26 10:58:12,510 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 10:58:12,514 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-26 10:58:12,516 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-26 10:58:12,516 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-26 10:58:12,518 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:58:12,518 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-26 10:58:12,519 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 10:58:12,519 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 10:58:12,519 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-26 10:58:12,519 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 10:58:12,519 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-26 10:58:12,519 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-26 10:58:12,520 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 10:58:12,520 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 10:58:12,520 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 10:58:12,520 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 10:58:12,521 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 10:58:12,521 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-26 10:58:12,521 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 10:58:12,524 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-26 10:58:12,527 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 10:58:12,530 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 10:58:12,532 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 10:58:12,536 [INFO] Restored position exit state: AAPL
+2026-09-26 10:58:12,536 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 10:58:12,538 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 10:58:12,538 [INFO] ======================================================================
+2026-09-26 10:58:12,538 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 10:58:12,540 [INFO] Universe pruned: no expired tickers
+2026-09-26 10:58:12,540 [INFO] ======================================================================
+2026-09-26 10:58:12,544 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-26 10:58:12,544 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-26 10:58:12,545 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-26 10:58:12,545 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-26 10:58:12,545 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-26 10:58:12,546 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434692); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:58:12,548 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790434692 not open and no fill detected — re-enabling exit evaluation
+2026-09-26 10:58:12,548 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434692); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:58:12,552 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-26 10:58:12,555 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434692); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:58:12,557 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434692); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:58:12,559 [INFO] Restored position exit state: BBNX
+2026-09-26 10:58:12,560 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434692); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:58:12,563 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-26 10:58:12,566 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434692); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 10:58:12,568 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 10:58:12,571 [INFO] Restored position exit state: BBNX
+2026-09-26 10:58:12,572 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-26 10:58:12,590 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-26 10:58:12,592 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 10:58:12,595 [INFO] Restored position exit state: AAPL
+2026-09-26 10:58:12,595 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 10:58:12,600 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:58:12,600 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 10:58:12,600 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:58:12,600 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 10:58:12,601 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 10:58:12,902 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 10:58:12,905 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:58:13,206 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 10:59:36,284 [INFO] [SYSTEM] Weekend — running CRYPTO-ONLY cycle (equity/options suspended)
+2026-09-26 10:59:36,949 [INFO] [CRYPTO] BROKER SL placed for YFI/USD stop=2432.6318 limit=2420.4687 qty=0.58491498 | order=445ac890-b556-4bee-bdef-5a8a48a6f87b
+2026-09-26 10:59:36,949 [INFO] [CRYPTO] Position closed externally: RENDER/USD
+2026-09-26 10:59:36,949 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-26 10:59:36,949 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-26 10:59:37,331 [INFO] [CRYPTO] 2 open: LTC/USD(74.4132→TP:77.2738), YFI/USD(2498.7495→TP:2594.8073)
+2026-09-26 10:59:40,161 [INFO] [CRYPTO] #1: RENDER/USD BUY @ 2.0061 conf=75% | RSI=67.7 3-bar uptrend
+2026-09-26 10:59:40,161 [INFO] [CRYPTO] #2: ONDO/USD BUY @ 0.5562 conf=73% | RSI=63.9 3-bar uptrend
+2026-09-26 10:59:40,161 [INFO] [CRYPTO] #3: LDO/USD BUY @ 0.4921 conf=72% | RSI=62.0 3-bar uptrend
+2026-09-26 10:59:40,161 [INFO] [CRYPTO] #4: BCH/USD BUY @ 339.4050 conf=67% | RSI=54.1 3-bar uptrend
+2026-09-26 10:59:40,246 [INFO] [CRYPTO] LIMIT BUY RENDER/USD qty=561.848829 (~$1129) limit=2.0091 | software TP=2.0863 SL=1.9559 | conf=75% | RSI=67.7 3-bar uptrend | order=9af4459d-fa3d-4f4a-b216-e503cb934360
+2026-09-26 10:59:40,336 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=1857.475288 (~$1035) limit=0.5571 | software TP=0.5785 SL=0.5423 | conf=73% | RSI=63.9 3-bar uptrend | order=7dbe2e63-2c74-41b2-8401-38919ab076ca
+2026-09-26 10:59:40,430 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1924.738527 (~$949) limit=0.4928 | software TP=0.5117 SL=0.4798 | conf=72% | RSI=62.0 3-bar uptrend | order=11314f4a-f1ed-4d26-bca3-5c7ff7ecc1e8
+2026-09-26 10:59:40,430 [INFO] [CRYPTO] SKIP BCH/USD conf=67% < min 70%
+2026-09-26 10:59:40,430 [INFO] Heartbeat: 2026-09-26T10:59:40.430860
+2026-09-26 10:59:40,516 [INFO] ======================================================================
+2026-09-26 10:59:40,516 [INFO] STATUS
+2026-09-26 10:59:40,516 [INFO] Equity:     $108,069.57
+2026-09-26 10:59:40,516 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-26 10:59:40,516 [INFO] Positions:  8
+2026-09-26 10:59:40,516 [INFO] Unrealized: $-2173.91
+2026-09-26 10:59:40,516 [INFO]   IMXI: 101 @ $11.23 | $2.05 (+0.18%)
+2026-09-26 10:59:40,516 [INFO]   LTCUSD: 0.000023206 @ $72.11 | $0.00 (+0.84%)
+2026-09-26 10:59:40,516 [INFO]   MXL: 1 @ $94.42 | $-0.58 (-0.61%)
+2026-09-26 10:59:40,516 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-345.00 (-30.53%)
+2026-09-26 10:59:40,516 [INFO]   TBBB: 1 @ $53.74 | $-0.18 (-0.34%)
+2026-09-26 10:59:40,516 [INFO]   TBBB261016C00055000: 4 @ $1.19 | $-35.00 (-7.37%)
+2026-09-26 10:59:40,516 [INFO]   WFF: 35608 @ $2.45 | $-1780.40 (-2.04%)
+2026-09-26 10:59:40,516 [INFO]   YFIUSD: 0.584915567 @ $2485.08 | $-14.80 (-1.02%)
+2026-09-26 10:59:40,516 [INFO] ======================================================================
+2026-09-26 10:59:40,518 [INFO] Universe pruned: no expired tickers
+2026-09-26 10:59:43,717 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:59:43,717 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 10:59:43,718 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:59:43,718 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 10:59:43,719 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 10:59:44,020 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 10:59:44,022 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 10:59:44,323 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:01:54,248 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-26 11:01:54,251 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:01:54,253 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:01:54,259 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-26 11:01:54,260 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-26 11:01:54,263 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-26 11:01:54,266 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-26 11:01:54,267 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:01:54,270 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:01:54,273 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-26 11:01:54,274 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-26 11:01:54,275 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:01:54,275 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-26 11:01:54,276 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-26 11:01:54,276 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:01:54,277 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-26 11:01:54,278 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-26 11:01:54,279 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:01:54,279 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:01:54,279 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:01:54,279 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:01:54,280 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:01:54,281 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-26 11:01:54,281 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:01:54,284 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-26 11:01:54,289 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:01:54,292 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:01:54,294 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:01:54,298 [INFO] Restored position exit state: AAPL
+2026-09-26 11:01:54,298 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 11:01:54,301 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 11:01:54,302 [INFO] ======================================================================
+2026-09-26 11:01:54,302 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 11:01:54,303 [INFO] Universe pruned: no expired tickers
+2026-09-26 11:01:54,303 [INFO] ======================================================================
+2026-09-26 11:01:54,307 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-26 11:01:54,309 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-26 11:01:54,309 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-26 11:01:54,309 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-26 11:01:54,309 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-26 11:01:54,310 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,311 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790434914 not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:01:54,312 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,316 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-26 11:01:54,319 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,322 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,326 [INFO] Restored position exit state: BBNX
+2026-09-26 11:01:54,327 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,330 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-26 11:01:54,332 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,333 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:01:54,337 [INFO] Restored position exit state: BBNX
+2026-09-26 11:01:54,338 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-26 11:01:54,342 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:01:54,342 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-26 11:01:54,345 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790434914); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:01:54,346 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:01:54,366 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-26 11:01:54,368 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:01:54,372 [INFO] Restored position exit state: AAPL
+2026-09-26 11:01:54,372 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:01:54,377 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:01:54,377 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 11:01:54,378 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:01:54,378 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 11:01:54,379 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 11:01:54,680 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:01:54,681 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:01:54,982 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:02:23,838 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:02:23,838 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 11:02:23,840 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:02:23,840 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 11:02:23,841 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 11:02:24,141 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:02:24,143 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:02:24,444 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:02:49,239 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-26 11:02:49,242 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:02:49,244 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:02:49,249 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-26 11:02:49,250 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-26 11:02:49,253 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-26 11:02:49,255 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-26 11:02:49,256 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:02:49,259 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:02:49,261 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-26 11:02:49,262 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-26 11:02:49,264 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:02:49,264 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:02:49,264 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-26 11:02:49,264 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-26 11:02:49,265 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-26 11:02:49,265 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-26 11:02:49,265 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:02:49,265 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-26 11:02:49,265 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:02:49,265 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-26 11:02:49,266 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:02:49,266 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:02:49,266 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-26 11:02:49,267 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:02:49,267 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:02:49,267 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-26 11:02:49,267 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:02:49,267 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-26 11:02:49,267 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-26 11:02:49,269 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:02:49,270 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:02:49,270 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:02:49,270 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:02:49,271 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:02:49,272 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-26 11:02:49,272 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:02:49,276 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-26 11:02:49,280 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:02:49,284 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:02:49,286 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:02:49,290 [INFO] Restored position exit state: AAPL
+2026-09-26 11:02:49,291 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 11:02:49,294 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 11:02:49,294 [INFO] ======================================================================
+2026-09-26 11:02:49,294 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 11:02:49,295 [INFO] Universe pruned: no expired tickers
+2026-09-26 11:02:49,295 [INFO] ======================================================================
+2026-09-26 11:02:49,299 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-26 11:02:49,300 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-26 11:02:49,301 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-26 11:02:49,301 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-26 11:02:49,301 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-26 11:02:49,302 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-26 11:02:49,305 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-26 11:02:49,306 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,307 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790434969 not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:02:49,308 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,311 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-26 11:02:49,314 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,317 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,320 [INFO] Restored position exit state: BBNX
+2026-09-26 11:02:49,321 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,324 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-26 11:02:49,327 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,328 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:02:49,332 [INFO] Restored position exit state: BBNX
+2026-09-26 11:02:49,335 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-26 11:02:49,338 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:02:49,339 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-26 11:02:49,341 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790434969); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:02:49,343 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:02:49,365 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-26 11:02:49,367 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:02:49,371 [INFO] Restored position exit state: AAPL
+2026-09-26 11:02:49,372 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:02:49,377 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:02:49,378 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 11:02:49,379 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:02:49,379 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 11:02:49,380 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 11:02:49,681 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:02:49,682 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:02:49,983 [INFO] STALE ORDER WFF: replaced successfully

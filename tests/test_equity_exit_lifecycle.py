@@ -72,6 +72,10 @@ def build_executor(client, state_path):
     executor._tightened = set()
     executor._peak_price = {}
     executor._ratchet_armed = set()
+    executor._pending_exits = {}
+    executor._tp_check_lock = threading.Lock()
+    executor._swap_cycle_closed = set()
+    executor.order_cache = {}
     executor._live_probe_scaled_in = set()
     executor._live_probe_scale_in_pending = {}
     executor._exit_state_path = state_path
@@ -815,8 +819,71 @@ class EquityExitLifecycleTests(unittest.TestCase):
             ):
                 restored.check_dead_money()
 
-            self.assertEqual(len(client.orders), 1)
+                self.assertEqual(len(client.orders), 1)
+                # Accepted ≠ closed: exit state is retained until the broker confirms flat
+                self.assertTrue(state_path.exists())
+                self.assertIn("AAPL", restored._pending_exits)
+                self.assertIn("AAPL", restored._entry_log)
+
+                # While the close is pending, no duplicate close is submitted
+                restored.check_dead_money()
+                self.assertEqual(len(client.orders), 1, "pending close must not be resubmitted")
+
+                # Broker confirms flat → all exit state is released
+                client.positions.clear()
+                restored.check_dead_money()
             self.assertFalse(state_path.exists())
+
+    def test_time_loss_retries_terminal_partial_close_for_remainder(self):
+        with tempfile.TemporaryDirectory() as directory:
+            position = MockPosition("AAPL", "7", 98.5, avg_entry_price=100.0)
+            client = MockClient([position])
+            executor = build_executor(client, Path(directory) / "exit_state.json")
+            executor._entry_log["AAPL"] = {
+                "strategy": "Momentum", "date": datetime.date.today(),
+                "entry_time": datetime.datetime.now() - datetime.timedelta(minutes=46),
+                "entry_price": 100.0, "atr_stop": 0.0,
+            }
+            executor._pending_exits["AAPL"] = {
+                "kind": "close", "qty": 10, "orig_qty": 10,
+                "coid": "apex-tm-close-AAPL-old", "order_id": "old-order",
+                "submitted_at": 0,
+            }
+
+            with patch.object(enhanced, "DEAD_MONEY_MINUTES", 45), patch.object(
+                enhanced, "DEAD_MONEY_MAX_ADVERSE_DRIFT_PCT", 1.0
+            ):
+                executor.check_dead_money()
+
+            closes = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+            self.assertEqual(len(closes), 1)
+            self.assertEqual(closes[0].qty, 7)
+            self.assertEqual(executor._pending_exits["AAPL"]["orig_qty"], 7)
+
+    def test_time_loss_waits_when_pending_order_lookup_fails(self):
+        with tempfile.TemporaryDirectory() as directory:
+            position = MockPosition("AAPL", "10", 98.5, avg_entry_price=100.0)
+            client = MockClient([position])
+            client.get_orders = Mock(side_effect=RuntimeError("temporary broker failure"))
+            executor = build_executor(client, Path(directory) / "exit_state.json")
+            executor._entry_log["AAPL"] = {
+                "strategy": "Momentum", "date": datetime.date.today(),
+                "entry_time": datetime.datetime.now() - datetime.timedelta(minutes=46),
+                "entry_price": 100.0, "atr_stop": 0.0,
+            }
+            executor._pending_exits["AAPL"] = {
+                "kind": "close", "qty": 10, "orig_qty": 10,
+                "coid": "apex-tm-close-AAPL-old", "order_id": "old-order",
+                "submitted_at": 0,
+            }
+
+            with patch.object(enhanced, "DEAD_MONEY_MINUTES", 45), patch.object(
+                enhanced, "DEAD_MONEY_MAX_ADVERSE_DRIFT_PCT", 1.0
+            ):
+                executor.check_dead_money()
+
+            self.assertEqual(client.orders, [], "unknown order state must not trigger a duplicate close")
+            self.assertIn("AAPL", executor._pending_exits)
 
     def test_restored_profitable_position_is_not_time_loss_exit(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -1548,8 +1615,9 @@ class MomentumScalpExitTests(unittest.TestCase):
         executor._intermediate_targets[sym] = entry_price * 1.05
 
     def test_scalp_scale_out_then_ratchet_closes_remainder_below_arm(self):
-        """2-share scalp at +5% sells 1 share and arms the ratchet; a later retrace
-        closes the remainder even though current gain has fallen back below +5%."""
+        """2-share scalp at +5% submits a 1-share scale-out; completion and
+        remainder protection wait for the broker-confirmed fill. The armed
+        ratchet then closes the remainder even below the +5% arm."""
         with tempfile.TemporaryDirectory() as directory:
             pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
             client, executor = self._executor(directory, pos)
@@ -1558,15 +1626,40 @@ class MomentumScalpExitTests(unittest.TestCase):
             with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
                 enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
             ):
-                # +5% → scale out half (1 share) at market, arm the ratchet
+                # +5% → scale-out SUBMITTED but not yet confirmed
                 executor.check_tp_targets()
                 market_sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
-                self.assertEqual(len(market_sells), 1, "scalp should sell half at +5%")
+                self.assertEqual(len(market_sells), 1, "scalp should submit a half sell at +5%")
                 self.assertEqual(market_sells[0].qty, 1)
+                coid = str(market_sells[0].client_order_id)
+                self.assertTrue(coid.startswith("apex-scalp-out-BBNX"))
+                self.assertFalse(
+                    executor._entry_log["BBNX"].get("scalp_scaled_out", False),
+                    "accepted is not filled — scalp must not be marked scaled out yet",
+                )
+                self.assertEqual(
+                    [o for o in client.orders if isinstance(o, enhanced.TrailingStopOrderRequest)], [],
+                    "no protective-stop replacement before fill confirmation",
+                )
+                self.assertIn("BBNX", executor._pending_exits)
+
+                # While the scale-out order is working, no duplicate partial sell
+                working_order = SimpleNamespace(symbol="BBNX", id="o-1", client_order_id=coid)
+                client.get_orders = lambda: [working_order]
+                executor.check_tp_targets()
+                market_sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+                self.assertEqual(len(market_sells), 1, "no duplicate scale-out while one is pending")
+                self.assertFalse(executor._entry_log["BBNX"].get("scalp_scaled_out", False))
+
+                # Broker shows the fill: position shrank 2 → 1
+                client.get_orders = lambda: []
+                pos.qty = "1"
+                executor.check_tp_targets()
                 self.assertTrue(executor._entry_log["BBNX"]["scalp_scaled_out"])
                 self.assertIn("BBNX", executor._ratchet_armed)
+                self.assertNotIn("BBNX", executor._pending_exits)
                 trails = [o for o in client.orders if isinstance(o, enhanced.TrailingStopOrderRequest)]
-                self.assertEqual(len(trails), 1, "remainder should get a fresh tight trail")
+                self.assertEqual(len(trails), 1, "confirmed remainder gets a fresh tight trail")
                 self.assertEqual(trails[0].qty, 1)
 
                 # Scalp state must survive a restart
@@ -1581,7 +1674,6 @@ class MomentumScalpExitTests(unittest.TestCase):
                 # giveback trigger (106 * 0.975 = 103.35) with gain now only +3.3%,
                 # under the +5% arm. The armed ratchet must still exit.
                 client.orders.clear()
-                pos.qty = "1"
                 pos.current_price = 106.0
                 executor.check_tp_targets()
                 self.assertEqual(client.orders, [], "no giveback yet at the new peak")
@@ -1593,6 +1685,179 @@ class MomentumScalpExitTests(unittest.TestCase):
                     "armed ratchet must close the remainder even below the +5% arm",
                 )
                 self.assertEqual(closes[0].qty, 1)
+                self.assertIn(
+                    "BBNX", executor._pending_exits,
+                    "accepted close is not confirmed — exit state must be retained",
+                )
+                self.assertIn("BBNX", executor._tp_targets)
+
+                # Broker confirms flat → exit state fully cleaned
+                client.positions.clear()
+                executor.check_tp_targets()
+                self.assertNotIn("BBNX", executor._tp_targets)
+                self.assertNotIn("BBNX", executor._pending_exits)
+
+    def test_pending_scale_out_grace_window_blocks_duplicate(self):
+        """If the sell is not yet visible in get_orders and the position is
+        unchanged, the grace window treats it as working — no duplicate submit."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                executor.check_tp_targets()
+                executor.check_tp_targets()
+                sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+                self.assertEqual(len(sells), 1, "grace window must suppress a duplicate scale-out")
+                self.assertFalse(executor._entry_log["BBNX"].get("scalp_scaled_out", False))
+
+    def test_failed_scale_out_retries_after_grace_window(self):
+        """A scale-out order that died unfilled past the grace window is released
+        and re-evaluated — resubmitted while the +5% target still holds."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                executor.check_tp_targets()
+                executor._pending_exits["BBNX"]["submitted_at"] = 0  # age past the grace window
+                executor.check_tp_targets()
+                sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+                self.assertEqual(len(sells), 2, "dead scale-out order should be retried")
+                self.assertFalse(executor._entry_log["BBNX"].get("scalp_scaled_out", False))
+
+    def test_terminal_partial_scale_out_protects_actual_remainder(self):
+        """A terminal partial scale-out books what filled and protects the
+        broker-reported remainder instead of reselling the original half."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("BBNX", "10", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                executor.check_tp_targets()
+                self.assertEqual(client.orders[0].qty, 5)
+                executor._pending_exits["BBNX"]["submitted_at"] = 0
+                pos.qty = "7"  # 3 of the requested 5 shares filled before cancellation
+                client.get_orders = lambda: []
+                executor.check_tp_targets()
+
+            self.assertTrue(executor._entry_log["BBNX"]["scalp_scaled_out"])
+            self.assertNotIn("BBNX", executor._pending_exits)
+            trails = [o for o in client.orders if isinstance(o, enhanced.TrailingStopOrderRequest)]
+            self.assertEqual(len(trails), 1)
+            self.assertEqual(trails[0].qty, 7)
+            sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+            self.assertEqual(len(sells), 1, "do not resubmit the original 5-share partial sell")
+
+    def test_terminal_partial_close_retries_only_remaining_shares(self):
+        """A canceled close with some fills re-evaluates using the live remainder."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("AAPL", "10", 91.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            executor._entry_log["AAPL"] = {
+                "strategy": "Momentum", "ti_profile": "ti_momentum",
+                "entry_time": datetime.datetime(2026, 9, 25, 10, 0),
+                "entry_price": 100.0,
+            }
+            executor._tp_targets["AAPL"] = 90.0
+            executor._pending_exits["AAPL"] = {
+                "kind": "close", "qty": 10, "orig_qty": 10,
+                "coid": "apex-tp-close-AAPL-old", "order_id": "old-order",
+                "submitted_at": 0,
+            }
+            pos.qty = "7"  # 3 shares filled before the old order became terminal
+            client.get_orders = lambda: []
+
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", False):
+                executor.check_tp_targets()
+
+            closes = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+            self.assertEqual(len(closes), 1)
+            self.assertEqual(closes[0].qty, 7)
+            self.assertEqual(executor._pending_exits["AAPL"]["orig_qty"], 7)
+
+    def test_pending_exit_survives_restart(self):
+        """A submitted-but-unconfirmed scale-out must reload after restart so the
+        resumed bot reconciles the working order instead of duplicating it."""
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "exit_state.json"
+            pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                executor.check_tp_targets()
+            self.assertIn("BBNX", executor._pending_exits)
+
+            restored_client = MockClient([pos])
+            restored = build_executor(restored_client, state_path)
+            restored._record_probe_outcome = lambda *a, **k: None
+            restored._restore_exit_state()
+            self.assertIn("BBNX", restored._pending_exits)
+            self.assertEqual(restored._pending_exits["BBNX"]["kind"], "scale_out")
+
+            coid = restored._pending_exits["BBNX"]["coid"]
+            restored_client.get_orders = lambda: [
+                SimpleNamespace(symbol="BBNX", id="o-1", client_order_id=coid)
+            ]
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                restored.check_tp_targets()
+            self.assertEqual(
+                restored_client.orders, [],
+                "restored pending exit must block a duplicate scale-out",
+            )
+
+    def test_tp_check_skipped_while_another_exit_check_holds_lock(self):
+        """The nonblocking lock makes concurrent scan/fast-monitor calls skip
+        instead of racing into duplicate exits."""
+        with tempfile.TemporaryDirectory() as directory:
+            pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
+            client, executor = self._executor(directory, pos)
+            self._scalp_entry(executor, "BBNX")
+            executor._tp_check_lock.acquire()
+            try:
+                with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                    enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+                ):
+                    executor.check_tp_targets()
+            finally:
+                executor._tp_check_lock.release()
+            self.assertEqual(client.orders, [], "contended exit check must skip, not duplicate")
+
+    def test_only_profiles_keeps_normal_positions_on_scan_cadence(self):
+        """The 10s fast monitor (only_profiles={'scalp'}) must not process
+        non-scalp positions."""
+        with tempfile.TemporaryDirectory() as directory:
+            scalp_pos = MockPosition("BBNX", "2", 105.0, avg_entry_price=100.0)
+            other_pos = MockPosition("AAPL", "10", 109.0, avg_entry_price=100.0)
+            client = MockClient([scalp_pos, other_pos])
+            executor = build_executor(client, Path(directory) / "exit_state.json")
+            executor._record_probe_outcome = lambda *a, **k: None
+            self._scalp_entry(executor, "BBNX")
+            executor._entry_log["AAPL"] = {
+                "strategy": "TI", "ti_profile": "ti_momentum",
+                "entry_time": datetime.datetime(2026, 9, 25, 10, 0),
+                "entry_price": 100.0,
+            }
+            executor._tp_targets["AAPL"] = 110.0
+
+            with patch.object(enhanced, "TP_RATCHET_ENABLED", True), patch.object(
+                enhanced, "MOMENTUM_SCALP", self.SCALP_CFG
+            ):
+                executor.check_tp_targets(only_profiles={"scalp"})
+            sells = [o for o in client.orders if isinstance(o, enhanced.MarketOrderRequest)]
+            self.assertEqual([s.symbol for s in sells], ["BBNX"])
+            self.assertNotIn("AAPL", executor._ratchet_armed,
+                             "non-scalp positions wait for the scan cadence")
 
     def test_scalp_one_share_closes_in_full_at_target(self):
         """A 1-share scalp cannot scale out — it closes entirely at +5%."""
@@ -1639,6 +1904,155 @@ class MomentumScalpExitTests(unittest.TestCase):
                     len(client.orders), 1,
                     "armed ratchet must exit on giveback even below the arm threshold",
                 )
+
+
+class ScalpFastMonitorTests(unittest.TestCase):
+    """The 10s daemon monitor polls MomentumScalp profit targets between scans;
+    PDT software stops and non-scalp positions keep their existing cadence."""
+
+    def test_poll_checks_scalp_profit_targets(self):
+        from engine import orchestrator
+
+        executor = Mock()
+        executor._pdt_stop_blocked = {}
+        executor.has_active_scalp_positions = Mock(return_value=True)
+        ctx = SimpleNamespace(executor=executor)
+
+        orchestrator._software_stop_poll_once(ctx)
+
+        executor.check_tp_targets.assert_called_once_with(only_profiles={"scalp"})
+        executor.check_software_stops.assert_not_called()
+
+    def test_poll_runs_software_stops_and_skips_scalp_when_none_active(self):
+        from engine import orchestrator
+
+        executor = Mock()
+        executor._pdt_stop_blocked = {"WFF": 1.0}
+        executor.has_active_scalp_positions = Mock(return_value=False)
+        ctx = SimpleNamespace(executor=executor)
+
+        orchestrator._software_stop_poll_once(ctx)
+
+        executor.check_software_stops.assert_called_once()
+        executor.check_tp_targets.assert_not_called()
+
+    def test_has_active_scalp_positions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            executor = build_executor(MockClient([]), Path(directory) / "exit_state.json")
+            self.assertFalse(executor.has_active_scalp_positions())
+
+            executor._entry_log["AAPL"] = {"ti_profile": "ti_momentum"}
+            executor._tp_targets["AAPL"] = 110.0
+            self.assertFalse(executor.has_active_scalp_positions())
+
+            executor._entry_log["BBNX"] = {"ti_profile": "scalp"}
+            executor._tp_targets["BBNX"] = 110.0
+            self.assertTrue(executor.has_active_scalp_positions())
+
+            # A pending (not yet confirmed) scalp exit keeps fast monitoring on
+            executor._tp_targets.clear()
+            executor._pending_exits["BBNX"] = {"kind": "close"}
+            self.assertTrue(executor.has_active_scalp_positions())
+
+
+class _StaleOrderClient(MockClient):
+    def __init__(self, order, quote=None, quote_error=None):
+        super().__init__([])
+        self._stale_order = order
+        self._quote = quote
+        self._quote_error = quote_error
+        self.cancelled = []
+
+    def get_orders(self):
+        return [self._stale_order]
+
+    def cancel_order_by_id(self, order_id):
+        self.cancelled.append(order_id)
+
+    def get_latest_quote(self, symbol):
+        if self._quote_error is not None:
+            raise self._quote_error
+        return self._quote
+
+    def submit_order(self, order):
+        self.orders.append(order)
+        return SimpleNamespace(id="order-2")
+
+
+class StaleOrderExtendedHoursTests(unittest.TestCase):
+    """Extended-hours stale-order replacement must validate the replacement
+    quote BEFORE cancelling the working order (WFF paper-log regression: the
+    16:02 TIME LOSS SELL was cancelled, then every replacement failed with
+    'unable to determine quote', leaving no working exit)."""
+
+    def _stale_sell_order(self, age_hours=1):
+        return SimpleNamespace(
+            symbol="WFF",
+            id="order-1",
+            order_type="market",
+            order_class="",
+            client_order_id="",
+            qty="5",
+            side=enhanced.OrderSide.SELL,
+            limit_price=None,
+            created_at=datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=age_hours),
+        )
+
+    def _executor(self, client, directory, regular=False):
+        executor = build_executor(client, Path(directory) / "exit_state.json")
+        executor.market_state = SimpleNamespace(is_regular_hours=regular)
+        return executor
+
+    def test_missing_quote_preserves_working_exit_order(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = _StaleOrderClient(
+                self._stale_sell_order(), quote=SimpleNamespace(bid_price=0.0, ask_price=0.0)
+            )
+            executor = self._executor(client, directory)
+            executor.update_stale_orders()
+
+            self.assertEqual(client.cancelled, [],
+                             "working exit order must NOT be cancelled without a validated quote")
+            self.assertEqual(client.orders, [], "no replacement submitted without a quote")
+
+    def test_quote_exception_preserves_working_exit_order(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = _StaleOrderClient(
+                self._stale_sell_order(), quote_error=RuntimeError("quote unavailable")
+            )
+            executor = self._executor(client, directory)
+            executor.update_stale_orders()
+
+            self.assertEqual(client.cancelled, [],
+                             "quote failure must preserve the working exit order")
+            self.assertEqual(client.orders, [])
+
+    def test_valid_quote_cancels_then_replaces_extended_hours(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = _StaleOrderClient(
+                self._stale_sell_order(), quote=SimpleNamespace(bid_price=10.5, ask_price=10.7)
+            )
+            executor = self._executor(client, directory)
+            executor.update_stale_orders()
+
+            self.assertEqual(client.cancelled, ["order-1"])
+            self.assertEqual(len(client.orders), 1)
+            req = client.orders[0]
+            self.assertIsInstance(req, enhanced.LimitOrderRequest)
+            self.assertEqual(req.limit_price, 10.5)  # sell → replacement priced at the bid
+            self.assertTrue(req.extended_hours)
+
+    def test_regular_hours_still_cancels_then_resubmits_market(self):
+        """Regular-hours behavior is unchanged: cancel first, then market resubmit."""
+        with tempfile.TemporaryDirectory() as directory:
+            # Age past the 360-minute regular-hours stale cutoff
+            client = _StaleOrderClient(self._stale_sell_order(age_hours=10))
+            executor = self._executor(client, directory, regular=True)
+            executor.update_stale_orders()
+
+            self.assertEqual(client.cancelled, ["order-1"])
+            self.assertEqual(len(client.orders), 1)
+            self.assertIsInstance(client.orders[0], enhanced.MarketOrderRequest)
 
 
 class _ScalpFakeDatetime(datetime.datetime):
