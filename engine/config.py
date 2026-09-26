@@ -628,6 +628,41 @@ CRYPTO_MIN_CONFIDENCE = float(os.getenv("CRYPTO_MIN_CONFIDENCE", "0.70"))  # min
 # Scan interval during weekend (minutes)
 CRYPTO_SCAN_INTERVAL_MIN = int(os.getenv("CRYPTO_SCAN_INTERVAL_MIN", "30"))
 
+# ── Crypto Momentum Scalp (PAPER ONLY) ──────────────────────────────────────
+# Separate fast lane: 1-minute momentum breakout scalps on the crypto majors.
+# CONSERVATIVE DEFAULT: disabled. Set CRYPTO_SCALP_ENABLED=true to opt in.
+# Even when enabled, a hard runtime gate in CryptoTrader refuses any scalp
+# entry unless PAPER is true AND the connected Alpaca account number starts
+# with "PA" — this feature can never trade a live account.
+CRYPTO_SCALP_ENABLED   = os.getenv("CRYPTO_SCALP_ENABLED", "false").lower() in ("1", "true", "yes")
+# Scalp universe: majors only, intersected with CRYPTO_UNIVERSE at runtime.
+CRYPTO_SCALP_UNIVERSE: list = [
+    p.strip() for p in os.getenv("CRYPTO_SCALP_UNIVERSE", "BTC/USD,ETH/USD").split(",") if p.strip()
+]
+# Entry setup on 1-minute bars (no session assumptions — crypto trades 24/7):
+# current bar close breaks above the highest high of the preceding
+# CRYPTO_SCALP_BREAKOUT_BARS completed bars, with current bar volume >=
+# CRYPTO_SCALP_VOLUME_MULT x mean volume of the preceding up-to-
+# CRYPTO_SCALP_VOLUME_LOOKBACK completed bars.
+CRYPTO_SCALP_BREAKOUT_BARS   = int(os.getenv("CRYPTO_SCALP_BREAKOUT_BARS", "5"))
+CRYPTO_SCALP_VOLUME_MULT     = float(os.getenv("CRYPTO_SCALP_VOLUME_MULT", "1.5"))
+CRYPTO_SCALP_VOLUME_LOOKBACK = int(os.getenv("CRYPTO_SCALP_VOLUME_LOOKBACK", "20"))
+# Liquidity guardrails: rolling mean per-bar dollar volume floor (USD) and
+# maximum acceptable quote spread (% of mid).
+CRYPTO_SCALP_MIN_DOLLAR_VOL  = float(os.getenv("CRYPTO_SCALP_MIN_DOLLAR_VOL", "500000"))
+CRYPTO_SCALP_MAX_SPREAD_PCT  = float(os.getenv("CRYPTO_SCALP_MAX_SPREAD_PCT", "0.15"))
+# Exits: scale out half at +TP_PCT, then trail the remainder with a peak
+# giveback. The broker-side stop-limit SL (SL_PCT below entry) stays live as
+# the loss backstop for the full/remaining quantity.
+CRYPTO_SCALP_TP_PCT          = float(os.getenv("CRYPTO_SCALP_TP_PCT", "5.0"))
+CRYPTO_SCALP_GIVEBACK_PCT    = float(os.getenv("CRYPTO_SCALP_GIVEBACK_PCT", "2.5"))
+CRYPTO_SCALP_SL_PCT          = float(os.getenv("CRYPTO_SCALP_SL_PCT", "1.5"))
+# Positions whose half/remainder is below this qty close fully at the target.
+CRYPTO_SCALP_MIN_SPLIT_QTY   = float(os.getenv("CRYPTO_SCALP_MIN_SPLIT_QTY", "1e-6"))
+# Fast-poll scan throttle: the scalp scan runs at most once per this many
+# seconds from the 10-second software-stop poll thread.
+CRYPTO_SCALP_SCAN_INTERVAL_S = int(os.getenv("CRYPTO_SCALP_SCAN_INTERVAL_S", "60"))
+
 # ─────────────────────────────────────────────────────────────────
 # Daily Limits
 # ─────────────────────────────────────────────────────────────────

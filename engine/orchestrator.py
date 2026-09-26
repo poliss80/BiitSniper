@@ -981,6 +981,12 @@ def _software_stop_poll_once(ctx: AppContext) -> None:
         ctx.executor.check_software_stops()
     if ctx.executor.has_active_scalp_positions():
         ctx.executor.check_tp_targets(only_profiles={"scalp"})
+    # Paper-only crypto momentum scalp lane: 10s exit management plus a
+    # throttled (~60s) 1m breakout scan. No-op unless CRYPTO_SCALP_ENABLED
+    # and the paper-account gate passes — equity behavior above is untouched.
+    crypto_trader = getattr(ctx, "crypto_trader", None)
+    if crypto_trader is not None:
+        crypto_trader.fast_scalp_poll()
 
 
 def _start_software_stop_thread(ctx: AppContext) -> None:

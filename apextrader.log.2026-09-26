@@ -443,3 +443,393 @@
 2026-09-26 11:02:49,681 [INFO] STALE ORDER WFF: replaced successfully
 2026-09-26 11:02:49,682 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
 2026-09-26 11:02:49,983 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:24:30,778 [INFO] ok
+2026-09-26 11:24:30,779 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-26 11:24:30,779 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-26 11:24:30,779 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-26 11:24:30,784 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:30,784 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,791 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436270
+2026-09-26 11:24:30,793 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-26 11:24:30,793 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-26 11:24:30,796 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:30,796 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,797 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436270
+2026-09-26 11:24:30,799 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-26 11:24:30,799 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-26 11:24:30,802 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:24:30,802 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,802 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436270
+2026-09-26 11:24:30,808 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:24:30,808 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,808 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436270
+2026-09-26 11:24:30,813 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-26 11:24:30,815 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:30,816 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,816 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436270
+2026-09-26 11:24:30,819 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:30,820 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,820 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436270
+2026-09-26 11:24:30,823 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:30,823 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,823 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436270
+2026-09-26 11:24:30,826 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:30,826 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:30,826 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436270
+2026-09-26 11:24:30,829 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:30,831 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-26 11:24:30,831 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:30,833 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:30,837 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-26 11:24:31,045 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:31,045 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:31,045 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-26 11:24:31,045 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:44,615 [INFO] ok
+2026-09-26 11:24:44,615 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-26 11:24:44,616 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-26 11:24:44,616 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-26 11:24:44,619 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:44,619 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,619 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436284
+2026-09-26 11:24:44,621 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-26 11:24:44,621 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-26 11:24:44,625 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:44,625 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,625 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436284
+2026-09-26 11:24:44,626 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-26 11:24:44,626 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-26 11:24:44,629 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:24:44,630 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,630 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436284
+2026-09-26 11:24:44,634 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:24:44,634 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,634 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436284
+2026-09-26 11:24:44,636 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-26 11:24:44,637 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:44,637 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,637 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436284
+2026-09-26 11:24:44,641 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:44,641 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,641 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436284
+2026-09-26 11:24:44,644 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:44,644 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,644 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436284
+2026-09-26 11:24:44,647 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:44,647 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:44,647 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436284
+2026-09-26 11:24:44,650 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:44,651 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-26 11:24:44,651 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:44,652 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:44,654 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-26 11:24:44,675 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:44,676 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:44,676 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-26 11:24:44,676 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:56,494 [INFO] ok
+2026-09-26 11:24:56,494 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-26 11:24:56,494 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-26 11:24:56,494 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-26 11:24:56,498 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:56,499 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,499 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436296
+2026-09-26 11:24:56,501 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-26 11:24:56,501 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-26 11:24:56,503 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:56,503 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,503 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436296
+2026-09-26 11:24:56,504 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-26 11:24:56,504 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-26 11:24:56,506 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:24:56,506 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,506 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436296
+2026-09-26 11:24:56,508 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:24:56,509 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,509 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436296
+2026-09-26 11:24:56,511 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-26 11:24:56,513 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:56,513 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,513 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436296
+2026-09-26 11:24:56,517 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:56,517 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,517 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436296
+2026-09-26 11:24:56,520 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:56,520 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,520 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436296
+2026-09-26 11:24:56,522 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:24:56,522 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:24:56,522 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436296
+2026-09-26 11:24:56,524 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:56,525 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-26 11:24:56,525 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:56,526 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:24:56,529 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-26 11:24:56,552 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:56,552 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:24:56,553 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-26 11:24:56,553 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:25:00,387 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-26 11:25:00,391 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:25:00,393 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:25:00,401 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-26 11:25:00,402 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-26 11:25:00,404 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-26 11:25:00,407 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-26 11:25:00,408 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:25:00,413 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:25:00,416 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-26 11:25:00,416 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-26 11:25:00,418 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-26 11:25:00,418 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-26 11:25:00,419 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-26 11:25:00,420 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:25:00,420 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:25:00,421 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:25:00,421 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:25:00,421 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:25:00,422 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-26 11:25:00,422 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:25:00,425 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-26 11:25:00,429 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:25:00,433 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:25:00,434 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:25:00,439 [INFO] Restored position exit state: AAPL
+2026-09-26 11:25:00,439 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 11:25:00,443 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 11:25:00,443 [INFO] ======================================================================
+2026-09-26 11:25:00,443 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 11:25:00,445 [INFO] Universe pruned: no expired tickers
+2026-09-26 11:25:00,445 [INFO] ======================================================================
+2026-09-26 11:25:00,451 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-26 11:25:00,452 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-26 11:25:00,452 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-26 11:25:00,452 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-26 11:25:00,452 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-26 11:25:00,454 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-26 11:25:00,458 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-26 11:25:00,459 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,461 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790436300 not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:25:00,461 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,466 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-26 11:25:00,469 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,472 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,475 [INFO] Restored position exit state: BBNX
+2026-09-26 11:25:00,476 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,480 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-26 11:25:00,483 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,484 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:25:00,488 [INFO] Restored position exit state: BBNX
+2026-09-26 11:25:00,490 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-26 11:25:00,494 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:25:00,495 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-26 11:25:00,499 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790436300); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:00,500 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:25:00,536 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-26 11:25:00,538 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:25:00,541 [INFO] Restored position exit state: AAPL
+2026-09-26 11:25:00,541 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:25:00,546 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:25:00,547 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 11:25:00,548 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:25:00,549 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 11:25:00,550 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 11:25:00,852 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:25:00,854 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:25:01,155 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:25:16,582 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-26 11:25:16,585 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:25:16,587 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:25:16,592 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-26 11:25:16,593 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-26 11:25:16,596 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-26 11:25:16,599 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-26 11:25:16,601 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:25:16,603 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:25:16,605 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-26 11:25:16,606 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-26 11:25:16,607 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:25:16,608 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:16,608 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-26 11:25:16,608 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-26 11:25:16,608 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-26 11:25:16,608 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-26 11:25:16,608 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:16,608 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-26 11:25:16,609 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:25:16,609 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-26 11:25:16,609 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:25:16,609 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:16,609 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-26 11:25:16,609 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-26 11:25:16,610 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-26 11:25:16,610 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-26 11:25:16,610 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-26 11:25:16,610 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-26 11:25:16,610 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-26 11:25:16,611 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:25:16,612 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:25:16,612 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-26 11:25:16,612 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-26 11:25:16,613 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:25:16,613 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-26 11:25:16,614 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-26 11:25:16,616 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-26 11:25:16,619 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-26 11:25:16,621 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-26 11:25:16,622 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-26 11:25:16,627 [INFO] Restored position exit state: AAPL
+2026-09-26 11:25:16,628 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-26 11:25:16,633 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-26 11:25:16,633 [INFO] ======================================================================
+2026-09-26 11:25:16,633 [INFO] NEW DAY: 2026-09-26 | Start equity: $0.00
+2026-09-26 11:25:16,635 [INFO] Universe pruned: no expired tickers
+2026-09-26 11:25:16,635 [INFO] ======================================================================
+2026-09-26 11:25:16,638 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-26 11:25:16,639 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-26 11:25:16,639 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-26 11:25:16,639 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-26 11:25:16,639 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-26 11:25:16,640 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-26 11:25:16,642 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-26 11:25:16,643 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,644 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790436316 not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:25:16,645 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,649 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-26 11:25:16,651 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,653 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,656 [INFO] Restored position exit state: BBNX
+2026-09-26 11:25:16,657 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,660 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-26 11:25:16,663 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,664 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:25:16,668 [INFO] Restored position exit state: BBNX
+2026-09-26 11:25:16,670 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-26 11:25:16,674 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-26 11:25:16,674 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-26 11:25:16,676 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790436316); completion and remainder protection deferred until the fill is confirmed
+2026-09-26 11:25:16,678 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-26 11:25:16,696 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-26 11:25:16,699 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:25:16,703 [INFO] Restored position exit state: AAPL
+2026-09-26 11:25:16,703 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-26 11:25:16,707 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:25:16,707 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-26 11:25:16,708 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:25:16,708 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-26 11:25:16,709 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-26 11:25:17,010 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:25:17,012 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-26 11:25:17,313 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-26 11:26:15,547 [INFO] ok
+2026-09-26 11:26:15,547 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-26 11:26:15,547 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-26 11:26:15,548 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-26 11:26:15,550 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:26:15,550 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,551 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436375
+2026-09-26 11:26:15,552 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-26 11:26:15,553 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-26 11:26:15,556 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:26:15,556 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,556 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436375
+2026-09-26 11:26:15,558 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-26 11:26:15,559 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-26 11:26:15,563 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:26:15,563 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,564 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436375
+2026-09-26 11:26:15,567 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-26 11:26:15,567 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,568 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436375
+2026-09-26 11:26:15,569 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-26 11:26:15,570 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:26:15,571 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,571 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436375
+2026-09-26 11:26:15,574 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:26:15,574 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,574 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436375
+2026-09-26 11:26:15,578 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:26:15,579 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,579 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790436375
+2026-09-26 11:26:15,582 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-26 11:26:15,583 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-26 11:26:15,583 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790436375
+2026-09-26 11:26:15,587 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:26:15,588 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-26 11:26:15,588 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:26:15,590 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-26 11:26:15,593 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-26 11:26:15,619 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:26:15,620 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:26:15,620 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-26 11:26:15,620 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-26 11:29:40,874 [INFO] [SYSTEM] Weekend — running CRYPTO-ONLY cycle (equity/options suspended)
+2026-09-26 11:29:41,362 [INFO] [CRYPTO] Position closed externally: RENDER/USD
+2026-09-26 11:29:41,362 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-26 11:29:41,362 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-26 11:29:41,824 [INFO] [CRYPTO] 2 open: LTC/USD(74.4132→TP:77.2738), YFI/USD(2498.7495→TP:2594.8073)
+2026-09-26 11:29:44,704 [INFO] [CRYPTO] #1: AVAX/USD BUY @ 10.9450 conf=75% | RSI=67.9 3-bar uptrend
+2026-09-26 11:29:44,705 [INFO] [CRYPTO] #2: LINK/USD BUY @ 14.2683 conf=74% | RSI=65.9 3-bar uptrend
+2026-09-26 11:29:44,705 [INFO] [CRYPTO] #3: TRUMP/USD BUY @ 2.1507 conf=72% | RSI=61.8 3-bar uptrend
+2026-09-26 11:29:44,705 [INFO] [CRYPTO] #4: GRT/USD BUY @ 0.0281 conf=70% | RSI=59.2 3-bar uptrend
+2026-09-26 11:29:44,705 [INFO] [CRYPTO] #5: WIF/USD BUY @ 0.2497 conf=70% | RSI=58.5 3-bar uptrend
+2026-09-26 11:29:44,810 [INFO] [CRYPTO] LIMIT BUY AVAX/USD qty=79.320945 (~$869) limit=10.9614 | software TP=11.3828 SL=10.6714 | conf=75% | RSI=67.9 3-bar uptrend | order=66bdc21c-d4fd-4b32-9266-f79f4246f42a
+2026-09-26 11:29:44,907 [INFO] [CRYPTO] LIMIT BUY LINK/USD qty=55.775634 (~$797) limit=14.2898 | software TP=14.8391 SL=13.9116 | conf=74% | RSI=65.9 3-bar uptrend | order=675ae60e-cf0b-4494-8a97-6236b5f0248e
+2026-09-26 11:29:45,027 [INFO] [CRYPTO] LIMIT BUY TRUMP/USD qty=339.186674 (~$731) limit=2.1540 | software TP=2.2368 SL=2.0970 | conf=72% | RSI=61.8 3-bar uptrend | order=bec6dd30-b962-480a-8edc-617ec4ab69ef
+2026-09-26 11:29:45,116 [INFO] [CRYPTO] LIMIT BUY GRT/USD qty=23795.303259 (~$670) limit=0.0281 | software TP=0.0292 SL=0.0274 | conf=70% | RSI=59.2 3-bar uptrend | order=a42df1b7-e83c-4356-9973-d7387533b087
+2026-09-26 11:29:45,257 [INFO] [CRYPTO] LIMIT BUY WIF/USD qty=2454.858766 (~$614) limit=0.2501 | software TP=0.2597 SL=0.2435 | conf=70% | RSI=58.5 3-bar uptrend | order=5dda137a-98b7-4318-bfb4-186d8c2485b4
+2026-09-26 11:29:45,257 [INFO] [CRYPTO] SKIP SOL/USD conf=69% < min 70%
+2026-09-26 11:29:45,258 [INFO] [CRYPTO] SKIP XTZ/USD conf=68% < min 70%
+2026-09-26 11:29:45,258 [INFO] [CRYPTO] SKIP ETH/USD conf=65% < min 70%
+2026-09-26 11:29:45,258 [INFO] [CRYPTO] SKIP HYPE/USD conf=65% < min 70%
+2026-09-26 11:29:45,258 [INFO] [CRYPTO] SKIP PAXG/USD conf=65% < min 70%
+2026-09-26 11:29:45,258 [INFO] Heartbeat: 2026-09-26T11:29:45.258733
+2026-09-26 11:29:45,333 [INFO] ======================================================================
+2026-09-26 11:29:45,334 [INFO] STATUS
+2026-09-26 11:29:45,334 [INFO] Equity:     $108,075.77
+2026-09-26 11:29:45,335 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-26 11:29:45,335 [INFO] Positions:  8
+2026-09-26 11:29:45,335 [INFO] Unrealized: $-2167.72
+2026-09-26 11:29:45,335 [INFO]   IMXI: 101 @ $11.23 | $2.05 (+0.18%)
+2026-09-26 11:29:45,335 [INFO]   LTCUSD: 0.000023206 @ $72.11 | $0.00 (+1.44%)
+2026-09-26 11:29:45,335 [INFO]   MXL: 1 @ $94.42 | $-0.58 (-0.61%)
+2026-09-26 11:29:45,336 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-345.00 (-30.53%)
+2026-09-26 11:29:45,336 [INFO]   TBBB: 1 @ $53.74 | $-0.18 (-0.34%)
+2026-09-26 11:29:45,336 [INFO]   TBBB261016C00055000: 4 @ $1.19 | $-35.00 (-7.37%)
+2026-09-26 11:29:45,337 [INFO]   WFF: 35608 @ $2.45 | $-1780.40 (-2.04%)
+2026-09-26 11:29:45,337 [INFO]   YFIUSD: 0.584915567 @ $2485.08 | $-8.61 (-0.59%)
+2026-09-26 11:29:45,337 [INFO] ======================================================================
+2026-09-26 11:29:45,342 [INFO] Universe pruned: no expired tickers
+2026-09-26 11:32:59,371 [INFO] Stopped by user
+2026-09-26 11:32:59,832 [INFO] ======================================================================
+2026-09-26 11:32:59,833 [INFO] STATUS
+2026-09-26 11:32:59,833 [INFO] Equity:     $108,074.38
+2026-09-26 11:32:59,833 [INFO] Daily P&L:  $0.00  |  Trades: 0
+2026-09-26 11:32:59,833 [INFO] Positions:  9
+2026-09-26 11:32:59,833 [INFO] Unrealized: $-2168.30
+2026-09-26 11:32:59,833 [INFO]   GRTUSD: 23766.748895458 @ $0.03 | $-0.58 (-0.09%)
+2026-09-26 11:32:59,833 [INFO]   IMXI: 101 @ $11.23 | $2.05 (+0.18%)
+2026-09-26 11:32:59,833 [INFO]   LTCUSD: 0.000023206 @ $72.11 | $0.00 (+1.44%)
+2026-09-26 11:32:59,833 [INFO]   MXL: 1 @ $94.42 | $-0.58 (-0.61%)
+2026-09-26 11:32:59,833 [INFO]   PLTR261009C00187500: 1 @ $11.30 | $-345.00 (-30.53%)
+2026-09-26 11:32:59,833 [INFO]   TBBB: 1 @ $53.74 | $-0.18 (-0.34%)
+2026-09-26 11:32:59,833 [INFO]   TBBB261016C00055000: 4 @ $1.19 | $-35.00 (-7.37%)
+2026-09-26 11:32:59,834 [INFO]   WFF: 35608 @ $2.45 | $-1780.40 (-2.04%)
+2026-09-26 11:32:59,834 [INFO]   YFIUSD: 0.584915567 @ $2485.08 | $-8.61 (-0.59%)
+2026-09-26 11:32:59,834 [INFO] ======================================================================
