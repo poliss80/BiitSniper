@@ -1,23 +1,15 @@
 {
-  "generated_at": "2026-09-25T13:49:53-04:00",
+  "generated_at": "2026-09-25T19:57:45-04:00",
   "date": "2026-09-25",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "TBBB",
+      "symbol": "UNG",
       "action": "buy",
-      "price": 53.02,
-      "confidence": 0.93,
+      "price": 11.55,
+      "confidence": 0.94,
       "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.50"
-    },
-    {
-      "symbol": "MXL",
-      "action": "buy",
-      "price": 85.31,
-      "confidence": 0.89,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $6.13"
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.33"
     }
   ]
 }

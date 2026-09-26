@@ -774,7 +774,14 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
 
         if not candidates:
             return None
-        signal = max(candidates, key=lambda s: s.confidence)
+        # Policy: an eligible MomentumScalp always wins over other strategies
+        # (e.g. MomentumContinuation) regardless of confidence, so scalp setups
+        # get dedicated scalp execution instead of live-probe one-share sizing.
+        scalps = [c for c in candidates if c.strategy == "MomentumScalp"]
+        if scalps:
+            signal = max(scalps, key=lambda s: s.confidence)
+        else:
+            signal = max(candidates, key=lambda s: s.confidence)
         return annotate_signal_with_news(signal)
 
 
