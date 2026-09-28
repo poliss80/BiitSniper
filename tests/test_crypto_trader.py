@@ -337,7 +337,7 @@ class ScalpTestBase(unittest.TestCase):
         ))
 
     def seed_scalp_position(self, trader, qty=1.0, entry=100.0, scaled_out=False,
-                            peak=None):
+                            peak=None, entry_pending=False, sl_order_id="sl-1"):
         pos = CryptoPosition(
             symbol=SCALP_SYM,
             entry_price=entry,
@@ -347,9 +347,10 @@ class ScalpTestBase(unittest.TestCase):
             tp_price=round(entry * (1 + _cfg.CRYPTO_SCALP_TP_PCT / 100), 8),
             sl_price=round(entry * (1 - _cfg.CRYPTO_SCALP_SL_PCT / 100), 8),
             peak_price=peak if peak is not None else entry,
-            sl_order_id="sl-1",
+            sl_order_id=sl_order_id,
             strategy="momentum_scalp",
             scaled_out=scaled_out,
+            entry_pending=entry_pending,
         )
         trader._positions[SCALP_SYM] = pos
         return pos
@@ -647,6 +648,34 @@ class TestCryptoScalpPersistence(ScalpTestBase):
         self.assertEqual(restored.sl_price, pos.sl_price)
         self.assertEqual(restored.pending_exit["coid"], "apex-cscalp-out-BTCUSD-1")
 
+    def test_paper_position_restores_management_when_new_entries_disabled(self):
+        broker_pos = SimpleNamespace(symbol=SCALP_ASYM, qty="0.5", avg_entry_price="100.0")
+        trader1 = self.make_trader(positions=[broker_pos])
+        self.seed_scalp_position(trader1, qty=0.5, entry=100.0, scaled_out=True, peak=110.0)
+        trader1._save_scalp_state()
+
+        trader2 = self.make_trader(positions=[broker_pos])
+        with patch.object(_cfg, "CRYPTO_SCALP_ENABLED", False):
+            trader2._sync_positions()
+
+        self.assertEqual(trader2._positions[SCALP_SYM].strategy, "momentum_scalp")
+        self.assertTrue(trader2._positions[SCALP_SYM].scaled_out)
+        self.assertEqual(trader2._positions[SCALP_SYM].peak_price, 110.0)
+
+    def test_live_account_does_not_restore_paper_scalp_metadata(self):
+        broker_pos = SimpleNamespace(symbol=SCALP_ASYM, qty="0.5", avg_entry_price="100.0")
+        trader1 = self.make_trader(positions=[broker_pos])
+        self.seed_scalp_position(trader1, qty=0.5, entry=100.0, scaled_out=True, peak=110.0)
+        trader1._save_scalp_state()
+
+        trader2 = self.make_trader(account_number="3PL1234", positions=[broker_pos])
+        trader2._sync_positions()
+
+        restored = trader2._positions[SCALP_SYM]
+        self.assertEqual(restored.strategy, "baseline")
+        self.assertFalse(restored.scaled_out)
+        self.assertEqual(restored.tp_price, round(100.0 * (1 + _cfg.CRYPTO_TP_PCT / 100), 8))
+
     def test_baseline_positions_are_not_persisted(self):
         trader = self.make_trader()
         trader._positions[SCALP_SYM] = CryptoPosition(
@@ -661,6 +690,157 @@ class TestCryptoScalpPersistence(ScalpTestBase):
         )
         trader._save_scalp_state()
         self.assertFalse(self.state_path.exists(), "baseline-only state file must not be written")
+
+
+class TestCryptoScalpEntryLifecycle(ScalpTestBase):
+    """Pending-entry lifecycle: GTC limit entry -> broker fill sync -> prompt
+    broker SL -> price monitoring. Regression coverage for the bug where the
+    fast poll managed an estimated, unfilled entry as if it were a broker-held
+    position (selling coins that don't exist), and where the slow sync dropped
+    still-working scalp entries as 'stale'."""
+
+    @staticmethod
+    def _open_tagged_buy(coid="apex-cscalp-in-BTCUSD-1"):
+        return SimpleNamespace(
+            symbol=SCALP_ASYM, side="buy", order_type="limit",
+            id="entry-1", client_order_id=coid, status="new",
+        )
+
+    def test_unfilled_entry_retained_and_no_sell(self):
+        # Entry placed via the real path -> pending position + tagged coid
+        trader = self.make_trader()
+        sig = SimpleNamespace(symbol=SCALP_SYM, price=100.0, reason="t")
+        self.assertTrue(trader.execute_scalp_buy(sig))
+        pos = trader._positions[SCALP_SYM]
+        self.assertTrue(pos.entry_pending)
+        coid = trader._client.submitted[0].client_order_id
+        self.assertTrue(coid.startswith("apex-cscalp-in-"))
+
+        # Broker: no position yet, tagged entry order still working
+        trader._client._positions = []
+        trader._client._orders = [self._open_tagged_buy(coid)]
+        submitted_before = len(trader._client.submitted)
+        price_calls = []
+        trader._get_latest_price = lambda sym: price_calls.append(sym) or 106.0
+
+        trader.fast_scalp_poll()
+
+        self.assertIn(SCALP_SYM, trader._positions,
+                      "pending entry must survive the fast poll sync")
+        self.assertTrue(trader._positions[SCALP_SYM].entry_pending)
+        self.assertEqual(len(trader._client.submitted), submitted_before,
+                         "no SELL may be submitted before the entry fills")
+        self.assertEqual(price_calls, [],
+                         "unfilled entry must not be price-monitored")
+
+    def test_filled_entry_synced_and_sl_placed_before_monitoring(self):
+        trader = self.make_trader()
+        pos = self.seed_scalp_position(trader, qty=1.0, entry=100.0,
+                                       entry_pending=True, sl_order_id=None)
+        # Broker now shows the fill (partial qty, real fill price); entry gone
+        trader._client._positions = [
+            SimpleNamespace(symbol=SCALP_ASYM, qty="0.75", avg_entry_price="100.5")
+        ]
+        trader._client._orders = []
+        trader._get_latest_price = lambda sym: 106.0  # above TP -> would trigger exit
+
+        trader.fast_scalp_poll()
+
+        self.assertFalse(pos.entry_pending, "fill must be confirmed by broker sync")
+        self.assertEqual(pos.qty, 0.75, "actual broker qty must replace the estimate")
+        self.assertEqual(pos.entry_price, 100.5, "actual fill price must be adopted")
+        self.assertGreaterEqual(len(trader._client.submitted), 2)
+        sl_req = trader._client.submitted[0]
+        self.assertIsNotNone(getattr(sl_req, "stop_price", None),
+                             "first order after the fill must be the broker SL")
+        self.assertEqual(float(sl_req.stop_price), pos.sl_price)
+        # The scale-out cancelled the just-placed SL — proof it existed before
+        # any exit was submitted (mock assigns sequential ids: SL = order-1).
+        self.assertIn("order-1", trader._client.cancelled)
+        exit_req = trader._client.submitted[1]
+        self.assertTrue(
+            str(exit_req.client_order_id).startswith("apex-cscalp-out-"),
+            "price monitoring/exits must run only AFTER SL protection is in place",
+        )
+
+    def test_pending_entry_survives_repeated_fast_polls_and_persistence(self):
+        import json as _json
+        trader = self.make_trader()
+        self.seed_scalp_position(trader, qty=1.0, entry=100.0,
+                                 entry_pending=True, sl_order_id=None)
+        trader._save_scalp_state()
+        self.assertIn(SCALP_SYM, _json.loads(self.state_path.read_text()))
+
+        trader._client._positions = []
+        trader._client._orders = [self._open_tagged_buy()]
+        trader._get_latest_price = lambda sym: 200.0  # far above TP — must be ignored
+
+        trader.fast_scalp_poll()
+        trader.fast_scalp_poll()
+
+        self.assertIn(SCALP_SYM, trader._positions,
+                      "still-working entry must never be dropped as stale")
+        self.assertEqual(trader._client.submitted, [], "no orders while entry is unfilled")
+        self.assertIn(SCALP_SYM, _json.loads(self.state_path.read_text()),
+                      "scalp metadata must not be erased while the entry is working")
+
+    def test_untagged_open_buy_does_not_protect_pending_entry(self):
+        trader = self.make_trader()
+        self.seed_scalp_position(trader, qty=1.0, entry=100.0,
+                                 entry_pending=True, sl_order_id=None)
+        trader._save_scalp_state()
+        trader._client._positions = []
+        # Unrelated untagged resting BUY (e.g. baseline lane) — NOT a scalp entry
+        trader._client._orders = [
+            SimpleNamespace(symbol=SCALP_ASYM, side="buy", order_type="limit",
+                            id="base-1", client_order_id="", status="new")
+        ]
+
+        trader.fast_scalp_poll()
+
+        self.assertNotIn(SCALP_SYM, trader._positions,
+                         "pending entry with no tagged open order is dead and must be dropped")
+        self.assertFalse(self.state_path.exists(),
+                         "dropped scalp metadata must be erased from persisted state")
+        self.assertEqual(trader._client.submitted, [],
+                         "no new entry while the untagged buy blocks the scan")
+
+    def test_feature_disabled_still_manages_tracked_position(self):
+        trader = self.make_trader()
+        pos = self.seed_scalp_position(trader, qty=1.0, entry=100.0)
+        trader._client._positions = [
+            SimpleNamespace(symbol=SCALP_ASYM, qty="1.0", avg_entry_price="100.0")
+        ]
+        scan_calls = []
+        trader.scan_momentum_scalp = lambda syms: scan_calls.append(list(syms)) or []
+        trader._get_latest_price = lambda sym: 106.0  # TP hit
+
+        with patch.object(_cfg, "CRYPTO_SCALP_ENABLED", False):
+            trader.fast_scalp_poll()
+
+        self.assertEqual(len(trader._client.submitted), 1,
+                         "already-tracked position must still exit at target")
+        self.assertTrue(
+            trader._client.submitted[0].client_order_id.startswith("apex-cscalp-out-"))
+        self.assertIn("sl-1", trader._client.cancelled,
+                      "broker SL must be cancelled before the exit sell")
+        self.assertEqual(pos.pending_exit["kind"], "scale_out")
+        self.assertEqual(scan_calls, [],
+                         "no new-entry scanning while the feature is disabled")
+
+    def test_feature_disabled_no_tracked_positions_is_noop(self):
+        trader = self.make_trader()
+        scan_calls = []
+        trader.scan_momentum_scalp = lambda syms: scan_calls.append(list(syms)) or []
+        sync_calls = []
+        trader._sync_positions = lambda: sync_calls.append(1)
+
+        with patch.object(_cfg, "CRYPTO_SCALP_ENABLED", False):
+            trader.fast_scalp_poll()
+
+        self.assertEqual(scan_calls, [])
+        self.assertEqual(sync_calls, [], "nothing tracked — no broker sync needed")
+        self.assertEqual(trader._client.submitted, [])
 
 
 if __name__ == "__main__":

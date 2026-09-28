@@ -65,6 +65,7 @@ class CryptoPosition:
     strategy:     str = "baseline"      # "baseline" | "momentum_scalp"
     scaled_out:   bool = False          # scalp: partial profit already booked
     pending_exit: Optional[dict] = None # scalp: in-flight exit order metadata
+    entry_pending: bool = False         # scalp: entry BUY submitted, fill not yet confirmed by broker
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -234,7 +235,7 @@ class CryptoTrader:
                 notional = qty * entry
                 # Restore persisted scalp metadata so a restart does not silently
                 # downgrade an open scalp position to the baseline lane.
-                meta = self._load_scalp_state().get(sym_norm) if self._scalp_config_enabled() else None
+                meta = self._load_scalp_state().get(sym_norm) if self._scalp_paper_account_verified() else None
                 if meta:
                     sl_price = float(meta.get("sl_price") or round(entry * (1 - _cfg.CRYPTO_SCALP_SL_PCT / 100), 8))
                     tp_price = float(meta.get("tp_price") or round(entry * (1 + _cfg.CRYPTO_SCALP_TP_PCT / 100), 8))
@@ -276,6 +277,16 @@ class CryptoTrader:
             else:
                 # Position already tracked — place broker SL if not yet done
                 tracked = self._positions[sym_norm]
+                if tracked.entry_pending:
+                    # Broker now shows the position: the entry BUY has (at least
+                    # partially) filled. Adopt the actual fill qty/entry price so
+                    # exits and SL sizing use real broker values, not estimates.
+                    tracked.entry_pending = False
+                    tracked.entry_price   = float(pos.avg_entry_price)
+                    log.info(
+                        f"[CRYPTO][SCALP] {sym_norm} entry fill confirmed by broker — "
+                        f"entry={tracked.entry_price:.8f} qty={qty:.8f}"
+                    )
                 if tracked.sl_order_id is None:
                     if self._has_open_buy_order(sym_norm):
                         # Entry buy limit still resting — defer SL to avoid wash-trade rejection
@@ -289,8 +300,21 @@ class CryptoTrader:
         stale = [s for s in list(self._positions) if s not in live_symbols]
         removed_scalp = False
         for s in stale:
-            log.info(f"[CRYPTO] Position closed externally: {s}")
-            removed_scalp = removed_scalp or self._positions[s].strategy == "momentum_scalp"
+            pos = self._positions[s]
+            if (
+                pos.strategy == "momentum_scalp"
+                and pos.entry_pending
+                and self._has_open_scalp_entry_order(s)
+            ):
+                # Entry BUY still working on the broker — NOT stale. Keep the
+                # pending entry (and its persisted metadata) untouched.
+                log.debug(f"[CRYPTO][SCALP] {s} entry order still open — keeping pending state")
+                continue
+            if pos.strategy == "momentum_scalp" and pos.entry_pending:
+                log.info(f"[CRYPTO][SCALP] {s} pending entry no longer open on broker — dropping")
+            else:
+                log.info(f"[CRYPTO] Position closed externally: {s}")
+            removed_scalp = removed_scalp or pos.strategy == "momentum_scalp"
             self._positions.pop(s, None)
         if removed_scalp:
             self._save_scalp_state()
@@ -563,6 +587,36 @@ class CryptoTrader:
             log.debug(f"[CRYPTO] _has_open_buy_order failed for {symbol}: {e}")
         return False
 
+    def _has_open_scalp_entry_order(self, symbol: str) -> bool:
+        """True if this symbol's tagged scalp entry BUY is still open on the broker.
+
+        Scalp entries are submitted with client_order_id prefix 'apex-cscalp-in-';
+        matching on that tag avoids mistaking an unrelated (e.g. baseline lane)
+        resting BUY for a still-working scalp entry. Conservative on fetch
+        failure: returns True so a pending entry is never dropped on a
+        transient API error.
+        """
+        try:
+            from alpaca.trading.requests import GetOrdersRequest
+            from alpaca.trading.enums import OrderSide, QueryOrderStatus
+            alpaca_sym = self._alpaca_sym(symbol)
+            req = GetOrdersRequest(
+                status=QueryOrderStatus.OPEN,
+                side=OrderSide.BUY,
+                limit=100,
+            )
+            orders = self._client.get_orders(req)
+            for o in orders:
+                if str(getattr(o, "symbol", "")).upper() != alpaca_sym.upper():
+                    continue
+                coid = str(getattr(o, "client_order_id", "") or "")
+                if coid.startswith("apex-cscalp-in-"):
+                    return True
+            return False
+        except Exception as e:
+            log.debug(f"[CRYPTO][SCALP] open entry order check failed for {symbol}: {e}")
+            return True  # keep pending state on transient failure
+
     def _place_sl_order(self, symbol: str, qty: float, sl_price: float) -> Optional[str]:
         """Submit a broker-side GTC stop-limit SELL order for the SL level.
 
@@ -653,11 +707,14 @@ class CryptoTrader:
         """Hard paper-only gate for the scalp lane.
 
         Requires the config opt-in AND PAPER mode AND a connected Alpaca
-        paper account (account_number starts with 'PA'). The account check is
-        cached after the first successful lookup. Never True for live.
+        paper account (account_number starts with 'PA'). Never True for live.
         """
+        return self._scalp_config_enabled() and self._scalp_paper_account_verified()
+
+    def _scalp_paper_account_verified(self) -> bool:
+        """Verify paper account identity for both new entries and state restore."""
         from engine import config as _cfg
-        if not self._scalp_config_enabled() or not _cfg.PAPER:
+        if not _cfg.PAPER:
             return False
         if self._scalp_acct_ok is None:
             try:
@@ -820,6 +877,10 @@ class CryptoTrader:
                 f"limit={limit_price:.4f} | scalp TP={tp_price:.4f} SL={sl_price:.4f} "
                 f"| {signal.reason} | order={order.id}"
             )
+            # Tracked as a PENDING entry: the GTC limit may not be filled yet.
+            # _sync_positions() (now run by every fast poll) confirms the fill,
+            # adopts the actual qty/entry price, and only then places the SL and
+            # enables price monitoring.
             self._positions[signal.symbol] = CryptoPosition(
                 symbol=signal.symbol,
                 entry_price=limit_price,
@@ -830,6 +891,7 @@ class CryptoTrader:
                 sl_price=sl_price,
                 peak_price=limit_price,
                 strategy="momentum_scalp",
+                entry_pending=True,
             )
             self._save_scalp_state()
             return True
@@ -840,14 +902,26 @@ class CryptoTrader:
     # ── Scalp fast monitor (10s cadence) ──────────────────────────────────────
 
     def fast_scalp_poll(self) -> None:
-        """One fast-poll iteration for the scalp lane: manage open scalp
-        positions, then run the throttled scalp scan. No-op unless the lane
-        is enabled and the paper-only gate passes."""
-        if not self._scalp_config_enabled():
+        """One fast-poll iteration for the scalp lane.
+
+        Position management comes first: any tracked scalp position (pending
+        entry, open, or mid-exit) is synced against the broker and managed on
+        every poll — even when new entries are disabled — so existing paper
+        scalp exposure is never orphaned. The paper-only gate applies to NEW
+        entries only, not to closing/protecting already-tracked positions.
+        """
+        entries_allowed = self._scalp_config_enabled() and self._scalp_runtime_allowed()
+        tracked_scalp   = any(p.strategy == "momentum_scalp" for p in self._positions.values())
+        if not entries_allowed and not tracked_scalp:
             return
-        if not self._scalp_runtime_allowed():
+        if tracked_scalp:
+            # Reconcile with the broker BEFORE managing exits: confirms pending
+            # entry fills (actual qty/entry price + prompt broker SL) and never
+            # treats a still-working entry order as a filled position.
+            self._sync_positions()
+            self._monitor_scalp_positions()
+        if not entries_allowed:
             return
-        self._monitor_scalp_positions()
         from engine import config as _cfg
         now = time.time()
         if now - self._last_scalp_scan_ts >= float(getattr(_cfg, "CRYPTO_SCALP_SCAN_INTERVAL_S", 60)):
@@ -869,6 +943,8 @@ class CryptoTrader:
         giveback = float(_cfg.CRYPTO_SCALP_GIVEBACK_PCT) / 100
         for sym, pos in scalp:
             try:
+                if pos.entry_pending:
+                    continue  # entry BUY not filled yet — no broker-held coins to exit
                 if pos.pending_exit:
                     self._reconcile_scalp_pending(sym, pos)
                     continue
