@@ -637,6 +637,16 @@ class CryptoTrader:
             # so the submitted qty is always <= the true available balance while
             # keeping enough precision for low-priced tokens (e.g. PEPE).
             safe_qty    = math.floor(qty * (1 - 1e-6) * 1e8) / 1e8
+            if safe_qty <= 0:
+                # Dust holding below 1e-8 SL quantity precision — submitting a
+                # zero-qty order would trigger Alpaca 40010001. Debug (not
+                # warning) since this retries every cycle until the dust is
+                # swept or the position is closed.
+                log.debug(
+                    f"[CRYPTO] SL skipped for {symbol}: qty {qty!r} is below "
+                    f"1e-8 order precision (safe_qty={safe_qty}) — dust holding"
+                )
+                return None
             order_req   = StopLimitOrderRequest(
                 symbol=alpaca_sym,
                 qty=safe_qty,

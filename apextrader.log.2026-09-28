@@ -1,0 +1,277 @@
+2026-09-28 04:42:57,744 [INFO] Restored position exit state: IMXI, TBBB, MXL
+2026-09-28 04:42:57,779 [INFO] Entry log rebuilt from today's orders: IMXI, TBBB, MXL
+2026-09-28 04:42:57,811 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-28 04:42:57,840 [INFO] [OPTIONS] Reconciled BUY position: PLTR261009C00187500 1x call @187.5 entry=$11.30
+2026-09-28 04:42:57,840 [INFO] [OPTIONS] Reconciled BUY position: TBBB261016C00055000 4x call @55.0 entry=$1.19
+2026-09-28 04:42:57,840 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-28 04:42:57,972 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-28 04:42:57,972 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-28 04:42:57,973 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-28 04:42:57,973 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-28 04:42:57,973 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-28 04:42:57,973 [INFO] ======================================================================
+2026-09-28 04:42:57,973 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-28 04:42:57,974 [INFO] ======================================================================
+2026-09-28 04:42:57,974 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-28 04:42:57,974 [INFO] Priority 2 (Established): 16 stocks
+2026-09-28 04:42:57,974 [INFO] Total Universe: 42 stocks
+2026-09-28 04:42:57,974 [INFO] Scan: 3 min fixed
+2026-09-28 04:42:57,974 [INFO] ======================================================================
+2026-09-28 04:42:58,003 [INFO] Equity:          $105,487.76
+2026-09-28 04:42:58,003 [INFO] Buying Power:    $74,154.22
+2026-09-28 04:42:58,003 [INFO] PDT Status:      No
+2026-09-28 04:42:58,003 [INFO] Day Trade Count: None
+2026-09-28 04:42:58,003 [INFO] ======================================================================
+2026-09-28 04:42:58,003 [INFO] Starting… Press Ctrl+C to stop
+2026-09-28 04:42:58,003 [INFO] ======================================================================
+2026-09-28 04:42:58,004 [INFO] [STOP-THREAD] Software-stop + scalp fast-poll thread started (10s interval)
+2026-09-28 04:42:58,004 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-28 04:42:58,004 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-28 04:42:58,006 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-28 04:44:27,997 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-28 04:44:28,028 [INFO] ======================================================================
+2026-09-28 04:44:28,028 [INFO] NEW DAY: 2026-09-28 | Start equity: $105,487.76
+2026-09-28 04:44:28,030 [INFO] Universe pruned: removed 38 expired ticker(s): ['AG', 'AMDL', 'ARMG', 'BILI', 'BMNZ', 'BNO', 'BOIL', 'CCL', 'CRCG', 'DAMD']…
+2026-09-28 04:44:28,030 [INFO] ======================================================================
+2026-09-28 04:44:28,030 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-28 04:44:28,155 [INFO] [CRYPTO] BROKER SL placed for ADA/USD stop=0.2505 limit=0.2492 qty=0.00000001 | order=abe32aa0-cb95-4445-9fb5-b27877b21a02
+2026-09-28 04:44:32,435 [INFO] [CRYPTO] BROKER SL placed for BAT/USD stop=0.0927 limit=0.0923 qty=0.00000002 | order=e8d15aef-0391-4735-8572-c5edc83f7405
+2026-09-28 04:44:32,646 [INFO] [CRYPTO] BROKER SL placed for BONK/USD stop=0.0000 limit=0.0000 qty=0.00406434 | order=2db38456-7285-4d51-a137-db6b83d0383a
+2026-09-28 04:44:32,741 [INFO] [CRYPTO] BROKER SL placed for DOGE/USD stop=0.0954 limit=0.0949 qty=0.00000001 | order=78bae004-def8-451d-ac9d-a286cee67613
+2026-09-28 04:44:33,849 [INFO] [CRYPTO] 17 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0951→TP:0.0989), BCH/USD(341.1500→TP:354.7960), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SOL/USD(124.1000→TP:129.0640), SUSHI/USD(0.2713→TP:0.2821), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), YFI/USD(2485.0802→TP:2584.4834)
+2026-09-28 04:44:34,941 [INFO] [CRYPTO] #1: PAXG/USD SELL @ 4172.6520 conf=90% | RSI=4.5 3-bar downtrend
+2026-09-28 04:44:34,941 [INFO] [CRYPTO] #2: ONDO/USD BUY @ 0.5947 conf=75% | RSI=68.4 3-bar uptrend
+2026-09-28 04:44:35,041 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=2558.110035 (~$1524) limit=0.5956 | software TP=0.6185 SL=0.5798 | conf=75% | RSI=68.4 3-bar uptrend | order=1c86a04c-8425-48bc-ba48-58fff8b19e9d
+2026-09-28 04:44:35,503 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-28 04:44:36,346 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-28 04:44:37,102 [INFO] Quarterly P&L: +8.5% (target >= 50%)
+2026-09-28 04:44:37,439 [INFO] [SCAN] Market sentiment: neutral
+2026-09-28 04:44:37,471 [INFO] STALE ORDER: WFF OrderSide.SELL 35608 — age 21.2m (cutoff 3m) → limit @ current price
+2026-09-28 04:44:37,471 [WARNING] STALE ORDER WFF: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:44:37,471 [INFO] STALE ORDER: TBBB OrderSide.SELL 1 — age 21.2m (cutoff 3m) → limit @ current price
+2026-09-28 04:44:37,471 [WARNING] STALE ORDER TBBB: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:44:37,471 [INFO] STALE ORDER: MXL OrderSide.SELL 1 — age 21.2m (cutoff 3m) → limit @ current price
+2026-09-28 04:44:37,472 [WARNING] STALE ORDER MXL: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:44:37,472 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2790 — age 21.2m (cutoff 3m) → limit @ current price
+2026-09-28 04:44:37,472 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:44:37,472 [INFO] STALE ORDER: BCH/USD OrderSide.SELL 0 — age 427.1m (cutoff 3m) → limit @ current price
+2026-09-28 04:44:37,472 [WARNING] STALE ORDER BCH/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:44:37,546 [WARNING] Trade Ideas scan still running (100s) — trading loop continues
+2026-09-28 04:44:38,415 [INFO] [EDGAR] CIK map loaded: 8,004 companies
+2026-09-28 04:44:39,142 [INFO] [EDGAR] 8-K match: UNL — 8-K - United States 12 Month Natural Gas Fund, LP (0001405513) (Filer)
+2026-09-28 04:44:39,142 [INFO] [EDGAR] 8-K match: USL — 8-K - United States 12 Month Oil Fund, LP (0001405528) (Filer)
+2026-09-28 04:44:39,142 [INFO] [EDGAR] 8-K match: UNG — 8-K - United States Natural Gas Fund, LP (0001376227) (Filer)
+2026-09-28 04:44:39,143 [INFO] [EDGAR] 8-K match: UGA — 8-K - United States Gasoline Fund, LP (0001396878) (Filer)
+2026-09-28 04:44:39,143 [INFO] [EDGAR] 8-K match: USO — 8-K - United States Oil Fund, LP (0001327068) (Filer)
+2026-09-28 04:44:39,143 [INFO] [EDGAR] 8-K match: BNO — 8-K - United States Brent Oil Fund, LP (0001472494) (Filer)
+2026-09-28 04:44:39,143 [INFO] [EDGAR] 8-K match: HCTI — 8-K - Healthcare Triangle, Inc. (0001839285) (Filer)
+2026-09-28 04:44:39,143 [INFO] [EDGAR] 8-K match: CELZ — 8-K - CREATIVE MEDICAL TECHNOLOGY HOLDINGS, INC. (0001187953) (Filer)
+2026-09-28 04:44:39,144 [INFO] [EDGAR] 8-K match: RWAYI — 8-K - Runway Growth Finance Corp. (0001653384) (Filer)
+2026-09-28 04:44:39,144 [INFO] [EDGAR] 8-K match: WMG — 8-K - Warner Music Group Corp. (0001319161) (Filer)
+2026-09-28 04:44:39,144 [INFO] [EDGAR] 8-K match: TWI — 8-K - TITAN INTERNATIONAL INC (0000899751) (Filer)
+2026-09-28 04:44:39,144 [INFO] [EDGAR] 8-K match: GNK — 8-K - GENCO SHIPPING & TRADING LTD (0001326200) (Filer)
+2026-09-28 04:44:39,144 [INFO] [EDGAR] 12 newly triggered tickers: ['UNL', 'USL', 'UNG', 'UGA', 'USO', 'BNO', 'HCTI', 'CELZ', 'RWAYI', 'WMG', 'TWI', 'GNK']
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding UNL to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding USL to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding UNG to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding UGA to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding USO to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding BNO to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding HCTI to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding CELZ to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding RWAYI to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding WMG to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding TWI to P2 + scan queue for monitoring
+2026-09-28 04:44:39,146 [INFO] [EDGAR] Adding GNK to P2 + scan queue for monitoring
+2026-09-28 04:44:55,156 [INFO] [PREOPEN] Intelligence watchlist (bear, regime=bull): top 20 tickers → UNL(1.75:news-bullish, priority-queue), USL(1.75:news-bullish, priority-queue), UNG(1.75:news-bullish, priority-queue), UGA(1.75:news-bullish, priority-queue), USO(1.75:news-bullish, priority-queue), BNO(1.75:news-bullish, priority-queue), HCTI(1.75:news-bullish, priority-queue), CELZ(1.75:news-bullish, priority-queue), RWAYI(1.75:news-bullish, priority-queue), WMG(1.75:news-bullish, priority-queue)
+2026-09-28 04:44:55,156 [INFO] [PREOPEN] Provider performance → priority_queue=w1.00/0/18, universe_seed=w1.00/0/3, sentiment=w1.00/0/12
+2026-09-28 04:44:55,218 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-28 04:44:55,218 [INFO] [SCAN] 40 symbols (filtered, 8 workers): UNL, USL, UNG, UGA, USO, BNO, HCTI, CELZ, RWAYI, WMG, TWI, GNK, AGO, BRC, CNS, GL, KOF, MGM, NWN, TEVA, AGQ, BUR, CLRO, DUST, GDXD, GDXU, GFI, INLF, KITT, KOLD, MSGY, MX, SHMD, SHNY, SKDD, TDIC, WSHP, XRPT, XXRP, ZSL
+2026-09-28 04:44:55,218 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-28 04:44:59,361 [INFO] [GUARDRAIL SUMMARY] Rejected: 40 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 40
+2026-09-28 04:44:59,361 [INFO] [FUNNEL] targets=40 guardrail_rejected=40 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-28 04:44:59,362 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-28 04:44:59,362 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-28 04:44:59,423 [INFO] LIVE PROBE IMXI: scale-in skipped; gain -0.01% < 0.25%
+2026-09-28 04:44:59,423 [INFO] LIVE PROBE TBBB: scale-in skipped; gain -0.33% < 0.25%
+2026-09-28 04:44:59,423 [INFO] LIVE PROBE MXL: scale-in skipped; gain -4.68% < 0.25%
+2026-09-28 04:44:59,423 [INFO] [SCAN] No signals this cycle
+2026-09-28 04:47:59,442 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-28 04:48:00,641 [INFO] [CRYPTO] 17 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0951→TP:0.0989), BCH/USD(341.1500→TP:354.7960), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SOL/USD(124.1000→TP:129.0640), SUSHI/USD(0.2713→TP:0.2821), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), YFI/USD(2485.0802→TP:2584.4834)
+2026-09-28 04:48:01,809 [INFO] [CRYPTO] #1: PAXG/USD SELL @ 4172.6520 conf=90% | RSI=4.5 3-bar downtrend
+2026-09-28 04:48:01,809 [INFO] [CRYPTO] #2: ONDO/USD BUY @ 0.5947 conf=75% | RSI=68.4 3-bar uptrend
+2026-09-28 04:48:01,903 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=2344.927203 (~$1397) limit=0.5956 | software TP=0.6185 SL=0.5798 | conf=75% | RSI=68.4 3-bar uptrend | order=a75067c3-8aab-460b-bb6c-8af6f6290bc4
+2026-09-28 04:48:02,361 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-28 04:48:02,362 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-28 04:48:02,422 [INFO] Quarterly P&L: +7.4% (target >= 50%)
+2026-09-28 04:48:02,422 [INFO] [SCAN] Market sentiment: neutral
+2026-09-28 04:48:02,454 [INFO] STALE ORDER: BAT/USD OrderSide.SELL 0 — age 3.5m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,454 [WARNING] STALE ORDER BAT/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,454 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2558 — age 3.5m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,454 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,454 [INFO] STALE ORDER: DOGE/USD OrderSide.SELL 0 — age 3.5m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,454 [WARNING] STALE ORDER DOGE/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,454 [INFO] STALE ORDER: BONK/USD OrderSide.SELL 0 — age 3.5m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,454 [WARNING] STALE ORDER BONK/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,454 [INFO] STALE ORDER: ADA/USD OrderSide.SELL 0 — age 3.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,454 [WARNING] STALE ORDER ADA/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,454 [INFO] STALE ORDER: WFF OrderSide.SELL 35608 — age 24.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,454 [WARNING] STALE ORDER WFF: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,455 [INFO] STALE ORDER: TBBB OrderSide.SELL 1 — age 24.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,455 [WARNING] STALE ORDER TBBB: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,455 [INFO] STALE ORDER: MXL OrderSide.SELL 1 — age 24.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,455 [WARNING] STALE ORDER MXL: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,455 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2790 — age 24.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,455 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,455 [INFO] STALE ORDER: BCH/USD OrderSide.SELL 0 — age 430.5m (cutoff 3m) → limit @ current price
+2026-09-28 04:48:02,455 [WARNING] STALE ORDER BCH/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:48:02,511 [WARNING] Trade Ideas high_short_float: only 0 valid ticker(s) after filtering (need ≥5) — likely a login-page scrape or empty scan; skipping to preserve PRIORITY_2_ESTABLISHED
+2026-09-28 04:48:02,511 [WARNING] Trade Ideas market_scope_360: only 0 valid ticker(s) after filtering (need ≥5) — likely a login-page scrape or empty scan; skipping to preserve PRIORITY_1_MOMENTUM
+2026-09-28 04:48:02,511 [INFO] Trade Ideas [PRIORITY_1_MOMENTUM] momentum_scanner(20) + unusual_options_volume(9): +28 new, 1 existing → top-10: ['CLRO', 'GDXD', 'SHMD', 'ZSL', 'WSHP', 'MX', 'DUST', 'KOLD', 'SKDD', 'BUR']
+2026-09-28 04:48:02,511 [INFO] ── TI top-20 [PRIORITY_1_MOMENTUM] (primary=20 secondary=9): CLRO, GDXD, SHMD, ZSL, WSHP, MX, DUST, KOLD, SKDD, BUR, MSGY, TDIC, GFI, GDXU, XRPT, XXRP, INLF, SHNY, AGQ, KITT
+2026-09-28 04:48:02,570 [INFO] [SCAN] 48 symbols (filtered, 8 workers): UNL, USL, UNG, UGA, USO, BNO, HCTI, CELZ, RWAYI, WMG, TWI, GNK, CLRO, GDXD, SHMD, ZSL, WSHP, MX, DUST, KOLD, SKDD, BUR, MSGY, TDIC, GFI, GDXU, XRPT, XXRP, INLF, SHNY, AGQ, KITT, GL, TEVA, BRC, AGO, CNS, KOF, MGM, NWN, ACET, SMST, TZA, MUZ, SBIT, GOOGL, VST, VG
+2026-09-28 04:48:02,571 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-28 04:48:03,685 [INFO] [GUARDRAIL SUMMARY] Rejected: 48 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 48
+2026-09-28 04:48:03,686 [INFO] [FUNNEL] targets=48 guardrail_rejected=48 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-28 04:48:03,686 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-28 04:48:03,686 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-28 04:48:03,747 [INFO] LIVE PROBE IMXI: scale-in skipped; gain -0.01% < 0.25%
+2026-09-28 04:48:03,748 [INFO] LIVE PROBE TBBB: scale-in skipped; gain -0.33% < 0.25%
+2026-09-28 04:48:03,748 [INFO] LIVE PROBE MXL: scale-in skipped; gain -4.68% < 0.25%
+2026-09-28 04:48:03,748 [INFO] [SCAN] No signals this cycle
+2026-09-28 04:48:03,748 [INFO] Heartbeat: 2026-09-28T04:48:03.748849
+2026-09-28 04:51:03,770 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-28 04:51:04,657 [INFO] [CRYPTO] 17 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0951→TP:0.0989), BCH/USD(341.1500→TP:354.7960), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SOL/USD(124.1000→TP:129.0640), SUSHI/USD(0.2713→TP:0.2821), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), YFI/USD(2485.0802→TP:2584.4834)
+2026-09-28 04:51:05,736 [INFO] [CRYPTO] #1: PAXG/USD SELL @ 4172.6520 conf=90% | RSI=4.5 3-bar downtrend
+2026-09-28 04:51:05,736 [INFO] [CRYPTO] #2: ONDO/USD BUY @ 0.5947 conf=75% | RSI=68.4 3-bar uptrend
+2026-09-28 04:51:05,830 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=2149.508208 (~$1280) limit=0.5956 | software TP=0.6185 SL=0.5798 | conf=75% | RSI=68.4 3-bar uptrend | order=46265a9b-78d3-4209-8d38-5e998b5bee81
+2026-09-28 04:51:06,274 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-28 04:51:06,275 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-28 04:51:06,344 [INFO] Quarterly P&L: +7.4% (target >= 50%)
+2026-09-28 04:51:06,344 [INFO] [SCAN] Market sentiment: neutral
+2026-09-28 04:51:06,377 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2344 — age 3.1m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,377 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,377 [INFO] STALE ORDER: BAT/USD OrderSide.SELL 0 — age 6.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,377 [WARNING] STALE ORDER BAT/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,377 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2558 — age 6.5m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,377 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,378 [INFO] STALE ORDER: DOGE/USD OrderSide.SELL 0 — age 6.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,378 [WARNING] STALE ORDER DOGE/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,378 [INFO] STALE ORDER: BONK/USD OrderSide.SELL 0 — age 6.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,378 [WARNING] STALE ORDER BONK/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,378 [INFO] STALE ORDER: ADA/USD OrderSide.SELL 0 — age 6.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,378 [WARNING] STALE ORDER ADA/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,378 [INFO] STALE ORDER: WFF OrderSide.SELL 35608 — age 27.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,378 [WARNING] STALE ORDER WFF: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,378 [INFO] STALE ORDER: TBBB OrderSide.SELL 1 — age 27.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,378 [WARNING] STALE ORDER TBBB: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,378 [INFO] STALE ORDER: MXL OrderSide.SELL 1 — age 27.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,379 [WARNING] STALE ORDER MXL: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,379 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2790 — age 27.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,379 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,379 [INFO] STALE ORDER: BCH/USD OrderSide.SELL 0 — age 433.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:51:06,379 [WARNING] STALE ORDER BCH/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:51:06,520 [INFO] [SCAN] 48 symbols (filtered, 8 workers): UNL, USL, UNG, UGA, USO, BNO, HCTI, CELZ, RWAYI, WMG, TWI, GNK, CLRO, GDXD, SHMD, ZSL, WSHP, MX, DUST, KOLD, SKDD, BUR, MSGY, TDIC, GFI, GDXU, XRPT, XXRP, INLF, SHNY, AGQ, KITT, GL, TEVA, BRC, AGO, CNS, KOF, MGM, NWN, ACET, SMST, TZA, MUZ, SBIT, GOOGL, VST, VG
+2026-09-28 04:51:06,521 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-28 04:51:06,559 [INFO] [GUARDRAIL SUMMARY] Rejected: 48 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 48
+2026-09-28 04:51:06,559 [INFO] [FUNNEL] targets=48 guardrail_rejected=48 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-28 04:51:06,560 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.79
+2026-09-28 04:51:06,560 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-28 04:51:06,560 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-28 04:51:06,625 [INFO] LIVE PROBE IMXI: scale-in skipped; gain -0.01% < 0.25%
+2026-09-28 04:51:06,625 [INFO] LIVE PROBE TBBB: scale-in skipped; gain -0.33% < 0.25%
+2026-09-28 04:51:06,626 [INFO] LIVE PROBE MXL: scale-in skipped; gain -4.68% < 0.25%
+2026-09-28 04:51:06,626 [INFO] [SCAN] No signals this cycle
+2026-09-28 04:51:06,626 [INFO] Heartbeat: 2026-09-28T04:51:06.626353
+2026-09-28 04:54:06,650 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-28 04:54:07,775 [INFO] [CRYPTO] 17 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0951→TP:0.0989), BCH/USD(341.1500→TP:354.7960), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SOL/USD(124.1000→TP:129.0640), SUSHI/USD(0.2713→TP:0.2821), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), YFI/USD(2485.0802→TP:2584.4834)
+2026-09-28 04:54:08,885 [INFO] [CRYPTO] #1: PAXG/USD SELL @ 4172.6520 conf=90% | RSI=4.5 3-bar downtrend
+2026-09-28 04:54:08,886 [INFO] [CRYPTO] #2: ONDO/USD BUY @ 0.5947 conf=75% | RSI=68.4 3-bar uptrend
+2026-09-28 04:54:09,139 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=1970.392318 (~$1174) limit=0.5956 | software TP=0.6185 SL=0.5798 | conf=75% | RSI=68.4 3-bar uptrend | order=c02bed71-e60e-4589-b2dc-efe3e6ff767e
+2026-09-28 04:54:09,594 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-28 04:54:09,595 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-28 04:54:09,653 [INFO] Quarterly P&L: +8.5% (target >= 50%)
+2026-09-28 04:54:09,653 [INFO] [SCAN] Market sentiment: neutral
+2026-09-28 04:54:09,687 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2149 — age 3.1m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,687 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,688 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2344 — age 6.1m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,688 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,688 [INFO] STALE ORDER: BAT/USD OrderSide.SELL 0 — age 9.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,688 [WARNING] STALE ORDER BAT/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,688 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2558 — age 9.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,689 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,689 [INFO] STALE ORDER: DOGE/USD OrderSide.SELL 0 — age 9.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,689 [WARNING] STALE ORDER DOGE/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,689 [INFO] STALE ORDER: BONK/USD OrderSide.SELL 0 — age 9.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,689 [WARNING] STALE ORDER BONK/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,690 [INFO] STALE ORDER: ADA/USD OrderSide.SELL 0 — age 9.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,690 [WARNING] STALE ORDER ADA/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,690 [INFO] STALE ORDER: WFF OrderSide.SELL 35608 — age 30.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,690 [WARNING] STALE ORDER WFF: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,690 [INFO] STALE ORDER: TBBB OrderSide.SELL 1 — age 30.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,690 [WARNING] STALE ORDER TBBB: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,691 [INFO] STALE ORDER: MXL OrderSide.SELL 1 — age 30.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,691 [WARNING] STALE ORDER MXL: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,691 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2790 — age 30.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,691 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,691 [INFO] STALE ORDER: BCH/USD OrderSide.SELL 0 — age 436.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:54:09,692 [WARNING] STALE ORDER BCH/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:54:09,812 [INFO] [SCAN] 48 symbols (filtered, 8 workers): UNL, USL, UNG, UGA, USO, BNO, HCTI, CELZ, RWAYI, WMG, TWI, GNK, CLRO, GDXD, SHMD, ZSL, WSHP, MX, DUST, KOLD, SKDD, BUR, MSGY, TDIC, GFI, GDXU, XRPT, XXRP, INLF, SHNY, AGQ, KITT, GL, TEVA, BRC, AGO, CNS, KOF, MGM, NWN, ACET, SMST, TZA, MUZ, SBIT, GOOGL, VST, VG
+2026-09-28 04:54:09,813 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-28 04:54:09,847 [INFO] [GUARDRAIL SUMMARY] Rejected: 48 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 48
+2026-09-28 04:54:09,848 [INFO] [FUNNEL] targets=48 guardrail_rejected=48 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-28 04:54:09,848 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.76
+2026-09-28 04:54:09,849 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-28 04:54:09,849 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-28 04:54:09,905 [INFO] LIVE PROBE IMXI: scale-in skipped; gain -0.01% < 0.25%
+2026-09-28 04:54:09,905 [INFO] LIVE PROBE TBBB: scale-in skipped; gain -0.33% < 0.25%
+2026-09-28 04:54:09,905 [INFO] LIVE PROBE MXL: scale-in skipped; gain -4.68% < 0.25%
+2026-09-28 04:54:09,905 [INFO] [SCAN] No signals this cycle
+2026-09-28 04:54:09,905 [INFO] Heartbeat: 2026-09-28T04:54:09.905671
+2026-09-28 04:57:09,926 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-28 04:57:10,903 [INFO] [CRYPTO] 17 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0951→TP:0.0989), BCH/USD(341.1500→TP:354.7960), BONK/USD(0.0000→TP:0.0000), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SOL/USD(124.1000→TP:129.0640), SUSHI/USD(0.2713→TP:0.2821), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), YFI/USD(2485.0802→TP:2584.4834)
+2026-09-28 04:57:11,989 [INFO] [CRYPTO] #1: PAXG/USD SELL @ 4172.6520 conf=90% | RSI=4.5 3-bar downtrend
+2026-09-28 04:57:11,989 [INFO] [CRYPTO] #2: ONDO/USD BUY @ 0.5947 conf=75% | RSI=68.4 3-bar uptrend
+2026-09-28 04:57:12,085 [INFO] [CRYPTO] LIMIT BUY ONDO/USD qty=1806.185962 (~$1076) limit=0.5956 | software TP=0.6185 SL=0.5798 | conf=75% | RSI=68.4 3-bar uptrend | order=d5ad46d0-85e2-4bf3-b85f-1f706767d200
+2026-09-28 04:57:12,570 [INFO] [CRYPTO] Position closed externally: ONDO/USD
+2026-09-28 04:57:12,570 [INFO] [SYSTEM] Extended-hours equity trading active — scanning equities
+2026-09-28 04:57:12,631 [INFO] Quarterly P&L: +7.7% (target >= 50%)
+2026-09-28 04:57:12,631 [INFO] [SCAN] Market sentiment: neutral
+2026-09-28 04:57:12,661 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 1970 — age 3.1m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,662 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,662 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2149 — age 6.1m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,662 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,662 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2344 — age 9.2m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,662 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,662 [INFO] STALE ORDER: BAT/USD OrderSide.SELL 0 — age 12.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,662 [WARNING] STALE ORDER BAT/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,662 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2558 — age 12.6m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,662 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,662 [INFO] STALE ORDER: DOGE/USD OrderSide.SELL 0 — age 12.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER DOGE/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: BONK/USD OrderSide.SELL 0 — age 12.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER BONK/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: ADA/USD OrderSide.SELL 0 — age 12.8m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER ADA/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: WFF OrderSide.SELL 35608 — age 33.8m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER WFF: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: TBBB OrderSide.SELL 1 — age 33.8m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER TBBB: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: MXL OrderSide.SELL 1 — age 33.8m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER MXL: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: ONDO/USD OrderSide.BUY 2790 — age 33.8m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER ONDO/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:12,663 [INFO] STALE ORDER: BCH/USD OrderSide.SELL 0 — age 439.7m (cutoff 3m) → limit @ current price
+2026-09-28 04:57:12,663 [WARNING] STALE ORDER BCH/USD: quote unavailable ('TradingClient' object has no attribute 'get_latest_quote') — keeping working order
+2026-09-28 04:57:15,669 [INFO] [SCAN] 48 symbols (filtered, 8 workers): UNL, USL, UNG, UGA, USO, BNO, HCTI, CELZ, RWAYI, WMG, TWI, GNK, CLRO, GDXD, SHMD, ZSL, WSHP, MX, DUST, KOLD, SKDD, BUR, MSGY, TDIC, GFI, GDXU, XRPT, XXRP, INLF, SHNY, AGQ, KITT, GL, TEVA, BRC, AGO, CNS, KOF, MGM, NWN, ACET, SMST, TZA, MUZ, SBIT, GOOGL, VST, VG
+2026-09-28 04:57:15,669 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-28 04:57:15,690 [INFO] [GUARDRAIL SUMMARY] Rejected: 48 | DollarVol: 0 | RVOL: 0 | GapChase: 0 | MinPrice: 0 | Other: 48
+2026-09-28 04:57:15,690 [INFO] [FUNNEL] targets=48 guardrail_rejected=48 (rvol=0) -> signals_generated=0 -> conf_gate(-0) -> sector_cap(-0) -> final=0
+2026-09-28 04:57:15,691 [INFO] [ADAPTIVE] Lowered MIN_SIGNAL_CONFIDENCE to 0.73
+2026-09-28 04:57:15,691 [INFO] [SCAN] Breakdown — none | Errors: 0 | Total: 0
+2026-09-28 04:57:15,691 [INFO] [SCAN] No signals — after hours (stale daily bars, intraday gates not met)
+2026-09-28 04:57:15,746 [INFO] LIVE PROBE IMXI: scale-in skipped; gain -0.01% < 0.25%
+2026-09-28 04:57:15,746 [INFO] LIVE PROBE TBBB: scale-in skipped; gain -0.33% < 0.25%
+2026-09-28 04:57:15,746 [INFO] LIVE PROBE MXL: scale-in skipped; gain -4.68% < 0.25%
+2026-09-28 04:57:15,746 [INFO] [SCAN] No signals this cycle
+2026-09-28 04:57:15,746 [INFO] Heartbeat: 2026-09-28T04:57:15.746428

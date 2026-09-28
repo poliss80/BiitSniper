@@ -184,6 +184,27 @@ class TestCryptoTraderSLQtySafety(unittest.TestCase):
         self.assertLessEqual(submitted_qty, qty)
         self.assertEqual(submitted_qty, math.floor(qty * (1 - 1e-6) * 1e8) / 1e8)
 
+    def test_sl_skipped_for_dust_qty_below_precision(self):
+        """Dust holdings (< 1e-8 after shave/floor) must not be submitted —
+        Alpaca rejects qty=0 with 40010001. Matches live log dust from
+        2026-09-27 23:52 (e.g. DOTUSD 0.000000001, SOLUSD 0.000000008)."""
+        client = MockTradingClient()
+        trader = CryptoTrader(client)
+
+        for dust_qty in (0.000000001, 0.000000008, 0.000000006):
+            order_id = trader._place_sl_order(SYM, dust_qty, sl_price=0.5)
+
+            self.assertIsNone(order_id, f"dust qty {dust_qty!r} must not produce an order")
+        self.assertEqual(client.submitted, [], "no order must be submitted for dust qty")
+
+    def test_sl_skipped_for_zero_and_negative_qty(self):
+        client = MockTradingClient()
+        trader = CryptoTrader(client)
+
+        self.assertIsNone(trader._place_sl_order(SYM, 0.0, sl_price=0.5))
+        self.assertIsNone(trader._place_sl_order(SYM, -1.5, sl_price=0.5))
+        self.assertEqual(client.submitted, [])
+
 
 class TestCryptoTraderScanDedup(unittest.TestCase):
     """Regression: scan() must not resubmit a duplicate buy signal for a
