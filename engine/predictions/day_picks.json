@@ -1,15 +1,39 @@
 {
-  "generated_at": "2026-09-25T19:57:45-04:00",
-  "date": "2026-09-25",
+  "generated_at": "2026-09-28T11:03:36-04:00",
+  "date": "2026-09-28",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "UNG",
+      "symbol": "SKHL",
       "action": "buy",
-      "price": 11.55,
-      "confidence": 0.94,
+      "price": 11.77,
+      "confidence": 0.86,
       "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.33"
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $1.12"
+    },
+    {
+      "symbol": "ONCO",
+      "action": "buy",
+      "price": 1.245,
+      "confidence": 0.84,
+      "strategy": "MomentumContinuationPullback",
+      "reason": "Momentum continuation high-RVOL pullback/reclaim rvol=63.3x up=6.4% above VWAP and range midpoint MACD hist=0.0027 RSI=51.7"
+    },
+    {
+      "symbol": "SFIX",
+      "action": "buy",
+      "price": 2.385,
+      "confidence": 0.84,
+      "strategy": "MomentumContinuationPullback",
+      "reason": "Momentum continuation high-RVOL pullback/reclaim rvol=5.7x up=10.9% above VWAP and range midpoint MACD hist=0.0001 RSI=77.3"
+    },
+    {
+      "symbol": "MDB",
+      "action": "buy",
+      "price": 410.44,
+      "confidence": 0.83,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $19.76"
     }
   ]
 }

@@ -65,8 +65,12 @@ def main():
     # 1. Load credentials
     load_dotenv()
 
-    # 1a. Ensure we are running under the repository virtualenv if it exists.
-    repo_venv = Path(__file__).parent / ".venv" / "Scripts" / "python.exe"
+    # 1a. Match the watchdog's preferred venv, falling back to the legacy .venv.
+    repo_root = Path(__file__).parent
+    venv_dir = repo_root / "apextrader"
+    if not venv_dir.exists():
+        venv_dir = repo_root / ".venv"
+    repo_venv = venv_dir / "Scripts" / "python.exe"
     if repo_venv.exists() and Path(sys.executable).resolve() != repo_venv.resolve():
         print(
             f"ERROR: Please run ApexTrader using {repo_venv}.\n"
