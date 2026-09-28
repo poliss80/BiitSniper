@@ -26,7 +26,7 @@ from engine.config import (
     SWEEPEA, TECHNICAL, MOMENTUM, GAP_BREAKOUT, ORB, VWAP_RECLAIM, FLOAT_ROTATION, LONG_ONLY_MODE,
     ATR_STOP_MULTIPLIER, ATR_TP_RATIO, HIGH_SHORT_FLOAT_STOCKS, is_high_short_float,
     PRE_MARKET_MOMENTUM, OPENING_BELL_SURGE, PM_HIGH_BREAKOUT, EARLY_SQUEEZE, BEAR_BREAKDOWN,
-    SENTIMENT_STRATEGY, TRENDLINE_BREAKOUT,
+    SENTIMENT_STRATEGY, TRENDLINE_BREAKOUT, PREMARKET_MOMENTUM_SCALP,
     SWEEPEA_DYNAMIC_CONFIDENCE, SWEEPEA_REQUIRE_TREND, SWEEPEA_TREND_EMA_RISING_BARS,
     MOMENTUM_CONTINUATION, MARKET_STRUCTURE_BREAKOUT, PARABOLIC_FADE_RECLAIM, POC_RECLAIM, MOMENTUM_SCALP,
 )
@@ -1555,6 +1555,142 @@ class EarlySqueezeDetector:
         )
 
 
+class PreMarketMomentumScalpStrategy:
+    """Pre-market (04:00–09:25 ET) momentum-squeeze variant of MomentumScalp:
+    low-float gappers already squeezing in the pre-market on a fresh breakout
+    with a surge in the current 1m bar's volume. Emits strategy tag
+    "MomentumScalp" so the execution layer applies the exact same scalp
+    sizing/TP/ratchet profile as the regular-session MomentumScalpStrategy.
+    No RVOL projection — regular-session RVOL is not meaningful pre-market."""
+
+    def _get_float(self, symbol: str) -> Optional[float]:
+        return _get_float_shares(symbol)
+
+    def scan(self, symbol: str) -> Optional[Signal]:
+        def reject(reason: str) -> None:
+            log.debug("PreMarketMomentumScalp %s rejected: %s", symbol, reason)
+
+        try:
+            cfg = PREMARKET_MOMENTUM_SCALP
+            if not cfg["enabled"]:
+                return None
+            if symbol in _INVERSE_ETFS:
+                return None
+
+            # Pre-market window only: window_start <= now < window_end ET
+            now_et      = datetime.datetime.now(ET)
+            mins_of_day = now_et.hour * 60 + now_et.minute
+            if not (cfg["window_start_min"] <= mins_of_day < cfg["window_end_min"]):
+                return None
+            market_open = now_et.replace(hour=9, minute=30, second=0, microsecond=0)
+
+            pm_bars = get_premarket_bars(symbol)
+            if pm_bars.empty or len(pm_bars) < cfg["min_premarket_bars"]:
+                reject("missing premarket data")
+                return None
+
+            # Normalize timestamps to ET; keep today's pre-market bars only
+            # (>= window start, strictly before the current regular session).
+            timestamp_values = pm_bars["time"] if "time" in pm_bars.columns else pm_bars.index
+            timestamps = pd.Series(pd.to_datetime(timestamp_values, errors="coerce"), index=pm_bars.index)
+            if timestamps.dt.tz is not None:
+                timestamps = timestamps.dt.tz_convert(ET)
+            else:
+                timestamps = timestamps.dt.tz_localize(ET)
+            bar_minutes  = timestamps.dt.hour * 60 + timestamps.dt.minute
+            session_mask = (
+                (timestamps.dt.date == now_et.date())
+                & (bar_minutes >= cfg["window_start_min"])
+                & (timestamps < market_open)
+            )
+            pm = pm_bars.loc[session_mask]
+            if len(pm) < cfg["min_premarket_bars"]:
+                reject(f"insufficient valid premarket bars ({len(pm)})")
+                return None
+
+            # Latest bar must be current pre-market data, not a stale snapshot
+            last_ts = timestamps.loc[pm.index].iloc[-1]
+            if pd.isna(last_ts) or (now_et - last_ts).total_seconds() > cfg["max_bar_age_min"] * 60:
+                reject("stale premarket data")
+                return None
+
+            daily = get_bars(symbol, "5d", "1d")
+            if daily.empty or len(daily) < 2:
+                reject("missing daily data")
+                return None
+            prior_close = float(daily["close"].iloc[-2])
+            if prior_close <= 0:
+                reject("missing prior close")
+                return None
+
+            cur_close = float(pm["close"].iloc[-1])
+
+            # Gap from prior close: positive, >= min, capped to avoid chasing
+            gap_pct = (cur_close - prior_close) / prior_close * 100
+            if gap_pct < cfg["min_gap_pct"]:
+                reject(f"gap too small ({gap_pct:.1f}%)")
+                return None
+            if gap_pct > cfg["max_gap_pct"]:
+                reject(f"gap too large ({gap_pct:.1f}%)")
+                return None
+
+            shares_float = self._get_float(symbol)
+            if shares_float is None or shares_float > cfg["max_float_shares"]:
+                reject(f"float unavailable or over cap ({shares_float})")
+                return None
+
+            # Fresh breakout: current close must clear the highest high of the
+            # preceding breakout_lookback_bars PM bars (current excluded).
+            breakout_lookback = min(int(cfg["breakout_lookback_bars"]), len(pm) - 1)
+            breakout_high     = float(pm["high"].iloc[:-1].tail(breakout_lookback).max())
+            if cur_close <= breakout_high:
+                reject(f"no fresh breakout ({cur_close:.2f} <= prior-bar high {breakout_high:.2f})")
+                return None
+
+            # Candle-volume confirmation: current 1m bar volume >= MomentumScalp's
+            # bar_volume_mult x the trailing up-to-20-bar PM average (current excluded).
+            cur_bar_vol = float(pm["volume"].iloc[-1])
+            avg_bar_vol = float(pm["volume"].iloc[:-1].tail(20).mean())
+            if avg_bar_vol <= 0:
+                reject("missing trailing average bar volume")
+                return None
+            barvol_ratio = cur_bar_vol / avg_bar_vol
+            if barvol_ratio < MOMENTUM_SCALP["bar_volume_mult"]:
+                reject(f"weak current-bar volume ({barvol_ratio:.1f}x trailing avg)")
+                return None
+
+            # Still at the recent high — close must hold >= near_high_pct of the
+            # recent recent_high_bars-window high.
+            recent_window = pm.iloc[-int(cfg["recent_high_bars"]):]
+            recent_high   = float(recent_window["high"].max())
+            recent_low    = float(recent_window["low"].min())
+            if cur_close < recent_high * cfg["near_high_pct"]:
+                reject(f"fading off recent high ({cur_close:.2f} vs {recent_high:.2f})")
+                return None
+
+            stop_dist = cur_close - recent_low
+            if stop_dist <= 0:
+                reject("entry at/below recent swing low")
+                return None
+
+            conf  = 0.75
+            conf += min(max(gap_pct - cfg["min_gap_pct"], 0.0) * 0.01, 0.08)
+            conf += min(max(barvol_ratio - MOMENTUM_SCALP["bar_volume_mult"], 0.0) * 0.03, 0.07)
+            conf  = min(conf, 0.95)
+            conf  = _sa_metrics_boost(symbol, conf)
+
+            return Signal(
+                symbol, "buy", cur_close, round(conf, 2),
+                f"PreMarket momentum scalp gap=+{gap_pct:.1f}% float={shares_float / 1_000_000:.1f}M "
+                f"barvol={barvol_ratio:.1f}x break>${breakout_high:.2f} "
+                f"target +{MOMENTUM_SCALP['tp_pct']:.0f}% or ride on continuation",
+                "MomentumScalp",
+                atr_stop=stop_dist,
+            )
+        except Exception:
+            return None
+
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Momentum Continuation Strategy
 # ──────────────────────────────────────────────────────────────────────────────
@@ -2483,6 +2619,7 @@ def get_strategy_instances(bull_regime: bool = True):
         OpeningBellSurgeStrategy(),
         PMHighBreakoutStrategy(),
         EarlySqueezeDetector(),
+        PreMarketMomentumScalpStrategy(),
         MomentumContinuationStrategy(),
         MomentumScalpStrategy(),
         ParabolicFadeReclaimStrategy(),

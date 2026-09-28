@@ -1008,6 +1008,24 @@ TI_MAX_OVERNIGHT_GAP_PCT = 12.0       # Skip if >12% overnight/pre-market gap
 SQUEEZE_TP1_PCT = float(os.getenv("SQUEEZE_TP1_PCT", "8.0"))
 SQUEEZE_TP2_PCT = float(os.getenv("SQUEEZE_TP2_PCT", "18.0"))
 
+# Pre-market Momentum Scalp — premarket (04:00–09:25 ET) squeeze variant of
+# MomentumScalp: low-float gappers breaking out on surging current-bar volume.
+# Emits the same "MomentumScalp" strategy tag so the execution layer reuses the
+# exact scalp sizing/TP/ratchet profile. Opt-in: disabled by default.
+PREMARKET_MOMENTUM_SCALP = {
+    "enabled": os.getenv("PREMARKET_MOMENTUM_SCALP_ENABLED", "false").lower() in ("1", "true", "yes"),
+    "window_start_min": int(os.getenv("PM_SCALP_WINDOW_START_MIN", str(4 * 60))),        # 04:00 ET
+    "window_end_min": int(os.getenv("PM_SCALP_WINDOW_END_MIN", str(9 * 60 + 25))),       # no signal at/after 09:25 ET
+    "max_float_shares": float(os.getenv("PM_SCALP_MAX_FLOAT_SHARES", str(EARLY_SQUEEZE["max_float_shares"]))),
+    "min_gap_pct": float(os.getenv("PM_SCALP_MIN_GAP_PCT", "3.0")),                      # min positive gap from prior close
+    "max_gap_pct": float(os.getenv("PM_SCALP_MAX_GAP_PCT", str(TI_MAX_OVERNIGHT_GAP_PCT))),  # don't chase huge gaps
+    "min_premarket_bars": int(os.getenv("PM_SCALP_MIN_BARS", "5")),                      # valid same-day PM 1m bars required
+    "breakout_lookback_bars": int(os.getenv("PM_SCALP_BREAKOUT_LOOKBACK_BARS", "5")),    # close must clear highest high of prior N bars
+    "recent_high_bars": int(os.getenv("PM_SCALP_RECENT_HIGH_BARS", "10")),               # near-high window
+    "near_high_pct": float(os.getenv("PM_SCALP_NEAR_HIGH_PCT", "0.995")),                # close >= 99.5% of recent high
+    "max_bar_age_min": int(os.getenv("PM_SCALP_MAX_BAR_AGE_MIN", "5")),                  # latest bar must be current PM data
+}
+
 # ─────────────────────────────────────────────────────────────────
 # Midday Chop Filter (11:30 AM – 1:00 PM ET)
 # ─────────────────────────────────────────────────────────────────
