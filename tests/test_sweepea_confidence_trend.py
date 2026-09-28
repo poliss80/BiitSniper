@@ -17,7 +17,8 @@ class _FakeDatetime(datetime.datetime):
     """datetime.now(tz) pinned to 11:00 ET so Path A (hour >= 10) is active."""
     @classmethod
     def now(cls, tz=None):
-        return datetime.datetime(2026, 9, 8, 11, 0, 0, tzinfo=tz)
+        now = datetime.datetime(2026, 9, 8, 11, 0, 0)
+        return ET.localize(now) if tz is not None else now
 
 
 _FAKE_DATETIME_MODULE = SimpleNamespace(
@@ -61,9 +62,19 @@ def _build_daily(closes, volumes=None, tag_low_ema8=True, pin_close_to_ema8=Fals
     }, index=idx)
 
 
-def _scan(df, require_trend=True):
+def _scan(df, require_trend=True, live_price=None, minute_time="2026-09-08 10:59:00"):
+    minute_price = float(df["close"].iloc[-1]) if live_price is None else float(live_price)
+    minute_bars = pd.DataFrame({
+        "time": [ET.localize(datetime.datetime.fromisoformat(minute_time))],
+        "close": [minute_price],
+    })
+
     def fake_get_bars(symbol, period, interval, *a, **k):
-        return df.copy() if interval == "1d" else pd.DataFrame()
+        if interval == "1d":
+            return df.copy()
+        if interval == "1m":
+            return minute_bars.copy()
+        return pd.DataFrame()
     with patch.object(strategies, "get_bars", side_effect=fake_get_bars), \
          patch.object(strategies, "_is_bull_regime", return_value=True), \
          patch.object(strategies, "_sa_metrics_boost", _identity_boost), \
@@ -113,6 +124,33 @@ class TestSweepeaConfidenceTrend(unittest.TestCase):
         sig = _scan(df)
         self.assertIsNotNone(sig)
         self.assertEqual(sig.action, "buy")
+
+    def test_signal_uses_fresh_intraday_price_not_daily_close(self):
+        closes = [30 + 0.5 * i for i in range(90)]
+        df = _build_daily(closes)
+        live_price = float(df["close"].ewm(span=8, adjust=False).mean().iloc[-1])
+
+        sig = _scan(df, live_price=live_price)
+
+        self.assertIsNotNone(sig)
+        self.assertAlmostEqual(sig.price, live_price)
+        self.assertNotEqual(sig.price, float(df["close"].iloc[-1]))
+
+    def test_stale_intraday_bar_rejects_daily_pullback_signal(self):
+        closes = [30 + 0.5 * i for i in range(90)]
+        df = _build_daily(closes)
+
+        sig = _scan(df, minute_time="2026-09-08 10:54:00")
+
+        self.assertIsNone(sig)
+
+    def test_live_price_far_below_daily_ema_rejects_setup(self):
+        closes = [30 + 0.5 * i for i in range(90)]
+        df = _build_daily(closes)
+
+        sig = _scan(df, live_price=float(df["close"].iloc[-1]) * 0.80)
+
+        self.assertIsNone(sig)
 
     def test_sweepea_pullback_now_passes_trend_advisory(self):
         # Moderate/partially-stacked trend: strong rise, shallow pullback, mild

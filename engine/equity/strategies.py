@@ -410,13 +410,34 @@ class SweepeaStrategy:
                 daily["ema50"] = daily["close"].ewm(span=50, adjust=False).mean()
                 cur  = daily.iloc[-1]
                 prev = daily.iloc[-2]
+                now_et = datetime.datetime.now(ET)
+                intraday = get_bars(symbol, "1d", "1m")
+                if intraday.empty or "close" not in intraday.columns:
+                    return None
+                time_values = intraday["time"] if "time" in intraday.columns else intraday.index
+                timestamps = pd.Series(pd.to_datetime(time_values, errors="coerce"), index=intraday.index)
+                if timestamps.dt.tz is not None:
+                    timestamps = timestamps.dt.tz_convert(ET)
+                else:
+                    timestamps = timestamps.dt.tz_localize(ET)
+                today_mask = (timestamps.dt.date == now_et.date()) & (timestamps <= now_et)
+                today_bars = intraday.loc[today_mask]
+                if today_bars.empty:
+                    return None
+                latest_bar_time = timestamps.loc[today_bars.index].iloc[-1]
+                if (now_et - latest_bar_time).total_seconds() > 5 * 60:
+                    log.debug("Sweepea %s rejected: latest intraday bar is stale", symbol)
+                    return None
+                entry_price = float(today_bars["close"].iloc[-1])
+                if entry_price <= 0:
+                    return None
                 if not _sweepea_liquidity_ok(symbol, float(cur["close"]), daily):
                     return None
                 # Price touched or slightly undercut EMA and recovered above it
                 pb8  = (cur["low"] <= float(cur["ema8"])  * 1.005
-                        and cur["close"] >= float(cur["ema8"]) * 0.995)
+                        and entry_price >= float(cur["ema8"]) * 0.995)
                 pb20 = (cur["low"] <= float(cur["ema20"]) * 1.005
-                        and cur["close"] >= float(cur["ema20"]) * 0.995)
+                        and entry_price >= float(cur["ema20"]) * 0.995)
                 # Prior trend must be up (close > 8-bar lookback mean)
                 uptrend = float(prev["close"]) > float(daily["close"].iloc[-10:-2].mean())
                 is_inverse = symbol in _INVERSE_ETFS
@@ -471,7 +492,6 @@ class SweepeaStrategy:
                     else:
                         conf = 0.88 if is_htf else 0.82
                     conf = _sa_metrics_boost(symbol, conf)
-                    entry_price = float(cur["close"])
                     # Trailing stop logic: set initial highest_price and trailing_stop
                     trailing_stop = entry_price * 0.90  # 10% trailing stop
                     highest_price = entry_price
