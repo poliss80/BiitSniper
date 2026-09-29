@@ -45,14 +45,21 @@ def _sig(symbol, strategy, conf):
 
 
 def _run_scan(signals_for_symbol):
-    """scan_universe with guardrails/strategies/news-annotation mocked out."""
+    """scan_universe with guardrails/strategies/news-annotation mocked out.
+
+    ET time is pinned outside the midday chop window so the scalp-priority
+    floor is MIN_SIGNAL_CONFIDENCE regardless of when the suite runs."""
     strats = [_FakeStrategy(s) for s in signals_for_symbol]
     with patch.object(scan, "clear_bar_cache"), \
          patch.object(scan, "_prefetch_snapshots"), \
          patch.object(scan, "_passes_guardrails", return_value=(True, None)), \
          patch.object(scan, "get_strategy_instances", return_value=strats), \
          patch.object(scan, "annotate_signal_with_news", side_effect=lambda s: s), \
-         patch.object(scan, "MIN_SIGNAL_CONFIDENCE", 0.50):
+         patch.object(scan, "MIN_SIGNAL_CONFIDENCE", 0.50), \
+         patch.object(scan._cfg, "MIDDAY_CHOP_START", "11:30"), \
+         patch.object(scan._cfg, "MIDDAY_CHOP_END", "13:00"), \
+         patch.object(scan, "datetime") as fake_dt:
+        fake_dt.datetime.now.return_value.strftime.return_value = "10:00"
         return scan.scan_universe(["TEST"], "neutral", _market_state())
 
 
@@ -116,6 +123,70 @@ class TestScalpCandidatePriority(unittest.TestCase):
         self.assertEqual(signals[0].strategy, "MomentumContinuation")
         self.assertEqual(signals[0].confidence, 0.92)
         self.assertEqual(hit_counts, {"MomentumContinuation": 1})
+
+
+class TestScalpPriorityActiveFloor(unittest.TestCase):
+    """Scalp candidate priority must use the actual active BUY floor:
+    max(adaptive scan floor, MIN_SIGNAL_CONFIDENCE, midday MIDDAY_MIN_CONFIDENCE).
+    A scalp the orchestrator's midday gate would reject must not suppress a
+    qualifying alternative candidate for the same symbol."""
+
+    def _run(self, signals_for_symbol, hhmm):
+        strats = [_FakeStrategy(s) for s in signals_for_symbol]
+        with patch.object(scan, "clear_bar_cache"), \
+             patch.object(scan, "_prefetch_snapshots"), \
+             patch.object(scan, "_passes_guardrails", return_value=(True, None)), \
+             patch.object(scan, "get_strategy_instances", return_value=strats), \
+             patch.object(scan, "annotate_signal_with_news", side_effect=lambda s: s), \
+             patch.object(scan, "MIN_SIGNAL_CONFIDENCE", 0.80), \
+             patch.object(scan._cfg, "MIDDAY_CHOP_START", "11:30"), \
+             patch.object(scan._cfg, "MIDDAY_CHOP_END", "13:00"), \
+             patch.object(scan._cfg, "MIDDAY_MIN_CONFIDENCE", 0.88), \
+             patch.object(scan, "datetime") as fake_dt:
+            fake_dt.datetime.now.return_value.strftime.return_value = hhmm
+            return scan.scan_universe(["TEST"], "neutral", _market_state())
+
+    def test_midday_sub_floor_scalp_does_not_suppress_qualified_alternative(self):
+        # Midday floor 0.88: scalp 0.84 would be rejected downstream by the
+        # orchestrator, so the qualifying 0.90 alternative must win the slot.
+        signals, hit_counts, errors = self._run([
+            _sig("TEST", "MomentumScalp", 0.84),
+            _sig("TEST", "MomentumContinuation", 0.90),
+        ], "12:00")
+
+        self.assertEqual(errors, 0)
+        self.assertEqual(len(signals), 1)
+        self.assertEqual(signals[0].strategy, "MomentumContinuation")
+        self.assertEqual(signals[0].confidence, 0.90)
+        self.assertEqual(hit_counts, {"MomentumContinuation": 1})
+
+    def test_midday_qualified_scalp_keeps_priority(self):
+        # Midday floor 0.88: scalp 0.90 clears every gate it will face, so
+        # scalp priority is preserved over the 0.84 alternative.
+        signals, hit_counts, errors = self._run([
+            _sig("TEST", "MomentumContinuation", 0.84),
+            _sig("TEST", "MomentumScalp", 0.90),
+        ], "12:00")
+
+        self.assertEqual(errors, 0)
+        self.assertEqual(len(signals), 1)
+        self.assertEqual(signals[0].strategy, "MomentumScalp")
+        self.assertEqual(signals[0].confidence, 0.90)
+        self.assertEqual(hit_counts, {"MomentumScalp": 1})
+
+    def test_outside_midday_scalp_priority_unchanged(self):
+        # Outside the midday window the active floor is MIN_SIGNAL_CONFIDENCE
+        # (0.80): scalp 0.84 is qualified and still beats the 0.90 alternative.
+        signals, hit_counts, errors = self._run([
+            _sig("TEST", "MomentumScalp", 0.84),
+            _sig("TEST", "MomentumContinuation", 0.90),
+        ], "10:00")
+
+        self.assertEqual(errors, 0)
+        self.assertEqual(len(signals), 1)
+        self.assertEqual(signals[0].strategy, "MomentumScalp")
+        self.assertEqual(signals[0].confidence, 0.84)
+        self.assertEqual(hit_counts, {"MomentumScalp": 1})
 
 
 def _completed_daily_dates(n):

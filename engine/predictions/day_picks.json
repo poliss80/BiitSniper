@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-29T15:10:56-04:00",
+  "generated_at": "2026-09-29T15:27:10-04:00",
   "date": "2026-09-29",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "ITGR",
+      "symbol": "IOVA",
       "action": "buy",
-      "price": 126.39,
-      "confidence": 0.88,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.26"
+      "price": 14.99,
+      "confidence": 0.83,
+      "strategy": "MomentumContinuationPullback",
+      "reason": "Momentum continuation high-RVOL pullback/reclaim rvol=4.7x up=35.7% above VWAP and range midpoint MACD hist=0.0068 RSI=49.3"
     }
   ]
 }

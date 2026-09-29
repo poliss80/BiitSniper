@@ -721,6 +721,37 @@ def get_scan_targets(excluded: Set[str] = None) -> List[str]:
     return targets
 
 
+def _adaptive_conf_floor(bull: bool, vix: Optional[float], base_conf: float) -> float:
+    """Adaptive scan-level confidence floor from market regime and VIX.
+
+    Applied to returned signals at the end of scan_universe(); computing it
+    once lets worker-side scalp candidate priority use the exact same floor
+    the post-pool gate will apply.
+    """
+    if bull:
+        if vix and vix > 25:
+            return min(0.80, base_conf + 0.05)  # stricter in high-vol bull
+        return base_conf
+    if vix and vix < 18:
+        return max(0.65, base_conf - 0.05)  # looser in calm bear
+    return max(0.68, base_conf - 0.02)
+
+
+def _midday_buy_floor() -> float:
+    """Active BUY confidence floor for the current ET time.
+
+    Mirrors orchestrator._active_buy_conf_floor(): inside the midday chop
+    window (MIDDAY_CHOP_START–MIDDAY_CHOP_END ET) the orchestrator raises the
+    buy gate to MIDDAY_MIN_CONFIDENCE. Scalp candidate priority must respect
+    that floor so a scalp the orchestrator would reject cannot suppress a
+    qualifying alternative candidate for the same symbol.
+    """
+    now_hhmm = datetime.datetime.now(_ET).strftime("%H:%M")
+    if _cfg.MIDDAY_CHOP_START <= now_hhmm < _cfg.MIDDAY_CHOP_END:
+        return _cfg.MIDDAY_MIN_CONFIDENCE
+    return MIN_SIGNAL_CONFIDENCE
+
+
 def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketState) -> Tuple[List, Dict[str, int], int]:
     clear_bar_cache()
     with _guardrail_lock:
@@ -751,6 +782,22 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
         'overnight_gap': 0,
         'other': 0
     }
+
+    # Resolve VIX + the adaptive scan-level confidence floor ONCE before the
+    # pool so worker-side scalp priority uses the same value the post-pool
+    # gate will apply.
+    vix = None
+    if hasattr(market_state, 'vix') and market_state.vix is not None:
+        vix = market_state.vix
+    elif hasattr(market_state, 'resolve_vix'):
+        vix, _, _ = market_state.resolve_vix()
+    adaptive_conf = _adaptive_conf_floor(bull_regime, vix, MIN_SIGNAL_CONFIDENCE)
+    # Scalp-priority floor: a scalp must clear every confidence gate it will
+    # actually face — the scan-level adaptive floor, the global minimum, and
+    # the orchestrator's active BUY floor (raised to MIDDAY_MIN_CONFIDENCE
+    # during the midday chop window) — otherwise it must not suppress a
+    # qualifying alternative candidate for the same symbol.
+    scalp_priority_floor = max(adaptive_conf, MIN_SIGNAL_CONFIDENCE, _midday_buy_floor())
 
     def _scan_one(symbol: str):
         # Dead-ticker check already done in get_scan_targets() — skip here.
@@ -816,11 +863,13 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
         # Policy: an eligible MomentumScalp wins over other strategies
         # (e.g. MomentumContinuation) so scalp setups get dedicated scalp
         # execution instead of live-probe one-share sizing — but only when the
-        # scalp itself clears the global MIN_SIGNAL_CONFIDENCE floor. A sub-floor
-        # scalp must not suppress a qualifying non-scalp candidate for this
-        # ticker; the later confidence gate decides from there.
+        # scalp itself clears scalp_priority_floor (the actual active BUY
+        # floor: scan-level adaptive floor, MIN_SIGNAL_CONFIDENCE, and the
+        # midday MIDDAY_MIN_CONFIDENCE gate). A sub-floor scalp must not
+        # suppress a qualifying non-scalp candidate for this ticker; the later
+        # confidence gate decides from there.
         scalps = [c for c in candidates if c.strategy == "MomentumScalp"]
-        qualified_scalps = [c for c in scalps if c.confidence >= MIN_SIGNAL_CONFIDENCE]
+        qualified_scalps = [c for c in scalps if c.confidence >= scalp_priority_floor]
         if qualified_scalps:
             signal = max(qualified_scalps, key=lambda s: s.confidence)
         else:
@@ -853,24 +902,8 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
     signals_generated = len(signals)
 
     signals.sort(key=lambda x: x.confidence, reverse=True)
-    # Adaptive confidence filter using pre-intelligence (market regime, VIX)
-    vix = None
-    if hasattr(market_state, 'vix') and market_state.vix is not None:
-        vix = market_state.vix
-    elif hasattr(market_state, 'resolve_vix'):
-        vix, _, _ = market_state.resolve_vix()
-    bull = market_state.resolve_regime()
-    base_conf = MIN_SIGNAL_CONFIDENCE
-    if bull:
-        if vix and vix > 25:
-            adaptive_conf = min(0.80, base_conf + 0.05)  # stricter in high-vol bull
-        else:
-            adaptive_conf = base_conf
-    else:
-        if vix and vix < 18:
-            adaptive_conf = max(0.65, base_conf - 0.05)  # looser in calm bear
-        else:
-            adaptive_conf = max(0.68, base_conf - 0.02)
+    # Adaptive confidence gate (floor computed once before the pool above, so
+    # worker-side scalp priority and this filter use the exact same value).
     signals = [s for s in signals if s.confidence >= adaptive_conf]
     # Funnel: confidence gate drop count.
     conf_dropped = signals_generated - len(signals)
