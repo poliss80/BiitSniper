@@ -2082,9 +2082,12 @@ class MomentumScalpScanTests(unittest.TestCase):
     }
 
     @staticmethod
-    def _daily(n=20, avg_vol=1_000_000.0):
-        """20 daily bars, avg volume 1M (scan averages iloc[:-1] -> 1M)."""
-        closes = [50.0 + 0.3 * i for i in range(n)]
+    def _daily(n=20, avg_vol=1_000_000.0, prior_close=10.0):
+        """20 daily bars, avg volume 1M (scan averages iloc[:-1] -> 1M).
+        Closes pinned at prior_close (default 10.0) so the extension gate —
+        measured against daily['close'].iloc[-2] — lines up with the
+        intraday fixture's 10.00 session open."""
+        closes = [prior_close] * n
         idx = pd.date_range(end="2026-09-24", periods=n, freq="B")
         return pd.DataFrame({
             "open":   closes,
@@ -2095,15 +2098,17 @@ class MomentumScalpScanTests(unittest.TestCase):
         }, index=idx)
 
     @staticmethod
-    def _intraday(cur_vol=16_000.0, base_vol=8_000.0, breakout=True, n=60):
-        """60 x 1m bars 09:30-10:29 ET ramping 10.00 -> ~10.80 (+8% from open).
+    def _intraday(cur_vol=16_000.0, base_vol=8_000.0, breakout=True, n=60,
+                  open_px=10.0, ramp_pct=8.0):
+        """60 x 1m bars 09:30-10:29 ET ramping open_px -> +ramp_pct% over the
+        session (defaults: 10.00 -> ~10.80, +8% from open).
         Base volume 8k/min -> day_vol ~480k -> rvol ~3.1x at elapsed=60 min.
         breakout=True: last bar closes above the preceding 5-bar high;
         breakout=False: last bar closes just under it, but still within 0.5%
         of the recent high so only the breakout guard can reject."""
         opens, highs, lows, closes, vols = [], [], [], [], []
         for i in range(n):
-            price = 10.0 + 0.8 * i / (n - 1)
+            price = open_px * (1 + ramp_pct / 100.0 * i / (n - 1))
             o, c = price, price + 0.01
             opens.append(o)
             closes.append(c)
@@ -2121,9 +2126,10 @@ class MomentumScalpScanTests(unittest.TestCase):
             "close": closes, "volume": vols,
         }, index=idx)
 
-    def _scan(self, intraday, symbol="TEST"):
+    def _scan(self, intraday, daily=None, symbol="TEST"):
+        daily = self._daily() if daily is None else daily
         def fake_get_bars(sym, period, interval, *a, **k):
-            return intraday.copy() if interval == "1m" else self._daily().copy()
+            return intraday.copy() if interval == "1m" else daily.copy()
         with patch.object(equity_strategies, "get_bars", side_effect=fake_get_bars), \
              patch.object(equity_strategies, "_sa_metrics_boost", lambda s, c, *a, **k: c), \
              patch.object(equity_strategies, "MOMENTUM_SCALP", self.SCALP_CFG), \
@@ -2146,6 +2152,23 @@ class MomentumScalpScanTests(unittest.TestCase):
         # Strong bar volume, but close does not clear the preceding 5-bar high
         sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=False))
         self.assertIsNone(sig, "no breakout above the preceding 5-bar high must reject")
+
+    def test_premarket_gap_extension_measured_vs_prior_close(self):
+        # Prior close $10, regular open ~$20 (100% premarket gap), current
+        # ~$20.1: only +0.5% from the 09:30 open but >100% above the prior
+        # close. The extension gate measures vs the prior close, so this
+        # must still fire a MomentumScalp signal.
+        sig = self._scan(
+            self._intraday(cur_vol=16_000.0, breakout=True, open_px=20.0, ramp_pct=0.5),
+            daily=self._daily(prior_close=10.0),
+        )
+        self.assertIsNotNone(
+            sig, "stock >100% up vs prior close must not be missed as 'not extended'"
+        )
+        self.assertEqual(sig.strategy, "MomentumScalp")
+        # price_up_pct in the reason reflects the prior-close move (~+101%),
+        # not the +0.9% the session-open basis would have produced
+        self.assertIn("up=101", sig.reason)
 
 
 class PositionCapCryptoExclusionTests(unittest.TestCase):

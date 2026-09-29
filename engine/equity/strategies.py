@@ -1922,18 +1922,19 @@ class MomentumScalpStrategy:
                 reject("missing current-day session data")
                 return None
 
-            cur_close    = float(session["close"].iloc[-1])
-            session_open = float(session["open"].iloc[0])
-            if session_open <= 0:
-                session_open = float(daily["close"].iloc[-2])
-            if session_open <= 0:
-                reject("missing session open")
+            cur_close   = float(session["close"].iloc[-1])
+            prior_close = float(daily["close"].iloc[-2])
+            if prior_close <= 0:
+                reject("missing prior close")
                 return None
 
-            # Must already be extended >= min_price_up_pct above the session open
-            price_up_pct = (cur_close - session_open) / session_open * 100
+            # Must already be extended >= min_price_up_pct above the prior
+            # close — measured against the previous completed daily close (not
+            # the 09:30 session open) so a premarket gap already >100% up on
+            # the day is not missed as 'not extended'.
+            price_up_pct = (cur_close - prior_close) / prior_close * 100
             if price_up_pct < cfg["min_price_up_pct"]:
-                reject(f"not extended enough ({price_up_pct:.1f}%)")
+                reject(f"not extended enough ({price_up_pct:.1f}% above prior close)")
                 return None
 
             # Must still be pushing — at/near the very recent high, not fading
