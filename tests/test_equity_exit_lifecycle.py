@@ -2056,10 +2056,17 @@ class StaleOrderExtendedHoursTests(unittest.TestCase):
 
 
 class _ScalpFakeDatetime(datetime.datetime):
-    """datetime.now(tz) pinned to 2026-09-25 10:30 ET (elapsed=60 min, in-window)."""
+    """datetime.now(tz) pinned to 2026-09-25 10:30 ET (elapsed=60 min, in-window).
+
+    NOTE: pytz zones must be attached via tz.localize(naive) — constructing
+    datetime(..., tzinfo=pytz_tz) yields the broken LMT offset (-56 min) and
+    corrupts any subtraction against tz_localize'd bar timestamps."""
     @classmethod
     def now(cls, tz=None):
-        return datetime.datetime(2026, 9, 25, 10, 30, 0, tzinfo=tz)
+        naive = datetime.datetime(2026, 9, 25, 10, 30, 0)
+        if tz is not None and hasattr(tz, "localize"):
+            return tz.localize(naive)
+        return naive.replace(tzinfo=tz)
 
 
 _FAKE_SCALP_DATETIME_MODULE = SimpleNamespace(
@@ -2169,6 +2176,74 @@ class MomentumScalpScanTests(unittest.TestCase):
         # price_up_pct in the reason reflects the prior-close move (~+101%),
         # not the +0.9% the session-open basis would have produced
         self.assertIn("up=101", sig.reason)
+
+    @staticmethod
+    def _daily_varying(closes, vols=None, end="2026-09-24"):
+        """Completed daily bars with per-day closes/volumes (no today candle)."""
+        vols = vols or [1_000_000.0] * len(closes)
+        idx = pd.date_range(end=end, periods=len(closes), freq="B")
+        return pd.DataFrame({
+            "open":   closes,
+            "high":   [c + 0.3 for c in closes],
+            "low":    [c - 0.3 for c in closes],
+            "close":  closes,
+            "volume": [float(v) for v in vols],
+        }, index=idx)
+
+    def test_prior_close_is_last_completed_close_when_today_absent(self):
+        # Provider omitted today's candle: the last row IS yesterday's completed
+        # session. Prior close must be that last close ($10), not iloc[-2] ($50).
+        daily = self._daily_varying([50.0] * 19 + [10.0])
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=True), daily=daily)
+        self.assertIsNotNone(sig, "prior close must be the last completed session close")
+        self.assertIn("up=8", sig.reason)  # ~+8% vs $10, not deeply negative vs $50
+
+    def test_todays_partial_candle_never_becomes_prior_close_or_baseline(self):
+        # Provider included today's still-forming daily candle (garbage $50 close,
+        # huge partial volume): both prior close and the volume baseline must
+        # come from the 20 completed sessions only.
+        today_row = pd.DataFrame({
+            "open": [30.0], "high": [55.0], "low": [29.0],
+            "close": [50.0], "volume": [999_000_000.0],
+        }, index=pd.DatetimeIndex(["2026-09-25"]))
+        daily = pd.concat([self._daily(prior_close=10.0), today_row])
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=True), daily=daily)
+        self.assertIsNotNone(sig, "today's partial daily candle must be excluded")
+        self.assertIn("up=8", sig.reason)
+
+    def test_avg_daily_vol_uses_last_20_completed_sessions(self):
+        # 25 completed sessions: the first 5 traded 10M/day, the true last-20
+        # trade 1M/day. A whole-frame average (2.8M) would push rvol (~1.1x)
+        # below min_rvol and wrongly reject.
+        daily = self._daily_varying(
+            [10.0] * 25,
+            vols=[10_000_000.0] * 5 + [1_000_000.0] * 20,
+        )
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=True), daily=daily)
+        self.assertIsNotNone(
+            sig, "rvol baseline must be the last-20 completed sessions, not the whole frame"
+        )
+
+    def test_rejects_when_fewer_than_5_completed_sessions(self):
+        daily = self._daily_varying([10.0] * 4)
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=True), daily=daily)
+        self.assertIsNone(sig, "fewer than 5 completed daily sessions must reject")
+
+    def test_rejects_stale_last_bar(self):
+        # Fake now is 10:30 ET; trimming to 50 bars leaves the last bar at
+        # 10:19 ET — 11 minutes old (> 5m) — so the extension-qualified setup
+        # must be rejected as stale.
+        sig = self._scan(self._intraday(cur_vol=16_000.0, breakout=True).iloc[:50])
+        self.assertIsNone(sig, "stale last 1m bar (>5m old) must reject")
+
+    def test_post_extension_skip_logs_info_with_bar_context(self):
+        with self.assertLogs("ApexTrader", level="INFO") as cm:
+            sig = self._scan(self._intraday(cur_vol=8_000.0, breakout=True))
+        self.assertIsNone(sig)
+        joined = "\n".join(cm.output)
+        self.assertIn("[SCALP] SKIP TEST: weak current-bar volume", joined)
+        self.assertIn("last 1m bar", joined)
+        self.assertIn("age", joined)
 
 
 class PositionCapCryptoExclusionTests(unittest.TestCase):

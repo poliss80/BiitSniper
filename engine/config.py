@@ -853,6 +853,10 @@ MOMENTUM_SCALP = {
     "max_bp_pct": float(os.getenv("SCALP_MAX_BP_PCT", "20.0")),               # hard cap: never exceed this % of buying power
     "tp_pct": float(os.getenv("SCALP_TP_PCT", "5.0")),                         # fast bank target
     "ratchet_giveback_pct": float(os.getenv("SCALP_RATCHET_GIVEBACK_PCT", "2.5")),  # tight trail once armed
+    # Regular-session scalp exception: a TI stock rejected ONLY for an overnight
+    # gap / gap chase may be re-checked with those two gap checks skipped and
+    # routed to MomentumScalp alone (all other guardrails still apply).
+    "ti_gap_exempt": os.getenv("SCALP_TI_GAP_EXEMPT", "true").lower() in ("1", "true", "yes"),
 }
 
 PARABOLIC_FADE_RECLAIM = {

@@ -24,6 +24,7 @@ from engine.utils.bars import (
     calc_macd,
     calculate_atr,
     calculate_poc,
+    completed_daily_history,
 )
 
 from engine.utils.market import (

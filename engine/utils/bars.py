@@ -504,3 +504,44 @@ def calculate_atr(bars: pd.DataFrame, period: int = 14) -> float:
         return float(atr) if not pd.isna(atr) else 0.0
     except Exception:
         return 0.0
+
+
+def completed_daily_history(
+    daily: pd.DataFrame | None,
+    today_et: datetime.date,
+    lookback: int = 20,
+) -> Tuple[float | None, pd.DataFrame]:
+    """Split a daily-bars frame into (prior_close, last *lookback* completed sessions).
+
+    Robust to providers that include today's still-forming daily candle (Schwab)
+    or omit it: only rows whose bar date in America/New_York is strictly before
+    *today_et* are kept, so *prior_close* is always the last COMPLETED session
+    close. Timestamps come from the ``time`` column when present, otherwise the
+    DatetimeIndex; tz-aware values are converted to ET, naive values localized.
+
+    Returns (None, empty DataFrame) when the frame is unusable (no timestamps)
+    or contains no completed sessions.
+    """
+    empty = pd.DataFrame()
+    try:
+        if daily is None or not hasattr(daily, "empty") or daily.empty:
+            return None, empty
+        if "time" in daily.columns:
+            ts_values = daily["time"]
+        elif isinstance(daily.index, pd.DatetimeIndex):
+            ts_values = daily.index
+        else:
+            return None, empty
+        ts = pd.Series(pd.to_datetime(ts_values, errors="coerce"), index=daily.index).dropna()
+        if ts.empty:
+            return None, empty
+        if ts.dt.tz is not None:
+            ts = ts.dt.tz_convert(ET)
+        else:
+            ts = ts.dt.tz_localize(ET)
+        completed = daily.loc[ts.index[ts.dt.date < today_et]]
+        if completed.empty:
+            return None, empty
+        return float(completed["close"].iloc[-1]), completed.tail(lookback)
+    except Exception:
+        return None, empty

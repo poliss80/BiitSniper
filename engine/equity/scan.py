@@ -28,8 +28,9 @@ from engine.config import (
     TI_MIN_DOLLAR_VOLUME,
     TI_MAX_OVERNIGHT_GAP_PCT,
     BEAR_SHORT_UNIVERSE,
+    MOMENTUM_SCALP,
 )
-from engine.utils import MarketState, clear_bar_cache, get_bars, is_dead_ticker
+from engine.utils import MarketState, clear_bar_cache, completed_daily_history, get_bars, is_dead_ticker
 from engine.utils.bars import get_feed_used as _get_feed_used
 
 # IEX (free) feed captures roughly 15% of consolidated volume vs SIP.
@@ -70,7 +71,7 @@ _ADAPTIVE_MIN_RVOL = 1.2
 _ADAPTIVE_MIN_CONF = 0.60
 _ADAPTIVE_STEP_RVOL = 0.2
 _ADAPTIVE_STEP_CONF = 0.03
-from .strategies import get_strategy_instances, MomentumStrategy, TechnicalStrategy, SentimentStrategy
+from .strategies import get_strategy_instances, MomentumStrategy, MomentumScalpStrategy, TechnicalStrategy, SentimentStrategy
 from engine.data.alpaca_news import annotate_signal_with_news
 from engine.utils.market import _is_bull_regime, _INVERSE_ETFS
 
@@ -163,7 +164,7 @@ def _get_or_load_guardrail_data(symbol: str) -> Dict[str, object]:
     return data
 
 
-def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Optional[MarketState] = None, return_reason: bool = False, is_ti_stock: bool = False) -> bool:
+def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Optional[MarketState] = None, return_reason: bool = False, is_ti_stock: bool = False, skip_gap_checks: bool = False) -> bool:
     """Pre-scan gates: dollar-volume, RVOL, and gap-chase guard.
     Returns False to skip the symbol; never raises.
 
@@ -177,6 +178,11 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
     is_ti_stock: True if this symbol is from Trade Ideas (momentum/HSF stocks).
     When True, applies stricter guardrails: lower gap-chase %, higher RVOL,
     higher dollar-volume, and checks for large overnight gaps.
+
+    skip_gap_checks: when True, skips ONLY the TI overnight-gap and gap-chase
+    checks (used by the regular-session MomentumScalp exception route). Every
+    other guardrail — min price, dollar volume, RVOL, prior-session data
+    quality — stays fully active.
     """
     # return_reason is now an explicit argument
     try:
@@ -213,22 +219,26 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
         # ── TI OVERNIGHT GAP CHECK: Skip if massive pre-market move ────────────
         # Trade Ideas momentum stocks often gap hard overnight. Skip if >12% gap
         # to avoid chasing already-extended moves on poor risk/reward.
-        if is_ti_stock and open_px > 0:
+        if is_ti_stock and open_px > 0 and not skip_gap_checks:
             try:
-                # Fetch yesterday's daily bar to calc overnight gap
+                # Fetch yesterday's daily bar to calc overnight gap. Use the
+                # completed-session helper so Schwab's optional partial today
+                # candle never becomes the "prior close" (and a frame without
+                # today's bar still yields yesterday's close).
                 yesterday_bars = _cached_frame_or_default(guard_data.get("daily_2d_1d"), get_bars(symbol, "2d", "1d"))
-                if yesterday_bars is not None and hasattr(yesterday_bars, "empty") and not yesterday_bars.empty and len(yesterday_bars) >= 1:
-                    yesterday_close = float(yesterday_bars["close"].iloc[-2]) if len(yesterday_bars) >= 2 else None
-                    if yesterday_close and yesterday_close > 0:
-                        overnight_gap = ((open_px - yesterday_close) / yesterday_close) * 100
-                        if abs(overnight_gap) > TI_MAX_OVERNIGHT_GAP_PCT:
-                            _log.debug(
-                                f"[GUARDRAIL] {symbol} blocked: TI stock overnight gap {overnight_gap:.1f}% > "
-                                f"TI_MAX_OVERNIGHT_GAP_PCT {TI_MAX_OVERNIGHT_GAP_PCT}%"
-                            )
-                            if return_reason:
-                                return False, 'overnight_gap'
-                            return False
+                yesterday_close, _completed = completed_daily_history(
+                    yesterday_bars, datetime.datetime.now(_ET).date(), lookback=2
+                )
+                if yesterday_close and yesterday_close > 0:
+                    overnight_gap = ((open_px - yesterday_close) / yesterday_close) * 100
+                    if abs(overnight_gap) > TI_MAX_OVERNIGHT_GAP_PCT:
+                        _log.debug(
+                            f"[GUARDRAIL] {symbol} blocked: TI stock overnight gap {overnight_gap:.1f}% > "
+                            f"TI_MAX_OVERNIGHT_GAP_PCT {TI_MAX_OVERNIGHT_GAP_PCT}%"
+                        )
+                        if return_reason:
+                            return False, 'overnight_gap'
+                        return False
             except Exception as _gap_err:
                 _log.debug(f"[TI] {symbol}: overnight gap check failed ({_gap_err}) — continuing")
 
@@ -547,7 +557,7 @@ def _passes_guardrails(symbol: str, bull_regime: bool = None, market_state: Opti
                 adaptive_gap = max(12.0, base_gap - 3.0)
 
         # Gap-chase guard: skip if up >adaptive_gap% without a tight consolidation base
-        if open_px > 0:
+        if open_px > 0 and not skip_gap_checks:
             day_gain = ((price - open_px) / open_px) * 100
             if day_gain > adaptive_gap:
                 # When 1-min bars are available, require tight recent consolidation.
@@ -748,16 +758,45 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
         # Custom: get rejection reason from _passes_guardrails
         is_ti = symbol in _ti_stocks
         passed, reason = _passes_guardrails(symbol, bull_regime=bull_regime, market_state=market_state, return_reason=True, is_ti_stock=is_ti)
+        scalp_only = False
         if not passed:
-            with scan_lock:
-                if reason in guardrail_rejections:
-                    guardrail_rejections[reason] += 1
-                else:
-                    guardrail_rejections['other'] += 1
-            return None
+            # TI gap exception: a regular-session MomentumScalp MAY still take a
+            # TI stock rejected ONLY for an overnight gap / gap chase (scalps
+            # intentionally trade already-extended runners). Rerun guardrails
+            # with just those two gap checks skipped; every other guardrail
+            # still applies, and the symbol is exposed to no other strategy.
+            # No retry for non-TI symbols, non-gap rejects, or premarket.
+            if (
+                reason in ("overnight_gap", "gap_chase")
+                and is_ti
+                and getattr(market_state, "is_regular_hours", False)
+                and MOMENTUM_SCALP.get("enabled")
+                and MOMENTUM_SCALP.get("ti_gap_exempt")
+            ):
+                retry_passed, _retry_reason = _passes_guardrails(
+                    symbol, bull_regime=bull_regime, market_state=market_state,
+                    return_reason=True, is_ti_stock=is_ti, skip_gap_checks=True,
+                )
+                if retry_passed:
+                    scalp_only = True
+                    _log.info(
+                        f"[SCALP] {symbol}: TI {reason} guardrail waived — "
+                        f"routing to MomentumScalp only"
+                    )
+            if not scalp_only:
+                with scan_lock:
+                    if reason in guardrail_rejections:
+                        guardrail_rejections[reason] += 1
+                    else:
+                        guardrail_rejections['other'] += 1
+                return None
 
         candidates = []
-        for s in strats:
+        run_strats = (
+            [s for s in strats if isinstance(s, MomentumScalpStrategy)]
+            if scalp_only else strats
+        )
+        for s in run_strats:
             try:
                 if isinstance(s, TechnicalStrategy):
                     sig = s.scan(symbol, sentiment)
@@ -774,14 +813,19 @@ def scan_universe(scan_targets: List[str], sentiment: str, market_state: MarketS
 
         if not candidates:
             return None
-        # Policy: an eligible MomentumScalp always wins over other strategies
-        # (e.g. MomentumContinuation) regardless of confidence, so scalp setups
-        # get dedicated scalp execution instead of live-probe one-share sizing.
+        # Policy: an eligible MomentumScalp wins over other strategies
+        # (e.g. MomentumContinuation) so scalp setups get dedicated scalp
+        # execution instead of live-probe one-share sizing — but only when the
+        # scalp itself clears the global MIN_SIGNAL_CONFIDENCE floor. A sub-floor
+        # scalp must not suppress a qualifying non-scalp candidate for this
+        # ticker; the later confidence gate decides from there.
         scalps = [c for c in candidates if c.strategy == "MomentumScalp"]
-        if scalps:
-            signal = max(scalps, key=lambda s: s.confidence)
+        qualified_scalps = [c for c in scalps if c.confidence >= MIN_SIGNAL_CONFIDENCE]
+        if qualified_scalps:
+            signal = max(qualified_scalps, key=lambda s: s.confidence)
         else:
-            signal = max(candidates, key=lambda s: s.confidence)
+            others = [c for c in candidates if c.strategy != "MomentumScalp"]
+            signal = max(others or scalps, key=lambda s: s.confidence)
         return annotate_signal_with_news(signal)
 
 

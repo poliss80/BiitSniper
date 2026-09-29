@@ -272,6 +272,19 @@ def _build_scan_targets(ctx: AppContext) -> Tuple[List[str], set]:
 
 # ── Signal filtering ──────────────────────────────────────────────────────────
 
+def _active_buy_conf_floor() -> tuple[float, bool]:
+    """Return (active buy confidence floor, is_midday) for the current ET time.
+
+    Shared by _filter_eligible() and _log_skipped() so skip diagnostics report
+    the same floor the filter actually applied (the midday chop window raises
+    it to MIDDAY_MIN_CONFIDENCE).
+    """
+    import pytz as _ptz, datetime as _dt
+    _now_hhmm = _dt.datetime.now(_ptz.timezone("America/New_York")).strftime("%H:%M")
+    _midday   = cfg.MIDDAY_CHOP_START <= _now_hhmm < cfg.MIDDAY_CHOP_END
+    return (cfg.MIDDAY_MIN_CONFIDENCE if _midday else cfg.MIN_SIGNAL_CONFIDENCE), _midday
+
+
 def _filter_eligible(
     ctx: AppContext,
     signals: list,
@@ -282,11 +295,7 @@ def _filter_eligible(
 
     Returns the eligible signal list ready for execution.
     """
-    import pytz as _ptz, datetime as _dt
-    _now_et   = _dt.datetime.now(_ptz.timezone("America/New_York"))
-    _now_hhmm = _now_et.strftime("%H:%M")
-    _midday   = cfg.MIDDAY_CHOP_START <= _now_hhmm < cfg.MIDDAY_CHOP_END
-    _conf_floor = cfg.MIDDAY_MIN_CONFIDENCE if _midday else cfg.MIN_SIGNAL_CONFIDENCE
+    _conf_floor, _midday = _active_buy_conf_floor()
     if _midday:
         log.info(
             f"[MIDDAY] Chop filter active ({cfg.MIDDAY_CHOP_START}–{cfg.MIDDAY_CHOP_END} ET) — "
@@ -334,7 +343,7 @@ def _filter_eligible(
             eligible = [fallback]
 
     log.info(
-        f"Confidence gate (long>={cfg.MIN_SIGNAL_CONFIDENCE:.0%}, "
+        f"Confidence gate (long>={_conf_floor:.0%}, "
         f"short>={short_min_conf:.0%}) + cross-ref: {len(eligible)} eligible"
     )
     return eligible
@@ -342,7 +351,8 @@ def _filter_eligible(
 
 def _log_skipped(signals: list, eligible: list, fresh_held: set, regime: str, executor: EnhancedExecutor) -> None:
     """Log skip reason for each top-10 raw signal that did not make it to eligible."""
-    short_min_conf = cfg.MIN_SHORT_CONFIDENCE_BEAR if regime == "bear" else cfg.MIN_SIGNAL_CONFIDENCE
+    buy_floor, midday = _active_buy_conf_floor()
+    short_min_conf = cfg.MIN_SHORT_CONFIDENCE_BEAR if regime == "bear" else buy_floor
     eligible_syms  = {s.symbol for s in eligible}
     top10          = sorted(signals, key=lambda s: s.confidence, reverse=True)[:10]
     for s in top10:
@@ -351,8 +361,9 @@ def _log_skipped(signals: list, eligible: list, fresh_held: set, regime: str, ex
         conf = round(float(s.confidence), 2)
         if s.symbol in fresh_held:
             reason = "already held/ordered"
-        elif s.action == "buy" and conf < cfg.MIN_SIGNAL_CONFIDENCE:
-            reason = f"conf {conf:.0%} < long min {cfg.MIN_SIGNAL_CONFIDENCE:.0%}"
+        elif s.action == "buy" and conf < buy_floor:
+            floor_label = "midday long min" if midday else "long min"
+            reason = f"conf {conf:.0%} < {floor_label} {buy_floor:.0%}"
         elif s.action in ("sell", "short") and conf < short_min_conf:
             reason = f"conf {conf:.0%} < short min {short_min_conf:.0%}"
         elif executor.shorting_blocked and s.action in ("sell", "short"):

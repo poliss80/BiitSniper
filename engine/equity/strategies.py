@@ -21,7 +21,7 @@ from typing import Optional
 
 
 
-from engine.utils import get_bars, calc_rsi, calc_macd, get_premarket_bars, calculate_poc
+from engine.utils import get_bars, calc_rsi, calc_macd, get_premarket_bars, calculate_poc, completed_daily_history
 from engine.config import (
     SWEEPEA, TECHNICAL, MOMENTUM, GAP_BREAKOUT, ORB, VWAP_RECLAIM, FLOAT_ROTATION, LONG_ONLY_MODE,
     ATR_STOP_MULTIPLIER, ATR_TP_RATIO, HIGH_SHORT_FLOAT_STOCKS, is_high_short_float,
@@ -1901,7 +1901,7 @@ class MomentumScalpStrategy:
 
             intraday = get_bars(symbol, "1d", "1m")
             daily    = get_bars(symbol, "20d", "1d")
-            if intraday.empty or daily.empty or len(daily) < 2:
+            if intraday.empty or daily.empty:
                 reject("missing data")
                 return None
 
@@ -1922,11 +1922,29 @@ class MomentumScalpStrategy:
                 reject("missing current-day session data")
                 return None
 
-            cur_close   = float(session["close"].iloc[-1])
-            prior_close = float(daily["close"].iloc[-2])
+            session_ts  = timestamps.loc[session_mask]
+            last_bar_ts = session_ts.iloc[-1]
+            bar_age_min = (now_et - last_bar_ts).total_seconds() / 60.0
+
+            def skip(reason: str) -> None:
+                # Post-extension failures: INFO-level diagnostics including the
+                # latest 1m bar timestamp/age so missed scalp setups stay visible.
+                log.info(
+                    "[SCALP] SKIP %s: %s (last 1m bar %s ET, age %.1fm)",
+                    symbol, reason, last_bar_ts, bar_age_min,
+                )
+
+            # True last-20 COMPLETED daily sessions — robust to Schwab either
+            # including today's still-forming daily candle or omitting it.
+            prior_close, completed_daily = completed_daily_history(daily, now_et.date(), lookback=20)
+            if prior_close is None or len(completed_daily) < 5:
+                reject(f"insufficient completed daily history ({len(completed_daily)} sessions)")
+                return None
             if prior_close <= 0:
                 reject("missing prior close")
                 return None
+
+            cur_close = float(session["close"].iloc[-1])
 
             # Must already be extended >= min_price_up_pct above the prior
             # close — measured against the previous completed daily close (not
@@ -1937,41 +1955,48 @@ class MomentumScalpStrategy:
                 reject(f"not extended enough ({price_up_pct:.1f}% above prior close)")
                 return None
 
+            # Extension qualifies — from here a stale tape means dead data, not
+            # a missed setup: reject when the latest 1m bar is >5 minutes old.
+            if bar_age_min > 5.0:
+                skip(f"stale last 1m bar (age {bar_age_min:.1f}m > 5m)")
+                return None
+
             # Must still be pushing — at/near the very recent high, not fading
             lookback      = min(int(cfg["break_lookback_min"]), len(session))
             recent_window = session.iloc[-lookback:]
             recent_high   = float(recent_window["high"].max())
             recent_low    = float(recent_window["low"].min())
             if cur_close < recent_high * 0.995:
-                reject(f"fading off recent high ({cur_close:.2f} vs {recent_high:.2f})")
+                skip(f"fading off recent high ({cur_close:.2f} vs {recent_high:.2f})")
                 return None
 
             # RVOL: intraday volume so far vs elapsed fraction of avg daily volume
+            # (baseline = mean volume of the last <=20 COMPLETED daily sessions).
             day_vol       = float(session["volume"].sum())
-            avg_daily_vol = float(daily["volume"].iloc[:-1].mean())
+            avg_daily_vol = float(completed_daily["volume"].mean())
             if avg_daily_vol <= 0:
-                reject("missing average daily volume")
+                skip("missing average daily volume")
                 return None
             elapsed_frac = max(elapsed_min / 390.0, 0.005)
             rvol         = day_vol / (avg_daily_vol * elapsed_frac)
             if rvol < cfg["min_rvol"]:
-                reject(f"insufficient RVOL ({rvol:.1f}x)")
+                skip(f"insufficient RVOL ({rvol:.1f}x)")
                 return None
 
             # Immediate candle-volume confirmation: the current 1-minute bar's
             # volume must be >= bar_volume_mult x the average of the preceding
             # up-to-20 minute bars (current bar excluded from the average).
             if len(session) < 2:
-                reject("insufficient bars for candle-volume confirmation")
+                skip("insufficient bars for candle-volume confirmation")
                 return None
             cur_bar_vol = float(session["volume"].iloc[-1])
             avg_bar_vol = float(session["volume"].iloc[:-1].tail(20).mean())
             if avg_bar_vol <= 0:
-                reject("missing trailing average bar volume")
+                skip("missing trailing average bar volume")
                 return None
             barvol_ratio = cur_bar_vol / avg_bar_vol
             if barvol_ratio < cfg["bar_volume_mult"]:
-                reject(f"weak current-bar volume ({barvol_ratio:.1f}x trailing avg)")
+                skip(f"weak current-bar volume ({barvol_ratio:.1f}x trailing avg)")
                 return None
 
             # Breakout confirmation: current close must be above the highest high
@@ -1979,12 +2004,12 @@ class MomentumScalpStrategy:
             # stricter than the near-HOD guard above.
             breakout_high = float(session["high"].iloc[:-1].tail(min(5, len(session) - 1)).max())
             if cur_close <= breakout_high:
-                reject(f"no breakout ({cur_close:.2f} <= prior-bar high {breakout_high:.2f})")
+                skip(f"no breakout ({cur_close:.2f} <= prior-bar high {breakout_high:.2f})")
                 return None
 
             stop_dist = cur_close - recent_low
             if stop_dist <= 0:
-                reject("entry at/below recent swing low")
+                skip("entry at/below recent swing low")
                 return None
 
             conf  = 0.75
@@ -2001,7 +2026,8 @@ class MomentumScalpStrategy:
                 "MomentumScalp",
                 atr_stop=stop_dist,
             )
-        except Exception:
+        except Exception as exc:
+            log.warning("MomentumScalp %s scan failed: %s", symbol, exc)
             return None
 
 

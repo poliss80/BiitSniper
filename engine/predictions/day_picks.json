@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-29T12:21:27-04:00",
+  "generated_at": "2026-09-29T15:10:56-04:00",
   "date": "2026-09-29",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "CCL",
+      "symbol": "ITGR",
       "action": "buy",
-      "price": 24.89,
-      "confidence": 0.91,
-      "strategy": "MomentumContinuation",
-      "reason": "Momentum continuation rvol=4.2x up=11.5% break of session high MACD hist=0.0155 RSI=69.6"
+      "price": 126.39,
+      "confidence": 0.88,
+      "strategy": "Sweepea",
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.26"
     }
   ]
 }
