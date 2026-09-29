@@ -1,0 +1,1342 @@
+2026-09-29 11:42:26,237 [INFO] LIVE PROBE daily count restored: 0/50
+2026-09-29 11:42:26,268 [INFO] [OPTIONS] Reconciled BUY position: ORCL261016C00139000 1x call @139.0 entry=$8.35
+2026-09-29 11:42:26,268 [INFO] [OPTIONS] Reconciled BUY position: PLTR261009C00187500 1x call @187.5 entry=$11.30
+2026-09-29 11:42:26,268 [INFO] [OPTIONS] Reconciled BUY position: TBBB261016C00055000 4x call @55.0 entry=$1.19
+2026-09-29 11:42:26,268 [INFO] [OPTIONS] Reconciled BUY position: VXX261016C00018000 1x call @18.0 entry=$0.78
+2026-09-29 11:42:26,268 [INFO] Options trading ENABLED (45% allocation, 14-40 DTE)
+2026-09-29 11:42:26,412 [INFO] [CRYPTO] Tradeable universe (33): ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD']
+2026-09-29 11:42:26,412 [INFO] Crypto trading ENABLED — universe: ['BTC/USD', 'ETH/USD', 'SOL/USD', 'ADA/USD', 'AVAX/USD', 'DOT/USD', 'LINK/USD', 'LTC/USD', 'BCH/USD', 'XTZ/USD', 'XRP/USD', 'POL/USD', 'RENDER/USD', 'FIL/USD', 'GRT/USD', 'ARB/USD', 'LDO/USD', 'AAVE/USD', 'UNI/USD', 'SUSHI/USD', 'YFI/USD', 'CRV/USD', 'ONDO/USD', 'HYPE/USD', 'SKY/USD', 'BAT/USD', 'PAXG/USD', 'DOGE/USD', 'SHIB/USD', 'BONK/USD', 'PEPE/USD', 'WIF/USD', 'TRUMP/USD'] | pos_pct=0.0% | TP=4.0% | SL=2.5%
+2026-09-29 11:42:26,412 [INFO] Trade mode: paper (PAPER=True, LIVE=False)
+2026-09-29 11:42:26,413 [INFO] Shorting enabled (LONG_ONLY_MODE=False)
+2026-09-29 11:42:26,413 [INFO] Loaded quarterly state: start equity $97,250.00 since 2026-07-01
+2026-09-29 11:42:26,413 [INFO] ======================================================================
+2026-09-29 11:42:26,413 [INFO] APEXTRADER - Priority-Based Momentum Trading
+2026-09-29 11:42:26,413 [INFO] ======================================================================
+2026-09-29 11:42:26,413 [INFO] Priority 1 (Momentum): 22 stocks
+2026-09-29 11:42:26,413 [INFO] Priority 2 (Established): 16 stocks
+2026-09-29 11:42:26,414 [INFO] Total Universe: 42 stocks
+2026-09-29 11:42:26,414 [INFO] Scan: 3 min fixed
+2026-09-29 11:42:26,414 [INFO] ======================================================================
+2026-09-29 11:42:26,446 [INFO] Equity:          $108,700.80
+2026-09-29 11:42:26,446 [INFO] Buying Power:    $143,361.72
+2026-09-29 11:42:26,446 [INFO] PDT Status:      No
+2026-09-29 11:42:26,446 [INFO] Day Trade Count: None
+2026-09-29 11:42:26,446 [INFO] ======================================================================
+2026-09-29 11:42:26,446 [INFO] Starting… Press Ctrl+C to stop
+2026-09-29 11:42:26,446 [INFO] ======================================================================
+2026-09-29 11:42:26,447 [INFO] [STOP-THREAD] Software-stop + scalp fast-poll thread started (10s interval)
+2026-09-29 11:42:26,447 [INFO] Startup TI capture — refreshing universe before first scan…
+2026-09-29 11:42:26,448 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-29 11:42:26,448 [INFO] Waiting up to 90s for startup TI capture…
+2026-09-29 11:43:56,453 [WARNING] Startup TI capture timed out — proceeding with current universe
+2026-09-29 11:43:56,484 [INFO] ======================================================================
+2026-09-29 11:43:56,484 [INFO] NEW DAY: 2026-09-29 | Start equity: $108,715.80
+2026-09-29 11:43:56,487 [INFO] Universe pruned: removed 51 expired ticker(s): ['AIAI', 'AIR', 'APUS', 'ARMG', 'AVX', 'BEG', 'BKYI', 'BUUU', 'CCL', 'CD']…
+2026-09-29 11:43:56,487 [INFO] ======================================================================
+2026-09-29 11:43:56,487 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-29 11:43:56,928 [INFO] [CRYPTO] BROKER SL placed for CRV/USD stop=0.3528 limit=0.3510 qty=1164.40531230 | order=bf84a00c-4139-4847-b68d-b23f7534d31d
+2026-09-29 11:43:57,536 [INFO] [CRYPTO] BROKER SL placed for SKY/USD stop=0.0819 limit=0.0815 qty=84317.72157460 | order=7b55d0e7-3277-4bbb-b8e9-e41452ae98b5
+2026-09-29 11:43:58,083 [INFO] [CRYPTO] BROKER SL placed for YFI/USD stop=2375.9320 limit=2364.0524 qty=8.79246848 | order=13da3f30-06b1-4561-8410-44ab73a80442
+2026-09-29 11:43:58,713 [INFO] [CRYPTO] 19 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0952→TP:0.0990), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3618→TP:0.3763), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0840→TP:0.0873), SUSHI/USD(0.2716→TP:0.2825), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), XRP/USD(1.4952→TP:1.5551), XTZ/USD(0.3197→TP:0.3325), YFI/USD(2436.8534→TP:2534.3275)
+2026-09-29 11:44:00,147 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4749 conf=74% | RSI=66.0 3-bar uptrend
+2026-09-29 11:44:00,147 [INFO] [CRYPTO] #2: ARB/USD BUY @ 0.2137 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-29 11:44:00,148 [INFO] [CRYPTO] #3: PAXG/USD BUY @ 4162.8780 conf=66% | RSI=51.9 3-bar uptrend
+2026-09-29 11:44:00,233 [WARNING] [CRYPTO] Insufficient cash balance for LDO/USD (available=257.99, min=400.0) — skipping
+2026-09-29 11:44:00,304 [WARNING] [CRYPTO] Insufficient cash balance for ARB/USD (available=257.99, min=400.0) — skipping
+2026-09-29 11:44:00,304 [INFO] [CRYPTO] SKIP PAXG/USD conf=66% < min 70%
+2026-09-29 11:44:00,304 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-29 11:44:00,349 [INFO] INTRADAY 10:55 ET RESET: retaining options positions: ['ORCL261016C00139000', 'PLTR261009C00187500', 'TBBB261016C00055000', 'VXX261016C00018000']
+2026-09-29 11:44:00,350 [INFO] INTRADAY 10:55 ET RESET: retaining crypto positions: ['ADAUSD', 'AVAXUSD', 'BATUSD', 'BONKUSD', 'CRVUSD', 'DOGEUSD', 'DOTUSD', 'FILUSD', 'GRTUSD', 'LINKUSD', 'LTCUSD', 'SHIBUSD', 'SKYUSD', 'SUSHIUSD', 'TRUMPUSD', 'UNIUSD', 'XRPUSD', 'XTZUSD', 'YFIUSD']
+2026-09-29 11:44:01,281 [INFO] Schwab: Refreshing access token...
+2026-09-29 11:44:02,747 [INFO] Schwab: Access token refreshed (expires in 3600s)
+2026-09-29 11:44:04,028 [INFO] OPTIONS: ORCL261016C00139000 'stop' pending confirmation (1/2 cycles)
+2026-09-29 11:44:04,058 [INFO] OPTIONS: PLTR261009C00187500 'stop' pending confirmation (1/2 cycles)
+2026-09-29 11:44:04,092 [INFO] OPTIONS: TBBB261016C00055000 'stop' pending confirmation (1/2 cycles)
+2026-09-29 11:44:04,125 [WARNING] OPTIONS: VXX261016C00018000 wide quote spread 24.1% > 15.0% max (bid=$0.51 mark=$0.58 ask=$0.65) — deferring price-driven exits
+2026-09-29 11:44:04,225 [INFO] Options scan: starting — 150 ticker(s) in universe
+2026-09-29 11:44:24,310 [WARNING] Schwab: QQQ chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-29 11:44:25,889 [WARNING] Schwab: SPY chain returned 502 — retrying in 3.0s (attempt 1/3)
+2026-09-29 11:44:35,969 [WARNING] Schwab: QQQ chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-29 11:44:39,650 [WARNING] Schwab: SPY chain returned 502 — retrying in 8.0s (attempt 2/3)
+2026-09-29 11:44:53,141 [WARNING] Schwab: QQQ chain failed with 502 after 3 attempts — giving up
+2026-09-29 11:44:58,114 [WARNING] Schwab: SPY chain failed with 502 after 3 attempts — giving up
+2026-09-29 11:45:02,403 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-29 11:45:04,692 [INFO] Schwab: quote unavailable for QURE; Alpaca fallback used
+2026-09-29 11:45:23,499 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-29 11:45:25,899 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-29 11:45:29,389 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-29 11:45:33,349 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-29 11:45:35,034 [INFO] Schwab: quote unavailable for AIAI; Alpaca fallback used
+2026-09-29 11:45:36,288 [INFO] Schwab: quote unavailable for APUS; Alpaca fallback used
+2026-09-29 11:45:37,242 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-29 11:45:38,733 [INFO] Schwab: quote unavailable for AVX; Alpaca fallback used
+2026-09-29 11:45:39,923 [INFO] Schwab: quote unavailable for BEG; Alpaca fallback used
+2026-09-29 11:45:41,129 [INFO] Schwab: quote unavailable for BKYI; Alpaca fallback used
+2026-09-29 11:45:42,161 [INFO] Schwab: quote unavailable for CABO; Alpaca fallback used
+2026-09-29 11:45:43,147 [INFO] Schwab: quote unavailable for CCL; Alpaca fallback used
+2026-09-29 11:45:44,313 [INFO] Schwab: quote unavailable for CD; Alpaca fallback used
+2026-09-29 11:45:45,460 [INFO] Schwab: quote unavailable for CLPT; Alpaca fallback used
+2026-09-29 11:45:46,714 [INFO] Schwab: quote unavailable for CTNT; Alpaca fallback used
+2026-09-29 11:45:47,702 [INFO] Schwab: quote unavailable for DCX; Alpaca fallback used
+2026-09-29 11:45:48,775 [INFO] Schwab: quote unavailable for EGG; Alpaca fallback used
+2026-09-29 11:45:49,693 [INFO] Schwab: quote unavailable for FEAM; Alpaca fallback used
+2026-09-29 11:45:50,658 [INFO] Schwab: quote unavailable for FICO; Alpaca fallback used
+2026-09-29 11:45:51,684 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-29 11:45:52,796 [INFO] Schwab: quote unavailable for GRML; Alpaca fallback used
+2026-09-29 11:45:53,700 [WARNING] Schwab: Failed to get quote for II: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/II; Alpaca fallback failed: 'II'
+2026-09-29 11:45:54,739 [INFO] Schwab: quote unavailable for IMMX; Alpaca fallback used
+2026-09-29 11:45:55,884 [INFO] Schwab: quote unavailable for INDP; Alpaca fallback used
+2026-09-29 11:45:57,116 [INFO] Schwab: quote unavailable for IOVA; Alpaca fallback used
+2026-09-29 11:45:58,139 [INFO] Schwab: quote unavailable for IPST; Alpaca fallback used
+2026-09-29 11:45:59,248 [INFO] Schwab: quote unavailable for ITG; Alpaca fallback used
+2026-09-29 11:46:00,543 [INFO] Schwab: quote unavailable for LONA; Alpaca fallback used
+2026-09-29 11:46:01,534 [INFO] Schwab: quote unavailable for MAAS; Alpaca fallback used
+2026-09-29 11:46:02,698 [INFO] Schwab: quote unavailable for MSGY; Alpaca fallback used
+2026-09-29 11:46:03,857 [INFO] Schwab: quote unavailable for NAMI; Alpaca fallback used
+2026-09-29 11:46:04,843 [INFO] Schwab: quote unavailable for NESR; Alpaca fallback used
+2026-09-29 11:46:06,083 [INFO] Schwab: quote unavailable for OIG; Alpaca fallback used
+2026-09-29 11:46:07,059 [INFO] Schwab: quote unavailable for OKUR; Alpaca fallback used
+2026-09-29 11:46:08,058 [INFO] Schwab: quote unavailable for ONMD; Alpaca fallback used
+2026-09-29 11:46:09,140 [INFO] Schwab: quote unavailable for ORCU; Alpaca fallback used
+2026-09-29 11:46:10,276 [INFO] Schwab: quote unavailable for ORCX; Alpaca fallback used
+2026-09-29 11:46:11,289 [INFO] Schwab: quote unavailable for PWP; Alpaca fallback used
+2026-09-29 11:46:12,402 [INFO] Schwab: quote unavailable for QMLS; Alpaca fallback used
+2026-09-29 11:46:13,348 [INFO] Schwab: quote unavailable for RILY; Alpaca fallback used
+2026-09-29 11:46:14,309 [INFO] Schwab: quote unavailable for SANG; Alpaca fallback used
+2026-09-29 11:46:15,242 [INFO] Schwab: quote unavailable for SDEV; Alpaca fallback used
+2026-09-29 11:46:16,556 [INFO] Schwab: quote unavailable for SVRN; Alpaca fallback used
+2026-09-29 11:46:17,595 [INFO] Schwab: quote unavailable for TDIC; Alpaca fallback used
+2026-09-29 11:46:18,815 [INFO] Schwab: quote unavailable for TMCR; Alpaca fallback used
+2026-09-29 11:46:19,970 [INFO] Schwab: quote unavailable for TRUG; Alpaca fallback used
+2026-09-29 11:46:21,335 [INFO] Schwab: quote unavailable for USDEW; Alpaca fallback used
+2026-09-29 11:46:22,360 [INFO] Schwab: quote unavailable for VRME; Alpaca fallback used
+2026-09-29 11:46:23,500 [INFO] Schwab: quote unavailable for WHLR; Alpaca fallback used
+2026-09-29 11:46:24,503 [INFO] Schwab: quote unavailable for WRBY; Alpaca fallback used
+2026-09-29 11:46:25,927 [INFO] Schwab: quote unavailable for WW; Alpaca fallback used
+2026-09-29 11:46:27,169 [INFO] Schwab: quote unavailable for XRPN; Alpaca fallback used
+2026-09-29 11:46:28,346 [INFO] Schwab: quote unavailable for YMT; Alpaca fallback used
+2026-09-29 11:46:29,459 [INFO] Options scan: 0 signal(s) | universe=150 | fail summary: no_MarketStructureBreakoutCall=150, no_OpeningRangeBreakoutCall=150, no_MomentumContinuationCall=150, no_PocReclaimCall=150, no_GapBreakoutCall=150, no_MomentumCall=150, no_BearPut=150, no_BearCallSpread=150, no_ShortSqueeze=150, no_MeanReversion=150, no_BreakoutRetest=150, no_TrendPullbackSpread=150, no_IronCondor=150, no_Butterfly=150, no_signal=150
+2026-09-29 11:46:29,459 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_OpeningRangeBreakoutCall: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_MomentumContinuationCall: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_PocReclaimCall: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_GapBreakoutCall: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_MomentumCall: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_BearPut: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_BearCallSpread: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_ShortSqueeze: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_MeanReversion: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_BreakoutRetest: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_TrendPullbackSpread: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_IronCondor: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_Butterfly: WLK, SVM, BTCS, EFXT, QURE, EQNR | no_signal: WLK, SVM, BTCS, EFXT, QURE, EQNR
+2026-09-29 11:46:29,459 [INFO] [OPTIONS] No qualifying signals this cycle | open=4
+2026-09-29 11:46:29,459 [INFO] [OPTIONS] Options: 4 position(s)
+  ORCL261016C00139000 | 1x reconciled entry=$8.35 DTE=17
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=10
+  TBBB261016C00055000 | 4x reconciled entry=$1.19 DTE=17
+  VXX261016C00018000 | 1x reconciled entry=$0.78 DTE=17
+2026-09-29 11:46:29,870 [INFO] Quarterly P&L: +11.8% (target >= 50%)
+2026-09-29 11:46:30,063 [INFO] [SCAN] Market sentiment: neutral
+2026-09-29 11:46:30,106 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 362.5m (cutoff 360m) → market
+2026-09-29 11:46:30,463 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:30,464 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 365.5m (cutoff 360m) → market
+2026-09-29 11:46:30,825 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:30,826 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 368.6m (cutoff 360m) → market
+2026-09-29 11:46:31,180 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:31,180 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 371.9m (cutoff 360m) → market
+2026-09-29 11:46:31,541 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:31,541 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 374.9m (cutoff 360m) → market
+2026-09-29 11:46:31,898 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:31,898 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 3 — age 378.0m (cutoff 360m) → market
+2026-09-29 11:46:32,260 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:32,260 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 3 — age 381.1m (cutoff 360m) → market
+2026-09-29 11:46:32,632 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:32,632 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 3 — age 384.2m (cutoff 360m) → market
+2026-09-29 11:46:33,056 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:33,056 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 4 — age 387.3m (cutoff 360m) → market
+2026-09-29 11:46:33,413 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:33,413 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 4 — age 390.4m (cutoff 360m) → market
+2026-09-29 11:46:33,772 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:33,772 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 4 — age 393.5m (cutoff 360m) → market
+2026-09-29 11:46:34,128 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:34,129 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 5 — age 396.6m (cutoff 360m) → market
+2026-09-29 11:46:34,491 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:34,491 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 5 — age 399.7m (cutoff 360m) → market
+2026-09-29 11:46:34,849 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:34,850 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 6 — age 402.9m (cutoff 360m) → market
+2026-09-29 11:46:35,208 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:35,208 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 6 — age 406.0m (cutoff 360m) → market
+2026-09-29 11:46:35,578 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:46:35,578 [ERROR] Trade Ideas scrape hard-timeout (249s) — killing Chrome/chromedriver and resetting future
+2026-09-29 11:46:37,397 [INFO] [EDGAR] CIK map loaded: 8,004 companies
+2026-09-29 11:46:38,077 [INFO] [EDGAR] 8-K match: TGL — 8-K - TREASURE GLOBAL INC (0001905956) (Filer)
+2026-09-29 11:46:38,078 [INFO] [EDGAR] 8-K match: CRTD — 8-K - Creatd, Inc. (0001357671) (Filer)
+2026-09-29 11:46:38,078 [INFO] [EDGAR] 8-K match: GBTG — 8-K - Global Business Travel Group, Inc. (0001820872) (Filer)
+2026-09-29 11:46:38,079 [INFO] [EDGAR] 8-K match: FLZH — 8-K - Flash Sports & Media Holdings, Inc. (0001706524) (Filer)
+2026-09-29 11:46:38,079 [INFO] [EDGAR] 4 newly triggered tickers: ['TGL', 'CRTD', 'GBTG', 'FLZH']
+2026-09-29 11:46:38,081 [INFO] [EDGAR] Adding TGL to P2 + scan queue for monitoring
+2026-09-29 11:46:38,082 [INFO] [EDGAR] Adding CRTD to P2 + scan queue for monitoring
+2026-09-29 11:46:38,082 [INFO] [EDGAR] Adding GBTG to P2 + scan queue for monitoring
+2026-09-29 11:46:38,082 [INFO] [EDGAR] Adding FLZH to P2 + scan queue for monitoring
+2026-09-29 11:46:38,454 [INFO] [ALPACA-MOVERS] Adding SLND to P2 + scan queue for monitoring
+2026-09-29 11:46:38,455 [INFO] [ALPACA-MOVERS] Adding IOVA to P2 + scan queue for monitoring
+2026-09-29 11:46:38,455 [INFO] [ALPACA-MOVERS] 2 gainers queued for scan: ['SLND', 'IOVA']
+2026-09-29 11:46:38,521 [ERROR] [UNIVERSE HEALTH] ti_primary.json is empty! No tickers to scan. Check data pipeline.
+2026-09-29 11:46:38,521 [INFO] [SCAN] 55 symbols (filtered, 8 workers): TGL, CRTD, GBTG, FLZH, SLND, IOVA, APUS, BEG, BKYI, CLPT, CTNT, DCX, FICO, GRML, ITG, LONA, MKT, PWP, QURE, SANG, SDEV, SVRN, TDIC, USDEW, VRME, XRPN, AIAI, ARMG, CABO, CCL, CD, EGG, EMPD, FEAM, GLND, IMMX, INDP, IPST, MAAS, MSGY, NAMI, NESR, OIG, OKUR, ONMD, ORCU, ORCX, QMLS, RILY, SLE, SXTC, TMCR, WHLR, WRBY, WW
+2026-09-29 11:46:38,521 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-29 11:46:41,079 [INFO] [RVOL@TIME] TGL: today_vol=1062891, avg_intraday_vol=371516 (4 sessions), elapsed_min=136, rvol=2.861, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:41,523 [WARNING] [GUARDRAIL] FLZH blocked: price 0.07 < adaptive_min_price 0.25
+2026-09-29 11:46:41,738 [INFO] [RVOL@TIME] SLND: today_vol=110640488, avg_intraday_vol=86092 (1 sessions), elapsed_min=136, rvol=1285.139, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-29 11:46:41,892 [INFO] [RVOL@TIME] BEG: today_vol=376361, avg_intraday_vol=224202 (4 sessions), elapsed_min=136, rvol=1.679, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:42,054 [INFO] [RVOL@TIME] IOVA: today_vol=28998451, avg_intraday_vol=3497968 (4 sessions), elapsed_min=136, rvol=8.290, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:42,391 [INFO] [RVOL@TIME] APUS: today_vol=186159, avg_intraday_vol=14526081 (3 sessions), elapsed_min=136, rvol=0.013, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-29 11:46:42,391 [WARNING] [GUARDRAIL] APUS blocked: RVOL@TIME 0.01 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=186159 | avg_intraday_vol=14526081
+2026-09-29 11:46:42,833 [INFO] [RVOL@TIME] BKYI: today_vol=72117469, avg_intraday_vol=384110 (2 sessions), elapsed_min=136, rvol=187.752, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-29 11:46:44,817 [INFO] [RVOL@TIME] CLPT: today_vol=987215, avg_intraday_vol=189366 (4 sessions), elapsed_min=136, rvol=5.213, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:45,051 [INFO] [RVOL@TIME] CTNT: today_vol=239017, avg_intraday_vol=336927 (4 sessions), elapsed_min=136, rvol=0.709, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:45,378 [INFO] [RVOL@TIME] DCX: today_vol=83856, avg_intraday_vol=165870 (4 sessions), elapsed_min=136, rvol=0.506, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:45,511 [INFO] [RVOL@TIME] FICO: today_vol=2156410, avg_intraday_vol=110196 (4 sessions), elapsed_min=136, rvol=19.569, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:46,461 [INFO] [RVOL@TIME] GRML: today_vol=2631806, avg_intraday_vol=12964880 (4 sessions), elapsed_min=136, rvol=0.203, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:46,461 [WARNING] [GUARDRAIL] GRML blocked: RVOL@TIME 0.20 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=2631806 | avg_intraday_vol=12964880
+2026-09-29 11:46:48,952 [INFO] [RVOL@TIME] ITG: today_vol=271767, avg_intraday_vol=165990 (4 sessions), elapsed_min=136, rvol=1.637, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:49,902 [INFO] [RVOL@TIME] LONA: today_vol=255627, avg_intraday_vol=270283 (3 sessions), elapsed_min=136, rvol=0.946, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-29 11:46:50,915 [INFO] [RVOL@TIME] PWP: today_vol=6968850, avg_intraday_vol=356927 (4 sessions), elapsed_min=136, rvol=19.525, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:51,940 [INFO] [RVOL@TIME] QURE: today_vol=9129903, avg_intraday_vol=609806 (4 sessions), elapsed_min=136, rvol=14.972, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:53,168 [WARNING] [GUARDRAIL] SANG blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-29 11:46:53,516 [INFO] [RVOL@TIME] SDEV: today_vol=62472345, avg_intraday_vol=3628564 (4 sessions), elapsed_min=136, rvol=17.217, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:53,788 [INFO] [RVOL@TIME] SVRN: today_vol=113524, avg_intraday_vol=168597 (4 sessions), elapsed_min=136, rvol=0.673, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:54,098 [INFO] [RVOL@TIME] TDIC: today_vol=143442, avg_intraday_vol=5223072 (2 sessions), elapsed_min=136, rvol=0.027, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-29 11:46:54,098 [WARNING] [GUARDRAIL] TDIC blocked: RVOL@TIME 0.03 < rvol_threshold 0.40 (adaptive=0.50 sessions=2 discount=0.80) | today_vol=143442 | avg_intraday_vol=5223072
+2026-09-29 11:46:56,672 [INFO] [RVOL@TIME] VRME: today_vol=43665, avg_intraday_vol=142629 (4 sessions), elapsed_min=136, rvol=0.306, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:56,672 [WARNING] [GUARDRAIL] VRME blocked: RVOL@TIME 0.31 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=43665 | avg_intraday_vol=142629
+2026-09-29 11:46:57,001 [INFO] [RVOL@TIME] USDEW: today_vol=128470, avg_intraday_vol=367215 (3 sessions), elapsed_min=136, rvol=0.350, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-29 11:46:57,001 [WARNING] [GUARDRAIL] USDEW blocked: RVOL@TIME 0.35 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=128470 | avg_intraday_vol=367215
+2026-09-29 11:46:57,096 [INFO] [RVOL@TIME] XRPN: today_vol=469755, avg_intraday_vol=120717 (4 sessions), elapsed_min=136, rvol=3.891, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:57,388 [INFO] [RVOL@TIME] AIAI: today_vol=163197, avg_intraday_vol=101919 (4 sessions), elapsed_min=136, rvol=1.601, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:57,712 [INFO] [RVOL@TIME] ARMG: today_vol=1050970, avg_intraday_vol=1088544 (4 sessions), elapsed_min=136, rvol=0.965, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:58,453 [INFO] [RVOL@TIME] CABO: today_vol=304543, avg_intraday_vol=177972 (4 sessions), elapsed_min=136, rvol=1.711, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:46:59,946 [INFO] [RVOL@TIME] CCL: today_vol=35835254, avg_intraday_vol=7170904 (4 sessions), elapsed_min=136, rvol=4.997, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:00,294 [INFO] [RVOL@TIME] CD: today_vol=67990, avg_intraday_vol=119279 (4 sessions), elapsed_min=137, rvol=0.570, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:00,402 [INFO] [RVOL@TIME] EGG: today_vol=111057, avg_intraday_vol=3193411 (1 sessions), elapsed_min=137, rvol=0.035, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-29 11:47:00,402 [WARNING] [GUARDRAIL] EGG blocked: RVOL@TIME 0.03 < rvol_threshold 0.33 (adaptive=0.50 sessions=1 discount=0.65) | today_vol=111057 | avg_intraday_vol=3193411
+2026-09-29 11:47:00,553 [INFO] [RVOL@TIME] EMPD: today_vol=42489, avg_intraday_vol=190051 (4 sessions), elapsed_min=137, rvol=0.224, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:00,554 [WARNING] [GUARDRAIL] EMPD blocked: RVOL@TIME 0.22 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=42489 | avg_intraday_vol=190051
+2026-09-29 11:47:00,931 [INFO] [RVOL@TIME] FEAM: today_vol=458475, avg_intraday_vol=303950 (4 sessions), elapsed_min=137, rvol=1.508, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:03,709 [INFO] [RVOL@TIME] IMMX: today_vol=2133428, avg_intraday_vol=350858 (4 sessions), elapsed_min=137, rvol=6.081, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:04,005 [INFO] [RVOL@TIME] GLND: today_vol=6204789, avg_intraday_vol=39849714 (4 sessions), elapsed_min=137, rvol=0.156, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:04,005 [WARNING] [GUARDRAIL] GLND blocked: RVOL@TIME 0.16 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=6204789 | avg_intraday_vol=39849714
+2026-09-29 11:47:05,557 [INFO] [RVOL@TIME] INDP: today_vol=407321, avg_intraday_vol=444295 (4 sessions), elapsed_min=137, rvol=0.917, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:06,576 [INFO] [RVOL@TIME] IPST: today_vol=41098, avg_intraday_vol=640422 (3 sessions), elapsed_min=137, rvol=0.064, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-29 11:47:06,576 [WARNING] [GUARDRAIL] IPST blocked: RVOL@TIME 0.06 < rvol_threshold 0.45 (adaptive=0.50 sessions=3 discount=0.90) | today_vol=41098 | avg_intraday_vol=640422
+2026-09-29 11:47:06,889 [INFO] [RVOL@TIME] MAAS: today_vol=100815, avg_intraday_vol=543686 (4 sessions), elapsed_min=137, rvol=0.185, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:06,889 [WARNING] [GUARDRAIL] MAAS blocked: RVOL@TIME 0.19 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=100815 | avg_intraday_vol=543686
+2026-09-29 11:47:07,530 [INFO] [RVOL@TIME] MSGY: today_vol=5325936, avg_intraday_vol=18234523 (2 sessions), elapsed_min=137, rvol=0.292, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-29 11:47:07,530 [WARNING] [GUARDRAIL] MSGY blocked: RVOL@TIME 0.29 < rvol_threshold 0.40 (adaptive=0.50 sessions=2 discount=0.80) | today_vol=5325936 | avg_intraday_vol=18234523
+2026-09-29 11:47:08,393 [INFO] [RVOL@TIME] NAMI: today_vol=1751873, avg_intraday_vol=11414939 (2 sessions), elapsed_min=137, rvol=0.153, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-29 11:47:08,393 [WARNING] [GUARDRAIL] NAMI blocked: RVOL@TIME 0.15 < rvol_threshold 0.40 (adaptive=0.50 sessions=2 discount=0.80) | today_vol=1751873 | avg_intraday_vol=11414939
+2026-09-29 11:47:08,566 [INFO] [RVOL@TIME] NESR: today_vol=1688709, avg_intraday_vol=217904 (4 sessions), elapsed_min=137, rvol=7.750, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:09,336 [INFO] [RVOL@TIME] OIG: today_vol=191923, avg_intraday_vol=212129 (4 sessions), elapsed_min=137, rvol=0.905, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:10,044 [INFO] [RVOL@TIME] OKUR: today_vol=155197, avg_intraday_vol=187621 (4 sessions), elapsed_min=137, rvol=0.827, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:10,356 [INFO] [RVOL@TIME] ONMD: today_vol=27287, avg_intraday_vol=41440 (4 sessions), elapsed_min=137, rvol=0.658, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:10,356 [WARNING] [GUARDRAIL] ONMD blocked: dollar volume 164590 < tw_dollar_vol 316154 (iex_scale=False) | price=5.97 | day_vol=27587
+2026-09-29 11:47:11,073 [INFO] [RVOL@TIME] ORCU: today_vol=9291011, avg_intraday_vol=3372473 (4 sessions), elapsed_min=137, rvol=2.755, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:11,979 [INFO] [RVOL@TIME] ORCX: today_vol=2915346, avg_intraday_vol=1364111 (4 sessions), elapsed_min=137, rvol=2.137, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:12,619 [INFO] [RVOL@TIME] QMLS: today_vol=865812, avg_intraday_vol=151821 (4 sessions), elapsed_min=137, rvol=5.703, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:14,017 [INFO] [RVOL@TIME] RILY: today_vol=802562, avg_intraday_vol=244070 (4 sessions), elapsed_min=137, rvol=3.288, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:14,109 [INFO] [RVOL@TIME] SLE: today_vol=70192, avg_intraday_vol=177598 (4 sessions), elapsed_min=137, rvol=0.395, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:14,109 [WARNING] [GUARDRAIL] SLE blocked: RVOL@TIME 0.40 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=70192 | avg_intraday_vol=177598
+2026-09-29 11:47:16,868 [WARNING] [GUARDRAIL] SXTC blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-29 11:47:17,709 [INFO] [RVOL@TIME] TMCR: today_vol=122552, avg_intraday_vol=180540 (1 sessions), elapsed_min=137, rvol=0.679, threshold=0.33 (adaptive=0.50 session_discount=0.65 iex_scale=False)
+2026-09-29 11:47:17,963 [INFO] [RVOL@TIME] WHLR: today_vol=140739, avg_intraday_vol=10952908 (4 sessions), elapsed_min=137, rvol=0.013, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:18,000 [INFO] [RVOL@TIME] WRBY: today_vol=1971468, avg_intraday_vol=626292 (4 sessions), elapsed_min=137, rvol=3.148, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:18,005 [WARNING] [GUARDRAIL] WHLR blocked: RVOL@TIME 0.01 < rvol_threshold 0.50 (adaptive=0.50 sessions=4 discount=1.00) | today_vol=140739 | avg_intraday_vol=10952908
+2026-09-29 11:47:18,909 [INFO] [RVOL@TIME] WW: today_vol=591844, avg_intraday_vol=126157 (4 sessions), elapsed_min=137, rvol=4.691, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:47:20,593 [INFO] [GUARDRAIL SUMMARY] Rejected: 26 | DollarVol: 1 | RVOL: 16 | GapChase: 5 | MinPrice: 1 | Other: 3
+2026-09-29 11:47:20,593 [INFO] [FUNNEL] targets=55 guardrail_rejected=26 (rvol=16) -> signals_generated=5 -> conf_gate(-5) -> sector_cap(-0) -> final=0
+2026-09-29 11:47:20,593 [INFO] [SCAN] Breakdown — Sweepea: 1, TrendlineBreakout: 4 | Errors: 0 | Total: 0
+2026-09-29 11:47:20,593 [INFO] [SCAN] No signals this cycle
+2026-09-29 11:50:20,614 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-29 11:50:21,935 [INFO] [CRYPTO] 19 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0952→TP:0.0990), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3618→TP:0.3763), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0840→TP:0.0873), SUSHI/USD(0.2716→TP:0.2825), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), XRP/USD(1.4952→TP:1.5551), XTZ/USD(0.3197→TP:0.3325), YFI/USD(2436.8534→TP:2534.3275)
+2026-09-29 11:50:23,561 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4749 conf=74% | RSI=66.0 3-bar uptrend
+2026-09-29 11:50:23,561 [INFO] [CRYPTO] #2: ARB/USD BUY @ 0.2137 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-29 11:50:23,561 [INFO] [CRYPTO] #3: PAXG/USD BUY @ 4162.8780 conf=66% | RSI=51.9 3-bar uptrend
+2026-09-29 11:50:23,663 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1712.818077 (~$815) limit=0.4756 | software TP=0.4939 SL=0.4630 | conf=74% | RSI=66.0 3-bar uptrend | order=25f96c29-86d6-4add-a991-839ff016665f
+2026-09-29 11:50:23,766 [INFO] [CRYPTO] LIMIT BUY ARB/USD qty=3488.618171 (~$747) limit=0.2141 | software TP=0.2223 SL=0.2084 | conf=73% | RSI=63.7 3-bar uptrend | order=babea112-ab39-4378-92a1-bb1f0b69b8d1
+2026-09-29 11:50:23,767 [INFO] [CRYPTO] SKIP PAXG/USD conf=66% < min 70%
+2026-09-29 11:50:24,461 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-29 11:50:24,461 [INFO] [CRYPTO] Position closed externally: ARB/USD
+2026-09-29 11:50:25,422 [WARNING] OPTIONS: VXX261016C00018000 wide quote spread 24.1% > 15.0% max (bid=$0.51 mark=$0.58 ask=$0.65) — deferring price-driven exits
+2026-09-29 11:50:25,463 [WARNING] Schwab API degraded: 76.9% success rate (threshold 80%) — using Alpaca-first strategy
+2026-09-29 11:50:25,464 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['TGL', 'CRTD', 'GBTG', 'FLZH', 'SLND']
+2026-09-29 11:50:25,465 [INFO] Options scan: starting — 190 ticker(s) in universe
+2026-09-29 11:51:17,018 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-29 11:51:20,143 [INFO] Schwab: quote unavailable for SHMD; Alpaca fallback used
+2026-09-29 11:51:25,647 [INFO] Schwab: quote unavailable for KOD; Alpaca fallback used
+2026-09-29 11:51:29,726 [INFO] Schwab: quote unavailable for RNAC; Alpaca fallback used
+2026-09-29 11:51:34,472 [INFO] Schwab: quote unavailable for BBNX; Alpaca fallback used
+2026-09-29 11:51:47,365 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-29 11:51:49,634 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-29 11:51:52,398 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-29 11:51:56,833 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-29 11:51:59,207 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-29 11:52:01,245 [INFO] Schwab: quote unavailable for RILY; Alpaca fallback used
+2026-09-29 11:52:02,668 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-29 11:52:03,867 [INFO] Schwab: quote unavailable for OKUR; Alpaca fallback used
+2026-09-29 11:52:05,086 [WARNING] Schwab: Failed to get quote for MKT: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/MKT; Alpaca fallback failed: 'MKT'
+2026-09-29 11:52:08,831 [INFO] Schwab: quote unavailable for DOCN; Alpaca fallback used
+2026-09-29 11:52:11,384 [INFO] Schwab: quote unavailable for AXTI; Alpaca fallback used
+2026-09-29 11:52:12,507 [INFO] Options scan: 0 signal(s) | universe=190 | fail summary: no_MarketStructureBreakoutCall=190, no_OpeningRangeBreakoutCall=190, no_MomentumContinuationCall=190, no_PocReclaimCall=190, no_GapBreakoutCall=190, no_MomentumCall=190, no_BearPut=190, no_BearCallSpread=190, no_ShortSqueeze=190, no_MeanReversion=190, no_BreakoutRetest=190, no_TrendPullbackSpread=190, no_IronCondor=190, no_Butterfly=190, no_signal=190
+2026-09-29 11:52:12,555 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_OpeningRangeBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_MomentumContinuationCall: PWP, WW, MX, IMMX, GANX, ORCU | no_PocReclaimCall: PWP, WW, MX, IMMX, GANX, ORCU | no_GapBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_MomentumCall: PWP, WW, MX, IMMX, GANX, ORCU | no_BearPut: PWP, WW, MX, IMMX, GANX, ORCU | no_BearCallSpread: PWP, WW, MX, IMMX, GANX, ORCU | no_ShortSqueeze: PWP, WW, MX, IMMX, GANX, ORCU | no_MeanReversion: PWP, WW, MX, IMMX, GANX, ORCU | no_BreakoutRetest: PWP, WW, MX, IMMX, GANX, ORCU | no_TrendPullbackSpread: PWP, WW, MX, IMMX, GANX, ORCU | no_IronCondor: PWP, WW, MX, IMMX, GANX, ORCU | no_Butterfly: PWP, WW, MX, IMMX, GANX, ORCU | no_signal: PWP, WW, MX, IMMX, GANX, ORCU
+2026-09-29 11:52:12,555 [INFO] [OPTIONS] No qualifying signals this cycle | open=4
+2026-09-29 11:52:12,556 [INFO] [OPTIONS] Options: 4 position(s)
+  ORCL261016C00139000 | 1x reconciled entry=$8.35 DTE=17
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=10
+  TBBB261016C00055000 | 4x reconciled entry=$1.19 DTE=17
+  VXX261016C00018000 | 1x reconciled entry=$0.78 DTE=17
+2026-09-29 11:52:12,626 [INFO] Quarterly P&L: +11.8% (target >= 50%)
+2026-09-29 11:52:12,627 [INFO] [SCAN] Market sentiment: neutral
+2026-09-29 11:52:12,667 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 362.0m (cutoff 360m) → market
+2026-09-29 11:52:13,033 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:52:13,034 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 365.1m (cutoff 360m) → market
+2026-09-29 11:52:13,401 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:52:13,481 [INFO] [SCAN] 75 symbols (filtered, 8 workers): TGL, CRTD, GBTG, FLZH, SLND, IOVA, ONMD, BKYI, SDEV, SANG, BEG, XRPN, LONA, ITG, SVRN, PWP, MSGY, YMT, WW, WRBY, CCL, OIG, FEAM, ORCU, ORCX, NAMI, ARMG, AVX, TRUG, DCX, QURE, FICO, CTNT, VRME, CLPT, APUS, TDIC, WHLR, GRML, USDEW, MAAS, AIAI, EGG, CABO, QMLS, INDP, NESR, RILY, IMMX, TMCR, CD, IPST, GLND, OKUR, II, SLE, EMPD, SXTC, MKT, MX, GANX, WLK, ITGR, WYY, SHMD, NCLH, VOD, BWXT, GLAS, ET, FRVO, EWZ, SSTI, SMMT, PIPR
+2026-09-29 11:52:13,481 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-29 11:52:16,152 [INFO] [RVOL@TIME] TGL: today_vol=1074369, avg_intraday_vol=379239 (4 sessions), elapsed_min=142, rvol=2.833, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:16,452 [INFO] [RVOL@TIME] SLND: today_vol=111365163, avg_intraday_vol=146285 (2 sessions), elapsed_min=142, rvol=761.289, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-29 11:52:16,712 [WARNING] [GUARDRAIL] FLZH blocked: price 0.07 < adaptive_min_price 0.25
+2026-09-29 11:52:18,333 [INFO] [RVOL@TIME] IOVA: today_vol=29650511, avg_intraday_vol=3611247 (4 sessions), elapsed_min=142, rvol=8.211, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:18,616 [INFO] [RVOL@TIME] SDEV: today_vol=65128411, avg_intraday_vol=3666217 (4 sessions), elapsed_min=142, rvol=17.764, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:21,469 [INFO] [RVOL@TIME] XRPN: today_vol=582189, avg_intraday_vol=123196 (4 sessions), elapsed_min=142, rvol=4.726, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:25,686 [INFO] [RVOL@TIME] PWP: today_vol=7065499, avg_intraday_vol=360934 (4 sessions), elapsed_min=142, rvol=19.576, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:26,268 [INFO] [RVOL@TIME] WW: today_vol=599237, avg_intraday_vol=129892 (4 sessions), elapsed_min=142, rvol=4.613, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:27,315 [INFO] [RVOL@TIME] WRBY: today_vol=2026075, avg_intraday_vol=651230 (4 sessions), elapsed_min=142, rvol=3.111, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:27,615 [INFO] [RVOL@TIME] CCL: today_vol=36690141, avg_intraday_vol=7396125 (4 sessions), elapsed_min=142, rvol=4.961, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:27,971 [INFO] [RVOL@TIME] OIG: today_vol=192724, avg_intraday_vol=212988 (4 sessions), elapsed_min=142, rvol=0.905, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:27,972 [WARNING] [GUARDRAIL] OIG blocked: RVOL@TIME 0.90 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=192724 | avg_intraday_vol=212988
+2026-09-29 11:52:28,991 [INFO] [RVOL@TIME] FEAM: today_vol=460325, avg_intraday_vol=315648 (4 sessions), elapsed_min=142, rvol=1.458, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:30,703 [INFO] [RVOL@TIME] ORCU: today_vol=9350260, avg_intraday_vol=3414053 (4 sessions), elapsed_min=142, rvol=2.739, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:30,831 [INFO] [RVOL@TIME] ORCX: today_vol=2998365, avg_intraday_vol=1379062 (4 sessions), elapsed_min=142, rvol=2.174, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:36,543 [INFO] [RVOL@TIME] AVX: today_vol=216488, avg_intraday_vol=586168 (4 sessions), elapsed_min=142, rvol=0.369, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:36,544 [WARNING] [GUARDRAIL] AVX blocked: RVOL@TIME 0.37 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=216488 | avg_intraday_vol=586168
+2026-09-29 11:52:36,683 [INFO] [RVOL@TIME] TRUG: today_vol=831823, avg_intraday_vol=191369 (4 sessions), elapsed_min=142, rvol=4.347, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:37,466 [INFO] [RVOL@TIME] QURE: today_vol=9282913, avg_intraday_vol=621652 (4 sessions), elapsed_min=142, rvol=14.933, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:40,487 [INFO] [RVOL@TIME] CLPT: today_vol=999588, avg_intraday_vol=193608 (4 sessions), elapsed_min=142, rvol=5.163, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:45,319 [INFO] [RVOL@TIME] USDEW: today_vol=128870, avg_intraday_vol=375935 (3 sessions), elapsed_min=142, rvol=0.343, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 11:52:45,320 [WARNING] [GUARDRAIL] USDEW blocked: RVOL@TIME 0.34 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=128870 | avg_intraday_vol=375935
+2026-09-29 11:52:46,137 [INFO] [RVOL@TIME] AIAI: today_vol=171297, avg_intraday_vol=107849 (4 sessions), elapsed_min=142, rvol=1.588, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:47,694 [INFO] [RVOL@TIME] QMLS: today_vol=869412, avg_intraday_vol=157224 (4 sessions), elapsed_min=142, rvol=5.530, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:49,730 [INFO] [RVOL@TIME] NESR: today_vol=1717670, avg_intraday_vol=227684 (4 sessions), elapsed_min=142, rvol=7.544, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:50,064 [INFO] [RVOL@TIME] RILY: today_vol=835653, avg_intraday_vol=247406 (4 sessions), elapsed_min=142, rvol=3.378, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:50,211 [INFO] [RVOL@TIME] IMMX: today_vol=2176769, avg_intraday_vol=357926 (4 sessions), elapsed_min=142, rvol=6.082, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:54,629 [INFO] [RVOL@TIME] IPST: today_vol=42266, avg_intraday_vol=663512 (3 sessions), elapsed_min=142, rvol=0.064, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 11:52:54,629 [WARNING] [GUARDRAIL] IPST blocked: RVOL@TIME 0.06 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=42266 | avg_intraday_vol=663512
+2026-09-29 11:52:56,199 [INFO] [RVOL@TIME] OKUR: today_vol=158429, avg_intraday_vol=187802 (4 sessions), elapsed_min=142, rvol=0.844, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:56,199 [WARNING] [GUARDRAIL] OKUR blocked: RVOL@TIME 0.84 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=158429 | avg_intraday_vol=187802
+2026-09-29 11:52:56,914 [INFO] [RVOL@TIME] SLE: today_vol=71942, avg_intraday_vol=181496 (4 sessions), elapsed_min=142, rvol=0.396, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:56,915 [WARNING] [GUARDRAIL] SLE blocked: RVOL@TIME 0.40 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=71942 | avg_intraday_vol=181496
+2026-09-29 11:52:58,902 [INFO] [RVOL@TIME] EMPD: today_vol=48542, avg_intraday_vol=194218 (4 sessions), elapsed_min=142, rvol=0.250, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:52:58,902 [WARNING] [GUARDRAIL] EMPD blocked: RVOL@TIME 0.25 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=48542 | avg_intraday_vol=194218
+2026-09-29 11:52:59,065 [WARNING] [GUARDRAIL] SXTC blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-29 11:52:59,823 [INFO] [RVOL@TIME] GANX: today_vol=805086, avg_intraday_vol=329574 (4 sessions), elapsed_min=142, rvol=2.443, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:00,713 [INFO] [RVOL@TIME] WLK: today_vol=393298, avg_intraday_vol=100783 (4 sessions), elapsed_min=143, rvol=3.902, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:00,898 [INFO] [RVOL@TIME] ITGR: today_vol=516875, avg_intraday_vol=490873 (4 sessions), elapsed_min=143, rvol=1.053, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:01,143 [INFO] [RVOL@TIME] WYY: today_vol=302529, avg_intraday_vol=1116804 (3 sessions), elapsed_min=143, rvol=0.271, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 11:53:01,143 [WARNING] [GUARDRAIL] WYY blocked: RVOL@TIME 0.27 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=302529 | avg_intraday_vol=1116804
+2026-09-29 11:53:01,787 [INFO] [RVOL@TIME] SHMD: today_vol=1000150, avg_intraday_vol=1072979 (4 sessions), elapsed_min=143, rvol=0.932, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:01,788 [WARNING] [GUARDRAIL] SHMD blocked: RVOL@TIME 0.93 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=1000150 | avg_intraday_vol=1072979
+2026-09-29 11:53:03,647 [INFO] [RVOL@TIME] NCLH: today_vol=9775764, avg_intraday_vol=5431453 (4 sessions), elapsed_min=143, rvol=1.800, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:03,849 [INFO] [RVOL@TIME] BWXT: today_vol=336849, avg_intraday_vol=188952 (4 sessions), elapsed_min=143, rvol=1.783, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:04,036 [INFO] [RVOL@TIME] VOD: today_vol=1278598, avg_intraday_vol=1235272 (4 sessions), elapsed_min=143, rvol=1.035, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:05,395 [INFO] [RVOL@TIME] GLAS: today_vol=472054, avg_intraday_vol=599772 (4 sessions), elapsed_min=143, rvol=0.787, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:05,395 [WARNING] [GUARDRAIL] GLAS blocked: RVOL@TIME 0.79 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=472054 | avg_intraday_vol=599772
+2026-09-29 11:53:05,951 [INFO] [RVOL@TIME] ET: today_vol=4276113, avg_intraday_vol=3194465 (4 sessions), elapsed_min=143, rvol=1.339, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:08,661 [INFO] [RVOL@TIME] FRVO: today_vol=2696029, avg_intraday_vol=4119651 (4 sessions), elapsed_min=143, rvol=0.654, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:08,662 [WARNING] [GUARDRAIL] FRVO blocked: RVOL@TIME 0.65 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=2696029 | avg_intraday_vol=4119651
+2026-09-29 11:53:09,141 [INFO] [RVOL@TIME] EWZ: today_vol=8547339, avg_intraday_vol=9450380 (4 sessions), elapsed_min=143, rvol=0.904, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:09,141 [WARNING] [GUARDRAIL] EWZ blocked: RVOL@TIME 0.90 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=8547339 | avg_intraday_vol=9450380
+2026-09-29 11:53:09,646 [WARNING] [GUARDRAIL] SSTI blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-29 11:53:10,939 [INFO] [RVOL@TIME] PIPR: today_vol=658764, avg_intraday_vol=145528 (4 sessions), elapsed_min=143, rvol=4.527, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:53:13,012 [INFO] [GUARDRAIL SUMMARY] Rejected: 50 | DollarVol: 0 | RVOL: 14 | GapChase: 3 | MinPrice: 1 | Other: 4
+2026-09-29 11:53:13,012 [INFO] [FUNNEL] targets=75 guardrail_rejected=50 (rvol=14) -> signals_generated=10 -> conf_gate(-7) -> sector_cap(-0) -> final=3
+2026-09-29 11:53:13,013 [INFO] [ADAPTIVE] Resetting adaptive filters after successful scan.
+2026-09-29 11:53:13,013 [INFO] [SCAN] Breakdown — MomentumContinuationPullback: 1, MomentumScalp: 1, Sweepea: 2, TrendlineBreakout: 6 | Errors: 0 | Total: 3
+2026-09-29 11:53:13,014 [INFO] [SCAN] TOP5_RAW #1: PWP BUY $16.89 conf=90% [MomentumScalp] — Momentum scalp up=15.4% rvol=18.0x barvol=2.0x break>$16.89 near HOD $16.92 target +5% or ride on continuation
+2026-09-29 11:53:13,014 [INFO] [SCAN] TOP5_RAW #2: ITGR BUY $126.33 conf=88% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.26
+2026-09-29 11:53:13,014 [INFO] [SCAN] TOP5_RAW #3: IOVA BUY $14.03 conf=84% [MomentumContinuationPullback] — Momentum continuation high-RVOL pullback/reclaim rvol=5.8x up=27.0% above VWAP and range midpoint MACD hist=0.0028 RSI=53.1
+2026-09-29 11:53:13,118 [INFO] Live holdings: 24 excluded
+2026-09-29 11:53:13,118 [INFO] [MIDDAY] Chop filter active (11:30–13:00 ET) — min confidence raised to 88%
+2026-09-29 11:53:13,118 [INFO] Confidence gate (long>=82%, short>=88%) + cross-ref: 2 eligible
+2026-09-29 11:53:13,119 [INFO] [SCAN] SKIP IOVA BUY $14.03 conf=84% [MomentumContinuationPullback] — filtered
+2026-09-29 11:53:13,119 [INFO] [TRADE] TOP5_ELIGIBLE #1: PWP BUY $16.89 conf=90% [MomentumScalp] — Momentum scalp up=15.4% rvol=18.0x barvol=2.0x break>$16.89 near HOD $16.92 target +5% or ride on continuation
+2026-09-29 11:53:13,119 [INFO] [TRADE] TOP5_ELIGIBLE #2: ITGR BUY $126.33 conf=88% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.26
+2026-09-29 11:53:14,168 [INFO] Scan email sent
+2026-09-29 11:53:14,169 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-29 11:53:14,204 [INFO] EXECUTE: BUY PWP @ $16.89 | MomentumScalp | Momentum scalp up=15.4% rvol=18.0x barvol=2.0x break>$16.89 near HOD $16.92 target +5% or ride on continuation
+2026-09-29 11:53:14,354 [INFO] SWAP: closing ARBUSD (weakest) to make room for PWP (conf=90%)
+2026-09-29 11:53:14,390 [INFO] SWAP close submitted for ARBUSD; waiting for position count to fall below 3 before entering PWP
+2026-09-29 11:53:14,391 [INFO] Skip PWP: Swap close submitted for ARBUSD; retry after close
+2026-09-29 11:53:15,475 [INFO] EXECUTE: BUY ITGR @ $126.33 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.26
+2026-09-29 11:53:15,554 [INFO] SWAP: closing ADAUSD (weakest) to make room for ITGR (conf=88%)
+2026-09-29 11:53:15,583 [WARNING] SWAP close failed for ADAUSD: {"code":40310000,"message":"order qty must be \u003e= minimal qty of order 0.000000002"}
+2026-09-29 11:53:15,583 [INFO] Skip ITGR: Swap close failed: {"code":40310000,"message":"order qty must be \u003e= minimal qty of order 0.000000002"}
+2026-09-29 11:53:16,584 [INFO] Heartbeat: 2026-09-29T11:53:16.584805
+2026-09-29 11:56:16,667 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-29 11:56:18,428 [INFO] [CRYPTO] 19 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0952→TP:0.0990), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3618→TP:0.3763), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0840→TP:0.0873), SUSHI/USD(0.2716→TP:0.2825), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), XRP/USD(1.4952→TP:1.5551), XTZ/USD(0.3197→TP:0.3325), YFI/USD(2436.8534→TP:2534.3275)
+2026-09-29 11:56:19,667 [INFO] [CRYPTO] #1: LDO/USD BUY @ 0.4749 conf=74% | RSI=66.0 3-bar uptrend
+2026-09-29 11:56:19,668 [INFO] [CRYPTO] #2: ARB/USD BUY @ 0.2137 conf=73% | RSI=63.7 3-bar uptrend
+2026-09-29 11:56:19,668 [INFO] [CRYPTO] #3: PAXG/USD BUY @ 4162.8780 conf=66% | RSI=51.9 3-bar uptrend
+2026-09-29 11:56:19,784 [INFO] [CRYPTO] LIMIT BUY LDO/USD qty=1708.192476 (~$812) limit=0.4756 | software TP=0.4939 SL=0.4630 | conf=74% | RSI=66.0 3-bar uptrend | order=2b8eb4c5-e7e6-4d35-83c1-3aa5a5f1af17
+2026-09-29 11:56:19,888 [INFO] [CRYPTO] LIMIT BUY ARB/USD qty=3479.181392 (~$745) limit=0.2141 | software TP=0.2223 SL=0.2084 | conf=73% | RSI=63.7 3-bar uptrend | order=d8047dda-7dd8-4abd-a877-d562cffc3473
+2026-09-29 11:56:19,888 [INFO] [CRYPTO] SKIP PAXG/USD conf=66% < min 70%
+2026-09-29 11:56:20,087 [INFO] [CRYPTO] BROKER SL placed for ARB/USD stop=0.2084 limit=0.2074 qty=3471.52372157 | order=7aa7ac00-722e-4cf2-b8e1-24dc9a92b996
+2026-09-29 11:56:20,712 [INFO] [CRYPTO] Position closed externally: LDO/USD
+2026-09-29 11:56:21,083 [INFO] OPTIONS: ORCL261016C00139000 'stop' pending confirmation (1/2 cycles)
+2026-09-29 11:56:21,118 [INFO] OPTIONS: PLTR261009C00187500 'stop' pending confirmation (1/2 cycles)
+2026-09-29 11:56:21,227 [WARNING] OPTIONS: TBBB261016C00055000 wide quote spread 25.2% > 15.0% max (bid=$0.52 mark=$0.59 ask=$0.67) — deferring price-driven exits
+2026-09-29 11:56:21,259 [WARNING] OPTIONS: VXX261016C00018000 wide quote spread 16.7% > 15.0% max (bid=$0.55 mark=$0.60 ask=$0.65) — deferring price-driven exits
+2026-09-29 11:56:21,326 [INFO] Schwab API recovered: 81.8% success rate — switching back to Schwab-first
+2026-09-29 11:56:21,328 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['TGL', 'CRTD', 'GBTG', 'FLZH', 'SLND']
+2026-09-29 11:56:21,328 [INFO] Options scan: starting — 190 ticker(s) in universe
+2026-09-29 11:57:09,345 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-29 11:57:09,876 [INFO] Schwab: quote unavailable for SHMD; Alpaca fallback used
+2026-09-29 11:57:11,872 [INFO] Schwab: quote unavailable for KOD; Alpaca fallback used
+2026-09-29 11:57:14,751 [INFO] Schwab: quote unavailable for RNAC; Alpaca fallback used
+2026-09-29 11:57:18,896 [INFO] Schwab: quote unavailable for BBNX; Alpaca fallback used
+2026-09-29 11:57:30,520 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-29 11:57:32,004 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-29 11:57:34,299 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-29 11:57:38,146 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-29 11:57:39,726 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-29 11:57:40,552 [INFO] Schwab: quote unavailable for RILY; Alpaca fallback used
+2026-09-29 11:57:41,269 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-29 11:57:41,968 [INFO] Schwab: quote unavailable for OKUR; Alpaca fallback used
+2026-09-29 11:57:42,800 [WARNING] Schwab: Failed to get quote for MKT: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/MKT; Alpaca fallback failed: 'MKT'
+2026-09-29 11:57:45,101 [INFO] Schwab: quote unavailable for DOCN; Alpaca fallback used
+2026-09-29 11:57:46,758 [INFO] Schwab: quote unavailable for AXTI; Alpaca fallback used
+2026-09-29 11:57:47,456 [INFO] Options scan: 0 signal(s) | universe=190 | fail summary: no_MarketStructureBreakoutCall=190, no_OpeningRangeBreakoutCall=190, no_MomentumContinuationCall=190, no_PocReclaimCall=190, no_GapBreakoutCall=190, no_MomentumCall=190, no_BearPut=190, no_BearCallSpread=190, no_ShortSqueeze=190, no_MeanReversion=190, no_BreakoutRetest=190, no_TrendPullbackSpread=190, no_IronCondor=190, no_Butterfly=190, no_signal=190
+2026-09-29 11:57:47,456 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_OpeningRangeBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_MomentumContinuationCall: PWP, WW, MX, IMMX, GANX, ORCU | no_PocReclaimCall: PWP, WW, MX, IMMX, GANX, ORCU | no_GapBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_MomentumCall: PWP, WW, MX, IMMX, GANX, ORCU | no_BearPut: PWP, WW, MX, IMMX, GANX, ORCU | no_BearCallSpread: PWP, WW, MX, IMMX, GANX, ORCU | no_ShortSqueeze: PWP, WW, MX, IMMX, GANX, ORCU | no_MeanReversion: PWP, WW, MX, IMMX, GANX, ORCU | no_BreakoutRetest: PWP, WW, MX, IMMX, GANX, ORCU | no_TrendPullbackSpread: PWP, WW, MX, IMMX, GANX, ORCU | no_IronCondor: PWP, WW, MX, IMMX, GANX, ORCU | no_Butterfly: PWP, WW, MX, IMMX, GANX, ORCU | no_signal: PWP, WW, MX, IMMX, GANX, ORCU
+2026-09-29 11:57:47,456 [INFO] [OPTIONS] No qualifying signals this cycle | open=4
+2026-09-29 11:57:47,456 [INFO] [OPTIONS] Options: 4 position(s)
+  ORCL261016C00139000 | 1x reconciled entry=$8.35 DTE=17
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=10
+  TBBB261016C00055000 | 4x reconciled entry=$1.19 DTE=17
+  VXX261016C00018000 | 1x reconciled entry=$0.78 DTE=17
+2026-09-29 11:57:47,548 [INFO] Quarterly P&L: +11.7% (target >= 50%)
+2026-09-29 11:57:47,548 [INFO] [SCAN] Market sentiment: neutral
+2026-09-29 11:57:47,582 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 361.4m (cutoff 360m) → market
+2026-09-29 11:57:47,949 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:57:47,949 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 364.4m (cutoff 360m) → market
+2026-09-29 11:57:48,340 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 11:57:49,392 [INFO] [ALPACA-MOVERS] No gainers passed filters this cycle
+2026-09-29 11:57:49,480 [INFO] [SCAN] 75 symbols (filtered, 8 workers): TGL, CRTD, GBTG, FLZH, SLND, IOVA, ONMD, BKYI, SDEV, SANG, BEG, XRPN, LONA, ITG, SVRN, PWP, MSGY, YMT, WW, WRBY, CCL, OIG, FEAM, ORCU, ORCX, NAMI, ARMG, AVX, TRUG, DCX, QURE, FICO, CTNT, VRME, CLPT, APUS, TDIC, WHLR, GRML, USDEW, MAAS, AIAI, EGG, CABO, QMLS, INDP, NESR, RILY, IMMX, TMCR, CD, IPST, GLND, OKUR, II, EQNR, CYH, FDN, PACS, FLUT, SSL, OTLY, BXBL, RNAC, IDT, NXDT, ALHC, RVTY, SEER, WAT, HLMN, TDW, JELD, ARLO, NUCL
+2026-09-29 11:57:49,480 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-29 11:57:52,169 [INFO] [RVOL@TIME] TGL: today_vol=1102556, avg_intraday_vol=385980 (4 sessions), elapsed_min=147, rvol=2.857, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 11:57:52,587 [WARNING] [GUARDRAIL] FLZH blocked: price 0.07 < adaptive_min_price 0.25
+2026-09-29 11:57:52,616 [INFO] [RVOL@TIME] SLND: today_vol=112744601, avg_intraday_vol=148072 (2 sessions), elapsed_min=147, rvol=761.418, threshold=0.40 (adaptive=0.50 session_discount=0.80 iex_scale=False)
+2026-09-29 11:57:54,004 [INFO] [RVOL@TIME] IOVA: today_vol=30194267, avg_intraday_vol=3710785 (4 sessions), elapsed_min=147, rvol=8.137, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:57:54,128 [INFO] [RVOL@TIME] ONMD: today_vol=27644, avg_intraday_vol=87259 (4 sessions), elapsed_min=147, rvol=0.317, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:57:54,128 [WARNING] [GUARDRAIL] ONMD blocked: RVOL@TIME 0.32 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=27644 | avg_intraday_vol=87259
+2026-09-29 11:57:54,676 [INFO] [RVOL@TIME] SDEV: today_vol=68391052, avg_intraday_vol=3686550 (4 sessions), elapsed_min=147, rvol=18.552, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:57:57,582 [INFO] [RVOL@TIME] XRPN: today_vol=648385, avg_intraday_vol=130560 (4 sessions), elapsed_min=147, rvol=4.966, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:01,796 [INFO] [RVOL@TIME] PWP: today_vol=7267195, avg_intraday_vol=366731 (4 sessions), elapsed_min=148, rvol=19.816, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:02,392 [INFO] [RVOL@TIME] WW: today_vol=606699, avg_intraday_vol=132720 (4 sessions), elapsed_min=148, rvol=4.571, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:03,538 [INFO] [RVOL@TIME] WRBY: today_vol=2040938, avg_intraday_vol=674337 (4 sessions), elapsed_min=148, rvol=3.027, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:04,035 [INFO] [RVOL@TIME] FEAM: today_vol=471262, avg_intraday_vol=318269 (4 sessions), elapsed_min=148, rvol=1.481, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:04,118 [INFO] [RVOL@TIME] CCL: today_vol=37355227, avg_intraday_vol=7686176 (4 sessions), elapsed_min=148, rvol=4.860, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:04,150 [INFO] [RVOL@TIME] OIG: today_vol=198780, avg_intraday_vol=226712 (4 sessions), elapsed_min=148, rvol=0.877, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:04,151 [WARNING] [GUARDRAIL] OIG blocked: RVOL@TIME 0.88 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=198780 | avg_intraday_vol=226712
+2026-09-29 11:58:06,798 [INFO] [RVOL@TIME] ORCU: today_vol=9438524, avg_intraday_vol=3513857 (4 sessions), elapsed_min=148, rvol=2.686, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:06,984 [INFO] [RVOL@TIME] ORCX: today_vol=2999431, avg_intraday_vol=1418148 (4 sessions), elapsed_min=148, rvol=2.115, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:12,497 [INFO] [RVOL@TIME] AVX: today_vol=222301, avg_intraday_vol=596572 (4 sessions), elapsed_min=148, rvol=0.373, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:12,497 [WARNING] [GUARDRAIL] AVX blocked: RVOL@TIME 0.37 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=222301 | avg_intraday_vol=596572
+2026-09-29 11:58:12,790 [INFO] [RVOL@TIME] TRUG: today_vol=857946, avg_intraday_vol=221132 (4 sessions), elapsed_min=148, rvol=3.880, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:13,212 [INFO] [RVOL@TIME] QURE: today_vol=9416531, avg_intraday_vol=648443 (4 sessions), elapsed_min=148, rvol=14.522, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:17,012 [INFO] [RVOL@TIME] CLPT: today_vol=1016077, avg_intraday_vol=202209 (4 sessions), elapsed_min=148, rvol=5.025, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:21,334 [INFO] [RVOL@TIME] USDEW: today_vol=131723, avg_intraday_vol=349790 (4 sessions), elapsed_min=148, rvol=0.377, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:21,334 [WARNING] [GUARDRAIL] USDEW blocked: RVOL@TIME 0.38 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=131723 | avg_intraday_vol=349790
+2026-09-29 11:58:22,406 [INFO] [RVOL@TIME] AIAI: today_vol=187182, avg_intraday_vol=108281 (4 sessions), elapsed_min=148, rvol=1.729, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:23,149 [INFO] [RVOL@TIME] QMLS: today_vol=872315, avg_intraday_vol=162043 (4 sessions), elapsed_min=148, rvol=5.383, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:25,952 [INFO] [RVOL@TIME] NESR: today_vol=1740999, avg_intraday_vol=236345 (4 sessions), elapsed_min=148, rvol=7.366, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:26,353 [INFO] [RVOL@TIME] RILY: today_vol=836603, avg_intraday_vol=254588 (4 sessions), elapsed_min=148, rvol=3.286, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:26,803 [INFO] [RVOL@TIME] IMMX: today_vol=2223828, avg_intraday_vol=371378 (4 sessions), elapsed_min=148, rvol=5.988, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:31,093 [INFO] [RVOL@TIME] IPST: today_vol=47866, avg_intraday_vol=673277 (3 sessions), elapsed_min=148, rvol=0.071, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 11:58:31,094 [WARNING] [GUARDRAIL] IPST blocked: RVOL@TIME 0.07 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=47866 | avg_intraday_vol=673277
+2026-09-29 11:58:31,363 [INFO] [RVOL@TIME] OKUR: today_vol=168958, avg_intraday_vol=192037 (4 sessions), elapsed_min=148, rvol=0.880, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:31,363 [WARNING] [GUARDRAIL] OKUR blocked: RVOL@TIME 0.88 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=168958 | avg_intraday_vol=192037
+2026-09-29 11:58:32,961 [INFO] [RVOL@TIME] EQNR: today_vol=1782199, avg_intraday_vol=1148434 (4 sessions), elapsed_min=148, rvol=1.552, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:33,452 [INFO] [RVOL@TIME] CYH: today_vol=603416, avg_intraday_vol=459928 (4 sessions), elapsed_min=148, rvol=1.312, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:34,021 [INFO] [RVOL@TIME] FDN: today_vol=68894, avg_intraday_vol=85230 (4 sessions), elapsed_min=148, rvol=0.808, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:34,021 [WARNING] [GUARDRAIL] FDN blocked: RVOL@TIME 0.81 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=68894 | avg_intraday_vol=85230
+2026-09-29 11:58:34,277 [INFO] [RVOL@TIME] PACS: today_vol=286360, avg_intraday_vol=167685 (4 sessions), elapsed_min=148, rvol=1.708, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:34,600 [INFO] [RVOL@TIME] FLUT: today_vol=897161, avg_intraday_vol=695390 (4 sessions), elapsed_min=148, rvol=1.290, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:36,261 [INFO] [RVOL@TIME] SSL: today_vol=601668, avg_intraday_vol=689937 (4 sessions), elapsed_min=148, rvol=0.872, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:36,261 [WARNING] [GUARDRAIL] SSL blocked: RVOL@TIME 0.87 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=601668 | avg_intraday_vol=689937
+2026-09-29 11:58:37,463 [INFO] [RVOL@TIME] OTLY: today_vol=9911, avg_intraday_vol=99436 (1 sessions), elapsed_min=148, rvol=0.100, threshold=0.65 (adaptive=1.00 session_discount=0.65 iex_scale=False)
+2026-09-29 11:58:37,463 [WARNING] [GUARDRAIL] OTLY blocked: RVOL@TIME 0.10 < rvol_threshold 0.65 (adaptive=1.00 sessions=1 discount=0.65) | today_vol=9911 | avg_intraday_vol=99436
+2026-09-29 11:58:38,527 [INFO] [RVOL@TIME] BXBL: today_vol=72449, avg_intraday_vol=117535 (2 sessions), elapsed_min=148, rvol=0.616, threshold=0.80 (adaptive=1.00 session_discount=0.80 iex_scale=False)
+2026-09-29 11:58:38,528 [WARNING] [GUARDRAIL] BXBL blocked: RVOL@TIME 0.62 < rvol_threshold 0.80 (adaptive=1.00 sessions=2 discount=0.80) | today_vol=72449 | avg_intraday_vol=117535
+2026-09-29 11:58:39,954 [INFO] [RVOL@TIME] RNAC: today_vol=37809, avg_intraday_vol=107633 (4 sessions), elapsed_min=148, rvol=0.351, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:39,954 [WARNING] [GUARDRAIL] RNAC blocked: RVOL@TIME 0.35 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=37809 | avg_intraday_vol=107633
+2026-09-29 11:58:41,431 [INFO] [RVOL@TIME] IDT: today_vol=183480, avg_intraday_vol=85801 (4 sessions), elapsed_min=148, rvol=2.138, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:43,563 [INFO] [RVOL@TIME] NXDT: today_vol=40771, avg_intraday_vol=106432 (2 sessions), elapsed_min=148, rvol=0.383, threshold=0.80 (adaptive=1.00 session_discount=0.80 iex_scale=False)
+2026-09-29 11:58:43,563 [WARNING] [GUARDRAIL] NXDT blocked: RVOL@TIME 0.38 < rvol_threshold 0.80 (adaptive=1.00 sessions=2 discount=0.80) | today_vol=40771 | avg_intraday_vol=106432
+2026-09-29 11:58:44,329 [INFO] [RVOL@TIME] ALHC: today_vol=1374374, avg_intraday_vol=2720936 (4 sessions), elapsed_min=148, rvol=0.505, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:44,329 [WARNING] [GUARDRAIL] ALHC blocked: RVOL@TIME 0.51 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=1374374 | avg_intraday_vol=2720936
+2026-09-29 11:58:45,153 [INFO] [RVOL@TIME] RVTY: today_vol=178359, avg_intraday_vol=399678 (4 sessions), elapsed_min=148, rvol=0.446, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:45,154 [WARNING] [GUARDRAIL] RVTY blocked: RVOL@TIME 0.45 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=178359 | avg_intraday_vol=399678
+2026-09-29 11:58:45,213 [INFO] [RVOL@TIME] SEER: today_vol=75421, avg_intraday_vol=332018 (4 sessions), elapsed_min=148, rvol=0.227, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:45,214 [WARNING] [GUARDRAIL] SEER blocked: RVOL@TIME 0.23 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=75421 | avg_intraday_vol=332018
+2026-09-29 11:58:46,420 [INFO] [RVOL@TIME] WAT: today_vol=113758, avg_intraday_vol=185149 (4 sessions), elapsed_min=148, rvol=0.614, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:46,420 [WARNING] [GUARDRAIL] WAT blocked: RVOL@TIME 0.61 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=113758 | avg_intraday_vol=185149
+2026-09-29 11:58:46,889 [INFO] [RVOL@TIME] HLMN: today_vol=281262, avg_intraday_vol=277417 (4 sessions), elapsed_min=148, rvol=1.014, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:47,023 [INFO] [RVOL@TIME] TDW: today_vol=54586, avg_intraday_vol=89763 (4 sessions), elapsed_min=148, rvol=0.608, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:47,024 [WARNING] [GUARDRAIL] TDW blocked: RVOL@TIME 0.61 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=54586 | avg_intraday_vol=89763
+2026-09-29 11:58:48,038 [INFO] [RVOL@TIME] JELD: today_vol=2504274, avg_intraday_vol=676526 (4 sessions), elapsed_min=148, rvol=3.702, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:49,087 [INFO] [RVOL@TIME] ARLO: today_vol=132623, avg_intraday_vol=279899 (4 sessions), elapsed_min=148, rvol=0.474, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:49,087 [WARNING] [GUARDRAIL] ARLO blocked: RVOL@TIME 0.47 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=132623 | avg_intraday_vol=279899
+2026-09-29 11:58:50,616 [INFO] [RVOL@TIME] NUCL: today_vol=40962, avg_intraday_vol=132257 (4 sessions), elapsed_min=148, rvol=0.310, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 11:58:50,617 [WARNING] [GUARDRAIL] NUCL blocked: RVOL@TIME 0.31 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=40962 | avg_intraday_vol=132257
+2026-09-29 11:59:14,825 [INFO] [GUARDRAIL SUMMARY] Rejected: 51 | DollarVol: 0 | RVOL: 19 | GapChase: 3 | MinPrice: 1 | Other: 3
+2026-09-29 11:59:14,826 [INFO] [FUNNEL] targets=75 guardrail_rejected=51 (rvol=19) -> signals_generated=11 -> conf_gate(-9) -> sector_cap(-0) -> final=2
+2026-09-29 11:59:14,826 [INFO] [SCAN] Breakdown — MomentumContinuationPullback: 2, TrendlineBreakout: 9 | Errors: 0 | Total: 2
+2026-09-29 11:59:14,827 [INFO] [SCAN] TOP5_RAW #1: IOVA BUY $14.07 conf=84% [MomentumContinuationPullback] — Momentum continuation high-RVOL pullback/reclaim rvol=5.7x up=27.3% above VWAP and range midpoint MACD hist=0.0070 RSI=58.0
+2026-09-29 11:59:14,827 [INFO] [SCAN] TOP5_RAW #2: PWP BUY $16.82 conf=84% [MomentumContinuationPullback] — Momentum continuation high-RVOL pullback/reclaim rvol=17.7x up=15.0% above VWAP and range midpoint MACD hist=0.0018 RSI=46.1
+2026-09-29 11:59:14,897 [INFO] Live holdings: 24 excluded
+2026-09-29 11:59:14,897 [INFO] [MIDDAY] Chop filter active (11:30–13:00 ET) — min confidence raised to 88%
+2026-09-29 11:59:14,897 [INFO] Confidence gate (long>=82%, short>=88%) + cross-ref: 0 eligible
+2026-09-29 11:59:14,897 [INFO] [SCAN] SKIP IOVA BUY $14.07 conf=84% [MomentumContinuationPullback] — filtered
+2026-09-29 11:59:14,897 [INFO] [SCAN] SKIP PWP BUY $16.82 conf=84% [MomentumContinuationPullback] — filtered
+2026-09-29 11:59:14,899 [INFO] notify_scan_results: no picks to send
+2026-09-29 11:59:14,899 [INFO] [SCAN] No eligible signals after filtering
+2026-09-29 11:59:14,900 [INFO] Heartbeat: 2026-09-29T11:59:14.900103
+2026-09-29 12:02:14,917 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-29 12:02:16,352 [INFO] [CRYPTO] 20 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0952→TP:0.0990), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3618→TP:0.3763), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0840→TP:0.0873), SUSHI/USD(0.2716→TP:0.2825), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), XRP/USD(1.4952→TP:1.5551), XTZ/USD(0.3197→TP:0.3325), YFI/USD(2436.8534→TP:2534.3275), ARB/USD(0.2141→TP:0.2223)
+2026-09-29 12:02:18,012 [INFO] [CRYPTO] #1: PEPE/USD BUY @ 0.0000 conf=72% | RSI=62.1 3-bar uptrend
+2026-09-29 12:02:18,013 [INFO] [CRYPTO] #2: SOL/USD BUY @ 120.8815 conf=71% | RSI=60.1 3-bar uptrend
+2026-09-29 12:02:18,132 [INFO] [CRYPTO] LIMIT BUY PEPE/USD qty=173223502.304147 (~$752) limit=0.0000 | software TP=0.0000 SL=0.0000 | conf=72% | RSI=62.1 3-bar uptrend | order=234eb0db-c57c-4f72-adb3-ba1e6aec3ed6
+2026-09-29 12:02:18,233 [INFO] [CRYPTO] Portfolio position cap reached (25/25) — skipping SOL/USD
+2026-09-29 12:02:18,690 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=172842237.75666773 | order=9a871100-ec23-4218-b3b5-65838f7c5a41
+2026-09-29 12:02:19,488 [WARNING] OPTIONS: TBBB261016C00055000 wide quote spread 33.0% > 15.0% max (bid=$0.48 mark=$0.57 ask=$0.67) — deferring price-driven exits
+2026-09-29 12:02:19,532 [WARNING] OPTIONS: VXX261016C00018000 wide quote spread 17.9% > 15.0% max (bid=$0.51 mark=$0.56 ask=$0.61) — deferring price-driven exits
+2026-09-29 12:02:19,566 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['TGL', 'CRTD', 'GBTG', 'FLZH', 'SLND']
+2026-09-29 12:02:19,566 [INFO] Options scan: starting — 190 ticker(s) in universe
+2026-09-29 12:03:06,310 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-29 12:03:08,320 [INFO] Schwab: quote unavailable for SHMD; Alpaca fallback used
+2026-09-29 12:03:12,806 [INFO] Schwab: quote unavailable for KOD; Alpaca fallback used
+2026-09-29 12:03:13,709 [INFO] Schwab: quote unavailable for RNAC; Alpaca fallback used
+2026-09-29 12:03:14,994 [INFO] Schwab: quote unavailable for BBNX; Alpaca fallback used
+2026-09-29 12:03:26,475 [INFO] Schwab: quote unavailable for MARA; Alpaca fallback used
+2026-09-29 12:03:28,560 [INFO] Schwab: quote unavailable for CRWD; Alpaca fallback used
+2026-09-29 12:03:30,777 [INFO] Schwab: quote unavailable for LCID; Alpaca fallback used
+2026-09-29 12:03:34,151 [INFO] Schwab: quote unavailable for BCRX; Alpaca fallback used
+2026-09-29 12:03:35,469 [INFO] Schwab: quote unavailable for ARMG; Alpaca fallback used
+2026-09-29 12:03:36,283 [INFO] Schwab: quote unavailable for RILY; Alpaca fallback used
+2026-09-29 12:03:36,950 [INFO] Schwab: quote unavailable for GLND; Alpaca fallback used
+2026-09-29 12:03:37,603 [INFO] Schwab: quote unavailable for OKUR; Alpaca fallback used
+2026-09-29 12:03:39,299 [WARNING] Schwab: Failed to get quote for MKT: 404 Client Error: Not Found for url: https://api.schwabapi.com/marketdata/v1/quotes/MKT; Alpaca fallback failed: 'MKT'
+2026-09-29 12:03:41,522 [INFO] Schwab: quote unavailable for DOCN; Alpaca fallback used
+2026-09-29 12:03:43,082 [INFO] Schwab: quote unavailable for AXTI; Alpaca fallback used
+2026-09-29 12:03:43,997 [INFO] Options scan: 0 signal(s) | universe=190 | fail summary: no_MarketStructureBreakoutCall=190, no_OpeningRangeBreakoutCall=190, no_MomentumContinuationCall=190, no_PocReclaimCall=190, no_GapBreakoutCall=190, no_MomentumCall=190, no_BearPut=190, no_BearCallSpread=190, no_ShortSqueeze=190, no_MeanReversion=190, no_BreakoutRetest=190, no_TrendPullbackSpread=190, no_IronCondor=190, no_Butterfly=190, no_signal=190
+2026-09-29 12:03:43,998 [INFO] Options scan fail examples: no_MarketStructureBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_OpeningRangeBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_MomentumContinuationCall: PWP, WW, MX, IMMX, GANX, ORCU | no_PocReclaimCall: PWP, WW, MX, IMMX, GANX, ORCU | no_GapBreakoutCall: PWP, WW, MX, IMMX, GANX, ORCU | no_MomentumCall: PWP, WW, MX, IMMX, GANX, ORCU | no_BearPut: PWP, WW, MX, IMMX, GANX, ORCU | no_BearCallSpread: PWP, WW, MX, IMMX, GANX, ORCU | no_ShortSqueeze: PWP, WW, MX, IMMX, GANX, ORCU | no_MeanReversion: PWP, WW, MX, IMMX, GANX, ORCU | no_BreakoutRetest: PWP, WW, MX, IMMX, GANX, ORCU | no_TrendPullbackSpread: PWP, WW, MX, IMMX, GANX, ORCU | no_IronCondor: PWP, WW, MX, IMMX, GANX, ORCU | no_Butterfly: PWP, WW, MX, IMMX, GANX, ORCU | no_signal: PWP, WW, MX, IMMX, GANX, ORCU
+2026-09-29 12:03:43,998 [INFO] [OPTIONS] No qualifying signals this cycle | open=4
+2026-09-29 12:03:43,998 [INFO] [OPTIONS] Options: 4 position(s)
+  ORCL261016C00139000 | 1x reconciled entry=$8.35 DTE=17
+  PLTR261009C00187500 | 1x reconciled entry=$11.30 DTE=10
+  TBBB261016C00055000 | 4x reconciled entry=$1.19 DTE=17
+  VXX261016C00018000 | 1x reconciled entry=$0.78 DTE=17
+2026-09-29 12:03:44,078 [INFO] Quarterly P&L: +11.8% (target >= 50%)
+2026-09-29 12:03:44,079 [INFO] [SCAN] Market sentiment: neutral
+2026-09-29 12:03:44,114 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 361.2m (cutoff 360m) → market
+2026-09-29 12:03:44,476 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 12:03:44,477 [INFO] STALE ORDER: AAVE/USD OrderSide.BUY 2 — age 364.2m (cutoff 360m) → market
+2026-09-29 12:03:44,839 [WARNING] STALE ORDER AAVE/USD: replace failed: {"code":42210000,"message":"invalid crypto time_in_force"}
+2026-09-29 12:03:44,839 [INFO] Scanning all Trade Ideas pages in background (browser=edge, profile=Profile 3) …
+2026-09-29 12:03:44,909 [INFO] [SCAN] 75 symbols (filtered, 8 workers): TGL, CRTD, GBTG, FLZH, SLND, IOVA, ONMD, BKYI, SDEV, SANG, BEG, XRPN, LONA, ITG, SVRN, PWP, MSGY, YMT, WW, WRBY, CCL, OIG, FEAM, ORCU, ORCX, NAMI, ARMG, AVX, TRUG, DCX, QURE, FICO, CTNT, VRME, CLPT, APUS, TDIC, WHLR, GRML, USDEW, MAAS, AIAI, EGG, CABO, QMLS, INDP, NESR, RILY, IMMX, TMCR, CD, IPST, GLND, OKUR, II, SLE, EMPD, SXTC, MKT, MX, GANX, WLK, ITGR, WYY, SHMD, NCLH, VOD, BWXT, GLAS, ET, FRVO, EWZ, SSTI, SMMT, PIPR
+2026-09-29 12:03:44,909 [INFO] [SCAN] BULL REGIME — cap 5/cycle
+2026-09-29 12:03:47,676 [INFO] [RVOL@TIME] TGL: today_vol=1107687, avg_intraday_vol=389915 (4 sessions), elapsed_min=153, rvol=2.841, threshold=0.50 (adaptive=0.50 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:47,907 [WARNING] [GUARDRAIL] FLZH blocked: price 0.07 < adaptive_min_price 0.25
+2026-09-29 12:03:48,140 [INFO] [RVOL@TIME] SLND: today_vol=114015803, avg_intraday_vol=152461 (3 sessions), elapsed_min=153, rvol=747.836, threshold=0.45 (adaptive=0.50 session_discount=0.90 iex_scale=False)
+2026-09-29 12:03:49,468 [INFO] [RVOL@TIME] IOVA: today_vol=30669600, avg_intraday_vol=4007124 (4 sessions), elapsed_min=153, rvol=7.654, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:49,556 [INFO] [RVOL@TIME] ONMD: today_vol=33022, avg_intraday_vol=85804 (3 sessions), elapsed_min=153, rvol=0.385, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 12:03:49,557 [WARNING] [GUARDRAIL] ONMD blocked: RVOL@TIME 0.38 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=33022 | avg_intraday_vol=85804
+2026-09-29 12:03:49,948 [INFO] [RVOL@TIME] SDEV: today_vol=70562769, avg_intraday_vol=3711303 (4 sessions), elapsed_min=153, rvol=19.013, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:52,885 [INFO] [RVOL@TIME] XRPN: today_vol=988211, avg_intraday_vol=131269 (4 sessions), elapsed_min=153, rvol=7.528, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:57,251 [INFO] [RVOL@TIME] PWP: today_vol=7374649, avg_intraday_vol=375771 (4 sessions), elapsed_min=153, rvol=19.625, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:57,711 [INFO] [RVOL@TIME] WW: today_vol=609849, avg_intraday_vol=134071 (4 sessions), elapsed_min=153, rvol=4.549, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:59,115 [INFO] [RVOL@TIME] WRBY: today_vol=2126903, avg_intraday_vol=704075 (4 sessions), elapsed_min=153, rvol=3.021, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:59,256 [INFO] [RVOL@TIME] CCL: today_vol=37898293, avg_intraday_vol=7885449 (4 sessions), elapsed_min=153, rvol=4.806, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:59,466 [INFO] [RVOL@TIME] FEAM: today_vol=472496, avg_intraday_vol=323346 (4 sessions), elapsed_min=153, rvol=1.461, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:59,550 [INFO] [RVOL@TIME] OIG: today_vol=210177, avg_intraday_vol=228452 (4 sessions), elapsed_min=153, rvol=0.920, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:03:59,550 [WARNING] [GUARDRAIL] OIG blocked: RVOL@TIME 0.92 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=210177 | avg_intraday_vol=228452
+2026-09-29 12:04:02,271 [INFO] [RVOL@TIME] ORCU: today_vol=9520868, avg_intraday_vol=3577545 (4 sessions), elapsed_min=154, rvol=2.661, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:02,428 [INFO] [RVOL@TIME] ORCX: today_vol=3014854, avg_intraday_vol=1437700 (4 sessions), elapsed_min=154, rvol=2.097, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:07,633 [INFO] [RVOL@TIME] AVX: today_vol=223651, avg_intraday_vol=600231 (4 sessions), elapsed_min=154, rvol=0.373, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:07,633 [WARNING] [GUARDRAIL] AVX blocked: RVOL@TIME 0.37 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=223651 | avg_intraday_vol=600231
+2026-09-29 12:04:07,878 [INFO] [RVOL@TIME] TRUG: today_vol=867786, avg_intraday_vol=295205 (4 sessions), elapsed_min=154, rvol=2.940, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:08,059 [INFO] [RVOL@TIME] QURE: today_vol=9534071, avg_intraday_vol=668527 (4 sessions), elapsed_min=154, rvol=14.261, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:12,002 [INFO] [RVOL@TIME] CLPT: today_vol=1042058, avg_intraday_vol=209926 (4 sessions), elapsed_min=154, rvol=4.964, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:16,090 [INFO] [RVOL@TIME] USDEW: today_vol=131723, avg_intraday_vol=392453 (4 sessions), elapsed_min=154, rvol=0.336, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:16,091 [WARNING] [GUARDRAIL] USDEW blocked: RVOL@TIME 0.34 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=131723 | avg_intraday_vol=392453
+2026-09-29 12:04:16,515 [INFO] [RVOL@TIME] AIAI: today_vol=214358, avg_intraday_vol=125222 (4 sessions), elapsed_min=154, rvol=1.712, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:20,106 [INFO] [RVOL@TIME] QMLS: today_vol=894261, avg_intraday_vol=164891 (4 sessions), elapsed_min=154, rvol=5.423, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:20,511 [INFO] [RVOL@TIME] NESR: today_vol=1784769, avg_intraday_vol=254883 (4 sessions), elapsed_min=154, rvol=7.002, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:20,933 [INFO] [RVOL@TIME] RILY: today_vol=862982, avg_intraday_vol=256573 (4 sessions), elapsed_min=154, rvol=3.363, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:24,060 [INFO] [RVOL@TIME] IMMX: today_vol=2253681, avg_intraday_vol=393540 (4 sessions), elapsed_min=154, rvol=5.727, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:25,050 [INFO] [RVOL@TIME] IPST: today_vol=48866, avg_intraday_vol=681890 (3 sessions), elapsed_min=154, rvol=0.072, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 12:04:25,050 [WARNING] [GUARDRAIL] IPST blocked: RVOL@TIME 0.07 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=48866 | avg_intraday_vol=681890
+2026-09-29 12:04:28,590 [INFO] [RVOL@TIME] OKUR: today_vol=170012, avg_intraday_vol=193427 (4 sessions), elapsed_min=154, rvol=0.879, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:28,590 [WARNING] [GUARDRAIL] OKUR blocked: RVOL@TIME 0.88 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=170012 | avg_intraday_vol=193427
+2026-09-29 12:04:28,702 [INFO] [RVOL@TIME] SLE: today_vol=99667, avg_intraday_vol=190775 (4 sessions), elapsed_min=154, rvol=0.522, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:28,702 [WARNING] [GUARDRAIL] SLE blocked: RVOL@TIME 0.52 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=99667 | avg_intraday_vol=190775
+2026-09-29 12:04:28,878 [INFO] [RVOL@TIME] EMPD: today_vol=51688, avg_intraday_vol=222632 (4 sessions), elapsed_min=154, rvol=0.232, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:28,878 [WARNING] [GUARDRAIL] EMPD blocked: RVOL@TIME 0.23 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=51688 | avg_intraday_vol=222632
+2026-09-29 12:04:29,045 [WARNING] [GUARDRAIL] SXTC blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-29 12:04:29,520 [INFO] [RVOL@TIME] GANX: today_vol=836415, avg_intraday_vol=336211 (4 sessions), elapsed_min=154, rvol=2.488, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:33,299 [INFO] [RVOL@TIME] WLK: today_vol=398402, avg_intraday_vol=121814 (4 sessions), elapsed_min=154, rvol=3.271, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:33,568 [INFO] [RVOL@TIME] ITGR: today_vol=559158, avg_intraday_vol=500618 (4 sessions), elapsed_min=154, rvol=1.117, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:33,585 [INFO] [RVOL@TIME] WYY: today_vol=329663, avg_intraday_vol=1197849 (3 sessions), elapsed_min=154, rvol=0.275, threshold=0.90 (adaptive=1.00 session_discount=0.90 iex_scale=False)
+2026-09-29 12:04:33,586 [WARNING] [GUARDRAIL] WYY blocked: RVOL@TIME 0.28 < rvol_threshold 0.90 (adaptive=1.00 sessions=3 discount=0.90) | today_vol=329663 | avg_intraday_vol=1197849
+2026-09-29 12:04:33,779 [INFO] [RVOL@TIME] SHMD: today_vol=1005530, avg_intraday_vol=1120830 (4 sessions), elapsed_min=154, rvol=0.897, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:33,780 [WARNING] [GUARDRAIL] SHMD blocked: RVOL@TIME 0.90 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=1005530 | avg_intraday_vol=1120830
+2026-09-29 12:04:33,885 [INFO] [RVOL@TIME] NCLH: today_vol=10068363, avg_intraday_vol=5928003 (4 sessions), elapsed_min=154, rvol=1.698, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:34,124 [INFO] [RVOL@TIME] VOD: today_vol=1299488, avg_intraday_vol=1298775 (4 sessions), elapsed_min=154, rvol=1.001, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:36,268 [INFO] [RVOL@TIME] BWXT: today_vol=365193, avg_intraday_vol=203406 (4 sessions), elapsed_min=154, rvol=1.795, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:38,384 [INFO] [RVOL@TIME] GLAS: today_vol=485163, avg_intraday_vol=623010 (4 sessions), elapsed_min=154, rvol=0.779, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:38,384 [WARNING] [GUARDRAIL] GLAS blocked: RVOL@TIME 0.78 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=485163 | avg_intraday_vol=623010
+2026-09-29 12:04:38,520 [INFO] [RVOL@TIME] ET: today_vol=4460280, avg_intraday_vol=3438135 (4 sessions), elapsed_min=154, rvol=1.297, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:39,097 [INFO] [RVOL@TIME] FRVO: today_vol=2846669, avg_intraday_vol=4287700 (4 sessions), elapsed_min=154, rvol=0.664, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:39,097 [WARNING] [GUARDRAIL] FRVO blocked: RVOL@TIME 0.66 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=2846669 | avg_intraday_vol=4287700
+2026-09-29 12:04:41,794 [INFO] [RVOL@TIME] EWZ: today_vol=8917629, avg_intraday_vol=10024399 (4 sessions), elapsed_min=154, rvol=0.890, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:41,794 [WARNING] [GUARDRAIL] EWZ blocked: RVOL@TIME 0.89 < rvol_threshold 1.00 (adaptive=1.00 sessions=4 discount=1.00) | today_vol=8917629 | avg_intraday_vol=10024399
+2026-09-29 12:04:41,962 [WARNING] [GUARDRAIL] SSTI blocked: no valid prior-session bars for RVOL@TIME confirmation (REQUIRE_PRIOR_SESSION_BARS=on)
+2026-09-29 12:04:42,425 [INFO] [RVOL@TIME] PIPR: today_vol=664706, avg_intraday_vol=153456 (4 sessions), elapsed_min=154, rvol=4.332, threshold=1.00 (adaptive=1.00 session_discount=1.00 iex_scale=False)
+2026-09-29 12:04:43,302 [INFO] [GUARDRAIL SUMMARY] Rejected: 50 | DollarVol: 0 | RVOL: 15 | GapChase: 3 | MinPrice: 1 | Other: 4
+2026-09-29 12:04:43,302 [INFO] [FUNNEL] targets=75 guardrail_rejected=50 (rvol=15) -> signals_generated=11 -> conf_gate(-9) -> sector_cap(-0) -> final=2
+2026-09-29 12:04:43,302 [INFO] [SCAN] Breakdown — MomentumScalp: 2, Sweepea: 2, TrendlineBreakout: 7 | Errors: 0 | Total: 2
+2026-09-29 12:04:43,302 [INFO] [SCAN] TOP5_RAW #1: ORCU BUY $6.78 conf=90% [MomentumScalp] — Momentum scalp up=10.2% rvol=10.3x barvol=2.5x break>$6.77 near HOD $6.79 target +5% or ride on continuation
+2026-09-29 12:04:43,302 [INFO] [SCAN] TOP5_RAW #2: ITGR BUY $126.31 conf=88% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.26
+2026-09-29 12:04:43,376 [INFO] Live holdings: 25 excluded
+2026-09-29 12:04:43,376 [INFO] [MIDDAY] Chop filter active (11:30–13:00 ET) — min confidence raised to 88%
+2026-09-29 12:04:43,377 [INFO] Confidence gate (long>=82%, short>=88%) + cross-ref: 2 eligible
+2026-09-29 12:04:43,377 [INFO] [TRADE] TOP5_ELIGIBLE #1: ORCU BUY $6.78 conf=90% [MomentumScalp] — Momentum scalp up=10.2% rvol=10.3x barvol=2.5x break>$6.77 near HOD $6.79 target +5% or ride on continuation
+2026-09-29 12:04:43,377 [INFO] [TRADE] TOP5_ELIGIBLE #2: ITGR BUY $126.31 conf=88% [Sweepea] — Daily Sweepea pullback to 8-EMA | ATR $0.26
+2026-09-29 12:04:44,363 [INFO] Scan email sent
+2026-09-29 12:04:44,363 [INFO] Executing top 2 signal(s) (cap=5)
+2026-09-29 12:04:44,393 [INFO] EXECUTE: BUY ORCU @ $6.78 | MomentumScalp | Momentum scalp up=10.2% rvol=10.3x barvol=2.5x break>$6.77 near HOD $6.79 target +5% or ride on continuation
+2026-09-29 12:04:44,525 [INFO] SWAP: closing ADAUSD (weakest) to make room for ORCU (conf=90%)
+2026-09-29 12:04:44,558 [WARNING] SWAP close failed for ADAUSD: {"code":40310000,"message":"order qty must be \u003e= minimal qty of order 0.000000002"}
+2026-09-29 12:04:44,558 [INFO] Skip ORCU: Swap close failed: {"code":40310000,"message":"order qty must be \u003e= minimal qty of order 0.000000002"}
+2026-09-29 12:04:45,592 [INFO] EXECUTE: BUY ITGR @ $126.31 | Sweepea | Daily Sweepea pullback to 8-EMA | ATR $0.26
+2026-09-29 12:04:45,654 [INFO] SWAP: closing ADAUSD (weakest) to make room for ITGR (conf=88%)
+2026-09-29 12:04:45,683 [WARNING] SWAP close failed for ADAUSD: {"code":40310000,"message":"order qty must be \u003e= minimal qty of order 0.000000002"}
+2026-09-29 12:04:45,683 [INFO] Skip ITGR: Swap close failed: {"code":40310000,"message":"order qty must be \u003e= minimal qty of order 0.000000002"}
+2026-09-29 12:04:46,466 [INFO] ok
+2026-09-29 12:04:46,466 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-29 12:04:46,466 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-29 12:04:46,466 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-29 12:04:46,469 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,469 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,469 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,471 [INFO] [CRYPTO][SCALP] BTC/USD entry fill confirmed by broker — entry=100.50000000 qty=0.75000000
+2026-09-29 12:04:46,472 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.74999925 | order=order-1
+2026-09-29 12:04:46,472 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,472 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=order-1
+2026-09-29 12:04:46,472 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.37500000 limit=105.8410 | order=order-2 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,480 [INFO] [CRYPTO][SCALP] LIMIT BUY BTC/USD qty=8.320819 (~$833) limit=100.1500 | scalp TP=105.0000 SL=98.5000 | t | order=order-1
+2026-09-29 12:04:46,485 [INFO] [CRYPTO][SCALP] BTC/USD pending entry no longer open on broker — dropping
+2026-09-29 12:04:46,486 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,486 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,487 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,488 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-29 12:04:46,488 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-29 12:04:46,491 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,491 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,491 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,494 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-29 12:04:46,494 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-29 12:04:46,496 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:04:46,496 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,497 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790697886
+2026-09-29 12:04:46,500 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:04:46,500 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,501 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790697886
+2026-09-29 12:04:46,502 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-29 12:04:46,503 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,503 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,504 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,508 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,508 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,508 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,513 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,513 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,513 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790697886
+2026-09-29 12:04:46,516 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:04:46,516 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,516 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790697886
+2026-09-29 12:04:46,518 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:04:46,520 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:04:46,520 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:04:46,521 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:04:46,525 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 100.0000 <= entry 100.0000
+2026-09-29 12:04:46,526 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,526 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=99.8500 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790697886
+2026-09-29 12:04:46,529 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 99.0000 <= entry 100.0000
+2026-09-29 12:04:46,529 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:04:46,530 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=98.8515 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790697886
+2026-09-29 12:04:46,537 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:04:46,538 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=97.5000 limit=97.0125 qty=0.49999950 | order=order-1
+2026-09-29 12:04:46,540 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:04:46,544 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:04:46,567 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:04:46,568 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:04:46,568 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:04:46,568 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:04:46,569 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-29 12:04:46,569 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:04:46,570 [INFO] BUY LIMIT AAPL: 10 @ $99.15 (ext-hours quote-first) | Momentum
+2026-09-29 12:04:46,570 [ERROR] EOD close failed AAPL: no usable after-hours position mark
+2026-09-29 12:04:46,571 [INFO] EOD CLOSE AAPL: 10 shares | extended-hours limit $99.00 | strategy=unknown | P&L $0.00
+2026-09-29 12:04:46,572 [INFO] LIVE PROBE AAPL: ATM option deferred; options market is closed
+2026-09-29 12:04:46,577 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:04:46,580 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:04:46,583 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:04:46,584 [INFO] SELL AAPL: 10 shares | Momentum
+2026-09-29 12:04:46,684 [INFO] Heartbeat: 2026-09-29T12:04:46.684176
+2026-09-29 12:04:46,985 [INFO] EOD CLOSE AAPL: 10 shares | market | strategy=unknown | P&L $0.00
+2026-09-29 12:04:46,990 [INFO] Restored position exit state: AAPL
+2026-09-29 12:04:46,996 [WARNING] INTRADAY FINAL RESET: ignoring inactive asset AVNS: {"code":40010001,"message":"asset AVNS is not active"}
+2026-09-29 12:04:46,996 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:04:46,996 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:04:46,997 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:04:46,997 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:04:46,997 [INFO] INTRADAY FINAL RESET: retaining crypto positions: ['BTC/USD']
+2026-09-29 12:04:46,997 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:04:46,997 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:04:46,997 [INFO] INTRADAY FINAL RESET: retaining options positions: ['AAPL260918C00200000']
+2026-09-29 12:04:46,997 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:04:46,997 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:04:46,998 [INFO] INTRADAY FINAL RESET: retaining scaled-in live-probe positions: ['AAPL']
+2026-09-29 12:04:46,998 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=[]
+2026-09-29 12:04:46,998 [ERROR] INTRADAY FINAL RESET: close failed for AAPL: temporary broker failure
+2026-09-29 12:04:46,998 [WARNING] INTRADAY FINAL RESET: close submissions failed; remaining=['AAPL']
+2026-09-29 12:04:47,000 [WARNING] Bracket skip APGE: broker reports trading halt; cached for this session
+2026-09-29 12:04:47,011 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-29 12:04:47,015 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:04:47,018 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:04:47,021 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-29 12:04:47,022 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-29 12:04:47,027 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-29 12:04:47,029 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-29 12:04:47,030 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:04:47,033 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:04:47,035 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-29 12:04:47,035 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-29 12:04:47,036 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:04:47,036 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:04:47,036 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-29 12:04:47,036 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-29 12:04:47,037 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:04:47,037 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-29 12:04:47,038 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:04:47,038 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:04:47,038 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-29 12:04:47,038 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:04:47,038 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-29 12:04:47,038 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-29 12:04:47,039 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:04:47,039 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:04:47,040 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:04:47,040 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:04:47,041 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:04:47,042 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-29 12:04:47,043 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:04:47,046 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-29 12:04:47,049 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:04:47,053 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:04:47,055 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:04:47,061 [INFO] Restored position exit state: AAPL
+2026-09-29 12:04:47,061 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-29 12:04:47,064 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-29 12:04:47,064 [INFO] ======================================================================
+2026-09-29 12:04:47,064 [INFO] NEW DAY: 2026-09-29 | Start equity: $0.00
+2026-09-29 12:04:47,066 [INFO] Universe pruned: removed 92 expired ticker(s): ['AIAI', 'ALHC', 'ARLO', 'ARMG', 'AVX', 'AXTI', 'BBNX', 'BWXT', 'BXBL', 'CABO']…
+2026-09-29 12:04:47,066 [INFO] ======================================================================
+2026-09-29 12:04:47,067 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-29 12:04:47,068 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-29 12:04:47,068 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-29 12:04:47,069 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-29 12:04:47,069 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-29 12:04:47,069 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-29 12:04:47,071 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-29 12:04:47,072 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,075 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790697887 not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:04:47,075 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,079 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-29 12:04:47,081 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,084 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,086 [INFO] Restored position exit state: BBNX
+2026-09-29 12:04:47,088 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,091 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-29 12:04:47,095 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,097 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:04:47,099 [WARNING] Could not save position exit state: [WinError 5] Access is denied: 'C:\\Users\\spoli\\AppData\\Local\\Temp\\tmpg24p1wxg\\exit_state.tmp' -> 'C:\\Users\\spoli\\AppData\\Local\\Temp\\tmpg24p1wxg\\exit_state.json'
+2026-09-29 12:04:47,100 [INFO] Restored position exit state: BBNX
+2026-09-29 12:04:47,100 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-29 12:04:47,103 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:04:47,103 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-29 12:04:47,105 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790697887); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:04:47,107 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:04:47,121 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-29 12:04:47,123 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:04:47,124 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:04:47,124 [INFO] Max positions reached (5/5) — skipping NVDA
+2026-09-29 12:04:47,128 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:04:47,132 [INFO] Restored position exit state: AAPL
+2026-09-29 12:04:47,132 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:04:47,135 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:04:47,135 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-29 12:04:47,136 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:04:47,136 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-29 12:04:47,137 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-29 12:04:47,438 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:04:47,439 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:04:47,740 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:07:43,829 [INFO] ok
+2026-09-29 12:07:43,829 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-29 12:07:43,829 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-29 12:07:43,829 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-29 12:07:43,834 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,834 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,835 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,838 [INFO] [CRYPTO][SCALP] BTC/USD entry fill confirmed by broker — entry=100.50000000 qty=0.75000000
+2026-09-29 12:07:43,838 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.74999925 | order=order-1
+2026-09-29 12:07:43,838 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,838 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=order-1
+2026-09-29 12:07:43,838 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.37500000 limit=105.8410 | order=order-2 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,844 [INFO] [CRYPTO][SCALP] LIMIT BUY BTC/USD qty=8.320819 (~$833) limit=100.1500 | scalp TP=105.0000 SL=98.5000 | t | order=order-1
+2026-09-29 12:07:43,847 [INFO] [CRYPTO][SCALP] BTC/USD pending entry no longer open on broker — dropping
+2026-09-29 12:07:43,848 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,848 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,849 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,851 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-29 12:07:43,851 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-29 12:07:43,853 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,854 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,854 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,855 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-29 12:07:43,855 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-29 12:07:43,857 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:07:43,857 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,857 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698063
+2026-09-29 12:07:43,861 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:07:43,861 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,861 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698063
+2026-09-29 12:07:43,862 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-29 12:07:43,864 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,864 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,864 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,868 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,868 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,869 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,872 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,872 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,872 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698063
+2026-09-29 12:07:43,874 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:07:43,874 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,874 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698063
+2026-09-29 12:07:43,877 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:07:43,878 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:07:43,878 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:07:43,879 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:07:43,880 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 100.0000 <= entry 100.0000
+2026-09-29 12:07:43,880 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,880 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=99.8500 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698063
+2026-09-29 12:07:43,882 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 99.0000 <= entry 100.0000
+2026-09-29 12:07:43,882 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:07:43,882 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=98.8515 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698063
+2026-09-29 12:07:43,896 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:07:43,896 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=97.5000 limit=97.0125 qty=0.49999950 | order=order-1
+2026-09-29 12:07:43,898 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:07:43,901 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:07:43,926 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:07:43,927 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:07:43,927 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:07:43,927 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:07:43,927 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-29 12:07:43,927 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:07:43,928 [INFO] BUY LIMIT AAPL: 10 @ $99.15 (ext-hours quote-first) | Momentum
+2026-09-29 12:07:43,929 [ERROR] EOD close failed AAPL: no usable after-hours position mark
+2026-09-29 12:07:43,930 [INFO] EOD CLOSE AAPL: 10 shares | extended-hours limit $99.00 | strategy=unknown | P&L $0.00
+2026-09-29 12:07:43,931 [INFO] LIVE PROBE AAPL: ATM option deferred; options market is closed
+2026-09-29 12:07:43,936 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:07:43,938 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:07:43,941 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:07:43,942 [INFO] SELL AAPL: 10 shares | Momentum
+2026-09-29 12:07:44,344 [INFO] EOD CLOSE AAPL: 10 shares | market | strategy=unknown | P&L $0.00
+2026-09-29 12:07:44,353 [INFO] Restored position exit state: AAPL
+2026-09-29 12:07:44,358 [WARNING] INTRADAY FINAL RESET: ignoring inactive asset AVNS: {"code":40010001,"message":"asset AVNS is not active"}
+2026-09-29 12:07:44,358 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:07:44,358 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:07:44,358 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:07:44,358 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:07:44,359 [INFO] INTRADAY FINAL RESET: retaining crypto positions: ['BTC/USD']
+2026-09-29 12:07:44,359 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:07:44,359 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:07:44,359 [INFO] INTRADAY FINAL RESET: retaining options positions: ['AAPL260918C00200000']
+2026-09-29 12:07:44,359 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:07:44,359 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:07:44,359 [INFO] INTRADAY FINAL RESET: retaining scaled-in live-probe positions: ['AAPL']
+2026-09-29 12:07:44,359 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=[]
+2026-09-29 12:07:44,359 [ERROR] INTRADAY FINAL RESET: close failed for AAPL: temporary broker failure
+2026-09-29 12:07:44,359 [WARNING] INTRADAY FINAL RESET: close submissions failed; remaining=['AAPL']
+2026-09-29 12:07:44,361 [WARNING] Bracket skip APGE: broker reports trading halt; cached for this session
+2026-09-29 12:07:44,370 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-29 12:07:44,373 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:07:44,375 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:07:44,379 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-29 12:07:44,379 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-29 12:07:44,381 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-29 12:07:44,385 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-29 12:07:44,386 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:07:44,388 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:07:44,390 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-29 12:07:44,390 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-29 12:07:44,391 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:07:44,391 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-29 12:07:44,392 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:07:44,392 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:07:44,393 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-29 12:07:44,393 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:07:44,393 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-29 12:07:44,393 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-29 12:07:44,393 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:07:44,394 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:07:44,394 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:07:44,394 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:07:44,394 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:07:44,395 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-29 12:07:44,395 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:07:44,397 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-29 12:07:44,401 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:07:44,404 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:07:44,407 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:07:44,411 [INFO] Restored position exit state: AAPL
+2026-09-29 12:07:44,411 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-29 12:07:44,415 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-29 12:07:44,415 [INFO] ======================================================================
+2026-09-29 12:07:44,416 [INFO] NEW DAY: 2026-09-29 | Start equity: $0.00
+2026-09-29 12:07:44,418 [INFO] Universe pruned: no expired tickers
+2026-09-29 12:07:44,418 [INFO] ======================================================================
+2026-09-29 12:07:44,419 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-29 12:07:44,420 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-29 12:07:44,420 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-29 12:07:44,420 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-29 12:07:44,420 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-29 12:07:44,421 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-29 12:07:44,423 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-29 12:07:44,424 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,426 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790698064 not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:07:44,426 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,430 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-29 12:07:44,432 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,435 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,438 [INFO] Restored position exit state: BBNX
+2026-09-29 12:07:44,439 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,442 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-29 12:07:44,444 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,445 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:07:44,449 [INFO] Restored position exit state: BBNX
+2026-09-29 12:07:44,451 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-29 12:07:44,455 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:07:44,455 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-29 12:07:44,457 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790698064); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:07:44,458 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:07:44,474 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-29 12:07:44,475 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:07:44,475 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:07:44,475 [INFO] Max positions reached (5/5) — skipping NVDA
+2026-09-29 12:07:44,477 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:07:44,480 [INFO] Restored position exit state: AAPL
+2026-09-29 12:07:44,480 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:07:44,484 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:07:44,484 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-29 12:07:44,485 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:07:44,486 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-29 12:07:44,486 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-29 12:07:44,787 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:07:44,789 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:07:45,090 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:07:46,704 [INFO] [SYSTEM] FORCE_CRYPTO=true — running crypto cycle
+2026-09-29 12:07:47,983 [INFO] [CRYPTO] 21 open: ADA/USD(0.2569→TP:0.2672), AVAX/USD(10.9521→TP:11.3901), BAT/USD(0.0952→TP:0.0990), BONK/USD(0.0000→TP:0.0000), CRV/USD(0.3618→TP:0.3763), DOGE/USD(0.0978→TP:0.1017), DOT/USD(1.2543→TP:1.3045), FIL/USD(1.1396→TP:1.1852), GRT/USD(0.0281→TP:0.0293), LINK/USD(14.3211→TP:14.8940), LTC/USD(72.1100→TP:74.9944), SHIB/USD(0.0000→TP:0.0000), SKY/USD(0.0840→TP:0.0873), SUSHI/USD(0.2716→TP:0.2825), TRUMP/USD(2.1390→TP:2.2245), UNI/USD(9.7494→TP:10.1394), XRP/USD(1.4952→TP:1.5551), XTZ/USD(0.3197→TP:0.3325), YFI/USD(2436.8534→TP:2534.3275), ARB/USD(0.2141→TP:0.2223), PEPE/USD(0.0000→TP:0.0000)
+2026-09-29 12:07:49,010 [INFO] [CRYPTO] #1: SOL/USD BUY @ 120.8815 conf=71% | RSI=60.1 3-bar uptrend
+2026-09-29 12:07:49,090 [INFO] [CRYPTO] Portfolio position cap reached (25/25) — skipping SOL/USD
+2026-09-29 12:07:49,090 [INFO] [CRYPTO] No new entries this cycle (all signals rejected)
+2026-09-29 12:07:50,139 [INFO] OPTIONS: ORCL261016C00139000 'stop' pending confirmation (1/2 cycles)
+2026-09-29 12:07:50,173 [INFO] OPTIONS: PLTR261009C00187500 'stop' pending confirmation (1/2 cycles)
+2026-09-29 12:07:50,221 [WARNING] OPTIONS: TBBB261016C00055000 wide quote spread 25.2% > 15.0% max (bid=$0.52 mark=$0.59 ask=$0.67) — deferring price-driven exits
+2026-09-29 12:07:50,249 [INFO] OPTIONS: VXX261016C00018000 'stop' pending confirmation (1/2 cycles)
+2026-09-29 12:07:50,358 [INFO] Options scan: injecting 5 priority-queue symbol(s): ['TGL', 'CRTD', 'GBTG', 'FLZH', 'SLND']
+2026-09-29 12:07:50,359 [INFO] Options scan: starting — 159 ticker(s) in universe
+2026-09-29 12:08:34,506 [INFO] ok
+2026-09-29 12:08:34,506 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-29 12:08:34,506 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-29 12:08:34,506 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-29 12:08:34,511 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,511 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,511 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,515 [INFO] [CRYPTO][SCALP] BTC/USD entry fill confirmed by broker — entry=100.50000000 qty=0.75000000
+2026-09-29 12:08:34,515 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.74999925 | order=order-1
+2026-09-29 12:08:34,516 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,516 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=order-1
+2026-09-29 12:08:34,516 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.37500000 limit=105.8410 | order=order-2 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,523 [INFO] [CRYPTO][SCALP] LIMIT BUY BTC/USD qty=8.320819 (~$833) limit=100.1500 | scalp TP=105.0000 SL=98.5000 | t | order=order-1
+2026-09-29 12:08:34,527 [INFO] [CRYPTO][SCALP] BTC/USD pending entry no longer open on broker — dropping
+2026-09-29 12:08:34,529 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,529 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,529 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,531 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-29 12:08:34,531 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-29 12:08:34,534 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,534 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,535 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,536 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-29 12:08:34,536 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-29 12:08:34,539 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:08:34,539 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,539 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698114
+2026-09-29 12:08:34,543 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:08:34,543 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,543 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698114
+2026-09-29 12:08:34,545 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-29 12:08:34,547 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,548 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,548 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,552 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,552 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,552 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,556 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,557 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,557 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698114
+2026-09-29 12:08:34,560 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:34,560 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,561 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698114
+2026-09-29 12:08:34,563 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:08:34,565 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:08:34,566 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:08:34,567 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:08:34,569 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 100.0000 <= entry 100.0000
+2026-09-29 12:08:34,569 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,569 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=99.8500 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698114
+2026-09-29 12:08:34,572 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 99.0000 <= entry 100.0000
+2026-09-29 12:08:34,572 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:34,573 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=98.8515 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698114
+2026-09-29 12:08:34,581 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:08:34,581 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=97.5000 limit=97.0125 qty=0.49999950 | order=order-1
+2026-09-29 12:08:34,584 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:08:34,587 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:08:34,610 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:08:34,611 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:08:34,611 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:08:34,611 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:08:34,611 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-29 12:08:34,611 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:08:34,612 [INFO] BUY LIMIT AAPL: 10 @ $99.15 (ext-hours quote-first) | Momentum
+2026-09-29 12:08:34,613 [ERROR] EOD close failed AAPL: no usable after-hours position mark
+2026-09-29 12:08:34,615 [INFO] EOD CLOSE AAPL: 10 shares | extended-hours limit $99.00 | strategy=unknown | P&L $0.00
+2026-09-29 12:08:34,616 [INFO] LIVE PROBE AAPL: ATM option deferred; options market is closed
+2026-09-29 12:08:34,619 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:34,621 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:34,625 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:34,625 [INFO] SELL AAPL: 10 shares | Momentum
+2026-09-29 12:08:34,642 [INFO] Options scan: prefetch complete — starting strategy evaluation
+2026-09-29 12:08:35,027 [INFO] EOD CLOSE AAPL: 10 shares | market | strategy=unknown | P&L $0.00
+2026-09-29 12:08:35,033 [INFO] Restored position exit state: AAPL
+2026-09-29 12:08:35,038 [WARNING] INTRADAY FINAL RESET: ignoring inactive asset AVNS: {"code":40010001,"message":"asset AVNS is not active"}
+2026-09-29 12:08:35,038 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:08:35,038 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:08:35,039 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:08:35,039 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:08:35,039 [INFO] INTRADAY FINAL RESET: retaining crypto positions: ['BTC/USD']
+2026-09-29 12:08:35,039 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:08:35,039 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:08:35,040 [INFO] INTRADAY FINAL RESET: retaining options positions: ['AAPL260918C00200000']
+2026-09-29 12:08:35,040 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:08:35,040 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:08:35,040 [INFO] INTRADAY FINAL RESET: retaining scaled-in live-probe positions: ['AAPL']
+2026-09-29 12:08:35,040 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=[]
+2026-09-29 12:08:35,041 [ERROR] INTRADAY FINAL RESET: close failed for AAPL: temporary broker failure
+2026-09-29 12:08:35,041 [WARNING] INTRADAY FINAL RESET: close submissions failed; remaining=['AAPL']
+2026-09-29 12:08:35,044 [WARNING] Bracket skip APGE: broker reports trading halt; cached for this session
+2026-09-29 12:08:35,105 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-29 12:08:35,109 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:35,111 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:35,115 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-29 12:08:35,116 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-29 12:08:35,118 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-29 12:08:35,125 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-29 12:08:35,127 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:08:35,129 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:35,133 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-29 12:08:35,133 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-29 12:08:35,134 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:08:35,135 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:35,135 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-29 12:08:35,135 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-29 12:08:35,135 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-29 12:08:35,135 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-29 12:08:35,135 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:35,136 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-29 12:08:35,136 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:08:35,136 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-29 12:08:35,136 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:08:35,136 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:35,136 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-29 12:08:35,137 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:08:35,137 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:35,137 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-29 12:08:35,137 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:08:35,137 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-29 12:08:35,137 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-29 12:08:35,138 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:08:35,138 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:08:35,139 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:08:35,139 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:08:35,140 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:08:35,140 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-29 12:08:35,141 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:08:35,144 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-29 12:08:35,148 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:08:35,151 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:35,153 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:35,158 [INFO] Restored position exit state: AAPL
+2026-09-29 12:08:35,159 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-29 12:08:35,163 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-29 12:08:35,163 [INFO] ======================================================================
+2026-09-29 12:08:35,164 [INFO] NEW DAY: 2026-09-29 | Start equity: $0.00
+2026-09-29 12:08:35,165 [INFO] Universe pruned: no expired tickers
+2026-09-29 12:08:35,165 [INFO] ======================================================================
+2026-09-29 12:08:35,166 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-29 12:08:35,167 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-29 12:08:35,168 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-29 12:08:35,168 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-29 12:08:35,168 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-29 12:08:35,169 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-29 12:08:35,172 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-29 12:08:35,174 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,176 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790698115 not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:08:35,176 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,181 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-29 12:08:35,184 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,186 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,190 [INFO] Restored position exit state: BBNX
+2026-09-29 12:08:35,191 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,194 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-29 12:08:35,197 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,199 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:08:35,203 [INFO] Restored position exit state: BBNX
+2026-09-29 12:08:35,205 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-29 12:08:35,210 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:08:35,210 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-29 12:08:35,214 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790698115); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:35,215 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:08:35,235 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-29 12:08:35,236 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:08:35,237 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:08:35,237 [INFO] Max positions reached (5/5) — skipping NVDA
+2026-09-29 12:08:35,240 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:08:35,243 [INFO] Restored position exit state: AAPL
+2026-09-29 12:08:35,243 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:08:35,248 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:08:35,249 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-29 12:08:35,250 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:08:35,250 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-29 12:08:35,251 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-29 12:08:35,552 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:08:35,554 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:08:35,855 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:08:35,940 [INFO] Schwab: quote unavailable for SHMD; Alpaca fallback used
+2026-09-29 12:08:37,036 [INFO] Schwab: quote unavailable for SATL; Alpaca fallback used
+2026-09-29 12:08:40,613 [INFO] Schwab: quote unavailable for RNAC; Alpaca fallback used
+2026-09-29 12:08:43,244 [INFO] Schwab: quote unavailable for NAUT; Alpaca fallback used
+2026-09-29 12:08:53,708 [INFO] ok
+2026-09-29 12:08:53,708 [INFO] [CRYPTO] #1: ETH/USD BUY @ 1.0000 conf=90% | test
+2026-09-29 12:08:53,708 [INFO] [CRYPTO] #2: PEPE/USD BUY @ 1.0000 conf=65% | test
+2026-09-29 12:08:53,708 [INFO] [CRYPTO] SKIP PEPE/USD conf=65% < min 70%
+2026-09-29 12:08:53,711 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,711 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,711 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,716 [INFO] [CRYPTO][SCALP] BTC/USD entry fill confirmed by broker — entry=100.50000000 qty=0.75000000
+2026-09-29 12:08:53,716 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.74999925 | order=order-1
+2026-09-29 12:08:53,716 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,716 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=order-1
+2026-09-29 12:08:53,717 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.37500000 limit=105.8410 | order=order-2 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,722 [INFO] [CRYPTO][SCALP] LIMIT BUY BTC/USD qty=8.320819 (~$833) limit=100.1500 | scalp TP=105.0000 SL=98.5000 | t | order=order-1
+2026-09-29 12:08:53,725 [INFO] [CRYPTO][SCALP] BTC/USD pending entry no longer open on broker — dropping
+2026-09-29 12:08:53,727 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,727 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,727 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,728 [WARNING] [CRYPTO][SCALP] exit order canceled with no fill for BTC/USD — restoring protection
+2026-09-29 12:08:53,728 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.99999900 | order=order-2
+2026-09-29 12:08:53,730 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,730 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,730 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,732 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-2
+2026-09-29 12:08:53,732 [INFO] [CRYPTO][SCALP] BTC/USD scale-out filled 0.50000000 — remaining 0.50000000, SL replaced | order=order-1
+2026-09-29 12:08:53,734 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:08:53,735 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,735 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698133
+2026-09-29 12:08:53,738 [INFO] [CRYPTO][SCALP] BTC/USD giveback exit 107.0000 <= peak 110.0000 - 2.5%
+2026-09-29 12:08:53,738 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,738 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.50000000 limit=106.8395 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698133
+2026-09-29 12:08:53,739 [INFO] [CRYPTO][SCALP] CLOSED BTC/USD | entry=100.0000
+2026-09-29 12:08:53,740 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,740 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,740 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,743 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,744 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,744 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,747 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,747 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,747 [INFO] [CRYPTO][SCALP] SCALE_OUT submitted BTC/USD qty=0.50000000 limit=105.8410 | order=order-1 coid=apex-cscalp-out-BTCUSD-1790698133
+2026-09-29 12:08:53,750 [INFO] [CRYPTO][SCALP] BTC/USD target hit 106.0000 >= 105.0000 — scaling out
+2026-09-29 12:08:53,750 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,750 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=0.00000050 limit=105.8410 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698133
+2026-09-29 12:08:53,752 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:08:53,753 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:08:53,753 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:08:53,754 [ERROR] [CRYPTO][SCALP] Entry BLOCKED for BTC/USD — scalp lane is paper-only and requires CRYPTO_SCALP_ENABLED=true
+2026-09-29 12:08:53,755 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 100.0000 <= entry 100.0000
+2026-09-29 12:08:53,755 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,755 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=99.8500 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698133
+2026-09-29 12:08:53,758 [INFO] [CRYPTO][SCALP] BTC/USD non-profit flatten 99.0000 <= entry 100.0000
+2026-09-29 12:08:53,758 [INFO] [CRYPTO] SL order cancelled for BTC/USD | order=sl-1
+2026-09-29 12:08:53,759 [INFO] [CRYPTO][SCALP] CLOSE submitted BTC/USD qty=1.00000000 limit=98.8515 | order=order-1 coid=apex-cscalp-close-BTCUSD-1790698133
+2026-09-29 12:08:53,766 [ERROR] [CRYPTO][SCALP] DISABLED — connected account 3PL1234 is not an Alpaca paper account
+2026-09-29 12:08:53,766 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=97.5000 limit=97.0125 qty=0.49999950 | order=order-1
+2026-09-29 12:08:53,769 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:08:53,772 [INFO] [CRYPTO] BROKER SL placed for BTC/USD stop=98.5000 limit=98.0075 qty=0.49999950 | order=order-1
+2026-09-29 12:08:53,791 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:08:53,791 [WARNING] [CRYPTO][SCALP] account verification failed: 'MockTradingClient' object has no attribute 'get_account'
+2026-09-29 12:08:53,792 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:08:53,792 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:08:53,792 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.5000 limit=0.4975 qty=1.23456666 | order=sl-order-1
+2026-09-29 12:08:53,792 [INFO] [CRYPTO] BROKER SL placed for PEPE/USD stop=0.0000 limit=0.0000 qty=398296061.41266751 | order=sl-order-1
+2026-09-29 12:08:53,793 [INFO] BUY LIMIT AAPL: 10 @ $99.15 (ext-hours quote-first) | Momentum
+2026-09-29 12:08:53,793 [ERROR] EOD close failed AAPL: no usable after-hours position mark
+2026-09-29 12:08:53,794 [INFO] EOD CLOSE AAPL: 10 shares | extended-hours limit $99.00 | strategy=unknown | P&L $0.00
+2026-09-29 12:08:53,795 [INFO] LIVE PROBE AAPL: ATM option deferred; options market is closed
+2026-09-29 12:08:53,799 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:53,801 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:53,803 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:53,804 [INFO] SELL AAPL: 10 shares | Momentum
+2026-09-29 12:08:54,205 [INFO] EOD CLOSE AAPL: 10 shares | market | strategy=unknown | P&L $0.00
+2026-09-29 12:08:54,212 [INFO] Restored position exit state: AAPL
+2026-09-29 12:08:54,217 [WARNING] INTRADAY FINAL RESET: ignoring inactive asset AVNS: {"code":40010001,"message":"asset AVNS is not active"}
+2026-09-29 12:08:54,217 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:08:54,217 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=['AVNS']
+2026-09-29 12:08:54,218 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:08:54,218 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:08:54,219 [INFO] INTRADAY FINAL RESET: retaining crypto positions: ['BTC/USD']
+2026-09-29 12:08:54,220 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:08:54,220 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:08:54,220 [INFO] INTRADAY FINAL RESET: retaining options positions: ['AAPL260918C00200000']
+2026-09-29 12:08:54,220 [WARNING] INTRADAY FINAL RESET: close submitted for AAPL qty=10
+2026-09-29 12:08:54,220 [INFO] INTRADAY FINAL RESET: close requests submitted; continuing without waiting for confirmation: ['AAPL']
+2026-09-29 12:08:54,220 [INFO] INTRADAY FINAL RESET: retaining scaled-in live-probe positions: ['AAPL']
+2026-09-29 12:08:54,220 [INFO] INTRADAY FINAL RESET: flatten complete; ignored_inactive=[]
+2026-09-29 12:08:54,220 [ERROR] INTRADAY FINAL RESET: close failed for AAPL: temporary broker failure
+2026-09-29 12:08:54,220 [WARNING] INTRADAY FINAL RESET: close submissions failed; remaining=['AAPL']
+2026-09-29 12:08:54,223 [WARNING] Bracket skip APGE: broker reports trading halt; cached for this session
+2026-09-29 12:08:54,230 [INFO] LIVE PROBE skipped: daily cap reached (10/10)
+2026-09-29 12:08:54,234 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:54,236 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:54,241 [INFO] LIVE PROBE AAPL: scale-in skipped; no new post-entry high above 101.20
+2026-09-29 12:08:54,242 [INFO] LIVE PROBE ATM OPTION AAPL: 1x $100.00 call submitted
+2026-09-29 12:08:54,244 [INFO] LIVE PROBE SCALE-IN LIMIT AAPL: +5 shares @ $101.10 (extended-hours)
+2026-09-29 12:08:54,248 [INFO] LIVE PROBE AAPL: scale-in skipped; held 2.0 min < 5 min
+2026-09-29 12:08:54,249 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:08:54,251 [INFO] LIVE PROBE SCALE-IN SOXS: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:54,254 [WARNING] MARGIN EOD: cash=$500 exposure requires closing ['AAPL'] to avoid overnight margin
+2026-09-29 12:08:54,254 [INFO] MARGIN EOD CLOSE AAPL: 10 shares | market | strategy=Momentum | P&L $0.00
+2026-09-29 12:08:54,256 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:08:54,256 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:54,256 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 1
+2026-09-29 12:08:54,256 [INFO] [OPTIONS][RETRY] Order option-order for SOFI fully filled, no retry needed.
+2026-09-29 12:08:54,256 [WARNING] [OPTIONS] Reconcile: could not fetch positions: 'RetryClient' object has no attribute 'get_all_positions'
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 2)
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 0, Contracts: 2
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Max retries reached for SOFI order option-order — unfilled remainder (2) canceled, giving up.
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Order option-order for SOFI confirmed filled — reconciling tracked positions
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Started retry thread for SOFI order option-order (retry 0)
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Waiting 0s before checking order option-order for SOFI
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Order option-order for SOFI still open after timeout. Filled qty: 1, Contracts: 3
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Cancelling order option-order for SOFI (unfilled qty: 2)
+2026-09-29 12:08:54,257 [INFO] [OPTIONS][RETRY] Retrying SOFI order at more aggressive limit: 1.26 for remaining qty 2 (retry 1)
+2026-09-29 12:08:54,258 [INFO] [OPTIONS][RETRY] Submitted new SINGLE order for SOFI: retry-order
+2026-09-29 12:08:54,258 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:08:54,258 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:08:54,259 [INFO] [OPTIONS] Open option entry order order-1 already pending for SOFI — duplicate entry suppressed
+2026-09-29 12:08:54,259 [INFO] [OPTIONS] Pending option entry already open for SOFI — skipping duplicate entry
+2026-09-29 12:08:54,259 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:08:54,260 [WARNING] [OPTIONS] Could not inspect open orders for pending SOFI entry: api down — allowing entry attempt
+2026-09-29 12:08:54,260 [INFO] [OPTIONS] EXECUTED SOFI call TestMomentum 1c conf=100% legs=1 open_window=False
+2026-09-29 12:08:54,262 [WARNING] [OPTIONS] SOFI order submission returned no order id — treating as failed; position NOT tracked
+2026-09-29 12:08:54,266 [INFO] LIVE PROBE AAPL: sizing 50 → 1 share(s); no automatic scale-in
+2026-09-29 12:08:54,268 [INFO] LIVE PROBE SCALE-IN AAPL: +5 shares at +1.00% pending fill confirmation
+2026-09-29 12:08:54,270 [INFO] LIVE PROBE AAPL: scale-in filled; protection replaced for 2 shares
+2026-09-29 12:08:54,275 [INFO] Restored position exit state: AAPL
+2026-09-29 12:08:54,275 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.50% → closing
+2026-09-29 12:08:54,279 [WARNING] Could not read start-of-day equity: 'NoneType' object has no attribute 'get_account'
+2026-09-29 12:08:54,279 [INFO] ======================================================================
+2026-09-29 12:08:54,279 [INFO] NEW DAY: 2026-09-29 | Start equity: $0.00
+2026-09-29 12:08:54,281 [INFO] Universe pruned: no expired tickers
+2026-09-29 12:08:54,281 [INFO] ======================================================================
+2026-09-29 12:08:54,282 [INFO] LIVE PROBE AAPL: scale-in skipped; gain -0.00% < 0.50%
+2026-09-29 12:08:54,283 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: no valid bid/ask quote; falling back to last=$0.43
+2026-09-29 12:08:54,283 [WARNING] [OPTIONS] SOFI260918C00019500 has no valid Alpaca bid/ask quote or last trade
+2026-09-29 12:08:54,283 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.44 (ask)
+2026-09-29 12:08:54,283 [INFO] [OPTIONS] SOFI260918C00019500 Alpaca pricing: bid=$0.39 ask=$0.44 limit=$0.39 (bid)
+2026-09-29 12:08:54,284 [INFO] TIME LOSS AAPL: held 46 min, adverse drift 1.50% >= 1.00% → closing
+2026-09-29 12:08:54,286 [WARNING] Pending time-loss exit AAPL: order reconciliation failed (temporary broker failure) — waiting
+2026-09-29 12:08:54,287 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,288 [INFO] PENDING EXIT BBNX: scale_out order apex-scalp-out-BBNX-1790698134 not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:08:54,288 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,291 [INFO] RATCHET EXIT AAPL: $106.80 gave back 2% from peak $109.00 (peak +9.0%, exit +6.8%) → market close
+2026-09-29 12:08:54,294 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,296 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,300 [INFO] Restored position exit state: BBNX
+2026-09-29 12:08:54,301 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,302 [INFO] SCALP TP CLOSE BBNX: $105.00 hit +5% fast target (+5.0%) — too small to scale out, closing in full
+2026-09-29 12:08:54,304 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 1/2 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,306 [INFO] SCALP SCALE-OUT FILLED BBNX: 1 sold, 1 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:08:54,309 [INFO] Restored position exit state: BBNX
+2026-09-29 12:08:54,311 [INFO] RATCHET EXIT BBNX: $103.30 gave back 2% from peak $106.00 (peak +6.0%, exit +3.3%) → market close
+2026-09-29 12:08:54,314 [INFO] PENDING EXIT AAPL: close order apex-tp-close-AAPL-old not open and no fill detected — re-enabling exit evaluation
+2026-09-29 12:08:54,315 [INFO] TP CLOSE AAPL: $91.00 hit +10% target $90.00 → market close (full position)
+2026-09-29 12:08:54,317 [INFO] SCALP SCALE-OUT SUBMITTED BBNX: $105.00 hit +5% fast target → selling 5/10 at market (apex-scalp-out-BBNX-1790698134); completion and remainder protection deferred until the fill is confirmed
+2026-09-29 12:08:54,318 [INFO] SCALP SCALE-OUT FILLED BBNX: 5 sold, 7 remain — ratchet (2% giveback) + fresh trail engaged
+2026-09-29 12:08:54,331 [INFO] LIVE PROBE BBNX: MomentumScalp exempt from probe sizing; keeping calculated 200 share(s)
+2026-09-29 12:08:54,331 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:08:54,332 [WARNING] NVDA: asset status check failed ('MockClient' object has no attribute 'get_asset') — proceeding cautiously
+2026-09-29 12:08:54,332 [INFO] Max positions reached (5/5) — skipping NVDA
+2026-09-29 12:08:54,334 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:08:54,336 [INFO] Restored position exit state: AAPL
+2026-09-29 12:08:54,337 [INFO] RATCHET EXIT AAPL: $119.00 gave back 8% from peak $130.00 (peak +30.0%, exit +19.0%) → market close
+2026-09-29 12:08:54,340 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:08:54,340 [WARNING] STALE ORDER WFF: can't determine price — keeping working order
+2026-09-29 12:08:54,341 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:08:54,341 [WARNING] STALE ORDER WFF: quote unavailable (quote unavailable) — keeping working order
+2026-09-29 12:08:54,342 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 600.0m (cutoff 360m) → market
+2026-09-29 12:08:54,643 [INFO] STALE ORDER WFF: replaced successfully
+2026-09-29 12:08:54,646 [INFO] STALE ORDER: WFF OrderSide.SELL 5 — age 60.0m (cutoff 3m) → limit @ current price
+2026-09-29 12:08:54,947 [INFO] STALE ORDER WFF: replaced successfully

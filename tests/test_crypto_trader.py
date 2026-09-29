@@ -864,5 +864,119 @@ class TestCryptoScalpEntryLifecycle(ScalpTestBase):
         self.assertEqual(trader._client.submitted, [])
 
 
+class TestCryptoBaselineNonProfitFlatten(unittest.TestCase):
+    """Baseline monitor flattens confirmed positions at/below entry even when
+    neither TP nor SL has triggered."""
+
+    def _trader(self, entry=100.0, tp=105.0, sl=97.0):
+        trader = CryptoTrader(MockTradingClient())
+        trader._sync_positions = lambda: None
+        trader._positions[SYM] = CryptoPosition(
+            symbol=SYM,
+            entry_price=entry,
+            entry_time=datetime.now(),
+            qty=10.0,
+            notional=10.0 * entry,
+            tp_price=tp,
+            sl_price=sl,
+            peak_price=entry,
+            sl_order_id="sl-1",
+            strategy="baseline",
+        )
+        closed = []
+        trader._close_position = lambda sym, reason: closed.append((sym, reason)) or True
+        return trader, closed
+
+    def test_closes_at_entry_without_tp_or_sl(self):
+        trader, closed = self._trader()
+        trader._get_latest_price = lambda sym: 100.0  # == entry
+
+        trader.monitor_positions()
+
+        self.assertEqual(len(closed), 1)
+        self.assertEqual(closed[0][0], SYM)
+        self.assertIn("non-profit", closed[0][1])
+
+    def test_closes_below_entry(self):
+        trader, closed = self._trader()
+        trader._get_latest_price = lambda sym: 99.5  # below entry, above SL
+
+        trader.monitor_positions()
+
+        self.assertEqual(len(closed), 1)
+        self.assertIn("non-profit", closed[0][1])
+
+    def test_profitable_position_not_closed_absent_tp_sl(self):
+        trader, closed = self._trader()
+        trader._get_latest_price = lambda sym: 101.0  # above entry, below TP
+
+        trader.monitor_positions()
+
+        self.assertEqual(closed, [])
+
+    def test_sl_reason_takes_precedence_below_entry(self):
+        trader, closed = self._trader()
+        trader._get_latest_price = lambda sym: 96.0  # <= sl 97
+
+        trader.monitor_positions()
+
+        self.assertEqual(len(closed), 1)
+        self.assertIn("SL hit", closed[0][1])
+
+
+class TestCryptoScalpNonProfitFlatten(ScalpTestBase):
+    """Scalp monitor submits a full close at/below entry via _submit_scalp_exit,
+    preserving the entry_pending / pending_exit guards."""
+
+    def _poll_at(self, trader, price):
+        trader._get_latest_price = lambda sym: price
+        trader._monitor_scalp_positions()
+
+    def test_full_close_submitted_at_entry(self):
+        trader = self.make_trader()
+        pos = self.seed_scalp_position(trader, qty=1.0, entry=100.0)
+
+        self._poll_at(trader, 100.0)  # == entry
+
+        self.assertEqual(len(trader._client.submitted), 1)
+        req = trader._client.submitted[0]
+        self.assertEqual(float(req.qty), 1.0)
+        self.assertTrue(req.client_order_id.startswith("apex-cscalp-close-BTCUSD-"))
+        self.assertEqual(pos.pending_exit["kind"], "close")
+        self.assertIn("sl-1", trader._client.cancelled, "broker SL cancelled before close")
+
+    def test_full_close_submitted_below_entry(self):
+        trader = self.make_trader()
+        pos = self.seed_scalp_position(trader, qty=1.0, entry=100.0)
+
+        self._poll_at(trader, 99.0)
+
+        self.assertEqual(len(trader._client.submitted), 1)
+        self.assertEqual(pos.pending_exit["kind"], "close")
+
+    def test_no_close_while_entry_pending(self):
+        trader = self.make_trader()
+        pos = self.seed_scalp_position(trader, qty=1.0, entry=100.0, entry_pending=True)
+
+        self._poll_at(trader, 50.0)
+
+        self.assertEqual(trader._client.submitted, [])
+        self.assertIsNone(pos.pending_exit)
+
+    def test_no_close_while_exit_pending(self):
+        trader = self.make_trader()
+        pos = self.seed_scalp_position(trader, qty=1.0, entry=100.0)
+        pos.pending_exit = {
+            "kind": "close", "qty": 1.0, "orig_qty": 1.0,
+            "coid": "apex-cscalp-close-BTCUSD-1", "order_id": "order-9",
+            "submitted_at": 0.0,
+        }
+
+        self._poll_at(trader, 50.0)
+
+        self.assertEqual(trader._client.submitted, [], "no duplicate exit while one is working")
+        self.assertIsNotNone(pos.pending_exit)
+
+
 if __name__ == "__main__":
     unittest.main()

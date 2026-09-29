@@ -341,6 +341,8 @@ class CryptoTrader:
                     reason = f"TP hit {price:.4f} >= {pos.tp_price:.4f}"
                 elif price <= pos.sl_price:
                     reason = f"SL hit {price:.4f} <= {pos.sl_price:.4f}"
+                elif price <= pos.entry_price:
+                    reason = f"non-profit flatten {price:.4f} <= entry {pos.entry_price:.4f}"
 
                 if reason:
                     self._close_position(sym, reason)
@@ -962,7 +964,13 @@ class CryptoTrader:
                 if price is None:
                     continue
                 pos.peak_price = max(pos.peak_price, price)
-                if not pos.scaled_out and price >= pos.tp_price:
+                if price <= pos.entry_price:
+                    log.info(
+                        f"[CRYPTO][SCALP] {sym} non-profit flatten {price:.4f} <= "
+                        f"entry {pos.entry_price:.4f}"
+                    )
+                    self._submit_scalp_exit(sym, pos, price, kind="close")
+                elif not pos.scaled_out and price >= pos.tp_price:
                     log.info(
                         f"[CRYPTO][SCALP] {sym} target hit {price:.4f} >= {pos.tp_price:.4f} — scaling out"
                     )

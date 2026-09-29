@@ -1031,6 +1031,7 @@ class EnhancedExecutor:
                 and float(getattr(p, "qty_available", p.qty)) > 0
                 and p.symbol not in self._swap_cycle_closed
                 and p.symbol not in entered_today
+                and getattr(p, "asset_class", None) != "crypto"  # crypto managed separately — never swap out
                 and not re.match(r'^[A-Z]+\d{6}[CP]\d{8}$', p.symbol)  # skip OCC option symbols
             ]
             if not longs:
@@ -1231,13 +1232,19 @@ class EnhancedExecutor:
             )
         
         # ── Max positions gate (secondary; optional swap if at limit) ─────
-        if positions.total_count >= effective_max:
+        # Crypto positions are managed by the crypto trader under its own cap —
+        # they must not consume equity/option slots here. Options still count.
+        non_crypto_count = sum(
+            1 for p in positions.positions_dict.values()
+            if getattr(p, "asset_class", None) != "crypto"
+        )
+        if non_crypto_count >= effective_max:
             if not (SWAP_ON_FULL and signal.confidence >= SWAP_MIN_CONFIDENCE):
                 log.info(
-                    f"Max positions reached ({positions.total_count}/{effective_max}) — "
+                    f"Max positions reached ({non_crypto_count}/{effective_max}) — "
                     f"skipping {signal.symbol}"
                 )
-                return False, f"Max positions reached: {positions.total_count}/{effective_max}"
+                return False, f"Max positions reached: {non_crypto_count}/{effective_max}"
             else:
                 # Strong confidence signal + at max: prefer swap to maintain position count
                 label = "SWAP (bear)" if swap_only else "SWAP"

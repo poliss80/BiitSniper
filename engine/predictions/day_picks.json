@@ -1,31 +1,15 @@
 {
-  "generated_at": "2026-09-28T13:52:21-04:00",
-  "date": "2026-09-28",
+  "generated_at": "2026-09-29T12:10:14-04:00",
+  "date": "2026-09-29",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "CANG",
+      "symbol": "ITGR",
       "action": "buy",
-      "price": 2.2799,
-      "confidence": 0.92,
-      "strategy": "MomentumContinuation",
-      "reason": "Momentum continuation rvol=11.1x up=15.0% break of session high MACD hist=0.0031 RSI=62.9"
-    },
-    {
-      "symbol": "MDB",
-      "action": "buy",
-      "price": 410.44,
-      "confidence": 0.83,
+      "price": 126.32,
+      "confidence": 0.88,
       "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $19.76"
-    },
-    {
-      "symbol": "ADMA",
-      "action": "buy",
-      "price": 9.38,
-      "confidence": 0.83,
-      "strategy": "Sweepea",
-      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.35"
+      "reason": "Daily Sweepea pullback to 8-EMA | ATR $0.26"
     }
   ]
 }

@@ -2148,5 +2148,91 @@ class MomentumScalpScanTests(unittest.TestCase):
         self.assertIsNone(sig, "no breakout above the preceding 5-bar high must reject")
 
 
+class PositionCapCryptoExclusionTests(unittest.TestCase):
+    """Crypto holdings must not count toward the equity max-positions cap,
+    and swap-candidate selection must never pick a crypto position."""
+
+    def _executor(self, positions):
+        client = MockClient(positions)
+        executor = build_executor(
+            client, Path(tempfile.gettempdir()) / "unused_cap_state.json"
+        )
+        executor._htb_cache = set()
+        executor._options_cost_reserve = 0.0
+        executor._position_cache = None
+        executor._cache_timestamp = 0.0
+        executor._cache_ttl = 5.0
+        return executor
+
+    def _crypto(self, symbol):
+        # asset_class arrives as an alpaca-py str-Enum on real positions
+        from enum import Enum
+
+        class AssetClass(str, Enum):
+            CRYPTO = "crypto"
+
+        return MockPosition(symbol, "100", 1.0, asset_class=AssetClass.CRYPTO)
+
+    def _validate(self, executor):
+        signal = SimpleNamespace(symbol="NVDA", confidence=0.50, price=100.0)
+        acct = enhanced.AccountSnapshot(
+            equity=100_000.0, buying_power=100_000.0, daytrade_count=0
+        )
+        with patch.object(enhanced, "USE_VIX_ROC_FILTER", False), patch.object(
+            enhanced, "MAX_POSITIONS", 5
+        ):
+            return executor._validate_trade(signal, acct, enhanced.OrderType.LONG)
+
+    def test_crypto_positions_do_not_count_toward_max_positions(self):
+        # 3 stocks + 1 option + 2 crypto = 6 total, but only 4 non-crypto
+        # (cap patched to 5) — entry must be allowed.
+        executor = self._executor([
+            MockPosition("AAA", "10", 50.0),
+            MockPosition("BBB", "10", 50.0),
+            MockPosition("CCC", "10", 50.0),
+            MockPosition("AAPL260116C00150000", "1", 2.0, asset_class="us_option"),
+            self._crypto("ARBUSD"),
+            MockPosition("ADAUSD", "100", 0.5, asset_class="crypto"),
+        ])
+
+        ok, reason = self._validate(executor)
+
+        self.assertTrue(ok, reason)
+
+    def test_stocks_and_options_still_count_toward_max_positions(self):
+        # 4 stocks + 1 option = 5 non-crypto at cap 5 — entry blocked even
+        # though crypto positions push the raw total well past the cap.
+        executor = self._executor([
+            MockPosition("AAA", "10", 50.0),
+            MockPosition("BBB", "10", 50.0),
+            MockPosition("CCC", "10", 50.0),
+            MockPosition("DDD", "10", 50.0),
+            MockPosition("AAPL260116C00150000", "1", 2.0, asset_class="us_option"),
+            self._crypto("ARBUSD"),
+            MockPosition("ADAUSD", "100", 0.5, asset_class="crypto"),
+        ])
+
+        ok, reason = self._validate(executor)
+
+        self.assertFalse(ok)
+        self.assertIn("Max positions reached: 5/5", reason)
+
+    def test_weakest_position_never_returns_crypto(self):
+        stock = MockPosition("AAA", "10", 50.0)
+        stock.unrealized_plpc = -0.01
+        crypto = self._crypto("ARBUSD")
+        crypto.unrealized_plpc = -0.50  # worse P&L than the stock
+        executor = self._executor([stock, crypto])
+
+        self.assertEqual(executor._find_weakest_position(), "AAA")
+
+    def test_weakest_position_none_when_only_crypto_held(self):
+        crypto = self._crypto("ARBUSD")
+        crypto.unrealized_plpc = -0.50
+        executor = self._executor([crypto])
+
+        self.assertIsNone(executor._find_weakest_position())
+
+
 if __name__ == "__main__":
     unittest.main()
