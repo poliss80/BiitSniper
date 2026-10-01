@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-29T15:27:10-04:00",
-  "date": "2026-09-29",
+  "generated_at": "2026-09-30T18:31:30-04:00",
+  "date": "2026-09-30",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "IOVA",
+      "symbol": "INGN",
       "action": "buy",
-      "price": 14.99,
-      "confidence": 0.83,
-      "strategy": "MomentumContinuationPullback",
-      "reason": "Momentum continuation high-RVOL pullback/reclaim rvol=4.7x up=35.7% above VWAP and range midpoint MACD hist=0.0068 RSI=49.3"
+      "price": 5.8,
+      "confidence": 0.8233,
+      "strategy": "Momentum",
+      "reason": "Strong momentum (9.3%) + volume x6.9 + above SMA20"
     }
   ]
 }
