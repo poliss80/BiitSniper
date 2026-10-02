@@ -28,7 +28,7 @@ OPTIONS_BROKER = "alpaca"                               # Only Alpaca supports o
 OPTIONS_ENABLED             = os.getenv("OPTIONS_ENABLED", "true").lower() in ("1", "true", "yes")
 OPTIONS_STANDALONE_ENTRIES_ENABLED = os.getenv("OPTIONS_STANDALONE_ENTRIES_ENABLED", "true").lower() in ("1", "true", "yes")
 OPTIONS_ALLOCATION_PCT      = float(os.getenv("OPTIONS_ALLOCATION_PCT", "15.0"))  # % of equity for all options (override via .env)
-OPTIONS_MAX_POSITIONS       = int(os.getenv("OPTIONS_MAX_POSITIONS", "4"))        # max open options positions total
+OPTIONS_MAX_POSITIONS       = int(os.getenv("OPTIONS_MAX_POSITIONS", "15"))        # max open options positions total
 OPTIONS_MAX_MLEG_POSITIONS  = int(os.getenv("OPTIONS_MAX_MLEG_POSITIONS", "2"))   # hard limit: max open spreads/butterflies/condors
 OPTIONS_MAX_MLEG_CONTRACTS  = int(os.getenv("OPTIONS_MAX_MLEG_CONTRACTS", "2"))   # hard limit: max contracts per spread entry
 # Comma-separated list of allowed strategy names. Empty = all strategies enabled.
@@ -611,7 +611,7 @@ CRYPTO_UNIVERSE: list = [
 ]
 
 # Position sizing
-CRYPTO_MAX_POSITIONS = int(os.getenv("CRYPTO_MAX_POSITIONS", "12"))    # max simultaneous crypto positions
+CRYPTO_MAX_POSITIONS = int(os.getenv("CRYPTO_MAX_POSITIONS", "10"))    # max simultaneous crypto positions
 CRYPTO_POSITION_PCT  = float(os.getenv("CRYPTO_POSITION_PCT",  "0.0"))   # legacy override; 0 = auto (BP / CRYPTO_MAX_POSITIONS)
 CRYPTO_MIN_NOTIONAL  = float(os.getenv("CRYPTO_MIN_NOTIONAL",  "100.0")) # minimum order in USD
 
@@ -623,7 +623,7 @@ CRYPTO_SL_PCT        = float(os.getenv("CRYPTO_SL_PCT",  "2.5"))         # stop-
 CRYPTO_RSI_BUY_MIN   = float(os.getenv("CRYPTO_RSI_BUY_MIN",  "42.0"))  # RSI must be above this to buy
 CRYPTO_RSI_BUY_MAX   = float(os.getenv("CRYPTO_RSI_BUY_MAX",  "70.0"))  # RSI must be below this to buy
 CRYPTO_RSI_SELL_MAX  = float(os.getenv("CRYPTO_RSI_SELL_MAX", "52.0"))  # RSI must be below this to close
-CRYPTO_MIN_CONFIDENCE = float(os.getenv("CRYPTO_MIN_CONFIDENCE", "0.70"))  # min signal confidence to buy
+CRYPTO_MIN_CONFIDENCE = float(os.getenv("CRYPTO_MIN_CONFIDENCE", "0.80"))  # min signal confidence to buy
 
 # Scan interval during weekend (minutes)
 CRYPTO_SCAN_INTERVAL_MIN = int(os.getenv("CRYPTO_SCAN_INTERVAL_MIN", "30"))

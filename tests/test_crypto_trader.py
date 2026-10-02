@@ -245,8 +245,8 @@ class TestCryptoMinConfidenceGate(unittest.TestCase):
         from types import SimpleNamespace as _NS
         from engine import orchestrator
 
-        low_conf_sig = _NS(symbol=SYM, action="buy", price=1.0, confidence=0.65, reason="test")
-        high_conf_sig = _NS(symbol="ETH/USD", action="buy", price=1.0, confidence=0.90, reason="test")
+        low_conf_sig = _NS(symbol=SYM, action="buy", price=1.0, confidence=0.79, reason="test")
+        high_conf_sig = _NS(symbol="ETH/USD", action="buy", price=1.0, confidence=0.80, reason="test")
 
         crypto_trader = SimpleNamespace(
             monitor_positions=lambda: None,
@@ -256,14 +256,37 @@ class TestCryptoMinConfidenceGate(unittest.TestCase):
         )
         ctx = SimpleNamespace(crypto_trader=crypto_trader)
 
-        with patch.object(_cfg, "CRYPTO_MIN_CONFIDENCE", 0.70), patch.object(
-            orchestrator.cfg, "CRYPTO_MIN_CONFIDENCE", 0.70
+        with patch.object(_cfg, "CRYPTO_MIN_CONFIDENCE", 0.80), patch.object(
+            orchestrator.cfg, "CRYPTO_MIN_CONFIDENCE", 0.80
         ), patch.object(orchestrator.cfg, "CRYPTO_UNIVERSE", [SYM, "ETH/USD"]):
             calls = []
             crypto_trader.execute_buy = lambda sig: calls.append(sig.symbol) or True
             orchestrator._run_crypto_cycle(ctx)
 
-        self.assertEqual(calls, ["ETH/USD"], "only the >=70% confidence signal should execute")
+        self.assertEqual(calls, ["ETH/USD"], "only the >=80% confidence signal should execute")
+
+
+class TestCryptoPositionCap(unittest.TestCase):
+    def test_crypto_cap_blocks_entry_independently_of_portfolio_cap(self):
+        positions = [
+            SimpleNamespace(symbol=f"COIN{index}USD", qty="1", asset_class="crypto")
+            for index in range(10)
+        ]
+        client = MockTradingClient(positions=positions)
+        client.get_account = lambda: SimpleNamespace(
+            account_number="PA123456" if _cfg.PAPER else "123456",
+            non_marginable_buying_power="10000",
+            buying_power="10000",
+        )
+        trader = CryptoTrader(client)
+        signal = SimpleNamespace(symbol=SYM, price=1.0, confidence=0.9, reason="test")
+
+        with patch.object(_cfg, "CRYPTO_MAX_POSITIONS", 10), patch.object(
+            _cfg, "MAX_POSITIONS", 20
+        ):
+            self.assertFalse(trader.execute_buy(signal))
+
+        self.assertEqual(client.submitted, [])
 
 
 # ── Crypto momentum scalp lane (paper-only) ──────────────────────────────────

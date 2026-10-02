@@ -457,8 +457,21 @@ class CryptoTrader:
             # Using the broader buying_power (which includes margin) causes 40310000 errors.
             cash_bp       = float(getattr(account, "non_marginable_buying_power", None) or account.buying_power)
 
+            positions = self._client.get_all_positions()
+            crypto_position_count = sum(
+                1 for position in positions
+                if getattr(position, "asset_class", None) == "crypto"
+            )
+            crypto_position_count = max(crypto_position_count, len(self._positions))
+            if crypto_position_count >= _cfg.CRYPTO_MAX_POSITIONS:
+                log.info(
+                    f"[CRYPTO] Crypto position cap reached "
+                    f"({crypto_position_count}/{_cfg.CRYPTO_MAX_POSITIONS}) — skipping {signal.symbol}"
+                )
+                return False
+
             # ── Max positions gate ────────────────────────────────────────────
-            portfolio_count = len(self._client.get_all_positions())
+            portfolio_count = len(positions)
             if portfolio_count >= _cfg.MAX_POSITIONS:
                 log.info(
                     f"[CRYPTO] Portfolio position cap reached "

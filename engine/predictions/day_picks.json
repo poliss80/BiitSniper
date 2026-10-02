@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-30T18:31:30-04:00",
-  "date": "2026-09-30",
+  "generated_at": "2026-10-02T07:33:36-04:00",
+  "date": "2026-10-02",
   "market_regime": "bull",
   "picks": [
     {
-      "symbol": "INGN",
+      "symbol": "SSM",
       "action": "buy",
-      "price": 5.8,
-      "confidence": 0.8233,
-      "strategy": "Momentum",
-      "reason": "Strong momentum (9.3%) + volume x6.9 + above SMA20"
+      "price": 2.61,
+      "confidence": 0.94,
+      "strategy": "PreMarketMomentum",
+      "reason": "Pre-mkt momentum: gap +133.0% | PM vol 261% of avg daily"
     }
   ]
 }
