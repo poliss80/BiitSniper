@@ -1962,21 +1962,21 @@ class OptionsExecutor:
                     _eff_stop = min(_eff_stop, 22.0)
 
                 # ── Spread/Multi-leg exit logic (bull call, bear put, butterfly, condor, etc.) ────
-                # NOTE: Spread SL calculation is complex (mark pricing, bid-ask spreads, multi-leg consolidation).
-                # Instead of computing SL in code, get SL directly from Schwab API when syncing positions.
-                # For now: Skip -35% debit SL for spreads; let Schwab manage via its own stop orders.
+                # NOTE: No broker-side stop order is submitted for spreads — the bot
+                # software monitors consolidated spread P&L and applies the percentage
+                # stop below (with DTE tightening computed above).
                 _is_spread = ("spread" in pos.option_type.lower() or "spread" in pos.strategy.lower() or
                              "TrendPullback" in pos.strategy or "BearCall" in pos.strategy)
                 _is_butterfly = "butterfly" in pos.option_type.lower() or "butterfly" in pos.strategy.lower()
                 _is_condor    = "condor"    in pos.option_type.lower() or "condor"    in pos.strategy.lower()
                 _is_mleg = _is_spread or _is_butterfly or _is_condor
 
-                # ── Multi-leg positions: skip percentage-based SL, use Schwab stop orders ────
+                # ── Multi-leg positions: stop monitored by bot software (no broker stop order) ────
                 if _is_mleg:
                     log.debug(
                         f"[OPTIONS] {pos.symbol} {pos.strategy} (multi-leg) — "
                         f"mark=${current_mark:.2f} pnl={pnl_pct:+.1f}% "
-                        f"(SL managed by Schwab stop order, not bot calculation)"
+                        f"(stop monitored by bot software; no Schwab stop order submitted)"
                     )
 
                 # ── Butterfly / Iron Condor exit logic ───────────────────────
@@ -2148,9 +2148,11 @@ class OptionsExecutor:
                         )
                         to_close.append(occ_sym)
 
-                # ── Percentage-based stop loss: ONLY for naked options, NOT spreads ────
-                # Multi-leg spreads have complex mark pricing; SL is managed by Schwab stop orders.
-                elif not _is_mleg and self._price_exit_allowed(
+                # ── Percentage-based stop loss: naked options AND vertical/multi-leg spreads ────
+                # The bot software monitors consolidated spread P&L and closes on stop;
+                # no broker-side stop order is ever submitted. Butterfly/condor positions
+                # use their dedicated logic above and `continue` before reaching this branch.
+                elif self._price_exit_allowed(
                     occ_sym, "stop", pnl_pct <= -_eff_stop, wide_spread
                 ):
                     # Grace period: don't stop-out within first N days of entry

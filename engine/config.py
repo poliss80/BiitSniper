@@ -58,7 +58,7 @@ OPTIONS_MIN_IV_PCT          = float(os.getenv("OPTIONS_MIN_IV_PCT", "15.0"))    
 # Tightened from -35%: naked calls decay fast; cut losers quicker to preserve capital for re-entries.
 # Grace period extended to 3 days — options need time to settle after entry.
 # Scale-out strategy: Close 50% at first target, hold 50% with tighter stop for max profit.
-OPTIONS_STOP_LOSS_PCT       = float(os.getenv("OPTIONS_STOP_LOSS_PCT", "25.0"))      # -25% loss for NAKED options (NOT spreads) — unchanged
+OPTIONS_STOP_LOSS_PCT       = float(os.getenv("OPTIONS_STOP_LOSS_PCT", "25.0"))      # software stop threshold for naked options and vertical spreads
 OPTIONS_PROFIT_TARGET_1_PCT = float(os.getenv("OPTIONS_PROFIT_TARGET_1_PCT", "25.0"))  # was 50% — close 50% of position at +25% (lock profit faster)
 OPTIONS_PROFIT_TARGET_1_STOP_PCT = float(os.getenv("OPTIONS_PROFIT_TARGET_1_STOP_PCT", "15.0"))  # was 20% — tighter stop on 2nd half (aggressive)
 OPTIONS_PROFIT_TARGET_2_PCT = float(os.getenv("OPTIONS_PROFIT_TARGET_2_PCT", "50.0"))  # was 100% — close remaining 50% at +50% (aggressive exit)

@@ -1,17 +1,18 @@
 {
-  "updated": "2026-10-02T11:32:45Z",
+  "updated": "2026-10-02T13:13:52Z",
   "tickers": [
+    "VVV",
+    "ETR",
     "EME",
-    "COTY",
+    "IDA",
+    "TRU",
+    "SYY",
     "STZ",
     "NOC",
-    "IDA",
-    "SYY",
     "EFX",
-    "EMCOR",
-    "VVV",
-    "TRU",
-    "SW",
-    "AERO"
+    "COTY",
+    "HGTY",
+    "XPOF",
+    "SW"
   ]
 }

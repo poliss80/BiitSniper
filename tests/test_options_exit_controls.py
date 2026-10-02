@@ -193,6 +193,104 @@ class HardExitTests(unittest.TestCase):
             self.assertEqual(ex._exit_confirm, {})
 
 
+class SpreadStopTests(unittest.TestCase):
+    """Requirement: vertical spreads reaching the final stop branch use the bot
+    software percentage stop (with confirmation); butterfly/condor stay on their
+    dedicated path and never accumulate a generic 'stop' confirmation."""
+
+    def test_vertical_spread_percentage_stop_confirms_then_closes(self):
+        legs = [
+            {"occ_symbol": OCC, "side": "buy", "ratio_qty": 1},
+            {"occ_symbol": "XYZ261030C00055000", "side": "sell", "ratio_qty": 1},
+        ]
+        pos = make_position(strategy="TrendPullbackSpread", option_type="spread",
+                            legs=legs, entry_price=2.0)
+        ex = build_executor(pos)
+        # Consolidated Schwab pricing: mark $1.20 -> -40% (below -25% stop),
+        # spread 0.10/1.20 = 8.3% (not wide)
+        pricing = {
+            "spread_mark": 1.20,
+            "spread_bid": 1.15,
+            "spread_ask": 1.25,
+            "pnl_mark_pct": -40.0,
+            "dte": None,
+        }
+
+        with patch(f"{EXECUTOR_MOD}.OPTIONS_EXIT_CONFIRM_CYCLES", 2), \
+             patch(f"{EXECUTOR_MOD}.OPTIONS_STOP_LOSS_PCT", 25.0), \
+             patch(f"{EXECUTOR_MOD}.OPTIONS_ENTRY_GRACE_DAYS", 3), \
+             patch("engine.utils.schwab_pricing.get_spread_complete_pricing",
+                   return_value=pricing):
+            # Cycle 1: condition seen, not yet confirmed
+            ex.monitor_positions()
+            ex._close_option.assert_not_called()
+            self.assertEqual(ex._exit_confirm.get((pos.occ_symbol, "stop")), 1)
+
+            # Cycle 2: confirmed -> close
+            ex.monitor_positions()
+            ex._close_option.assert_called_once()
+            self.assertEqual(ex._close_option.call_args[0][0], pos.occ_symbol)
+
+    def test_butterfly_stays_on_dedicated_path_without_generic_stop(self):
+        legs = [
+            {"occ_symbol": "XYZ261003C00045000", "side": "buy", "ratio_qty": 1},
+            {"occ_symbol": OCC, "side": "sell", "ratio_qty": 2},
+            {"occ_symbol": "XYZ261003C00055000", "side": "buy", "ratio_qty": 1},
+        ]
+        pos = make_position(dte=30, strategy="Butterfly", option_type="butterfly",
+                            legs=legs, entry_price=2.0)
+        ex = build_executor(pos)
+        # Consolidated mark $1.00 -> -50% (well below -25% stop), narrow spread
+        pricing = {
+            "spread_mark": 1.00,
+            "spread_bid": 0.95,
+            "spread_ask": 1.05,
+            "pnl_mark_pct": -50.0,
+            "dte": None,
+        }
+
+        with patch(f"{EXECUTOR_MOD}.OPTIONS_EXIT_CONFIRM_CYCLES", 2), \
+             patch(f"{EXECUTOR_MOD}.OPTIONS_STOP_LOSS_PCT", 25.0), \
+             patch(f"{EXECUTOR_MOD}.OPTIONS_ENTRY_GRACE_DAYS", 3), \
+             patch("engine.utils.schwab_pricing.get_spread_complete_pricing",
+                   return_value=pricing):
+            for _ in range(3):
+                ex.monitor_positions()
+            # Dedicated butterfly path: no generic stop close, no confirmation
+            ex._close_option.assert_not_called()
+            self.assertNotIn((pos.occ_symbol, "stop"), ex._exit_confirm)
+
+    def test_condor_stays_on_dedicated_path_without_generic_stop(self):
+        legs = [
+            {"occ_symbol": "XYZ261003P00045000", "side": "buy", "ratio_qty": 1},
+            {"occ_symbol": "XYZ261003P00048000", "side": "sell", "ratio_qty": 1},
+            {"occ_symbol": "XYZ261003P00052000", "side": "sell", "ratio_qty": 1},
+            {"occ_symbol": "XYZ261003P00055000", "side": "buy", "ratio_qty": 1},
+        ]
+        pos = make_position(dte=30, strategy="IronCondor", option_type="condor",
+                            legs=legs, entry_price=2.0)
+        ex = build_executor(pos)
+        # Consolidated mark $1.00 -> -50% (well below -25% stop), narrow spread
+        pricing = {
+            "spread_mark": 1.00,
+            "spread_bid": 0.95,
+            "spread_ask": 1.05,
+            "pnl_mark_pct": -50.0,
+            "dte": None,
+        }
+
+        with patch(f"{EXECUTOR_MOD}.OPTIONS_EXIT_CONFIRM_CYCLES", 2), \
+             patch(f"{EXECUTOR_MOD}.OPTIONS_STOP_LOSS_PCT", 25.0), \
+             patch(f"{EXECUTOR_MOD}.OPTIONS_ENTRY_GRACE_DAYS", 3), \
+             patch("engine.utils.schwab_pricing.get_spread_complete_pricing",
+                   return_value=pricing):
+            for _ in range(3):
+                ex.monitor_positions()
+            # Dedicated condor path: no generic stop close, no confirmation
+            ex._close_option.assert_not_called()
+            self.assertNotIn((pos.occ_symbol, "stop"), ex._exit_confirm)
+
+
 class CloseOptionPricingTests(unittest.TestCase):
     """Requirement: single-leg close limits come from the fresh Alpaca quote
     side, not the broker Position.current_price."""
